@@ -51,20 +51,26 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 -- Weaponskills
-	elseif spell.type == 'Weaponskill' then
-		if player.TP >= 100 then
-			if spell.target.distance <= 25 then
-				if sets.precast.WS[spell.name] then
-					equip(sets.precast.WS[spell.name])
+	 elseif sets.precast.WS[spell.name] then
+		if  player.status == 'Engaged' then
+			if player.TP >= 100 then
+				if spell.target.distance <= 5 then
+					if sets.precast.WS[spell.name] then
+						equip(sets.precast.WS[spell.name])
+					else
+						equip(sets.precast.WS)
+					end
 				else
-					equip(sets.precast.WS)
+					cancel_spell()
+					windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
 				end
-			else
-				cancelspell()
-				windower.addtochat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
+			else 
+				cancel_spell()
+				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
 			end
-		else 
-			windower.addtochat(121, ''..player.TP..' is not enough to WS')
+		else
+			cancel_spell()
+			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then

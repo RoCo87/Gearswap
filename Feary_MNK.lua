@@ -102,6 +102,7 @@ function status_change(new,old)
 		equip(sets.TP.Hybrid)
 	end
 end
+
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
 -- gain = true losebuff = false
