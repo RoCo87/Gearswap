@@ -34,6 +34,7 @@ function self_command(command)
 	-- Set PDT set and equip it
 		PDT = 1
 		equip(sets.idle.PDT)
+		windower.add_to_chat(121,'PDT Set Locked')
 --  Lock MDT
 	elseif command == 'MDT' then
 	-- make sure other values are set to default
@@ -42,6 +43,7 @@ function self_command(command)
 	-- lock MDT set and equip it
 		MDT = 1
 		equip(sets.idle.MDT)
+		windower.add_to_chat(121,'MDT Set Locked')
 	elseif command == 'TP' then
 		if Mode == 0 then
 		-- check defaults
@@ -50,7 +52,7 @@ function self_command(command)
 		-- Increment by 1 for MidAcc set
 			Mode = 1
 			equip(sets.TP.MidAcc)
-			 windower.add_to_chat(121,'MidAcc Set')
+			windower.add_to_chat(121,'MidAcc Set')
 		elseif Mode == 1 then 
 		-- check defaults
 			PDT = 0
