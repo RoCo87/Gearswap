@@ -31,50 +31,78 @@ function self_command(command)
 		equip(sets.idle.MDT)
 		windower.add_to_chat(121,'MDT Set Locked')
 	elseif command == 'TP' then
-		Acc = 0
+		ACC = 0
 		PDT = 0
 		MDT = 0
-		equip(sets.TP.RA)
+		if player.equipment.range == "Echidna's Bow" then
+			equip(sets.RA)
+		elseif player.equipment.range == "Eminent Gun" then
+			equip(sets.RA.Gun)
+		end
 		windower.add_to_chat(121,'TP Set Locked')
 	elseif command == 'ACC' then
-		Acc = 1
+		-- Use a toggle
+		if ACC == 1 then
+			ACC = 0
+		else
+			Acc = 1
+		end
 		PDT = 0
 		MDT = 0
-		equip(sets.TP.RA.ACC)
+		if player.equipment.range == "Echidna's Bow" then
+			equip(sets.RA.Acc)
+		elseif player.equipment.range == "Eminent Gun" then
+			equip(sets.RA.Acc.Gun)
+		end
 		windower.add_to_chat(121,'ACC Set Locked')
 	elseif command == "Mode" then
 		-- use a toggle
 		if Mode =="Melee" then
 			-- set it to default
-			mode = "None"
+			Mode = "None"
+			windower.add_to_chat(121,'Mode Normal')
 		else
-			mode = "Melee"
+			Mode = "Melee"
+			windower.add_to_chat(121,'Mode Melee')
 		end
 	end
 end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
-		equip(sets.idle.Standard)
-	elseif new =='Engaged' then
+		if PDT == 1 or buffactive['Weakness'] or player.hpp == 30 then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
+	elseif new == 'Engaged' then
          -- Gear info each time you Engage, useful if using DressUp or BlinkMeNot
-            windower.add_to_chat(8,player.name..': PDT = '..PDT..' | MDT ='..MDT..' | ACC = '..ACC)
+            windower.add_to_chat(8,player.name..': Mode = '..Mode..' | PDT = '..PDT..' | MDT ='..MDT..' | ACC = '..ACC)
             -- Automatically activate Velocity Shot when engaging
             if not buffactive['Velocity Shot'] and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[129] < 1 then
                 windower.send_command('velocityshot')
             end
-			-- Set Acc Sets
-			if Acc == 1 then
-				if Mode == "Melee" then
+			
+			if PDT == 1 or buffactive['Weakness'] or player.hpp == 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+			-- Set ACC Sets
+				if ACC == 1 then
+					if Mode == "Melee" then
 					equip(sets.TP.Acc)	
-				else
-					equip(sets.TP.RA.ACC)
-				end
-			elseif Acc == 0 then
-				if Mode == "Melee" then
-					equip(sets.TP)	
-				else
-					equip(sets.TP.RA)
+					else
+						equip(sets.RA.Acc)
+					end
+					elseif ACC == 0 then
+					if Mode == "Melee" then
+						equip(sets.TP)	
+					else
+						equip(sets.RA)
+					end
 				end
 			end
     end
@@ -113,6 +141,12 @@ function precast(spell,arg)
     if spell.name == 'Spectral Jig' and buffactive.Sneak then
         windower.ffxi.cancel_buff(71)
         cast_delay(0.3)
+	elseif windower.wc_match(spell.name,'Curing*') then
+        equip(sets.misc.Waltz)
+    elseif windower.wc_match(spell.name,'*Step') then
+        equip(sets.misc.Steps)
+	elseif windower.wc_match(spell.name,'*Flourish') then
+        equip(sets.misc.flourish)
     end
 end
 
@@ -158,30 +192,42 @@ end
 
 function aftercast(spell,arg)
 	-- 
-	if player.status == 'engaged' then
-		if ACC == 1 then
-			if Mode == "Melee" then
-				equip(sets.TP.ACC)
-			else
-				if player.equipment.range == "Echidna's Bow" then
-					equip(sets.RA.Acc)
-				elseif player.equipment.range == "Eminent Gun" then
-					equip(sets.RA.Acc.Gun)
-				end
-			end
+	if player.status == 'Engaged' then
+		if PDT == 1 or buffactive['Weakness'] then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.PDT)
 		else
-			if Mode == "Melee" then
-				equip(sets.TP.ACC)
+			if ACC == 1 then
+				if Mode == "Melee" then
+					equip(sets.TP.Acc)
+				else
+					if player.equipment.range == "Echidna's Bow" then
+						equip(sets.RA.Acc)
+					elseif player.equipment.range == "Eminent Gun" then
+						equip(sets.RA.Acc.Gun)
+					end
+				end
 			else
-				if player.equipment.range == "Echidna's Bow" then
-					equip(sets.RA)
-				elseif player.equipment.range == "Eminent Gun" then
-					equip(sets.RA.Gun)
+				if Mode == "Melee" then
+					equip(sets.TP.Acc)
+				else
+					if player.equipment.range == "Echidna's Bow" then
+						equip(sets.RA)
+					elseif player.equipment.range == "Eminent Gun" then
+						equip(sets.RA.Gun)
+					end
 				end
 			end
 		end
 	else
-		equip(sets.idle.Standard)
+		if PDT == 1 or buffactive['Weakness'] then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
 	end
     -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
     if spell and spell.name == 'Utsusemi: Ni' then

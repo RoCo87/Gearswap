@@ -12,19 +12,31 @@ if player.name == 'Feary' then
 	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
-				set_macro_page(1,1)
-			elseif player.sub_job == 'SAM' then
-				set_macro_page(1,2)
-			elseif player.sub_job == 'WAR' then
-				set_macro_page(1,3)
-			elseif player.sub_job == 'DRG' then 
-				set_macro_page(1,4)
-			end
+			if player.equipment.range == "Echidna's Bow" then
+				if player.sub_job == 'NIN' then
+					set_macro_page(13,1)
+				elseif player.sub_job == 'SAM' then
+					set_macro_page(13,2)
+				elseif player.sub_job == 'WAR' then
+					set_macro_page(13,3)
+				elseif player.sub_job == 'DRG' then 
+					set_macro_page(13,4)
+				end
+			elseif player.equipment.range == "Eminence Gun" then
+				if player.sub_job == 'NIN' then
+					set_macro_page(13,5)
+				elseif player.sub_job == 'SAM' then
+					set_macro_page(13,6)
+				elseif player.sub_job == 'WAR' then
+					set_macro_page(13,7)
+				elseif player.sub_job == 'DRG' then 
+					set_macro_page(13,8)
+				end
+			end			
 		else
-			set_macro_page(1,1)
+			set_macro_page(13,1)
 		end
 		
 -- Auto Sets
@@ -125,7 +137,7 @@ sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="L
 
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 
-sets.misc.Waltz = {hands="Buremete Gloves", waist="Chuq'aba Belt"}
+sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
 
