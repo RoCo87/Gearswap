@@ -4,10 +4,7 @@
 --
 
 
-
-
-
--- Base Tables
+-- Basic Tables
 
 	sets.idle = {}
 	sets.misc = {}

@@ -13,7 +13,7 @@
 -- Gear Sets 
 function get_sets()
 
--- Get WHM gearsets
+-- Get MNK Gearsets
 	include('Gearsets/Mnk_Gearsets.lua')
 	
 -- Define Default Values for Variables

@@ -14,7 +14,6 @@
 	-- G15 Keyboard
 	windower. register_event('job_change', G15)
 	
-	
 -- Functions
 function day_change(day)
 	day = world.day
