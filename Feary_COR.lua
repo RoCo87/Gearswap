@@ -1,4 +1,4 @@
--- Feary's RNG LUA
+-- Feary's COR LUA
 -- Date: 3/10/2014
 --
 --
@@ -6,18 +6,22 @@
 -- Gear Sets 
 function get_sets()
 
--- Get RNG Gearsets
-	include('Gearsets/RNG_Gearsets.lua')   
+-- Get COR Gearsets
+	include('Gearsets/COR_Gearsets.lua')   
 	
 -- Define Default Values for Variables
-	Mode = "None"
+	Mode = "Melee"
 	ACC = 0
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
 	
+	QDBullet = {Animikii Bullet}
+	TPBullet = {Achiyal. Bullet)
+	WSBullet = {Achiyal. Bullet}
+	MBullet = {Bullet}
+	
 end
-
 
 function self_command(command)
    -- Lock PDT
@@ -40,11 +44,7 @@ function self_command(command)
 		ACC = 0
 		PDT = 0
 		MDT = 0
-		if player.equipment.range == "Echidna's Bow" then
-			equip(sets.RA)
-		elseif player.equipment.range == "Eminent Gun" then
-			equip(sets.RA.Gun)
-		end
+		equip(sets.RA)
 		windower.add_to_chat(121,'TP Set Locked')
 	elseif command == 'ACC' then
 		-- Use a toggle
@@ -55,11 +55,7 @@ function self_command(command)
 		end
 		PDT = 0
 		MDT = 0
-		if player.equipment.range == "Echidna's Bow" then
-			equip(sets.RA.Acc)
-		elseif player.equipment.range == "Eminent Gun" then
-			equip(sets.RA.Acc.Gun)
-		end
+		equip(sets.RA.Acc)
 		windower.add_to_chat(121,'ACC Set Locked')
 	elseif command == "Mode" then
 		-- use a toggle
@@ -76,7 +72,7 @@ end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
-		if PDT == 1 or buffactive['Weakness'] or player.hpp == 30 then
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
@@ -84,14 +80,10 @@ function status_change(new,old)
 			equip(sets.idle.Standard)
 		end
 	elseif new == 'Engaged' then
-     -- Gear info each time you Engage, useful if using DressUp or BlinkMeNot
-		windower.add_to_chat(8,player.name..': Mode = '..Mode..' | PDT = '..PDT..' | MDT ='..MDT..' | ACC = '..ACC)
-		-- Automatically activate Velocity Shot when engaging
-		if not buffactive['Velocity Shot'] and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[129] < 1 then
-			windower.send_command('velocityshot')
-        end
-		-- Engaged Sets
-		if PDT == 1 or buffactive['Weakness'] or player.hpp == 30 then
+    -- Gear info each time you Engage, useful if using DressUp or BlinkMeNot
+        windower.add_to_chat(8,player.name..': Mode = '..Mode..' | PDT = '..PDT..' | MDT ='..MDT..' | ACC = '..ACC)
+	-- Engaged sets
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
@@ -101,20 +93,20 @@ function status_change(new,old)
 				if Mode == "Melee" then
 					equip(sets.TP.Acc)	
 				else
-					if player.equipment.range == "Echidna's Bow" then
+					if player.equipment.range == "Armageddon" then
 						equip(sets.RA.Acc)
 					elseif player.equipment.range == "Eminent Gun" then
-						equip(sets.RA.Acc.Gun)
+						equip(sets.RA.Acc)
 					end
 				end
 			elseif ACC == 0 then
 				if Mode == "Melee" then
 					equip(sets.TP)	
 				else
-					if player.equipment.range == "Echidna's Bow" then
+					if player.equipment.range == "Armageddon" then
 						equip(sets.RA)
 					elseif player.equipment.range == "Eminent Gun" then
-						equip(sets.RA.Gun)
+						equip(sets.RA)
 					end
 				end
 			end
@@ -123,15 +115,35 @@ function status_change(new,old)
 end
 
 function precast(spell,arg)
-	-- when /war Make sure Berserk is up when using a WS
-    if (spell.name == 'Jishnu\'s Radiance' or spell.name == 'Namas Arrow') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
-        windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
-        cancel_spell()
-        return
-    end
-
+	-- Cor Rolls
+	if spell.type == 'CorsairRoll' or spell.english == "Double-Up" then
+		if spell.english:wcmatch('Caster\'s Roll|Courser\'s Roll|Blitzer\'s Roll|Tactician\'s Roll|Allies\' Roll') then
+			equip(sets.precast.JA[spell.name])
+		else
+			equip(sets.precast.JA["Phantom Roll"])
+		end
+	end
+	
+	-- Quick Draw
+	if spell.type == "CorsairShot" then
+		if player.equipment.ammo == QDBullet then
+			if spell.english:wcmatch('Dark Shot|Light Shot') thend
+				equip(sets.precast.QD.ACC, ammo=QDBullet)
+			else
+				equip(sets.precast.QD.MAB, ammo=QDBullet)
+			end
+		else
+		
+		end
+	end
+	
+	-- Range Attack 
     if spell.name == 'Ranged' then
-        equip(sets.precast.Snapshot)
+		if player.equipment.ammo == QDBullet then
+			cancel_spell()
+		else
+			equip(sets.precast.Snapshot)
+		end
     end
 
     -- Generic equip command for all Job Abilities and Weaponskills
@@ -167,16 +179,16 @@ end
 function midcast(spell,arg)
     if spell.name == 'Ranged' then
 		if ACC == 1 then
-			if player.equipment.range == "Echidna's Bow" then
+			if player.equipment.range == "Armageddon" then
 				equip(sets.RA.Acc)
 			elseif player.equipment.range == "Eminent Gun" then
-				equip(sets.RA.Acc.Gun)
+				equip(sets.RA.Acc)
 			end
 		else
-			if player.equipment.range == "Echidna's Bow" then
+			if player.equipment.range == "Armageddon" then
 				equip(sets.RA)
 			elseif player.equipment.range == "Eminent Gun" then
-				equip(sets.RA.Gun)
+				equip(sets.RA)
 			end
 		end
         if buffactive.Barrage then
@@ -205,7 +217,7 @@ function midcast(spell,arg)
 end
 
 function aftercast(spell,arg)
-	-- 
+-- 
 	if player.status == 'Engaged' then
 		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
 			equip(sets.idle.PDT)
@@ -216,20 +228,20 @@ function aftercast(spell,arg)
 				if Mode == "Melee" then
 					equip(sets.TP.Acc)
 				else
-					if player.equipment.range == "Echidna's Bow" then
+					if player.equipment.range == "Armageddon" then
 						equip(sets.RA.Acc)
 					elseif player.equipment.range == "Eminent Gun" then
-						equip(sets.RA.Acc.Gun)
+						equip(sets.RA.Acc)
 					end
 				end
 			else
 				if Mode == "Melee" then
 					equip(sets.TP)
 				else
-					if player.equipment.range == "Echidna's Bow" then
+					if player.equipment.range == "Armageddon" then
 						equip(sets.RA)
 					elseif player.equipment.range == "Eminent Gun" then
-						equip(sets.RA.Gun)
+						equip(sets.RA)
 					end
 				end
 			end

@@ -3,13 +3,6 @@
 --
 --
 
---function file_unload()
--- unload Gearswap
-
--- load spellcast for other jobs.
---windower.send_command("load spellcast")
---end
-
 -- Gear Sets 
 function get_sets()
 

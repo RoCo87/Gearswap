@@ -5,36 +5,36 @@ if player.Name == 'Feary' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
-		include('include/autoexec.lua')
+		--include('include/autoexec.lua')
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
 		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'nin' then
-				set_macro_page(1,1)
+				set_macro_page(4,1)
 			elseif player.sub_job =='whm' then
-				set.macro_page(1,2)
+				set_macro_page(4,2)
 			elseif player.sub_job == 'rdm' then
-				set.macro_page(1,3)
+				set_macro_page(4,3)
 			elseif player.sub_job =='sch' then 
-				set.macro_page(1,4)
+				set_macro_page(4,4)
 			elseif player.sub_job =='dnc' then 
-				set.macro_page(1,5)
+				set_macro_page(4,5)
 			elseif player.sub_job =='BLM' then 
-				set.macro_page(1,6)
+				set_macro_page(4,6)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(4,1)
 		end
 		
 		-- Instruments
 		-- Buffs
 		ballad = {range="Crooner's Cithara"}
-		march = {range="Langeleik")
-		minuet = {range="Apollo's Flute")
-		madrigal = {range="Cantabank's Horn")
-		minne = {range="Syrinx")
+		march = {range="Langeleik"}
+		minuet = {range="Apollo's Flute"}
+		madrigal = {range="Cantabank's Horn"}
+		minne = {range="Syrinx"}
 		etude = {range="Langeleik"}
 		carol = {range="Crumhorn"}
 		mambo  = {range="Vihuela"}
@@ -52,33 +52,24 @@ if player.Name == 'Feary' then
 		requiem = {range="Requiem Flute"}
 		virelai = {range="Daurdabla"}
 		nocturne = {range="Iron Ram Horn"}
-		
-		-- Mintrel's Ring Minimal HP to trigger Ring
-		rdmringhp = 815
-		whmringhp = 1160
-		ninringhp = 815
-		schringhp = 815
-		blmringhp = 744
-		dncringhp = 744
-		
-		
+
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Gendewitha Caubeen", neck="Twilight Torque", lear="", rear="",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
 				head="Gendewitha Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
+                body="Gendewitha Bliaut", hands="Serpentes Cuffs", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",
-                body="Heka's Kalasiris", hands="Serpentes Cuffs",
+                body="Gendewitha Bliaut", hands="Serpentes Cuffs",
                 legs="Nares Trews", feet="Aoidos' Cothrn. +2"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Aoidos' Cothrn. +2"})
@@ -87,25 +78,24 @@ if player.Name == 'Feary' then
                 body="Dalmatica", hands="Zenith Mitts", lring="", rring="",
                 back="", waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
 		-- JA
-		sets.precast.JA["Nightingale"] = {feet="Brd. Slippers +2"}
-		sets.precast.JA["Troubadour"] = {body="Brd. Jstcorps +2"}
-		sets.precast.JA["Soul Voice"] = {legs="Brd. Cannions +2"}
+		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
+		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
+		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions"}
 		
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = { 
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
-                body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
+                body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Chelona Boots"}
+		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre Dagger",
+				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="", rear="Aoidos' Earring",
+                body="", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="",
+                back="Swith Cape", waist="Witful Belt", legs="Gendewitha Spats", feet="Bokwus Boots"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",
                 back="", waist="", legs="", feet=""})
-		sets.precast.Songcastingtime = set_combine(sets.precast.Fastcast, {
-				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="", rear="Aoidos' Earring",
-                body="", hands="Gendewitha Gages", lring="Minstrel's Ring", rring="",
-                back="Swith Cape", waist="Witful Belt", legs="Gendewitha Spats", feet="Bokwus Boots"})
-		
 		-- Midcast
 		sets.midcast.Recast = { main="",
 				head="", neck="", lear="", rear="",
@@ -115,15 +105,15 @@ if player.Name == 'Feary' then
 				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
                 body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
                 back="Balladeer's Cape", waist="Austerity Belt", legs="Nares Trews", feet="Serpentes Sabots"}
-		-- Bardsong
-		sets.midcast.Buffsong = { main="",
+		-- Bard songs
+		sets.midcast.Buffsong = { main="Legato Dagger",
+				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
+                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
+                back="", waist="", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
+		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
                 back="", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
-		sets.midcast.Skillsong = { main="",
-				head="", neck="", lear="Musical Earring", rear="",
-                body="Aoidos' hngrln. +2", hands="", lring="", rring="",
-                back="", waist="Witful Belt", legs="Aoidos' rhing. +2", feet=""}
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="",
@@ -172,7 +162,7 @@ if player.Name == 'Feary' then
 		sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {})
 		
-		sets.precast.JA["Waltz"] = {}
-		sets.precast.JA["Step"] = {}
-
+		sets.misc.Waltz = {}
+		sets.misc.Steps = {}
+		sets.misc.flourish = {}
 end
