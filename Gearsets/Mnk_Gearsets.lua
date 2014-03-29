@@ -6,9 +6,9 @@
 
 if player.name == 'Feary' then
 -- includes
-	include('utility.lua')
-	include('mappings.lua')
-	include('equipment.lua')
+	include('include/utility.lua')
+	include('include/mappings.lua')
+	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
@@ -17,29 +17,22 @@ if player.name == 'Feary' then
 			if player.sub_job == 'war' then
 				set_macro_page(1,1)
 			elseif player.sub_job == 'nin' then
-				set.macro_page(1,2)
+				set_macro_page(1,2)
 			elseif player.sub_job == 'dnc' then
-				set.macro_page(1,3)
+				set_macro_page(1,3)
 			elseif player.sub_job == 'drg' then 
-				set.macro_page(1,4)
+				set_macro_page(1,4)
 			elseif player.sub_job == 'whm' then 
-				set.macro_page(1,5)
+				set_macro_page(1,5)
 			elseif player.sub_job == 'run' then 
-				set.macro_page(1,6)
+				set_macro_page(1,6)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(1,1)
 		end
-		
--- Augmented Gear
-Aug = {}
-Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
 
-sets.misc = {}
 -- Auto Sets
 -- Standard/idle
-sets.idle = {}
 sets.idle.PDT = { 
 				head="Otronif Mask", neck="Twilight Torque",
                 body="Otronif Harness", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
@@ -50,7 +43,7 @@ sets.idle.MDT = {
                 body="Manibozho Jerkin", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Black Belt", legs="Nahtirah Trousers", feet="Manibozho Boots"}
 
-sets.idle.Regen = set_combine(sets.idle.PDT, {body="Melee Cyclas +2"})
+sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {
 				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
@@ -92,24 +85,22 @@ sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, { ammo="Honed Tathlum",
 				head="Whirlpool Mask", body="Tantra Cyclas +2", waist="Hurch'lan Sash"})
 
 -- JA
-sets.precast = {}
-sets.precast.JA = {}
-sets.precast.JA["Formless Strikes"] = {body="Mel. Cyclas +2"}
+sets.precast.JA["Formless Strikes"] = {body="Hes. Cyclas"}
 sets.precast.JA["Chakra"] = set_combine(sets.idle.PDT, { ammo="Tantra Tahtlum",
 				head="Whirlpool Mask",
-				body="Manibozho Jerkin", hands="Mel. Gloves +2", 
+				body="Manibozho Jerkin", hands="Hes. Gloves", 
 				legs="Nahtirah Trousers"})
 sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",
                 body="Manibozho Jerkin", hands="Otronif Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="", waist="", legs="Nahtirah Trousers"})
 sets.precast.JA["Impetus"] = {body="Tantra Cyclas +2"}
-sets.precast.JA["Hundred Fists"] = {legs="Mel. Hose +2"}
-sets.precast.JA["Focus"] = {head="Temple Crown"}
-sets.precast.JA["Dodge"] = {feet="Temple Gaiters"}
-sets.precast.JA["Boost"] = {hands="Temple Gloves"}
-sets.precast.JA["Counterstance"] = {feet="Mel. Gaiters +2"}
-sets.precast.JA["Mantra"] = {feet="Mel. Gaiters +2"}
+sets.precast.JA["Hundred Fists"] = {legs="Hes. Hose"}
+sets.precast.JA["Focus"] = {head="Anchorite's Crown"}
+sets.precast.JA["Dodge"] = {feet="Anch. Gaiters"}
+sets.precast.JA["Boost"] = {hands="Anchorite's Gloves"}
+sets.precast.JA["Counterstance"] = {feet="Hes. Gaiters"}
+sets.precast.JA["Mantra"] = {feet="Hes. Gaiters"}
 
 -- Weaponskills
 sets.precast.WS = {ammo="Honed Tathlum",
@@ -165,7 +156,7 @@ sets.misc.Fastcast = set_combine(sets.idle.PDT, {
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {}
-sets.misc.Steps = {}
+sets.misc.Steps = set_combine(sets.TP.MidAcc,{})
 sets.misc.flourish = {}
 
 

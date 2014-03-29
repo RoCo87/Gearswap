@@ -15,26 +15,26 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'SAM' then
-				set_macro_page(10,1)
+				set_macro_page(12,1)
 			elseif player.sub_job == 'NIN' then
-				set_macro_page(10,2)
+				set_macro_page(12,2)
 			elseif player.sub_job == 'DNC' then
-				set_macro_page(10,3)
+				set_macro_page(12,3)
 			elseif player.sub_job == 'WAR' then 
-				set_macro_page(10,4)
+				set_macro_page(12,4)
 			elseif player.sub_job == 'BLU' then 
-				set_macro_page(10,5)
+				set_macro_page(12,5)
 			elseif player.sub_job == 'RDM' then 
-				set_macro_page(10,6)
+				set_macro_page(12,6)
 			elseif player.sub_job == 'WHM' then 
-				set_macro_page(10,7)	
+				set_macro_page(12,7)	
 			elseif player.sub_job == 'SCH' then 
-				set_macro_page(10,8)	
+				set_macro_page(12,8)	
 			elseif player.sub_job == 'PLD' then 
-				set_macro_page(10,9)	
+				set_macro_page(12,9)	
 			end
 		else
-			set_macro_page(10,1)
+			set_macro_page(12,1)
 		end
 		
 -- Auto Sets
@@ -69,16 +69,23 @@ sets.TP.Acc = {	ammo="Hagneia Stone",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches", feet="Mikinaak Greaves"}
-
+-- Ionis Haste +2% Save TP 25+
 sets.TP.Acc.Ionis = {ammo="Hagneia Stone",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches", feet="Mikinaak Greaves"}
 
 -- Pet
-sets.precast.HealingBreath = {}
-sets.midcast.Breath = {}
-sets.midcast.HealingBreath = {head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring", rear="",
+sets.precast.HealingBreath = {
+				head="Vishap Armet", 
+				body="Pteroslaver Mail", hands="Ogier's Gauntlets", lring="Meridian Ring", rring="K'ayres Ring",
+				back="Strendu Mantle", waist="Glassblower's Belt", legs="Gorney Brayettes", feet="Gorney Sollerets"}
+sets.midcast.HealingBreath = {
+				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring", rear="",
+				body="Wyvern Mail", hands="Buremte Gloves", lring="", rring="",
+				back="Updraft Mantle", waist="Glassblower's Belt", legs="Pteroslaver Brais", feet="Ptero. Greaves"}
+sets.midcast.Breath = {	
+				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring", rear="",
 				body="Wyvern Mail", hands="Buremte Gloves", lring="", rring="",
 				back="Updraft Mantle", waist="Glassblower's Belt", legs="Pteroslaver Brais", feet="Ptero. Greaves"}
 
@@ -148,7 +155,7 @@ sets.precast.WS["Camlann's Torment"] = {ammo="Hagneia Stone",
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Cizin Helm", lear="Loquac. Earring", rring="Prolix Ring",})
 
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 

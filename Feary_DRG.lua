@@ -11,6 +11,7 @@ function get_sets()
 	
 -- Define Default Values for Variables
 	Mode = 0
+	ACC = 0
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
@@ -86,7 +87,12 @@ function status_change(new,old)
      -- Gear info each time you Engage, useful if using DressUp or BlinkMeNot
 		windower.add_to_chat(8,player.name..': Mode = '..Mode..' | PDT = '..PDT..' | MDT ='..MDT..' | ACC = '..ACC)
 		-- Automatically activate Hasso when engaging
-		if not buffactive['Hasso'] and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[129] < 1 then
+		if player.sub_job["SAM"] and
+		not buffactive['Hasso'] and
+		not buffactive.Amnesia and 
+		not buffactive.Obliviscence and 
+		not buffactive.Paralysis and 
+		windower.ffxi.get_ability_recasts()[138] < 1 then
 			windower.send_command('Hasso')
         end
 		-- Engaged Sets
@@ -99,14 +105,14 @@ function status_change(new,old)
 			if ACC == 1 then
 				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
 					equip(sets.TP.Acc.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
+					--windower.add_to_chat(121,'Ionis buffed')
 				else
 					equip(sets.TP.Acc)
 				end
 			elseif ACC == 0 then
 				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
 					equip(sets.TP.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
+					--windower.add_to_chat(121,'Ionis buffed')
 				else
 					equip(sets.TP)
 				end
@@ -118,12 +124,15 @@ end
 function precast(spell,arg)
     -- Job Abilities
 	if spell.type == 'JobAbility' then
-		if sets.precast.JA[spell.name] then
+		if spell.name == 'Convert' then
+			cancel_spell()
+		elseif sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
 	-- Pet Commands 
 	elseif spell.type == 'PetCommand' then
-		if pet.isvalid == "true" then
+		if pet.isvalid == true then
+			-- midcast delay
 			if spell.name == "Smiting Breath" then
 				equip(sets.precast.HealingBreath)
 			elseif spell.name == 'Restoring Breath' then
@@ -156,144 +165,162 @@ function precast(spell,arg)
 			cancel_spell()
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
-	end
-
-
+	elseif spell.type:endswith('Magic') then
+		-- Healing Breath Triggers
+		if spell.english:wcmatch("Bar*") and player.hpp <= 51 then
+			print(player.hpp)
+			equip(sets.precast.HealingBreath)
+		end
+		-- Cure casting time
+		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
+			equip(sets.precast.Fastcast)
+		end
+		-- Cancel Sneak
+		if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		end	
     -- Magic spell gear handling(Precast)
-    if spell.skill == 'Ninjutsu' then
+    elseif spell.type == 'Ninjutsu' then
         equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
             equip(sets.misc.Utsusemi)
         end
-    end
-
-    -- Special handling to remove Dancer sub job Sneak effect
-    if spell.name == 'Spectral Jig' and buffactive.Sneak then
-        windower.ffxi.cancel_buff(71)
-        cast_delay(0.3)
-	elseif windower.wc_match(spell.name,'Curing*') then
-        equip(sets.misc.Waltz)
-    elseif windower.wc_match(spell.name,'*Step') then
-        equip(sets.misc.Steps)
-	elseif windower.wc_match(spell.name,'*Flourish') then
-        equip(sets.misc.flourish)
+    else
+		-- Special handling to remove Dancer sub job Sneak effect
+		if spell.name == 'Spectral Jig' and buffactive.Sneak then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		elseif windower.wc_match(spell.name,'Curing*') then
+			equip(sets.misc.Waltz)
+		elseif windower.wc_match(spell.name,'*Step') then
+			equip(sets.misc.Steps)
+		elseif windower.wc_match(spell.name,'*Flourish') then
+			equip(sets.misc.flourish)
+		end
     end
 end
 
 function pet_precast(spell,arg)
-	if spell.english:wcmatch('Healing Breath*') then
+	if spell.english:startswith('Healing Breath') or spell.english:startswith('Restoring Breathe') then
 		equip(sets.precast.HealingBreath)
-		windower.add_to_chat(121,'pet precast')
-	elseif spell.english:wcmatch('*Breath') then
-		equip(sets.precast.Breath)
-		windower.add_to_chat(121,'pet precast')
+	else 
+		equip(sets.precast.HealingBreath)
 	end
 end
 
 function midcast(spell,arg)	
+	-- Pet Command
 	if spell.type == 'PetCommand' then
-		if pet.isvalid == "true" then
+		if pet.isvalid == true then
 			if spell.name == "Smiting Breath" then
-				equip(sets.midcast.HealingBreath)
+				equip(sets.midcast.Breath)
 			elseif spell.name == 'Restoring Breath' then
 				equip(sets.midcast.HealingBreath)
 			elseif spell.name == 'Steady Wing' then
 				equip(sets.precast.JA["Steady Wing"])
 			end
-		else
-			cancel_spell()
+		end
+	elseif spell.type:endswith('Magic') then
+		-- Healing Breath Triggers
+		if spell.english:wcmatch("Stone|Bar*") and player.hpp < 51 then
+			equip(sets.midcast.HealingBreath)
+		end
+    elseif spell.type == 'Ninjutsu' then
+		-- Gear change to Damage Taken set when in midcast of Utsusemi
+		-- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
+		if windower.wc_match(spell.name,'Utsusemi*') then
+			equip(sets.misc.Utsusemi)
+			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
+				if buffactive['Copy Image'] then
+					windower.ffxi.cancel_buff(66)
+				elseif buffactive['Copy Image (2)'] then
+					windower.ffxi.cancel_buff(444)
+				elseif buffactive['Copy Image (3)'] then
+					windower.ffxi.cancel_buff(445)
+				elseif buffactive['Copy Image (4+)'] then
+					windower.ffxi.cancel_buff(446)
+				end
+			end
+		elseif spell.name == 'Monomi: Ichi' or spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+			windower.ffxi.cancel_buff(71)
 		end
 	end
-    -- Gear change to Damage Taken set when in midcast of Utsusemi
-    -- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
-    if windower.wc_match(spell.name,'Utsusemi*') then
-        equip(sets.misc.Utsusemi)
-        if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
-            if buffactive['Copy Image'] then
-                windower.ffxi.cancel_buff(66)
-            elseif buffactive['Copy Image (2)'] then
-                windower.ffxi.cancel_buff(444)
-            elseif buffactive['Copy Image (3)'] then
-                windower.ffxi.cancel_buff(445)
-            elseif buffactive['Copy Image (4+)'] then
-                windower.ffxi.cancel_buff(446)
-            end
-        end
-    elseif spell.name == 'Monomi: Ichi' or spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-        windower.ffxi.cancel_buff(71)
-    end
 end
 
 function pet_midcast(spell,arg)
 	if spell.english:wcmatch('Healing Breath*') then
 		equip(sets.midcast.HealingBreath)
-		windower.add_to_chat(121,'pet precast')
 	elseif spell.english:wcmatch('*Breath') then
 		equip(sets.midcast.Breath)
-		windower.add_to_chat(121,'pet precast')
 	end
 end
 
 function aftercast(spell,arg)
+	-- Leaving Healing Breath Gear on and use pet aftercast
+	if spell.english:wcmatch("Bar*") and player.hpp < 51 or pet_midaction() == true then
+			equip(sets.midcast.HealingBreath)
+	else
 	-- Engaged
-	if player.status == 'Engaged' then
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			if ACC == 1 then
-				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
-					equip(sets.TP.Acc.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
-				else
-					equip(sets.TP.Acc)
-				end
+		if player.status == 'Engaged' then
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
 			else
-				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
-					equip(sets.TP.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
+				if ACC == 1 then
+					if buffactive.Ionis and areas.Adoulin:contains(world.area) then
+						equip(sets.TP.Acc.Ionis)
+						--windower.add_to_chat(121,'Ionis buffed')
+					else
+						equip(sets.TP.Acc)
+					end
 				else
-					equip(sets.TP)
+					if buffactive.Ionis and areas.Adoulin:contains(world.area) then
+						equip(sets.TP.Ionis)
+						--windower.add_to_chat(121,'Ionis buffed')
+					else
+						equip(sets.TP)
+					end
 				end
 			end
-		end
-	else
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
 		else
-			equip(sets.idle.Standard)
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
+		end
+		-- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
+		if spell and spell.name == 'Utsusemi: Ni' then
+			ShadowType = 'Ni'
+		elseif spell and spell.name == 'Utsusemi: Ichi' then
+			ShadowType = 'Ichi'
 		end
 	end
-    -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
-    if spell and spell.name == 'Utsusemi: Ni' then
-        ShadowType = 'Ni'
-    elseif spell and spell.name == 'Utsusemi: Ichi' then
-        ShadowType = 'Ichi'
-    end
 end
 
 function pet_aftercast(spell,arg)
 -- Engaged
-	if player.status == 'Engaged' then
+	if player.status == 'Engaged' or spell.english:wcmatch("Stone|Bar") then
 		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
 			if ACC == 1 then
-				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
+				if buffactive.Ionis and areas.Adoulin:contains(world.area) then
 					equip(sets.TP.Acc.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
+					--windower.add_to_chat(121,'Ionis buffed')
 				else
 					equip(sets.TP.Acc)
 				end
 			else
-				if buffactive == "Ionis" and areas.Adoulin:contains(world.area) then
+				if buffactive.Ionis and areas.Adoulin:contains(world.area) then
 					equip(sets.TP.Ionis)
-					windower.add_to_chat(121,'Ionis buffed')
+					--windower.add_to_chat(121,'Ionis buffed')
 				else
 					equip(sets.TP)
 				end

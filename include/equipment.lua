@@ -7,18 +7,32 @@
 
 -- Augmented Gear
 	Aug = {}
-	Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-	Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
-	Aug.DemonRing1 = {name="Demon's Ring",augments={"Resist Curse+2, Mag. crit. hit dmg. +3%"}}
-	Aug.DemonRing2 = {name="Demon's Ring",augments={"Resist Curse+2, Mag. crit. hit dmg. +3%"}}
+	Aug.Darkring1 = {name="Dark Ring",augments={"Phys. dmg. taken -5%","Magic dmg. taken -3%"}}
+	Aug.Darkring2 = {name="Dark Ring",augments={"Phys. dmg. taken -4%","Magic dmg. taken -4%"}}
+	Aug.DemonRing1 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
+	Aug.DemonRing2 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	
 -- Magian Staves
 	-- Elemental Precast
-		FastcastStaff = {['Light']='Arka I', ['Dark']='Xsaeta I', ['Fire']='Atar I', ['Ice']='Vourukasha I',
+		Fastcast = {}
+		Fastcast.Staff = {['Light']='Arka I', ['Dark']='Xsaeta I', ['Fire']='Atar I', ['Ice']='Vourukasha I',
 				['Wind']='Vayuvata I', ['Earth']='Vishrava I', ['Lightning']='Apamajas I', ['Water']='Haoma I', ['Thunder']='Apamajas I'}
+		Fastcast.Staff.ID = {['Light']=19932, ['Dark']=19936, ['Fire']=19914, ['Ice']=19917,
+				['Wind']=19920, ['Earth']=19923, ['Lightning']=19926, ['Water']=19929, ['Thunder']=19926}
 	-- Elemental Recast
-		RecastStaff = {['Light']='Arka II', ['Dark']='Xsaeta II', ['Fire']='Atar II', ['Ice']='Vourukasha II',
+		Recast = {}
+		Recast.Staff = {['Light']='Arka II', ['Dark']='Xsaeta II', ['Fire']='Atar II', ['Ice']='Vourukasha II',
 				['Wind']='Vayuvata II', ['Earth']='Vishrava II', ['Lightning']='Apamajas II', ['Water']='Haoma II', ['Thunder']='Apamajas II'}
+		Recast.Staff.ID = {['Light']=19933, ['Dark']=19937, ['Fire']=19915, ['Ice']=19918,
+				['Wind']=19921, ['Earth']=19924, ['Lightning']=19927, ['Water']=19930, ['Thunder']=19927}
+
+	-- Perp Cost Staves
+		Prep = {}
+		Prep.Staff = {['Light']='Arka III', ['Dark']='Xsaeta III', ['Fire']='Atar III', ['Ice']='Vourukasha III',
+				['Wind']='Vayuvata III', ['Earth']='Vishrava III', ['Lightning']='Apamajas III', ['Water']='Haoma III', ['Thunder']='Apamajas III'}
+		Prep.Staff.ID = {['Light']=19934, ['Dark']=19938, ['Fire']=19916, ['Ice']=19919,
+				['Wind']=19922, ['Earth']=19925, ['Lightning']=19928, ['Water']=19931, ['Thunder']=19928}
+
 -- Elemental Gear 
 	elemental = {}
 		

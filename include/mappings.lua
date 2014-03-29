@@ -17,8 +17,8 @@
 	-- Aftercast
 	sets.aftercast = {}	
 
+-- Areas based Equipment
 	areas = {}
-	
 -- Adoulin areas, where Ionis will grant special stat bonuses.
 	areas.Adoulin = S{
 		"Yahse Hunting Grounds",
@@ -41,15 +41,12 @@
 		"Outer Ra'Kaznar [U]"
 		}
 
-
-
-
 -- City areas for town gear and behavior.
-	areas.Cities = S{
+	areas.Town = S{
 			"Ru'Lude Gardens",
 			"Upper Jeuno",
-				"Lower Jeuno",
-				"Port Jeuno",
+			"Lower Jeuno",
+			"Port Jeuno",
 			"Port Windurst",
 			"Windurst Waters",
 			"Windurst Woods",

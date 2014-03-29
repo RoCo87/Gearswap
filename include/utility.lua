@@ -6,16 +6,7 @@
 
 
 -- Macros 
-function set_macro_page(set,book)
-        if not tonumber(set) then
-                add_to_chat(123,'Error setting macro page: Set is not a valid number ('..tostring(set)..').')
-                return
-        end
-        if set < 1 or set > 10 then
-                add_to_chat(123,'Error setting macro page: Macro set ('..tostring(set)..') must be between 1 and 10.')
-                return
-        end
-
+function set_macro_page(book,set)
         if book then
                 if not tonumber(book) then
                         add_to_chat(123,'Error setting macro page: book is not a valid number ('..tostring(book)..').')
@@ -29,5 +20,14 @@ function set_macro_page(set,book)
         else
                 windower.send_command('input /macro set '..tostring(set))
         end
+        if not tonumber(set) then
+                add_to_chat(123,'Error setting macro page: Set is not a valid number ('..tostring(set)..').')
+                return
+        end
+        if set < 1 or set > 10 then
+                add_to_chat(123,'Error setting macro page: Macro set ('..tostring(set)..') must be between 1 and 10.')
+                return
+        end
+
 end
 
