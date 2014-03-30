@@ -15,20 +15,20 @@ if player.name == 'Feary' then
 		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'war' then
-				set_macro_page(1,1)
+				set_macro_page(6,1)
 			elseif player.sub_job == 'nin' then
-				set_macro_page(1,2)
+				set_macro_page(6,2)
 			elseif player.sub_job == 'dnc' then
-				set_macro_page(1,3)
+				set_macro_page(6,3)
 			elseif player.sub_job == 'drg' then 
-				set_macro_page(1,4)
+				set_macro_page(6,4)
 			elseif player.sub_job == 'whm' then 
-				set_macro_page(1,5)
+				set_macro_page(6,5)
 			elseif player.sub_job == 'run' then 
-				set_macro_page(1,6)
+				set_macro_page(6,6)
 			end
 		else
-			set_macro_page(1,1)
+			set_macro_page(6,1)
 		end
 
 -- Auto Sets
@@ -88,7 +88,7 @@ sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, { ammo="Honed Tathlum",
 sets.precast.JA["Formless Strikes"] = {body="Hes. Cyclas"}
 sets.precast.JA["Chakra"] = set_combine(sets.idle.PDT, { ammo="Tantra Tahtlum",
 				head="Whirlpool Mask",
-				body="Manibozho Jerkin", hands="Hes. Gloves", 
+				body="Anchorite's Cyclas", hands="Hes. Gloves", 
 				legs="Nahtirah Trousers"})
 sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",

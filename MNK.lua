@@ -38,50 +38,57 @@ function self_command(command)
 		equip(sets.idle.MDT)
 		windower.add_to_chat(121,'MDT Set Locked')
 	elseif command == 'TP' then
-		if Mode == 0 then
-		-- check defaults
+		if PDT == 1 or MDT == 1 then
 			PDT = 0
 			MDT = 0
-		-- Increment by 1 for MidAcc set
-			Mode = 1
-			equip(sets.TP.MidAcc)
-			windower.add_to_chat(121,'MidAcc Set')
-		elseif Mode == 1 then 
-		-- check defaults
-			PDT = 0
-			MDT = 0
-		-- Increment by 1 for HighAcc set
-			Mode = 2
-			equip(sets.TP.HighAcc)
-			 windower.add_to_chat(121,'HighAcc Set')
-		elseif Mode == 2 then
-		-- check defaults
-			PDT = 0
-			MDT = 0
-		-- Increment by 1 for Hybrid set
-			Mode = 3
-			equip(sets.TP.Hybrid)
-			 windower.add_to_chat(121,'Hybrid Set')
-		elseif Mode == 3 then
-		-- check defaults
-			PDT = 0
-			MDT = 0
-		-- Increment by 1 for TP set
-			Mode = 0
 			equip(sets.TP)
-			 windower.add_to_chat(121,'TP Set')
+			windower.add_to_chat(121,'TP Set')
 		else
-		-- set to default if mode is greater than 3
-			PDT = 0
-			MDT = 0
-			Mode = 0
+			if Mode == 0 then
+			-- check defaults
+				PDT = 0
+				MDT = 0
+			-- Increment by 1 for MidAcc set
+				Mode = 1
+				equip(sets.TP.MidAcc)
+				windower.add_to_chat(121,'MidAcc Set')
+			elseif Mode == 1 then 
+			-- check defaults
+				PDT = 0
+				MDT = 0
+			-- Increment by 1 for HighAcc set
+				Mode = 2
+				equip(sets.TP.HighAcc)
+				 windower.add_to_chat(121,'HighAcc Set')
+			elseif Mode == 2 then
+			-- check defaults
+				PDT = 0
+				MDT = 0
+			-- Increment by 1 for Hybrid set
+				Mode = 3
+				equip(sets.TP.Hybrid)
+				 windower.add_to_chat(121,'Hybrid Set')
+			elseif Mode == 3 then
+			-- check defaults
+				PDT = 0
+				MDT = 0
+			-- Increment by 1 for TP set
+				Mode = 0
+				equip(sets.TP)
+				 windower.add_to_chat(121,'TP Set')
+			else
+			-- set to default if mode is greater than 3
+				PDT = 0
+				MDT = 0
+				Mode = 0
+			end
 		end
 	end
 end
 	
 function status_change(new,old)
--- Auto set
-    if T{'idle','Resting'}:contains(new) then
+-- Autoset
+    if T{'Idle','Resting'}:contains(new) then
 		equip(sets.idle.Standard)
 	elseif new == 'Engaged' and Mode == 0 then
 		if buffactive == 'Hundred Fists' then
