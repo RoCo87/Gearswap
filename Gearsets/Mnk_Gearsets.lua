@@ -77,12 +77,9 @@ sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)
 sets.TP.HF = set_combine(sets.TP,{body="Tantra Cyclas +2"})
 
 -- Impetus Sets
-sets.TP.Impetus = set_combine(sets.TP, { ammo="Hagneia Stone",
-                body="Tantra Cyclas +2", waist="Twilight Belt"})
-sets.TP.MidAcc.Impetus = set_combine(sets.TP.MidAcc, {ammo="Honed Tathlum", body="Tantra Cyclas +2",
-				waist="Hurch'lan Sash"})
-sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, { ammo="Honed Tathlum",
-				head="Whirlpool Mask", body="Tantra Cyclas +2", waist="Hurch'lan Sash"})
+sets.TP.Impetus = set_combine(sets.TP, {})
+sets.TP.MidAcc.Impetus = set_combine(sets.TP.MidAcc, {})
+sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, {})
 
 -- JA
 sets.precast.JA["Formless Strikes"] = {body="Hes. Cyclas"}

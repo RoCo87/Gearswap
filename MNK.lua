@@ -21,28 +21,79 @@ end -- End gear sets
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
-	-- Make sure other values are set to default
-		MDT = 0
-		Mode = 0
-	-- Set PDT set and equip it
-		PDT = 1
-		equip(sets.idle.PDT)
-		windower.add_to_chat(121,'PDT Set Locked')
+		if PDT == 1 then
+			windower.add_to_chat(121,'TP Set Locked')
+			if Mode == 0 then
+				equip(sets.TP)
+				windower.add_to_chat(121,'TP Set')
+			elseif Mode == 1 then 
+				equip(sets.TP.MidAcc)
+				windower.add_to_chat(121,'MidAcc Set')
+			elseif Mode == 2 then
+				equip(sets.TP.HighAcc)
+				 windower.add_to_chat(121,'HighAcc Set')
+			elseif Mode == 3 then
+				equip(sets.TP.Hybrid)
+				windower.add_to_chat(121,'Hybrid Set')
+			end
+			-- make sure other values are set to default
+			PDT = 0
+			-- Unlock MDT set and equip Current TP set
+			MDT = 0
+		else
+		-- Make sure other values are set to default
+			MDT = 0
+		-- Set PDT set and equip it
+			PDT = 1
+			equip(sets.idle.PDT)
+			windower.add_to_chat(121,'PDT Set')
+		end
 --  Lock MDT
 	elseif command == 'MDT' then
-	-- make sure other values are set to default
-		PDT = 0
-		Mode = 0
-	-- lock MDT set and equip it
-		MDT = 1
-		equip(sets.idle.MDT)
-		windower.add_to_chat(121,'MDT Set Locked')
+		if MDT == 1 then
+		-- make sure other values are set to default
+			PDT = 0
+		-- Unlock MDT set and equip Current TP set
+			MDT = 0
+			windower.add_to_chat(121,'TP Set Locked')
+			if Mode == 0 then
+				equip(sets.TP)
+				windower.add_to_chat(121,'TP Set')
+			elseif Mode == 1 then 
+				equip(sets.TP.MidAcc)
+				windower.add_to_chat(121,'MidAcc Set')
+			elseif Mode == 2 then
+				equip(sets.TP.HighAcc)
+				 windower.add_to_chat(121,'HighAcc Set')
+			elseif Mode == 3 then
+				equip(sets.TP.Hybrid)
+				windower.add_to_chat(121,'Hybrid Set')
+			end
+		else
+		-- make sure other values are set to default
+			PDT = 0
+		-- lock MDT set and equip it
+			MDT = 1
+			equip(sets.idle.MDT)
+			windower.add_to_chat(121,'MDT Set Locked')
+		end
 	elseif command == 'TP' then
 		if PDT == 1 or MDT == 1 then
 			PDT = 0
 			MDT = 0
-			equip(sets.TP)
-			windower.add_to_chat(121,'TP Set')
+			if Mode == 0 then
+				equip(sets.TP)
+				windower.add_to_chat(121,'TP Set')
+			elseif Mode == 1 then 
+				equip(sets.TP.MidAcc)
+				windower.add_to_chat(121,'MidAcc Set')
+			elseif Mode == 2 then
+				equip(sets.TP.HighAcc)
+				 windower.add_to_chat(121,'HighAcc Set')
+			elseif Mode == 3 then
+				equip(sets.TP.Hybrid)
+				windower.add_to_chat(121,'Hybrid Set')
+			end
 		else
 			if Mode == 0 then
 			-- check defaults
@@ -83,6 +134,8 @@ function self_command(command)
 				Mode = 0
 			end
 		end
+	elseif command == 'testing' then
+		windower.add_to_chat(121,'PDT:'..PDT..'MDT:'..MDT..'Mode:'..Mode..)
 	end
 end
 	
@@ -90,18 +143,43 @@ function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
 		equip(sets.idle.Standard)
-	elseif new == 'Engaged' and Mode == 0 then
-		if buffactive == 'Hundred Fists' then
-			equip(sets.TP.HF)
+	elseif new == 'Engaged' then
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
+			else
+				MDT = 0
+				PDT = 0
+			end
 		else
-			equip(sets.TP)
+			-- Automatically activate Impetus when engaging
+            if not buffactive.Impetus and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[31] < 1 then
+                windower.send_command('impetus')
+            end
+			-- Equip TP
+			if Mode == 0 then	
+				if buffactive == 'Hundred Fists' then
+					windower.add_to_chat(121,'Hundred Fists')
+					equip(sets.TP.HF)
+				else
+					windower.add_to_chat(121,'TP')
+					equip(sets.TP)
+				end
+			elseif Mode == 1 then
+				windower.add_to_chat(121,'MidAcc TP')
+				equip(sets.TP.MidAcc)
+			elseif Mode == 2 then
+				windower.add_to_chat(121,'HighAcc TP')
+				equip(sets.TP.HighAcc)
+			elseif Mode == 3 then
+				windower.add_to_chat(121,'Hybrid TP')
+				equip(sets.TP.Hybrid)
+			end
 		end
-	elseif new == 'Engaged' and Mode == 1 then
-		equip(sets.TP.MidAcc)
-	elseif new == 'Engaged' and Mode == 2 then
-		equip(sets.TP.HighAcc)
-	elseif new == 'Engaged' and Mode == 3 then
-		equip(sets.TP.Hybrid)
 	end
 end
 
@@ -116,6 +194,9 @@ function buff_change(buff,g_or_l)
 	end
 	if buff == 'Formless Strikes' and g_or_l == true then
 		windower.send_command('input /p ===== Formless Strikes On =====')
+	end
+	if buff == 'Hundred Fists' and g_or_l == true then
+		windower.send_command('input /p ===== Hundred Fists On =====')
 	end
 end
 
@@ -138,7 +219,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.TP..'Not enough TP to WS')
 			end
 		else
 			cancel_spell()
@@ -167,6 +248,7 @@ function precast(spell,arg)
 end
 
 function midcast(spell,arg)
+	-- Utsusemi
 	if windower.wc_match(spell.name,'Utsusemi*') then
 		-- Equip PDT then Utsusemi Gear sets
         equip(sets.idle.PDT, sets.misc.Utsusemi)
@@ -192,18 +274,20 @@ function aftercast(spell,arg)
 		windower.add_to_chat(121, "Town Gear")
 		equip(sets.misc.Town)
 	else
-		if player.status == 'Engaged' and Mode == 0 then
-			if Buffactive == 'Hundred Fists' then
-				equip(sets.TP.HF)
-			else
-				equip(sets.TP)
+		if player.status == 'Engaged' then
+			if Mode == 0 then
+				if buffactive == 'Hundred Fists' then
+					equip(sets.TP.HF)
+				else
+					equip(sets.TP)
+				end
+			elseif Mode == 1 then
+				equip(sets.TP.MidAcc)
+			elseif Mode == 2 then
+				equip(sets.TP.HighAcc)
+			elseif Mode == 3 then
+				equip(sets.TP.Hybrid
 			end
-		elseif player.status == 'Engaged' and Mode == 1 then
-			equip(sets.TP.MidAcc)
-		elseif player.status == 'Engaged' and Mode == 2 then
-			equip(sets.TP.HighAcc)
-		elseif player.status == 'Engaged' and Mode == 3 then
-			equip(sets.TP.Hybrid)
 		else
 			equip(sets.idle.Standard)
 		end
