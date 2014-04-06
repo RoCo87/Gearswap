@@ -12,6 +12,8 @@
 	-- Precast
 	sets.precast = {}
 	sets.precast.JA = {}
+	sets.precast.WS = {}
+	
 	-- Midcast
 	sets.midcast = {}
 	-- Aftercast

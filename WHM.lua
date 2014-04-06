@@ -1,23 +1,17 @@
--- Feary's RDM LUA
---
---
---
---
---
+-- Feary's WHM LUA
+-- Date: 1/29/2014
 
--- Gear Sets 
 function get_sets()
--- Get RDM gearsets
-	include('Gearsets/RDM_Gearsets.lua')
+	-- Get WHM gearsets
+	include('Gearsets/WHM_GearSets.lua')
 	
--- Define Default Values for Variables
+	-- Variables 
+	ShadowType = 'None'
 	PDT = 0
 	MDT = 0
-	skill = 0
-	ShadowType = 'None'
-end 
+end
 
--- Rules
+
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
@@ -26,7 +20,6 @@ function self_command(command)
 	-- Set PDT set and equip it
 		PDT = 1
 		equip(sets.idle.PDT)
-		windower.add_to_chat(121,'PDT Set')
 --  Lock MDT
 	elseif command == 'MDT' then
 	-- make sure other values are set to default
@@ -34,24 +27,14 @@ function self_command(command)
 	-- lock MDT set and equip it
 		MDT = 1
 		equip(sets.idle.MDT)
-		windower.add_to_chat(121,'MDT Set')
--- Reset	
+-- Unlock 
 	elseif command == 'TP' then
-	-- set to default if mode is greater than 3
-			PDT = 0
-			MDT = 0	
-	elseif command == 'Skill' then
-	-- toggle
-		if skill == 0 then
-		-- set it on
-			skill = 1
-		else
-		-- set if off
-			skill = 0
-		end
+		PDT = 0
+		MDT = 0
+		windower.addtochat(121, "Unlocked PDT/MDT")
 	end
 end
-
+	
 function status_change(new,old)
 -- Auto set
     if T{'idle','Resting'}:contains(new) then
@@ -61,15 +44,6 @@ function status_change(new,old)
 	end
 end
 
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-
-end
-
-function pretarget(spell)
-	
-end
-
 function precast(spell,arg)
 -- Job Abilities
 	if spell.type == 'JobAbility' then
@@ -77,8 +51,8 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 -- Weaponskills
-	 elseif spell.type == 'Weaponskill' then
-		if player.status == 'Engaged' then
+	 elseif sets.precast.WS[spell.name] then
+		if  player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
@@ -100,68 +74,59 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		-- Chainspell
-		if buffactive.Chainspell or buffactive.Spontaneity then
-			-- Don't need Fastcast
-			if spell.name == 'Stun' then
-				equip(sets.midcast.Stun)
-			elseif spell.skill:startswith('Elemental') then
-				equip(sets.midcast.Nuke)
-			else
-				equip(sets.midcast.Macc)
-			end
+		-- Cure casting time
+		if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
+			equip(sets.precast.Cure)
 		else
-			if spell.skill:startswith("Healing") then
-				-- Cure casting time
-				if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
-					equip(sets.precast.Cure)
-				else
-					equip(sets.precast.Fastcast)
-				end
-			elseif spell.skill:startswith("Enhancing") then
-				equip(sets.precast.Fastcast)
-				-- Cancel Sneak
-				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-					windower.ffxi.cancel_buff(71)
-					cast_delay(0.3)
-				end
-			elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-			else
-				equip(sets.precast.Fastcast)
-			end
+			equip(sets.precast.Fastcast)
 		end
+		-- Cancel Sneak
+		if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		-- Auspice 
+		elseif spell.name == 'Auspice' then
+			equip({feet="Orsn. Duckbills +2"})
+		elseif spell.english:wcmatch('Protectra*') then
+			equip({feet="Clr. Duckbills +2"})
+		elseif spell.english:wcmatch('Shellra*') then
+			equip({legs="Clr. Pantaln +2"})
+		end		
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		equip(sets.precast.Fastcast)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
 		equip(sets.precast.Fastcast)
-	else
-	-- Special handling to remove Dancer sub job Sneak effect
-		if spell.name == 'Spectral Jig' and buffactive.Sneak then
-			windower.ffxi.cancel_buff(71)
-			cast_delay(0.3)
-		elseif windower.wc_match(spell.name,'Curing*') then
-			equip(sets.misc.Waltz)
-		elseif windower.wc_match(spell.name,'*Step') then
-			equip(sets.misc.Steps)
-		elseif windower.wc_match(spell.name,'*Flourish') then
-			equip(sets.misc.flourish)
-		end
 	end
 end
 
 function midcast(spell,arg)
 -- Healing Magic
 	if spell.skill == 'HealingMagic' then
-		-- Add Light Obi Twilight Cape and Chatoyant Staff
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
 			equip(sets.midcast.Cure)
 		elseif spell.english:startswith("Curaga") then
-			equip(sets.midcast.Curaga)	
-		elseif spell.english:startswith('Reraise') then
+			equip(sets.midcast.Curaga)
+		elseif spell.english:startswith('Cura') then
+			equip(sets.midcast.Cura)
+		-- Na Spells
+		elseif spell.english:wcmatch('Paralyna|Poisona|Blindna|Silena|Cursna|Viruna|Stona') then
+			if buffactive['Divine Caress'] then
+				equip(sets.midcast.Naspells, sets.precast.JA[spell.name])
+			elseif spell.name == 'Cursna' then
+				equip(sets.midcast.Cursna)
+			else
+				equip(sets.midcast.Naspells)
+			end
+		elseif spell.name == 'Erase' then
+			equip(sets.midcast.Erase)
+		elseif spell.name == 'Esuna' then
+			equip(sets.midcast.Esuna)
+		elseif spell.name == 'Sacrifice' then
+			equip(sets.midcast.Sacrifice)
+		elseif spell.english:startswith('Reraise') or spell.name == 'Arise' then
 			equip(sets.midcast.ConserveMP)
 		else
 			equip(sets.midcast.Recast)
@@ -170,14 +135,16 @@ function midcast(spell,arg)
 	elseif spell.skill == 'EnhancingMagic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
-		elseif spell.name:wcmatch("Gain*") then
-			equip(sets.midcast.Enhancing)
-		elseif spell.name == "Temper" then
-			equip(sets.midcast.Enhancing)
-		elseif spell.english:contains("Spikes") then
-			equip(sets.midcast.INT, {legs="Vitivation Tights"})
-		elseif spell.english:contains("Refresh") then
-			equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
+		elseif spell.english:wcmatch('Regen*') then
+			equip(sets.midcast.Regen)
+		elseif spell.english:wcmatch('BarStona|BarWatera|BarAera|BarFira|BarBlizzara|BarThundra') then
+			equip(sets.midcast.BarElement)
+		elseif spell.english:wcmatch('BarSleepra|BarPoisonra|BarParalyna|BarBlindra|BarSilencra|BarVira|BarPetra|BarAmnesra') then
+			equip(sets.midcast.BarStatus)
+		elseif spell.english:wcmatch('Boost-*') then
+			equip(sets.midcast.Boost)
+		elseif spell.english:endswith('Spikes') then
+			equip(sets.midcast.Spikes)
 		elseif spell.name == 'Stoneskin' then
 			equip(sets.midcast.Stoneskin)
 			if buffactive.Stoneskin then
@@ -189,6 +156,12 @@ function midcast(spell,arg)
 			equip(sets.midcast.Aquaveil)
 		elseif spell.name == 'Haste' then
 			equip(sets.midcast.Hastespell)
+		elseif spell.name == 'Auspice' then
+			equip(sets.midcast.ConserveMP, {feet="Orsn. Duckbills +2"})
+		elseif spell.english:wcmatch('Protectra*') then
+			equip(sets.midcast.ConserveMP, {feet="Clr. Duckbills +2"})
+		elseif spell.english:wcmatch('Shellra*') then
+			equip(sets.midcast.ConserveMP, {legs="Clr. Pantaln +2"})
 		elseif spell.english:wcmatch('Reraise*') then
 			equip(sets.midcast.ConserveMP)
 		else
@@ -196,7 +169,6 @@ function midcast(spell,arg)
 		end
 -- Enfeebling Magic
 	elseif spell.skill == 'EnfeeblingMagic' then
-		-- Maybe account for saboteur
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -207,36 +179,33 @@ function midcast(spell,arg)
 -- Divine Magic
 	elseif spell.skill == 'DivineMagic' then
 		if spell.english:startswith('Banish') then
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.Banish)
 		elseif spell.english:startswith('Holy') then
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.Holy)
 		elseif spell.name == 'Repose' then
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.Repose)
 		elseif spell.name == 'Flash' then
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.Flash)
 		end
 -- Dark Magic
 	elseif spell.skill == 'DarkMagic' then
-		if spell.name == "Drain" then
-			equip(sets.midcast.Aspir) 
-		elseif spell.name == "Aspir" then
+		if spell.name == 'Drain' then
+			equip(sets.midcast.Drain)
+		elseif spell.name == 'Aspir' then
 			equip(sets.midcast.Aspir)
-		elseif spell.name == "Stun" then
+		elseif spell.name == 'Stun' then
 			equip(sets.midcast.Macc)
 		else
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.DarkMagic)
 		end
 -- Elemental Magic
 	elseif spell.skill == 'ElementalMagic' then
-		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
+		if spell.english:wcmatch('Fir*|Ston*|Water*|Aero*|Blizza*|Thund*') then
+			equip(sets.midcast.Nuke)
+		elseif spell.english:wcmatch('Burn|Rasp|Drown|Choke|Frost|Shock') then
+			equip(sets.midcast.Dot)
 		else
-			-- accounts for obis staffs cape ring
-			if skill == 1 then
-				equip(sets.midcast.Elemental) 
-			else
-				equip(sets.midcast.Nuke)
-			end
+			equip(sets.midcast.Macc)
 		end
 -- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then
@@ -251,28 +220,21 @@ function midcast(spell,arg)
             elseif buffactive['Copy Image (4+)'] then
                 windower.ffxi.cancel_buff(446)
             end
-		elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
-			windower.ffxi.cancel_buff(71)
-		end
--- Songs
-	elseif spell.skill == "Singing" then
-			
-	end
-end 
+        end
+    elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
+        windower.ffxi.cancel_buff(71)
+    end
+end -- end midcast 
 
 function aftercast(spell,arg)
-	if buffactive.Chainspell then
-		-- do nothing
+-- Autoset
+	if player.status == 'Engaged' then
+		equip(sets.TP)
 	else
-	-- Autoset
-		if player.status == 'Engaged' then
-			equip(sets.TP)
-		else
-			equip(sets.idle.Standard)
-		end
+		equip(sets.idle.Standard)
 	end
--- Lullaby
-	if spell.name == "Sleep II" or spell.name == "Sleepga II" then
+-- Sleep and repose
+	if spell.name == "Sleep II" or spell.name == "Repose" then
 		windower.send_command('wait 75;input /echo [ WARNING! Sleep : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! Sleep : Will wear off within 0:10 ]')
         windower.send_command('wait 85;input /echo [ WARNING! Sleep : Will wear off within 0:05 ]')
@@ -283,9 +245,9 @@ function aftercast(spell,arg)
 	end
 -- Convert
 	if spell.name == 'Convert' then
-	  windower.send_command('wait 2;input /ma "Cure IV" me')
+		windower.send_command('wait 1; input /ma "Cure V" <me>')
 	end
- -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
+	 -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
     if spell and spell.name == 'Utsusemi: Ni' then
         ShadowType = 'Ni'
     elseif spell and spell.name == 'Utsusemi: Ichi' then

@@ -114,12 +114,12 @@ if player.Name == 'Feary' then
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
                 back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
 		sets.midcast.Debuff = {main="Mandau",
-				head="Bihu Roundlet", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
 		-- Goal 
 		sets.midcast.Debuff2 = {main="Mandau", range="Gjallarhorn",
-				head="Bihu Roundlet", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
 
@@ -150,8 +150,8 @@ if player.Name == 'Feary' then
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul ring", rring="Aquasoul ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
-				head="Bihu Roundlet", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Aoidos' hngrln. +2", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})

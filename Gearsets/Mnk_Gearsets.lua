@@ -35,19 +35,19 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Otronif Mask", neck="Twilight Torque",
-                body="Otronif Harness", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais", feet="Otronif Boots"}
+                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Black Belt", legs="Nahtirah Trousers", feet="Manibozho Boots"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {
 				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais", feet="Manibozho Boots"}
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Hermes' Sandals"})
@@ -57,17 +57,17 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- TP 
 sets.TP = { ammo="Hagneia Stone",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 -- Accuracy TP
 sets.TP.MidAcc = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
 -- High Accuracy TP
 sets.TP.HighAcc = { ammo="Honed Tathlum",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Hybrid PDT/TP
@@ -89,7 +89,7 @@ sets.precast.JA["Chakra"] = set_combine(sets.idle.PDT, { ammo="Tantra Tahtlum",
 				legs="Nahtirah Trousers"})
 sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="", waist="", legs="Nahtirah Trousers"})
 sets.precast.JA["Impetus"] = {body="Tantra Cyclas +2"}
 sets.precast.JA["Hundred Fists"] = {legs="Hes. Hose"}
@@ -119,18 +119,18 @@ sets.precast.WS['Final Heaven'] = set_combine(sets.precast.WS)
 
 sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {ammo="Potestas Bomblet",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring="Thundersoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Thundersoul Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 
 sets.precast.WS.MidAcc = {}
 sets.precast.WS.HighAcc = {}
 sets.precast.WS.MidAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring="Thundersoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Thundersoul Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Anguinus Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {ammo="Potestas Bomblet",
 				head="Whirlpool Mask", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring="Mars's Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Mars's Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 
 sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
@@ -148,7 +148,7 @@ sets.aftercast = {}
 -- Misc Sets
 sets.misc.Fastcast = set_combine(sets.idle.PDT, {
 				head="Athos's Chapeau", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves", lring="", rring="Prolix Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="", rring="Prolix Ring",
                 back="Repulse Mantle", waist="Black Belt", legs="", feet=""})
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 

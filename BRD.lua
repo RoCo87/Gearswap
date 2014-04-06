@@ -1,4 +1,4 @@
--- Feary's RDM LUA
+-- Feary's Brd LUA
 --
 --
 --
@@ -7,14 +7,15 @@
 
 -- Gear Sets 
 function get_sets()
--- Get RDM gearsets
-	include('Gearsets/RDM_Gearsets.lua')
+-- Get BRD gearsets
+	include('Gearsets/BRD_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	PDT = 0
 	MDT = 0
-	skill = 0
+	ACC = 0
 	ShadowType = 'None'
+	Gjallarhorn = 1
 end 
 
 -- Rules
@@ -26,7 +27,7 @@ function self_command(command)
 	-- Set PDT set and equip it
 		PDT = 1
 		equip(sets.idle.PDT)
-		windower.add_to_chat(121,'PDT Set')
+		 windower.add_to_chat(121,'PDT Set')
 --  Lock MDT
 	elseif command == 'MDT' then
 	-- make sure other values are set to default
@@ -35,20 +36,10 @@ function self_command(command)
 		MDT = 1
 		equip(sets.idle.MDT)
 		windower.add_to_chat(121,'MDT Set')
--- Reset	
 	elseif command == 'TP' then
-	-- set to default if mode is greater than 3
+		-- set to default if mode is greater than 3
 			PDT = 0
-			MDT = 0	
-	elseif command == 'Skill' then
-	-- toggle
-		if skill == 0 then
-		-- set it on
-			skill = 1
-		else
-		-- set if off
-			skill = 0
-		end
+			MDT = 0
 	end
 end
 
@@ -67,7 +58,22 @@ function buff_change(buff,g_or_l)
 end
 
 function pretarget(spell)
-	
+	if spell.type == 'BardSong' then
+		if buffactive.Pianissimo then
+			--Default to stpc
+			change_target("<stpc>")
+		elseif buffactive.Tenuto then
+			-- Default to me
+			change_target("<me>")
+		else
+			if spell.target.type == "SELF" then
+				-- Default to me
+				change_target("<me>")
+			else
+				change_target("<stnpc>")
+			end
+		end
+	end
 end
 
 function precast(spell,arg)
@@ -100,43 +106,39 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		-- Chainspell
-		if buffactive.Chainspell or buffactive.Spontaneity then
-			-- Don't need Fastcast
-			if spell.name == 'Stun' then
-				equip(sets.midcast.Stun)
-			elseif spell.skill:startswith('Elemental') then
-				equip(sets.midcast.Nuke)
-			else
-				equip(sets.midcast.Macc)
-			end
+		-- Cure casting time
+		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
+			equip(sets.precast.Cure)
 		else
-			if spell.skill:startswith("Healing") then
-				-- Cure casting time
-				if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
-					equip(sets.precast.Cure)
-				else
-					equip(sets.precast.Fastcast)
-				end
-			elseif spell.skill:startswith("Enhancing") then
-				equip(sets.precast.Fastcast)
-				-- Cancel Sneak
-				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-					windower.ffxi.cancel_buff(71)
-					cast_delay(0.3)
-				end
-			elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-			else
-				equip(sets.precast.Fastcast)
-			end
+			equip(sets.precast.Fastcast)
 		end
+		-- Cancel Sneak
+		if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		end		
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		equip(sets.precast.Fastcast)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
-		equip(sets.precast.Fastcast)
+		if buffactive.Nightingale then
+			-- Dummy Songs
+			if spell.name == "Fowl Aubade" then
+				equip({range="Daurdabla"})
+			elseif spell.name == "Herb Pastoral" then
+				equip({range="Daurdabla"})
+			else
+				equip(sets.midcast.Buffsong)
+			end
+		else
+			-- Magian Staff
+			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+				equip(sets.precast.Fastcast.Song, {main=Fastcast.Staff[spell.element]})
+			else
+				equip(sets.precast.Fastcast.Song,{main="Felibre's Dague"})
+			end	
+		end
 	else
 	-- Special handling to remove Dancer sub job Sneak effect
 		if spell.name == 'Spectral Jig' and buffactive.Sneak then
@@ -155,10 +157,14 @@ end
 function midcast(spell,arg)
 -- Healing Magic
 	if spell.skill == 'HealingMagic' then
-		-- Add Light Obi Twilight Cape and Chatoyant Staff
-		-- Cure Curaga Cura
+		-- Cure Curaga
 		if spell.english:startswith('Cure') then
-			equip(sets.midcast.Cure)
+			-- Elemental Obi
+			if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) and player.inventory[elemental.Obi[spell.element]] then
+				equip(sets.midcast.Cure, {waist=elemental.Obi[spell.element], back="Twilight Cape"})
+			else
+				equip(sets.midcast.Cure)
+			end
 		elseif spell.english:startswith("Curaga") then
 			equip(sets.midcast.Curaga)	
 		elseif spell.english:startswith('Reraise') then
@@ -170,14 +176,6 @@ function midcast(spell,arg)
 	elseif spell.skill == 'EnhancingMagic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
-		elseif spell.name:wcmatch("Gain*") then
-			equip(sets.midcast.Enhancing)
-		elseif spell.name == "Temper" then
-			equip(sets.midcast.Enhancing)
-		elseif spell.english:contains("Spikes") then
-			equip(sets.midcast.INT, {legs="Vitivation Tights"})
-		elseif spell.english:contains("Refresh") then
-			equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
 		elseif spell.name == 'Stoneskin' then
 			equip(sets.midcast.Stoneskin)
 			if buffactive.Stoneskin then
@@ -196,7 +194,6 @@ function midcast(spell,arg)
 		end
 -- Enfeebling Magic
 	elseif spell.skill == 'EnfeeblingMagic' then
-		-- Maybe account for saboteur
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -217,27 +214,10 @@ function midcast(spell,arg)
 		end
 -- Dark Magic
 	elseif spell.skill == 'DarkMagic' then
-		if spell.name == "Drain" then
-			equip(sets.midcast.Aspir) 
-		elseif spell.name == "Aspir" then
-			equip(sets.midcast.Aspir)
-		elseif spell.name == "Stun" then
-			equip(sets.midcast.Macc)
-		else
-			equip(sets.midcast.Macc)
-		end
+		
 -- Elemental Magic
 	elseif spell.skill == 'ElementalMagic' then
-		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-		else
-			-- accounts for obis staffs cape ring
-			if skill == 1 then
-				equip(sets.midcast.Elemental) 
-			else
-				equip(sets.midcast.Nuke)
-			end
-		end
+		
 -- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then
 		equip(sets.midcast.Recast)
@@ -256,15 +236,70 @@ function midcast(spell,arg)
 		end
 -- Songs
 	elseif spell.skill == "Singing" then
-			
+		-- Dummy Songs
+		if spell.name == "Fowl Aubade" then
+			equip(sets.midcast.Recast, {range="Daurdabla"})
+		elseif spell.name == "Herb Pastoral" then
+			equip(sets.midcast.Recast, {range="Daurdabla"})
+		else
+			if Gjallarhorn == 1 or player.equipment.range == "Gjallarhorn" then
+				-- BuffSongs
+				if spell.target.type == "SELF" then
+					if spell.name == "Sentinal's Scherzo" then
+						equip(sets.midcast.Skillsong,{range="Gjallarhorn", feet="Aoidos' Cothrn. +2"})
+					else	
+						-- Ballads
+						if spell.name:contains('Ballad') then
+							equip(sets.midcast.Buffsong,{range="Gjallarhorn", legs="Aoidos' rhing. +2"})
+						elseif spell.name:contains('Minuet') then
+							equip(sets.midcast.Buffsong,{range="Gjallarhorn", Body="Aoidos' Hngrln +2"})
+						elseif spell.name:contains('March') then
+							equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Ad. Mnchtte +2"})
+						elseif spell.name:contains('Madrigal') then
+							equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Aoidos' Calot +2"})
+						--Everything else
+						else	
+							equip(sets.midcast.Buffsong,{range="Gjallarhorn"})
+						end
+					end
+				else
+				-- Debuff
+					equip(sets.midcast.Debuff,{range="Gjallarhorn"})
+				end
+			-- Not Ghorn
+			else
+			-- BuffSongs
+				if spell.target.type == "SELF" then
+					if spell.name == "Sentinal's Scherzo" then
+						equip(sets.midcast.Skillsong,{range=Scherzo, feet="Aoidos' Cothrn. +2"})
+					else
+						if spell.name:contains('Ballad') then
+							equip(sets.midcast.Buffsong,{range=Ballad, legs="Aoidos' rhing. +2"})
+						elseif spell.name:contains('Minuet') then
+							equip(sets.midcast.Buffsong,{range=Minuet, Body="Aoidos' Hngrln +2"})
+						elseif spell.name:contains('March') then
+							equip(sets.midcast.Buffsong,{range=March, hands="Ad. Mnchtte +2"})
+						elseif spell.name:contains('Madrigal') then
+							equip(sets.midcast.Buffsong,{range=Madrigal, head="Aoidos' Calot +2"})
+						else	
+						equip(sets.midcast.Buffsong,{range=spell.name:contains(spell.name)})
+						end
+					end
+			-- Debuff Songs
+				else
+					equip(sets.midcast.Debuff,{range="Gjallarhorn"})
+				end
+			end
+		end
 	end
 end 
 
 function aftercast(spell,arg)
-	if buffactive.Chainspell then
-		-- do nothing
+-- Autoset
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
 	else
-	-- Autoset
 		if player.status == 'Engaged' then
 			equip(sets.TP)
 		else
@@ -272,18 +307,18 @@ function aftercast(spell,arg)
 		end
 	end
 -- Lullaby
-	if spell.name == "Sleep II" or spell.name == "Sleepga II" then
-		windower.send_command('wait 75;input /echo [ WARNING! Sleep : Will wear off within 0:15 ]')
-        windower.send_command('wait 80;input /echo [ WARNING! Sleep : Will wear off within 0:10 ]')
-        windower.send_command('wait 85;input /echo [ WARNING! Sleep : Will wear off within 0:05 ]')
-	elseif spell.name == "Sleep" or spell.name == "Sleepga" then
-		windower.send_command('wait 45;input /echo [ WARNING! Sleep : Will wear off within 0:15 ]')
-        windower.send_command('wait 50;input /echo [ WARNING! Sleep : Will wear off within 0:10 ]')
-        windower.send_command('wait 55;input /echo [ WARNING! Sleep : Will wear off within 0:05 ]')
+	if spell.name == "Foe Lullaby II" or spell.name == "Horde Lullaby II" then
+		windower.send_command('wait 75;input /echo [ WARNING! Lullaby II : Will wear off within 0:15 ]')
+        windower.send_command('wait 80;input /echo [ WARNING! Lullaby II : Will wear off within 0:10 ]')
+        windower.send_command('wait 85;input /echo [ WARNING! Lullaby II : Will wear off within 0:05 ]')
+	elseif spell.name == "Foe Lullaby" or spell.name == "Horde Lullaby" then
+		windower.send_command('wait 45;input /echo [ WARNING! Lullaby : Will wear off within 0:15 ]')
+        windower.send_command('wait 50;input /echo [ WARNING! Lullaby : Will wear off within 0:10 ]')
+        windower.send_command('wait 55;input /echo [ WARNING! Lullaby : Will wear off within 0:05 ]')
 	end
 -- Convert
 	if spell.name == 'Convert' then
-	  windower.send_command('wait 2;input /ma "Cure IV" me')
+		cancel_spell()
 	end
  -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
     if spell and spell.name == 'Utsusemi: Ni' then

@@ -1,38 +1,33 @@
--- Feary's MNK LUA
--- Date: 1/18/2014
+-- Feary's PLD LUA
+-- Date: 4/1/2014
 --
 --
 
 -- Gear Sets 
 function get_sets()
 
--- Get MNK Gearsets
-	include('Gearsets/Mnk_Gearsets.lua')
+-- Get PLD Gearsets
+	include('Gearsets/PLD_Gearsets.lua')
 	
 -- Define Default Values for Variables
-	boostCount = 0
 	Mode = 0
 	PDT = 0
 	MDT = 0
+	Shield = "None"
 	ShadowType = 'None'
-end -- End gear sets
+end 
 
--- Rules
 function self_command(command)
--- Lock PDT
+   -- Lock PDT
 	if command == 'PDT' then
 		if PDT == 1 then
-			windower.add_to_chat(121,'TP Set Locked')
 			if Mode == 0 then
 				equip(sets.TP)
-				windower.add_to_chat(121,'TP Set')
+				windower.add_to_chat(121,'TP Set Locked')
 			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
+				equip(sets.TP.Acc)
+				windower.add_to_chat(121,'Acc TP Set')
 			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
 				equip(sets.TP.Hybrid)
 				windower.add_to_chat(121,'Hybrid Set')
 			end
@@ -42,38 +37,34 @@ function self_command(command)
 			MDT = 0
 		else
 		-- Make sure other values are set to default
-			MDT = 0
-		-- Set PDT set and equip it
-			PDT = 1
-			equip(sets.idle.PDT)
-			windower.add_to_chat(121,'PDT Set')
+				MDT = 0
+			-- Set PDT set and equip it
+				PDT = 1
+				equip(sets.idle.PDT)
+				windower.add_to_chat(121,'PDT Set Locked')
 		end
 --  Lock MDT
 	elseif command == 'MDT' then
-		if MDT == 1 then
+		if PDT == 1 then
+			if Mode == 0 then
+				equip(sets.TP)
+				windower.add_to_chat(121,'TP Set Locked')
+			elseif Mode == 1 then 
+				equip(sets.TP.Acc)
+				windower.add_to_chat(121,'Acc TP Set')				
+			elseif Mode == 2 then
+				equip(sets.TP.Hybrid)
+				windower.add_to_chat(121,'Hybrid Set')
+			end
 		-- make sure other values are set to default
 			PDT = 0
 		-- Unlock MDT set and equip Current TP set
 			MDT = 0
-			windower.add_to_chat(121,'TP Set Locked')
-			if Mode == 0 then
-				equip(sets.TP)
-				windower.add_to_chat(121,'TP Set')
-			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
-			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)
-				windower.add_to_chat(121,'Hybrid Set')
-			end
 		else
 		-- make sure other values are set to default
 			PDT = 0
 		-- lock MDT set and equip it
-			MDT = 1
+			MDT = 1	
 			equip(sets.idle.MDT)
 			windower.add_to_chat(121,'MDT Set Locked')
 		end
@@ -85,65 +76,61 @@ function self_command(command)
 				equip(sets.TP)
 				windower.add_to_chat(121,'TP Set')
 			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
+				equip(sets.TP.Acc)
+				windower.add_to_chat(121,'Acc Set')
 			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
 				equip(sets.TP.Hybrid)
-				windower.add_to_chat(121,'Hybrid Set')
+				 windower.add_to_chat(121,'Hybrid Set')
 			end
 		else
 			if Mode == 0 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for MidAcc set
-				Mode = 1
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
+				-- check defaults
+					PDT = 0
+					MDT = 0
+				-- Increment by 1 for Acc set
+					Mode = 1
+					equip(sets.TP.Acc)
+					windower.add_to_chat(121,'Acc Set')
 			elseif Mode == 1 then 
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for HighAcc set
-				Mode = 2
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
+				-- check defaults
+					PDT = 0
+					MDT = 0
+				-- Increment by 1 for Hybrid set
+					Mode = 2
+					equip(sets.TP.Hybrid)
+					windower.add_to_chat(121,'Hybrid Set')
 			elseif Mode == 2 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for Hybrid set
-				Mode = 3
-				equip(sets.TP.Hybrid)
-				 windower.add_to_chat(121,'Hybrid Set')
-			elseif Mode == 3 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for TP set
-				Mode = 0
-				equip(sets.TP)
-				 windower.add_to_chat(121,'TP Set')
-			else
-			-- set to default if mode is greater than 3
-				PDT = 0
-				MDT = 0
-				Mode = 0
+				-- check defaults
+					PDT = 0
+					MDT = 0
+				-- Reset to 0 for TP set
+					Mode = 0
+					equip(sets.TP)
+					windower.add_to_chat(121,'TP Set')
 			end
 		end
-	elseif command == 'testing' then
-		windower.add_to_chat(121,'PDT:'..PDT..'MDT:'..MDT..'Mode:'..Mode)
+	elseif command == "Shield" then
+		-- use a toggle
+		if player.equipment.sub == "Aegis" then
+			equip(sub="Ochain")
+			windower.add_to_chat(121,'Ochain')
+		elseif player.equipment.sub == "Ochain" then
+			equip(sub="Aegis")
+			windower.add_to_chat(121,'Aegis')
+		end
 	end
 end
-	
+
 function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
-		windower.add_to_chat(121,'Idle/Resting Set')
-		equip(sets.idle.Standard)
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
 	elseif new == 'Engaged' then
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
@@ -157,26 +144,14 @@ function status_change(new,old)
 				PDT = 0
 			end
 		else
-			-- Automatically activate Impetus when engaging
-            if not buffactive.Impetus and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[31] < 1 then
-                windower.send_command('impetus')
-            end
 			-- Equip TP
 			if Mode == 0 then	
-				if buffactive == 'Hundred Fists' then
-					windower.add_to_chat(121,'Hundred Fists')
-					equip(sets.TP.HF)
-				else
-					windower.add_to_chat(121,'TP')
-					equip(sets.TP)
-				end
+				windower.add_to_chat(121,'TP Set')
+				equip(sets.TP)
 			elseif Mode == 1 then
-				windower.add_to_chat(121,'MidAcc TP')
-				equip(sets.TP.MidAcc)
+				windower.add_to_chat(121,'Acc TP')
+				equip(sets.TP.Acc)
 			elseif Mode == 2 then
-				windower.add_to_chat(121,'HighAcc TP')
-				equip(sets.TP.HighAcc)
-			elseif Mode == 3 then
 				windower.add_to_chat(121,'Hybrid TP')
 				equip(sets.TP.Hybrid)
 			end
@@ -186,30 +161,8 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
--- gain = true losebuff = false
--- Lose Buffs
-	if buff == 'Boost' and g_or_l == false then
-        boostCount = 0
-	end
-	if buff == 'Max HP Boost' and g_or_l == false then
-		windower.send_command('input /p ===== Mantra/HP Boost Off =====')
-	end
-	if buff == 'Formless Strikes' and g_or_l == false then
-		windower.send_command('input /p ===== Formless Strikes Off =====')
-	end
-	if buff == 'Hundred Fists' and g_or_l == true then
-		windower.send_command('input /p ===== Hundred Fists Off =====')
-	end
--- Gain Buffs
-	if buff == 'Max HP Boost' and g_or_l == true then
-		windower.send_command('input /p ===== Mantra/HP Boost On =====')
-	end
-	if buff == 'Formless Strikes' and g_or_l == true then
-		windower.send_command('input /p ===== Formless Strikes On =====')
-	end
-	if buff == 'Hundred Fists' and g_or_l == true then
-		windower.send_command('input /p ===== Hundred Fists On =====')
-	end
+	-- gain = true losebuff = false
+	
 end
 
 function precast(spell,arg)
@@ -220,10 +173,18 @@ function precast(spell,arg)
 		if  player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
-					if sets.precast.WS[spell.name] then
-						equip(sets.precast.WS[spell.name])
+					if Mode == 1 then
+						if sets.precast.WS.Acc[spell.name] then
+							equip(sets.precast.WS[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
 					else
-						equip(sets.precast.WS)
+						if sets.precast.WS[spell.name] then
+							equip(sets.precast.WS[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
 					end
 				else
 					cancel_spell()
@@ -288,17 +249,11 @@ function aftercast(spell,arg)
 	else
 		if player.status == 'Engaged' then
 			if Mode == 0 then
-				if buffactive == 'Hundred Fists' then
-					equip(sets.TP.HF)
-				else
-					equip(sets.TP)
-				end
+				equip(sets.TP)
 			elseif Mode == 1 then
-				equip(sets.TP.MidAcc)
+				equip(sets.TP.Acc)
 			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)	
+				equip(sets.TP.Hybrid)
 			end
 		else
 			equip(sets.idle.Standard)
@@ -309,9 +264,6 @@ function aftercast(spell,arg)
         ShadowType = 'Ni'
     elseif spell and spell.name == 'Utsusemi: Ichi' then
         ShadowType = 'Ichi'
-    elseif spell and spell.name == 'Boost' then
-        boostCount = boostCount +1
-        windower.add_to_chat(8,'Boost Count - [ '..boostCount..' / 12 ] ('..math.floor(100*boostCount/12)..'% Boosted!)')
     end
 end
 
