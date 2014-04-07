@@ -1,11 +1,18 @@
 -- Feary's THF LUA
 -- Date: 4/5/2014
---
---
+-- To Do:
+--	Account for Hide
+-- 	expand on thief knife
+-- 	account for sata?
+-- 	check on locking full evasion
 
 -- Gear Sets 
 function get_sets()
-
+	-- set binds
+	windower.send_command('@bind f10 gs c MDT')
+	windower.send_command('@bind f11 gs c PDT')
+	windower.send_command('@bind f12 gs c TP')
+	
 -- Get THF Gearsets
 	include('Gearsets/THF_Gearsets.lua')
 	
@@ -17,6 +24,10 @@ function get_sets()
 	ShadowType = 'None'
 end -- End gear sets
 
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	windower.send_command('unbind f10')
+end
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -28,7 +39,11 @@ function self_command(command)
 			-- Unlock MDT set and equip Current TP set
 			MDT = 0
 			-- Place Me in my previous set.
-			previous_set()
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
 		else
 		-- Make sure other values are set to default
 			MDT = 0
@@ -46,7 +61,11 @@ function self_command(command)
 			MDT = 0
 			windower.add_to_chat(121,'MDT Unlocked')
 		-- Place me in my previous set
-			previous_set()
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
 		else
 		-- make sure other values are set to default
 			PDT = 0
@@ -62,12 +81,12 @@ function self_command(command)
 			MDT = 0
 			previous_set()
 		else
-			if Mode >= 2 then
+			if Mode >= 4 then
 			-- Reset to 0
 				Mode = 0
 			else
 			-- Increment by 1
-				Mode =+ 1
+				Mode = Mode + 1
 			end
 			-- Place me in previous set
 			previous_set()
@@ -75,8 +94,20 @@ function self_command(command)
 	elseif command == 'TH' then
 		if TH == 0 then
 			TH = 1
+			windower.add_to_chat(121,'Treasure Hunter Locked')
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard,sets.TH)	
+			end
 		else
 			TH = 0
+			windower.add_to_chat(121,'Treasure Hunter Unlocked')
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)	
+			end
 		end
 	end
 end
@@ -85,7 +116,19 @@ function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
 		windower.add_to_chat(121,'Idle/Resting Set')
-		equip(sets.idle.Standard)
+		if TH == 1 then
+			if Mode == 4 then
+				equip(sets.idle.Standard,sets.idle.Evasion,sets.TH)
+			else
+				equip(sets.idle.Standard,sets.TH)
+			end
+		else
+			if Mode == 4 then
+				equip(sets.idle.Standard,sets.idle.Evasion)
+			else
+				equip(sets.idle.Standard)
+			end
+		end
 	elseif new == 'Engaged' then
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
@@ -107,49 +150,82 @@ end
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
 -- Sneak Attack
-	if buff == 'Sneak Attack' and g_or_l == true then
-		if TH == 1 then
-			equip(sets.precast.JA["Sneak Attack"],sets.TH)
-		else
-			equip(sets.precast.JA["Sneak Attack"])
-		end
-	end
 	if buff == 'Sneak Attack' and g_or_l == false then
 		previous_set()
 	end
 -- Trick Attack
-	if buff == 'Trick Attack' and g_or_l == true then
-		if TH == 1 then
-			equip(sets.precast.JA["Trick Attack"],sets.TH)
-		else
-			equip(sets.precast.JA["Trick Attack"])
-		end
-	end
 	if buff == 'Trick Attack' and g_or_l == false then
        previous_set()
 	end
 
 -- Flee
 	if buff == 'Flee' and g_or_l == true then
-		 equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
+		if Mode == 4 then
+		 equip(sets.idle.PDT,sets.idle.Evasion,{feet="Pillager's Poulaines"})
+		else
+			equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
+		end
 	end
 	if buff == 'Flee' and g_or_l == false then
-        equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
+		if Mode == 4 then
+			equip(sets.idle.PDT,sets.idle.Evasion,{feet="Pillager's Poulaines"})
+		else
+			equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
+		end
 	end
 	
--- Fient
-	if buff == 'Fient' and g_or_l == true then
-		 equip(sets.idle.PDT,{legs="Plunderer's Culottes"})
-	end
-	if buff == 'Fient' and g_or_l == false then
-        equip(sets.idle.PDT,{legs="Plunderer's Culottes"})
+-- Feint
+	if buff == 'Feint' and g_or_l == false then
+        equip({legs="Plunderer's Culottes"})
+		if player.status == 'Engaged' then
+			previous_set()
+		else	
+			if Mode == 4 then
+				equip(sets.idle.Standard,sets.idle.Evasion)
+			else
+				equip(sets.idle.Standard)
+			end
+		end
 	end
 end
 
 function precast(spell,arg)
  -- Generic equip command for all Job Abilities and Weaponskills
     if sets.precast.JA[spell.name] then
-        equip(sets.precast.JA[spell.name])
+		if S{'Sneak Attack', 'Trick Attack'}:contains(spell.english) then
+			if spell.english == "Sneak Attack" then
+				if TH == 1 then
+					if buffactive['Feint'] then
+						equip(sets.precast.JA["Sneak Attack"],sets.TH,{legs="Plunderer's Culottes"})
+					else
+						equip(sets.precast.JA["Sneak Attack"],sets.TH)
+					end
+				else
+					if buffactive['Feint'] then
+						equip(sets.precast.JA["Sneak Attack"],{legs="Plunderer's Culottes"})
+					else
+						equip(sets.precast.JA["Sneak Attack"])
+					end
+				end
+			end
+			if spell.english == "Trick Attack" then
+				if TH == 1 then
+					if buffactive['Feint'] then
+						equip(sets.precast.JA["Trick Attack"],sets.TH,{legs="Plunderer's Culottes"})
+					else
+						equip(sets.precast.JA["Trick Attack"],sets.TH)
+					end
+				else
+					if buffactive['Feint'] then
+						equip(sets.precast.JA["Trick Attack"],{legs="Plunderer's Culottes"})
+					else
+						equip(sets.precast.JA["Trick Attack"])
+					end
+				end
+			end
+		else
+			equip(sets.precast.JA[spell.name])
+		end
    elseif sets.precast.WS[spell.name] then
 		if  player.status == 'Engaged' then
 			if player.TP >= 100 then
@@ -240,12 +316,23 @@ function aftercast(spell,arg)
 		equip(sets.misc.Town)
 	else
 		if player.status == 'Engaged' then
-			previous_set()
+			if S{'Sneak Attack', 'Trick Attack', 'Feint'}:contains(spell.english) then
+				-- Do nothing 
+			else
+				-- Equip Previous TP set
+				previous_set()
+			end
 		else
 			if buffactive["Flee"] then
 				equip(sets.idle.Standard,{feet="Pillager's Poulaines"})
 			else
-				equip(sets.idle.Standard)
+				if not S{'Sneak Attack', 'Trick Attack', 'Feint'}:contains(spell.english) then
+					if Mode == 4 then
+						equip(sets.idle.Standard,sets.idle.Evasion)
+					else
+						equip(sets.idle.Standard)
+					end
+				end
 			end
 		end
 	end
@@ -257,7 +344,7 @@ function aftercast(spell,arg)
 	end
 end
 
-function previous_set()
+function previous_set(spell)
 	if TH == 1 then
 		if buffactive["Feint"] then
 			if Mode == 0 then
@@ -270,10 +357,12 @@ function previous_set()
 				equip(sets.TP.Buffed,sets.TH,{legs="Plunderer's Culottes"})
 				windower.add_to_chat(121,'TH locked - Alliance Buff Set')
 			elseif Mode == 3 then
-				equip(sets.TP.Evasion,sets.TH,{legs="Plunderer's Culottes"})
+				equip(sets.TP.Hybrid,sets.TH,{legs="Plunderer's Culottes"})
 				windower.add_to_chat(121,'TH locked - Hybrid Evasion Set')
+			elseif Mode == 4 then
+					equip(sets.idle.Evasion,sets.TH,{legs="Plunderer's Culottes"})
+				windower.add_to_chat(121,'TH locked - Full Evasion Lock')
 			end	
-
 		else
 			if Mode == 0 then
 				equip(sets.TP,sets.TH)
@@ -285,24 +374,30 @@ function previous_set()
 				equip(sets.TP.Buffed,sets.TH)
 				windower.add_to_chat(121,'TH locked - Alliance Buff Set')
 			elseif Mode == 3 then
-				equip(sets.TP.Evasion,sets.TH)
+				equip(sets.TP.Hybrid,sets.TH)
 				windower.add_to_chat(121,'TH locked - Hybrid Evasion Set')
+			elseif Mode == 4 then
+				equip(sets.idle.Evasion,sets.TH)
+				windower.add_to_chat(121,'TH locked - Full Evasion Set')
 			end	
 		end
 	else
 		if buffactive["Feint"] then
 			if Mode == 0 then
 				equip(sets.TP,{legs="Plunderer's Culottes"})
-				windower.add_to_chat(121,'TP Set')
+				windower.add_to_chat(121,'Feint - TP Set')
 			elseif Mode == 1 then 
 				equip(sets.TP.Acc,{legs="Plunderer's Culottes"})
-				windower.add_to_chat(121,'Acc Set')
+				windower.add_to_chat(121,'Feint - Acc Set')
 			elseif Mode == 2 then
 				equip(sets.TP.Buffed,{legs="Plunderer's Culottes"})
-				windower.add_to_chat(121,'Alliance Buff Set')
+				windower.add_to_chat(121,'Feint - Alliance Buff Set')
 			elseif Mode == 3 then
-				equip(sets.TP.Evasion,{legs="Plunderer's Culottes"})
-				windower.add_to_chat(121,'Hybrid Evasion Set')
+				equip(sets.TP.Hybrid,{legs="Plunderer's Culottes"})
+				windower.add_to_chat(121,'Fient - Hybrid Evasion Set')
+			elseif Mode == 4 then
+				equip(sets.idle.Evasion,{legs="Plunderer's Culottes"})
+				windower.add_to_chat(121,'Fient - Full Evasion Set')
 			end		
 		else
 			if Mode == 0 then
@@ -315,8 +410,11 @@ function previous_set()
 				equip(sets.TP.Buffed)
 				windower.add_to_chat(121,'Alliance Buff Set')
 			elseif Mode == 3 then
-				equip(sets.TP.Evasion)
+				equip(sets.TP.Hybrid)
 				windower.add_to_chat(121,'Hybrid Evasion Set')
+			elseif Mode == 4 then
+				equip(sets.idle.Evasion)
+				windower.add_to_chat(121,'Full Evasion Set')
 			end		
 		end
 	end	

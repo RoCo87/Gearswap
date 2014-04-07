@@ -5,7 +5,8 @@
 
 -- Gear Sets 
 function get_sets()
-
+	-- Set Binds 
+	 windower.send_command('@bind f10 input /range <t>')
 -- Get RNG Gearsets
 	include('Gearsets/RNG_Gearsets.lua')   
 	
@@ -16,6 +17,10 @@ function get_sets()
 	MDT = 0
 	ShadowType = 'None'
 	
+end
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	windower.send_command('unbind f10')
 end
 
 
