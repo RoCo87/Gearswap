@@ -41,7 +41,7 @@ sets.idle.PDT = {
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Engulfer Cape", waist="Black Belt", legs="Nahtirah Trousers", feet="Manibozho Boots"}
+                back="Engulfer Cape", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {
@@ -138,12 +138,6 @@ sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gorget", waist="Anguinus Belt"})
-
--- Midcast Sets
-sets.midcast = {}
-
--- Aftercast
-sets.aftercast = {}
 
 -- Misc Sets
 sets.misc.Fastcast = set_combine(sets.idle.PDT, {

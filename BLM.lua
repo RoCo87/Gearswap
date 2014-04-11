@@ -1,8 +1,8 @@
--- Feary's RDM LUA
--- Created 2/18/2014
+-- Feary's BLM LUA
+-- Created - 4/11/2014
 -- To do list
 -- - Obi Staves cape ring
---
+-- 	sorceror's ring
 --
 --includes
 	include('include/functions.lua')
@@ -14,7 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get RDM gearsets
-	include('Gearsets/RDM_Gearsets.lua')
+	include('Gearsets/BLM_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0
@@ -121,7 +121,11 @@ function status_change(new,old)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			equip(sets.idle.Standard)
+			if buffactive['Mana Wall'] then
+				equip(sets.idle.Standard,{feet="Goetia Sabots"})
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	elseif new == 'Engaged' then
 		slot_lock()
@@ -182,36 +186,24 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		-- Chainspell
-		if buffactive.Chainspell or buffactive.Spontaneity then
-			-- Don't need Fastcast
-			if spell.name == 'Stun' then
-				equip(sets.midcast.Stun)
-			elseif spell.skill:startswith('Elemental') then
-				equip(sets.midcast.Nuke)
+		if spell.skill:startswith("Healing") then
+			-- Cure casting time
+			if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
+				equip(sets.precast.Cure)
 			else
-				equip(sets.midcast.Macc)
+				equip(sets.precast.Fastcast)
 			end
+		elseif spell.skill:startswith("Enhancing") then
+			equip(sets.precast.Fastcast)
+			-- Cancel Sneak
+			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+				windower.ffxi.cancel_buff(71)
+				cast_delay(0.3)
+			end
+		elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
+			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 		else
-			if spell.skill:startswith("Healing") then
-				-- Cure casting time
-				if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
-					equip(sets.precast.Cure)
-				else
-					equip(sets.precast.Fastcast)
-				end
-			elseif spell.skill:startswith("Enhancing") then
-				equip(sets.precast.Fastcast)
-				-- Cancel Sneak
-				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-					windower.ffxi.cancel_buff(71)
-					cast_delay(0.3)
-				end
-			elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-			else
-				equip(sets.precast.Fastcast)
-			end
+			equip(sets.precast.Fastcast)
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
@@ -252,14 +244,10 @@ function midcast(spell,arg)
 	elseif spell.skill == 'EnhancingMagic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
-		elseif spell.name:wcmatch("Gain*") then
-			equip(sets.midcast.Enhancing)
-		elseif spell.name == "Temper" then
-			equip(sets.midcast.Enhancing)
 		elseif spell.english:contains("Spikes") then
-			equip(sets.midcast.INT, {legs="Vitivation Tights"})
+			equip(sets.midcast.INT)
 		elseif spell.english:contains("Refresh") then
-			equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
+			equip(sets.midcast.ConserveMP)
 		elseif spell.name == 'Stoneskin' then
 			equip(sets.midcast.Stoneskin)
 			if buffactive.Stoneskin then
@@ -338,9 +326,9 @@ function midcast(spell,arg)
 		end
 -- Songs
 	elseif spell.skill == "Singing" then
-			
+		equip(sets.midcast.Macc)
 	end
-end 
+end -- end midcast
 
 function aftercast(spell,arg)
 	if player.status == 'Engaged' then
@@ -366,11 +354,15 @@ function aftercast(spell,arg)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			equip(sets.idle.Standard)
+			if buffactive['Mana Wall'] then
+				equip(sets.idle.Standard,{feet="Goetia Sabots"})
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
 -- Lullaby
-	if spell.name == "Sleep II" or spell.name == "Repose" then
+	if spell.name == "Sleep II" or spell.name == "Sleepga II" or spell.name == "Repose" then
 		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
         windower.send_command('wait 85;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')

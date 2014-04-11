@@ -5,7 +5,9 @@
 
 -- Gear Sets 
 function get_sets()
-
+--includes
+	include('include/binds.lua')
+	include('include/status.lua')
 -- Get COR Gearsets
 	include('Gearsets/COR_Gearsets.lua')   
 	
@@ -22,7 +24,10 @@ function get_sets()
 	MBullet = {ammo="Bullet"}
 	
 end
-
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	clear_binds()
+end
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then

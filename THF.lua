@@ -1,19 +1,21 @@
 -- Feary's THF LUA
 -- Date: 4/5/2014
 -- To Do:
---	Account for Hide
--- 	expand on thief knife
+--	Account for Hide + SA or TA
 -- 	account for sata?
--- 	check on locking full evasion
+-- 	
+-- 	
 
+--includes
+	include('include/functions.lua')
+	include('include/status.lua')
+	
 -- Gear Sets 
 function get_sets()
-	-- set binds
-	windower.send_command('@bind f10 gs c MDT')
-	windower.send_command('@bind f11 gs c PDT')
-	windower.send_command('@bind f12 gs c TP')
-	
--- Get THF Gearsets
+--includes
+	--include('include/autoexec.lua')
+	include('include/binds.lua')
+	-- Get THF Gearsets
 	include('Gearsets/THF_Gearsets.lua')
 	
 -- Define Default Values for Variables
@@ -26,7 +28,7 @@ end -- End gear sets
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-	windower.send_command('unbind f10')
+	clear_binds()
 end
 -- Rules
 function self_command(command)
@@ -42,7 +44,11 @@ function self_command(command)
 			if player.status == 'Engaged' then
 				previous_set()
 			else
-				equip(sets.idle.Standard)
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		else
 		-- Make sure other values are set to default
@@ -60,11 +66,15 @@ function self_command(command)
 		-- Unlock MDT set and equip Current TP set
 			MDT = 0
 			windower.add_to_chat(121,'MDT Unlocked')
-		-- Place me in my previous set
+		-- Place Me in my previous set.
 			if player.status == 'Engaged' then
 				previous_set()
 			else
-				equip(sets.idle.Standard)
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		else
 		-- make sure other values are set to default
@@ -79,7 +89,16 @@ function self_command(command)
 			-- Reset to Default
 			PDT = 0
 			MDT = 0
-			previous_set()
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
+			end
 		else
 			if Mode >= 4 then
 			-- Reset to 0
@@ -89,7 +108,15 @@ function self_command(command)
 				Mode = Mode + 1
 			end
 			-- Place me in previous set
-			previous_set()
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
+			end
 		end
 	elseif command == 'TH' then
 		if TH == 0 then
@@ -260,7 +287,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'Not enough TP to WS')
+				windower.add_to_chat(121, ''..player.TP..'tp is Not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -284,7 +311,7 @@ function precast(spell,arg)
     elseif windower.wc_match(spell.name,'Curing*') then
         equip(sets.misc.Waltz)
     elseif windower.wc_match(spell.name,'*Step') then
-        equip(sets.TP.HighAcc)
+        equip(sets.TP.Acc)
     end
 end
 

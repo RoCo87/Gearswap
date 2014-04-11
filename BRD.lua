@@ -4,10 +4,16 @@
 --
 --
 --
-
+--includes
+	include('include/functions.lua')
+	include('include/status.lua')
+	
 -- Gear Sets 
 function get_sets()
--- Get BRD gearsets
+--includes
+	--include('include/autoexec.lua')
+	include('include/binds.lua')
+	-- Get BRD gearsets
 	include('Gearsets/BRD_Gearsets.lua')
 	
 -- Define Default Values for Variables
@@ -17,44 +23,9 @@ function get_sets()
 	ShadowType = 'None'
 	Gjallarhorn = 1
 end 
-
--- Rules
-function self_command(command)
--- Lock PDT
-	if command == 'PDT' then
-	-- Make sure other values are set to default
-		MDT = 0
-	-- Set PDT set and equip it
-		PDT = 1
-		equip(sets.idle.PDT)
-		 windower.add_to_chat(121,'PDT Set')
---  Lock MDT
-	elseif command == 'MDT' then
-	-- make sure other values are set to default
-		PDT = 0
-	-- lock MDT set and equip it
-		MDT = 1
-		equip(sets.idle.MDT)
-		windower.add_to_chat(121,'MDT Set')
-	elseif command == 'TP' then
-		-- set to default if mode is greater than 3
-			PDT = 0
-			MDT = 0
-	end
-end
-
-function status_change(new,old)
--- Auto set
-    if T{'idle','Resting'}:contains(new) then
-		equip(sets.idle.Standard)
-	elseif new == 'Engaged' then
-		equip(sets.TP)
-	end
-end
-
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	clear_binds()
 end
 
 function pretarget(spell)
@@ -74,6 +45,116 @@ function pretarget(spell)
 			end
 		end
 	end
+end
+-- Rules
+function self_command(command)
+-- Lock PDT
+	if command == 'PDT' then
+		if PDT == 1 then
+			-- make sure other values are set to default
+			-- Unlock PDT/MDT Variables
+			PDT = 0
+			MDT = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'PDT Set UnLocked')
+		else
+		-- Make sure other values are set to default
+				MDT = 0
+			-- Set PDT set and equip it
+				PDT = 1
+				equip(sets.idle.PDT)
+				windower.add_to_chat(121,'PDT Set Locked')
+		end
+--  Lock MDT
+	elseif command == 'MDT' then
+		if MDT == 1 then
+		-- make sure other values are set to default
+		-- Unlock PDT/MDT Variables
+			PDT = 0
+			MDT = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'MDT Set UnLocked')
+		else
+		-- make sure other values are set to default
+			PDT = 0
+		-- lock MDT set and equip it
+			MDT = 1	
+			equip(sets.idle.MDT)
+			windower.add_to_chat(121,'MDT Set Locked')
+		end
+	elseif command == 'TP' then
+		if PDT == 1 or MDT == 1 then
+			-- Reset to Default
+			PDT = 0
+			MDT = 0
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'PDT/MDT Set UnLocked')
+		else
+			if Mode >= 1 then
+				-- Reset to 0
+				Mode = 0
+			else
+				-- Increment by 1
+				Mode = Mode + 1
+			end
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+		end
+	end
+end
+
+function status_change(new,old)
+-- Auto set
+    if T{'Idle','Resting'}:contains(new) then
+		slot_lock()
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
+	elseif new == 'Engaged' then
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
+			else
+				MDT = 0
+				PDT = 0
+			end
+		else
+			-- Equip previous TP set 
+				previous_set()
+		end
+	end
+end
+
+-- Gain or lose buffs 
+function buff_change(buff,g_or_l)
+	statuses()
 end
 
 function precast(spell,arg)
@@ -300,10 +381,23 @@ function aftercast(spell,arg)
 		windower.add_to_chat(121, "Town Gear")
 		equip(sets.misc.Town)
 	else
-		if player.status == 'Engaged' then
-			equip(sets.TP)
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
+			else
+				MDT = 0
+				PDT = 0
+			end
 		else
-			equip(sets.idle.Standard)
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
 -- Lullaby
@@ -326,4 +420,27 @@ function aftercast(spell,arg)
     elseif spell and spell.name == 'Utsusemi: Ichi' then
         ShadowType = 'Ichi'
 	end
+end
+
+function previous_set()
+	slot_lock()
+	if Mode == 0 then
+		equip(sets.TP)
+		windower.add_to_chat(121,'TP Set')
+	elseif Mode == 1 then
+		equip(sets.TP.Acc)
+		windower.add_to_chat(121,'Acc TP Set')
+	end		
+end
+
+function slot_lock()
+    if player.equipment.left_ear == 'Reraise Earring' then
+        disable('left_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on left ear')
+    elseif player.equipment.right_ear == 'Reraise Earring' then
+        disable('right_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on right ear')
+    else
+        enable('left_ear','right_ear')
+    end
 end

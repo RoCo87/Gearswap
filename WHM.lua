@@ -1,46 +1,134 @@
 -- Feary's WHM LUA
--- Date: 1/29/2014
+-- Date Created : 1/29/2014
+--
+--
+--
+--
 
+--includes
+	include('include/functions.lua')
+	include('include/status.lua')
+	
+-- Gear Sets 
 function get_sets()
+--includes
+	--include('include/autoexec.lua')
+	include('include/binds.lua')
 	-- Get WHM gearsets
 	include('Gearsets/WHM_GearSets.lua')
 	
 	-- Variables 
 	ShadowType = 'None'
+	Mode = 0
 	PDT = 0
 	MDT = 0
 end
-
-
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	clear_binds()
+end
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
-	-- Make sure other values are set to default
-		MDT = 0
-	-- Set PDT set and equip it
-		PDT = 1
-		equip(sets.idle.PDT)
+		if PDT == 1 then
+			-- make sure other values are set to default
+			-- Unlock PDT/MDT Variables
+			PDT = 0
+			MDT = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'PDT Set UnLocked')
+		else
+		-- Make sure other values are set to default
+				MDT = 0
+			-- Set PDT set and equip it
+				PDT = 1
+				equip(sets.idle.PDT)
+				windower.add_to_chat(121,'PDT Set Locked')
+		end
 --  Lock MDT
 	elseif command == 'MDT' then
-	-- make sure other values are set to default
-		PDT = 0
-	-- lock MDT set and equip it
-		MDT = 1
-		equip(sets.idle.MDT)
--- Unlock 
+		if MDT == 1 then
+		-- make sure other values are set to default
+		-- Unlock PDT/MDT Variables
+			PDT = 0
+			MDT = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'MDT Set UnLocked')
+		else
+		-- make sure other values are set to default
+			PDT = 0
+		-- lock MDT set and equip it
+			MDT = 1	
+			equip(sets.idle.MDT)
+			windower.add_to_chat(121,'MDT Set Locked')
+		end
 	elseif command == 'TP' then
-		PDT = 0
-		MDT = 0
-		windower.addtochat(121, "Unlocked PDT/MDT")
-	end
+		if PDT == 1 or MDT == 1 then
+			-- Reset to Default
+			PDT = 0
+			MDT = 0
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'PDT/MDT Set UnLocked')
+		else
+			if Mode >= 1 then
+				-- Reset to 0
+				Mode = 0
+			else
+				-- Increment by 1
+				Mode = Mode + 1
+			end
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+		end
 end
 	
 function status_change(new,old)
 -- Auto set
-    if T{'idle','Resting'}:contains(new) then
-		equip(sets.idle.Standard)
+    if T{'Idle','Resting'}:contains(new) then
+		slot_lock()
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
 	elseif new == 'Engaged' then
-		equip(sets.TP)
+		slot_lock()
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
+			else
+				MDT = 0
+				PDT = 0
+			end
+		else
+			-- Equip previous TP set 
+				previous_set()
+		end
 	end
 end
 
@@ -51,7 +139,7 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 -- Weaponskills
-	 elseif sets.precast.WS[spell.name] then
+	elseif spell.type == "WeaponSkill" then
 		if  player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
@@ -74,24 +162,27 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		-- Cure casting time
-		if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
-			equip(sets.precast.Cure)
-		else
-			equip(sets.precast.Fastcast)
+		if spell.skill == "HealingMagic" then
+			-- Cure casting time
+			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
+				equip(sets.precast.Cure)
+			else
+				equip(sets.precast.Fastcast)
+			end
+		elseif spell.skill == "EnhancingMagic" then
+			-- Cancel Sneak
+			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+				windower.ffxi.cancel_buff(71)
+				cast_delay(0.3)
+			-- Auspice 
+			elseif spell.name == 'Auspice' then
+				equip({feet="Orsn. Duckbills +2"})
+			elseif spell.english:wcmatch('Protectra*') then
+				equip({feet="Clr. Duckbills +2"})
+			elseif spell.english:wcmatch('Shellra*') then
+				equip({legs="Clr. Pantaln +2"})
+			end		
 		end
-		-- Cancel Sneak
-		if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-			windower.ffxi.cancel_buff(71)
-			cast_delay(0.3)
-		-- Auspice 
-		elseif spell.name == 'Auspice' then
-			equip({feet="Orsn. Duckbills +2"})
-		elseif spell.english:wcmatch('Protectra*') then
-			equip({feet="Clr. Duckbills +2"})
-		elseif spell.english:wcmatch('Shellra*') then
-			equip({legs="Clr. Pantaln +2"})
-		end		
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		equip(sets.precast.Fastcast)
@@ -229,19 +320,40 @@ end -- end midcast
 function aftercast(spell,arg)
 -- Autoset
 	if player.status == 'Engaged' then
-		equip(sets.TP)
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
+			else
+				MDT = 0
+				PDT = 0
+			end
+		else
+			-- Equip previous TP set 
+				previous_set()
+		end
 	else
-		equip(sets.idle.Standard)
+		slot_lock()
+		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+			equip(sets.idle.PDT)
+		elseif MDT == 1 then
+			equip(sets.idle.MDT)
+		else
+			equip(sets.idle.Standard)
+		end
 	end
 -- Sleep and repose
 	if spell.name == "Sleep II" or spell.name == "Repose" then
-		windower.send_command('wait 75;input /echo [ WARNING! Sleep : Will wear off within 0:15 ]')
-        windower.send_command('wait 80;input /echo [ WARNING! Sleep : Will wear off within 0:10 ]')
-        windower.send_command('wait 85;input /echo [ WARNING! Sleep : Will wear off within 0:05 ]')
+		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
+        windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
+        windower.send_command('wait 85;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
 	elseif spell.name == "Sleep" or spell.name == "Sleepga" then
-		windower.send_command('wait 45;input /echo [ WARNING! Sleep : Will wear off within 0:15 ]')
-        windower.send_command('wait 50;input /echo [ WARNING! Sleep : Will wear off within 0:10 ]')
-        windower.send_command('wait 55;input /echo [ WARNING! Sleep : Will wear off within 0:05 ]')
+		windower.send_command('wait 45;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
+        windower.send_command('wait 50;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
+        windower.send_command('wait 55;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
 	end
 -- Convert
 	if spell.name == 'Convert' then
@@ -254,3 +366,27 @@ function aftercast(spell,arg)
         ShadowType = 'Ichi'
 	end
 end
+
+function previous_set()
+	slot_lock()
+	if Mode == 0 then
+		equip(sets.TP)
+		windower.add_to_chat(121,'TP Set')
+	elseif Mode == 1 then
+		equip(sets.TP.Acc)
+		windower.add_to_chat(121,'Acc TP Set')
+	end
+end
+
+function slot_lock()
+    if player.equipment.left_ear == 'Reraise Earring' then
+        disable('left_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on left ear')
+    elseif player.equipment.right_ear == 'Reraise Earring' then
+        disable('right_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on right ear')
+    else
+        enable('left_ear','right_ear')
+    end
+end
+

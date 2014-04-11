@@ -56,7 +56,7 @@ if player.Name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
 		sets.idle.MDT = {

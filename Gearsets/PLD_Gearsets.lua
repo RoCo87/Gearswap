@@ -14,23 +14,28 @@ if player.name == 'Feary' then
 	-- sets Macros: 0ff = 0  On = 1
 		automacroset = 0
 		if automacroset == 1 then
-			if player.sub_job == 'war' then
+			if player.sub_job == 'NIN' then
 				set_macro_page(16,1)
-			elseif player.sub_job == 'nin' then
+			elseif player.sub_job == 'DNC' then
 				set_macro_page(16,2)
-			elseif player.sub_job == 'dnc' then
+			elseif player.sub_job == 'WAR' then
 				set_macro_page(16,3)
-			elseif player.sub_job == 'drg' then 
+			elseif player.sub_job == 'BLU' then 
 				set_macro_page(16,4)
 			elseif player.sub_job == 'whm' then 
 				set_macro_page(16,5)
 			elseif player.sub_job == 'run' then 
 				set_macro_page(16,6)
 			end
+		elseif automacroset == 2 then
+			set_macro_page(16,2)
 		else
-			set_macro_page(16,1)
+			windower.send_command('input /macro book 16')
 		end
 -- Auto Sets
+physicalshield = {sub="Ochain"}
+magicalshield = {sub="Aegis"}
+
 -- Standard/idle
 sets.idle.PDT = { ammo="Angha Gem",
 				head="Yaoyotl Helm", neck="Twilight Torque",
@@ -46,19 +51,19 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				legs="Blood Cuisses"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Hermes' Sandals"})
+				lear="Merman's Earring", rear="Merman's Earring", legs="Blood Cuisses"})
 -- TP 
-sets.TP = { 
+sets.TP = {  ammo="Paeapua",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Pak Corselet", hands="Cab. Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches", feet="Whirlpool Greaves"}
+                body="Pak Corselet", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches", feet="Ejekamal Boots"}
 sets.TP.Acc = {
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Pak Corselet", hands="Buremte Gloves", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.TP.Hybrid = {
+sets.TP.Hybrid = { 
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Pak Corselet", hands="Buremte Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Cab. Surcoat", hands="Buremte Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Repulse Mantle", waist="Dynamic Belt +1", legs="Cizin Breeches", feet="Cizin Greaves"}
 -- Precast 
 sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
@@ -73,9 +78,9 @@ sets.HPDown = set_combine(sets.idle.PDT,{
 sets.Recast = set_combine(sets.TP,{})
 
 sets.Cure = set_combine(sets.Recast,{
-				head="Yaoyotl Helm", neck="Phalaina Locket", lear="Creed Earring",
+				head="Yaoyotl Helm", neck="Phalaina Locket", lear="Creed Earring", rear="Knightly Earring",
 				body="Reverence Surcoat",hands="Buremte Gloves",lring="Meridian Ring",rring="K'ayres Ring",
-				back="Valor Cape", waist="Creed Baudrier", legs="Cab. Breeches", feet="Cab. Leggings"})
+				back="Valor Cape", waist="Chuq'aba Belt", legs="Cab. Breeches", feet="Cab. Leggings"})
 
 sets.midcast.DivineMagic = set_combine(sets.Recast,{body="Reverence Surcoat"})
 
@@ -83,17 +88,18 @@ sets.midcast.EnhancingMagic = set_combine(sets.Recast,{})
 
 -- JA
 sets.precast.JA["Invincible"] = set_combine(sets.Enmity,{legs="Cab. Breeches"})
-sets.precast.JA["Intervene"] = set_combine(sets.Enmity,{
+sets.precast.JA["Intervene"] = set_combine(sets.precast.JA["Shield Bast"],{
 				hands="Cab. Gauntlets",lear="Knightly Earring"})
-				
-sets.precast.JA["Chivalry"] = set_combine(sets.idle.PDT,{
-				head="Yaoyotl Helm", 
-				body="Cab. Surcoat", hands="Cab. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
-				 legs="Cab. Breeches", feet="Whirlpool Greaves"})
+-- MND			
+sets.precast.JA["Chivalry"] = set_combine(sets.idle.PDT,{hands="Cab. Gauntlets"},{
+				head="Yaoyotl Helm", neck="Phalaina Locket",
+				body="Cab. Surcoat", lring="Aquasoul Ring", rring="Aquasoul Ring",
+				legs="Cab. Breeches", feet="Whirlpool Greaves"})
+-- VIT
 sets.precast.JA["Rampart"] = set_combine(sets.Enmity,{
 				head="Cab. Coronet", 
 				body="Cab. Surcoat", hands="Cab. Gauntlets",
-				back="Valor Cape", waist="Flume Belt"  legs="Cab. Breeches", feet="Whirlpool Greaves"})
+				back="Valor Cape", waist="Chuq'aba Belt",  legs="Cab. Breeches", feet="Whirlpool Greaves"})
 sets.precast.JA["Sentinel"] = set_combine(sets.Enmity,{feet="Cab. Leggings"})
 sets.precast.JA["Holy Circle"] = set_combine(sets.Enmity,{feet="Rev. Leggings"})
 sets.precast.JA["Fealty"] = set_combine(sets.Enmity,{body="Cab. Surcoat"})
@@ -109,14 +115,17 @@ sets.precast.WS['Requiescat'] = { ammo="",
 				head="Yaoyotl Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Atheling Mantle", waist="Shadow Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.precast.WS.Acc['Requiescat'] = { ammo="",
-				head="Yaoyotl Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Vespid Mantle", waist="Shadow Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Chant du Cygne'] = {ammo="",
 				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+
+sets.precast.WS.Acc = {}
+sets.precast.WS.Acc['Requiescat'] = { ammo="",
+				head="Yaoyotl Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                back="Vespid Mantle", waist="Shadow Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+
 sets.precast.WS.Acc['Chant du Cygne'] = {ammo="",
 				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Mars's Ring",
@@ -129,8 +138,8 @@ sets.misc.Fastcast = set_combine(sets.idle.PDT, {
                 })
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 
-sets.misc.Waltz = {}
-sets.misc.Steps = set_combine(sets.TP.MidAcc,{})
+sets.misc.Waltz = set_combine(sets.precast.JA["Chivalry"],{})
+sets.misc.Steps = set_combine(sets.TP.Acc,{})
 sets.misc.flourish = {}
 
 elseif player.name == 'Derion' then

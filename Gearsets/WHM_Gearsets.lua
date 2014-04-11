@@ -4,7 +4,10 @@
 if player.name == 'Feary' then
 		-- includes
 		include('include/utility.lua')
-		
+		include('include/mappings.lua')
+		include('include/equipment.lua')
+		-- include('../include/autoexec.lua')
+			
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
@@ -21,14 +24,8 @@ if player.name == 'Feary' then
 			set.macro_page(1,1)
 		end
 		
-		-- Augmented Gear
-		Aug = {}
-		Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-		Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
-		
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle = {}
 		sets.idle.PDT = {main="Earth Staff",
 				head="Gendewitha Caubeen", neck="Twilight Torque", lear="", rear="",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring=Aug.Darkring2,
@@ -45,12 +42,11 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Moonshade Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs",
                 legs="Nares Trews", feet="Herald's Gaiters"})
-		sets.misc = {}
+
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
 		-- Precast
 		-- Magic
-		sets.precast = {}
 		sets.precast.Fastcast = { ammo="Impatiens",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="Prolix Ring", rring="",

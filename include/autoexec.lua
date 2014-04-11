@@ -5,15 +5,17 @@
 --
 
 -- Events
+function register_event()
 	-- Day Change
-	windower.register_event('day_change', day_change)
+	--windower.register_event('day_change', day_change)
 	
 	-- Light Luggage
-	windower.register_event('zone_change', light_luggage)
+	--windower.register_event('zone_change', light_luggage)
 	
 	-- G15 Keyboard
-	windower. register_event('job_change', G15)
-	
+	--windower.register_event('job_change', G15)
+end
+
 -- Functions
 function day_change(day)
 	day = world.day
@@ -180,6 +182,7 @@ function G15()
 		elseif player.main_job == "RUN" then
 			windower.send_command('exec Feary/run/g15/m1/default.txt;exec Feary/run/g15/m2/default.txt;exec Feary/run/g15/m3/default.txt;exec Feary/run/g13/m1/default.txt;exec Feary/run/g13/m2/default.txt;exec Feary/run/g13/m3/default.txt')
 		end
+	end
 end
 
 function storm_elements()

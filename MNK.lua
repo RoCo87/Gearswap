@@ -2,11 +2,18 @@
 -- Date: 1/18/2014
 --
 --
-
+--
+--includes
+	include('include/functions.lua')
+	include('include/status.lua')
+	
 -- Gear Sets 
 function get_sets()
+--includes
+	--include('include/autoexec.lua')
+	include('include/binds.lua')
 
--- Get MNK Gearsets
+	-- Get MNK Gearsets
 	include('Gearsets/Mnk_Gearsets.lua')
 	
 -- Define Default Values for Variables
@@ -17,29 +24,27 @@ function get_sets()
 	ShadowType = 'None'
 end -- End gear sets
 
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+	clear_binds()
+end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
 		if PDT == 1 then
-			windower.add_to_chat(121,'TP Set Locked')
-			if Mode == 0 then
-				equip(sets.TP)
-				windower.add_to_chat(121,'TP Set')
-			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
-			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)
-				windower.add_to_chat(121,'Hybrid Set')
-			end
+			windower.add_to_chat(121,'PDT Unlocked')
 			-- make sure other values are set to default
 			PDT = 0
 			-- Unlock MDT set and equip Current TP set
 			MDT = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
 		else
 		-- Make sure other values are set to default
 			MDT = 0
@@ -55,19 +60,12 @@ function self_command(command)
 			PDT = 0
 		-- Unlock MDT set and equip Current TP set
 			MDT = 0
-			windower.add_to_chat(121,'TP Set Locked')
-			if Mode == 0 then
-				equip(sets.TP)
-				windower.add_to_chat(121,'TP Set')
-			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
-			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)
-				windower.add_to_chat(121,'Hybrid Set')
+			windower.add_to_chat(121,'MDT Unlocked')
+		-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
 			end
 		else
 		-- make sure other values are set to default
@@ -79,59 +77,28 @@ function self_command(command)
 		end
 	elseif command == 'TP' then
 		if PDT == 1 or MDT == 1 then
+			-- Reset to Default
 			PDT = 0
 			MDT = 0
-			if Mode == 0 then
-				equip(sets.TP)
-				windower.add_to_chat(121,'TP Set')
-			elseif Mode == 1 then 
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
-			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)
-				windower.add_to_chat(121,'Hybrid Set')
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
 			end
 		else
-			if Mode == 0 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for MidAcc set
-				Mode = 1
-				equip(sets.TP.MidAcc)
-				windower.add_to_chat(121,'MidAcc Set')
-			elseif Mode == 1 then 
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for HighAcc set
-				Mode = 2
-				equip(sets.TP.HighAcc)
-				 windower.add_to_chat(121,'HighAcc Set')
-			elseif Mode == 2 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for Hybrid set
-				Mode = 3
-				equip(sets.TP.Hybrid)
-				 windower.add_to_chat(121,'Hybrid Set')
-			elseif Mode == 3 then
-			-- check defaults
-				PDT = 0
-				MDT = 0
-			-- Increment by 1 for TP set
+			if Mode >= 3 then
+			-- Reset to 0
 				Mode = 0
-				equip(sets.TP)
-				 windower.add_to_chat(121,'TP Set')
 			else
-			-- set to default if mode is greater than 3
-				PDT = 0
-				MDT = 0
-				Mode = 0
+			-- Increment by 1
+				Mode = Mode + 1
+			end
+			-- Place me in previous set
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
 			end
 		end
 	elseif command == 'testing' then
@@ -161,25 +128,8 @@ function status_change(new,old)
             if not buffactive.Impetus and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[31] < 1 then
                 windower.send_command('impetus')
             end
-			-- Equip TP
-			if Mode == 0 then	
-				if buffactive == 'Hundred Fists' then
-					windower.add_to_chat(121,'Hundred Fists')
-					equip(sets.TP.HF)
-				else
-					windower.add_to_chat(121,'TP')
-					equip(sets.TP)
-				end
-			elseif Mode == 1 then
-				windower.add_to_chat(121,'MidAcc TP')
-				equip(sets.TP.MidAcc)
-			elseif Mode == 2 then
-				windower.add_to_chat(121,'HighAcc TP')
-				equip(sets.TP.HighAcc)
-			elseif Mode == 3 then
-				windower.add_to_chat(121,'Hybrid TP')
-				equip(sets.TP.Hybrid)
-			end
+			-- Equip Previous TP
+			previous_set()
 		end
 	end
 end
@@ -231,7 +181,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'Not enough TP to WS')
+				windower.add_to_chat(121, ''..player.TP..'tp is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -287,19 +237,7 @@ function aftercast(spell,arg)
 		equip(sets.misc.Town)
 	else
 		if player.status == 'Engaged' then
-			if Mode == 0 then
-				if buffactive == 'Hundred Fists' then
-					equip(sets.TP.HF)
-				else
-					equip(sets.TP)
-				end
-			elseif Mode == 1 then
-				equip(sets.TP.MidAcc)
-			elseif Mode == 2 then
-				equip(sets.TP.HighAcc)
-			elseif Mode == 3 then
-				equip(sets.TP.Hybrid)	
-			end
+			previous_set()
 		else
 			equip(sets.idle.Standard)
 		end
@@ -315,4 +253,23 @@ function aftercast(spell,arg)
     end
 end
 
-
+function previous_set()
+	if Mode == 0 then	
+		if buffactive == 'Hundred Fists' then
+			windower.add_to_chat(121,'Hundred Fists')
+			equip(sets.TP.HF)
+		else
+			windower.add_to_chat(121,'TP')
+			equip(sets.TP)
+		end
+	elseif Mode == 1 then
+		windower.add_to_chat(121,'MidAcc TP')
+		equip(sets.TP.MidAcc)
+	elseif Mode == 2 then
+		windower.add_to_chat(121,'HighAcc TP')
+		equip(sets.TP.HighAcc)
+	elseif Mode == 3 then
+		windower.add_to_chat(121,'Hybrid TP')
+		equip(sets.TP.Hybrid)
+	end
+end
