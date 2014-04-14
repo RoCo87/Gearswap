@@ -6,19 +6,49 @@
 --
 --
 
+function basic_binds()
+	windower.send_command('bind sysrq screenshot png hide')
+	windower.send_command('bind ^v paste')
+end
+
+function clear_binds()
+	windower.send_command('clearbinds')
+	windower.add_to_chat(8,'Clearing All Binds - Setting to Defaults')
+	windower.send_command('bind !f10 drawdistance set 10')
+	windower.send_command('bind ^f10 drawdistance set 1')
+	windower.send_command('bind f11 game_forceambientlight')
+	windower.send_command('bind f12 showfps')
+	basic_binds()
+	windower.send_command('bind ^f1 input /ta <a10>')
+	windower.send_command('bind ^f2 input /ta <a11>')
+	windower.send_command('bind ^f3 input /ta <a12>')
+	windower.send_command('bind ^f4 input /ta <a13>')
+	windower.send_command('bind ^f5 input /ta <a14>')
+	windower.send_command('bind ^f6 input /ta <a15>')
+	windower.send_command('bind !f1 input /ta <a20>')
+	windower.send_command('bind !f2 input /ta <a21>')
+	windower.send_command('bind !f3 input /ta <a22>')
+	windower.send_command('bind !f4 input /ta <a23>')
+	windower.send_command('bind !f5 input /ta <a24>')
+	windower.send_command('bind !f6 input /ta <a25>')
+end
+
 if player.main_job == "WAR" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 	
 elseif player.main_job == "MNK" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 	
 elseif player.main_job == "WHM" then
+	basic_binds()
 	windower.send_command('bind f1 input /ma "Cure IV" <p0>')
 	windower.send_command('bind f2 input /ma "Cure IV" <p1>')
 	windower.send_command('bind f3 input /ma "Cure IV" <p2>')
@@ -65,24 +95,28 @@ elseif player.main_job == "WHM" then
 	windower.send_command('bind @6 input /ma "Poisona" <stpc>')
 
 elseif player.main_job == "BLM" then
+	basic_binds()
 		-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 
 elseif player.main_job == "THF" then
+	basic_binds()
 		-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 
 elseif player.main_job == "RDM" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 
 elseif player.main_job == "PLD" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
@@ -108,29 +142,40 @@ elseif player.main_job == "PLD" then
 	windower.send_command('bind !f6 input /ma "Cure IV" <p5>')
 	
 elseif player.main_job == "BRD" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 	
 elseif player.main_job == "SAM" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 	
 elseif player.main_job == "DRG" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 
 elseif player.main_job == "RNG" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 elseif player.main_job == "COR" then
+	basic_binds()
+	-- set binds
+	windower.send_command('@bind f10 gs c MDT')
+	windower.send_command('@bind f11 gs c PDT')
+	windower.send_command('@bind f12 gs c TP')
+elseif player.main_job == "SMN" then
+	basic_binds()
 	-- set binds
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
@@ -141,27 +186,4 @@ else
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
-end
-
-function clear_binds()
-	windower.send_command('clearbinds')
-	windower.add_to_chat(8,'Clearing All Binds - Setting to Defaults')
-	windower.send_command('bind !f10 drawdistance set 10')
-	windower.send_command('bind ^f10 drawdistance set 1')
-	windower.send_command('bind f11 game_forceambientlight')
-	windower.send_command('bind f12 showfps')
-	windower.send_command('bind sysrq screenshot png hide')
-	windower.send_command('bind ^v paste')
-	windower.send_command('bind ^f1 input /ta <a10>')
-	windower.send_command('bind ^f2 input /ta <a11>')
-	windower.send_command('bind ^f3 input /ta <a12>')
-	windower.send_command('bind ^f4 input /ta <a13>')
-	windower.send_command('bind ^f5 input /ta <a14>')
-	windower.send_command('bind ^f6 input /ta <a15>')
-	windower.send_command('bind !f1 input /ta <a20>')
-	windower.send_command('bind !f2 input /ta <a21>')
-	windower.send_command('bind !f3 input /ta <a22>')
-	windower.send_command('bind !f4 input /ta <a23>')
-	windower.send_command('bind !f5 input /ta <a24>')
-	windower.send_command('bind !f6 input /ta <a25>')
 end

@@ -116,12 +116,16 @@ function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
 		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
+		if new == "Resting" then
+			equip(sets.Resting)
 		else
-			equip(sets.idle.Standard)
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	elseif new == 'Engaged' then
 		slot_lock()

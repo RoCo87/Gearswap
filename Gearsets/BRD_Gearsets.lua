@@ -107,12 +107,12 @@ if player.Name == 'Feary' then
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
-                back="", waist="", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
+                back="", waist="", legs="Aoidos' Rhing. +2", feet="Brioso Slippers"}
 		-- Target Skill + 800
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
-                back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
+                back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers"}
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",

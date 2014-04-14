@@ -7,6 +7,7 @@
 -- Basic Tables
 
 	sets.idle = {}
+	sets.idle.Avatar = {}
 	sets.misc = {}
 	
 	-- Precast
@@ -16,6 +17,7 @@
 	
 	-- Midcast
 	sets.midcast = {}
+	sets.midcast.Pet = {}
 	-- Aftercast
 	sets.aftercast = {}	
 

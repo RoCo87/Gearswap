@@ -1,6 +1,6 @@
 -- Feary's PLD LUA
 -- Date: 4/1/2014
---
+-- chiv and tp
 --
 --
 --
@@ -133,6 +133,8 @@ function self_command(command)
 		end
 	elseif command == "w" then
 		equip({main="Buramenk'ah", sub=Shield})
+	elseif command == "clear_binds" then
+		clear_binds()
 	end
 end
 

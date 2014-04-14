@@ -14,14 +14,14 @@ if player.name == 'Feary' then
 			if player.sub_job == 'rdm' then
 				set_macro_page(1,1)
 			elseif player.sub_job =='sch' then
-				set.macro_page(1,2)
+				set_macro_page(1,2)
 			elseif player.sub_job == 'smn' then
-				set.macro_page(1,3)
+				set_macro_page(1,3)
 			elseif player.sub_job =='blm' then 
-				set.macro_page(1,4)
+				set_macro_page(1,4)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(1,1)
 		end
 		
 		-- Auto Sets
@@ -165,22 +165,25 @@ if player.name == 'Feary' then
 
 	elseif player.name == 'Derion' then
 		-- includes
-		include(include/utility.lua)
-		
+		include('include/utility.lua')
+		include('include/mappings.lua')
+		include('include/equipment.lua')
+		-- include('../include/autoexec.lua')
+			
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'rdm' then
-				set_macro_page(1, 1)
-			elseif player.sub_job == 'sch' then
-				set.macro_page(1, 2)
+				set_macro_page(1,1)
+			elseif player.sub_job =='sch' then
+				set_macro_page(1,2)
 			elseif player.sub_job == 'smn' then
-				set.macro_page(1,3)
-			elseif player.sub_job == 'blm' then 
-				set.macro_page(1,4)
+				set_macro_page(1,3)
+			elseif player.sub_job =='blm' then 
+				set_macro_page(1,4)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(1,1)
 		end
 		
 		-- Augmented Gear
@@ -331,25 +334,27 @@ if player.name == 'Feary' then
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
 	elseif player.name == 'Aniyah' then
-			-- includes
-		include(include/utility.lua)
-		
+		-- includes
+		include('include/utility.lua')
+		include('include/mappings.lua')
+		include('include/equipment.lua')
+		-- include('../include/autoexec.lua')
+			
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'rdm' then
-				set_macro_page(1, 1)
-			elseif player.sub_job == 'sch' then
-				set.macro_page(1, 2)
+				set_macro_page(1,1)
+			elseif player.sub_job =='sch' then
+				set_macro_page(1,2)
 			elseif player.sub_job == 'smn' then
-				set.macro_page(1,3)
-			elseif player.sub_job == 'blm' then 
-				set.macro_page(1,4)
+				set_macro_page(1,3)
+			elseif player.sub_job =='blm' then 
+				set_macro_page(1,4)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(1,1)
 		end
-		
 		-- Augmented Gear
 		Aug = {}
 		Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
@@ -498,23 +503,26 @@ if player.name == 'Feary' then
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
 	elseif player.name =='Firetoplay' then
-			-- includes
-		include(include/utility.lua)
-		
+		-- includes
+		include('include/utility.lua')
+		include('include/mappings.lua')
+		include('include/equipment.lua')
+		-- include('../include/autoexec.lua')
+			
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'rdm' then
-				set_macro_page(1, 1)
-			elseif player.sub_job == 'sch' then
-				set.macro_page(1, 2)
+				set_macro_page(1,1)
+			elseif player.sub_job =='sch' then
+				set_macro_page(1,2)
 			elseif player.sub_job == 'smn' then
-				set.macro_page(1,3)
-			elseif player.sub_job == 'blm' then 
-				set.macro_page(1,4)
+				set_macro_page(1,3)
+			elseif player.sub_job =='blm' then 
+				set_macro_page(1,4)
 			end
 		else
-			set.macro_page(1,1)
+			set_macro_page(1,1)
 		end
 		
 		-- Augmented Gear
