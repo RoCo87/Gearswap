@@ -1,16 +1,15 @@
 -- Feary's BLM LUA
 -- Created - 4/11/2014
 -- To do list
--- 
--- sorceror's ring
--- 
+-- - Obi Staves cape ring
+-- 	sorceror's ring
 --
 --includes
 	include('include/functions.lua')
 	include('include/status.lua')
 	
 -- Gear Sets 
-function get_sets(spell)
+function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
@@ -85,7 +84,6 @@ function self_command(command)
 				previous_set()
 			else
 				equip(sets.idle.Standard)
-				windower.add_to_chat(121,'PDT/MDT Set UnLocked')
 			end
 		else
 			if Mode >= 1 then
@@ -190,6 +188,13 @@ function precast(spell,arg)
 			cancel_spell()
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
+	elseif spell.type == 'Geomancy' then
+		if pet.isvalid then
+			cancel_spell()
+			windower.send_command('Full Cicle;wait 1;'..spell.name)
+		else
+		end
+		equip(sets.precast.Fastcast)
 -- Magic
 	elseif spell.type:endswith('Magic') then
 		if spell.skill:startswith("Healing") then
@@ -206,40 +211,17 @@ function precast(spell,arg)
 				windower.ffxi.cancel_buff(71)
 				cast_delay(0.3)
 			end
-		elseif spell.skill:startswith('Elemental') then
-			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
-			end
-					-- Magian Staff
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
-					equip(sets.precast.Elemental, {main=Fastcast.Staff[spell.element]})
-				else
-					equip(sets.precast.Elemental)
-				end
+		elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
+			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 		else
-			-- Magian Staff
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
-					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
-				else
-					equip(sets.precast.Fastcast)
-				end	
+			equip(sets.precast.Fastcast)
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
-		-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
-				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
-			else
-				equip(sets.precast.Fastcast)
-			end
+		equip(sets.precast.Fastcast)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
-		-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
-				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
-			else
-				equip(sets.precast.Fastcast)
-			end
+		equip(sets.precast.Fastcast)
 	else
 	-- Special handling to remove Dancer sub job Sneak effect
 		if spell.name == 'Spectral Jig' and buffactive.Sneak then
@@ -256,8 +238,25 @@ function precast(spell,arg)
 end
 
 function midcast(spell,arg)
+-- Geomancy
+	if spell.skill == 'Geomancy' then
+		equip(sets.midcast.Geomancy)
+		if buffactive["Lasting Emanation"] then
+		end
+		if buffactive["Ecliptic Attriction"] then
+		end
+		if buffactive["Collimated Fervor"] then
+		end
+		if buffactive["Dematerilize"] then
+		end
+		if buffactive["Bolster"] then
+		end
+		if spell.english:wcmatch('Indi*') then
+		
+		elseif spell.english:wcmatch('Geo*') then
+		end
 -- Healing Magic
-	if spell.skill == 'HealingMagic' then
+	elseif spell.skill == 'HealingMagic' then
 		-- Add Light Obi Twilight Cape and Chatoyant Staff
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
@@ -295,7 +294,6 @@ function midcast(spell,arg)
 		end
 -- Enfeebling Magic
 	elseif spell.skill == 'EnfeeblingMagic' then
-		-- Maybe account for saboteur
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -329,34 +327,12 @@ function midcast(spell,arg)
 	elseif spell.skill == 'ElementalMagic' then
 		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-		elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then
-			equip(sets.midcast.Elemental)
-		else	
+		else
+			-- accounts for obis staffs cape ring
 			if Skill == 1 then
-				elemental_lock()
-				equip(sets.midcast.Elemental)
+				equip(sets.midcast.Elemental) 
 			else
-				if player.hp <= 75 and player.TP <= 100 and player.inventory["Sorcerer's ring"] then
-					if not spell.english:wcmatch('*ja|* V') then
-						elemental_lock()	
-						-- Nuke Staff
-						equip(sets.midcast.Nuke,{lring="Sorcerer's Ring"})
-					else
-						elemental_lock()
-						-- Magian Staves
-						equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],lring="Sorcerer's Ring"})
-					end
-				else
-					if not spell.english:wcmatch('*ja|* V') then
-						-- Nuke 
-						elemental_lock()
-						equip(sets.midcast.Nuke)
-					else
-						elemental_lock()
-						-- Magian Staves
-						equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
-					end						
-				end
+				equip(sets.midcast.Nuke)
 			end
 		end
 -- Ninjutsu
@@ -405,11 +381,7 @@ function aftercast(spell,arg)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			if buffactive['Mana Wall'] then
-				equip(sets.idle.Standard,{feet="Goetia Sabots"})
-			else
-				equip(sets.idle.Standard)
-			end
+			equip(sets.idle.Standard)
 		end
 	end
 -- Lullaby
@@ -444,7 +416,7 @@ function previous_set()
 	end
 end
 
-function slot_lock()					
+function slot_lock()
     if player.equipment.left_ear == 'Reraise Earring' then
         disable('left_ear')
         windower.add_to_chat(8,'Reraise Earring equiped on left ear')
@@ -454,27 +426,4 @@ function slot_lock()
     else
         enable('left_ear','right_ear')
     end
-end
-
-function elemental_lock()
--- Elemental Obi, Twilight Cape, Zodiac Ring
-	if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
-		if player.inventory[elemental.Obi[spell.element]] then
-			equip({waist=elemental.Obi[spell.element]})
-			disable("waist")
-		else
-			enable("waist")
-		end
-		if player.inventory["Twilight Cape"] then
-			equip({back="Twilight Cape"})
-			disable("back")
-		else
-			enable("back")
-		end
-		if player.inventory["Zodiac Ring"] then
-			equip({rring="Zodiac Ring"})
-		else
-			equip('rring')
-		end
-	end
 end

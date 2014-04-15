@@ -180,6 +180,7 @@ if player.name == 'Feary' then
 		sets.precast.WS = set_combine(sets.TP, {})
 		-- MP Gear
 		sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {})
+		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
 
 	elseif player.name == 'Derion' then
 		

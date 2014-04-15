@@ -498,7 +498,7 @@ if player.name == 'Feary' then
 		sets.midcast.Dot = {}
 
 		-- Melee Sets
-		sets.TP = {}
+		sets.TP = set_combine(sets.idle.PDT,{})
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 

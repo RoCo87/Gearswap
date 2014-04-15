@@ -32,17 +32,17 @@ if player.Name == 'Feary' then
 		sets.idle.PDT = {main="Earth Staff",
 				head="Hagondes Hat", neck="Twilight Torque",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
+                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Engulfer Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
+                back="Umbra Cape", waist="", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",feet="Herald's Gaiters"})
+				lear="Merman's Earring", rear="Moonshade Earring"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		-- JA
 		sets.precast.JA["Manafont"] = {}
@@ -75,18 +75,16 @@ if player.Name == 'Feary' then
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Strophadic Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul Earring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
-		sets.midcast.Nuke.Magian = { sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul Earring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
 	
+		
+		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
@@ -142,6 +140,7 @@ if player.Name == 'Feary' then
 				head="", neck="", lear="", rear="",
                 body="", hands="", lring="", rring="",
                 back="", waist="", legs="", feet=""})
+		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
 		
 		-- Misc
