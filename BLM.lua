@@ -210,7 +210,7 @@ function precast(spell,arg)
 			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 				equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
 			end
-					-- Magian Staff
+				-- Magian Staff
 				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
 					equip(sets.precast.Elemental, {main=Fastcast.Staff[spell.element]})
 				else
@@ -333,29 +333,144 @@ function midcast(spell,arg)
 			equip(sets.midcast.Elemental)
 		else	
 			if Skill == 1 then
-				elemental_lock()
 				equip(sets.midcast.Elemental)
 			else
+				-- check Sorcerer's Ring
 				if player.hp <= 75 and player.TP <= 100 and player.inventory["Sorcerer's ring"] then
-					if not spell.english:wcmatch('*ja|* V') then
-						elemental_lock()	
-						-- Nuke Staff
-						equip(sets.midcast.Nuke,{lring="Sorcerer's Ring"})
+					-- day/weather/storm check
+					if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
+						-- Obi
+						if player.inventory[elemental.Obi[spell.element]] then
+							if not spell.english:wcmatch('*ja|* V') then
+								-- Nuke Staff
+								equip(sets.midcast.Nuke,{lring="Sorcerer's Ring"},{waist=elemental.Obi[spell.element]})
+							else
+								-- Magian Staves
+								equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],lring="Sorcerer's Ring"},{waist=elemental.Obi[spell.element]})
+							end
+						-- No Obi
+						else
+							if not spell.english:wcmatch('*ja|* V') then
+								-- Nuke Staff
+								equip(sets.midcast.Nuke,{lring="Sorcerer's Ring"})
+							else
+								-- Magian Staves
+								equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],lring="Sorcerer's Ring"})
+							end
+						end	
 					else
-						elemental_lock()
-						-- Magian Staves
-						equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],lring="Sorcerer's Ring"})
+						if not spell.english:wcmatch('*ja|* V') then
+							-- Nuke Staff
+							equip(sets.midcast.Nuke,{lring="Sorcerer's Ring"})
+						else
+							-- Magian Staves
+							equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],lring="Sorcerer's Ring"})
+						end
 					end
+				-- No Ring
 				else
-					if not spell.english:wcmatch('*ja|* V') then
-						-- Nuke 
-						elemental_lock()
-						equip(sets.midcast.Nuke)
+					-- day/weather/storm check
+					if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
+						-- Obi Check
+						if player.inventory[elemental.Obi[spell.element]] then
+							-- yes obi Yes Cape 
+							if player.inventory["Twilight Cape"] then
+								-- check Ring
+									if player.inventory["Zodiac Ring"] then
+									-- yes obi yes cape yes ring
+										if not spell.english:wcmatch('*ja|* V') then
+											-- Nuke Staff
+											equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+										else
+											-- Magian Staves
+											equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+										end
+									-- yes obi yes cape No Ring
+									else
+										if not spell.english:wcmatch('*ja|* V') then
+											-- Nuke Staff
+											equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape"})
+										else
+											-- Magian Staves
+											equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],back="Twilight Cape"})
+										end
+									end
+							-- No Cape
+							else
+								-- Check Ring yes obi no cape yes ring
+								if player.inventory["Zodiac Ring"] then
+									if not spell.english:wcmatch('*ja|* V') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],rring="Zodiac Ring"})
+									end
+								-- yes obi no cape no ring
+								else
+									if not spell.english:wcmatch('*ja|* V') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element]})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element]})
+									end
+								end
+							end
+						-- No Obi
+						else
+							-- no obi yes cape yes ring
+							if player.inventory["Twilight Cape"] then
+								--no obi yes cape yes ring
+								if player.inventory["Zodiac Ring"] then
+									if not spell.english:wcmatch('*ja|* V') then
+											-- Nuke Staff
+											equip(sets.midcast.Nuke,{back="Twilight Cape",rring="Zodiac Ring"})
+										else
+											-- Magian Staves
+											equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+										end
+								--no obi yes cape No Ring
+								else
+									if not spell.english:wcmatch('*ja|* V') then
+											-- Nuke Staff
+											equip(sets.midcast.Nuke,{back="Twilight Cape"})
+										else
+											-- Magian Staves
+											equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],back="Twilight Cape"})
+										end
+								end
+							-- No obi no Cape yes ring
+							else
+								if player.inventory["Zodiac Ring"] then
+									if not spell.english:wcmatch('*ja|* V') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],rring="Zodiac Ring"})
+									end
+								else
+									if not spell.english:wcmatch('*ja|* V') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke)
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+									end
+								end
+							end
+						end						
+					-- No Weather/Day/Storm
 					else
-						elemental_lock()
-						-- Magian Staves
-						equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
-					end						
+						if not spell.english:wcmatch('*ja|* V') then
+							-- Nuke 
+							equip(sets.midcast.Nuke)
+						else
+							-- Magian Staves
+							equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+						end	
+					end
 				end
 			end
 		end
@@ -433,6 +548,7 @@ function aftercast(spell,arg)
         ShadowType = 'Ichi'
 	end
 end
+
 function previous_set()
 	slot_lock()
 	if Mode == 0 then
@@ -454,27 +570,4 @@ function slot_lock()
     else
         enable('left_ear','right_ear')
     end
-end
-
-function elemental_lock()
--- Elemental Obi, Twilight Cape, Zodiac Ring
-	if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
-		if player.inventory[elemental.Obi[spell.element]] then
-			equip({waist=elemental.Obi[spell.element]})
-			disable("waist")
-		else
-			enable("waist")
-		end
-		if player.inventory["Twilight Cape"] then
-			equip({back="Twilight Cape"})
-			disable("back")
-		else
-			enable("back")
-		end
-		if player.inventory["Zodiac Ring"] then
-			equip({rring="Zodiac Ring"})
-		else
-			equip('rring')
-		end
-	end
 end
