@@ -336,9 +336,9 @@ function midcast(spell,arg)
 				equip(sets.midcast.Elemental)
 			else
 				-- check Sorcerer's Ring
-				if player.hp <= 75 and player.TP <= 100 and player.inventory["Sorcerer's ring"] then
+				if player.hp <= 75 and player.tp <= 100 and player.inventory["Sorcerer's Ring"] then
 					-- day/weather/storm check
-					if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
+					if spell.element == world.day_element or spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 						-- Obi
 						if player.inventory[elemental.Obi[spell.element]] then
 							if not spell.english:wcmatch('*ja|* V') then
@@ -370,7 +370,7 @@ function midcast(spell,arg)
 				-- No Ring
 				else
 					-- day/weather/storm check
-					if (spell.element == world.day_element) or (spell.element == world.weather_element) or (spell.element == buffactive[elements.storm_of[spell.element]]) then
+					if spell.element == world.day_element or spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 						-- Obi Check
 						if player.inventory[elemental.Obi[spell.element]] then
 							-- yes obi Yes Cape 
