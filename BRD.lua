@@ -1,12 +1,11 @@
 -- Feary's Brd LUA
---
---
---
---
+-- Created: 1/18/2014
+-- Updated: 4/17/2014
+-- To Do:
+-- update for mules instrument.
 --
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -23,6 +22,7 @@ function get_sets()
 	ShadowType = 'None'
 	Gjallarhorn = 1
 end 
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
@@ -154,7 +154,8 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-	statuses()
+	-- Global Status Values
+	include('include/status.lua')
 end
 
 function precast(spell,arg)
@@ -323,7 +324,7 @@ function midcast(spell,arg)
 		elseif spell.name == "Herb Pastoral" then
 			equip(sets.midcast.Recast, {range="Daurdabla"})
 		else
-			if Gjallarhorn == 1 or player.equipment.range == "Gjallarhorn" then
+			if player.inventory["Gjallarhorn"] then
 				-- BuffSongs
 				if spell.target.type == "SELF" then
 					if spell.name == "Sentinal's Scherzo" then

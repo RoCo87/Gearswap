@@ -5,7 +5,6 @@
 --
 --
 
-function statuses()
 -- gain buffs
 	if buff == 'Defense Down' and g_or_l == true then
 		windower.send_command('input /p Defense Down')
@@ -17,7 +16,7 @@ function statuses()
 		windower.send_command('input /p gradual petrification will need Stona in 15;wait 10;input /p Stona in 5;wait 5;input /p Petrified Stona Please')
 	end
 	if buff == 'bind' and g_or_l == true then
-		windower.send_command('input /p Bind')
+		windower.send_command('input /p Bound')
 	end
 	if buff == 'Doom' and g_or_l == true then
 		windower.send_command('input /p Doomed')
@@ -49,4 +48,3 @@ function statuses()
 	if buff == 'charm' and g_or_l == true then
 		windower.send_command('input /p Uncharmed')
 	end
-end

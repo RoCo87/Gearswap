@@ -82,11 +82,7 @@ if player.Name == 'Feary' then
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
-		sets.midcast.Nuke.Magian = { sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
-	
+		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
