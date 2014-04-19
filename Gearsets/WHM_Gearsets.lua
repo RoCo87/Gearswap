@@ -54,7 +54,7 @@ if player.name == 'Feary' then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",
-                back="", waist="", legs="Orsn. Pantaln +2", feet=""})
+                back="", waist="", legs="Orsn. Pantaln. +2", feet=""})
 		-- JA
 		sets.precast.JA = {}
 		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
@@ -98,7 +98,7 @@ if player.name == 'Feary' then
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				head="", neck="Debilis Medallion", lear="Loquac. Earring", rear="",
                 body="Orison Bliaud +2", hands="", lring="Prolix Ring", rring="Haoma's Ring",
-                back="Mending Cape", waist="Witful Belt", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
+                back="Mending Cape", waist="Witful Belt", legs="Orsn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
@@ -213,7 +213,7 @@ if player.name == 'Feary' then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln. +2", feet="Cure Clogs"})
 		-- JA
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
 		sets.precast.JA['Asylum'] = {}
@@ -254,7 +254,7 @@ if player.name == 'Feary' then
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				neck="Debilis Medallion",
                 body="Orison Bliaud +2", lring="Haoma's Ring",
-                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
+                back="Mending Cape", legs="Orsn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)

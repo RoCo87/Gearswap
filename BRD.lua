@@ -190,6 +190,7 @@ function precast(spell,arg)
 	elseif spell.type:endswith('Magic') then
 		-- Cure casting time
 		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
+			windower.add_to_chat(121, "Cure")
 			equip(sets.precast.Cure)
 		else
 			equip(sets.precast.Fastcast)

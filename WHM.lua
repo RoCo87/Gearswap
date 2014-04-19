@@ -150,7 +150,7 @@ function precast(spell,arg)
 		end
 -- Weaponskills
 	elseif spell.type == "WeaponSkill" then
-		if  player.status == 'Engaged' then
+		if player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
@@ -186,11 +186,13 @@ function precast(spell,arg)
 				cast_delay(0.3)
 			-- Auspice 
 			elseif spell.name == 'Auspice' then
-				equip({feet="Orsn. Duckbills +2"})
+				equip(sets.precast.Fastcast,{feet="Orsn. Duckbills +2"})
 			elseif spell.english:wcmatch('Protectra*') then
-				equip({feet="Clr. Duckbills +2"})
+				equip(sets.precast.Fastcast,{feet="Clr. Duckbills +2"})
 			elseif spell.english:wcmatch('Shellra*') then
-				equip({legs="Clr. Pantaln +2"})
+				equip(sets.precast.Fastcast,{legs="Clr. Pantaln +2"})
+			else
+				equip(sets.precast.Fastcast)
 			end		
 		end
 -- Ninjutsu
