@@ -6,9 +6,7 @@
 --
 
 --includes
-	include('include/functions.lua')
-	include('include/status.lua')
-	
+	include('include/functions.lua')	
 -- Gear Sets 
 function get_sets()
 --includes
@@ -102,6 +100,13 @@ function self_command(command)
 	end
 end
 	
+-- Gain or lose buffs 
+function buff_change(buff,g_or_l)
+	include('include/status.lua')
+	-- gain = true losebuff = false
+
+end
+
 function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then

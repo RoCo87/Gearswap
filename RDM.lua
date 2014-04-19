@@ -172,7 +172,7 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 -- Weaponskills
-	 elseif spell.type == 'WeaponSkill' then
+	elseif spell.type == 'WeaponSkill' then
 		if player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
@@ -527,33 +527,38 @@ function midcast(spell,arg)
 end 
 
 function aftercast(spell,arg)
-	if player.status == 'Engaged' then
-		if PDT == 1 or MDT == 1 then
-			if PDT == 1 and MDT == 0 then
-				windower.add_to_chat(121,'PDT Locked')
-				equip(sets.idle.PDT)
-			elseif MDT == 1 and PDT == 0 then
-				windower.add_to_chat(121,'MDT Locked')
-				equip(sets.idle.MDT)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
+	else
+		if player.status == 'Engaged' then
+			if PDT == 1 or MDT == 1 then
+				if PDT == 1 and MDT == 0 then
+					windower.add_to_chat(121,'PDT Locked')
+					equip(sets.idle.PDT)
+				elseif MDT == 1 and PDT == 0 then
+					windower.add_to_chat(121,'MDT Locked')
+					equip(sets.idle.MDT)
+				else
+					MDT = 0
+					PDT = 0
+				end
 			else
-				MDT = 0
-				PDT = 0
+				-- Equip previous TP set 
+					previous_set()
 			end
 		else
-			-- Equip previous TP set 
-				previous_set()
-		end
-	else
-		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			equip(sets.idle.Standard)
+			slot_lock()
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
--- Lullaby
+-- Sleep Timers
 	if spell.name == "Sleep II" or spell.name == "Repose" then
 		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')

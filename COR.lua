@@ -2,12 +2,14 @@
 -- Date: 3/10/2014
 --
 --
-
+--includes
+	include('include/functions.lua')
+	
 -- Gear Sets 
 function get_sets()
 --includes
+	--include('include/autoexec.lua')
 	include('include/binds.lua')
-	include('include/status.lua')
 -- Get COR Gearsets
 	include('Gearsets/COR_Gearsets.lua')   
 	
@@ -73,6 +75,13 @@ function self_command(command)
 			windower.add_to_chat(121,'Mode Melee')
 		end
 	end
+end
+
+-- Gain or lose buffs 
+function buff_change(buff,g_or_l)
+	include('include/status.lua')
+	-- gain = true losebuff = false
+
 end
 
 function status_change(new,old)

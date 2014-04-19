@@ -102,7 +102,7 @@ if player.Name == 'Feary' then
 		sets.midcast.ConserveMP = {
 				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
                 body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
-                back="Balladeer's Cape", waist="Austerity Belt", legs="Nares Trews", feet="Serpentes Sabots"}
+                back="Balladeer's Cape", waist="Austerity Belt", legs="", feet="Serpentes Sabots"}
 		-- Bard songs
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
@@ -132,7 +132,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Curaga = {main="Arka IV",
 				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="",
                 body="Gendewitha Bliaut", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Refraction Cape", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
+                back="Pahtli Cape", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
 	
 		-- Enhancing
 		sets.midcast.Phalanx = {}
@@ -146,8 +146,8 @@ if player.Name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul ring", rring="Aquasoul ring",
+				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
@@ -161,6 +161,10 @@ if player.Name == 'Feary' then
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gendewitha Spats", feet="Bihu Slippers"})
+		sets.TP = set_combine(sets.TP, {main="Mandau",
+				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gendewitha Spats", feet="Bihu Slippers"})	
 		sets.precast.WS = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
@@ -179,6 +183,6 @@ if player.Name == 'Feary' then
                 back="Vespid Mantle", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
 		
 		sets.misc.Waltz = {}
-		sets.misc.Steps = {}
-		sets.misc.flourish = {}
+		sets.misc.Steps = set_combine(sets.TP.Acc,{})
+		sets.misc.flourish = set_combine(sets.TP.Macc,{})
 end

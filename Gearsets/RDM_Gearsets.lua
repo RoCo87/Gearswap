@@ -131,6 +131,10 @@ if player.Name == 'Feary' then
 				head="", neck="", lear="", rear="",
                 body="", hands="", lring="", rring="",
                 back="", waist="", legs="", feet=""})
+		sets.TP.Acc = set_combine(sets.TP, {
+				head="", neck="", lear="", rear="",
+                body="", hands="", lring="", rring="",
+                back="", waist="", legs="", feet=""})
 		sets.precast.WS = set_combine(sets.TP, {
 				head="", neck="", lear="", rear="",
                 body="", hands="", lring="", rring="",
@@ -141,6 +145,6 @@ if player.Name == 'Feary' then
 		
 		-- Misc
 		sets.misc.Waltz = {}
-		sets.misc.Steps = {}
-		sets.misc.flourish = {}
+		sets.misc.Steps = set_combine(sets.TP.Acc, {})
+		sets.misc.flourish = set_combine(sets.midcast.Macc, {})
 end

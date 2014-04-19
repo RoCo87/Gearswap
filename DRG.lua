@@ -117,7 +117,7 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-	statuses()
+	include('include/status.lua')
 	-- gain = true losebuff = false
 
 end
@@ -398,6 +398,7 @@ function slot_lock()
         enable('left_ear','right_ear')
     end
 end
+
 function slot_lock()
     -- Twilight Helm/Mail logic
     if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail'then

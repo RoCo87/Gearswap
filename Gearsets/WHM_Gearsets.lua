@@ -185,112 +185,96 @@ if player.name == 'Feary' then
 		else
 			set_macro_page(1,1)
 		end
-		
-		-- Augmented Gear
-		Aug = {}
-		Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-		--Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
-		
+	
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle = {}
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		
 		sets.idle.PDT = { main="Earth Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-				
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
-
-		sets.misc = {}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
+		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Magnetic Earring",
+                body="Orison Bliaud +2", hands="Serpentes Cuffs", lring="", rring="",
+                back="Felicitas Cape", waist="Austerity Belt", legs="", feet="Chelona Boots"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{hands="Serpentes Cuffs"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		
 		-- Precast
 		-- Magic
-		sets.precast = {}
-		sets.precast.Fastcast = { ammo="Impatiens",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.precast.Fastcast = { ammo="Incantor stone",
+				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
+                body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="Clr Cap +2", neck="", lear="", rear="",
+                body="Heka's Kalasiris", hands="", lring="", rring="",
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
 		-- JA
-		sets.precast.JA = {}
-		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
+		sets.precast.JA['Asylum'] = {}
+		
+		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
+		sets.precast.JA['Divine Seal'] = {}
 		
 		-- Midcast
-		sets.midcast = {}
-		sets.midcast.Recast = { main="Plenitas Virga",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.midcast.Recast = set_combine(sets.idle.PDT,{main="Plenitas Virga",waist="witful belt"})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="", lear="", rear="Gifted Earring",
+                body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="Magnetic Earring",
+                back="", waist="Austerity Belt", legs="", feet="Umbani Boots"}
 
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		sets.midcast.Cure = {main="Arka IV", sub="Pax Grip",
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", sub="Pax Grip",})
 
 		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
-		sets.midcast.Cura = {}
+		sets.midcast.Cura = set_combine(sets.midcast.Recast,{})
 
 		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {ammo="Incantor Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="orison cap +2", neck="Orison Locket",
+                body="Orison Bliaud +2", lring="", rring="Sirona's Ring",
+                back="Altruistic Cape",legs="Orsn. pantaln. +2"})
 		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
 
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				neck="Debilis Medallion",
+                body="Orison Bliaud +2", lring="Haoma's Ring",
+                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
 
 		-- Enhancing
 		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				body="Cleric's Briault", hands="Orison Mitts +2",
+                })
 		sets.midcast.BarElement = {main="Beneficus",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="", rear="",
-                body="Orison Bliaut +2", hands="Orison Mitts +2", lring="", rring="",
+				head="Orison Cap +2", neck="Colossus's Torque",
+                body="Orison Bliaut +2", hands="Orison Mitts +2",
                 back="Merciful Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.Boost = {main="Beneficus", sub="Fulcio Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				neck="Colossus's Torque",
+                body="Anhur Robe",
+                legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
+		sets.midcast.Boost = {main="Kirin's Pole", sub="Fulcio Grip",
+				neck="Colossus's Torque",
+                body="Anhur Robe", hands="Augur's Gloves", lring="", rring="",
+                back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.Phalanx = set_combine(sets.Boost)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Ring"}
 		sets.midcast.Stoneskin = {waist="Siegal Sash"}
@@ -302,34 +286,36 @@ if player.name == 'Feary' then
 		sets.midcast.Repose = set_combine(sets.midcast.Recast)
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Soothsayer Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Hecate's Earring", rear="Novio Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                back="Searing Cape", waist="", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
 		-- Dark Magic
 		sets.midcast.DarkMagic = set_combine(sets.midcast.Macc, {})
 		sets.midcast.Drain = set_combine(sets.midcast.Macc, {})
-		sets.midcast.Aspir = set_combine(sets.midtcast.Macc, {})
+		sets.midcast.Aspir = set_combine(sets.midcast.Macc, {})
 		
 		-- Elemental Magic
 		sets.midcast.Nuke = set_combine(sets.midcast.Banish)
-		sets.midcast.Dot = {}
+		sets.midcast.Dot = set_combine(sets.midcast.Macc)
 
 		-- Melee Sets
-		sets.TP = {}
+		sets.TP = set_combine(sets.idle.PDT,{})
+		sets.TP.Acc = set_combine(sets.TP,{})
+		
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
@@ -355,111 +341,96 @@ if player.name == 'Feary' then
 		else
 			set_macro_page(1,1)
 		end
-		-- Augmented Gear
-		Aug = {}
-		Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-		--Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
-		
+	
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle = {}
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		
 		sets.idle.PDT = { main="Earth Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-				
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
-
-		sets.misc = {}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
+		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Magnetic Earring",
+                body="Orison Bliaud +2", hands="Serpentes Cuffs", lring="", rring="",
+                back="Felicitas Cape", waist="Austerity Belt", legs="", feet="Chelona Boots"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{hands="Serpentes Cuffs"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		
 		-- Precast
 		-- Magic
-		sets.precast = {}
-		sets.precast.Fastcast = { ammo="Impatiens",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.precast.Fastcast = { ammo="Incantor stone",
+				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
+                body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="Clr Cap +2", neck="", lear="", rear="",
+                body="Heka's Kalasiris", hands="", lring="", rring="",
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
 		-- JA
-		sets.precast.JA = {}
-		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
+		sets.precast.JA['Asylum'] = {}
+		
+		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
+		sets.precast.JA['Divine Seal'] = {}
 		
 		-- Midcast
-		sets.midcast = {}
-		sets.midcast.Recast = { main="Plenitas Virga",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.midcast.Recast = set_combine(sets.idle.PDT,{main="Plenitas Virga",waist="witful belt"})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="", lear="", rear="Gifted Earring",
+                body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="Magnetic Earring",
+                back="", waist="Austerity Belt", legs="", feet="Umbani Boots"}
 
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		sets.midcast.Cure = {main="Arka IV", sub="Pax Grip",
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", sub="Pax Grip",})
 
 		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
-		sets.midcast.Cura = {}
+		sets.midcast.Cura = set_combine(sets.midcast.Recast,{})
 
 		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {ammo="Incantor Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="orison cap +2", neck="Orison Locket",
+                body="Orison Bliaud +2", lring="", rring="Sirona's Ring",
+                back="Altruistic Cape",legs="Orsn. pantaln. +2"})
 		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
 
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				neck="Debilis Medallion",
+                body="Orison Bliaud +2", lring="Haoma's Ring",
+                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
 
 		-- Enhancing
 		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				body="Cleric's Briault", hands="Orison Mitts +2",
+                })
 		sets.midcast.BarElement = {main="Beneficus",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="", rear="",
-                body="Orison Bliaut +2", hands="Orison Mitts +2", lring="", rring="",
+				head="Orison Cap +2", neck="Colossus's Torque",
+                body="Orison Bliaut +2", hands="Orison Mitts +2",
                 back="Merciful Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.Boost = {main="Beneficus", sub="Fulcio Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				neck="Colossus's Torque",
+                body="Anhur Robe",
+                legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
+		sets.midcast.Boost = {main="Kirin's Pole", sub="Fulcio Grip",
+				neck="Colossus's Torque",
+                body="Anhur Robe", hands="Augur's Gloves", lring="", rring="",
+                back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.Phalanx = set_combine(sets.Boost)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Ring"}
 		sets.midcast.Stoneskin = {waist="Siegal Sash"}
@@ -471,34 +442,36 @@ if player.name == 'Feary' then
 		sets.midcast.Repose = set_combine(sets.midcast.Recast)
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Soothsayer Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Hecate's Earring", rear="Novio Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                back="Searing Cape", waist="", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
 		-- Dark Magic
 		sets.midcast.DarkMagic = set_combine(sets.midcast.Macc, {})
 		sets.midcast.Drain = set_combine(sets.midcast.Macc, {})
-		sets.midcast.Aspir = set_combine(sets.midtcast.Macc, {})
+		sets.midcast.Aspir = set_combine(sets.midcast.Macc, {})
 		
 		-- Elemental Magic
 		sets.midcast.Nuke = set_combine(sets.midcast.Banish)
-		sets.midcast.Dot = {}
+		sets.midcast.Dot = set_combine(sets.midcast.Macc)
 
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT,{})
+		sets.TP.Acc = set_combine(sets.TP,{})
+		
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
@@ -524,112 +497,96 @@ if player.name == 'Feary' then
 		else
 			set_macro_page(1,1)
 		end
-		
-		-- Augmented Gear
-		Aug = {}
-		Aug.Darkring1 = {name="Dark Ring",augments={"Physical Damage Taken -5%, Magical Damage Taken -3%"}}
-		--Aug.Darkring2 = {name="Dark Ring",augments={"Physical Damage Taken -4%, Magical Damage Taken -4%"}}
-		
+	
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle = {}
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		
 		sets.idle.PDT = { main="Earth Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-				
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
-
-		sets.misc = {}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
+		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Magnetic Earring",
+                body="Orison Bliaud +2", hands="Serpentes Cuffs", lring="", rring="",
+                back="Felicitas Cape", waist="Austerity Belt", legs="", feet="Chelona Boots"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{hands="Serpentes Cuffs"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		
 		-- Precast
 		-- Magic
-		sets.precast = {}
-		sets.precast.Fastcast = { ammo="Impatiens",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.precast.Fastcast = { ammo="Incantor stone",
+				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
+                body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="Clr Cap +2", neck="", lear="", rear="",
+                body="Heka's Kalasiris", hands="", lring="", rring="",
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
 		-- JA
-		sets.precast.JA = {}
-		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
+		sets.precast.JA['Asylum'] = {}
+		
+		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
+		sets.precast.JA['Divine Seal'] = {}
 		
 		-- Midcast
-		sets.midcast = {}
-		sets.midcast.Recast = { main="Plenitas Virga",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+		sets.midcast.Recast = set_combine(sets.idle.PDT,{main="Plenitas Virga",waist="witful belt"})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="", neck="", lear="", rear="Gifted Earring",
+                body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="Magnetic Earring",
+                back="", waist="Austerity Belt", legs="", feet="Umbani Boots"}
 
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", 
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		sets.midcast.Cure = {main="Arka IV", sub="Pax Grip",
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", sub="Pax Grip",})
 
 		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Orison cap +2", neck="Colossus's Torque", lear="Loquac. Earring", rear="Orison Earring<",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Solemn ring", rring="Sirona's ring",
+                back="Oretania's Cape", waist="Cleric's Belt", legs="Orsn. pantaln. +2", feet="Rubeus Boots"}
+				
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
-		sets.midcast.Cura = {}
+		sets.midcast.Cura = set_combine(sets.midcast.Recast,{})
 
 		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {ammo="Incantor Stone",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="orison cap +2", neck="Orison Locket",
+                body="Orison Bliaud +2", lring="", rring="Sirona's Ring",
+                back="Altruistic Cape",legs="Orsn. pantaln. +2"})
 		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
 
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				neck="Debilis Medallion",
+                body="Orison Bliaud +2", lring="Haoma's Ring",
+                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
 
 		-- Enhancing
 		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				body="Cleric's Briault", hands="Orison Mitts +2",
+                })
 		sets.midcast.BarElement = {main="Beneficus",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="", rear="",
-                body="Orison Bliaut +2", hands="Orison Mitts +2", lring="", rring="",
+				head="Orison Cap +2", neck="Colossus's Torque",
+                body="Orison Bliaut +2", hands="Orison Mitts +2",
                 back="Merciful Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
-		sets.midcast.Boost = {main="Beneficus", sub="Fulcio Grip",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				neck="Colossus's Torque",
+                body="Anhur Robe",
+                legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
+		sets.midcast.Boost = {main="Kirin's Pole", sub="Fulcio Grip",
+				neck="Colossus's Torque",
+                body="Anhur Robe", hands="Augur's Gloves", lring="", rring="",
+                back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
 		sets.midcast.Phalanx = set_combine(sets.Boost)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Ring"}
 		sets.midcast.Stoneskin = {waist="Siegal Sash"}
@@ -641,34 +598,37 @@ if player.name == 'Feary' then
 		sets.midcast.Repose = set_combine(sets.midcast.Recast)
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Soothsayer Staff",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Hecate's Earring", rear="Novio Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                back="Searing Cape", waist="", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""}
+				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
 		-- Dark Magic
 		sets.midcast.DarkMagic = set_combine(sets.midcast.Macc, {})
 		sets.midcast.Drain = set_combine(sets.midcast.Macc, {})
-		sets.midcast.Aspir = set_combine(sets.midtcast.Macc, {})
+		sets.midcast.Aspir = set_combine(sets.midcast.Macc, {})
 		
 		-- Elemental Magic
 		sets.midcast.Nuke = set_combine(sets.midcast.Banish)
-		sets.midcast.Dot = {}
+		sets.midcast.Dot = set_combine(sets.midcast.Macc)
 
 		-- Melee Sets
-		sets.TP = {}
+		sets.TP = set_combine(sets.idle.PDT,{})
+		sets.TP.Acc = set_combine(sets.TP,{})
+		
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
+
 	end

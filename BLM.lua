@@ -7,7 +7,7 @@
 --
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
+	
 	
 -- Gear Sets 
 function get_sets(spell)
@@ -165,7 +165,8 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-
+	-- Global Status
+	include('include/status.lua')
 end
 
 function pretarget(spell)
