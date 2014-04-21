@@ -30,6 +30,7 @@ end
 function file_unload()
 	clear_binds()
 end
+
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then

@@ -354,8 +354,8 @@ if player.name == 'Feary' then
                 body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
-				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Magnetic Earring",
-                body="Orison Bliaud +2", hands="Serpentes Cuffs", lring="", rring="",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
+                body="Gendewitha bliaut", hands="Serpentes Cuffs", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{hands="Serpentes Cuffs"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
@@ -369,7 +369,7 @@ if player.name == 'Feary' then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln. +2", feet="Cure Clogs"})
 		-- JA
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
 		sets.precast.JA['Asylum'] = {}
@@ -410,7 +410,7 @@ if player.name == 'Feary' then
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				neck="Debilis Medallion",
                 body="Orison Bliaud +2", lring="Haoma's Ring",
-                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
+                back="Mending Cape", legs="Orsn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
@@ -525,7 +525,7 @@ if player.name == 'Feary' then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="Orsn. Pantaln +2", feet="Cure Clogs"})
+                back="Pahtli Cape", waist="", legs="Orsn. Pantaln. +2", feet="Cure Clogs"})
 		-- JA
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
 		sets.precast.JA['Asylum'] = {}
@@ -566,7 +566,7 @@ if player.name == 'Feary' then
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				neck="Debilis Medallion",
                 body="Orison Bliaud +2", lring="Haoma's Ring",
-                back="Mending Cape", legs="Orn. Pantaln. +2", feet="Gende. Galoshes"})
+                back="Mending Cape", legs="Orsn. Pantaln. +2", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)

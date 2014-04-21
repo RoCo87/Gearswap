@@ -5,7 +5,7 @@
 
 
 -- Basic Tables
-
+	
 	sets.idle = {}
 	sets.idle.Avatar = {}
 	sets.misc = {}

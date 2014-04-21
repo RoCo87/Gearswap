@@ -273,7 +273,7 @@ function precast(spell,arg)
 end
 
 function pet_midcast(spell)
-	if pet.name:contains('Spirit') then
+	if string.find(pet.name,'Spirit') then
 		equip(sets.midcast.Pet.Spirit)
 	else
 	-- Perfect Defense
@@ -507,17 +507,17 @@ function pet_sets()
 					if pet.name == "Alexander" then
 						windower.add_to_chat(121, 'Alexander')
 						equip(sets.idle.Avatar[pet.name])
-					elseif pet.element:contains(world.day_element) then
+					elseif pet.element == world.day_element then
 						equip(sets.idle.Avatar[pet.name],sets.perp.Day)
-					elseif pet.element:contains(world.weather_element) then
+					elseif pet.element == world.weather_element then
 						equip(sets.idle.Avatar[pet.name],sets.perp.Weather)
 					else
 						equip(sets.idle.Avatar[pet.name])
 					end
 				else
-					if pet.element:contains(world.day_element) then
+					if pet.element == world.day_element then
 						equip(sets.idle.Avatar,sets.perp.Day)
-					elseif world.weather_element == pet.element then
+					elseif pet.element == world.weather_element then
 						equip(sets.idle.Avatar,sets.perp.Weather)
 					else					
 						equip(sets.idle.Avatar)
