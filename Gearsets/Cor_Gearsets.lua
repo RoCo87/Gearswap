@@ -43,7 +43,7 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {
+sets.misc.Town = set_combine(sets.idle.PDT, {head="Lanun Tricorne",body="Lanun Frac",hands="Lanun Gauntlets",legs="Lanun Gauntlets",
 				feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
@@ -61,27 +61,27 @@ sets.TP.Acc = {
                 back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- RA Sets
-sets.precast.Snapshot = {
+sets.precast.Snapshot = {ammo="TPBullet",
 				head="Nvrch. Tricorne +2", hands="Lanun Gants",
                 back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers"}
 -- Eminent Gun
-sets.RA = { 
+sets.RA = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 				
-sets.RA.Acc = {
+sets.RA.Acc = { ammo="TPBullet",
 			head="Nvrch. Tricorne +2", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Thur. tights +1", feet="Iuitl Gaiters"}
 
 -- Armageddon 
-sets.RA.Armageddon = {  
+sets.RA.Armageddon = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.RA.Armageddon.Acc = {
+sets.RA.Armageddon.Acc = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
@@ -161,7 +161,7 @@ sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="L
 
 sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 
-sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
+sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
 

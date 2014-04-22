@@ -218,42 +218,44 @@ end
 
 function precast(spell,arg)
  -- Generic equip command for all Job Abilities and Weaponskills
-    if sets.precast.JA[spell.name] then
-		if S{'Sneak Attack', 'Trick Attack'}:contains(spell.english) then
-			if spell.english == "Sneak Attack" then
-				if TH == 1 then
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Sneak Attack"],sets.TH,{legs="Plunderer's Culottes"})
+	if spell.type == 'JobAbility' then
+		if sets.precast.JA[spell.name] then
+			if S{'Sneak Attack', 'Trick Attack'}:contains(spell.english) then
+				if spell.english == "Sneak Attack" then
+					if TH == 1 then
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Sneak Attack"],sets.TH,{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Sneak Attack"],sets.TH)
+						end
 					else
-						equip(sets.precast.JA["Sneak Attack"],sets.TH)
-					end
-				else
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Sneak Attack"],{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Sneak Attack"])
-					end
-				end
-			end
-			if spell.english == "Trick Attack" then
-				if TH == 1 then
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Trick Attack"],sets.TH,{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Trick Attack"],sets.TH)
-					end
-				else
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Trick Attack"],{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Trick Attack"])
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Sneak Attack"],{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Sneak Attack"])
+						end
 					end
 				end
+				if spell.english == "Trick Attack" then
+					if TH == 1 then
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Trick Attack"],sets.TH,{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Trick Attack"],sets.TH)
+						end
+					else
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Trick Attack"],{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Trick Attack"])
+						end
+					end
+				end
+			else
+				equip(sets.precast.JA[spell.name])
 			end
-		else
-			equip(sets.precast.JA[spell.name])
 		end
-   elseif sets.precast.WS[spell.name] then
+   elseif spell.type == 'Weaponskill' then
 		if  player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
@@ -293,26 +295,23 @@ function precast(spell,arg)
 			cancel_spell()
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
-    end
-
  -- Ninjutsu spell gear handling(Precast)
-    if spell.skill == 'Ninjutsu' then
+    elseif spell.skill == 'Ninjutsu' then
         equip(sets.misc.FastCast)
         if windower.wc_match(spell.name,'Utsusemi*') then
             equip(sets.misc.Utsusemi)
         end
-    end
-
-
- -- Special handling to remove Dancer sub job Sneak effect
-    if spell.name == 'Spectral Jig' and buffactive.Sneak then
-        windower.ffxi.cancel_buff(71)
-        cast_delay(0.3)
-    elseif windower.wc_match(spell.name,'Curing*') then
-        equip(sets.misc.Waltz)
-    elseif windower.wc_match(spell.name,'*Step') then
-        equip(sets.TP.Acc)
-    end
+	else
+	 -- Special handling to remove Dancer sub job Sneak effect
+		if spell.name == 'Spectral Jig' and buffactive.Sneak then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		elseif windower.wc_match(spell.name,'Curing*') then
+			equip(sets.misc.Waltz)
+		elseif windower.wc_match(spell.name,'*Step') then
+			equip(sets.TP.Acc)
+		end
+	end
 end
 
 function midcast(spell,arg)
