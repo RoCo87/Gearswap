@@ -16,9 +16,9 @@ function get_sets()
 	include('Gearsets/BRD_Gearsets.lua')
 	
 -- Define Default Values for Variables
+	Mode = 0
 	PDT = 0
 	MDT = 0
-	ACC = 0
 	ShadowType = 'None'
 	Gjallarhorn = 1
 end 
@@ -190,7 +190,7 @@ function precast(spell,arg)
 	elseif spell.type:endswith('Magic') then
 		-- Cure casting time
 		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
-			windower.add_to_chat(121, "Cure")
+			--windower.add_to_chat(121, "Cure")
 			equip(sets.precast.Cure)
 		else
 			equip(sets.precast.Fastcast)

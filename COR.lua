@@ -199,7 +199,7 @@ function precast(spell,arg)
 		if sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
-	elseif spell.type == "Weaponskill" then
+	elseif spell.type == "WeaponSkill" then
 		-- Ranged Weaponskills
 		if ranged_weaponskills:contains(spell.name) then
 			if player.status == 'Engaged' then
