@@ -7,7 +7,6 @@
 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -104,6 +103,11 @@ function self_command(command)
 	end
 end
 
+function buff_change(buff,g_or_l)
+	include('include/status.lua')
+	-- gain = true losebuff = false
+end
+
 function pet_change(pet,gain)
 -- Gain a Pet 
 	if gain then
@@ -192,7 +196,7 @@ function precast(spell,arg)
 				end
 			else
 				equip(sets.precast.JA[spell.name])
-			else
+			end
 		end
 	elseif spell.type == 'PetCommand' then
 		if pet.isvalid then

@@ -1,8 +1,10 @@
 -- Feary's MNK LUA
--- Date: 1/18/2014
+-- Created: 1/18/2014
+-- Last Updated: 4/20/2014
+-- To Do List 
 --
 --
---
+-- 
 --includes
 	include('include/functions.lua')
 	include('include/status.lua')

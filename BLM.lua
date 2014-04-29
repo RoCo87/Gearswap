@@ -1,20 +1,19 @@
 -- Feary's BLM LUA
 -- Created - 4/11/2014
--- To do list
+-- To Do List
 -- 
--- sorceror's ring
+-- 
 -- 
 --
 --includes
 	include('include/functions.lua')
-	
 	
 -- Gear Sets 
 function get_sets(spell)
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
--- Get RDM gearsets
+-- Get BLM gearsets
 	include('Gearsets/BLM_Gearsets.lua')
 	
 -- Define Default Values for Variables
@@ -52,7 +51,7 @@ function self_command(command)
 			equip(sets.idle.PDT)
 			windower.add_to_chat(121,'PDT Set Locked')
 		end
---  Lock MDT
+-- Lock MDT
 	elseif command == 'MDT' then
 		if MDT == 1 then
 		-- make sure other values are set to default
@@ -307,7 +306,6 @@ function midcast(spell,arg)
 		end
 -- Enfeebling Magic
 	elseif spell.skill == 'EnfeeblingMagic' then
-		-- Maybe account for saboteur
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -717,38 +715,43 @@ function midcast(spell,arg)
 end -- end midcast
 
 function aftercast(spell,arg)
-	if player.status == 'Engaged' then
-		if PDT == 1 or MDT == 1 then
-			if PDT == 1 and MDT == 0 then
-				windower.add_to_chat(121,'PDT Locked')
-				equip(sets.idle.PDT)
-			elseif MDT == 1 and PDT == 0 then
-				windower.add_to_chat(121,'MDT Locked')
-				equip(sets.idle.MDT)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
+	else	
+		if player.status == 'Engaged' then
+			if PDT == 1 or MDT == 1 then
+				if PDT == 1 and MDT == 0 then
+					windower.add_to_chat(121,'PDT Locked')
+					equip(sets.idle.PDT)
+				elseif MDT == 1 and PDT == 0 then
+					windower.add_to_chat(121,'MDT Locked')
+					equip(sets.idle.MDT)
+				else
+					MDT = 0
+					PDT = 0
+				end
 			else
-				MDT = 0
-				PDT = 0
+				-- Equip previous TP set 
+					previous_set()
 			end
 		else
-			-- Equip previous TP set 
-				previous_set()
-		end
-	else
-		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			if buffactive['Mana Wall'] then
-				equip(sets.idle.Standard,{feet="Goetia Sabots"})
+			slot_lock()
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
 			else
-				equip(sets.idle.Standard)
+				if buffactive['Mana Wall'] then
+					equip(sets.idle.Standard,{feet="Goetia Sabots"})
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	end
--- Lullaby
-	if spell.name == "Sleep II" or spell.name == "Sleepga II" or spell.name == "Repose" then
+-- Sleep Timers
+	if spell.name == "Sleep II" or spell.name == "Sleepga II" or spell.name == "Repose" or spell.name == "Dream Flower" then
 		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
         windower.send_command('wait 85;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')

@@ -1,4 +1,4 @@
--- Feary's WHM LUA
+-- Feary's SMN LUA
 -- Date Created : 1/29/2014
 -- Alex?
 --
