@@ -1,4 +1,7 @@
 -- SAM Gearsets
+-- Created 4/16/2014
+-- last Update: 4/30/2014
+-- To Do:
 --
 --
 --
@@ -65,15 +68,15 @@ sets.TP.Buffed = { ammo="Hagneia Stone",
                 back="Takaha Mantle", waist="Cetl Belt", legs="Unkai Haidate +2", feet="Otronif Boots"}
 
 -- Bow TP
-sets.TP.Bow = { range="Speleogen Bow", ammo="Tulfaire Arrow",
+sets.TP.Bow = { range="Yoichinoyumi", ammo="Tulfaire Arrow",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
                 back="Takaha Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
-sets.TP.Bow.Acc = { range="Speleogen Bow", ammo="Tulfaire Arrow",
+sets.TP.Bow.Acc = { range="Yoichinoyumi", ammo="Tulfaire Arrow",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
                 back="Takaha Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
-sets.TP.Bow.Buffed = { range="Speleogen Bow", ammo="Tulfaire Arrow",
+sets.TP.Bow.Buffed = { range="Yoichinoyumi", ammo="Tulfaire Arrow",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
                 back="Takaha Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
@@ -124,11 +127,16 @@ sets.precast.WS['Requiescat'] = {
 				head="Otomi Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Buquwik Cape", waist="Shadow Belt", legs="Mikinaak Cuisses", feet="Sakonji Sune-Ate"}
-sets.precast.WS['Apex Arrow'] = {
+-- Ranged Weaponskill
+sets.precast.RAWS = {
 				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
-sets.precast.WS['Namas Arrow'] = {
+sets.precast.RAWS['Apex Arrow'] = {
+				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
+sets.precast.RAWS['Namas Arrow'] = {
 				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}

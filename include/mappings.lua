@@ -29,7 +29,7 @@
 						"Hot Shot", "Split Shot", "Sniper Shot", "Slug Shot", "Blast Shot", "Heavy Shot", "Detonator", "Numbing Shot", "Last Stand",
 						"Coronach", "Trueflight", "Leaden Salute", "Wildfire",
 						"Myrkr"}
-		ranged_weaponskills.Distance = S{["Sidewinder"]=16, ["Refulgent Arrow"] = 16, ["Apex Arrow"] = 16, ["Namas Arrow"] = 16, ["Jishnu's Radiance"] = 16,
+		ranged_weaponskills_Distance = T{["Sidewinder"] = 16, ["Refulgent Arrow"] = 16, ["Apex Arrow"] = 16, ["Namas Arrow"] = 16, ["Jishnu's Radiance"] = 16,
 						["Heavy Shot"] = 16, ["Last Stand"] = 16,
 						["Coronach"] = 16, ["Trueflight"] = 16, ["Leaden Salute"] = 16, ["Wildfire"] = 16}
 

@@ -240,18 +240,16 @@ function precast(spell,arg)
 	end
 end
 
-function midcast(spell,act)
+function midcast(spell,arg)
 -- BlueMagic
-	if spell.skill == 'BlueMagic' then
-		print('midcast')
-		print(sets.midcast.BlueMagic[bluSpellStats[spell.english]])
-		  if bluSpellStats[spell.english] then
+	if spell.skill == 'Blue Magic' then
+		if bluSpellStats[spell.english] then
             equip(sets.midcast.BlueMagic[bluSpellStats[spell.english]])
             if buffactive['Chain Affinity'] then
-                equip(sets.misc['Chain Affinity'])
+                equip(sets.precast.JA['Chain Affinity'])
             end
             if buffactive.Efflux then
-                equip(sets.misc.Efflux)
+                equip(sets.precast.JA['Effux'])
             end
 		elseif bluSpells[spell.english] then
             equip(sets.midcast.BlueMagic[bluSpells[spell.english]])
@@ -259,7 +257,7 @@ function midcast(spell,act)
             equip(sets.midcast.BlueMagic)
         end
 -- Healing Magic
-	elseif spell.skill == 'HealingMagic' then
+	elseif spell.skill == 'Healing Magic' then
 		-- Add Light Obi Twilight Cape and Chatoyant Staff
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
@@ -272,11 +270,11 @@ function midcast(spell,act)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		print(test)
 		equip(sets.midcast.ConserveMP)
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.BlueMagic.Macc)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -285,7 +283,7 @@ function midcast(spell,act)
 			equip(sets.midcast.BlueMagic.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.BlueMagic.Macc)
 		elseif spell.english:startswith('Holy') then
@@ -296,11 +294,10 @@ function midcast(spell,act)
 			equip(sets.midcast.BlueMagic.Macc)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		equip(sets.midcast.BlueMagic.Macc)
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
-		
+	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.midcast.BlueMagic.Macc)
 -- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then

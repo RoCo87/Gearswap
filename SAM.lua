@@ -17,7 +17,9 @@ function get_sets()
 	include('Gearsets/SAM_Gearsets.lua')
 	
 -- Define Default Values for Variables
-	Bow = "Speleogen Bow"
+	-- STP Bow does not go here, only bows for Namas/Apex that us sets.TP.Bow, have to test the other bow.
+	Bow = T{"Yoichinoyumi", "Speleogen Bow"}
+	Ammo = {ammo="Horn Arrow"}
 	Mode = 0
 	PDT = 0
 	MDT = 0
@@ -159,43 +161,70 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-
+-- Global Status Values
+	include('include/status.lua')
 end
 
 function precast(spell,arg)
--- Situational spell logic for Warrior sub job
-    if (spell.name == 'Namas Arrow' or spell.name == 'Requiescat' or spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kaiten' or spell.name == 'Tachi: Shoha') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
-        windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
-        cancel_spell()
-        return
-    end
 	if spell.type == "JobAbility" then
 		if sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
    elseif spell.type == "WeaponSkill" then
-		if  player.status == 'Engaged' then
+		if player.status == 'Engaged' then
 			if player.TP >= 100 then
-				if spell.target.distance <= 5 then
-					if sets.precast.WS[spell.name] then
-						equip(sets.precast.WS[spell.name])
-					else
-						equip(sets.precast.WS)
-					end
-					-- Layered this way to allow for proper equiping of gear when any combo of the below buffs are in effect
-					if buffactive.Sekkanoki then
-						equip(sets.precast.JA["Sekkanoki"])
-						if buffactive.Sengikori then
-							equip(sets.precast.JA["Sengikori"])
-						end
-					end
-					if buffactive['Meikyo Shisui'] then
-						equip(sets.precast.JA['Meikyo Shisui'])
-					end					
-				else
+				-- Situational spell logic for Warrior sub job
+				if (spell.name == 'Namas Arrow' or spell.name == 'Requiescat' or spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kaiten' or spell.name == 'Tachi: Shoha') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
+					windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
 					cancel_spell()
-					windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
+					return
 				end
+				-- Ranged WS
+				if ranged_weaponskills:contains(spell.name) then
+					-- Check Ranged WS Distance
+					if spell.target.distance <= ranged_weaponskills_Distance[spell.name] then
+						if sets.precast.RAWS[spell.name] then
+							equip(sets.precast.RAWS[spell.name],Ammo)
+						else
+							equip(sets.precast.RAWS,Ammo)
+						end
+						-- Layered this way to allow for proper equiping of gear when any combo of the below buffs are in effect
+						if buffactive.Sekkanoki then
+							equip(sets.precast.JA["Sekkanoki"])
+							if buffactive.Sengikori then
+								equip(sets.precast.JA["Sengikori"])
+							end
+						end
+						if buffactive['Meikyo Shisui'] then
+							equip(sets.precast.JA['Meikyo Shisui'])
+						end	
+					else
+						cancel_spell()
+						windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
+					end
+				-- Check WS Distance
+				else
+					if spell.target.distance <= 5 then
+						if sets.precast.WS[spell.name] then
+							equip(sets.precast.WS[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
+						-- Layered this way to allow for proper equiping of gear when any combo of the below buffs are in effect
+						if buffactive.Sekkanoki then
+							equip(sets.precast.JA["Sekkanoki"])
+							if buffactive.Sengikori then
+								equip(sets.precast.JA["Sengikori"])
+							end
+						end
+						if buffactive['Meikyo Shisui'] then
+							equip(sets.precast.JA['Meikyo Shisui'])
+						end	
+					else
+						cancel_spell()
+						windower.add_to_chat(121,''..spell.target..'is too far to ws')
+					end
+				end					
 			else 
 				cancel_spell()
 				windower.add_to_chat(121, ''..player.TP..'tp is Not enough to WS')
@@ -269,7 +298,7 @@ function aftercast(spell,arg)
 end
 
 function previous_set(spell)
-	if player.equipment.range == Bow then
+	if  Bow:contains(player.equipment.range) then
 		if Mode == 0 then
 			equip(sets.TP.Bow)
 			windower.add_to_chat(121,'Bow TP Set')
