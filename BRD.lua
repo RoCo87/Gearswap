@@ -367,7 +367,7 @@ function midcast(spell,arg)
 	elseif spell.skill == 'Elemental Magic' then
 		
 -- Ninjutsu
-	elseif spell.skill == "Ninjutsu" then
+	elseif spell.skill == 'Ninjutsu' then
 		equip(sets.midcast.Recast)
         if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then

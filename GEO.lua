@@ -168,9 +168,9 @@ function status_change(new,old)
 	end
 end
 
--- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-
+-- Global Status Values
+	include('include/status.lua')
 end
 
 function pretarget(spell)
@@ -330,7 +330,7 @@ function midcast(spell,arg)
 			end
 		end
 -- Healing Magic
-	elseif spell.skill == 'HealingMagic' then
+	elseif spell.skill == 'Healing Magic' then
 		-- Add Light Obi Twilight Cape and Chatoyant Staff
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
@@ -343,7 +343,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:contains("Spikes") then
@@ -367,10 +367,10 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		equip(sets.midcast.Macc)
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Macc)
 		elseif spell.english:startswith('Holy') then
@@ -381,7 +381,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == "Drain" then
 			equip(sets.midcast.Aspir) 
 		elseif spell.name == "Aspir" then
@@ -392,7 +392,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 		elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then

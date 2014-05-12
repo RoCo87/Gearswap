@@ -13,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get WHM gearsets
-	include('Gearsets/WHM_GearSets.lua')
+	include('Gearsets/WHM_Gearsets.lua')
 	
 	-- Variables 
 	ShadowType = 'None'
@@ -100,11 +100,9 @@ function self_command(command)
 	end
 end
 	
--- Gain or lose buffs 
 function buff_change(buff,g_or_l)
+-- Global Status Values
 	include('include/status.lua')
-	-- gain = true losebuff = false
-
 end
 
 function status_change(new,old)
@@ -172,14 +170,14 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
 			else
 				equip(sets.precast.Fastcast)
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
@@ -206,7 +204,7 @@ end
 
 function midcast(spell,arg)
 -- Healing Magic
-	if spell.skill == 'HealingMagic' then
+	if spell.skill == 'Healing Magic' then
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
 			equip(sets.midcast.Cure)
@@ -235,7 +233,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:wcmatch('Regen*') then
@@ -271,7 +269,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -280,7 +278,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Banish)
 		elseif spell.english:startswith('Holy') then
@@ -291,7 +289,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Flash)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == 'Drain' then
 			equip(sets.midcast.Drain)
 		elseif spell.name == 'Aspir' then
@@ -302,7 +300,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.DarkMagic)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		if spell.english:wcmatch('Fir*|Ston*|Water*|Aero*|Blizza*|Thund*') then
 			equip(sets.midcast.Nuke)
 		elseif spell.english:wcmatch('Burn|Rasp|Drown|Choke|Frost|Shock') then

@@ -110,6 +110,11 @@ function self_command(command)
 		end
 	end
 end
+ 
+function buff_change(buff,g_or_l)
+-- Global Status Values
+	include('include/status.lua')
+end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then

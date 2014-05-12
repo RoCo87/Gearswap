@@ -19,7 +19,7 @@ function get_sets()
 -- Define Default Values for Variables
 	-- STP Bow does not go here, only bows for Namas/Apex that us sets.TP.Bow, have to test the other bow.
 	Bow = T{"Yoichinoyumi", "Speleogen Bow"}
-	Ammo = {ammo="Horn Arrow"}
+	Ammo = {ammo="Demon Arrow"}
 	Mode = 0
 	PDT = 0
 	MDT = 0

@@ -1,8 +1,8 @@
 -- Feary's PLD LUA
--- Date: 4/1/2014
--- chiv and tp
---
---
+-- Created: 4/1/2014
+-- Last Update: 5/12/2014
+-- To Do List
+-- Chiv Check TP
 --
 --includes
 	include('include/functions.lua')
@@ -29,11 +29,11 @@ function get_sets()
 	Shield = "Ochain"
 	
 end 
--- Called when this job file is unloaded (eg: job change)
+
 function file_unload()
 	clear_binds()
 end
--- Rules 
+
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then
@@ -172,12 +172,10 @@ function status_change(new,old)
 		end
 	end
 end
-
--- Gain or lose buffs 
+ 
 function buff_change(buff,g_or_l)
-	statuses()
-	-- gain = true losebuff = false
-
+	-- Global Status Values
+	include('include/status.lua')
 end
 
 function precast(spell,arg)
@@ -188,7 +186,7 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 	elseif spell.type == 'WeaponSkill' then
-		if  player.status == 'Engaged' then
+		if player.status == 'Engaged' then
 			if player.TP >= 100 then
 				if spell.target.distance <= 5 then
 					if Mode == 1 then
@@ -217,22 +215,22 @@ function precast(spell,arg)
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.precast.HPDown)
 			else
 				equip(sets.misc.Fastcast)
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			equip(sets.misc.Fastcast)
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
 			end
-		elseif spell.skill == "DivineMagic" then
+		elseif spell.skill == 'Divine Magic' then
 			equip(sets.misc.Fastcast)
-		elseif spell.skill == "BlueMagic" then
+		elseif spell.skill == 'Blue Magic' then
 			equip(sets.misc.Fastcast,sets.Enmity)
-		elseif spell.skill == "ElementalMagic" then
+		elseif spell.skill == 'Elemental Magic' then
 			equip(sets.misc.Fastcast)
 		end
 	elseif spell.type == 'Ninjutsu' then
@@ -256,14 +254,14 @@ end
 
 function midcast(spell,arg)
 	if spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Self Cure 
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.Cure)
 			else
 				equip(sets.Cure)
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			if spell.name == "Reprisal" then
 				equip(sets.Recast,sets.misc.Fastcast)
 			elseif spell.name == "Phalanx" then
@@ -271,7 +269,7 @@ function midcast(spell,arg)
 			else
 				equip(sets.recast,sets.Enmity,sets.misc.Fastcast)
 			end
-		elseif spell.skill == "DivineMagic" then
+		elseif spell.skill == 'Divine Magic' then
 			if spell.name == "Flash" then
 				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
 			elseif spell.english:wcmatch('Banish*') then
@@ -283,9 +281,9 @@ function midcast(spell,arg)
 			else
 				equip(sets.Recast,sets.Enmity,sets.misc.Fastcast)
 			end
-		elseif spell.skill == "BlueMagic" then
+		elseif spell.skill == 'Blue Magic' then
 			equip(sets.misc.Fastcast)
-		elseif spell.skill == "ElementalMagic" then
+		elseif spell.skill == 'Elemental Magic' then
 			equip(sets.misc.Fastcast)
 		end
     elseif spell.type == 'Ninjutsu' then

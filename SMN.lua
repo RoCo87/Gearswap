@@ -228,7 +228,7 @@ function precast(spell,arg)
 			equip(sets.precast.Fastcast)
 		end
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
@@ -239,7 +239,7 @@ function precast(spell,arg)
 					equip(sets.precast.Fastcast)
 				end
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
@@ -307,10 +307,10 @@ end
 
 function midcast(spell,arg)
 -- SummoningMagic
-	if spell.skill == "SummoningMagic" then
+	if spell.skill == "Summoning Magic" then
 		equip(sets.midcast.Recast)
 -- Healing Magic
-	elseif spell.skill == 'HealingMagic' then
+	elseif spell.skill == 'Healing Magic' then
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
 			equip(sets.midcast.Cure)
@@ -339,7 +339,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:wcmatch('Regen*') then
@@ -373,7 +373,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -382,7 +382,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Banish)
 		elseif spell.english:startswith('Holy') then
@@ -393,7 +393,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Flash)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == 'Drain' then
 			equip(sets.midcast.Drain)
 		elseif spell.name == 'Aspir' then
@@ -404,7 +404,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.DarkMagic)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.midcast.Macc)
 -- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then

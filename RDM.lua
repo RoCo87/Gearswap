@@ -121,6 +121,11 @@ function self_command(command)
 	end
 end
 
+function buff_change(buff,g_or_l)
+-- Global Status Values
+	include('include/status.lua')
+end
+
 function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
@@ -154,11 +159,6 @@ function status_change(new,old)
 				previous_set()
 		end
 	end
-end
-
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-	include('include/status.lua')
 end
 
 function pretarget(spell)
@@ -249,7 +249,7 @@ end
 
 function midcast(spell,arg)
 -- Healing Magic
-	if spell.skill == 'HealingMagic' then
+	if spell.skill == 'Healing Magic' then
 		-- Add Light Obi Twilight Cape and Chatoyant Staff
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
@@ -262,7 +262,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.name:wcmatch("Gain*") then
@@ -290,7 +290,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		-- Maybe account for saboteur
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
@@ -300,7 +300,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Macc)
 		elseif spell.english:startswith('Holy') then
@@ -311,7 +311,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == "Drain" then
 			equip(sets.midcast.Aspir) 
 		elseif spell.name == "Aspir" then
@@ -322,7 +322,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak
 		elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then

@@ -125,6 +125,11 @@ function self_command(command)
 	end
 end
 
+function buff_change(buff,g_or_l)
+	-- Global Status
+	include('include/status.lua')
+end
+
 function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
@@ -158,11 +163,6 @@ function status_change(new,old)
 				previous_set()
 		end
 	end
-end
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-	-- Global Status
-	include('include/status.lua')
 end
 
 function precast(spell,arg)
