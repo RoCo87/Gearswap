@@ -33,6 +33,11 @@
 						["Heavy Shot"] = 16, ["Last Stand"] = 16,
 						["Coronach"] = 16, ["Trueflight"] = 16, ["Leaden Salute"] = 16, ["Wildfire"] = 16}
 
+-- Equipment Mappings
+
+	ranged_Bow = T{"Yoichinoyumi", "Echidna's Bow"}
+	ranged_Gun = T{"Annihilator", "Eminence Gun"}
+	
 -- Areas based Equipment
 	areas = {}
 -- Adoulin areas, where Ionis will grant special stat bonuses.

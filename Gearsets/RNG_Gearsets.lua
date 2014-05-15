@@ -1,4 +1,7 @@
 -- RNG Gear_sets
+-- Created:
+-- Last Updated:
+-- To Do:
 --
 --
 --
@@ -9,12 +12,11 @@ if player.name == 'Feary' then
 	include('include/utility.lua')
 	include('include/mappings.lua')
 	include('include/equipment.lua')
-	-- include('../include/autoexec.lua')
 	
--- sets Macros off = 0  on = 1
+-- Auto macro sets off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.equipment.range == "Echidna's Bow" then
+			if ranged_Bow:contains(player.equipment.range) then
 				if player.sub_job == 'NIN' then
 					set_macro_page(13,1)
 				elseif player.sub_job == 'SAM' then
@@ -24,7 +26,7 @@ if player.name == 'Feary' then
 				elseif player.sub_job == 'DRG' then 
 					set_macro_page(13,4)
 				end
-			elseif player.equipment.range == "Eminence Gun" then
+			elseif ranged_Gun:contains(player.equipment.range) then
 				if player.sub_job == 'NIN' then
 					set_macro_page(13,5)
 				elseif player.sub_job == 'SAM' then
@@ -71,29 +73,31 @@ sets.TP.Acc = {
 sets.precast.Snapshot = {head="Arcadian Beret",
                 body="Sylvan Caban +2", hands="Iuitl Wristbands",
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks"}
--- Echidna's Bow
-sets.RA = { head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
+-- Bow
+sets.RA = { 
+			head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Orion Jerkin", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
             back="Sylvan Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
 				
--- Eminent Gun RAACC
-sets.RA.Acc = { head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
-                back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
-
-sets.RA.Gun = { head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
+sets.RA.Acc = {
+			head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
+            body="Orion Jerkin", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
+			back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
+				
+-- Gun
+sets.RA.Gun = { 
+			head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
             body="Orion Jerkin", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
             back="Sylvan Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
 				
--- Eminent Gun RAACC
-sets.RA.Acc.Gun = { head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
-                back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
-
+sets.RA.Acc.Gun = { 
+			head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
+            body="Orion Jerkin", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
 
 -- JA
+-- 	
 sets.precast.JA.Acc = {}
--- Barrage
 sets.precast.JA["Barrage"] =  {
 				head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
                 body="Orion Jerkin", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
@@ -101,7 +105,7 @@ sets.precast.JA["Barrage"] =  {
 
 sets.precast.JA.Acc["Barrage"] =  {
 				head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+                body="Orion Jerkin", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"}
 -- Eagle Eye Shot
 sets.precast.JA["Eagle Eye Shot"] = set_combine(sets.RA, {legs="Arcadian Braccae"})
@@ -116,7 +120,7 @@ sets.precast.JA["Overkill"] = {
 
 sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
 				head="Arcadian Beret", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+                body="Orion Jerkin", hands="Orion Bracers", lring="Areew Ring +1", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks"})
 
 sets.precast.JA["Shadowbind"] = {hands="Orion Bracers"}

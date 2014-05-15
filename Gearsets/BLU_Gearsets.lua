@@ -42,7 +42,7 @@ if player.name == 'Feary' then
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="", feet="Chelona Boots"})
+                back="Umbra Cape", waist="Fucho-no-obi", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",legs="Blood Cuisses"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {body="Assim. Jubbah", legs="Blood Cuisses"})
@@ -51,14 +51,14 @@ if player.name == 'Feary' then
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
                 head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-                body="Thaumas Coat", hands="Luh. Bazubands +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
+                body="Thaumas Coat", hands="Luh. Bazubands", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 		-- Accuracy
 		sets.TP.Acc = set_combine(sets.TP, {ammo="Honed Tathlum",
                 hands="Buremte Gloves",
-                back="Letalis Mantle", feet="Assim. Charuqs"})
+                back="Atheling Mantle", waist="Hurch'lan Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		-- Allianced Buffs - Haste + March x2 
-		sets.TP.Buffed = set_combine(sets.TP, {ammo="Honed Tathlum",
+		sets.TP.Buffed = set_combine(sets.TP, {ammo="Vanir Battery",
 				lear="Dudgeon Earring", rear="Heartseeker Earring",
                 waist="Celt Belt"})
 		-- Evasion
@@ -93,10 +93,12 @@ if player.name == 'Feary' then
 		
 		-- Blue Magic
 		-- Skill
-		sets.midcast.BlueMagic = {ammo="Mavi Tathlum",
+		sets.midcast.BlueMagic = set_combine(sets.TP,{ammo="Mavi Tathlum",
                 head="Luhlaza Keffiyeh",
                 body="Assimilator's Jubbah", hands="Fea's Cuffs",
-                back="Cornflower Cape", legs="Mavi Tayt +2", feet="Luhlaza Charuqs"}
+                back="Cornflower Cape", legs="Mavi Tayt +2", feet="Luhlaza Charuqs"})
+		sets.idle.BlueMagic = {}
+		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{hands="Assim. Bazu.", back="Atheling Mantle"})
 		-- Recast
 		sets.midcast.BlueMagic.Recast = set_combine(sets.midcast.Recast)
 		-- STR

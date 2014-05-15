@@ -1,11 +1,13 @@
 -- Feary's RNG LUA
 -- Created: 3/10/2014
+-- Last Update: 5/12/2014
+-- To Do:
+-- Overkill Set
 --
--- To do
--- Overkill set
+--
+--
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -27,6 +29,12 @@ end
 function file_unload()
 	clear_binds()
 end
+ 
+function buff_change(buff,g_or_l)
+-- Global Status Values
+	include('include/status.lua')
+end
+
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then
@@ -110,11 +118,6 @@ function self_command(command)
 		end
 	end
 end
- 
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
-end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
@@ -150,14 +153,14 @@ function precast(spell,arg)
 	if spell.type == "JobAbility" then
 		if spell.name == "Barrage" or spell.name == "Eagle Eye Shot" or spell.name == "Overkill" then
 			if Mode == 1 or Mode == 3 then
-				if player.equipment.range == "Echidna's Bow" then
+				if ranged_Bow:contains(player.equipment.range) then
 					equip(sets.RA,sets.precast.JA.Acc[spell.name])
-				elseif player.equipment.range == "Eminent Gun" then
+				elseif ranged_Gun:contains(player.equipment.range) then
 					equip(sets.RA.Gun,sets.precast.JA.Acc[spell.name])
 				end
-			elseif player.equipment.range == "Echidna's Bow" then
+			elseif ranged_Bow:contains(player.equipment.range) then
 				equip(sets.RA,sets.precast.JA[spell.name])
-			elseif player.equipment.range == "Eminent Gun" then
+			elseif ranged_Gun:contains(player.equipment.range) then
 				equip(sets.RA.Gun,sets.precast.JA[spell.name])
 			end
 		else
@@ -174,7 +177,7 @@ function precast(spell,arg)
 		if ranged_weaponskills:contains(spell.name) then
 			if player.status == 'Engaged' then
 				if player.TP >= 100 then
-					if spell.target.distance >= ranged_weaponskills.Distance[spell.name] then
+					if spell.target.distance <= ranged_weaponskills.Distance[spell.name] then
 						if sets.precast.RAWS[spell.name] then
 							equip(sets.precast.RAWS[spell.name])
 						else
@@ -244,9 +247,9 @@ function midcast(spell,arg)
 			elseif buffactive.Overkill then
 				equip(sets.precast.JA.Acc["Overkill"])
 			else
-				if player.equipment.range == "Echidna's Bow" then
+				if ranged_Bow:contains(player.equipment.range) then
 					equip(sets.RA.Acc)
-				elseif player.equipment.range == "Eminent Gun" then
+				elseif ranged_Gun:contains(player.equipment.range) then
 					equip(sets.RA.Acc.Gun)
 				end
 			end
@@ -256,9 +259,9 @@ function midcast(spell,arg)
 			elseif buffactive.Overkill then
 				equip(sets.precast.JA["Overkill"])
 			else
-				if player.equipment.range == "Echidna's Bow" then
+				if ranged_Bow:contains(player.equipment.range) then
 					equip(sets.RA)
-				elseif player.equipment.range == "Eminent Gun" then
+				elseif ranged_Gun:contains(player.equipment.range) then
 					equip(sets.RA.Gun)
 				end
 			end
@@ -333,16 +336,16 @@ end
 function previous_set()
 slot_lock()
 	if Mode == 0 then
-		if player.equipment.range == "Echidna's Bow" then
+		if ranged_Bow:contains(player.equipment.range) then
 			equip(sets.RA)
-		elseif player.equipment.range == "Eminent Gun" then
+		elseif ranged_Gun:contains(player.equipment.range) then
 			equip(sets.RA.Gun)
 		end
 		windower.add_to_chat(121,'Ranged TP Set')
 	elseif Mode == 1 then
-		if player.equipment.range == "Echidna's Bow" then
+		if ranged_Bow:contains(player.equipment.range) then
 			equip(sets.RA.Acc)
-		elseif player.equipment.range == "Eminent Gun" then
+		elseif ranged_Gun:contains(player.equipment.range) then
 			equip(sets.RA.Acc.Gun)
 		end
 		windower.add_to_chat(121,'Ranged Acc TP Set')		

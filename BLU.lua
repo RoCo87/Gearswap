@@ -99,7 +99,7 @@ function self_command(command)
 				windower.add_to_chat(121,'PDT/MDT Set UnLocked')
 			end
 		else
-			if Mode >= 3 then
+			if Mode >= 4 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -114,6 +114,8 @@ function self_command(command)
 				windower.add_to_chat(121,'Buffed TP Set')
 			elseif Mode == 3 then
 				windower.add_to_chat(121,'Hybrid TP Set')
+			elseif Mode == 4 then
+				windower.add_to_chat(121,'Learning TP Set')
 			end
 			-- Place me in previous set
 			if player.status == 'Engaged' then
@@ -271,7 +273,6 @@ function midcast(spell,arg)
 		end
 -- Enhancing Magic
 	elseif spell.skill == 'Enhancing Magic' then
-		print(test)
 		equip(sets.midcast.ConserveMP)
 -- Enfeebling Magic
 	elseif spell.skill == 'Enfeebling Magic' then
@@ -389,6 +390,9 @@ function previous_set()
 	elseif Mode == 3 then
 		equip(sets.TP.Hybrid)
 		windower.add_to_chat(121,'Hybrid TP Set')
+	elseif Mode == 4 then
+		equip(sets.idle.BlueMagic.Learn)
+		windower.add_to_chat(121,'Learning TP Set')
 	end
 end
 
