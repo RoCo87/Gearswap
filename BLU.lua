@@ -33,7 +33,7 @@ function get_sets(spell)
                 ["Magic Hammer"]="MND", ["Mind Blast"]="MND"}
     bluSpells = T{["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", ["Winds of Promy."]="Recast",
                 ["Magic Fruit"]="CurePot", ["Plenilune Embrace"]="CurePot", ["White Wind"]="CurePot",
-                ["Sudden Lunge"]="STRAcc", ["Head Butt"]="STRAcc"}
+                ["Sudden Lunge"]="STRAcc", ["Head Butt"]="STRAcc", ["Absolute Terror"]="Macc"}
 end 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
@@ -256,6 +256,7 @@ function midcast(spell,arg)
 		elseif bluSpells[spell.english] then
             equip(sets.midcast.BlueMagic[bluSpells[spell.english]])
         else
+			windower.add_to_chat(121,"Default Skill Set")
             equip(sets.midcast.BlueMagic)
         end
 -- Healing Magic
