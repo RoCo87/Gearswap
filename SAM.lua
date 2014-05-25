@@ -298,7 +298,7 @@ function aftercast(spell,arg)
 end
 
 function previous_set(spell)
-	if  Bow:contains(player.equipment.range) then
+	if player.equipment.range == "Yoichinoyumi" then
 		if Mode == 0 then
 			equip(sets.TP.Bow)
 			windower.add_to_chat(121,'Bow TP Set')

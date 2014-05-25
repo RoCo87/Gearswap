@@ -140,6 +140,11 @@ sets.precast.RAWS['Namas Arrow'] = {
 				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
+sets.precast.RAWS.Acc = {}
+sets.precast.RAWS.Acc['Namas Arrow'] = {
+				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Arewe Ring +1", rring="Arewe Ring +1",
+                back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 
 -- Misc Sets
 sets.misc.Fastcast = set_combine(sets.idle.PDT, {
