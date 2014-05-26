@@ -1,4 +1,7 @@
 -- BRD Gearsets
+-- Created
+--
+--
 --
 
 if player.name == 'Feary' then
@@ -21,7 +24,7 @@ if player.name == 'Feary' then
 				set_macro_page(4,4)
 			elseif player.sub_job =='dnc' then 
 				set_macro_page(4,5)
-			elseif player.sub_job =='BLM' then 
+			elseif player.sub_job =='blm' then 
 				set_macro_page(4,6)
 			end
 		else
@@ -375,7 +378,7 @@ elseif player.name == "Carrisa" then
 				set_macro_page(4,4)
 			elseif player.sub_job =='dnc' then 
 				set_macro_page(4,5)
-			elseif player.sub_job =='BLM' then 
+			elseif player.sub_job =='blm' then 
 				set_macro_page(4,6)
 			end
 		else
@@ -417,7 +420,7 @@ elseif player.name == "Carrisa" then
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
-                back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+                back="Engulfer Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Nefer Khat", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Antivenom Earring",
                 body="Heka's kalasiris", hands="Serpentes Cuffs", rring="Angha Ring",

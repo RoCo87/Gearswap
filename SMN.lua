@@ -222,7 +222,7 @@ function precast(spell,arg)
 -- Magic
 	elseif spell.type:endswith('Pact') then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -233,7 +233,7 @@ function precast(spell,arg)
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
 			else
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
@@ -247,7 +247,7 @@ function precast(spell,arg)
 			end	
 		else
 			-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -256,7 +256,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -264,7 +264,7 @@ function precast(spell,arg)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)

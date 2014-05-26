@@ -1,12 +1,11 @@
 -- Feary's DRG LUA
--- Date: 3/15/2014
---
---
+-- Created: 3/15/2014
+-- Last Update: 5/26/2014
+-- To Do List
 --
 --
 -- includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()

@@ -1,12 +1,12 @@
 -- Feary's WHM LUA
 -- Date Created : 1/29/2014
---
---
+-- Last Update: 5/26/2014
+-- To Do
 --
 --
 
 --includes
-	include('include/functions.lua')	
+	include('include/functions.lua')
 -- Gear Sets 
 function get_sets()
 --includes

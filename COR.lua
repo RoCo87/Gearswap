@@ -20,10 +20,12 @@ function get_sets()
 	MBullet = {ammo="Bullet"}
 	-- Luzaf's Ring - 1 to use
 	luzaf = 1
+	
 	Mode = 0
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
+	
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
@@ -173,7 +175,7 @@ function precast(spell,arg)
 		end
 -- Cor Rolls
 	elseif spell.type == 'CorsairRoll' or spell.english == "Double-Up" then
-		if player.inventory["Luzaf's Ring"] and luzaf == 1 then
+		if player.inventory["Luzaf's Ring"] or player.wardrobe["Luzaf's Ring"] and luzaf == 1 then
 			if spell.english:wcmatch('Caster\'s Roll|Courser\'s Roll|Blitzer\'s Roll|Tactician\'s Roll|Allies\' Roll') then
 				equip(sets.precast.JA[spell.name],{rring="Luzaf's Ring"})
 			else
