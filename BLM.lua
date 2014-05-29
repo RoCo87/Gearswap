@@ -1,7 +1,7 @@
 -- Feary's BLM LUA
 -- Created - 4/11/2014
+-- Last Update: 5/26/2014
 -- To Do List
--- 
 -- 
 -- 
 --
@@ -221,7 +221,7 @@ function precast(spell,arg)
 				equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
 			else
 				-- Magian Staff
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Elemental, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Elemental)
@@ -229,7 +229,7 @@ function precast(spell,arg)
 			end
 		else
 			-- Magian Staff
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
@@ -238,7 +238,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -246,7 +246,7 @@ function precast(spell,arg)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
 		-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -346,15 +346,15 @@ function midcast(spell,arg)
 				equip(sets.midcast.Elemental)
 			else
 				-- check Sorcerer's Ring
-				if player.hp <= 75 and player.tp <= 100 and player.inventory["Sorcerer's Ring"] then
+				if player.hp <= 75 and player.tp <= 100 and (player.inventory["Sorcerer's Ring"] or player.wardrobe["Sorcerer's Ring"]) then
 					-- Zodiac Ring Check
-					if spell.element == world.day_element and player.inventory["Zodiac Ring"] then
+					if spell.element == world.day_element and (player.inventory["Zodiac Ring"] or player.wardrobe["Zodiac Ring"]) then
 						-- Weather Check
 						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 							-- Inventory Checks
-							if player.inventory[elemental.Obi[spell.element]] then
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
 								-- yes ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke, {waist=elemental.Obi[spell.element],back="Twilight Cape",lring="Sorcerer's Ring",rring="Zodiac Ring"})
@@ -374,7 +374,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- yes ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape",lring="Sorcerer's Ring",rring="Zodiac Ring"})
@@ -408,9 +408,9 @@ function midcast(spell,arg)
 						-- Weather Check
 						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 							-- Inventory checks
-							if player.inventory[elemental.Obi[spell.element]] then
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
 								-- no ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape",lring="Sorcerer's Ring"})
@@ -430,7 +430,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- no ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape"})
@@ -465,9 +465,9 @@ function midcast(spell,arg)
 						-- Weather Check
 						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 							-- Inventory checks
-							if player.inventory[elemental.Obi[spell.element]] then
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
 								-- no ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape",lring="Sorcerer's Ring"})
@@ -487,7 +487,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- no ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.inventory["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape"})
@@ -520,13 +520,13 @@ function midcast(spell,arg)
 				-- No Sorcerer's Ring
 				else
 					-- Zodiac Ring Check
-					if spell.element == world.day_element and player.inventory["Zodiac Ring"] then
+					if spell.element == world.day_element and (player.inventory["Zodiac Ring"] or player.wardrobe["Zodiac Ring"]) then
 						-- Weather Check
 						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 							-- Inventory Checks
-							if player.inventory[elemental.Obi[spell.element]] then
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
 								-- yes ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke, {waist=elemental.Obi[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
@@ -546,7 +546,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- yes ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape",rring="Zodiac Ring"})
@@ -580,9 +580,9 @@ function midcast(spell,arg)
 						-- Weather Check
 						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
 						-- Inventory checks
-							if player.inventory[elemental.Obi[spell.element]] then
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
 								-- no ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape"})
@@ -602,7 +602,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- no ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape"})
@@ -639,7 +639,7 @@ function midcast(spell,arg)
 							-- Inventory checks
 							if player.inventory[elemental.Obi[spell.element]] then
 								-- no ring yes obi Yes Cape 
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape"})
@@ -659,7 +659,7 @@ function midcast(spell,arg)
 								end
 							else
 								-- no ring no obi yes cape
-								if player.inventory["Twilight Cape"] then
+								if player.inventory["Twilight Cape"] ot player.wardrobe["Twilight Cape"] then
 									if not spell.english:wcmatch('*ja|* V') then
 										-- Nuke Staff
 										equip(sets.midcast.Nuke,{back="Twilight Cape"})

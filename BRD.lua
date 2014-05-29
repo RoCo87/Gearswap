@@ -2,7 +2,7 @@
 -- Created: 1/18/2014
 -- Updated: 4/17/2014
 -- To Do:
--- update for mules instrument.
+-- 
 --
 --includes
 	include('include/functions.lua')
@@ -130,6 +130,8 @@ function status_change(new,old)
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
+		elseif new == 'Resting' then
+			equip(sets.Resting)
 		else
 			equip(sets.idle.Standard)
 		end
@@ -203,7 +205,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -213,20 +215,20 @@ function precast(spell,arg)
 		if buffactive.Nightingale then
 			-- Dummy Songs
 			if spell.name == "Fowl Aubade" then
-				if player.inventory["Daurdabla"] then
+				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] then
 					equip({range="Daurdabla"})
-				elseif player.inventory["Terpander"] then
+				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			elseif spell.name == "Herb Pastoral" then
-				if player.inventory["Daurdabla"] then
+				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"]then
 					equip({range="Daurdabla"})
-				elseif player.inventory["Terpander"] then
+				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			else
 				-- Instrument check 
-				if player.inventory["Gjallarhorn"] then
+				if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] then
 					-- Use Gjallarhorn
 					equip(sets.precast.Fastcast,{range="Gjallarhorn"})
 				else
@@ -281,7 +283,7 @@ function precast(spell,arg)
 			end
 		else
 			-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.inventory[Fastcast.Staff[spell.element]] then
 				equip(sets.precast.Fastcast.Song, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast.Song,{main="Felibre's Dague"})
@@ -386,19 +388,19 @@ function midcast(spell,arg)
 	elseif spell.skill == "Singing" or spell.skill == "Stringed Instrument" or spell.skill == "Wind Instrument" then
 		-- Dummy Songs
 		if spell.name == "Fowl Aubade" then
-			if player.inventory["Daurdabla"] then
+			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] then
 				equip(sets.midcast.Recast, {range="Daurdabla"})
-			elseif player.inventory["Terpander"] then
+			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		elseif spell.name == "Herb Pastoral" then
-			if player.inventory["Daurdabla"] then
+			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] then
 				equip(sets.midcast.Recast, {range="Daurdabla"})
-			elseif player.inventory["Terpander"] then
+			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		else
-			if player.inventory["Gjallarhorn"] then
+			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] then
 				-- Buff Songs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Scherzo') then
