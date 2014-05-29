@@ -205,7 +205,11 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
+<<<<<<< HEAD
 			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] then
+=======
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+>>>>>>> edc8f13e16709b8ad683dd8447e6bf926ca088d4
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -283,7 +287,11 @@ function precast(spell,arg)
 			end
 		else
 			-- Magian Staff
+<<<<<<< HEAD
 			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.inventory[Fastcast.Staff[spell.element]] then
+=======
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.inventory[Fastcast.Staff[spell.element]]) then
+>>>>>>> edc8f13e16709b8ad683dd8447e6bf926ca088d4
 				equip(sets.precast.Fastcast.Song, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast.Song,{main="Felibre's Dague"})
