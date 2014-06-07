@@ -1,6 +1,6 @@
--- Feary's Brd LUA
+-- Feary's BRD LUA
 -- Created: 1/18/2014
--- Updated: 4/17/2014
+-- Updated: 6/4/2014
 -- To Do:
 -- 
 --
