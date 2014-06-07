@@ -14,11 +14,12 @@ function get_sets()
     sets.misc.DT = {}
     sets.misc.DT.None = {}
     sets.misc.DT.Active = {
-                head="Iuitl Headgear", neck="Twilight Torque",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Dark Ring", rring="Defending Ring",
-                back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
+                head="Iuitl Headgear +1", neck="Twilight Torque",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Defending Ring",
+                back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1"}
 
     sets.misc.Barrage = {
+                head="Umbani Cap", neck="Rancor Collar", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 hands="Orion Bracers +1",
                 legs="Desultor Tassets"}
 
@@ -26,7 +27,7 @@ function get_sets()
                 feet="Orion socks +1"}
 
     sets.misc.Utsusemi = {
-                neck="Magoraga Beads",}
+                neck="Magoraga Beads"}
 
 
     -- Precast sets --
@@ -37,7 +38,9 @@ function get_sets()
     sets.precast.JA.Camouflage = {
                 body="Orion Jerkin +1"}
     sets.precast.JA['Eagle Eye Shot'] = {
-                legs="Arcadian Braccae"}
+                head="Uk'uxkaj Cap", neck="Rancor Collar", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                body="Kyujutsugi", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Cape", waist="Elanid Belt", legs="Arc. Braccae +1", feet="Orion socks +1"}
     sets.precast.JA.Scavenge = {
                 feet="Orion Socks +1"}
     sets.precast.JA.Shadowbind = {
@@ -46,22 +49,26 @@ function get_sets()
                 legs="Orion Braccae +1"}
 
     sets.precast.PreShot = {
+                head="Sylvan Gapette +2",
+                body="Sylvan Caban +2", hands="Iuitl Wristbands +1",
+                waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
+    sets.precast.PreShot.Overkill = set_combine(sets.precast.PreShot, {
                 head="Orion Beret +1",
-                body="Sylvan Caban +2", hands="Iuitl Wristbands",
-                waist="Impulse Belt", legs="Nahtirah Trousers"}
+                hands="Arc. Bracers +1",
+                legs="Entois Trousers"})
 
     sets.precast.WS = {}
     sets.precast.WS['Jishnu\'s Radiance'] = {
-                head="Orion Beret +1", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Buquwik Cape", waist="Light Belt", legs="Manibozho Brais", feet="Orion socks +1"}
+                head="Uk'uxkaj Cap", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Cape", waist="Light Belt", legs="Manibozho Brais", feet="Arcadian Socks +1"}
     sets.precast.WS['Namas Arrow'] = {
                 head="Orion Beret +1", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Buquwik Cape", waist="Light Belt", legs="Nahtirah Trousers",  feet="Orion socks +1"}
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Cape", waist="Light Belt", legs="Nahtirah Trousers",  feet="Arcadian Socks +1"}
 
     sets.precast.FastCast = {
-                head="Athos's Chapeau", neck="Orunmila's Torque", lear="Loquac. Earring",
+                head="Haruspex Hat +1", neck="Orunmila's Torque", lear="Loquac. Earring",
                 body="Mirke Wardecors", hands="Thaumas Gloves", lring="Prolix Ring"}
 
 
@@ -69,18 +76,18 @@ function get_sets()
     sets.midcast = {}
 
 
-    -- Aftercast sets labeled to show either melee or idle --
-    sets.melee = {}
-    sets.melee.TP = {}
-    sets.melee.TP.Normal = {
-                head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+    -- Aftercast sets labeled to show either TP or idle --
+    sets.TP = {}
+    sets.TP.Normal = {
+                head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Paqichikaji Ring",
                 back="Lutian Cape", waist="Elanid Belt", legs="Nahtirah Trousers", feet="Orion socks +1"}
-    sets.melee.TP.Accuracy = set_combine(sets.melee.TP.Normal, {
+    sets.TP.Accuracy = set_combine(sets.TP.Normal, {
                 hands="Buremte Gloves", lring="Hajduk Ring", rring="Paqichikaji Ring",
-                legs="Orion Braccae +1"})
+                legs="Arc. Braccae +1"})
 
     sets.idle = set_combine(sets.misc.DT.Active, {
+                lear="Terra's Pearl", rear="Terra's Pearl",
                 back="Shadow Mantle"})
 
 
@@ -118,7 +125,7 @@ end
 function gear_modes()
     -- Sequential gear sets used to easier allow for changing player needs
     if player.status == 'Engaged' then
-        equip(sets.melee.TP[TPMode], sets.misc.DT[DTMode])
+        equip(sets.TP[TPMode], sets.misc.DT[DTMode])
     else
         equip(sets.idle, sets.misc.DT[DTMode], sets.misc.Movement)
     end
@@ -165,6 +172,9 @@ function precast(spell,arg)
 
     if spell.name == 'Ranged' then
         equip(sets.precast.PreShot)
+        if buffactive.Overkill then
+            equip(sets.precast.PreShot.Overkill)
+        end
     end
 
     -- Generic equip command for all Job Abilities and Weaponskills
@@ -177,8 +187,8 @@ function precast(spell,arg)
     -- Magic spell gear handling(Precast)
     if spell.skill == 'Ninjutsu' then
         equip(sets.precast.FastCast)
-        if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.precast.FastCast, sets.misc.Utsusemi)
+        if spell.name == "Utsusemi: Ichi" then
+            equip(sets.misc.Utsusemi)
         end
     end
 
@@ -191,7 +201,7 @@ end
 
 function midcast(spell,arg)
     if spell.name == 'Ranged' then
-        equip(sets.melee.TP[TPMode])
+        equip(sets.TP[TPMode])
         if buffactive.Barrage then
             equip(sets.misc.Barrage)
         end
@@ -200,7 +210,7 @@ function midcast(spell,arg)
     -- Gear change to Damage Taken set when in midcast of Utsusemi
     -- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
     if windower.wc_match(spell.name,'Utsusemi*') then
-        equip(sets.misc.DT.Active, sets.misc.Utsusemi)
+        equip(sets.misc.DT.Active)
         if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then
                 windower.ffxi.cancel_buff(66)
@@ -212,7 +222,7 @@ function midcast(spell,arg)
                 windower.ffxi.cancel_buff(446)
             end
         end
-    elseif spell.name == 'Monomi: Ichi' or spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+    elseif (spell.name == 'Monomi: Ichi' or spell.name == 'Sneak') and buffactive.Sneak and spell.target.type == 'SELF' then
         windower.ffxi.cancel_buff(71)
     end
 end

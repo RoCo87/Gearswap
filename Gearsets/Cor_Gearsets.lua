@@ -1,6 +1,6 @@
 -- COR Gear_sets
---
---
+-- Created
+-- Last Modified:
 --
 --
 
@@ -35,12 +35,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {head="Lanun Tricorne",body="Lanun Frac",hands="Lanun Gauntlets",legs="Lanun Gauntlets",
@@ -140,7 +140,7 @@ sets.precast.WS["Exenterator"] = {
 -- RA WS
 sets.precast.RAWS = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
@@ -149,7 +149,7 @@ sets.precast.RAWS['Wildfire'] = {
 
 sets.precast.RAWS['Last Stand'] = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 -- Midcast Sets
@@ -197,12 +197,12 @@ elseif player.name == 'Derion' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -302,7 +302,7 @@ sets.precast.WS["Exenterator"] = {
 -- RA WS
 sets.precast.RAWS = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
@@ -311,7 +311,7 @@ sets.precast.RAWS['Wildfire'] = {
 
 sets.precast.RAWS['Last Stand'] = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 -- Midcast Sets
@@ -358,12 +358,12 @@ elseif player.name == 'Aniyah' then
 -- Standard/idle
 		sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 		sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 		sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -463,7 +463,7 @@ elseif player.name == 'Aniyah' then
 		-- RA WS
 		sets.precast.RAWS = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 		sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
@@ -472,7 +472,7 @@ elseif player.name == 'Aniyah' then
 
 		sets.precast.RAWS['Last Stand'] = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 		-- Misc Sets
@@ -515,12 +515,12 @@ elseif player.name == 'Firetoplay' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -620,7 +620,7 @@ sets.precast.WS["Exenterator"] = {
 -- RA WS
 sets.precast.RAWS = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
@@ -629,7 +629,7 @@ sets.precast.RAWS['Wildfire'] = {
 
 sets.precast.RAWS['Last Stand'] = {
 				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 -- Midcast Sets

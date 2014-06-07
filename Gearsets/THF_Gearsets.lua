@@ -1,4 +1,7 @@
 -- THF Gear_sets
+-- Created: 4/5/2014
+-- Last Modified:
+-- To Do List 
 --
 --
 --
@@ -30,39 +33,39 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
-				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Pillager's Poulaines"})
+sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
+				feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Pillager's Poulaines"})
+				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 sets.TH = {
-			hands="Plunderer's Armlets",
+			hands="Plun. Armlets +1",
 			waist="Chaac Belt", feet="Raider's Poulaines +2"}
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
 sets.TP = { ammo="Raider's Bmrng.",
-			head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Thaumas Coat", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
             back="Atheling Mantle", waist="Windbuffet Belt", legs="Pillager's Culottes", feet="Plun. Poulaines"}
 
@@ -74,14 +77,14 @@ sets.TP.Acc = {
 
 -- Alliance Buffed
 sets.TP.Buffed = {
-			head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
             back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 -- RA Sets
@@ -114,7 +117,7 @@ sets.precast.JA["Sneak Attack"] = {
 -- Trick Attack
 sets.precast.JA["Trick Attack"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Dudgeon Earring", rear="Bladeborn earring",
-                body="Manibozho Jerkin", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 -- Weaponskills
@@ -224,12 +227,12 @@ elseif player.name == 'Fugiwara' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Iuitl Headgear", neck="Twilight Torque", lear="Brutal Earring", rear="Suppanomimi",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Dark Ring", rring="Shadow Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
                 back="Shadow Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Iuitl Headgear", neck="Twilight Torque", lear="Brutal Earring", rear="Suppanomimi",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Dark Ring", rring="Shadow Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
                 back="Shadow Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -247,13 +250,13 @@ sets.TH = {hands="Plunderer's Armlets",feet="Raider's Poulaines +2"}
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
 sets.TP = { ammo="Raider's Bmrng.",
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Letalis Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Accuracy TP Set
@@ -265,13 +268,13 @@ sets.TP.Acc = {
 -- Alliance Buffed
 sets.TP.Buffed = {
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Letalis Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.TP,{
 			head="Felistris Mask", neck="Torero Torque", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands", lring="Dark Ring", rring="Shadow Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Manibozho Boots"})
 
 -- RA Sets
@@ -304,7 +307,7 @@ sets.precast.JA["Sneak Attack"] = {
 -- Trick Attack
 sets.precast.JA["Trick Attack"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Dudgeon Earring", rear="Bladeborn earring",
-                body="Manibozho Jerkin", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 -- Weaponskills

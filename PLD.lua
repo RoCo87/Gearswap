@@ -186,7 +186,7 @@ function precast(spell,arg)
 		end
 	elseif spell.type == 'WeaponSkill' then
 		if player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if Mode == 1 then
 						if sets.precast.WS.Acc[spell.name] then
@@ -207,7 +207,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'Not enough TP to WS')
+				windower.add_to_chat(121, ''..player.tp..'Not enough TP to WS')
 			end
 		else
 			cancel_spell()

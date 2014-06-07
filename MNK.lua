@@ -7,7 +7,6 @@
 -- 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -169,8 +168,8 @@ function precast(spell,arg)
     if sets.precast.JA[spell.name] then
         equip(sets.precast.JA[spell.name])
    elseif sets.precast.WS[spell.name] then
-		if  player.status == 'Engaged' then
-			if player.TP >= 100 then
+		if player.status == 'Engaged' then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -183,7 +182,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'tp is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'tp is not enough to WS')
 			end
 		else
 			cancel_spell()

@@ -169,7 +169,7 @@ function precast(spell,arg)
 -- Weaponskills
 	elseif spell.type == 'Weaponskill' then
 		if player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -182,7 +182,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -205,11 +205,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-<<<<<<< HEAD
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] then
-=======
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
->>>>>>> edc8f13e16709b8ad683dd8447e6bf926ca088d4
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -287,11 +283,7 @@ function precast(spell,arg)
 			end
 		else
 			-- Magian Staff
-<<<<<<< HEAD
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] or player.inventory[Fastcast.Staff[spell.element]] then
-=======
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.inventory[Fastcast.Staff[spell.element]]) then
->>>>>>> edc8f13e16709b8ad683dd8447e6bf926ca088d4
 				equip(sets.precast.Fastcast.Song, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast.Song,{main="Felibre's Dague"})

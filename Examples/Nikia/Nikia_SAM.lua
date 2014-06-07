@@ -1,23 +1,22 @@
 --[[
     !! Special thanks to everyone that helped me with the code and to better understand it !!
-
-    AutoExec Companion Code
-    Job changes and registers job specific events
-    <register event="(regex)jobchange_(?!SAM).*(/regex)" silent="true">
-        ae unregister 10031;
-        ae unregister 10032
-    </register>
-
-    <register event="jobchange_sam/*" silent="true">
-        ae register 10031 hpp_100 gs c FullHP;
-        ae register 10032 "lowhp|*buff_Weakness" gs c AutoReraise
-    </register>
 ]]
 
 function get_sets()
     windower.send_command('input /macro book 3; wait .1; input /macro set 1; input /echo [ Job Changed to SAM ]')
     windower.send_command('@bind f10 gs c tryweaponskill')
     windower.send_command('input /blockhelp on')
+
+
+    -- Automated events similar to events in the AutoExec plugin
+    windower.register_event('hpp change', function(new, old)
+        if new == 100 and player.status == 'Idle' then
+            windower.send_command('wait 1;gs c FullHP')
+        elseif new < 35 then
+            equip(sets.misc.Twilight)
+            slot_disabling()
+        end
+    end)
 
 
     -- Start defining actual gear sets to be used below --
@@ -102,14 +101,13 @@ function get_sets()
 
     sets.idle = {}
     sets.idle.DT = set_combine(sets.misc.Twilight, {
-                neck="Twilight Torque",
+                neck="Twilight Torque", lear="Terra's Pearl", rear="Terra's Pearl",
                 hands="Otronif Gloves", lring="Dark Ring", rring="Defending Ring",
                 back="Shadow Mantle", waist="Flume Belt", legs="Otronif Brais",feet="Otronif Boots"})
     sets.idle.Regen = set_combine(sets.idle.DT,    {
                 neck="Wiglen Gorget",
                 lring="Paguroidea Ring", rring="Sheltered Ring"})
 
-    IdleMode = 'DT'
     DTMode = 'None'
     TPMode = 'Normal'
     WSBind = 'Tachi: Kaiten'
@@ -135,15 +133,9 @@ function self_command(str)
         end
         windower.add_to_chat(8,'Engaged melee set mode: '..TPMode)
         gear_modes()
-    -- Used with AutoExec event to automatically change to Idle DT set once 100% HP is reached
+    -- Used with windower.register_event to automatically change to Idle DT set once 100% HP is reached
     elseif str == 'FullHP' then
-        if player.status == 'Idle' then
-            gear_modes()
-        end
-    -- Used with AutoExec event to automatically change into Twilight set
-    elseif str == 'AutoReraise' then
-        equip(sets.misc.Twilight)
-        slot_disabling()
+        gear_modes()
     end
 
     -- Allows you to change the WeaponSkill that will be used when F10 is pressed,
@@ -173,18 +165,15 @@ end
 -- User created bridge for built in aftercast and status_change functions,
 -- also self_command references listed above to help handle mode changes for situation needs
 function gear_modes()
-    -- Allows adjustments to idle gear if regen gear should be used
-    if player.hpp < 100 then
-        IdleMode = 'Regen'
-    else
-        IdleMode = 'DT'
-    end
-
+    slot_disabling()
     -- Sequential gear sets used to easier allow for changing player needs
     if player.status == 'Engaged' then
         equip(sets.melee.TP[TPMode], sets.misc.DT[DTMode])
     else
-        equip(sets.idle[IdleMode], sets.misc.DT[DTMode], sets.misc.Movement)
+        equip(sets.idle.DT, sets.misc.DT[DTMode], sets.misc.Movement)
+        if player.hpp < 100 then
+            equip(sets.idle.Regen, sets.misc.DT[DTMode], sets.misc.Movement)
+        end
     end
 end
 
@@ -192,7 +181,7 @@ end
 -- Used to disable slots for items such as Reraise Earring among other things
 function slot_disabling()
     -- Twilight Helm/Mail logic
-    if (buffactive.Weakness or player.hpp < 25) and player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail'then
+    if (buffactive.Weakness or player.hpp < 35) and player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
         disable('head','body')
     else
         enable('head','body')
@@ -226,10 +215,17 @@ function status_change(new,old)
     end
 end
 
+function buff_change(buff,g_or_l)
+    if buff == 'weakness' and g_or_l then
+        equip(sets.misc.Twilight)
+        slot_disabling()
+    end
+end
+
 function precast(spell,arg)
     slot_disabling()
     -- Situational spell logic for Warrior sub job
-    if (spell.name == 'Namas Arrow' or spell.name == 'Requiescat' or spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kaiten' or spell.name == 'Tachi: Shoha') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
+    if (spell.name == 'Namas Arrow' or spell.name == 'Requiescat' or spell.name == 'Tachi: Kaiten' or spell.name == 'Tachi: Shoha') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
         windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
         cancel_spell()
         return

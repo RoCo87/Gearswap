@@ -31,11 +31,11 @@ if player.Name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",

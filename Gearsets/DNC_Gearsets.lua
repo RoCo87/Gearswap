@@ -1,6 +1,6 @@
 -- DNC Gear_sets
---
---
+-- Created
+-- Last Modified
 --
 --
 
@@ -31,12 +31,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -47,13 +47,13 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
@@ -77,7 +77,7 @@ sets.TP.Buffed = {
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 -- RA Sets

@@ -33,11 +33,11 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -119,7 +119,7 @@ if player.name == 'Feary' then
 		-- AGI
 		sets.midcast.BlueMagic.AGI = set_combine(sets.midcast.BlueMagic, {
                 head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Flame Pearl", rear="Flame Pearl",
-				body="Assimilator's Jubbah", hands="Iuitl Wristbands", lring="Stormsoul Ring", rring="Stormsoul Ring",
+				body="Assimilator's Jubbah", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
 				back="Cornflower Cape", legs="Nahtirah Trousers", feet="Assim. Charuqs"})
 		-- MND
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",

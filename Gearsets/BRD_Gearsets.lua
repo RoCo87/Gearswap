@@ -1,6 +1,6 @@
 -- BRD Gearsets
 -- Created
---
+-- Last Modified
 --
 --
 
@@ -61,20 +61,19 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
 				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
+                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Umbra Cape", waist="Flume Belt", legs="Bihu Cannions +1", feet="Bihu Slippers"}
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring="", rring="",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Chelona Boots"})
+                back="Felicitas Cape", waist="Austerity Belt", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1",
-                legs="Gendewitha Spats", feet="Aoidos' Cothrn. +2"})
+                feet="Aoidos' Cothrn. +2"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Aoidos' Cothrn. +2"})
 		sets.misc.MinusHP = {
@@ -120,13 +119,7 @@ if player.name == 'Feary' then
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
-		-- Goal 
-		sets.midcast.Debuff2 = {main="Mandau", range="Gjallarhorn",
-				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
-
+                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="",
@@ -247,11 +240,11 @@ elseif player.name == "Aniyah" then
 		-- Standard/idle
 		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
 				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Defending Ring".Aniyah,
                 back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Defending Ring".Aniyah,
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -337,12 +330,12 @@ elseif player.name == "Aniyah" then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gendewitha Gages", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="", ammo="Aureole",
 				head="", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gendewithe Gages", lring="Balrahn's ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
@@ -415,11 +408,11 @@ elseif player.name == "Carrisa" then
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring".Carrisa,
                 back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring".Carrisa,
                 back="Engulfer Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Nefer Khat", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Antivenom Earring",

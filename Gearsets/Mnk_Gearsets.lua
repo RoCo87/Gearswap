@@ -1,6 +1,6 @@
 -- MNK Gear_sets
---
---
+-- Created:
+-- Last Modified:
 --
 --
 
@@ -35,18 +35,18 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Otronif Mask", neck="Twilight Torque",
-                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {
 				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {

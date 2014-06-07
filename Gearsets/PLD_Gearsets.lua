@@ -1,6 +1,6 @@
 -- PLD Gearsets
---
---
+-- Created:
+-- Last Modified:
 --
 --
 
@@ -39,12 +39,12 @@ magicalshield = {sub="Aegis"}
 -- Standard/idle
 sets.idle.PDT = { ammo="Angha Gem",
 				head="Yaoyotl Helm", neck="Twilight Torque",
-                body="Cab. Surcoat", hands="Cizin Mufflers", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Rev. Leggings"}
 
 sets.idle.MDT = { ammo="Demonry Stone",
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Cab. Surcoat", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Shadow Ring",
+                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Shadow Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Cab. Breeches", feet="Rev. Leggings"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -56,19 +56,19 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 sets.TP = {  ammo="Paeapua",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Pak Corselet", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches", feet="Ejekamal Boots"}
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Ejekamal Boots"}
 sets.TP.Acc = {
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Pak Corselet", hands="Buremte Gloves", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.TP.Hybrid = { 
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Cab. Surcoat", hands="Buremte Gloves", lring=Aug.Darkring1, rring=Aug.Darkring2,
-                back="Repulse Mantle", waist="Dynamic Belt +1", legs="Cizin Breeches", feet="Cizin Greaves"}
+                body="Cab. Surcoat +1", hands="Buremte Gloves", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Repulse Mantle", waist="Dynamic Belt +1", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 -- Precast 
 sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
 				head="Cab. Coronet",
-				body="Cab. Surcoat",hands="Cab. Breeches",
+				body="Cab. Surcoat +1",hands="Cab. Breeches",
 				back="Valor Cape", waist="Creed Baudrier", legs="Cab. Leggings"})
 
 sets.HPDown = set_combine(sets.idle.PDT,{

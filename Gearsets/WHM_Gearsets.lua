@@ -28,11 +28,11 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Gendewitha Caubeen", neck="Twilight Torque", lear="", rear="",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
 				head="Gendewitha Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1, rring="Defending Ring",
                 back="", waist="",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -163,7 +163,7 @@ if player.name == 'Feary' then
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
-	elseif player.name == 'Derion' then
+elseif player.name == 'Derion' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')
@@ -191,7 +191,7 @@ if player.name == 'Feary' then
 		
 		sets.idle.PDT = { main="Earth Staff",
 				head="", neck="Twilight Torque", lear="", rear="",
-                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Defending Ring".Aniyah,
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
 				head="", neck="Twilight Torque", lear="", rear="",
@@ -319,7 +319,7 @@ if player.name == 'Feary' then
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
 
-	elseif player.name == 'Aniyah' then
+elseif player.name == 'Aniyah' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')
@@ -347,7 +347,7 @@ if player.name == 'Feary' then
 		
 		sets.idle.PDT = { main="Earth Staff",
 				head="", neck="Twilight Torque", lear="", rear="",
-                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Defending Ring".Aniyah,
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
 				head="", neck="Twilight Torque", lear="", rear="",
@@ -503,7 +503,7 @@ if player.name == 'Feary' then
 		
 		sets.idle.PDT = { main="Earth Staff",
 				head="", neck="Twilight Torque", lear="", rear="",
-                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                body="Gendewitha bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Defending Ring".Aniyah,
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {
 				head="", neck="Twilight Torque", lear="", rear="",

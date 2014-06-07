@@ -38,12 +38,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
 
 sets.idle.MDT = { 
 				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots"}
 
 sets.idle.Evasion = {}
@@ -142,7 +142,7 @@ sets.precast.RAWS['Namas Arrow'] = {
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 sets.precast.RAWS.Acc = {}
 sets.precast.RAWS.Acc['Namas Arrow'] = {
-				head="Sakonji Kabuto", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Sukeroku Hachi.", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Unkai Kote +2", lring="Arewe Ring +1", rring="Arewe Ring +1",
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 

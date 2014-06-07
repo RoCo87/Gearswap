@@ -1,5 +1,5 @@
--- DRG Gear_sets
--- Created:
+-- WAR Gear_sets
+-- Created: 6/1/2014
 -- Last Modified:
 --
 --
@@ -12,26 +12,18 @@ if player.name == 'Feary' then
 	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
-		automacroset = 1
+		automacroset = 0
 		if automacroset == 1 then
-			if player.sub_job == 'SAM' then
+			if player.sub_job == 'NIN' then
 				set_macro_page(12,1)
-			elseif player.sub_job == 'NIN' then
+			elseif player.sub_job == 'SAM' then
 				set_macro_page(12,2)
 			elseif player.sub_job == 'DNC' then
 				set_macro_page(12,3)
-			elseif player.sub_job == 'WAR' then 
+			elseif player.sub_job == 'MNK' then 
 				set_macro_page(12,4)
-			elseif player.sub_job == 'BLU' then 
+			elseif player.sub_job == 'DRK' then 
 				set_macro_page(12,5)
-			elseif player.sub_job == 'RDM' then 
-				set_macro_page(12,6)
-			elseif player.sub_job == 'WHM' then 
-				set_macro_page(12,7)	
-			elseif player.sub_job == 'SCH' then 
-				set_macro_page(12,8)	
-			elseif player.sub_job == 'PLD' then 
-				set_macro_page(12,9)	
 			end
 		else
 			set_macro_page(12,1)
@@ -49,30 +41,31 @@ sets.idle.MDT = {
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {legs="Blood Cuisses"})
+sets.misc.Town = set_combine(sets.idle.PDT, {feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", legs="Blood Cuisses"})
+				lear="Merman's Earring", rear="Merman's Earring", feet="Hermes' Sandals"})
+
 -- Melee TP 
 sets.TP = { ammo="Hagneia Stone",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
             back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 
 sets.TP.Ionis = { ammo="Hagneia Stone",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
             back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 
 -- Melee Accuracy TP
 sets.TP.Acc = {	ammo="Hagneia Stone",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+				body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 -- Ionis Haste +2% Save TP 25+
 sets.TP.Acc.Ionis = {ammo="Hagneia Stone",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+				body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 
 -- Pet
