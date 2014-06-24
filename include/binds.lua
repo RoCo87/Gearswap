@@ -1,7 +1,7 @@
 -- Feary's Bind Lua
 -- Date Created: 4/10/2014
---
---
+-- Last Updated
+-- To Do
 --
 --
 --
@@ -70,6 +70,7 @@ elseif player.main_job == "WHM" then
 	windower.send_command('bind !f4 input /ma "Curaga III" <p3>')
 	windower.send_command('bind !f5 input /ma "Curaga III" <p4>')
 	windower.send_command('bind !f6 input /ma "Curaga III" <p5>')
+	
 	-- Ctrl
 	windower.send_command('bind ^f1 input /ma "Cure IV" <p0>')
 	windower.send_command('bind ^f2 input /ma "Cure IV" <p1>')

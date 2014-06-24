@@ -2,7 +2,7 @@
 -- Created: 4/26/2014
 -- Last Updated: 4/26/2014
 -- To Do List:
---
+-- Configure Spells Sets - Adds spells
 --
 --
 --includes

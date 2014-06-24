@@ -1,6 +1,6 @@
--- Feary's BLM LUA
--- Created - 4/11/2014
--- Last Update: 5/26/2014
+-- Feary's SCH LUA
+-- Created - 6/13/2014
+-- Last Update: 6/23/2014
 -- To Do List
 -- 
 -- 
@@ -14,7 +14,7 @@ function get_sets(spell)
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get BLM gearsets
-	include('Gearsets/BLM_Gearsets.lua')
+	include('Gearsets/SCH_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0
@@ -286,8 +286,6 @@ function midcast(spell,arg)
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:contains("Spikes") then
 			equip(sets.midcast.INT)
-		elseif spell.english:contains("Refresh") then
-			equip(sets.midcast.ConserveMP)
 		elseif spell.name == 'Stoneskin' then
 			equip(sets.midcast.Stoneskin)
 			if buffactive.Stoneskin then
@@ -299,8 +297,10 @@ function midcast(spell,arg)
 			equip(sets.midcast.Aquaveil)
 		elseif spell.name == 'Haste' then
 			equip(sets.midcast.Hastespell)
-		elseif spell.english:wcmatch('Reraise*') then
-			equip(sets.midcast.ConserveMP)
+		elseif spell.name == 'Embrava' then
+			equip(sets.midcast.Embrava)
+		elseif spell.english:startswith('En') then
+			equip(sets.midcast.Enhancing)
 		else
 			equip(sets.midcast.ConserveMP)
 		end
@@ -331,7 +331,11 @@ function midcast(spell,arg)
 		elseif spell.name == "Aspir" then
 			equip(sets.midcast.Aspir)
 		elseif spell.name == "Stun" then
-			equip(sets.midcast.Macc)
+			if buffactive["Alacrity"] then
+				equip(sets.midcast.Stun.Alacrity)
+			else
+				equip(sets.midcast.Stun)
+			end
 		else
 			equip(sets.midcast.Macc)
 		end

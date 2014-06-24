@@ -36,14 +36,15 @@ if player.Name == 'Feary' then
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
+                back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
-				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
+				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+                body="Hagondes Coat", hands="Serpentes Cuffs",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
+		
 		-- JA
 		sets.precast.JA["Manafont"] = {}
 		sets.precast.JA["Subtle Sorcery"] = {}
@@ -56,7 +57,7 @@ if player.Name == 'Feary' then
 		sets.precast.MinusHP = {head="Zenith Crown",neck="Morgana's Choker",body="Dalmatica",hands="Zenith Mitts",legs="Zenith Slacks",feet="Zenith Pumps"}
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring",
-                body="Anhur Robe", hands="", lring="", rring="Prolix Ring",
+                body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Chelona Boots"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{head="Goetia Petasos +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {

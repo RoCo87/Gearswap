@@ -1,5 +1,6 @@
 -- Feary's SAM LUA
--- Date: 4/8/2014
+-- Created On: 4/8/2014
+-- Last Update: 6/13/2014
 -- To Do:
 --	
 -- 	
@@ -100,8 +101,9 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
-	elseif command == 'twilight' then
+	elseif command == 'twilight' or command == "t" then
 		-- Twilight Helm/Mail logic
+		-- if i have twilight gear on, put on my tp set 
 		if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
 			enable('head','body')
 			if player.status == "Engaged" then
@@ -112,6 +114,7 @@ function self_command(command)
 			end
 			windower.add_to_chat(121, 'Twilight Unequipped')
 		else
+			-- if i dont have twilight on equip it
 			equip({head="Twilight Helm",body="Twilight Mail"})
 		end
 	end
@@ -122,7 +125,7 @@ function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
 		slot_lock()
 		windower.add_to_chat(121,'Idle/Resting Set')
-		if player.hpp <= 30 or buffactive['Weakness'] then
+		if buffactive['Weakness'] then
 			windower.send_command('gs c twilight')
 		elseif PDT == 1 then
 			equip(sets.idle.PDT)
@@ -228,7 +231,7 @@ function precast(spell,arg)
 				end					
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..'tp is Not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..' TP is Not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -325,13 +328,6 @@ function previous_set(spell)
 end
 
 function slot_lock()
-    -- Twilight Helm/Mail logic
-    if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' and (player.hpp <= 30 or buffactive['Weakness']) then
-        disable('head','body')
-		windower.add_to_chat(121,'Twilight Locked')
-    else
-        enable('head','body')
-    end
     if player.equipment.left_ear == 'Reraise Earring' then
         disable('left_ear')
         windower.add_to_chat(121,'Reraise Earring equiped on left ear')

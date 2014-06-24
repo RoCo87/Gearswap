@@ -1,13 +1,13 @@
 -- Feary's WHM LUA
 -- Date Created : 1/29/2014
 -- Last Update: 5/26/2014
--- To Do
---
+-- To Do:
+-- Add Enmity Cure Sets Toggle
 --
 
 --includes
 	include('include/functions.lua')
--- Gear Sets 
+	
 function get_sets()
 --includes
 	--include('include/autoexec.lua')
@@ -15,16 +15,18 @@ function get_sets()
 	-- Get WHM gearsets
 	include('Gearsets/WHM_Gearsets.lua')
 	
-	-- Variables 
+	-- Variables
 	ShadowType = 'None'
 	Mode = 0
 	PDT = 0
 	MDT = 0
 end
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
@@ -304,7 +306,7 @@ function midcast(spell,arg)
 		if spell.english:wcmatch('Fir*|Ston*|Water*|Aero*|Blizza*|Thund*') then
 			equip(sets.midcast.Nuke)
 		elseif spell.english:wcmatch('Burn|Rasp|Drown|Choke|Frost|Shock') then
-			equip(sets.midcast.Dot)
+			equip(sets.midcast.DOT)
 		else
 			equip(sets.midcast.Macc)
 		end
@@ -329,30 +331,35 @@ end -- end midcast
 
 function aftercast(spell,arg)
 -- Autoset
-	if player.status == 'Engaged' then
-		if PDT == 1 or MDT == 1 then
-			if PDT == 1 and MDT == 0 then
-				windower.add_to_chat(121,'PDT Locked')
-				equip(sets.idle.PDT)
-			elseif MDT == 1 and PDT == 0 then
-				windower.add_to_chat(121,'MDT Locked')
-				equip(sets.idle.MDT)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
+	else
+		if player.status == 'Engaged' then
+			if PDT == 1 or MDT == 1 then
+				if PDT == 1 and MDT == 0 then
+					windower.add_to_chat(121,'PDT Locked')
+					equip(sets.idle.PDT)
+				elseif MDT == 1 and PDT == 0 then
+					windower.add_to_chat(121,'MDT Locked')
+					equip(sets.idle.MDT)
+				else
+					MDT = 0
+					PDT = 0
+				end
 			else
-				MDT = 0
-				PDT = 0
+				-- Equip previous TP set 
+					previous_set()
 			end
 		else
-			-- Equip previous TP set 
-				previous_set()
-		end
-	else
-		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			equip(sets.idle.Standard)
+			slot_lock()
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
 -- Sleep and repose

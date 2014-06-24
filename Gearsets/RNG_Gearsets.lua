@@ -71,7 +71,7 @@ sets.TP.Acc = {
 
 -- RA Sets
 sets.precast.Snapshot = {head="Arcadian Beret +1",
-                body="Sylvan Caban +2", hands="Iuitl Wristbands +1",
+                body="Arc. Jerkin +1", hands="Iuitl Wristbands +1",
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks"}
 sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion Beret +1",
                 body="Sylvan Caban +2", hands="Arc. Bracers +1",
@@ -80,23 +80,23 @@ sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion 
 -- Bow
 sets.RA = { 
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Arewe Ring +1",
             back="Sylvan Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.RA.Acc = {
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Arewe Ring +1", rring="Arewe Ring +1",
 			back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 -- Gun
 sets.RA.Gun = { 
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Arewe Ring +1",
             back="Sylvan Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.RA.Acc.Gun = { 
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Arewe Ring +1", rring="Arewe Ring +1",
             back="Kayapa Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 -- JA
@@ -104,30 +104,30 @@ sets.RA.Acc.Gun = {
 sets.precast.JA.Acc = {}
 sets.precast.JA["Barrage"] =  {
 				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.JA.Acc["Barrage"] =  {
 				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Arewe Ring +1", rring="Arewe Ring +1",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Arewe Ring +1", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 -- Eagle Eye Shot
-sets.precast.JA["Eagle Eye Shot"] = set_combine(sets.RA, {legs="Arcadian Braccae"})
+sets.precast.JA["Eagle Eye Shot"] = set_combine(sets.RA, {legs="Arcadian Braccae +1"})
 
-sets.precast.JA.Acc["Eagle Eye Shot"] = set_combine(sets.RA.Acc, {legs="Arcadian Braccae"})
+sets.precast.JA.Acc["Eagle Eye Shot"] = set_combine(sets.RA.Acc, {legs="Arcadian Braccae +1"})
 
 -- Overkill
 sets.precast.JA["Overkill"] = {
 				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Arewe Ring +1",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
 				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Areew Ring +1", rring="Arewe Ring +1",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Areew Ring +1", rring="Arewe Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
 
-sets.precast.JA["Shadowbind"] = {hands="Orion Bracers"}
+sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
 sets.precast.JA["Sharpshot"] = {legs="Orion Braccae"}
 sets.precast.JA["Double Shot"] = {body="Sylvan Gapette +2"}
 sets.precast.JA["Velocity Shot"] = {legs="Sylvan Caban +2"}
@@ -159,23 +159,23 @@ sets.precast.RAWS['Namas Arrow'] = {
 -- Gun/Crossbow WS
 sets.precast.RAWS['Last Stand'] = {
 				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Coronach'] = {
 				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Wildfire'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae", feet="Arcadian Socks"}
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks"}
 
 sets.precast.RAWS['Trueflight'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae", feet="Arcadian Socks"}
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks"}
 					
 -- Midcast Sets
 

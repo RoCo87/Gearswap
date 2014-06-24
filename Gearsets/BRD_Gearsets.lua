@@ -70,7 +70,7 @@ if player.name == 'Feary' then
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring="", rring="",
-                back="Felicitas Cape", waist="Austerity Belt", feet="Chelona Boots"})
+                back="Felicitas Cape", waist="", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",
                 feet="Aoidos' Cothrn. +2"})
@@ -362,20 +362,20 @@ elseif player.name == "Carrisa" then
 		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'nin' then
-				set_macro_page(4,1)
+				set_macro_page(20,1)
 			elseif player.sub_job =='whm' then
-				set_macro_page(4,2)
+				set_macro_page(20,2)
 			elseif player.sub_job == 'rdm' then
-				set_macro_page(4,3)
+				set_macro_page(20,3)
 			elseif player.sub_job =='sch' then 
-				set_macro_page(4,4)
+				set_macro_page(20,4)
 			elseif player.sub_job =='dnc' then 
-				set_macro_page(4,5)
-			elseif player.sub_job =='blm' then 
-				set_macro_page(4,6)
+				set_macro_page(20,5)
+			elseif player.sub_job =='BLM' then 
+				set_macro_page(20,6)
 			end
 		else
-			set_macro_page(4,1)
+			set_macro_page(20,1)
 		end
 		
 		-- Instruments
@@ -406,24 +406,24 @@ elseif player.name == "Carrisa" then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Earth Staff",
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring".Carrisa,
+		sets.idle.PDT = {main="Earth Staff", sub="Vivid Strap",
+				head="Nahtirah Hat", neck="Twilight Torque", lear="Loquac. Earring", rear="Musical Earring",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
                 back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
 		sets.idle.MDT = {
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring".Carrisa,
-                back="Engulfer Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+				head="Nahtirah Hat", neck="Twilight Torque", lear="Loquac. Earring", rear="Musical Earring",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
+                back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
-				head="Nefer Khat", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Antivenom Earring",
+				head="Nefer Khat", neck="Eidolon Pendant", lear="Loquac. Earring", rear="Antivenom Earring",
                 body="Heka's kalasiris", hands="Serpentes Cuffs", rring="Angha Ring",
                 back="Felicitas Cape", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Merman's Earring",
+				lear="Loquac. Earring", rear="Musical Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages",
                 legs="Gendewitha Spats", feet="Aoidos' Cothrn. +2"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="lilac Corsage", feet="Aoidos' Cothrn. +2"})
+				head="Lilac Corsage", feet="Aoidos' Cothrn. +2"})
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker", 
                 body="Dalmatica", hands="Zenith Mitts", 
@@ -437,7 +437,7 @@ elseif player.name == "Carrisa" then
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {
-				head="Nahtirah Hat", neck="Jeweled Collar", lear="Loquac. Earring", rear="",
+				head="Nahtirah Hat", neck="Jeweled Collar", lear="Loquac. Earring", rear="Musical Earring",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",

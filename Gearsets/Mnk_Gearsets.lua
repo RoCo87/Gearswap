@@ -1,7 +1,7 @@
 -- MNK Gear_sets
--- Created:
--- Last Modified:
---
+-- Created: 1/25/2014
+-- Last Modified: 6/14/2014
+-- To Do
 --
 
 if player.name == 'Feary' then
@@ -39,26 +39,27 @@ sets.idle.PDT = {
                 back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.MDT = { 
-				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {
-				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
+				head="Felistris Mask", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
+				head="Felistris Mask",
 				feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", feet="Hermes' Sandals"})
 -- TP 
-sets.TP = { ammo="Hagneia Stone",
-				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+sets.TP = { ammo="Ginsen",
+				head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif brais +1", feet="Manibozho Boots"}
 -- Accuracy TP
 sets.TP.MidAcc = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",

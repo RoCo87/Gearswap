@@ -1,7 +1,7 @@
 -- DNC Gear_sets
--- Created
--- Last Modified
---
+-- Created: 5/15/2014
+-- Last Modified: 6/6/2014
+-- To Do
 --
 
 if player.name == 'Feary' then
@@ -15,16 +15,14 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'NIN' then
-				set_macro_page(5,1)
+				set_macro_page(18,1)
 			elseif player.sub_job == 'WAR' then
-				set_macro_page(5,2)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(5,3)
-			elseif player.sub_job == 'SAM' then 
-				set_macro_page(5,4)
+				set_macro_page(18,2)
+			elseif player.sub_job == 'SAM' then
+				set_macro_page(18,3)
 			end
 		else
-			set_macro_page(5,1)
+			set_macro_page(18,1)
 		end
 		
 -- Auto Sets

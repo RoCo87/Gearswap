@@ -38,14 +38,14 @@ magicalshield = {sub="Aegis"}
 
 -- Standard/idle
 sets.idle.PDT = { ammo="Angha Gem",
-				head="Yaoyotl Helm", neck="Twilight Torque",
+				head="Rev. Coronet +1", neck="Twilight Torque",
                 body="Cab. Surcoat +1", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Rev. Leggings"}
+                back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Rev. Leggings +1"}
 
-sets.idle.MDT = { ammo="Demonry Stone",
-				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Shadow Ring",
-                back="Engulfer Cape", waist="Creed Baudrier", legs="Cab. Breeches", feet="Rev. Leggings"}
+sets.idle.MDT = { ammo="Vanir Battery",
+				head="Rev. Coronet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring="Defending Ring", rring="Shadow Ring",
+                back="Engulfer Cape", waist="Creed Baudrier", legs="Cab. Breeches", feet="Rev. Leggings +1"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
 				legs="Blood Cuisses"})
@@ -101,7 +101,7 @@ sets.precast.JA["Rampart"] = set_combine(sets.Enmity,{
 				body="Cab. Surcoat", hands="Cab. Gauntlets",
 				back="Valor Cape", waist="Chuq'aba Belt",  legs="Cab. Breeches", feet="Whirlpool Greaves"})
 sets.precast.JA["Sentinel"] = set_combine(sets.Enmity,{feet="Cab. Leggings"})
-sets.precast.JA["Holy Circle"] = set_combine(sets.Enmity,{feet="Rev. Leggings"})
+sets.precast.JA["Holy Circle"] = set_combine(sets.Enmity,{feet="Rev. Leggings +1"})
 sets.precast.JA["Fealty"] = set_combine(sets.Enmity,{body="Cab. Surcoat"})
 sets.precast.JA["Shield Bash"] = set_combine(sets.Enmity,{
 				hands="Cab. Gauntlets",lear="Knightly Earring"})
