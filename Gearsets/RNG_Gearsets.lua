@@ -44,17 +44,19 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Arcadian Beret +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
-				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Arcadian Beret +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Fajin Boots"})
+sets.misc.Town = set_combine(sets.idle.PDT, 
+				head="Arcadian Beret +1",
+				body="Arcadian Jerkin +1", hands="Arcadian Bracers +1",
+				legs="Arcadian Braccae +1", feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
