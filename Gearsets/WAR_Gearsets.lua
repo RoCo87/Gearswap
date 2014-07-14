@@ -1,7 +1,7 @@
 -- WAR Gear_sets
 -- Created: 6/1/2014
 -- Last Modified: 6/14/2014
---
+-- To Do
 --
 
 if player.name == 'Feary' then
@@ -36,7 +36,7 @@ sets.idle.PDT = {
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 
-sets.idle.MDT = { 
+sets.idle.MDT = { ammo="Vanir Battery",
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves"}

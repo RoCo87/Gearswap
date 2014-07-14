@@ -90,7 +90,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = { 
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
@@ -118,7 +118,7 @@ if player.name == 'Feary' then
                 back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
@@ -144,11 +144,11 @@ if player.name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
@@ -250,7 +250,7 @@ elseif player.name == "Aniyah" then
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Chelona Boots"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
+		sets.idle.Standard = set_combine(sets.idle.PDT,{main="Mandau", sub="Genbu's Shield",
 				lear="Merman's Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages",
                 legs="Gendewitha Spats", feet="Aoidos' Cothrn. +2"})
@@ -270,7 +270,7 @@ elseif player.name == "Aniyah" then
 		sets.precast.Fastcast = { 
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Praeco Doublet", hands="Gendewitha Gages", lring="Minstrel's Ring", rring="Prolix Ring",
@@ -298,12 +298,12 @@ elseif player.name == "Aniyah" then
                 back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers"}
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
+                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
+                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 		-- Goal 
 		sets.midcast.Debuff2 = {main="Mandau", range="Gjallarhorn",
-				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Balrahn's ring", rring="Sangoma Ring",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Musical Earring", rear="Gwati Earring",
+                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Brioso Cannions", feet="Bokwus Boots"}
 
 		--Healing Magic
@@ -330,11 +330,11 @@ elseif player.name == "Aniyah" then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="", ammo="Aureole",
 				head="", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
@@ -439,7 +439,7 @@ elseif player.name == "Carrisa" then
 		sets.precast.Fastcast = {
 				head="Nahtirah Hat", neck="Jeweled Collar", lear="Loquac. Earring", rear="Musical Earring",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Sha'ir Manteel", hands="Schellenband", lring="Minstrel's Ring", rring="Prolix Ring",

@@ -1,10 +1,11 @@
--- Statuses 
--- Date:
---
---
+-- Feary's Global Statuses 
+-- Created: 6/30/2014
+-- Last Updated:
+-- To Do:
 --
 --
 
+function buff_change(buff,g_or_l)
 -- gain buffs
 	if buff == 'Defense Down' and g_or_l == true then
 		windower.send_command('input /p Defense Down')
@@ -18,23 +19,23 @@
 	if buff == 'bind' and g_or_l == true then
 		windower.send_command('input /p Bound')
 	end
-	if buff == 'Doom' and g_or_l == true then
+	if buff == 'doom' and g_or_l == true then
 		windower.send_command('input /p Doomed')
 	end
-	if buff == 'Slow' and g_or_l == true then
+	if buff == 'slow' and g_or_l == true then
 		windower.send_command('input /p Slowed')
 	end
 	if buff == 'charm' and g_or_l == true then
-		windower.send_command('input /p charmed Sleep me')
+		windower.send_command('input /p Charmed, Sleep me')
 	end
 	if buff == 'weight' and g_or_l == true then
 		windower.send_command('input /p Gravity')
 	end
-	if buff == 'Weakness' and g_or_l == true then
+	if buff == 'weakness' and g_or_l == true then
 		windower.send_command('gs c twilight')
 	end
 -- Lose Buffs
-	if S{MNK,SAM,THF,DRK,WAR,COR,DRG,PUP}:contains(player.main_job) then
+	if S{MNK,SAM,THF,DRK,WAR,COR,DRG,PUP,PLD}:contains(player.main_job) then
 		if buff == 'haste' and g_or_l == false then
 			windower.send_command('input /p Haste Please')
 		end
@@ -42,9 +43,10 @@
 	if buff == 'encumbrance' and g_or_l == false then
 		previous_set()
 	end
-	if buff == 'Doom' and g_or_l == false then
+	if buff == 'doom' and g_or_l == false then
 		windower.send_command('input /p Doom off Woot -.-')
 	end
 	if buff == 'charm' and g_or_l == true then
 		windower.send_command('input /p Uncharmed')
 	end
+end

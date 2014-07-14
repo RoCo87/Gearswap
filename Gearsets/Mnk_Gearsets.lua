@@ -1,7 +1,10 @@
 -- MNK Gear_sets
 -- Created: 1/25/2014
 -- Last Modified: 6/14/2014
--- To Do
+-- To Do List
+--
+--
+--
 --
 
 if player.name == 'Feary' then

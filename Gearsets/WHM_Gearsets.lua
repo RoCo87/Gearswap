@@ -56,7 +56,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalairis",
                 back="Pahtli Cape", legs="Orsn. Pantaln. +2",feet="Cure Clogs"})
@@ -150,7 +150,7 @@ if player.name == 'Feary' then
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Gende. Gages +1", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Bokwus Robe", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
@@ -222,7 +222,7 @@ elseif player.name == 'Derion' then
 		sets.precast.Fastcast = { ammo="Incantor stone",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
@@ -308,11 +308,11 @@ elseif player.name == 'Derion' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
@@ -378,7 +378,7 @@ elseif player.name == 'Aniyah' then
 		sets.precast.Fastcast = { ammo="Incantor stone",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
@@ -464,11 +464,11 @@ elseif player.name == 'Aniyah' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
@@ -534,7 +534,7 @@ elseif player.name =='Firetoplay' then
 		sets.precast.Fastcast = { ammo="Incantor stone",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="",
                 body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Clr Cap +2", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
@@ -620,11 +620,11 @@ elseif player.name =='Firetoplay' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Balrahn's Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Sangoma Ring", rring="Perception Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
@@ -693,7 +693,7 @@ elseif player.name == 'Carrisa' then
 		sets.precast.Fastcast = {ammo="Impatiens", sub="Vivid Strap",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring", rear="Orison Earring",
                 body="Anhur Robe", hands="Repartie Gloves", lring="Prolix Ring", rring="",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1 +1", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="Aceso's Choker", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",

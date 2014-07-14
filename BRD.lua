@@ -155,7 +155,7 @@ function status_change(new,old)
 end
 
 -- Gain or lose buffs 
-function buff_change(buff,g_or_l)
+function feary_buff_change(buff,g_or_l)
 	-- Global Status Values
 	include('include/status.lua')
 end

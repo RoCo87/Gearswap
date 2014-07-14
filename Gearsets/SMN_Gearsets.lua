@@ -1,4 +1,9 @@
 -- SMN Gearsets
+-- Created:
+-- Last Updated: 
+-- To Do:
+--
+--
 --
 
 if player.name == 'Feary' then
@@ -97,7 +102,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = { ammo="Impatiens",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
 				body="Anhur Robe", hands="", lring="Prolix Ring", rring="",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",
@@ -161,7 +166,7 @@ if player.name == 'Feary' then
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Balrahn's ring", rring="Sangoma Ring",
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma Ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})

@@ -105,7 +105,7 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
-	elseif command == 'twilight' then
+	elseif command == 'twilight' or command == "t" then
 		-- Twilight Helm/Mail logic
 		if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
 			enable('head','body')
@@ -265,8 +265,10 @@ function midcast(spell,arg)
 				equip(sets.Recast,sets.misc.Fastcast)
 			elseif spell.name == "Phalanx" then
 				equip(sets.Recast,sets.Enmity,sets.midcast.EnhancingMagic)
+			elseif spell.name == "Crusade" then
+				equip(sets.Recast,sets.Enmity)
 			else
-				equip(sets.recast,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.Recast,sets.Enmity,sets.misc.Fastcast)
 			end
 		elseif spell.skill == 'Divine Magic' then
 			if spell.name == "Flash" then

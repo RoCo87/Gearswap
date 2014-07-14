@@ -1,7 +1,8 @@
 -- Feary's RDM LUA
 -- Created 2/18/2014
+-- Last Updated: 
 -- To do list
--- - Obi Staves cape ring
+-- 
 --
 --
 --includes
@@ -349,7 +350,7 @@ function midcast(spell,arg)
 -- Elemental Magic
 	elseif spell.skill == 'Elemental Magic' then
 		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak
+			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 		elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then
 			equip(sets.midcast.Elemental)
 		else

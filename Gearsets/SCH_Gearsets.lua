@@ -1,7 +1,12 @@
 -- SCH Gearsets
 -- Created: 6/13/2014
 -- Last Updated: 6/13/2014
----
+-- To Do:
+--
+--
+--
+--
+
 
 if player.Name == 'Feary' then
 		-- includes
@@ -55,7 +60,7 @@ if player.Name == 'Feary' then
 		sets.precast.JA["Modus Veritas"] = {}
 		sets.precast.JA["Libra"] = {}
 		
-		-- Stragems 
+		-- Strategems 
 		sets.precast.JA["Rapture"] = {}
 		
 		-- Precast
@@ -63,7 +68,7 @@ if player.Name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Incantor Stone",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants", feet="Argute Loafers +2"}
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Peda. Loafers"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris", 
                 back="Pahtli Cape"})  		
@@ -117,11 +122,11 @@ if player.Name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Balrahn's ring", rring="Sangoma ring",
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Balrahn's ring", rring="Sangoma ring",
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
                 back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
