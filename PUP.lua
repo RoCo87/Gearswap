@@ -100,6 +100,12 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
+	elseif command == "m" then
+		if master == 1 then 
+			master = 0
+		else
+			master = 1
+		end
 	end
 end
 
@@ -269,10 +275,10 @@ end
 
 function midcast(spell,arg)
 -- Magic
-	if spell.skill:endswith('Magic') then
+	if spell.type:endswith('Magic') then
 		equip(sets.midcast.Recast)
 -- Ninjutsu
-	elseif spell.skill == "Ninjutsu" then
+	elseif spell.type == "Ninjutsu" then
 		equip(sets.midcast.Recast)
         if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then

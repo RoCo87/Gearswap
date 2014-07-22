@@ -1,6 +1,9 @@
 -- PLD Gearsets
--- Created:
--- Last Modified:
+-- Created:4/1/2014
+-- Last Modified: 7/19/2014
+-- To Do List
+--
+--
 --
 --
 
@@ -73,7 +76,7 @@ sets.Weakened = { ammo="Angha Gem",
 -- Precast 
 -- Enmity Caps at 100 
 sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
-				head="Cab. Coronet", neck="Invidia Torque",
+				head="Cab. Coronet", neck="Atzintli Necklace",
 				body="Cab. Surcoat +1", hands="Cab. Gauntlets",
 				back="Fravashi Mantle", waist="Creed Baudrier", legs="Cab. Breeches", feet="Cab. Leggings"})
 

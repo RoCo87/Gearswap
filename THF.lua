@@ -9,8 +9,7 @@
 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
-	
+
 -- Gear Sets 
 function get_sets()
 --includes
@@ -177,6 +176,8 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
+-- Global Includes
+	include('include/status.lua')
 -- Sneak Attack
 	if buff == 'Sneak Attack' and g_or_l == false then
 		previous_set()

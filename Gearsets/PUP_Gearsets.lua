@@ -15,7 +15,7 @@ if player.name == 'Feary' then
 	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'war' then
 				set_macro_page(19,1)
@@ -33,6 +33,8 @@ if player.name == 'Feary' then
 		end
 	
 	animator = {range="Em. Animator"}
+	oil = {ammo="Automat. Oil +3"}
+	
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
@@ -52,31 +54,31 @@ sets.idle.Evasion = {
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Manibozho Boots"}
 
-sets.misc.Town = set_combine(animator, sets.idle.PDT, {
+sets.misc.Town = set_combine(animator, oil, sets.idle.PDT, {
 				feet="Hermes' Sandals"})
 				
-sets.idle.Standard = set_combine(animator, sets.idle.PDT, {
+sets.idle.Standard = set_combine(animator, oil, sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", feet="Hermes' Sandals"})
 
 -- Master TP 
 -- TP 
-sets.TP = set_combine(animator,{ 
+sets.TP = set_combine(animator, oil, { 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"})
 -- Accuracy TP
-sets.TP.MidAcc =  set_combine(sets.TP,{
+sets.TP.MidAcc =  set_combine(animator, oil, sets.TP,{
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
 -- High Accuracy TP
-sets.TP.HighAcc = set_combine(sets.TP,{
+sets.TP.HighAcc = set_combine(animator, oil, sets.TP,{
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
 
 -- Hybrid PDT/TP
-sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)
+sets.TP.Hybrid = set_combine(animator, oil, sets.TP, sets.idle.PDT)
 				
 -- Pet TP 
 sets.TP.Pet = set_combine(animator,sets.TP,{ 

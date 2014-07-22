@@ -1,6 +1,6 @@
 -- THF Gear_sets
 -- Created: 4/5/2014
--- Last Modified:
+-- Last Modified: 7/21/2014
 -- To Do List 
 --
 --
@@ -55,7 +55,7 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
 
 sets.TH = {
 			hands="Plun. Armlets +1",
-			waist="Chaac Belt", feet="Raider's Poulaines +2"}
+			waist="Chaac Belt"}
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
@@ -64,7 +64,7 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
-sets.TP = { ammo="Raider's Bmrng.",
+sets.TP = { ranged="Raider's Bmrng.",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Thaumas Coat", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
             back="Atheling Mantle", waist="Windbuffet Belt", legs="Pillager's Culottes", feet="Plun. Poulaines"}
