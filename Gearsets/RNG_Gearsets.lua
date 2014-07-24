@@ -1,6 +1,6 @@
 -- RNG Gear_sets
--- Created:
--- Last Updated:
+-- Created: 3/10/2014
+-- Last Updated: 7/22/2014
 -- To Do:
 --
 --
@@ -130,7 +130,7 @@ sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
 
 sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
-sets.precast.JA["Sharpshot"] = {legs="Orion Braccae"}
+sets.precast.JA["Sharpshot"] = {legs="Orion Braccae +1"}
 sets.precast.JA["Double Shot"] = {body="Sylvan Gapette +2"}
 sets.precast.JA["Velocity Shot"] = {legs="Sylvan Caban +2"}
 sets.precast.JA["Camouflage"] = {head="Orion Jerkin +1"}
