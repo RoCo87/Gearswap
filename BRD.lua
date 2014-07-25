@@ -13,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get BRD gearsets
-	include('Gearsets/BRD_Gearsets.lua')
+	include('Gearsets/'..player.name..'/BRD_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0

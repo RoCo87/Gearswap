@@ -14,7 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get RDM gearsets
-	include('Gearsets/Geo_Gearsets.lua')
+	include('Gearsets/'..player.name..'/Geo_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0

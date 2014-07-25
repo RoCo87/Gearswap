@@ -13,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get PLD Gearsets
-	include('Gearsets/PLD_Gearsets.lua')
+	include('Gearsets/'..player.name..'/PLD_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0

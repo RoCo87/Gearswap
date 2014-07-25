@@ -16,7 +16,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get NIN Gearsets
-	include('Gearsets/NIN_Gearsets.lua')
+	include('Gearsets/'..player.name..'/NIN_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0

@@ -14,7 +14,7 @@ function get_sets(spell)
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get BLU gearsets
-	include('Gearsets/BLU_Gearsets.lua')
+	include('Gearsets/'..player.name..'/BLU_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0

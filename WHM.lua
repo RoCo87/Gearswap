@@ -13,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get WHM gearsets
-	include('Gearsets/WHM_Gearsets.lua')
+	include('Gearsets/'..player.name..'/WHM_Gearsets.lua')
 	
 	-- Variables
 	ShadowType = 'None'

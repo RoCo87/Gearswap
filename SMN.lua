@@ -15,7 +15,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get SMN gearsets
-	include('Gearsets/SMN_Gearsets.lua')
+	include('Gearsets/'..player.name..'/SMN_Gearsets.lua')
 	
 	-- Variables 
 	ShadowType = 'None'

@@ -13,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get DRG Gearsets
-	include('Gearsets/DRG_Gearsets.lua')
+	include('Gearsets/'..player.name..'/DRG_Gearsets.lua')
 
 -- Define Default Values for Variables
 	Mode = 0

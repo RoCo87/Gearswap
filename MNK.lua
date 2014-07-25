@@ -15,7 +15,7 @@ function get_sets()
 	include('include/binds.lua')
 
 	-- Get MNK Gearsets
-	include('Gearsets/Mnk_Gearsets.lua')
+	include('Gearsets/'..player.name..'/Mnk_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	boostCount = 0

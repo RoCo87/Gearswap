@@ -14,7 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get PUP gearsets
-	include('Gearsets/PUP_Gearsets.lua')
+	include('Gearsets/'..player.name..'/PUP_Gearsets.lua')
 	
 	-- Variables 
 	ShadowType = 'None'

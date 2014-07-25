@@ -30,7 +30,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get COR Gearsets
-	include('Gearsets/COR_Gearsets.lua')   
+	include('Gearsets/'..player.name..'/COR_Gearsets.lua')   
 
 end
 -- Called when this job file is unloaded (eg: job change)

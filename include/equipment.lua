@@ -1,9 +1,11 @@
 -- Feary's Equipment
+-- Created On 1/12/2014
+-- Last Update:
+-- To Do
 --
 --
 --
 --
-
 
 -- Augmented Gear
 	Aug = {}

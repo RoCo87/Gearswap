@@ -14,7 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get SAM Gearsets
-	include('Gearsets/SAM_Gearsets.lua')
+	include('Gearsets/'..player.name..'/SAM_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	-- STP Bow does not go here, only bows for Namas/Apex that us sets.TP.Bow, have to test the other bow.

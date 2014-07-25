@@ -16,7 +16,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get THF Gearsets
-	include('Gearsets/THF_Gearsets.lua')
+	include('Gearsets/'..player.name..'/THF_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	TH = 0

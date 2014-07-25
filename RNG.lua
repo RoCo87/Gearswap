@@ -16,7 +16,7 @@ function get_sets()
 	include('include/binds.lua')
 
 -- Get RNG Gearsets
-	include('Gearsets/RNG_Gearsets.lua')   
+	include('Gearsets/'..player.name..'/RNG_Gearsets.lua')   
 	
 -- Define Default Values for Variables
 	Mode = 0
