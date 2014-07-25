@@ -5,13 +5,13 @@
 --
 
 	-- Day Change
-	windower.register_event('day_change', function(day_change)
+	windower.register_event('day_change', function(day)
 		day = world.day
 		windower.add_to_chat(121, '=='..world.day..'==')
 	end)
 	
 	-- Light Luggage
-	windower.register_event('zone_change', function(light_luggage)
+	windower.register_event('zone_change', function()
 	-- Delve and Skirmish
 		if world.zone == "Cirdas Caverns [U]" then
 			windower.add_to_chat(121, "Light Luggage - "..player.name.."'s Delve Profile")
@@ -97,6 +97,6 @@
 			windower.send_command('ll profile '..player.name..'_Meebles')
 		else
 			windower.add_to_chat(121, "Light Luggage - "..player.name.."'s Default Profile")
-			windower.send_command('ll profile default')
+			windower.send_command('ll profile none')
 		end
 	end)
