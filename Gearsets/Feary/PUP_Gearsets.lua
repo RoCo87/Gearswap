@@ -12,7 +12,6 @@ if player.name == 'Feary' then
 	include('include/utility.lua')
 	include('include/mappings.lua')
 	include('include/equipment.lua')
-	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
 		automacroset = 1
