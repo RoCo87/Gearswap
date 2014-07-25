@@ -7,7 +7,6 @@
 --
 --
 
-
 if player.Name == 'Feary' then
 		-- includes
 		include('include/mappings.lua')

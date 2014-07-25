@@ -191,12 +191,4 @@ sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
-
-
-elseif player.name == 'Derion' then
-
-elseif player.name == 'Aniyah' then
-
-elseif player.name == 'Firetoplay' then
-
 end

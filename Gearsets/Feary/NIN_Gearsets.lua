@@ -155,11 +155,4 @@ sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc)
 sets.misc.flourish = {}
 
-
-elseif player.name == 'Derion' then
-
-elseif player.name == 'Aniyah' then
-
-elseif player.name == 'Firetoplay' then
-
 end

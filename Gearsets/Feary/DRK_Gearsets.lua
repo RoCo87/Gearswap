@@ -162,11 +162,4 @@ sets.misc.Waltz = set_combine(sets.idle.PDT,{})
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
 
-
-elseif player.name == 'Derion' then
-
-elseif player.name == 'Aniyah' then
-
-elseif player.name == 'Firetoplay' then
-
 end

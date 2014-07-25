@@ -187,10 +187,5 @@ if player.name == 'Feary' then
 		sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
 
-	elseif player.name == 'Derion' then
-		
-	elseif player.name == 'Aniyah' then
-			
-	elseif player.name =='Firetoplay' then
-		
-	end
+
+end
