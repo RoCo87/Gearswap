@@ -39,12 +39,12 @@ if player.name == 'Feary' then
 sets.idle.PDT = { 
 				head="Otronif Mask", neck="Twilight Torque",
                 body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Hurch'lan Sash", legs="Otronif Brais +1", feet="Otronif Boots"}
+                back="Repulse Mantle", waist="Hurch'lan Sash", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="", legs="Otronif Brais +1", feet="Otronif Boots"}
+                back="", waist="", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {head="Pantin Taj"})
 

@@ -1,4 +1,7 @@
--- Include to Replaces AutoExec Plugin
+-- Feary's Autoexec.lua - Include to Replaces AutoExec Plugin
+-- Created on: 2/11/2014
+-- Last Updated; 7/25/2014
+-- TO Do List
 --
 --
 --
@@ -97,6 +100,6 @@
 			windower.send_command('ll profile '..player.name..'_Meebles')
 		else
 			windower.add_to_chat(121, "Light Luggage - "..player.name.."'s Default Profile")
-			windower.send_command('ll profile none')
+			windower.send_command('ll profile default')
 		end
 	end)

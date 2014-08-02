@@ -11,7 +11,7 @@
 -- Gear Sets 
 function get_sets()
 --includes
-	include('include/autoexec.lua')
+	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get PUP gearsets
 	include('Gearsets/'..player.name..'/PUP_Gearsets.lua')
@@ -116,13 +116,15 @@ end
 
 function pet_change(pet,gain)
 -- Gain a Pet 
-	if gain then
+	if gain == true then
+	-- When I Summon my Automaton
 		if master == 1 then
 			equip(sets.idle.Standard)
 		else
 			equip(sets.idle.Standard)
 		end
 	else
+		-- When i have no Automaton
 		master = 1
 	end
 end
@@ -193,10 +195,10 @@ function precast(spell,arg)
 -- Job Abilities
 	if spell.type == 'JobAbility' then
 		if sets.precast.JA[spell.name] then
-			if spell.name == "Role Reversal" then
+			if spell.name == "Tactical Switch" then
 				if pet.tp < 75 then
 					cancel_spell()
-					windower.add_to_chat(121,'Canceled Not Enough TP')
+					windower.add_to_chat(121,'Canceled - Below 75 TP')
 				else
 					equip(sets.precast.JA[spell.name])
 				end
@@ -264,12 +266,15 @@ function pet_midcast(spell)
 		equip(sets.pet.Attack)
 	elseif T{'Shield Bash'}:contains(spell.name) then
 		
-	elseif T{'Cure','Cure IV'}:contains{spell.name} then
+	elseif T{'Cure','Cure II','Cure III','Cure IV','Cure V','Cure VI'}:contains(spell.name) then
 		equip(sets.pet.Cure)
+	elseif T{'Sleep'}:contains(spell.name) then
+		--equip(sets.pet.Macc)
 	elseif spell.english:wcmatch('* V') then
 		equip(sets.pet.MAB)
 	else
-		windower.add_to_chat(121,'Unknown Automaton Spell')
+		--equip(sets.pet.Fastcast)
+		windower.add_to_chat(121,'Gearless Automaton Spell')
 	end
 end
 
