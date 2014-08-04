@@ -3,7 +3,7 @@
 --
 ---
 
-if player.Name == 'Carrisa' then
+if player.Name == 'Mitsura' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')

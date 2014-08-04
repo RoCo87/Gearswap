@@ -1,7 +1,7 @@
 -- BRD Gearsets
 --
 
-if player.name == "Carrisa" then
+if player.name == "Mitsura" then
 -- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')

@@ -5,7 +5,7 @@
 --
 
 
-if player.name == 'Carrisa' then
+if player.name == 'Mitsura' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')

@@ -6,7 +6,7 @@
 --
 --
 
-if player.name == 'Derion' then
+if player.name == 'Feary' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')
@@ -186,5 +186,11 @@ if player.name == 'Derion' then
 		-- MP Gear
 		sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
-end
-	
+
+	elseif player.name == 'Derion' then
+		
+	elseif player.name == 'Aniyah' then
+			
+	elseif player.name =='Firetoplay' then
+		
+	end

@@ -4,8 +4,7 @@
 --
 --
 
-
-if player.name == 'Carrisa' then
+if player.name == 'Mitsura' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')
@@ -32,12 +31,12 @@ if player.name == 'Carrisa' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -51,8 +50,7 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
             body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
-sets.TH = {hands="Asn. Armlets +2",
-			feet="Raider's Poulaines +2"}
+sets.TH = {hands="Asn. Armlets +2",feet="Raider's Poulaines +2"}
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
