@@ -1,16 +1,16 @@
 -- BLM Gearsets
 -- Date: 4/11/2014
 --
----
+--
 
-if player.Name == 'Feary' then
+if player.Name == 'Fearyjunior' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'RDM' then
 				set_macro_page(2,1)

@@ -78,7 +78,7 @@ sets.TP.Acc = {	ammo="Paeapua",
 sets.TP.Pet = {	ammo="Paeapua",
 			head="Monster Helm +2", neck="Asperity Necklace", lear="Bladeborn Earring", rear="SteelFlash Earring",
 			body="Monster Jackcoat +2", hands="Regimen Mittens", lring="Rajas ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Hurch'lan Sash", legs="Monster Trousers +2",feet="Armada Sollerets"}}
+			back="Atheling Mantle", waist="Hurch'lan Sash", legs="Monster Trousers +2",feet="Armada Sollerets"}
 
 sets.TP.Pet.Tank = {ammo="Paeapua",
 			head="Monster Helm +2", neck="Shepherd's Chain", lear="Bladeborn Earring", rear="SteelFlash Earring",
@@ -130,10 +130,10 @@ sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {})
 
 -- Primal Rend	
 sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {})
-	
 sets.precast.WS["Cloudsplitter"] = set_combine(sets.precast.WS, {})
+
 -- Onslaught
-sets.precast.WS.MS["Onslaught"] = set_combine(sets.precast.WS, })
+sets.precast.WS["Onslaught"] = set_combine(sets.precast.WS,{})
 sets.precast.WS.Acc["Onslaught"] = set_combine(sets.precast.WS, {})
 				
 -- Misc Sets

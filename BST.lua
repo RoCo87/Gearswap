@@ -18,7 +18,8 @@ function get_sets()
 -- Define Default Values for Variables
 	PetJug = ""
 	PetFood = ""
-	Master = 1
+	Tank = 0
+	Master = 0
 	Mode = 0
 	PDT = 0
 	MDT = 0
@@ -138,6 +139,12 @@ function self_command(command)
 		else
 			equip({head="Twilight Helm",body="Twilight Mail"})
 		end
+	elseif command == "m" or command == "master" then
+		if Master == 1 then
+			Master = 0
+		else
+			Master = 1
+		end
 	end
 end
 
@@ -245,7 +252,7 @@ end
 
 function pet_precast(spell,arg)
 	if ready_moves_to_check:contains(spell.name) and pet.status == 'Engaged' then
-		eq/rjsuip(sets.midcast.Pet.ReadyRecast)
+		equip(sets.midcast.Pet.ReadyRecast)
 	end
 end
 
@@ -291,11 +298,7 @@ function aftercast(spell,arg)
 	-- Engaged
 		if player.status == 'Engaged' then
 			if PDT == 1 then
-				if buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-				else
-					equip(sets.idle.PDT)
-				end
+				equip(sets.idle.PDT)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
 			else
@@ -303,15 +306,11 @@ function aftercast(spell,arg)
 			end
 		else
 			if PDT == 1 then
-				if buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-				else
-					equip(sets.idle.PDT)
-				end
+				equip(sets.idle.PDT)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
 			else
-				equip(sets.idle.Standard)
+				previous_set()
 			end
 		end
 		-- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
@@ -325,13 +324,9 @@ end
 
 function pet_aftercast(spell,arg)
 -- Engaged
-	if player.status == 'Engaged' or spell.english:wcmatch("Stone|Bar") then
+	if player.status == 'Engaged' then
 		if PDT == 1 then
-			if buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-			else
-				equip(sets.idle.PDT)
-			end
+			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
@@ -339,39 +334,59 @@ function pet_aftercast(spell,arg)
 		end
 	else
 		if PDT == 1 then
-			if buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-			else
-				equip(sets.idle.PDT)
-			end
+			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			equip(sets.idle.Standard)
+			previous_set()
 		end
 	end
 end
 
 function previous_set()
 	slot_lock()
-	if master = 1 then
-		if Mode == 1 then
-			equip(sets.TP.Acc)
+	if Master == 1 or pet.isvalid == "false" then
+		if player.status == "Engaged" then
+			if Mode == 1 then
+				-- Master Priority - Acc TP set
+				equip(sets.TP.Acc)
+			else
+				-- Master Priority - TP set
+				equip(sets.TP)
+			end
 		else
-			equip(sets.TP)
+			equip(sets.Idle.Standard)
 		end
 	-- Pet
 	else
-		if pet.status = "Engaged" then
-			if player.status = "Engaged" then
-				equip(sets.TP.Pet)
+		if pet.status == "Engaged" then
+			-- Pet Priority - Master Engaged - Pet Engaged - TP set
+			if player.status == "Engaged" then
+				if Tank == 1 then
+					equip(sets.TP.Pet.Tank)
+				else
+					equip(sets.TP.Pet)
+				end
 			else
-			pet.status = "E
-		elseif pet.status = "Idle" then
-			if player.status = "Engaged" then
-			
+				if Tank == 1 then
+					equip(sets.TP.Pet.Tank)
+				else
+				-- Pet Priority - Master Idle - Pet Engaged
+					equip(sets.idle.Pet.TP)
+				end
+			end
+		elseif pet.status == "Idle" then
+			if player.status == "Engaged" then
+				if Mode == 1 then
+					-- Master Priority - Acc TP set
+					equip(sets.TP.Acc)
+				else
+					-- Master Priority - TP set
+					equip(sets.TP)
+				end
 			else
-			
+				-- Pet Priority - Master Idle - Pet Idle
+				equip(sets.idle.Pet)
 			end
 		end
 	end

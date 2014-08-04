@@ -66,7 +66,7 @@ if player.name == 'Feary' then
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring="", rring="",
@@ -94,7 +94,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Swith Cape", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="", rring="",
@@ -157,27 +157,27 @@ if player.name == 'Feary' then
 		sets.TP = set_combine(sets.idle.PDT, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.TP.Acc = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gendewitha Spats", feet="Bihu Slippers"})	
+                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gende. Spats +1", feet="Bihu Slippers"})	
 		sets.precast.WS = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		
 		sets.misc.Waltz = {}
 		sets.misc.Steps = set_combine(sets.TP.Acc,{})
