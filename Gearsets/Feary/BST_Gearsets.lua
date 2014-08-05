@@ -48,8 +48,13 @@ sets.idle.MDT = {
 sets.misc.Town = set_combine(sets.idle.PDT, {feet="Skadi's Jambeaux"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Skadi's Jambeaux"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				feet="Skadi's Jambeaux"})
 
+sets.Resting = set_combine(sets.idle.PDT,{
+				head="Twilight Helm",
+				body="Twilight Mail"})
+				
 -- Pet Priority - Master Idle - Pet Idle
 sets.idle.Pet = {
 				head="Twilight Helm", neck="", lear="", rear="",
@@ -121,12 +126,24 @@ sets.midcast.Pet.WS = {
 
 
 -- Weaponskills
-sets.precast.WS = {}
-sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
+sets.precast.WS = {ammo="Vanir battery",
+			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
+			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+			back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
+sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
+			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
+			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+			back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 
 -- Ruinator
-sets.precast.WS["Ruinator"] = set_combine(sets.precast.WS, {})
-sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {})
+sets.precast.WS["Ruinator"] = set_combine(sets.precast.WS, {ammo="Vanir battery",
+			head="Otomi Helm", neck="Asperity Necklace", lear="Brutal earring", rear="Flame Pearl",
+			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Breeze Belt", legs="Gor. Brayettes +1", feet="Ejekamal Boots"})
+sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
+			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Breeze Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"})
 
 -- Primal Rend	
 sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {})

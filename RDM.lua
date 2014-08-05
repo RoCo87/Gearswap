@@ -274,7 +274,6 @@ function precast(spell,arg)
 end
 
 function midcast(spell,arg)
-	if spell.type == "WhiteMagic" then
 	-- Healing Magic
 		if spell.skill == 'Healing Magic' then
 			-- Add Light Obi Twilight Cape and Chatoyant Staff
@@ -337,10 +336,7 @@ function midcast(spell,arg)
 			elseif spell.name == 'Flash' then
 				equip(sets.midcast.Macc)
 			end
-		end
-	elseif spell.type == "BlackMagic" then
-	-- Dark Magic
-		if spell.skill == 'Dark Magic' then
+	elseif spell.skill == 'Dark Magic' then
 			if spell.name == "Drain" then
 				equip(sets.midcast.Aspir) 
 			elseif spell.name == "Aspir" then
@@ -351,7 +347,7 @@ function midcast(spell,arg)
 				equip(sets.midcast.Macc)
 			end
 	-- Elemental Magic
-		elseif spell.skill == 'Elemental Magic' then
+	elseif spell.skill == 'Elemental Magic' then
 			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 			elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then
@@ -533,10 +529,8 @@ function midcast(spell,arg)
 					end
 				end
 			end
-		end
 	-- Ninjutsu
-	elseif spell.type == "Ninjutsu" then	
-		if spell.skill == "Ninjutsu" then
+	elseif spell.skill == "Ninjutsu" then
 			equip(sets.midcast.Recast)
 			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
 				if buffactive['Copy Image'] then

@@ -20,6 +20,10 @@ function get_sets()
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
+	
+	GreatAxes = T{}
+	GreatSwords = T{}
+	
 end 
 
 function file_unload()

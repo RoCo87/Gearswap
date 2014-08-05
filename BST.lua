@@ -2,6 +2,8 @@
 -- Created: 7/26/2014
 -- Last Update: 7/26/2014
 -- To Do List
+-- Dual Wield vs single
+--
 --
 --
 -- includes
@@ -19,7 +21,7 @@ function get_sets()
 	PetJug = ""
 	PetFood = ""
 	Tank = 0
-	Master = 0
+	master = 0
 	Mode = 0
 	PDT = 0
 	MDT = 0
@@ -86,11 +88,7 @@ function self_command(command)
 			MDT = 0
 			windower.add_to_chat(121,'MDT Unlocked')
 		-- Place Me in my previous set.
-			if player.status == 'Engaged' then
-				previous_set()
-			else
-				equip(sets.idle.Standard)
-			end
+			previous_set()
 		else
 		-- make sure other values are set to default
 			PDT = 0
@@ -105,11 +103,7 @@ function self_command(command)
 			PDT = 0
 			MDT = 0
 			-- Place me in previous set
-			if player.status == 'Engaged' then
-				previous_set()
-			else
-				equip(sets.idle.Standard)
-			end
+			previous_set()
 		else
 			if Mode >= 1 then
 			-- Reset to 0
@@ -119,22 +113,14 @@ function self_command(command)
 				Mode = Mode + 1
 			end
 			-- Place me in previous set
-			if player.status == 'Engaged' then
-				previous_set()
-			else
-				equip(sets.idle.Standard)
-			end
+			previous_set()
 		end
 	elseif command == 'twilight' then
 		-- Twilight Helm/Mail logic
 		if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
 			enable('head','body')
-			if player.status == "Engaged" then
-				-- equip appropriate set
-				previous_set()
-			else
-				equip(sets.idle.Standard)
-			end
+			-- equip appropriate set
+			previous_set()
 			windower.add_to_chat(121, 'Twilight Unequipped')
 		else
 			equip({head="Twilight Helm",body="Twilight Mail"})
@@ -153,35 +139,37 @@ function buff_change(buff,g_or_l)
 	include('include/status.lua')
 end
 
+function pet_change(pet,gain)
+-- Gain a Pet via Summoning
+	if gain then
+		previous_set()
+	else
+		previous_set()
+	end
+end
+
 function status_change(new,old)
     if T{'Idle'}:contains(new) then
 		if PDT == 1 then
-			if buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-			else
-				equip(sets.idle.PDT)
-			end
+			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			-- Equip apporiate sets
-				previous_set()
+		-- Equip appropriate sets
+			previous_set()
 		end
 	elseif new == 'Resting' then
+		windower.add_to_chat(121, 'Resting')
 		equip(sets.Resting)
 	elseif new == 'Engaged' then
 		-- Engaged Sets
 		if PDT == 1 then
-			if buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-			else
-				equip(sets.idle.PDT)
-			end
+			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
 		else
-			-- Equip apporiate sets
-				previous_set()
+			-- Equip appropriate sets
+			previous_set()
 		end
     end
 end
@@ -189,15 +177,13 @@ end
 function precast(spell,arg)
     -- Job Abilities
 	if spell.type == 'JobAbility' then
-		if spell.name == 'Convert' then
-			cancel_spell()
-		elseif sets.precast.JA[spell.name] then
+		if sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
 	-- Pet Commands 
 	elseif spell.type == 'PetCommand' then
 		if pet.isvalid == true then
-		
+			previous_set()
 		else
 			cancel_spell()
 		end
@@ -206,10 +192,18 @@ function precast(spell,arg)
 		if player.status == 'Engaged' then
 			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
-					if sets.precast.WS[spell.name] then
-						equip(sets.precast.WS[spell.name])
+					if Mode == 1 then
+						if sets.precast.WS.Acc[spell.name] then
+							equip(sets.precast.WS.Acc[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
 					else
-						equip(sets.precast.WS)
+						if sets.precast.WS[spell.name] then
+							equip(sets.precast.WS[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
 					end
 				else
 					cancel_spell()
@@ -344,34 +338,24 @@ function pet_aftercast(spell,arg)
 end
 
 function previous_set()
-	slot_lock()
-	if Master == 1 or pet.isvalid == "false" then
-		if player.status == "Engaged" then
-			if Mode == 1 then
-				-- Master Priority - Acc TP set
-				equip(sets.TP.Acc)
-			else
-				-- Master Priority - TP set
-				equip(sets.TP)
-			end
-		else
-			equip(sets.Idle.Standard)
-		end
-	-- Pet
-	else
+	if pet.isvalid == true or master == 0 then 
 		if pet.status == "Engaged" then
-			-- Pet Priority - Master Engaged - Pet Engaged - TP set
 			if player.status == "Engaged" then
 				if Tank == 1 then
+					windower.add_to_chat(121, 'Tank')
 					equip(sets.TP.Pet.Tank)
 				else
+					-- Pet Priority - Master Engaged - Pet Engaged - TP set
+					windower.add_to_chat(121, 'Pet Priority - Master Engaged - Pet Engaged - TP set')
 					equip(sets.TP.Pet)
 				end
 			else
 				if Tank == 1 then
+					windower.add_to_chat(121, 'Tank')
 					equip(sets.TP.Pet.Tank)
 				else
 				-- Pet Priority - Master Idle - Pet Engaged
+				windower.add_to_chat(121, ' Pet Priority - Master Idle - Pet Engaged')
 					equip(sets.idle.Pet.TP)
 				end
 			end
@@ -379,15 +363,34 @@ function previous_set()
 			if player.status == "Engaged" then
 				if Mode == 1 then
 					-- Master Priority - Acc TP set
+					windower.add_to_chat(121, 'Acc TP set')
 					equip(sets.TP.Acc)
 				else
 					-- Master Priority - TP set
+					windower.add_to_chat(121, 'TP set')
 					equip(sets.TP)
 				end
 			else
 				-- Pet Priority - Master Idle - Pet Idle
+				windower.add_to_chat(121, 'Master Idle - Pet Idle')
 				equip(sets.idle.Pet)
 			end
+		end
+	else
+		if player.status == "Engaged" then
+			if Mode == 1 then
+				-- Master Priority - Acc TP set
+				windower.add_to_chat(121,'Master Priority - Acc TP set')
+				equip(sets.TP.Acc)
+			else
+				-- Master Priority - TP set
+				windower.add_to_chat(121,'Master Priority - TP set')
+				equip(sets.TP)
+			end
+		else
+		 -- Standard
+			windower.add_to_chat(121, 'Standard')
+			equip(sets.idle.Standard)
 		end
 	end
 end

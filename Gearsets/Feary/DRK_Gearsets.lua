@@ -2,7 +2,7 @@
 -- Created: 7/13/2014
 -- Last Modified: 7/13/2014
 -- To Do List
---
+-- adjust magic sets.
 --
 --
 --
@@ -93,7 +93,7 @@ sets.precast.JA["Arcane Crest"] = {}
 sets.precast.JA["Dark Seal"] = {head="Abyss Burgeonet +2"}
 sets.precast.JA["Weapon Bash"] = {hands="Chaos Gauntlets"}
 sets.precast.JA["Diabolic Eye"] = {hands="Abyss Gauntlets +2"}
-sets.precast.JA["Nether Void"] = {}
+sets.precast.JA["Nether Void"] = {legs="Bale Flanchard +2"}
 
 sets.precast.JA["Provoke"] = {}
 sets.precast.JA["Berserk"] = {}
@@ -105,11 +105,16 @@ sets.precast.JA["Aggressor"] = {}
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				head="Cizin Helm", lear="Loquac. Earring", 
 				rring="Prolix Ring"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})
 
-sets.midcast.DarkMagic = {}
-sets.midcast.Aspir = {}
-sets.midcast.Absorb = {}
-sets.midcast.Dread = {}
+sets.midcast.DarkMagic = {
+				head="Ignominy Burgeonet", neck="Aesir Torque", lear="Dark Earring",
+				body="Demon's Harness", hands="Avesta Bangles", lring="Archon Ring", rring="Diabolos's Ring",
+				back="Merciful Cape", legs="Bale Flanchard +2", feet="Igno. Sollerets"}
+sets.midcast.Aspir = set_combine(sets.midcast.DarkMagic,{
+			})
+sets.midcast.Absorb = set_combine(sets.midcast.DarkMagic, {})
+sets.midcast.Dread = {body="Bale Cuirass +2"}
 
 sets.midcast.Macc = {}
 sets.midcast.INT = set_combine(sets.midcast.Macc,{})
@@ -139,6 +144,10 @@ sets.precast.WS["Catastrophe"] = set_combine(sets.precast.WS, {ammo="Vanir Batte
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
+sets.precast.WS["Cross Reaper"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
+				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"})
 
 -- GreatSword
 sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
@@ -156,7 +165,6 @@ sets.precast.WS["Scourge"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 
 			
 -- Misc Sets
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {})
 
 sets.misc.Waltz = set_combine(sets.idle.PDT,{})
 sets.misc.Steps = set_combine(sets.TP.ACC)
