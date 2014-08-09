@@ -34,14 +34,15 @@ if player.name == 'Feary' then
                 body="Hagondes Coat", hands="Serpentes Cuffs",
                 waist="Fucho-no-obi",legs="Nares Trews", feet="Herald's Gaiters"})
 		
-		-- Prep Sets
+		-- Perp Sets
 		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquac. Earring",rear="Moonshade Earring",
 				body="Caller's Doublet +2",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-				back="Summoner's Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Caller's Pgch. +2"}
+				back="Pahtli Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Caller's Pgch. +2"}
 		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"})
 		sets.idle.Avatar["Diabolos"] = set_combine(sets.idle.Avatar,{waist="Diabolos's Rope"})
 		sets.idle.Avatar["Alexander"] = set_combine(sets.midcast.SummoningMagic)
+		sets.idle.Avatar["Odin"] = set_combine(sets.midcast.SummoningMagic)
 		
 		sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
 		sets.idle.Avatar.Melee = {hands="Regimen Mittens",waist="Kuku Stone",legs="Convoker's Spats"}
@@ -53,11 +54,13 @@ if player.name == 'Feary' then
 		sets.perp = {}
 		sets.perp.Day = {hands="Caller's Bracers +2"}
 		sets.perp.Weather = {neck="Caller's Pendant",hands="Caller's Bracers +2"}
+		
 		-- Blood Pacts 
 		-- Precast
 		-- Pact delay reduction gear
-		sets.precast.BloodPactWard = {ammo="Eminent Sachet",head="Summoner's Dblt",body="Summoner's Doublet",hands="Summoner's Bracers",legs="Summoner's Spats",feet="Summoner's Pgch.",lear="Caller's Earring"}
+		sets.precast.BloodPactWard = {ammo="Eminent Sachet",head="Evoker's Horn",body="Summoner's Doublet",hands="Summoner's Bracers",legs="Summoner's Spats",feet="Summoner's Pgch.",lear="Caller's Earring"}
 		sets.precast.BloodPactRage = sets.precast.BloodPactWard
+		
 		-- Midcast
 		-- Skill Gear
 		sets.midcast.SummoningMagic = {main="Soulscourge",ammo="Eminent Sachet",

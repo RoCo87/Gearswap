@@ -112,7 +112,7 @@ sets.midcast.DarkMagic = {
 				body="Demon's Harness", hands="Avesta Bangles", lring="Archon Ring", rring="Diabolos's Ring",
 				back="Merciful Cape", legs="Bale Flanchard +2", feet="Igno. Sollerets"}
 sets.midcast.Aspir = set_combine(sets.midcast.DarkMagic,{
-			})
+			head="Appetence Crown"})
 sets.midcast.Absorb = set_combine(sets.midcast.DarkMagic, {})
 sets.midcast.Dread = {body="Bale Cuirass +2"}
 
