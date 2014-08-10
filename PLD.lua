@@ -1,8 +1,10 @@
 -- Feary's PLD LUA
 -- Created: 4/1/2014
--- Last Update: 5/12/2014
--- To Do List
--- Chiv Check TP
+-- Last Update: 8/9/2014
+-- To Do List:
+--
+--
+-- 
 --
 --includes
 	include('include/functions.lua')
@@ -24,7 +26,7 @@ function get_sets()
 	mshield = "Aegis"
 	-- Physical Shield
 	pshield = "Ochain"
-	-- Defualt Shield
+	-- Default Shield
 	Shield = "Ochain"
 	
 end 
@@ -132,28 +134,21 @@ function self_command(command)
 		end
 	elseif command == "w" then
 		equip({main="Buramenk'ah", sub=Shield})
-	elseif command == "clear_binds" then
-		clear_binds()
 	end
 end
 
 function status_change(new,old)
-	if player.equipment.main == 'empty' then
-		equip({main="Buramenk'ah", sub=Shield})
-	elseif player.equipment.sub == 'empty' then
-		equip({main="Buramenk'ah", sub=Shield})
-	end
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
+		weapon_check()
 		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
+		if MDT == 1 then
 			equip(sets.idle.MDT)
 		else
 			equip(sets.idle.Standard)
 		end
 	elseif new == 'Engaged' then
+		 weapon_check()
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
 				windower.add_to_chat(121,'PDT Locked')
@@ -181,6 +176,9 @@ function precast(spell,arg)
 	if spell.type == 'JobAbility' then
 		if spell.name == 'Convert' then
 			cancel_spell()
+		elseif spell.name == 'Chivalry' and player.tp <= 70 then
+			cancel_spell()
+			windower.add_to_chat(121,'Not Enought TP to Chivalry')
 		elseif sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
@@ -347,13 +345,13 @@ function previous_set()
 	if player.equipment.sub == mshield then
 		if buffactive["Cover"] then
 			if Mode == 0 then
-				equip(sets.TP,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - TP Set')
 			elseif Mode == 1 then
-				equip(sets.TP.Acc,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Acc,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - Acc TP Set')
 			elseif Mode == 2 then
-				equip(sets.TP.Hybrid,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Hybrid,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - Hybrid TP Set')
 			end
 		else
@@ -371,13 +369,13 @@ function previous_set()
 	elseif player.equipment.sub == pshield then
 		if buffactive["Cover"] then
 			if Mode == 0 then
-				equip(sets.TP,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - TP Set')
 			elseif Mode == 1 then
-				equip(sets.TP.Acc,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Acc,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - Acc TP Set')
 			elseif Mode == 2 then
-				equip(sets.TP.Hybrid,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Hybrid,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - Hybrid TP Set')
 			end
 		else
@@ -394,7 +392,7 @@ function previous_set()
 		end
 	else
 		equip(sets.idle.PDT)
-		windower.add_to_chat(121, "No Known Shield Equipped. Equiping PDT")
+		windower.add_to_chat(121, "No Known Shield Equipped. Equipping PDT")
 	end
 end
 
@@ -416,3 +414,10 @@ function slot_lock()
     end
 end
 
+function weapon_check()
+	if player.equipment.main == 'empty' then
+		equip({main="Buramenk'ah", sub=Shield})
+	elseif player.equipment.sub == 'empty' then
+		equip({main="Buramenk'ah", sub=Shield})
+	end
+end

@@ -545,7 +545,6 @@ function midcast(spell,arg)
 			elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
 			end
-		end
 	else
 		-- Songs
 		if spell.skill == "Singing" then
