@@ -6,7 +6,7 @@
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Derion' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')
@@ -16,23 +16,22 @@ if player.name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Patriarch Cane", sub="Genbu's Shield",
-				head="Hagondes Hat", neck="Twilight Torque", lear="", rear="",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
-		sets.idle.MDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="", waist="",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="Cheviot Cape", waist="", legs="Espial Hose", feet="Espial Socks"}
+		sets.idle.MDT = {	
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="Black Belt", legs="Espial Hose", feet="Espial Socks"}	
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="Caller's Horn +2", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
-		sets.misc.Town = set_combine(sets.idle.PDT, {
+				head="Caller's Horn +2", neck="Eidolon Pendant", lear="Magnetic Earring",
+                body="Caller's Doublet +2",
+                back="Felicitas Cape", waist="Austerity Belt"})
+		sets.misc.Town = set_combine(sets.idle.PDT, {main="Eminent Dagger", sub="Genbu's Shield",	
+				head="Shaded Spectacles",
+				body="Goldsmith's Smock",
 				feet="Herald's Gaiters"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				head="Caller's Horn +2",lear="Merman's Earring", rear="Moonshade Earring",
-                body="Hagondes Coat", hands="Serpentes Cuffs",
-                waist="Fucho-no-obi",legs="Nares Trews", feet="Herald's Gaiters"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{ammo="Eminent Sachet"})
 		
 		-- Prep Sets
 		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
@@ -186,11 +185,5 @@ if player.name == 'Feary' then
 		-- MP Gear
 		sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
-
-	elseif player.name == 'Derion' then
-		
-	elseif player.name == 'Aniyah' then
-			
-	elseif player.name =='Firetoplay' then
-		
-	end
+end
+	
