@@ -145,11 +145,11 @@ sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
                 back="Vespid Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				head="Cizin Helm", lear="Loquac. Earring",
                 rring="Prolix Ring",
                 })
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = set_combine(sets.precast.JA["Chivalry"],{})
 sets.misc.Steps = set_combine(sets.TP.Acc,{})

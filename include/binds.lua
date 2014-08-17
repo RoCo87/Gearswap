@@ -5,6 +5,11 @@
 --
 --
 --
+-- Notes
+-- ALT = ^
+-- Ctrl = !
+-- windows key = @
+-- right click menu/ Apps  = #
 
 function basic_binds()
 	windower.send_command('bind sysrq screenshot png hide')
@@ -49,12 +54,12 @@ elseif player.main_job == "MNK" then
 	
 elseif player.main_job == "WHM" then
 	basic_binds()
-	windower.send_command('bind f1 input /ma "Cure IV" <p0>')
-	windower.send_command('bind f2 input /ma "Cure IV" <p1>')
-	windower.send_command('bind f3 input /ma "Cure IV" <p2>')
-	windower.send_command('bind f4 input /ma "Cure IV" <p3>')
-	windower.send_command('bind f5 input /ma "Cure IV" <p4>')
-	windower.send_command('bind f6 input /ma "Cure IV" <p5>')
+--	windower.send_command('bind f1 input /ma "Cure IV" <p0>')
+--	windower.send_command('bind f2 input /ma "Cure IV" <p1>')
+--	windower.send_command('bind f3 input /ma "Cure IV" <p2>')
+--	windower.send_command('bind f4 input /ma "Cure IV" <p3>')
+--	windower.send_command('bind f5 input /ma "Cure IV" <p4>')
+--	windower.send_command('bind f6 input /ma "Cure IV" <p5>')
 	
 	windower.send_command('bind f7 input /ma "Haste" <stpc>')
 	windower.send_command('bind f8 input /ma "Regen IV" <stpc>')
@@ -123,12 +128,12 @@ elseif player.main_job == "PLD" then
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
 	windower.send_command('@bind #g input /echo test')
-	windower.send_command('bind f1 input /ma "Cure IV" <p0>')
-	windower.send_command('bind f2 input /ma "Cure IV" <p1>')
-	windower.send_command('bind f3 input /ma "Cure IV" <p2>')
-	windower.send_command('bind f4 input /ma "Cure IV" <p3>')
-	windower.send_command('bind f5 input /ma "Cure IV" <p4>')
-	windower.send_command('bind f6 input /ma "Cure IV" <p5>')
+--	windower.send_command('bind f1 input /ma "Cure IV" <p0>')
+--	windower.send_command('bind f2 input /ma "Cure IV" <p1>')
+--	windower.send_command('bind f3 input /ma "Cure IV" <p2>')
+--	windower.send_command('bind f4 input /ma "Cure IV" <p3>')
+--	windower.send_command('bind f5 input /ma "Cure IV" <p4>')
+--	windower.send_command('bind f6 input /ma "Cure IV" <p5>')
 	windower.send_command('bind ^f1 input /ma "Cure IV" <p0>')
 	windower.send_command('bind ^f2 input /ma "Cure IV" <p1>')
 	windower.send_command('bind ^f3 input /ma "Cure IV" <p2>')

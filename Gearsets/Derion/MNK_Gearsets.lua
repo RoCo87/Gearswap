@@ -54,9 +54,8 @@ sets.idle.Evasion = {
                 back="", waist="", legs="", feet=""}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="Shaded Spectacles",
-				body="Goldsmith's Smock",
-				waist="Goldsmith's Smock", feet="Hermes' Sandals"})
+				head="",
+				feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				feet="Hermes' Sandals"})
@@ -140,10 +139,10 @@ sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {ammo="Tantra T
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gorget", waist="Anguinus Belt"})
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				head="Athos's Chapeau", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
 				waist="Black Belt"})
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.MidAcc,{})

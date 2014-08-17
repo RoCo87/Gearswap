@@ -151,7 +151,7 @@ sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS, {ammo="Ginsen",
                 back="Atheling Mantle", waist="Shadow Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 			
 -- Misc Sets
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {})
 
 sets.misc.Waltz = set_combine(sets.idle.PDT,{})
 sets.misc.Steps = set_combine(sets.TP.ACC)

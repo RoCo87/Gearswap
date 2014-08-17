@@ -238,7 +238,7 @@ function precast(spell,arg)
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
 	elseif spell.type == 'Ninjutsu' then
-			equip(sets.misc.FastCast)
+			equip(sets.precast.Fastcast)
 			if windower.wc_match(spell.name,'Utsusemi*') then
 				equip(sets.misc.Utsusemi)
 			end

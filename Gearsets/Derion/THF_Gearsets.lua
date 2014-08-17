@@ -7,7 +7,7 @@
 --
 --
 
-if player.name == 'Derion' then
+if player.name == 'Feary' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')
@@ -33,19 +33,17 @@ if player.name == 'Derion' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
-				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="Black Belt", legs="Espial Hose", feet="Espial Socks"}
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, { 
-				head="Shaded Spectacles",
-				body="Goldsmith's Smock",
-				waist="Goldsmith's Smock", feet="Fajin Boots"})
+sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
+				feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
@@ -56,8 +54,8 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 sets.TH = {
-			hands="Assassin's Armlets +2",
-			feet="Raider's Poulaines +2"}
+			hands="Plun. Armlets +1",
+			waist="Chaac Belt"}
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
@@ -67,9 +65,9 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
 			
 -- TP Sets 
 sets.TP = { ranged="Raider's Bmrng.",
-			head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
+			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+            body="Thaumas Coat", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Pillager's Culottes", feet="Plun. Poulaines"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	
@@ -187,9 +185,9 @@ sets.precast.WS.Acc["Evisceration"] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)
@@ -377,9 +375,9 @@ sets.precast.WS.Acc["Evisceration"] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)

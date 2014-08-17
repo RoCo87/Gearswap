@@ -157,9 +157,9 @@ sets.precast.RAWS['Last Stand'] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)
@@ -319,9 +319,9 @@ sets.precast.RAWS['Last Stand'] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)
@@ -476,9 +476,9 @@ elseif player.name == 'Aniyah' then
                 back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 		-- Misc Sets
-		sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+		sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-		sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+		sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 		sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 		sets.misc.Steps = set_combine(sets.TP.ACC)
@@ -637,9 +637,9 @@ sets.precast.RAWS['Last Stand'] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)

@@ -42,13 +42,11 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="Magnifying Spectacles",
-				body="Weaver's Smock",
-				waist="Weaver's Belt", feet="Strider Boots"})				
+sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
+				feet="Fajin Boots"})
+				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				body="Alchemist's Smock",
-				waist="Alchemist's Belt", feet="Strider Boots"})
+				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",

@@ -162,7 +162,7 @@ sets.precast.WS.Acc["Pyrrhic Kleos"] = {
 -- Aftercast
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 end

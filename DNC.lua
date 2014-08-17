@@ -193,10 +193,10 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		equip(sets.misc.Fastcast)
+		equip(sets.precast.Fastcast)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
-		equip(sets.misc.Fastcast)
+		equip(sets.precast.Fastcast)
 -- Dancer Stuff
 	elseif spell.type == "Samba" then
 		if Sambas:contains(spell.name) then

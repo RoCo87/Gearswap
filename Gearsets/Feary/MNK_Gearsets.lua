@@ -144,11 +144,11 @@ sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gorget", waist="Anguinus Belt"})
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				head="Athos's Chapeau", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="", rring="Prolix Ring",
                 back="Repulse Mantle", waist="Black Belt", legs="", feet=""})
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
+sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.MidAcc,{})

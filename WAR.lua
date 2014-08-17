@@ -216,7 +216,7 @@ function precast(spell,arg)
 		end	
     -- Magic spell gear handling(Precast)
     elseif spell.type == 'Ninjutsu' then
-        equip(sets.misc.Fastcast)
+        equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
             equip(sets.misc.Utsusemi)
         end

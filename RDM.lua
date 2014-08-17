@@ -131,15 +131,20 @@ function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
 		slot_lock()
-		if new == "Resting" then
-			equip(sets.Resting)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT)
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
+			if new == "Resting" then
+				equip(sets.Resting)
 			else
-				equip(sets.idle.Standard)
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	elseif new == 'Engaged' then
@@ -606,6 +611,7 @@ function aftercast(spell,arg)
         ShadowType = 'Ichi'
 	end
 end
+
 function previous_set()
 	slot_lock()
 	if Mode == 0 then
