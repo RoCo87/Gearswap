@@ -1,6 +1,6 @@
 -- Feary's Bind Lua
 -- Date Created: 4/10/2014
--- Last Updated
+-- Last Updated: 8/11/2014
 -- To Do
 --
 --

@@ -74,10 +74,17 @@ sets.Weakened = { ammo="Angha Gem",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 				
 -- Precast 
--- Enmity Caps at 100 
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+				head="Cizin Helm", lear="Loquac. Earring",
+                rring="Prolix Ring",
+                })
+sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+
+-- Enmity Caps at 200 
 sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
 				head="Cab. Coronet", neck="Atzintli Necklace",
-				body="Cab. Surcoat +1", hands="Cab. Gauntlets",
+				body="Cab. Surcoat +1", hands="Cab. Gauntlets +1",
 				back="Fravashi Mantle", waist="Creed Baudrier", legs="Cab. Breeches", feet="Cab. Leggings"})
 
 sets.HPDown = set_combine(sets.idle.PDT,{
@@ -98,22 +105,22 @@ sets.midcast.EnhancingMagic = set_combine(sets.Recast,{})
 -- JA
 sets.precast.JA["Invincible"] = set_combine(sets.Enmity,{legs="Cab. Breeches"})
 sets.precast.JA["Intervene"] = set_combine(sets.precast.JA["Shield Bast"],{
-				hands="Cab. Gauntlets",lear="Knightly Earring"})
+				hands="Cab. Gauntlets +1",lear="Knightly Earring"})
 -- MND			
-sets.precast.JA["Chivalry"] = set_combine(sets.idle.PDT,{hands="Cab. Gauntlets"},{
+sets.precast.JA["Chivalry"] = set_combine(sets.idle.PDT,{hands="Cab. Gauntlets +1"},{
 				head="Yaoyotl Helm", neck="Phalaina Locket",
 				body="Cab. Surcoat", lring="Aquasoul Ring", rring="Aquasoul Ring",
 				legs="Cab. Breeches", feet="Whirlpool Greaves"})
 -- VIT
 sets.precast.JA["Rampart"] = set_combine(sets.Enmity,{
 				head="Cab. Coronet", 
-				body="Cab. Surcoat", hands="Cab. Gauntlets",
+				body="Cab. Surcoat", hands="Cab. Gauntlets +1",
 				waist="Chuq'aba Belt", legs="Cab. Breeches", feet="Whirlpool Greaves"})
 sets.precast.JA["Sentinel"] = set_combine(sets.Enmity,{feet="Cab. Leggings"})
 sets.precast.JA["Holy Circle"] = set_combine(sets.Enmity,{feet="Rev. Leggings +1"})
 sets.precast.JA["Fealty"] = set_combine(sets.Enmity,{body="Cab. Surcoat"})
 sets.precast.JA["Shield Bash"] = set_combine(sets.Enmity,{
-				hands="Cab. Gauntlets",lear="Knightly Earring"})
+				hands="Cab. Gauntlets +1",lear="Knightly Earring"})
 
 -- WS
 sets.precast.WS = {
@@ -145,12 +152,6 @@ sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
                 back="Vespid Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 
 -- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {
-				head="Cizin Helm", lear="Loquac. Earring",
-                rring="Prolix Ring",
-                })
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
-
 sets.misc.Waltz = set_combine(sets.precast.JA["Chivalry"],{})
 sets.misc.Steps = set_combine(sets.TP.Acc,{})
 sets.misc.flourish = {}

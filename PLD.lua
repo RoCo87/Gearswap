@@ -216,25 +216,25 @@ function precast(spell,arg)
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.precast.HPDown)
 			else
-				equip(sets.misc.Fastcast)
+				equip(sets.precast.Fastcast)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
-			equip(sets.misc.Fastcast)
+			equip(sets.precast.Enhancing)
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
 			end
 		elseif spell.skill == 'Divine Magic' then
-			equip(sets.misc.Fastcast)
+			equip(sets.precast.Fastcast)
 		elseif spell.skill == 'Blue Magic' then
-			equip(sets.misc.Fastcast,sets.Enmity)
+			equip(sets.precast.Fastcast,sets.Enmity)
 		elseif spell.skill == 'Elemental Magic' then
-			equip(sets.misc.Fastcast)
+			equip(sets.precast.Fastcast)
 		end
 	elseif spell.type == 'Ninjutsu' then
 		-- Ninjutsu spell gear handling(Precast)
-		equip(sets.misc.FastCast)
+		equip(sets.precast.FastCast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-			equip(sets.misc.Utsusemi)
+			equip(sets.precast.Utsusemi)
         end
 	else
 		-- Special handling to remove Dancer sub job Sneak effect
@@ -242,7 +242,7 @@ function precast(spell,arg)
 			windower.ffxi.cancel_buff(71)
 			cast_delay(0.3)
 		elseif windower.wc_match(spell.name,'Curing*') then
-			equip(sets.misc.Waltz)
+			equip(sets.precast.Waltz)
 		elseif windower.wc_match(spell.name,'*Step') then
 			equip(sets.TP.Acc)
 		end
@@ -260,36 +260,36 @@ function midcast(spell,arg)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
 			if spell.name == "Reprisal" then
-				equip(sets.Recast,sets.misc.Fastcast)
+				equip(sets.Recast,sets.precast.Fastcast)
 			elseif spell.name == "Phalanx" then
 				equip(sets.Recast,sets.Enmity,sets.midcast.EnhancingMagic)
 			elseif spell.name == "Crusade" then
 				equip(sets.Recast,sets.Enmity)
 			else
-				equip(sets.Recast,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.Recast,sets.Enmity,sets.precast.Fastcast)
 			end
 		elseif spell.skill == 'Divine Magic' then
 			if spell.name == "Flash" then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
 			elseif spell.english:wcmatch('Banish*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
 			elseif spell.english:wcmatch('Holy*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
 			elseif spell.english:wcmatch('Enlight') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)	
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)	
 			else
-				equip(sets.Recast,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.Recast,sets.Enmity,sets.precast.Fastcast)
 			end
 		elseif spell.skill == 'Blue Magic' then
-			equip(sets.misc.Fastcast)
+			equip(sets.precast.Fastcast)
 		elseif spell.skill == 'Elemental Magic' then
-			equip(sets.misc.Fastcast)
+			equip(sets.precast.Fastcast)
 		end
     elseif spell.type == 'Ninjutsu' then
 		-- Utsusemi
 		if windower.wc_match(spell.name,'Utsusemi*') then
 			-- Equip PDT then Utsusemi Gear sets
-			equip(sets.idle.PDT, sets.misc.Utsusemi)
+			equip(sets.idle.PDT, sets.precast.Utsusemi)
 			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
 				if buffactive['Copy Image'] then
 					windower.ffxi.cancel_buff(66)
