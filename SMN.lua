@@ -1,7 +1,8 @@
 -- Feary's SMN LUA
 -- Date Created : 1/29/2014
--- Alex?
---
+-- Last Update: 8/17/2014
+-- To Do
+-- Alex
 --
 --
 
@@ -159,12 +160,17 @@ function status_change(new,old)
 			equip(sets.Resting)
 		elseif new == 'Idle' then
 				slot_lock()
-				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT)
-				elseif MDT == 1 then
-					equip(sets.idle.MDT)
+				if areas.Town:contains(world.zone) then
+					windower.add_to_chat(121, "Town Gear")
+					equip(sets.misc.Town)
 				else
-					equip(sets.idle.Standard)
+					if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+						equip(sets.idle.PDT)
+					elseif MDT == 1 then
+						equip(sets.idle.MDT)
+					else
+						equip(sets.idle.Standard)
+					end
 				end
 		elseif new == 'Engaged' then
 			slot_lock()

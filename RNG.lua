@@ -121,12 +121,21 @@ end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
-		if PDT == 1 or buffactive['Weakness'] or player.hpp == 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			equip(sets.idle.Standard)
+			if PDT == 1 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				if new = "Resting" then
+					equip(sets.Resting)
+				else
+				equip(sets.idle.Standard)
+				end
+			end
 		end
 	elseif new == 'Engaged' then
      	-- Automatically activate Velocity Shot when engaging
@@ -222,7 +231,7 @@ function precast(spell,arg)
     elseif spell.type == 'Ninjutsu' then
         equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.misc.Utsusemi)
+            equip(sets.precast.Utsusemi)
         end
     else
 		-- Special handling to remove Dancer sub job Sneak effect
@@ -271,7 +280,7 @@ function midcast(spell,arg)
     -- Gear change to Damage Taken set when in midcast of Utsusemi
     -- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
     if windower.wc_match(spell.name,'Utsusemi*') then
-        equip(sets.misc.Utsusemi)
+        equip(sets.precast.Utsusemi)
         if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then
                 windower.ffxi.cancel_buff(66)

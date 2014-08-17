@@ -715,38 +715,38 @@ function midcast(spell,arg)
 end -- end midcast
 
 function aftercast(spell,arg)
-	if areas.Town:contains(world.zone) then
-		windower.add_to_chat(121, "Town Gear")
-		equip(sets.misc.Town)
-	else	
-		if player.status == 'Engaged' then
-			if PDT == 1 or MDT == 1 then
-				if PDT == 1 and MDT == 0 then
-					windower.add_to_chat(121,'PDT Locked')
-					equip(sets.idle.PDT)
-				elseif MDT == 1 and PDT == 0 then
-					windower.add_to_chat(121,'MDT Locked')
-					equip(sets.idle.MDT)
-				else
-					MDT = 0
-					PDT = 0
-				end
+	if player.status == 'Engaged' then
+		if PDT == 1 or MDT == 1 then
+			if PDT == 1 and MDT == 0 then
+				windower.add_to_chat(121,'PDT Locked')
+				equip(sets.idle.PDT)
+			elseif MDT == 1 and PDT == 0 then
+				windower.add_to_chat(121,'MDT Locked')
+				equip(sets.idle.MDT)
 			else
-				-- Equip previous TP set 
-					previous_set()
+				MDT = 0
+				PDT = 0
 			end
 		else
-			slot_lock()
+			-- Equip previous TP set 
+				previous_set()
+		end
+	else
+		slot_lock()
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
+		else	
 			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
 				equip(sets.idle.PDT)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
 			else
 				if buffactive['Mana Wall'] then
-					equip(sets.idle.Standard,{feet="Goetia Sabots"})
-				else
-					equip(sets.idle.Standard)
-				end
+						equip(sets.idle.Standard,{feet="Goetia Sabots"})
+					else
+						equip(sets.idle.Standard)
+					end
 			end
 		end
 	end

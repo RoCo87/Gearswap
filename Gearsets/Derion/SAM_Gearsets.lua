@@ -153,7 +153,7 @@ sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				lear="Loquac. Earring",
                 rring="Prolix Ring",
                })
-sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc,{})

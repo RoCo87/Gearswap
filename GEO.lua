@@ -6,7 +6,6 @@
 --
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -136,13 +135,14 @@ function status_change(new,old)
 		if new == "Resting" then
 			equip(sets.Resting)
 		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT)
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
+			if areas.Town:contains(world.zone) then
+				windower.add_to_chat(121, "Town Gear")
+				equip(sets.misc.Town)
 			else
-				if buffactive['Mana Wall'] then
-					equip(sets.idle.Standard,{feet="Goetia Sabots"})
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
 				else
 					equip(sets.idle.Standard)
 				end
@@ -620,15 +620,20 @@ function aftercast(spell,arg)
 		end
 	else
 		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			equip(sets.idle.Standard)
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
--- Lullaby
+-- Timers
 	if spell.name == "Sleep II" or spell.name == "Sleepga II" or spell.name == "Repose" then
 		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')

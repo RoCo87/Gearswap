@@ -171,7 +171,7 @@ sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gor
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {})
 sets.midcast.Recast = set_combine(sets.idle.PDT, {})
-sets.misc.Utsusemi = set_combine(sets.precast.Fastcast,{})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast,{})
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.MidAcc,{})

@@ -1,6 +1,6 @@
 -- Feary's THF LUA
 -- Created: 4/5/2014
--- Last Modified:
+-- Last Modified: 8/17/2014
 -- To Do:
 --	Account for Hide + SA or TA
 -- 	account for SATA?
@@ -143,17 +143,22 @@ function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
 		windower.add_to_chat(121,'Idle/Resting Set')
-		if TH == 1 then
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion,sets.TH)
-			else
-				equip(sets.idle.Standard,sets.TH)
-			end
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion)
+			if TH == 1 then
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion,sets.TH)
+				else
+					equip(sets.idle.Standard,sets.TH)
+				end
 			else
-				equip(sets.idle.Standard)
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	elseif new == 'Engaged' then
@@ -301,7 +306,7 @@ function precast(spell,arg)
     elseif spell.skill == 'Ninjutsu' then
         equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.misc.Utsusemi)
+            equip(sets.precast.Utsusemi)
         end
 	else
 	 -- Special handling to remove Dancer sub job Sneak effect
@@ -320,7 +325,7 @@ function midcast(spell,arg)
 	-- Utsusemi
 	if windower.wc_match(spell.name,'Utsusemi*') then
 		-- Equip PDT then Utsusemi Gear sets
-        equip(sets.idle.PDT, sets.misc.Utsusemi)
+        equip(sets.idle.PDT, sets.precast.Utsusemi)
 		if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then
                 windower.ffxi.cancel_buff(66)

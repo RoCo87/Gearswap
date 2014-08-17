@@ -186,7 +186,7 @@ sets.precast.RAWS['Trueflight'] = {
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
 
-sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
 sets.misc.Steps = set_combine(sets.TP.ACC)

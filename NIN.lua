@@ -124,13 +124,26 @@ end
 function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
-		if Mode == 4 then
-			windower.add_to_chat(121,'Evasion Set')
-			equip(sets.idle.Standard,sets.idle.Evasion)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			windower.add_to_chat(121,'Idle/Resting Set')
-			equip(sets.idle.Standard)
-		end	
+			if PDT == 1 or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			elseif Mode == 4 then
+				windower.add_to_chat(121,'Evasion Set')
+				equip(sets.idle.Standard,sets.idle.Evasion)
+			else
+				if new = "Resting" then		
+					equip(sets.Resting)
+				else
+					windower.add_to_chat(121,'Idle/Resting Set')
+					equip(sets.idle.Standard)
+				end	
+			end
+		end
 	elseif new == 'Engaged' then
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then

@@ -134,12 +134,13 @@ end
 
 function status_change(new,old)
 -- Auto set
-    if T{'Idle','Resting'}:contains(new) then
+    if T{'Idle'}:contains(new) then
 		slot_lock()
-		if new == "Resting" then
-			equip(sets.Resting)
-		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
+		else	
+			if PDT == 1 then
 				equip(sets.idle.PDT)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
@@ -151,6 +152,8 @@ function status_change(new,old)
 				end
 			end
 		end
+	elseif new == "Resting" then
+		equip(sets.Resting)
 	elseif new == 'Engaged' then
 		slot_lock()
 		if PDT == 1 or MDT == 1 then

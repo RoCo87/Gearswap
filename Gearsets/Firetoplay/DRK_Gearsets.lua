@@ -156,7 +156,7 @@ sets.precast.WS["Scourge"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 
 			
 -- Misc Sets
-sets.misc.Utsusemi = set_combine(sets.precast.Fastcast, {})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})
 
 sets.misc.Waltz = set_combine(sets.idle.PDT,{})
 sets.misc.Steps = set_combine(sets.TP.ACC)

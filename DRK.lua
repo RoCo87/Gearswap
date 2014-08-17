@@ -125,16 +125,16 @@ function buff_change(buff,g_or_l)
 end
 
 function status_change(new,old)
-    if T{'Idle','Resting'}:contains(new) then
+    if T{'Idle'}:contains(new) then
 		if PDT == 1 then
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
-		elseif new == "Resting" then
-			equip(sets.Resting)
 		else
 			equip(sets.idle.Standard)
 		end
+	elseif new == 'Resting' then
+		equip(sets.Resting)
 	elseif new == 'Engaged' then
  		-- Automatically activate Hasso when engaging
 		if player.sub_job["SAM"] and not buffactive['Hasso'] and not buffactive.Amnesia and not buffactive.Obliviscence and	not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[138] < 1 then
@@ -266,7 +266,7 @@ function midcast(spell,arg)
 		-- Gear change to Damage Taken set when in midcast of Utsusemi
 		-- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
 		if windower.wc_match(spell.name,'Utsusemi*') then
-			equip(sets.misc.Utsusemi)
+			equip(sets.precast.Utsusemi)
 			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
 				if buffactive['Copy Image'] then
 					windower.ffxi.cancel_buff(66)

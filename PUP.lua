@@ -155,33 +155,38 @@ function status_change(new,old)
 			end
 		end
 	else
-		if new == 'Resting' then
-			equip(sets.Resting)
-		elseif new == 'Idle' then
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
+		else
+			if new == 'Resting' then
+				equip(sets.Resting)
+			elseif new == 'Idle' then
+					slot_lock()
+					if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+						equip(sets.idle.PDT)
+					elseif MDT == 1 then
+						equip(sets.idle.MDT)
+					else
+						equip(sets.idle.Standard)
+					end
+			elseif new == 'Engaged' then
 				slot_lock()
-				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT)
-				elseif MDT == 1 then
-					equip(sets.idle.MDT)
+				if PDT == 1 or MDT == 1 then
+					if PDT == 1 and MDT == 0 then
+						windower.add_to_chat(121,'PDT Locked')
+						equip(sets.idle.PDT)
+					elseif MDT == 1 and PDT == 0 then
+						windower.add_to_chat(121,'MDT Locked')
+						equip(sets.idle.MDT)
+					else
+						MDT = 0
+						PDT = 0
+					end
 				else
-					equip(sets.idle.Standard)
+					-- Equip previous TP set 
+						previous_set()
 				end
-		elseif new == 'Engaged' then
-			slot_lock()
-			if PDT == 1 or MDT == 1 then
-				if PDT == 1 and MDT == 0 then
-					windower.add_to_chat(121,'PDT Locked')
-					equip(sets.idle.PDT)
-				elseif MDT == 1 and PDT == 0 then
-					windower.add_to_chat(121,'MDT Locked')
-					equip(sets.idle.MDT)
-				else
-					MDT = 0
-					PDT = 0
-				end
-			else
-				-- Equip previous TP set 
-					previous_set()
 			end
 		end
 	end
