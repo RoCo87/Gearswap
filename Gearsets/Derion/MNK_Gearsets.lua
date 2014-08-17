@@ -54,8 +54,9 @@ sets.idle.Evasion = {
                 back="", waist="", legs="", feet=""}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="",
-				feet="Hermes' Sandals"})
+				head="Shaded Spectacles",
+				body="Goldsmith's Smock",
+				waist="Goldsmith's Smock", feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				feet="Hermes' Sandals"})

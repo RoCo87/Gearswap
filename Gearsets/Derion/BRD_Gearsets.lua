@@ -4,7 +4,7 @@
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Derion' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
@@ -32,50 +32,52 @@ if player.name == 'Feary' then
 		end
 		
 		-- Instruments
-		default = {range="Iron Ram Horn"}
+		default = {range="Eminent Flute"}
 		-- Buffs
-		ballad = {range="Crooner's Cithara"}
+		ballad = {range="Eminent Flute"}
 		march = {range="Langeleik"}
-		minuet = {range="Apollo's Flute"}
-		madrigal = {range="Cantabank's Horn"}
-		minne = {range="Syrinx"}
+		minuet = {range="Eminent Flute"}
+		madrigal = {range="Eminent Flute"}
+		minne = {range="Eminent Flute"}
 		etude = {range="Langeleik"}
-		carol = {range="Crumhorn"}
-		mambo  = {range="Vihuela"}
-		mazurka = {range="Daurdabla"}
-		paeon = {range="Iron Ram Horn"}
-		prelude = {range="Cantabank's Horn"}
-		scherzo = {range="Iron Ram Horn"}
-		hymnus = {range="Daurdabla"}
+		carol = {range="Eminent Flute"}
+		mambo  = {range="Eminent Flute"}
+		mazurka = {range="Langeleik"}
+		paeon = {range="Eminent Flute"}
+		prelude = {range="Eminent Flute"}
+		scherzo = {range="Eminent Flute"}
+		hymnus = {range="Eminent Flute"}
 		--Debuffs
-		elegy = {range="Syrinx"}
-		threnody = {range="Sorrowful Harp"}
-		lullaby = {range="Pan's Horn"}
-		horde = {range="Nursemaid Harp"}
-		finale = {range="Pan's Horn"}
-		requiem = {range="Requiem Flute"}
-		virelai = {range="Daurdabla"}
-		nocturne = {range="Iron Ram Horn"}
+		elegy = {range="Eminent Flute"}
+		threnody = {range="Eminent Flute"}
+		lullaby = {range="Eminent Flute"}
+		horde = {range="Eminent Flute"}
+		finale = {range="Eminent Flute"}
+		requiem = {range="Eminent Flute"}
+		virelai = {range="Eminent Flute"}
+		nocturne = {range="Eminent Flute"}
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
-				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume Belt", legs="Bihu Cannions +1", feet="Bihu Slippers"}
+		sets.idle.PDT = {main="Eminent Dagger", sub="Genbu's Shield",
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="Cheviot Cape", waist="", legs="Espial Hose", feet="Espial Socks"}
 		sets.idle.MDT = {
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="Felicitas Cape", waist="", legs="Espial Hose", feet="Espial Socks"}
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring="", rring="",
+                body="", hands="Gende. Gages +1", lring="", rring="",
                 back="Felicitas Cape", waist="", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",
+				lear="", rear="",
                 feet="Aoidos' Cothrn. +2"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Aoidos' Cothrn. +2"})
+				head="Shaded Spectacles",
+				body="Goldsmith's Smock",
+				waist="Goldsmith's Belt", feet="Aoidos' Cothrn. +2"})
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker", lear="", rear="",
                 body="Dalmatica", hands="Zenith Mitts", lring="", rring="",
