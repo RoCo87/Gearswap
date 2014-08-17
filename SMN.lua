@@ -159,17 +159,12 @@ function status_change(new,old)
 			equip(sets.Resting)
 		elseif new == 'Idle' then
 				slot_lock()
-				if areas.Town:contains(world.zone) then
-					windower.add_to_chat(121, "Town Gear")
-					equip(sets.misc.Town)
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
 				else
-					if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-						equip(sets.idle.PDT)
-					elseif MDT == 1 then
-						equip(sets.idle.MDT)
-					else
-						equip(sets.idle.Standard)
-					end
+					equip(sets.idle.Standard)
 				end
 		elseif new == 'Engaged' then
 			slot_lock()
