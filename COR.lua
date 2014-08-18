@@ -3,7 +3,7 @@
 -- Last Updated: 4/22/2014
 -- To Do List
 -- Triple Shot?
---
+-- add new rings.
 --
 --includes
 	include('include/functions.lua')
