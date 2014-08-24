@@ -23,7 +23,7 @@ if player.name == 'Derion' then
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
                 body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
                 back="Felicitas Cape", waist="Black Belt", legs="Espial Hose", feet="Espial Socks"}
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
+		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
 				head="Caller's Horn +2", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
