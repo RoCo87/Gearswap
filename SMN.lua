@@ -474,7 +474,6 @@ function aftercast(spell,arg)
 				equip(sets.idle.Standard)
 			end
 		end
-		
 	end
 -- Sleep and repose
 	if spell.name == "Sleep II" or spell.name == "Repose" then

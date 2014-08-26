@@ -187,7 +187,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..' TP is not enough to WS')
 			end
 		else
 			cancel_spell()

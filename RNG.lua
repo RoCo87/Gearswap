@@ -130,10 +130,10 @@ function status_change(new,old)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
 			else
-				if new = "Resting" then
+				if new == "Resting" then
 					equip(sets.Resting)
 				else
-				equip(sets.idle.Standard)
+					equip(sets.idle.Standard)
 				end
 			end
 		end
@@ -186,7 +186,7 @@ function precast(spell,arg)
 		if ranged_weaponskills:contains(spell.name) then
 			if player.status == 'Engaged' then
 				if player.tp >= 100 then
-					if spell.target.distance <= ranged_weaponskills.Distance[spell.name] then
+					if spell.target.distance <= ranged_weaponskills_Distance[spell.name] then
 						if sets.precast.RAWS[spell.name] then
 							equip(sets.precast.RAWS[spell.name])
 						else
@@ -194,7 +194,7 @@ function precast(spell,arg)
 						end
 					else
 						cancel_spell()
-						windower.add_to_chat(121,''..spell.target..'is too far to ws')
+						windower.add_to_chat(121, 'Canceled '..spell.name..'. '..spell.target.name..' is Too Far')
 					end
 				else 
 					cancel_spell()

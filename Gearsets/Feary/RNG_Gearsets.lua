@@ -53,7 +53,7 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, 
+sets.misc.Town = set_combine(sets.idle.PDT,{
 				head="Arcadian Beret +1",
 				body="Arcadian Jerkin +1", hands="Arcadian Bracers +1",
 				legs="Arcadian Braccae +1", feet="Fajin Boots"})
