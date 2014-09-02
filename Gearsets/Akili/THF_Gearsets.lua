@@ -7,7 +7,7 @@
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Akili' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')
@@ -42,11 +42,14 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
-				feet="Fajin Boots"})
+sets.misc.Town = set_combine(sets.idle.PDT, {main="Caduceus",
+				neck="Alchemist's Torque",
+				body="Alchemist's Smock",
+				waist="Alchemist's Belt", feet="Trotter Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				feet="Trotter Boots"})
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",

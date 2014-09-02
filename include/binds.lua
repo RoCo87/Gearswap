@@ -174,6 +174,9 @@ elseif player.main_job == "RNG" then
 	windower.send_command('@bind f10 gs c MDT')
 	windower.send_command('@bind f11 gs c PDT')
 	windower.send_command('@bind f12 gs c TP')
+	windower.send_command('@bind ` input /range <t>')
+	windower.send_command('@bind ^` gs c ws')
+	
 elseif player.main_job == "COR" then
 	basic_binds()
 	-- set binds

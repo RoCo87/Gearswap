@@ -3,8 +3,8 @@
 -- Last Update: 5/12/2014
 -- To Do:
 -- Overkill Set
---
---
+-- change engage set to pdt
+-- change bind key to f10?
 --
 --includes
 	include('include/functions.lua')
@@ -116,6 +116,15 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
+	elseif command == 'RA' then
+		windower.send_command('input /range <t>')
+	elseif command == 'ws' then
+		if player.status == 'Engaged' then
+			windower.send_command('Jishnu\'s Radiance')
+		else
+			windower.send_command('input /attack <t>')
+			windower.send_command('gs c ws')
+		end
 	end
 end
 
@@ -194,14 +203,14 @@ function precast(spell,arg)
 						end
 					else
 						cancel_spell()
-						windower.add_to_chat(121, 'Canceled '..spell.name..'. '..spell.target.name..' is Too Far')
+						windower.add_to_chat(121, 'Canceled '..spell.name..'. '..ranged_weaponskills_Distance[spell.name]..' is Too Far from '..spell.target.name..'.')
 					end
 				else 
 					cancel_spell()
 					windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 				end
 			else
-				windower.add_to_chat(121, 'You must be Engaged to WS')
+				windower.send_command('gs c ws')
 				cancel_spell()
 			end
 		else

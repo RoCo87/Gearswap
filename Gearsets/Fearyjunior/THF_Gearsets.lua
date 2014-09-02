@@ -42,8 +42,10 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
-				feet="Fajin Boots"})
+sets.misc.Town = set_combine(sets.idle.PDT, { 
+				head="Magnifying Spectacles", neck="Weaver's Torque",
+				body="Weaver's Smock",
+				waist="Weaver's Belt", feet="Trotter Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
