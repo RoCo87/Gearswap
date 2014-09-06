@@ -3,7 +3,7 @@
 -- Last Updated: 4/22/2014
 -- To Do List
 -- Triple Shot?
--- add new rings.
+-- 	`1
 --
 --includes
 	include('include/functions.lua')
@@ -122,9 +122,13 @@ function self_command(command)
 	elseif commmand == "luzaf" then
 		if lufaz == 1 then
 			lufaz = 0
+			windower.add_to_chat(121,'Luzaf\'s Ring Enabled')
 		else
 			lufaz = 1
+			windower.add_to_chat(121,'Luzaf\'s Ring Enabled')
 		end
+	elseif command == "RA" then
+		windower.send_command('input /ra <t>')
 	end
 end
 
@@ -140,7 +144,7 @@ function status_change(new,old)
 			windower.add_to_chat(121, "Town Gear")
 			equip(sets.misc.Town)
 		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+			if PDT == 1 then
 				equip(sets.idle.PDT)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
@@ -182,15 +186,35 @@ function precast(spell,arg)
 	elseif spell.type == 'CorsairRoll' or spell.english == "Double-Up" then
 		if player.inventory["Luzaf's Ring"] or player.wardrobe["Luzaf's Ring"] and luzaf == 1 then
 			if spell.english:wcmatch('Caster\'s Roll|Courser\'s Roll|Blitzer\'s Roll|Tactician\'s Roll|Allies\' Roll') then
-				equip(sets.precast.JA[spell.name],{rring="Luzaf's Ring"})
+				if player.inventory['Barataria Ring'] or player.wardrobe['Barataria Ring'] then
+					equip(sets.precast.JA[spell.name],{lring="Barataria Ring", rring="Luzaf's Ring"})
+				elseif player.inventory['Merirosvo Ring'] or player.wardrobe['Merirosvo Ring'] then
+					equip(sets.precast.JA[spell.name],{lring="Merirosvo Ring", rring="Luzaf's Ring"})
+				else
+					equip(sets.precast.JA[spell.name],{rring="Luzaf's Ring"})
+				end
+				
 			else
 				equip(sets.precast.JA["Phantom Roll"],{rring="Luzaf's Ring"})
 			end
 		else
 			if spell.english:wcmatch('Caster\'s Roll|Courser\'s Roll|Blitzer\'s Roll|Tactician\'s Roll|Allies\' Roll') then
-				equip(sets.precast.JA[spell.name])
+				if player.inventory['Barataria Ring'] or player.wardrobe['Barataria Ring'] then
+					equip(sets.precast.JA[spell.name],{lring="Barataria Ring"})
+				elseif player.inventory['Merirosvo Ring'] or player.wardrobe['Merirosvo Ring'] then
+					equip(sets.precast.JA[spell.name],{lring="Merirosvo Ring"})
+				else
+					equip(sets.precast.JA[spell.name])
+				end
 			else
-				equip(sets.precast.JA["Phantom Roll"])
+				if player.inventory['Barataria Ring'] or player.wardrobe['Barataria Ring'] then
+					equip(sets.precast.JA["Phantom Roll"],{lring="Barataria Ring"})
+				elseif player.inventory['Merirosvo Ring'] or player.wardrobe['Merirosvo Ring'] then
+					equip(sets.precast.JA["Phantom Roll"],{lring="Merirosvo Ring"})
+				else
+					equip(sets.precast.JA["Phantom Roll"])
+				end
+				
 			end
 		end
 -- Quick Draw

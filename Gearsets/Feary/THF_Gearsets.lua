@@ -1,4 +1,4 @@
--- THF Gear_sets
+-- Feary's THF Gear_sets
 -- Created: 4/5/2014
 -- Last Modified: 7/21/2014
 -- To Do List 
@@ -46,7 +46,9 @@ sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
 				feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				feet="Fajin Boots"})
+				
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
@@ -177,7 +179,13 @@ sets.precast.WS.Acc["Evisceration"] = {
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
-	
+
+-- Dancing Edge
+sets.precast.WS["Dancing Edge"] = {
+				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
+                body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
+}	
 -- Midcast Sets
 
 -- Aftercast

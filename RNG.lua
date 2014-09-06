@@ -1,10 +1,10 @@
 -- Feary's RNG LUA
 -- Created: 3/10/2014
--- Last Update: 5/12/2014
+-- Last Update: 9/1/2014
 -- To Do:
--- Overkill Set
--- change engage set to pdt
--- change bind key to f10?
+-- Overkill Set?
+-- Ammo Check?
+-- 
 --
 --includes
 	include('include/functions.lua')
@@ -117,10 +117,42 @@ function self_command(command)
 			end
 		end
 	elseif command == 'RA' then
-		windower.send_command('input /range <t>')
+		if player.status == 'Engaged' then
+			if not buffactive['Decoy Shot'] and not buffactive['Camouflage'] and windower.ffxi.get_ability_recasts()[52] < 1 then 
+				 windower.send_command('Decoy Shot')
+			elseif not buffactive['Camouflage'] and not buffactive['Decoy Shot'] and windower.ffxi.get_ability_recasts()[123] < 1 then 
+				windower.send_command('Camouflage')
+			elseif not buffactive['Sharpshot'] and not buffactive['Camouflage'] and windower.ffxi.get_ability_recasts()[124] < 1 then 
+				windower.send_command('Sharpshot')
+			end
+			windower.send_command('input /range <t>')
+		else
+			windower.send_command('input /attack <t>')
+			windower.send_command('wait 2;input /ra <t>')
+		end
 	elseif command == 'ws' then
 		if player.status == 'Engaged' then
-			windower.send_command('Jishnu\'s Radiance')
+			if buffactive['Camouflage'] then
+				cancel_spell()
+				windower.send_command('gs c RA')
+			else
+				if player.equipment.range == "Yoichinoyumi" or player.equipment.range == "Annihilator" then
+					if buffactive['Aftermath'] then
+						windower.add_to_chat(121,'Woot Aftermath')
+						windower.send_command('Jishnu\'s Radiance')
+					else
+						if player.TP == 3000 then
+							windower.send_command('Namas Arrow')
+						else
+							windower.add_to_chat(121,'You need Aftermath TP to 3000')
+							
+						end
+					end
+				else
+					windower.add_to_chat(121,'Cannot find weapon - defaulting to jishnu')
+					windower.send_command('Jishnu\'s Radiance')
+				end
+			end
 		else
 			windower.send_command('input /attack <t>')
 			windower.send_command('gs c ws')
@@ -156,9 +188,9 @@ function status_change(new,old)
 			equip(sets.idle.PDT)
 		elseif MDT == 1 then
 			equip(sets.idle.MDT)
-		else
+		--else
 		-- Equip previous TP set 
-			previous_set()
+		--	previous_set()
 		end
     end
 end
@@ -182,7 +214,15 @@ function precast(spell,arg)
 				equip(sets.RA.Gun,sets.precast.JA[spell.name])
 			end
 		else
-			equip(sets.precast.JA[spell.name])
+			if buffactive['Camouflage'] then
+				if spell.name == 'Shadowbind' then
+					equip(sets.precast.JA[spell.name])
+				else 
+					cancel_spell()
+				end
+			else
+				equip(sets.precast.JA[spell.name])
+			end
 		end
     elseif spell.type == "WeaponSkill" then
 		-- when /war Make sure Berserk is up when using a WS
@@ -324,11 +364,7 @@ function aftercast(spell,arg)
 				PDT = 0
 			end
 		else
-			if player.status == 'Engaged' then
-				previous_set()
-			else
-				equip(sets.idle.Standard)
-			end
+			equip(sets.idle.Standard)
 		end
 	end
     -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni

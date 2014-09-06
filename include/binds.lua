@@ -61,9 +61,9 @@ elseif player.main_job == "WHM" then
 --	windower.send_command('bind f5 input /ma "Cure IV" <p4>')
 --	windower.send_command('bind f6 input /ma "Cure IV" <p5>')
 	
-	windower.send_command('bind f7 input /ma "Haste" <stpc>')
-	windower.send_command('bind f8 input /ma "Regen IV" <stpc>')
-	windower.send_command('bind f9 input /ma "Erase" <stpc>')
+--	windower.send_command('bind f7 input /ma "Haste" <stpc>')
+--	windower.send_command('bind f8 input /ma "Regen IV" <stpc>')
+--	windower.send_command('bind f9 input /ma "Erase" <stpc>')
 	windower.send_command('bind f10 gs c MDT')
 	windower.send_command('bind f11 gs c PDT')
 	windower.send_command('bind f12 input /ma "Sacrifice" <stpc>')
@@ -171,11 +171,10 @@ elseif player.main_job == "DRG" then
 elseif player.main_job == "RNG" then
 	basic_binds()
 	-- set binds
-	windower.send_command('@bind f10 gs c MDT')
-	windower.send_command('@bind f11 gs c PDT')
+	windower.send_command('@bind f10 gs c RA')
+	windower.send_command('@bind f11 gs c ws')
+	windower.send_command('@bind f11 gs c MDT')
 	windower.send_command('@bind f12 gs c TP')
-	windower.send_command('@bind ` input /range <t>')
-	windower.send_command('@bind ^` gs c ws')
 	
 elseif player.main_job == "COR" then
 	basic_binds()

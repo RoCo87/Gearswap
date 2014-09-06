@@ -1,6 +1,6 @@
--- COR Gear_sets
--- Created
--- Last Modified:
+-- Feary's COR Gear_sets
+-- Created:
+-- Last Modified: 9/4/2014
 --
 --
 
@@ -43,11 +43,14 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {head="Lanun Tricorne",body="Lanun Frac",hands="Lanun Gauntlets",legs="Lanun Gauntlets",
-				feet="Hermes' Sandals"})
+sets.misc.Town = set_combine(sets.idle.PDT, {
+				head="Lanun Tricorne",
+				body="Lanun Frac", hands="Lanun Gants",
+				legs="Lanun Culottes", feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Hermes' Sandals"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				feet="Hermes' Sandals"})
 -- Melee TP 
 sets.TP = { 
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
