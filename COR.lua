@@ -193,9 +193,15 @@ function precast(spell,arg)
 				else
 					equip(sets.precast.JA[spell.name],{rring="Luzaf's Ring"})
 				end
-				
 			else
-				equip(sets.precast.JA["Phantom Roll"],{rring="Luzaf's Ring"})
+				if player.inventory['Barataria Ring'] or player.wardrobe['Barataria Ring'] then
+					equip(sets.precast.JA["Phantom Roll"],{lring="Barataria Ring", rring="Luzaf's Ring"})
+				elseif player.inventory['Merirosvo Ring'] or player.wardrobe['Merirosvo Ring'] then
+					equip(sets.precast.JA["Phantom Roll"],{lring="Merirosvo Ring", rring="Luzaf's Ring"})
+				else
+					equip(sets.precast.JA["Phantom Roll"],{rring="Luzaf's Ring"})
+				end
+				
 			end
 		else
 			if spell.english:wcmatch('Caster\'s Roll|Courser\'s Roll|Blitzer\'s Roll|Tactician\'s Roll|Allies\' Roll') then
