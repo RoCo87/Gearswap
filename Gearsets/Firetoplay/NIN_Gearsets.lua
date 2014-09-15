@@ -1,13 +1,13 @@
--- NIN Gear_sets
+-- Firetoplay's NIN Gear_sets
 -- Created: 7/13/2014
--- Last Modified: 7/13/2014
+-- Last Modified: 9/1/2014
 -- To Do List 
 --
 --
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Firetoplay' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')
@@ -33,17 +33,16 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
 
 sets.idle.MDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="Black Belt", legs="Espial Hose", feet="Espial Socks"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { 
-				head="Felistris Mask",
 				feet="Danzo Sune-Ate"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
@@ -51,7 +50,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Felistris Mask", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-             body="Otronif Harness", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+            body="Otronif Harness", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Fravashi Mantle", waist="Twilight Belt", legs="Otronif Brais +1",feet="Otronif Boots +1"})
 
 sets.Enmity = {
@@ -84,9 +83,9 @@ sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi,{
 			
 -- TP Sets 
 sets.TP = { ammo="Ginsen",
-			head="Iga Zukin +2", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+			head="Espial Cap", neck="Chivalrous Chain", lear="Brutal Earring", rear="Suppanomimi",
+            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {ammo="Ginsen",

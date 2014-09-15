@@ -1,13 +1,13 @@
--- THF Gear_sets
+-- Firetoplay's THF Gear_sets
 -- Created: 4/5/2014
--- Last Modified: 7/21/2014
+-- Last Modified: 9/1/2014
 -- To Do List 
 --
 --
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Firetoplay' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')
@@ -33,16 +33,16 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
 
 sets.idle.MDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
+                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
+sets.misc.Town = set_combine(sets.idle.PDT, { 
 				feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
@@ -54,8 +54,8 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 sets.TH = {
-			hands="Plun. Armlets +1",
-			waist="Chaac Belt"}
+			hands="Assassin's Armlets +2",
+			feet="Raider's Poulaines +2"}
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
@@ -64,10 +64,10 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
-sets.TP = { ranged="Raider's Bmrng.",
-			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Thaumas Coat", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Pillager's Culottes", feet="Plun. Poulaines"}
+sets.TP = {	ranged="Raider's Bmrng.",
+			head="Espial Cap", neck="Chivalrous Chain", lear="Brutal Earring", rear="Suppanomimi",
+            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	
@@ -122,9 +122,9 @@ sets.precast.JA["Trick Attack"] = {
 
 -- Weaponskills
 sets.precast.WS = {
-				head="Pillager's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+			head="Espial Cap", neck="Chivalrous Chain", lear="Brutal Earring", rear="Suppanomimi",
+            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Warwolf Belt", legs="Espial Hose", feet="Espial Socks"}
 -- Mercy Stroke
 sets.precast.WS["Mercy Stroke"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",

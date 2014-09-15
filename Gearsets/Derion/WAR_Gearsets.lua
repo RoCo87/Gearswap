@@ -1,4 +1,4 @@
--- Derion WAR Gear_sets
+-- Derion's WAR Gear_sets
 -- Created: 6/1/2014
 -- Last Modified: 6/14/2014
 -- To Do

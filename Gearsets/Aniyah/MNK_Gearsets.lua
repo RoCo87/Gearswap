@@ -1,4 +1,4 @@
--- MNK Gear_sets
+-- Aniyah's MNK Gear_sets
 -- Created: 1/25/2014
 -- Last Modified: 6/14/2014
 -- To Do List
@@ -7,7 +7,7 @@
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Aniyah' then
 -- includes
 	include('include/utility.lua')
 	include('include/mappings.lua')

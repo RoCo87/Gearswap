@@ -1,11 +1,11 @@
--- BLU Gearsets
+-- Aniyah's BLU Gearsets
 -- Created: 4/26/2014
 -- Last Updated: 6/13/2014
 -- To Do List:
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Aniyah' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')

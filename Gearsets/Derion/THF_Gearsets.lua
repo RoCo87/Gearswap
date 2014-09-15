@@ -1,4 +1,4 @@
--- THF Gear_sets
+-- Derion's THF Gear_sets
 -- Created: 4/5/2014
 -- Last Modified: 7/21/2014
 -- To Do List 
@@ -35,12 +35,12 @@ if player.name == 'Derion' then
 sets.idle.PDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
                 body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="e", waist="", legs="Espial Hose", feet="Espial Socks"}
+                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
 
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
                 body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="e", waist="", legs="Espial Hose", feet="Espial Socks"}
+                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { 
 				head="Shaded Spectacles",
@@ -124,9 +124,9 @@ sets.precast.JA["Trick Attack"] = {
 
 -- Weaponskills
 sets.precast.WS = {
-				head="Pillager's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Vespid Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+			head="Espial Cap", neck="Agasaya's Collar", lear="Brutal Earring", rear="Suppanomimi",
+            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 -- Mercy Stroke
 sets.precast.WS["Mercy Stroke"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",

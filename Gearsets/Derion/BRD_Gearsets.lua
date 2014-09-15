@@ -1,6 +1,9 @@
--- BRD Gearsets
--- Created
--- Last Modified
+-- Derion's BRD Gearsets
+-- Created: 02/11/2014
+-- Last Modified: 9/1/2014
+-- To Do:
+--
+--
 --
 --
 

@@ -1,6 +1,6 @@
--- COR Gear_sets
--- Created
--- Last Modified:
+-- Derion's COR Gear Sets
+-- Created:
+-- Last Modified:: 9/1/2014
 -- To Do List
 --
 --

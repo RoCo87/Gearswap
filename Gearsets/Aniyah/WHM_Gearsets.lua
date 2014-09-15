@@ -1,4 +1,4 @@
--- WHM Gearsets
+-- Aniyah's WHM Gearsets
 -- Date Created: 1/29/2014
 -- Last Updated: 6/6/2014
 -- To Do List:
@@ -7,7 +7,7 @@
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Aniyah' then
 		-- includes
 		include('include/utility.lua')
 		include('include/mappings.lua')

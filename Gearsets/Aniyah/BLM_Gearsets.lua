@@ -1,9 +1,13 @@
--- BLM Gearsets
--- Date: 4/11/2014
+-- Aniyah's BLM Gearsets
+-- Created On: 4/11/2014
+-- Last Updated: 9/11/2014
+-- To Do List
 --
----
+--
+--
+--
 
-if player.Name == 'Feary' then
+if player.Name == 'Aniyah' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')

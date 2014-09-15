@@ -1,4 +1,4 @@
--- SMN Gearsets
+-- Derion's SMN Gearsets
 -- Created:
 -- Last Updated: 
 -- To Do:
