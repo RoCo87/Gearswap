@@ -65,28 +65,29 @@ sets.TP.Acc = {
 
 -- RA Sets
 sets.precast.Snapshot = {ammo="TPBullet",
-				head="Nvrch. Tricorne +2", hands="Lanun Gants",
+				head="Nvrch. Tricorne +2", 
+				hands="Lanun Gants",
                 back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers"}
 -- Eminent Gun
 sets.RA = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 				
 sets.RA.Acc = { ammo="TPBullet",
 			head="Nvrch. Tricorne +2", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Thur. tights +1", feet="Iuitl Gaiters"}
 
 -- Armageddon 
 sets.RA.Armageddon = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.RA.Armageddon.Acc = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Arewe Ring +1", rring="Arewe Ring +1",
+            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 

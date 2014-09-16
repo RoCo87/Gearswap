@@ -185,7 +185,7 @@ sets.precast.WS["Dancing Edge"] = {
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
-}	
+				
 -- Midcast Sets
 
 -- Aftercast
