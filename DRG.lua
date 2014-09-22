@@ -134,7 +134,7 @@ function status_change(new,old)
 			elseif MDT == 1 then
 				equip(sets.idle.MDT)
 			else
-				if new = 'Resting' then
+				if new == 'Resting' then
 					equio(sets.Resting)
 				else
 					equip(sets.idle.Standard)

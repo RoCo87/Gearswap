@@ -49,32 +49,39 @@ sets.idle.MDT = {
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {legs="Blood Cuisses"})
+sets.misc.Town = set_combine(sets.idle.PDT, {
+				legs="Blood Cuisses"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", legs="Blood Cuisses"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				legs="Blood Cuisses"})
 -- Melee TP 
-sets.TP = { ammo="Hagneia Stone",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
+sets.TP = { ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 
-sets.TP.Ionis = { ammo="Hagneia Stone",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
+sets.TP.Ionis = { ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
 
 -- Melee Accuracy TP
-sets.TP.Acc = {	ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
+sets.TP.Acc = {	ammo="Ginsen",
+			head="Otomi Helm", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Xaddi Mail", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Goading Belt", legs="Xaddi Cuisses", feet="Xaddi Boots"}
 -- Ionis Haste +2% Save TP 25+
-sets.TP.Acc.Ionis = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
-
+sets.TP.Acc.Ionis = {ammo="Ginsen",
+			head="Otomi Helm", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Xaddi Mail", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Goading Belt", legs="Xaddi Cuisses", feet="Xaddi Boots"}
+-- Alliance Buffs - Rolls + Songs
+sets.TP.Buffed = {ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
+}
 -- Pet
 sets.precast.HealingBreath = {
 				head="Vishap Armet", 
@@ -99,7 +106,7 @@ sets.precast.JA["Spirit Surge"] = {body="Pteroslaver Mail"}
 sets.precast.JA["Fly High"] = {}
 
 sets.precast.JA["Call Wyvern"] = {body="Pteroslaver Mail"}
-sets.precast.JA["Angon"] = {ammo="Angon", hands="Ptero. Fin. Gaunt."}
+sets.precast.JA["Angon"] = {ammo="Angon", hands="Ptero. Fin. Gaunt.", lear="Dragoon's Earring"}
 sets.precast.JA["Deep Breathing"] = {head="Ptero. Armet"}
 sets.precast.JA["Strafe"] = {legs="Pteroslaver Brais"}
 sets.precast.JA["Empathy"] = {feet="Ptero. Greaves"}
@@ -107,59 +114,73 @@ sets.precast.JA["Ancient Circle"] = {legs="Vishap Brais"}
 sets.precast.JA["Spirit Link"] = {head="Vishap Armet"}
 
 -- Jumps 
-sets.precast.JA["Jump"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Lncr. Vmbrc. +2", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lncr. Cuissots +2", feet="Lncr. Schynbld +2"}
+sets.precast.JA["Jump"] = {ammo="Ginsen",
+				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Vishap Mail", hands="Vishap Finger Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses", feet="Vishap Greaves"}
 
-sets.precast.JA["High Jump"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Ogier's Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Phorcys Dirs", feet="Mikinaak Greaves"}
+sets.precast.JA["High Jump"] = {ammo="Ginsen",
+				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Vishap Mail", hands="Vishap Finger Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses", feet="Cizin Greaves"}
 
 sets.precast.JA["Super Jump"] = {}
 
-sets.precast.JA["Spirit Jump"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Lncr. Vmbrc. +2", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lncr. Cuissots +2", feet="Lncr. Schynbld +2"}
+sets.precast.JA["Spirit Jump"] = {ammo="Ginsen",
+				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Lancer Plackert +2", hands="Xaddi Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Lncr. Schynbld. +2"}
 
-sets.precast.JA["Soul Jump"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lncr. Plackart +2", hands="Ogier's Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Phorcys Dirs", feet="Mikinaak Greaves"}
+sets.precast.JA["Soul Jump"] = {ammo="Ginsen",
+				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Lancer Plackert +2", hands="Xaddi Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Cizin Greaves"}
 
 -- Weaponskills
-sets.precast.WS = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+sets.precast.WS = {ammo="Ginsen",
+				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
-sets.precast.WS["Stardiver"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Atheling Mantle", waist="Light Belt", legs="Cizin Breeches +1", feet="Iuitl Gaiters"}
+sets.precast.WS.Acc = {}
 
-sets.precast.WS["Drakesbane"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
-                back="Atheling Mantle", waist="Light Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
+sets.precast.WS["Stardiver"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Mantle", waist="Light Belt", legs="Ptero. Brais", feet="Ptero. Greaves"}
 
-sets.precast.WS["Camlann's Torment"] = {ammo="Hagneia Stone",
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+sets.precast.WS.Acc["Stardiver"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Buquwik Cape", waist="Light Belt", legs="Cizin Breeches +1", feet="Ptero. Greaves"}
+
+sets.precast.WS["Drakesbane"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Ptero. Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Lncr. Cuissots +2", feet="Vishap Greaves"}
+
+sets.precast.WS.Acc["Drakesbane"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
--- Midcast Sets
 
--- Aftercast
+sets.precast.WS["Camlann's Torment"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Atheling Mantle", waist="Light Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"}
+
+sets.precast.WS.Acc["Camlann's Torment"] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Updraft Mantle", waist="Light Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Cizin Helm", lear="Loquac. Earring", rring="Prolix Ring",})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
-sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
+sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
 
