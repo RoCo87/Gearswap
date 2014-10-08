@@ -44,7 +44,9 @@ if player.name == 'Feary' then
 		sets.idle.Avatar["Alexander"] = set_combine(sets.midcast.SummoningMagic)
 		sets.idle.Avatar["Odin"] = set_combine(sets.midcast.SummoningMagic)
 		
+		-- Avator Favor - needs 450 skill minimum
 		sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
+		
 		sets.idle.Avatar.Melee = {hands="Regimen Mittens",waist="Kuku Stone",legs="Convoker's Spats"}
 		sets.idle.Avatar.Spirit = {main="Bolelabunga",sub="Genbu's Shield",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquacious Earring",rear="Moonshade Earring",

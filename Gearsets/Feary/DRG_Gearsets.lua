@@ -1,6 +1,9 @@
--- DRG Gear_sets
--- Created:
--- Last Modified:
+-- Feary's DRG Gear_sets
+-- Created: 3/15/2014
+-- Last Modified: 9/22/2014
+-- To Do List:
+--
+--
 --
 --
 
@@ -81,7 +84,7 @@ sets.TP.Buffed = {ammo="Ginsen",
 			head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
             back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"}
-}
+
 -- Pet
 sets.precast.HealingBreath = {
 				head="Vishap Armet", 
@@ -116,24 +119,24 @@ sets.precast.JA["Spirit Link"] = {head="Vishap Armet"}
 -- Jumps 
 sets.precast.JA["Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Vishap Mail", hands="Vishap Finger Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				body="Vishap Mail", hands="Vishap Finger Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses", feet="Vishap Greaves"}
 
 sets.precast.JA["High Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Vishap Mail", hands="Vishap Finger Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				body="Vishap Mail", hands="Vishap Finger Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses", feet="Cizin Greaves"}
 
 sets.precast.JA["Super Jump"] = {}
 
 sets.precast.JA["Spirit Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lancer Plackert +2", hands="Xaddi Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				body="Lancer Plackert +2", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Lncr. Schynbld. +2"}
 
 sets.precast.JA["Soul Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lancer Plackert +2", hands="Xaddi Gauntlets" lring="Rajas Ring", rring="K'ayres Ring",
+				body="Lancer Plackert +2", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Cizin Greaves"}
 
 -- Weaponskills

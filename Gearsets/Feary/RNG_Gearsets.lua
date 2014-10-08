@@ -145,6 +145,7 @@ sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks"}
 -- Weaponskills
 -- Melee
 sets.precast.WS = {}
+
 -- Range
 sets.precast.RAWS = {
 				head="Umbani Cap", neck="Ocachi Gorget", lear="Clearview Earring", rear="Flame Pearl",

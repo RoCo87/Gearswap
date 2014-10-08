@@ -145,7 +145,6 @@ function self_command(command)
 							windower.send_command('Namas Arrow')
 						else
 							windower.add_to_chat(121,'You need Aftermath TP to 3000')
-							
 						end
 					end
 				else

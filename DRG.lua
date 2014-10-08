@@ -126,8 +126,8 @@ function status_change(new,old)
 			equip(sets.misc.Town)
 		else
 			if PDT == 1 then
-				if buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
+				if buffactive['Weakness'] then
+					equip(sets.idle.PDT,{head="Twilight Helm", body="Twilight Mail"})
 				else
 					equip(sets.idle.PDT)
 				end
@@ -135,7 +135,7 @@ function status_change(new,old)
 				equip(sets.idle.MDT)
 			else
 				if new == 'Resting' then
-					equio(sets.Resting)
+					equip(sets.Resting)
 				else
 					equip(sets.idle.Standard)
 				end
@@ -210,8 +210,6 @@ function precast(spell,arg)
 		-- Healing Breath Triggers
 		if spell.english:wcmatch("Bar*") and player.hpp <= 51 then
 			equip(sets.precast.HealingBreath)
-		else
-			cancel_spell()
 		end
 		-- Cure casting time
 		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
