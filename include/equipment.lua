@@ -9,6 +9,7 @@
 
 -- Augmented Gear
 	Aug = {}
+	-- Dark Rings
 	Aug.Darkring1 = {name="Dark Ring",augments={"Phys. dmg. taken -5%","Magic dmg. taken -3%"}}
 	Aug.Darkring2 = {name="Dark Ring",augments={"Phys. dmg. taken -4%","Magic dmg. taken -4%"}}
 	Aug.Darkring1.Aniyah = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
@@ -18,8 +19,9 @@
 	--Aug.Darkring1.Firetoplay = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
 	--Aug.Darkring2.Firetoplay = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
 	Aug.Darkring1.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
-	--Aug.Darkring2.Carrisa = {name="Dark Ring"}
+	Aug.Darkring2.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
 
+	-- Demon Rings
 	Aug.DemonRing1 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	Aug.DemonRing2 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	
