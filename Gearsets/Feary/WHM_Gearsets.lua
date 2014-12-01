@@ -81,11 +81,11 @@ if player.name == 'Feary' then
 		--Healing Magic
 		-- Cures
 		sets.midcast.Cure = {main="Arka IV", 
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", 
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"})
 

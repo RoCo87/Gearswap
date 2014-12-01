@@ -78,7 +78,7 @@ sets.precast.Snapshot = {
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks"}
 sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion Beret +1",
                 body="Sylvan Caban +2", hands="Arc. Bracers +1",
-                waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks"})
+                waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
 
 -- Bow
 sets.RA = { 
@@ -140,7 +140,7 @@ sets.precast.JA["Scavenge"] = {feet="Orion Socks +1"}
 sets.precast.JA["Bounty Shot"] = {hands="Syl. Glvltte. +2"}
 sets.precast.JA["Unlimited Shot"] = {feet="Sylvan Bottln. +2"}
 sets.precast.JA["Flashy Shot"] = {hands="Arcadian Bracers"}
-sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks"}
+sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks +1"}
 
 -- Weaponskills
 -- Melee
@@ -176,19 +176,19 @@ sets.precast.RAWS['Coronach'] = {
 sets.precast.RAWS['Wildfire'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks"}
+                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 
 sets.precast.RAWS['Trueflight'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks"}
+                back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 					
 -- Midcast Sets
 
 -- Aftercast
 
 -- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", hands="Thaumas Gloves", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", hands="Thaumas Gloves", lear="Loquac. Earring", rring="Prolix Ring",})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 

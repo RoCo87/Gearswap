@@ -94,12 +94,12 @@ if player.Name == 'Feary' then
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
-				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Refraction Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Arka IV", 
-				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Refraction Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
 	

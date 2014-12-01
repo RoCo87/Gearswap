@@ -173,8 +173,8 @@ elseif player.main_job == "RNG" then
 	-- set binds
 	windower.send_command('@bind f10 gs c RA')
 	windower.send_command('@bind f11 gs c ws')
-	windower.send_command('@bind f11 gs c MDT')
-	windower.send_command('@bind f12 gs c TP')
+	windower.send_command('@bind f12 gs c MDT')
+	--windower.send_command('@bind f12 gs c TP')
 	
 elseif player.main_job == "COR" then
 	basic_binds()

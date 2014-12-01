@@ -145,7 +145,7 @@ sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gor
 
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Athos's Chapeau", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
+				head="Haruspex Hat +1", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="", rring="Prolix Ring",
                 back="Repulse Mantle", waist="Black Belt", legs="", feet=""})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
