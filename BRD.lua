@@ -195,18 +195,28 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		-- Cure casting time
-		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
-			--windower.add_to_chat(121, "Cure")
-			equip(sets.precast.Cure)
+		if spell.skill == "Healing Magic" then
+			-- Cure casting time
+			if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
+				--windower.add_to_chat(121, "Cure")
+				equip(sets.precast.Cure)
+			else
+				equip(sets.precast.Fastcast)
+			end
+		elseif spell.skill == "Enhancing Magic" then
+			if spell.name == "Stoneskin" then
+				equip(sets.precast.Stoneskin)
+			else 
+				equip(sets.precast.Enhancing)
+			end
+			-- Cancel Sneak
+			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+				windower.ffxi.cancel_buff(71)
+				cast_delay(0.3)
+			end	
 		else
 			equip(sets.precast.Fastcast)
 		end
-		-- Cancel Sneak
-		if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-			windower.ffxi.cancel_buff(71)
-			cast_delay(0.3)
-		end		
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff

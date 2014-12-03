@@ -161,7 +161,7 @@ sets.precast.RAWS['Last Stand'] = {
 -- Aftercast
 
 -- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", lear="Loquac. Earring", rring="Prolix Ring",})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 

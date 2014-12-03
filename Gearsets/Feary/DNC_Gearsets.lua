@@ -50,7 +50,7 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
-			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
+			head="Haruspex Hat +1", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
             body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
@@ -162,7 +162,7 @@ sets.precast.WS.Acc["Pyrrhic Kleos"] = {
 -- Aftercast
 
 -- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", lear="Loquac. Earring", rring="Prolix Ring",})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 end

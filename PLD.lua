@@ -146,7 +146,7 @@ function status_change(new,old)
 			windower.add_to_chat(121, "Town Gear")
 			equip(sets.misc.Town)
 		else
-			if new = "Resting" then
+			if new == "Resting" then
 				equip(sets.Resting)
 			else
 				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then

@@ -1,6 +1,6 @@
--- BRD Gearsets
--- Created
--- Last Modified
+-- Feary's BRD Gearsets
+-- Created:
+-- Last Modified:11/16/2014
 --
 --
 
@@ -96,9 +96,11 @@ if player.name == 'Feary' then
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="", feet=""})
+                body="Heka's Kalasiris", 
+                back="Pahtli Cape"})
+		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
+		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
+		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {waist="Witful Belt"})
 		
@@ -122,12 +124,12 @@ if player.name == 'Feary' then
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
-				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Orison Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Arka IV",
-				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
                 body="Gendewitha Bliaut", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Pahtli Cape", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
 	

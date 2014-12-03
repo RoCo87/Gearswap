@@ -32,12 +32,13 @@ if player.name == 'Feary' then
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Caller's Horn +2",lear="Merman's Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs",
-                waist="Fucho-no-obi",legs="Nares Trews", feet="Herald's Gaiters"})
+                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Herald's Gaiters"})
 		
 		-- Perp Sets
 		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
-				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquac. Earring",rear="Moonshade Earring",
+				head="Convoker's Horn",neck="Caller's Pendant",lear="Gifted Earring",rear="Moonshade Earring",
 				body="Caller's Doublet +2",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
+				-- Conveyence Cape -- Fervor Ring
 				back="Pahtli Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Caller's Pgch. +2"}
 		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"})
 		sets.idle.Avatar["Diabolos"] = set_combine(sets.idle.Avatar,{waist="Diabolos's Rope"})
