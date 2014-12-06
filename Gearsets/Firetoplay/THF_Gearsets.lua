@@ -34,13 +34,13 @@ if player.name == 'Firetoplay' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring="", rring="",
+                back="Repulse Mantle", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring="", rring="",
+                back="Repulse Mantle", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { 
 				feet="Fajin Boots"})
@@ -50,7 +50,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 sets.TH = {
@@ -60,14 +60,14 @@ sets.TH = {
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
 sets.TP = {	ranged="Raider's Bmrng.",
 			head="Espial Cap", neck="Chivalrous Chain", lear="Brutal Earring", rear="Suppanomimi",
-            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
+            body="Iuitl Gambison", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	

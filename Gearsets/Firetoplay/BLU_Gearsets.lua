@@ -1,11 +1,11 @@
--- BLU Gearsets
+-- Firetoplay's BLU Gearsets
 -- Created: 4/26/2014
 -- Last Updated: 6/13/2014
 -- To Do List:
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Firetoplay' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
@@ -33,16 +33,16 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring="", rring="",
                 back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring="", rring="",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
-                back="Umbra Cape", waist="Fucho-no-obi", feet="Chelona Boots"})
+                back="Umbra Cape", waist="Fucho-no-obi", feet="Serpentes Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",legs="Blood Cuisses"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {body="Assim. Jubbah", legs="Blood Cuisses"})
