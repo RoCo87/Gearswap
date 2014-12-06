@@ -39,13 +39,13 @@ if player.name == 'Derion' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Boots"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Derion, rring="",
+                back="Repulse Mantle", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Boots"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Derion, rring="",
+                back="", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
 				head="Shaded Spectacles", neck="Goldsmith's Torque",

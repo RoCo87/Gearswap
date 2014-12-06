@@ -62,7 +62,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- TP 
 sets.TP = { ammo="Tantra Tathlum",
 				head="Espial Cap", neck="Agasaya's Collar", lear="Brutal Earring", rear="Ghillie Earring +1",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
+                body="Espial Gambison", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 -- Accuracy TP
 sets.TP.MidAcc = { ammo="Tantra Tathlum",
