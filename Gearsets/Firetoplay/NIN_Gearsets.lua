@@ -34,13 +34,13 @@ if player.name == 'Firetoplay' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Espial Hose", feet="Espial Socks"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring="", rring="",
+                back="Repulse Mantle", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Espial Gambison", hands="Espial Bracers", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="Black Belt", legs="Espial Hose", feet="Espial Socks"}
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring="", rring="",
+                back="", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { 
 				feet="Danzo Sune-Ate"})
@@ -72,8 +72,8 @@ sets.midcast.Wheel = {
 			head="Koga Hatsuburi", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
 			body="Ninja Chainmail", hands="Ninja Tekko", lring="Icesoul Ring", rring="Icesoul Ring",
 			back="Toro Cape", waist="Wanion Belt", legs="Ninja Hakama", feet="Ninja Kyahan"}
-sets.midcast.Skill = {
 			head="Ninja Hatsuburi", 
+sets.midcast.Skill = {
 			feet="Koga Kyahan"}
 sets.midcast.Enfeeb = set_combine(sets.midcast.Skill,{
 			lear="Lifestorm Earring", rear="Psystorm Earring",
@@ -84,8 +84,8 @@ sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi,{
 -- TP Sets 
 sets.TP = { ammo="Ginsen",
 			head="Espial Cap", neck="Chivalrous Chain", lear="Brutal Earring", rear="Suppanomimi",
-            body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
+            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {ammo="Ginsen",
