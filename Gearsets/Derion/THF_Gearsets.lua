@@ -40,7 +40,7 @@ sets.idle.PDT = {
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
                 body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Derion, rring="",
-                back="", waist="", legs="Iuitl Tights", feet="Espial Gaiters"}
+                back="", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { 
 				head="Shaded Spectacles",
