@@ -264,13 +264,21 @@ function precast(spell,arg)
 		end
    elseif spell.type == 'Weaponskill' then
 		if  player.status == 'Engaged' then
-			if player.tp >= 100 then
+			if player.tp >= 1000 then
 				if spell.target.distance <= 5 then
 					if spell.english:wcmatch("Mercy Stroke|Rudra's Storm") then
 						if buffactive["Sneak Attack"] then
-							equip(sets.precast.WS.SA[spell.name])
+							if Mode == 1 or Mode == 2 then
+								equip(sets.precast.WS.Acc.SA[spell.name])
+							else
+								equip(sets.precast.WS.SA[spell.name])
+							end
 						elseif buffactive["Trick Attack"] then
-							equip(sets.precast.WS.TA[spell.name])
+							if Mode == 1 or Mode == 2 then
+								equip(sets.precast.WS.Acc.TA[spell.name])
+							else
+								equip(sets.precast.WS.TA[spell.name])
+							end
 						else
 							cancel_spell()
 							windower.add_to_chat(121,'Cancelled - '..spell.name..' - Need to Stack with Sneak Attack or Trick Attack')

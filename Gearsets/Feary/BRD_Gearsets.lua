@@ -109,15 +109,22 @@ if player.name == 'Feary' then
                 body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
                 back="Balladeer's Cape", waist="Austerity Belt", legs="", feet="Serpentes Sabots"}
 		-- Bard songs
+		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
-				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
-                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
-                back="", waist="", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
-		-- Target Skill + 800
+				head="Aoidos' Calot +2", neck="Aoidos' matinee",
+                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                back="Harmony Cape", waist="Corvax Sash", legs="Mdk. Shalwar +1", feet="Brioso Slippers +1"}
+		-- Enhancing Buff - Buff Set
+		sets.midcast.Buffsong = {main="Legato Dagger",
+				head="Aoidos' Calot +2", neck="Aoidos' matinee",
+                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                back="Harmony Cape", waist="Corvax Sash", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
+		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
                 back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
+		-- Debuff 
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",

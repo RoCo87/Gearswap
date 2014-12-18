@@ -206,6 +206,8 @@ function precast(spell,arg)
 		elseif spell.skill == "Enhancing Magic" then
 			if spell.name == "Stoneskin" then
 				equip(sets.precast.Stoneskin)
+			elseif spell.name == "Haste" then
+				equip(sets.precast.Hastespell)
 			else 
 				equip(sets.precast.Enhancing)
 			end
