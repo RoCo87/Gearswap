@@ -33,29 +33,29 @@ if player.name == 'Aniyah' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff", 
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
+				head="", neck="Twilight Torque", lear="", rear="",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="", waist="",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+				head="", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Felicitas Cape", waist="",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Antivenom Earring", rear="Relaxing Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{ sub="Mephitis Grip",
-				lear="Merman's Earring", rear="Moonshade Earring",
+                back="Felicitas Cape", waist="Austerity Belt", legs="", feet=""})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				hands="Serpentes Cuffs",
-                legs="Nares Trews", feet="Herald's Gaiters"})
+                })
 
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
+				
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring",
-                body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
+                body="Anhur Robe", hands="Gendewitha Gages", lring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalairis",
