@@ -61,17 +61,17 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 				feet="Hermes' Sandals"})
 -- TP 
 sets.TP = { ammo="Tantra Tathlum",
-				head="Espial Cap", neck="Agasaya's Collar", lear="Brutal Earring", rear="Ghillie Earring +1",
+				head="Espial Cap", neck="Agasaya's Collar", lear="Bladeborn Earring", rear="SteelFlash Earring",
                 body="Espial Gambison", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 -- Accuracy TP
 sets.TP.MidAcc = { ammo="Tantra Tathlum",
-				head="Espial Cap", neck="Agasaya's Collar", lear="Brutal Earring", rear="Ghillie Earring +1",
+				head="Espial Cap", neck="Agasaya's Collar", lear="Bladeborn Earring", rear="SteelFlash Earring",
                 body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 -- High Accuracy TP
 sets.TP.HighAcc = {ammo="Tantra Tathlum",
-				head="Espial Cap", neck="Agasaya's Collar", lear="Brutal Earring", rear="Ghillie Earring +1",
+				head="Espial Cap", neck="Agasaya's Collar", lear="Bladeborn Earring", rear="SteelFlash Earring",
                 body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Twilight Belt", legs="Espial Hose", feet="Espial Socks"}
 

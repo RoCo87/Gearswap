@@ -35,8 +35,8 @@ if player.Name == 'Aniyah' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring1.Aniyah,
+                back="Cheviot Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
@@ -44,7 +44,7 @@ if player.Name == 'Aniyah' then
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
+                back="Cheviot Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})

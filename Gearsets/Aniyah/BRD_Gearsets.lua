@@ -1,10 +1,10 @@
--- BRD Gearsets
--- Created
--- Last Modified
+-- Aniyah's BRD Gearsets
+-- Created:
+-- Last Modified:
 --
 --
 
-if player.name == 'Feary' then
+if player.name == 'Aniyah' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
@@ -59,20 +59,19 @@ if player.name == 'Feary' then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
-				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume Belt", legs="Bihu Cannions +1", feet="Bihu Slippers"}
+		sets.idle.PDT = {main="Legato Dagger", sub="Genbu's Shield",
+				head="Gende. Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
+                back="Cheviot Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
-				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+				head="Gende. Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Gendewitha Bliaut", hands="Gende. Gages +1", lring="", rring="",
                 back="Felicitas Cape", waist="", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",
                 feet="Aoidos' Cothrn. +2"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Aoidos' Cothrn. +2"})
@@ -106,7 +105,7 @@ if player.name == 'Feary' then
 				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
                 body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
                 back="Balladeer's Cape", waist="Austerity Belt", legs="", feet="Serpentes Sabots"}
-		-- Bard songs
+		-- Buff songs
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
                 body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
