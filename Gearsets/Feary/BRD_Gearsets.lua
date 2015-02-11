@@ -1,6 +1,6 @@
 -- Feary's BRD Gearsets
--- Created:
--- Last Modified:11/16/2014
+-- Created: 02/02/2014
+-- Last Modified: 02/03/2015
 --
 --
 
@@ -121,14 +121,15 @@ if player.name == 'Feary' then
                 back="Harmony Cape", waist="Corvax Sash", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
-				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring", rear="",
-                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2", lring="", rring="",
-                back="Rhapsode's Cape", waist="Witful Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
-		-- Debuff 
+				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring",
+                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                back="Rhapsode's Cape", waist="Corvax Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
+		-- Debuffs
 		sets.midcast.Debuff = {main="Mandau",
-				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Musical Earring", rear="Gwati Earring",
                 body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions +1", feet="Bokwus Boots"}
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Bihu Cannions +1", feet="Bokwus Boots"}
+		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
@@ -154,11 +155,11 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Bokwus Slops", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Bokwus Slops", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 

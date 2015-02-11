@@ -1,6 +1,6 @@
 -- RNG Gear_sets
 -- Created: 3/10/2014
--- Last Updated: 7/22/2014
+-- Last Updated: 02/03/2015
 -- To Do:
 --
 --
@@ -148,28 +148,28 @@ sets.precast.WS = {}
 
 -- Range
 sets.precast.RAWS = {
-				head="Umbani Cap", neck="Ocachi Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Umbani Cap", neck="Ocachi Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 -- Bow WS
 sets.precast.RAWS['Jishnu\'s Radiance'] = {
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Light Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.precast.RAWS['Namas Arrow'] = {
-				head="Orion Beret +1", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Orion Beret +1", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
 				back="Buquwik Cape", waist="Light Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 -- Gun/Crossbow WS
 sets.precast.RAWS['Last Stand'] = {
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Coronach'] = {
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 

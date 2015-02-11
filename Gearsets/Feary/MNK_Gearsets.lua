@@ -1,6 +1,6 @@
 -- MNK Gear_sets
 -- Created: 1/25/2014
--- Last Modified: 6/14/2014
+-- Last Modified: 02/03/2015
 -- To Do List
 --
 --
@@ -108,14 +108,15 @@ sets.precast.WS = {ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
+
 sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS.Impetus = {}
 sets.precast.WS.Impetus['Victory Smite'] = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Tantra Cyclas +2", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
