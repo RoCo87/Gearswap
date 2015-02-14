@@ -29,9 +29,9 @@
 						"Hot Shot", "Split Shot", "Sniper Shot", "Slug Shot", "Blast Shot", "Heavy Shot", "Detonator", "Numbing Shot", "Last Stand",
 						"Coronach", "Trueflight", "Leaden Salute", "Wildfire",
 						"Myrkr"}
-		ranged_weaponskills_Distance = T{["Sidewinder"] = 16, ["Refulgent Arrow"] = 16, ["Apex Arrow"] = 16, ["Namas Arrow"] = 16, ["Jishnu's Radiance"] = 16,
-						["Heavy Shot"] = 16, ["Last Stand"] = 16,
-						["Coronach"] = 16, ["Trueflight"] = 16, ["Leaden Salute"] = 16, ["Wildfire"] = 16}
+		ranged_weaponskills_Distance = T{["Sidewinder"] = 24, ["Refulgent Arrow"] = 24, ["Apex Arrow"] = 24, ["Namas Arrow"] = 24, ["Jishnu's Radiance"] = 24,
+						["Heavy Shot"] = 24, ["Last Stand"] = 24,
+						["Coronach"] = 24, ["Trueflight"] = 24, ["Leaden Salute"] = 24, ["Wildfire"] = 24}
 
 -- Equipment Mappings
 

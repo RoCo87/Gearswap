@@ -1,7 +1,7 @@
 -- WAR Gear_sets
 -- Created: 6/1/2014
 -- Last Modified: 6/14/2014
--- To Do
+-- To Do:
 --
 
 if player.name == 'Feary' then
@@ -48,7 +48,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 
 sets.Enmity = {}
 
--- TP set
+-- Generic TP Set
 sets.TP = { ammo="Ravager's Orb",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Xaddi Mail", hands="Cizin Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
