@@ -49,14 +49,14 @@
 -- Elemental Gear 
 	elemental = {}
 		
-	elemental.Obi = {['Light']='Korin Obi', ['Dark']='Anrin Obi', ['Fire']='Karin Obi', ['Ice']='Hyorin Obi', ['Wind']='Furin Obi',
-			['Earth']='Dorin Obi', ['Lightning']='Rairin Obi', ['Water']='Suirin Obi'}
+	elemental.Obi = {['Light']='Hachirin-no-Obi', ['Dark']='Anrin Obi', ['Fire']='Hachirin-no-Obi', ['Ice']='Hachirin-no-Obi', ['Wind']='Hachirin-no-Obi',
+			['Earth']='Hachirin-no-Obi', ['Lightning']='Hachirin-no-Obi', ['Water']='Hachirin-no-Obi'}
 
-	elemental.Gorget = {['Light']='Light Gorget', ['Dark']='Shadow Gorget', ['Fire']='Flame Gorget', ['Ice']='Snow Gorget',
-			['Wind']='Breeze Gorget', ['Earth']='Soil Gorget', ['Lightning']='Thunder Gorget', ['Water']='Aqua Gorget'}
+	elemental.Gorget = {['Light']='Fortia Gorget', ['Dark']='Fortia Gorget', ['Fire']='Fortia Gorget', ['Ice']='Fortia Gorget',
+			['Wind']='Fortia Gorget', ['Earth']='Fortia Gorget', ['Lightning']='Fortia Gorget', ['Water']='Fortia Gorget'}
 
-	elemental.Belt = {['Light']='Light Belt', ['Dark']='Shadow Belt', ['Fire']='Flame Belt', ['Ice']='Snow Belt',
-			['Wind']='Breeze Belt', ['Earth']='Soil Belt', ['Lightning']='Thunder Belt', ['Water']='Aqua Belt'}
+	elemental.Belt = {['Light']='Fortia Belt', ['Dark']='Shadow Belt', ['Fire']='Fortia Belt', ['Ice']='Fortia Belt',
+			['Wind']='Fortia Belt', ['Earth']='Fortia Belt', ['Lightning']='Fortia Belt', ['Water']='Fortia Belt'}
 
 			
 -------------------------------------------------------------------------------------------------------------------
