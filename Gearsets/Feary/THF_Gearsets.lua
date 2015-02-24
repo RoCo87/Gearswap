@@ -143,45 +143,45 @@ sets.precast.WS.Acc.TA = {}
 
 -- Mercy Stroke
 sets.precast.WS["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
 sets.precast.WS.SA["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Raid. Armlets +2", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
 sets.precast.WS.TA["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
 -- Rudra's Storm
 -- Solo
 sets.precast.WS["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 sets.precast.WS.SA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 sets.precast.WS.TA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 				
 sets.precast.WS.Acc["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 sets.precast.WS.Acc.SA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 sets.precast.WS.Acc.TA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Shadow Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 

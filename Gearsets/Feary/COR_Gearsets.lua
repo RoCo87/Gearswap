@@ -133,28 +133,28 @@ sets.precast.WS = {
                 back="Atheling Mantle", waist="Wanion Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.precast.WS["Requiescat"] = {
-				head="Whirlpool Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Atheling Mantle", waist="Shadow Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.WS["Exenterator"] = {
-				head="Whirlpool Mask", neck="Breeze Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Breeze Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 -- RA WS
 sets.precast.RAWS = {
-				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Flame Pearl",
+				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Flame Pearl",
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+                back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
                 body="Lanun Frac", hands="Thur. Gloves +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Toro Cape", waist="Aquiline Belt", legs="Nahtirah Trousers", feet="Lanun Boots"}
 
 sets.precast.RAWS['Last Stand'] = {
-				head="Lanun Tricorne", neck="Light Gorget", lear="Clearview Earring", rear="Volley Earring",
+				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Volley Earring",
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
-                back="Terebellum Mantle", waist="Light Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+                back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 -- Midcast Sets
 

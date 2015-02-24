@@ -141,7 +141,7 @@ sets.precast.WS = {ammo="Honed Tathlum",
 sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {})
 
 sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
@@ -157,16 +157,16 @@ sets.precast.WS.MidAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Sp
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Thundersoul Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Anguinus Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {ammo="Potestas Bomblet",
-				head="Whirlpool Mask", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Mars's Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 
 sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
-				head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 
-sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Shadow Gorget", waist="Anguinus Belt"})
+sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fortia Gorget", waist="Anguinus Belt"})
 
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {})

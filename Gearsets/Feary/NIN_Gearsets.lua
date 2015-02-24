@@ -132,9 +132,9 @@ sets.precast.WS["Blade: Jin"] = { ammo="Ginsen",
             back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.precast.WS["Blade: Shun"] = { ammo="Ginsen",
-			head="Felistris Mask", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Light Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
 			head="Uk'uxkaj Cap", neck="Hope Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -142,14 +142,14 @@ sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
             back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
 				
 sets.precast.WS["Blade: Metsu"] = {ammo="Ginsen",
-			head="Felistris Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Shadow Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.precast.WS["Blade: Kamu"] = {ammo="Ginsen",
-			head="Felistris Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Shadow Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc)

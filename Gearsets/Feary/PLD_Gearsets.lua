@@ -47,7 +47,7 @@ sets.idle.PDT = { ammo="Angha Gem",
 
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Rev. Coronet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring="Defending Ring", rring="Shadow Ring",
+                body="Cab. Surcoat +1", hands="Cizin Mufflers", lring="Defending Ring", rring="Fortia Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Cab. Breeches", feet="Rev. Leggings +1"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -128,26 +128,26 @@ sets.precast.WS = {
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Zoran's Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Requiescat'] = { ammo="",
-				head="Yaoyotl Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Atheling Mantle", waist="Shadow Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Chant du Cygne'] = {ammo="",
-				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Atonement'] = set_combine(sets.precast.WS, sets.Enmity,{
-				neck="Light Gorget",
+				neck="Fortia Gorget",
                 body="Phorcys Korazin", 
-				waist="Light Belt"})
+				waist="Fortia Belt"})
 
 sets.precast.WS.Acc = {}
 sets.precast.WS.Acc['Requiescat'] = {ammo="Aqua Sachet",
-				head="Yaoyotl Helm", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Vespid Mantle", waist="Shadow Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                back="Vespid Mantle", waist="Fortia Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 
 sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
-				head="Yaoyotl Helm", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Mars's Ring",
                 back="Vespid Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 

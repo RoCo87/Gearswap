@@ -151,21 +151,21 @@ if player.name == 'Feary' then
                 body="Assim. Jubbah", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		sets.precast.WS['Chant du Cygne'] = {ammo="Jukukik Feather",
-                head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Luhlaza Jubbah", hands="Luh. Bazubands", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 		sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Jukukik Feather",
-                head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Luhlaza Jubbah", hands="Assim. Bazu.", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 		sets.precast.WS['Requiescat'] = {ammo="Aqua Sachet",
-                head="Whirlpool Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Assim. Jubbah", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Shadow Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}
 		sets.precast.WS.Acc['Requiescat'] = {ammo="Aqua Sachet",
-                head="Whirlpool Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Assim. Jubbah", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Shadow Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}	
+                back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}	
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
