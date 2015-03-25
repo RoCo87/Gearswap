@@ -61,7 +61,7 @@ sets.TH = {
 
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
-			head="Haruspex Hat +1", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
+			head="Haruspex Hat +1", neck="Torero Torque", lear="Enchntr. Earring +1", rear="Loquac. Earring",
             body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
@@ -218,7 +218,10 @@ sets.precast.WS["Dancing Edge"] = {
 -- Aftercast
 
 -- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", lear="Loquac. Earring", rring="Prolix Ring",})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+			head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+			body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring",
+			legs="Enif Cosciales"})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 

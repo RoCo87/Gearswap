@@ -145,7 +145,7 @@ sets.precast.RAWS['Namas Arrow'] = {
 sets.precast.RAWS.Acc = {}
 sets.precast.RAWS.Acc['Namas Arrow'] = {
 				head="Sukeroku Hachi.", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Phorcys Korazin", hands="Buremte Gloves", lring="Hajduk Ring", rring="Hajduk Ring",
+                body="Kyujutsugi", hands="Buremte Gloves", lring="Hajduk Ring", rring="Hajduk Ring",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 
 -- Misc Sets

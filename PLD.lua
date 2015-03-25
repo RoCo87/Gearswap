@@ -77,7 +77,11 @@ function self_command(command)
 			PDT = 0
 		-- lock MDT set and equip it
 			MDT = 1	
-			equip(sets.idle.MDT)
+			if buffactive("Shell") then
+				equip(sets.idle.MDT.Shell)
+			else
+				equip(sets.idle.MDT)
+			end
 			windower.add_to_chat(121,'MDT Set Locked')
 		end
 	elseif command == 'TP' then
@@ -242,10 +246,11 @@ function precast(spell,arg)
 			equip(sets.precast.Fastcast)
 		end
 	elseif spell.type == 'Ninjutsu' then
-		-- Ninjutsu spell gear handling(Precast)
-		equip(sets.precast.FastCast)
         if windower.wc_match(spell.name,'Utsusemi*') then
 			equip(sets.precast.Utsusemi)
+		else
+			-- Ninjutsu spell gear handling(Precast)
+			equip(sets.precast.FastCast)
         end
 	else
 		-- Special handling to remove Dancer sub job Sneak effect
@@ -271,25 +276,25 @@ function midcast(spell,arg)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
 			if spell.name == "Reprisal" then
-				equip(sets.Recast,sets.precast.Fastcast)
+				equip(sets.midcast.Recast)
 			elseif spell.name == "Phalanx" then
-				equip(sets.Recast,sets.Enmity,sets.midcast.EnhancingMagic)
+				equip(sets.precast.Fastcast,sets.Enmity,sets.midcast.EnhancingMagic.Phalanx)
 			elseif spell.name == "Crusade" then
-				equip(sets.Recast,sets.Enmity)
+				equip(sets.Enmity)
 			else
-				equip(sets.Recast,sets.Enmity,sets.precast.Fastcast)
+				equip(sets.midcast.Recast,sets.Enmity,sets.precast.Fastcast)
 			end
 		elseif spell.skill == 'Divine Magic' then
 			if spell.name == "Flash" then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
+				equip(sets.midcast.DivineMagic.Flash)
 			elseif spell.english:wcmatch('Banish*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.midcast.Recast)
 			elseif spell.english:wcmatch('Holy*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)
+				equip(sets.midcast.DivineMagic, sets.Enmity,sets.midcast.Recast)
 			elseif spell.english:wcmatch('Enlight') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.precast.Fastcast)	
+				equip(sets.midcast.DivineMagic)	
 			else
-				equip(sets.Recast,sets.Enmity,sets.precast.Fastcast)
+				equip(sets.midcast.Recast,sets.Enmity)
 			end
 		elseif spell.skill == 'Blue Magic' then
 			equip(sets.precast.Fastcast)

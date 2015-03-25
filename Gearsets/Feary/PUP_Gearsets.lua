@@ -169,7 +169,8 @@ sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fortia Gorget", waist="Anguinus Belt"})
 
 -- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {})
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+				head="Haruspex Hat +1",})
 sets.midcast.Recast = set_combine(sets.idle.PDT, {})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast,{})
 

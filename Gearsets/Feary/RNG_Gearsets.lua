@@ -131,7 +131,7 @@ sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring ", rring="Hajduk Ring",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
 
-sets.precast.JA["Fortiabind"] = {hands="Orion Bracers +1"}
+sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
 sets.precast.JA["Sharpshot"] = {legs="Orion Braccae +1"}
 sets.precast.JA["Double Shot"] = {body="Sylvan Gapette +2"}
 sets.precast.JA["Velocity Shot"] = {legs="Sylvan Caban +2"}
@@ -149,7 +149,7 @@ sets.precast.WS = {}
 -- Range
 sets.precast.RAWS = {
 				head="Umbani Cap", neck="Ocachi Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 -- Bow WS
 sets.precast.RAWS['Jishnu\'s Radiance'] = {
@@ -158,9 +158,9 @@ sets.precast.RAWS['Jishnu\'s Radiance'] = {
                 back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.precast.RAWS['Namas Arrow'] = {
-				head="Orion Beret +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-				back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+				head="Arcadian Beret +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+				back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
 
 -- Gun/Crossbow WS
 sets.precast.RAWS['Last Stand'] = {
@@ -192,7 +192,7 @@ sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", hand
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
-sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
+sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}
 end

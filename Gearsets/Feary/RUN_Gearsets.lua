@@ -89,7 +89,7 @@ sets.precast.JA["Elemental Sforzo"] = {body="Futhark Coat"}
 sets.precast.JA["Odyllic Subterfuge"] = {}
 
 sets.precast.JA["Lunge"] = {
-				head="Athos Chapeau", neck="Eddy Necklace", lear="Friomisi Earring", rear="Novio Earring",
+				head="Haruspex Hat +1", neck="Eddy Necklace", lear="Friomisi Earring", rear="Novio Earring",
 				back="Toro Cape", legs="Iuitl Tights"}
 sets.precast.JA["Valiance"] = {body="Runiest Coat"}
 sets.precast.JA["Vallation"] = {body="Runiest Coat"}
