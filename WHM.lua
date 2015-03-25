@@ -1,32 +1,32 @@
 -- Feary's WHM LUA
 -- Date Created : 1/29/2014
---
---
---
+-- Last Update: 5/26/2014
+-- To Do:
+-- Add Enmity Cure Sets Toggle
 --
 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
--- Gear Sets 
 function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get WHM gearsets
-	include('Gearsets/WHM_GearSets.lua')
+	include('Gearsets/'..player.name..'/WHM_Gearsets.lua')
 	
-	-- Variables 
+	-- Variables
 	ShadowType = 'None'
 	Mode = 0
 	PDT = 0
 	MDT = 0
 end
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
@@ -102,19 +102,29 @@ function self_command(command)
 	end
 end
 	
+function buff_change(buff,g_or_l)
+-- Global Status Values
+	include('include/status.lua')
+end
+
 function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
 		slot_lock()
-		if new == "Resting" then
-			equip(sets.Resting)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT)
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
+			if new == "Resting" then
+				equip(sets.Resting)
 			else
-				equip(sets.idle.Standard)
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	elseif new == 'Engaged' then
@@ -145,8 +155,8 @@ function precast(spell,arg)
 		end
 -- Weaponskills
 	elseif spell.type == "WeaponSkill" then
-		if  player.status == 'Engaged' then
-			if player.TP >= 100 then
+		if player.status == 'Engaged' then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -159,7 +169,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -167,25 +177,27 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
 			else
 				equip(sets.precast.Fastcast)
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
 				cast_delay(0.3)
 			-- Auspice 
 			elseif spell.name == 'Auspice' then
-				equip({feet="Orsn. Duckbills +2"})
+				equip(sets.precast.Fastcast,{feet="Orsn. Duckbills +2"})
 			elseif spell.english:wcmatch('Protectra*') then
-				equip({feet="Clr. Duckbills +2"})
+				equip(sets.precast.Fastcast,{feet="Clr. Duckbills +2"})
 			elseif spell.english:wcmatch('Shellra*') then
-				equip({legs="Clr. Pantaln +2"})
+				equip(sets.precast.Fastcast,{legs="Clr. Pantaln +2"})
+			else
+				equip(sets.precast.Fastcast)
 			end		
 		end
 -- Ninjutsu
@@ -199,7 +211,7 @@ end
 
 function midcast(spell,arg)
 -- Healing Magic
-	if spell.skill == 'HealingMagic' then
+	if spell.skill == 'Healing Magic' then
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
 			equip(sets.midcast.Cure)
@@ -228,7 +240,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:wcmatch('Regen*') then
@@ -264,7 +276,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -273,7 +285,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Banish)
 		elseif spell.english:startswith('Holy') then
@@ -284,7 +296,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Flash)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == 'Drain' then
 			equip(sets.midcast.Drain)
 		elseif spell.name == 'Aspir' then
@@ -295,11 +307,11 @@ function midcast(spell,arg)
 			equip(sets.midcast.DarkMagic)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		if spell.english:wcmatch('Fir*|Ston*|Water*|Aero*|Blizza*|Thund*') then
 			equip(sets.midcast.Nuke)
 		elseif spell.english:wcmatch('Burn|Rasp|Drown|Choke|Frost|Shock') then
-			equip(sets.midcast.Dot)
+			equip(sets.midcast.DOT)
 		else
 			equip(sets.midcast.Macc)
 		end
@@ -324,30 +336,35 @@ end -- end midcast
 
 function aftercast(spell,arg)
 -- Autoset
-	if player.status == 'Engaged' then
-		if PDT == 1 or MDT == 1 then
-			if PDT == 1 and MDT == 0 then
-				windower.add_to_chat(121,'PDT Locked')
-				equip(sets.idle.PDT)
-			elseif MDT == 1 and PDT == 0 then
-				windower.add_to_chat(121,'MDT Locked')
-				equip(sets.idle.MDT)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
+	else
+		if player.status == 'Engaged' then
+			if PDT == 1 or MDT == 1 then
+				if PDT == 1 and MDT == 0 then
+					windower.add_to_chat(121,'PDT Locked')
+					equip(sets.idle.PDT)
+				elseif MDT == 1 and PDT == 0 then
+					windower.add_to_chat(121,'MDT Locked')
+					equip(sets.idle.MDT)
+				else
+					MDT = 0
+					PDT = 0
+				end
 			else
-				MDT = 0
-				PDT = 0
+				-- Equip previous TP set 
+					previous_set()
 			end
 		else
-			-- Equip previous TP set 
-				previous_set()
-		end
-	else
-		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			equip(sets.idle.Standard)
+			slot_lock()
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
 -- Sleep and repose

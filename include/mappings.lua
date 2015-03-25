@@ -5,7 +5,7 @@
 
 
 -- Basic Tables
-
+	
 	sets.idle = {}
 	sets.idle.Avatar = {}
 	sets.misc = {}
@@ -21,6 +21,23 @@
 	-- Aftercast
 	sets.aftercast = {}	
 
+
+-- Spell Mappings 
+
+		ranged_weaponskills = S{"Flaming Arrow", "Piercing Arrow", "Dulling Arrow", "Sidewinder", "Arching Arrow", "Blast Arrow",
+						"Empyreal Arrow", "Refulgent Arrow", "Apex Arrow", "Namas Arrow", "Jishnu's Radiance",
+						"Hot Shot", "Split Shot", "Sniper Shot", "Slug Shot", "Blast Shot", "Heavy Shot", "Detonator", "Numbing Shot", "Last Stand",
+						"Coronach", "Trueflight", "Leaden Salute", "Wildfire",
+						"Myrkr"}
+		ranged_weaponskills_Distance = T{["Sidewinder"] = 24, ["Refulgent Arrow"] = 24, ["Apex Arrow"] = 24, ["Namas Arrow"] = 24, ["Jishnu's Radiance"] = 24,
+						["Heavy Shot"] = 24, ["Last Stand"] = 24,
+						["Coronach"] = 24, ["Trueflight"] = 24, ["Leaden Salute"] = 24, ["Wildfire"] = 24}
+
+-- Equipment Mappings
+
+	ranged_Bow = T{"Yoichinoyumi", "Echidna's Bow"}
+	ranged_Gun = T{"Annihilator", "Eminence Gun"}
+	
 -- Areas based Equipment
 	areas = {}
 -- Adoulin areas, where Ionis will grant special stat bonuses.

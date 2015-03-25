@@ -1,22 +1,22 @@
 -- Feary's THF LUA
--- Date: 4/5/2014
+-- Created: 4/5/2014
+-- Last Modified: 8/17/2014
 -- To Do:
 --	Account for Hide + SA or TA
--- 	account for sata?
+-- 	account for SATA?
 -- 	
 -- 	
 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
-	
+
 -- Gear Sets 
 function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get THF Gearsets
-	include('Gearsets/THF_Gearsets.lua')
+	include('Gearsets/'..player.name..'/THF_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	TH = 0
@@ -143,17 +143,22 @@ function status_change(new,old)
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
 		windower.add_to_chat(121,'Idle/Resting Set')
-		if TH == 1 then
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion,sets.TH)
-			else
-				equip(sets.idle.Standard,sets.TH)
-			end
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion)
+			if TH == 1 then
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion,sets.TH)
+				else
+					equip(sets.idle.Standard,sets.TH)
+				end
 			else
-				equip(sets.idle.Standard)
+				if Mode == 4 then
+					equip(sets.idle.Standard,sets.idle.Evasion)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	elseif new == 'Engaged' then
@@ -176,6 +181,8 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
+-- Global Includes
+	include('include/status.lua')
 -- Sneak Attack
 	if buff == 'Sneak Attack' and g_or_l == false then
 		previous_set()
@@ -190,7 +197,7 @@ function buff_change(buff,g_or_l)
 		if Mode == 4 then
 		 equip(sets.idle.PDT,sets.idle.Evasion,{feet="Pillager's Poulaines"})
 		else
-			equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
+			equip(sets.idle.PDT,{feet="Fajin Boots"})
 		end
 	end
 	if buff == 'Flee' and g_or_l == false then
@@ -218,50 +225,60 @@ end
 
 function precast(spell,arg)
  -- Generic equip command for all Job Abilities and Weaponskills
-    if sets.precast.JA[spell.name] then
-		if S{'Sneak Attack', 'Trick Attack'}:contains(spell.english) then
-			if spell.english == "Sneak Attack" then
-				if TH == 1 then
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Sneak Attack"],sets.TH,{legs="Plunderer's Culottes"})
+	if spell.type == 'JobAbility' then
+		if sets.precast.JA[spell.name] then
+			if S{'Sneak Attack', 'Trick Attack'}:contains(spell.english) then
+				if spell.english == "Sneak Attack" then
+					if TH == 1 then
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Sneak Attack"],sets.TH,{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Sneak Attack"],sets.TH)
+						end
 					else
-						equip(sets.precast.JA["Sneak Attack"],sets.TH)
-					end
-				else
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Sneak Attack"],{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Sneak Attack"])
-					end
-				end
-			end
-			if spell.english == "Trick Attack" then
-				if TH == 1 then
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Trick Attack"],sets.TH,{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Trick Attack"],sets.TH)
-					end
-				else
-					if buffactive['Feint'] then
-						equip(sets.precast.JA["Trick Attack"],{legs="Plunderer's Culottes"})
-					else
-						equip(sets.precast.JA["Trick Attack"])
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Sneak Attack"],{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Sneak Attack"])
+						end
 					end
 				end
+				if spell.english == "Trick Attack" then
+					if TH == 1 then
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Trick Attack"],sets.TH,{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Trick Attack"],sets.TH)
+						end
+					else
+						if buffactive['Feint'] then
+							equip(sets.precast.JA["Trick Attack"],{legs="Plunderer's Culottes"})
+						else
+							equip(sets.precast.JA["Trick Attack"])
+						end
+					end
+				end
+			else
+				equip(sets.precast.JA[spell.name])
 			end
-		else
-			equip(sets.precast.JA[spell.name])
 		end
-   elseif sets.precast.WS[spell.name] then
+   elseif spell.type == 'Weaponskill' then
 		if  player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 1000 then
 				if spell.target.distance <= 5 then
 					if spell.english:wcmatch("Mercy Stroke|Rudra's Storm") then
 						if buffactive["Sneak Attack"] then
-							equip(sets.precast.WS.SA[spell.name])
+							if Mode == 1 or Mode == 2 then
+								equip(sets.precast.WS.Acc.SA[spell.name])
+							else
+								equip(sets.precast.WS.SA[spell.name])
+							end
 						elseif buffactive["Trick Attack"] then
-							equip(sets.precast.WS.TA[spell.name])
+							if Mode == 1 or Mode == 2 then
+								equip(sets.precast.WS.Acc.TA[spell.name])
+							else
+								equip(sets.precast.WS.TA[spell.name])
+							end
 						else
 							cancel_spell()
 							windower.add_to_chat(121,'Cancelled - '..spell.name..' - Need to Stack with Sneak Attack or Trick Attack')
@@ -287,39 +304,36 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'tp is Not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'tp is Not enough to WS')
 			end
 		else
 			cancel_spell()
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
-    end
-
  -- Ninjutsu spell gear handling(Precast)
-    if spell.skill == 'Ninjutsu' then
-        equip(sets.misc.FastCast)
+    elseif spell.skill == 'Ninjutsu' then
+        equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.misc.Utsusemi)
+            equip(sets.precast.Utsusemi)
         end
-    end
-
-
- -- Special handling to remove Dancer sub job Sneak effect
-    if spell.name == 'Spectral Jig' and buffactive.Sneak then
-        windower.ffxi.cancel_buff(71)
-        cast_delay(0.3)
-    elseif windower.wc_match(spell.name,'Curing*') then
-        equip(sets.misc.Waltz)
-    elseif windower.wc_match(spell.name,'*Step') then
-        equip(sets.TP.Acc)
-    end
+	else
+	 -- Special handling to remove Dancer sub job Sneak effect
+		if spell.name == 'Spectral Jig' and buffactive.Sneak then
+			windower.ffxi.cancel_buff(71)
+			cast_delay(0.3)
+		elseif windower.wc_match(spell.name,'Curing*') then
+			equip(sets.misc.Waltz)
+		elseif windower.wc_match(spell.name,'*Step') then
+			equip(sets.TP.Acc)
+		end
+	end
 end
 
 function midcast(spell,arg)
 	-- Utsusemi
 	if windower.wc_match(spell.name,'Utsusemi*') then
 		-- Equip PDT then Utsusemi Gear sets
-        equip(sets.idle.PDT, sets.misc.Utsusemi)
+        equip(sets.idle.PDT, sets.precast.Utsusemi)
 		if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then
                 windower.ffxi.cancel_buff(66)

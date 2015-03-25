@@ -1,11 +1,12 @@
 -- Feary's MNK LUA
--- Date: 1/18/2014
+-- Created: 1/18/2014
+-- Last Updated: 4/20/2014
+-- To Do List 
 --
 --
---
+-- 
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -14,7 +15,7 @@ function get_sets()
 	include('include/binds.lua')
 
 	-- Get MNK Gearsets
-	include('Gearsets/Mnk_Gearsets.lua')
+	include('Gearsets/'..player.name..'/Mnk_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	boostCount = 0
@@ -108,9 +109,22 @@ end
 	
 function status_change(new,old)
 -- Autoset
-    if T{'Idle','Resting'}:contains(new) then
-		windower.add_to_chat(121,'Idle/Resting Set')
-		equip(sets.idle.Standard)
+    if T{'Idle'}:contains(new) then
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
+		else
+			if PDT == 1 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				windower.add_to_chat(121,'Idle/Resting Set')
+				equip(sets.idle.Standard)
+			end
+		end
+	elseif new == 'Resting' then
+		equip(sets.Resting)
 	elseif new == 'Engaged' then
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
@@ -167,8 +181,8 @@ function precast(spell,arg)
     if sets.precast.JA[spell.name] then
         equip(sets.precast.JA[spell.name])
    elseif sets.precast.WS[spell.name] then
-		if  player.status == 'Engaged' then
-			if player.TP >= 100 then
+		if player.status == 'Engaged' then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -181,7 +195,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'tp is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'tp is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -191,9 +205,9 @@ function precast(spell,arg)
 
  -- Ninjutsu spell gear handling(Precast)
     if spell.skill == 'Ninjutsu' then
-        equip(sets.misc.FastCast)
+        equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.misc.Utsusemi)
+            equip(sets.precast.Utsusemi)
         end
     end
 
@@ -213,7 +227,7 @@ function midcast(spell,arg)
 	-- Utsusemi
 	if windower.wc_match(spell.name,'Utsusemi*') then
 		-- Equip PDT then Utsusemi Gear sets
-        equip(sets.idle.PDT, sets.misc.Utsusemi)
+        equip(sets.idle.PDT, sets.precast.Utsusemi)
 		if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
             if buffactive['Copy Image'] then
                 windower.ffxi.cancel_buff(66)

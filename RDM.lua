@@ -1,12 +1,12 @@
 -- Feary's RDM LUA
 -- Created 2/18/2014
+-- Last Updated: 
 -- To do list
--- - Obi Staves cape ring
+-- 
 --
 --
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -14,7 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 -- Get RDM gearsets
-	include('Gearsets/RDM_Gearsets.lua')
+	include('Gearsets/'..player.name..'/RDM_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0
@@ -109,22 +109,42 @@ function self_command(command)
 			-- set if off
 			skill = 0
 		end
+	elseif command == "t" then
+		if twilight == 0 then
+			twilight = twilight + 1
+			-- Twilight Gear
+			equip({head="Empty",body="Twilight Cloak"})
+			disable('head,body')
+			windower.add_to_chat(121,"Twilight Cloak Locked")
+		else
+			enable('head,body')
+		end		
 	end
+end
+
+function buff_change(buff,g_or_l)
+-- Global Status Values
+	include('include/status.lua')
 end
 
 function status_change(new,old)
 -- Auto set
     if T{'Idle','Resting'}:contains(new) then
 		slot_lock()
-		if new == "Resting" then
-			equip(sets.Resting)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT)
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
+			if new == "Resting" then
+				equip(sets.Resting)
 			else
-				equip(sets.idle.Standard)
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
 	elseif new == 'Engaged' then
@@ -147,11 +167,6 @@ function status_change(new,old)
 	end
 end
 
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-
-end
-
 function pretarget(spell)
 	
 end
@@ -163,9 +178,9 @@ function precast(spell,arg)
 			equip(sets.precast.JA[spell.name])
 		end
 -- Weaponskills
-	 elseif spell.type == 'WeaponSkill' then
+	elseif spell.type == 'WeaponSkill' then
 		if player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -178,7 +193,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -202,10 +217,20 @@ function precast(spell,arg)
 				if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
 					equip(sets.precast.Cure)
 				else
-					equip(sets.precast.Fastcast)
+					-- Magian Staff
+					if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+						equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+					else
+						equip(sets.precast.Fastcast)
+					end	
 				end
 			elseif spell.skill:startswith("Enhancing") then
-				equip(sets.precast.Fastcast)
+				-- Magian Staff
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Fastcast)
+				end	
 				-- Cancel Sneak
 				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 					windower.ffxi.cancel_buff(71)
@@ -214,15 +239,30 @@ function precast(spell,arg)
 			elseif spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 			else
-				equip(sets.precast.Fastcast)
+				-- Magian Staff
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Fastcast)
+				end	
 			end
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
-		equip(sets.precast.Fastcast)
+		-- Magian Staff
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+		else
+			equip(sets.precast.Fastcast)
+		end	
 -- BardSongs
 	elseif spell.type == 'BardSong' then
-		equip(sets.precast.Fastcast)
+		-- Magian Staff
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+		else
+			equip(sets.precast.Fastcast)
+		end	
 	else
 	-- Special handling to remove Dancer sub job Sneak effect
 		if spell.name == 'Spectral Jig' and buffactive.Sneak then
@@ -239,141 +279,318 @@ function precast(spell,arg)
 end
 
 function midcast(spell,arg)
--- Healing Magic
-	if spell.skill == 'HealingMagic' then
-		-- Add Light Obi Twilight Cape and Chatoyant Staff
-		-- Cure Curaga Cura
-		if spell.english:startswith('Cure') then
-			equip(sets.midcast.Cure)
-		elseif spell.english:startswith("Curaga") then
-			equip(sets.midcast.Curaga)	
-		elseif spell.english:startswith('Reraise') then
-			equip(sets.midcast.ConserveMP)
-		else
-			equip(sets.midcast.Recast)
-		end
--- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
-		if spell.name == 'Phalanx' then
-			equip(sets.midcast.Phalanx) 
-		elseif spell.name:wcmatch("Gain*") then
-			equip(sets.midcast.Enhancing)
-		elseif spell.name == "Temper" then
-			equip(sets.midcast.Enhancing)
-		elseif spell.english:contains("Spikes") then
-			equip(sets.midcast.INT, {legs="Vitivation Tights"})
-		elseif spell.english:contains("Refresh") then
-			equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
-		elseif spell.name == 'Stoneskin' then
-			equip(sets.midcast.Stoneskin)
-			if buffactive.Stoneskin then
-				windower.ffxi.cancel_buff(36)
-			end
-		elseif spell.name == 'Blink' then
-			equip(sets.midcast.Blink)
-		elseif spell.name == 'Aquaveil' then
-			equip(sets.midcast.Aquaveil)
-		elseif spell.name == 'Haste' then
-			equip(sets.midcast.Hastespell)
-		elseif spell.english:wcmatch('Reraise*') then
-			equip(sets.midcast.ConserveMP)
-		else
-			equip(sets.midcast.ConserveMP)
-		end
--- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
-		-- Maybe account for saboteur
-		if spell.english:startswith('Dia') then
-			equip(sets.midcast.Dia)
-		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
-			equip(sets.midcast.enfeebling)
-		else
-			equip(sets.midcast.Macc)
-		end
--- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
-		if spell.english:startswith('Banish') then
-			equip(sets.midcast.Macc)
-		elseif spell.english:startswith('Holy') then
-			equip(sets.midcast.Macc)
-		elseif spell.name == 'Repose' then
-			equip(sets.midcast.Macc)
-		elseif spell.name == 'Flash' then
-			equip(sets.midcast.Macc)
-		end
--- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
-		if spell.name == "Drain" then
-			equip(sets.midcast.Aspir) 
-		elseif spell.name == "Aspir" then
-			equip(sets.midcast.Aspir)
-		elseif spell.name == "Stun" then
-			equip(sets.midcast.Macc)
-		else
-			equip(sets.midcast.Macc)
-		end
--- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
-		if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-			equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
-		else
-			-- accounts for obis staffs cape ring
-			if Skill == 1 then
-				equip(sets.midcast.Elemental) 
+	-- Healing Magic
+		if spell.skill == 'Healing Magic' then
+			-- Add Light Obi Twilight Cape and Chatoyant Staff
+			-- Cure Curaga Cura
+			if spell.english:startswith('Cure') then
+				equip(sets.midcast.Cure)
+			elseif spell.english:startswith("Curaga") then
+				equip(sets.midcast.Curaga)	
+			elseif spell.english:startswith('Reraise') then
+				equip(sets.midcast.ConserveMP)
 			else
-				equip(sets.midcast.Nuke)
+				equip(sets.midcast.Recast)
 			end
-		end
--- Ninjutsu
+	-- Enhancing Magic
+		elseif spell.skill == 'Enhancing Magic' then
+			if spell.name == 'Phalanx' then
+				equip(sets.midcast.Phalanx) 
+			elseif spell.name:wcmatch("Gain*") then
+				equip(sets.midcast.Enhancing)
+			elseif spell.name == "Temper" then
+				equip(sets.midcast.Enhancing)
+			elseif spell.english:contains("Spikes") then
+				equip(sets.midcast.INT, {legs="Vitivation Tights"})
+			elseif spell.english:contains("Refresh") then
+				equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
+			elseif spell.name == 'Stoneskin' then
+				equip(sets.midcast.Stoneskin)
+				if buffactive.Stoneskin then
+					windower.ffxi.cancel_buff(36)
+				end
+			elseif spell.name == 'Blink' then
+				equip(sets.midcast.Blink)
+			elseif spell.name == 'Aquaveil' then
+				equip(sets.midcast.Aquaveil)
+			elseif spell.name == 'Haste' then
+				equip(sets.midcast.Hastespell)
+			elseif spell.english:wcmatch('Reraise*') then
+				equip(sets.midcast.ConserveMP)
+			else
+				equip(sets.midcast.ConserveMP)
+			end
+	-- Enfeebling Magic
+		elseif spell.skill == 'Enfeebling Magic' then
+			-- Maybe account for saboteur
+			if spell.english:startswith('Dia') then
+				equip(sets.midcast.Dia)
+			elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
+				equip(sets.midcast.enfeebling)
+			else
+				equip(sets.midcast.Macc)
+			end
+	-- Divine Magic
+		elseif spell.skill == 'Divine Magic' then
+			if spell.english:startswith('Banish') then
+				equip(sets.midcast.Macc)
+			elseif spell.english:startswith('Holy') then
+				equip(sets.midcast.Macc)
+			elseif spell.name == 'Repose' then
+				equip(sets.midcast.Macc)
+			elseif spell.name == 'Flash' then
+				equip(sets.midcast.Macc)
+			end
+	elseif spell.skill == 'Dark Magic' then
+			if spell.name == "Drain" then
+				equip(sets.midcast.Aspir) 
+			elseif spell.name == "Aspir" then
+				equip(sets.midcast.Aspir)
+			elseif spell.name == "Stun" then
+				equip(sets.midcast.Macc)
+			else
+				equip(sets.midcast.Macc)
+			end
+	-- Elemental Magic
+	elseif spell.skill == 'Elemental Magic' then
+			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
+				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
+			elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then
+				equip(sets.midcast.Elemental)
+			else
+				-- accounts for obis staffs cape ring
+				if Skill == 1 then
+					equip(sets.midcast.Elemental) 
+				else
+					-- Zodiac Ring Check
+					if spell.element == world.day_element and (player.inventory["Zodiac Ring"] or player.wardrobe["Zodiac Ring"]) then
+						-- Weather Check
+						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
+							-- Inventory Checks
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
+								-- yes ring yes obi Yes Cape 
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke, {waist=elemental.Obi[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+									end
+								else
+								-- yes ring yes obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],rring="Zodiac Ring"})
+									end
+								end
+							else
+								-- yes ring no obi yes cape
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{back="Twilight Cape",rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],back="Twilight Cape",rring="Zodiac Ring"})
+									end
+								else
+								-- yes ring no obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{rring="Zodiac Ring"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],rring="Zodiac Ring"})
+									end
+								end							
+							end
+						else
+						-- yes ring no obi no cape
+							if not spell.english:wcmatch('*IV') then
+								-- Nuke Staff
+								equip(sets.midcast.Nuke,{rring="Zodiac Ring"})
+							else
+								-- Magian Staves
+								equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],rring="Zodiac Ring"})
+							end
+						end	
+					-- Day Match No Ring 
+					elseif spell.element == world.day_element then
+						-- Weather Check
+						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
+							-- Inventory checks
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe["Inventory"] then
+								-- no ring yes obi Yes Cape 
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],back="Twilight Cape"})
+									end
+								else
+							-- no ring yes obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element]})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element]})
+									end
+								end
+							else
+								-- no ring no obi yes cape
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{back="Twilight Cape"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],back="Twilight Cape"})
+									end
+								else
+								-- no ring no obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke)
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+									end
+								end							
+							end
+						-- No Weather Match
+						else
+						-- no ring no obi no cape
+							if not spell.english:wcmatch('*IV') then
+								-- Nuke Staff
+								equip(sets.midcast.Nuke)
+							else
+								-- Magian Staves
+								equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+							end
+						end				
+					-- NO Day Match and no Ring 
+					else
+						-- Weather Check
+						if spell.element == world.weather_element or spell.element == buffactive[elements.storm_of[spell.element]] then
+							-- Inventory checks
+							if player.inventory[elemental.Obi[spell.element]] or player.wardrobe[elemental.Obi[spell.element]] then
+								-- no ring yes obi Yes Cape 
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element],back="Twilight Cape"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element],back="Twilight Cape"})
+									end
+								else
+							-- no ring yes obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{waist=elemental.Obi[spell.element]})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],waist=elemental.Obi[spell.element]})
+									end
+								end
+							else
+								-- no ring no obi yes cape
+								if player.inventory["Twilight Cape"] or player.wardrobe["Twilight Cape"] then
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke,{back="Twilight Cape"})
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element],back="Twilight Cape"})
+									end
+								else
+								-- no ring no obi no cape
+									if not spell.english:wcmatch('*IV') then
+										-- Nuke Staff
+										equip(sets.midcast.Nuke)
+									else
+										-- Magian Staves
+										equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+									end
+								end							
+							end
+						else
+						-- no ring no obi no cape
+							if not spell.english:wcmatch('*IV') then
+								-- Nuke Staff
+								equip(sets.midcast.Nuke)
+							else
+								-- Magian Staves
+								equip(sets.midcast.Nuke,{main=Fastcast.Staff[spell.element]})
+							end
+						end				
+					end
+				end
+			end
+	-- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then
-		equip(sets.midcast.Recast)
-        if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
-            if buffactive['Copy Image'] then
-                windower.ffxi.cancel_buff(66)
-            elseif buffactive['Copy Image (2)'] then
-                windower.ffxi.cancel_buff(444)
-            elseif buffactive['Copy Image (3)'] then
-                windower.ffxi.cancel_buff(445)
-            elseif buffactive['Copy Image (4+)'] then
-                windower.ffxi.cancel_buff(446)
-            end
-		elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
-			windower.ffxi.cancel_buff(71)
+			equip(sets.midcast.Recast)
+			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
+				if buffactive['Copy Image'] then
+					windower.ffxi.cancel_buff(66)
+				elseif buffactive['Copy Image (2)'] then
+					windower.ffxi.cancel_buff(444)
+				elseif buffactive['Copy Image (3)'] then
+					windower.ffxi.cancel_buff(445)
+				elseif buffactive['Copy Image (4+)'] then
+					windower.ffxi.cancel_buff(446)
+				end
+			elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
+				windower.ffxi.cancel_buff(71)
+			end
+	else
+		-- Songs
+		if spell.skill == "Singing" then
+			equip(sets.midcast.Macc)
 		end
--- Songs
-	elseif spell.skill == "Singing" then
-			
 	end
 end 
 
 function aftercast(spell,arg)
-	if player.status == 'Engaged' then
-		if PDT == 1 or MDT == 1 then
-			if PDT == 1 and MDT == 0 then
-				windower.add_to_chat(121,'PDT Locked')
-				equip(sets.idle.PDT)
-			elseif MDT == 1 and PDT == 0 then
-				windower.add_to_chat(121,'MDT Locked')
-				equip(sets.idle.MDT)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
+	else
+		if player.status == 'Engaged' then
+			if PDT == 1 or MDT == 1 then
+				if PDT == 1 and MDT == 0 then
+					windower.add_to_chat(121,'PDT Locked')
+					equip(sets.idle.PDT)
+				elseif MDT == 1 and PDT == 0 then
+					windower.add_to_chat(121,'MDT Locked')
+					equip(sets.idle.MDT)
+				else
+					MDT = 0
+					PDT = 0
+				end
 			else
-				MDT = 0
-				PDT = 0
+				-- Equip previous TP set 
+					previous_set()
 			end
 		else
-			-- Equip previous TP set 
-				previous_set()
-		end
-	else
-		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
-		else
-			equip(sets.idle.Standard)
+			slot_lock()
+			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+				equip(sets.idle.PDT)
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				equip(sets.idle.Standard)
+			end
 		end
 	end
--- Lullaby
+-- Sleep Timers
 	if spell.name == "Sleep II" or spell.name == "Repose" then
 		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
         windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
@@ -394,6 +611,7 @@ function aftercast(spell,arg)
         ShadowType = 'Ichi'
 	end
 end
+
 function previous_set()
 	slot_lock()
 	if Mode == 0 then

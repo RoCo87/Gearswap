@@ -1,14 +1,27 @@
 -- Feary's Equipment
+-- Created On 1/12/2014
+-- Last Update:
+-- To Do
 --
 --
 --
 --
-
 
 -- Augmented Gear
 	Aug = {}
+	-- Dark Rings
 	Aug.Darkring1 = {name="Dark Ring",augments={"Phys. dmg. taken -5%","Magic dmg. taken -3%"}}
 	Aug.Darkring2 = {name="Dark Ring",augments={"Phys. dmg. taken -4%","Magic dmg. taken -4%"}}
+	Aug.Darkring1.Aniyah = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
+	Aug.Darkring2.Aniyah = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
+	Aug.Darkring1.Derion = {name="Dark Ring",augments={"Breath dmg. Taken -4%","Phys. dmg. Taken -5%", "Magic dmg. taken -3%"}}
+	--Aug.Darkring2.Derion = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
+	--Aug.Darkring1.Firetoplay = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
+	--Aug.Darkring2.Firetoplay = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
+	Aug.Darkring1.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
+	Aug.Darkring2.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
+
+	-- Demon Rings
 	Aug.DemonRing1 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	Aug.DemonRing2 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	
@@ -36,14 +49,14 @@
 -- Elemental Gear 
 	elemental = {}
 		
-	elemental.Obi = {['Light']='Korin Obi', ['Dark']='Anrin Obi', ['Fire']='Karin Obi', ['Ice']='Hyorin Obi', ['Wind']='Furin Obi',
-			['Earth']='Dorin Obi', ['Lightning']='Rairin Obi', ['Water']='Suirin Obi'}
+	elemental.Obi = {['Light']='Hachirin-no-Obi', ['Dark']='Anrin Obi', ['Fire']='Hachirin-no-Obi', ['Ice']='Hachirin-no-Obi', ['Wind']='Hachirin-no-Obi',
+			['Earth']='Hachirin-no-Obi', ['Lightning']='Hachirin-no-Obi', ['Water']='Hachirin-no-Obi'}
 
-	elemental.Gorget = {['Light']='Light Gorget', ['Dark']='Shadow Gorget', ['Fire']='Flame Gorget', ['Ice']='Snow Gorget',
-			['Wind']='Breeze Gorget', ['Earth']='Soil Gorget', ['Lightning']='Thunder Gorget', ['Water']='Aqua Gorget'}
+	elemental.Gorget = {['Light']='Fortia Gorget', ['Dark']='Fortia Gorget', ['Fire']='Fortia Gorget', ['Ice']='Fortia Gorget',
+			['Wind']='Fortia Gorget', ['Earth']='Fortia Gorget', ['Lightning']='Fortia Gorget', ['Water']='Fortia Gorget'}
 
-	elemental.Belt = {['Light']='Light Belt', ['Dark']='Shadow Belt', ['Fire']='Flame Belt', ['Ice']='Snow Belt',
-			['Wind']='Breeze Belt', ['Earth']='Soil Belt', ['Lightning']='Thunder Belt', ['Water']='Aqua Belt'}
+	elemental.Belt = {['Light']='Fortia Belt', ['Dark']='Shadow Belt', ['Fire']='Fortia Belt', ['Ice']='Fortia Belt',
+			['Wind']='Fortia Belt', ['Earth']='Fortia Belt', ['Lightning']='Fortia Belt', ['Water']='Fortia Belt'}
 
 			
 -------------------------------------------------------------------------------------------------------------------

@@ -1,7 +1,8 @@
--- Feary's WHM LUA
+-- Feary's SMN LUA
 -- Date Created : 1/29/2014
--- Alex?
---
+-- Last Update: 8/17/2014
+-- To Do
+-- Alex
 --
 --
 
@@ -15,7 +16,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get SMN gearsets
-	include('Gearsets/SMN_Gearsets.lua')
+	include('Gearsets/'..player.name..'/SMN_Gearsets.lua')
 	
 	-- Variables 
 	ShadowType = 'None'
@@ -159,12 +160,17 @@ function status_change(new,old)
 			equip(sets.Resting)
 		elseif new == 'Idle' then
 				slot_lock()
-				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT)
-				elseif MDT == 1 then
-					equip(sets.idle.MDT)
+				if areas.Town:contains(world.zone) then
+					windower.add_to_chat(121, "Town Gear")
+					equip(sets.misc.Town)
 				else
-					equip(sets.idle.Standard)
+					if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+						equip(sets.idle.PDT)
+					elseif MDT == 1 then
+						equip(sets.idle.MDT)
+					else
+						equip(sets.idle.Standard)
+					end
 				end
 		elseif new == 'Engaged' then
 			slot_lock()
@@ -200,7 +206,7 @@ function precast(spell,arg)
 -- Weaponskills
 	elseif spell.type == "WeaponSkill" then
 		if player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -213,7 +219,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -222,24 +228,24 @@ function precast(spell,arg)
 -- Magic
 	elseif spell.type:endswith('Pact') then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
 		end
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
 			else
-				if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
 				end
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
@@ -247,7 +253,7 @@ function precast(spell,arg)
 			end	
 		else
 			-- Magian Staff
-			if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -256,7 +262,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -264,7 +270,7 @@ function precast(spell,arg)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and player.inventory[Fastcast.Staff[spell.element]] then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -273,7 +279,7 @@ function precast(spell,arg)
 end
 
 function pet_midcast(spell)
-	if pet.name:contains('Spirit') then
+	if string.find(pet.name,'Spirit') then
 		equip(sets.midcast.Pet.Spirit)
 	else
 	-- Perfect Defense
@@ -307,10 +313,10 @@ end
 
 function midcast(spell,arg)
 -- SummoningMagic
-	if spell.skill == "SummoningMagic" then
+	if spell.skill == "Summoning Magic" then
 		equip(sets.midcast.Recast)
 -- Healing Magic
-	elseif spell.skill == 'HealingMagic' then
+	elseif spell.skill == 'Healing Magic' then
 		-- Cure Curaga Cura
 		if spell.english:startswith('Cure') then
 			equip(sets.midcast.Cure)
@@ -339,7 +345,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Recast)
 		end
 -- Enhancing Magic
-	elseif spell.skill == 'EnhancingMagic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.midcast.Phalanx) 
 		elseif spell.english:wcmatch('Regen*') then
@@ -373,7 +379,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.ConserveMP)
 		end
 -- Enfeebling Magic
-	elseif spell.skill == 'EnfeeblingMagic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if spell.english:startswith('Dia') then
 			equip(sets.midcast.Dia)
 		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
@@ -382,7 +388,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Macc)
 		end
 -- Divine Magic
-	elseif spell.skill == 'DivineMagic' then
+	elseif spell.skill == 'Divine Magic' then
 		if spell.english:startswith('Banish') then
 			equip(sets.midcast.Banish)
 		elseif spell.english:startswith('Holy') then
@@ -393,7 +399,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Flash)
 		end
 -- Dark Magic
-	elseif spell.skill == 'DarkMagic' then
+	elseif spell.skill == 'Dark Magic' then
 		if spell.name == 'Drain' then
 			equip(sets.midcast.Drain)
 		elseif spell.name == 'Aspir' then
@@ -404,7 +410,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.DarkMagic)
 		end
 -- Elemental Magic
-	elseif spell.skill == 'ElementalMagic' then
+	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.midcast.Macc)
 -- Ninjutsu
 	elseif spell.skill == "Ninjutsu" then
@@ -468,7 +474,6 @@ function aftercast(spell,arg)
 				equip(sets.idle.Standard)
 			end
 		end
-		
 	end
 -- Sleep and repose
 	if spell.name == "Sleep II" or spell.name == "Repose" then
@@ -507,17 +512,17 @@ function pet_sets()
 					if pet.name == "Alexander" then
 						windower.add_to_chat(121, 'Alexander')
 						equip(sets.idle.Avatar[pet.name])
-					elseif pet.element:contains(world.day_element) then
+					elseif pet.element == world.day_element then
 						equip(sets.idle.Avatar[pet.name],sets.perp.Day)
-					elseif pet.element:contains(world.weather_element) then
+					elseif pet.element == world.weather_element then
 						equip(sets.idle.Avatar[pet.name],sets.perp.Weather)
 					else
 						equip(sets.idle.Avatar[pet.name])
 					end
 				else
-					if pet.element:contains(world.day_element) then
+					if pet.element == world.day_element then
 						equip(sets.idle.Avatar,sets.perp.Day)
-					elseif world.weather_element == pet.element then
+					elseif pet.element == world.weather_element then
 						equip(sets.idle.Avatar,sets.perp.Weather)
 					else					
 						equip(sets.idle.Avatar)

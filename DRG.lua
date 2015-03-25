@@ -1,12 +1,11 @@
 -- Feary's DRG LUA
--- Date: 3/15/2014
---
---
+-- Created: 3/15/2014
+-- Last Update: 5/26/2014
+-- To Do List
 --
 --
 -- includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -14,7 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get DRG Gearsets
-	include('Gearsets/DRG_Gearsets.lua')
+	include('Gearsets/'..player.name..'/DRG_Gearsets.lua')
 
 -- Define Default Values for Variables
 	Mode = 0
@@ -115,25 +114,32 @@ function self_command(command)
 	end
 end
 
--- Gain or lose buffs 
 function buff_change(buff,g_or_l)
-	statuses()
-	-- gain = true losebuff = false
-
+	-- Global Statuses
+	include('include/status.lua')
 end
 
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
-		if PDT == 1 then
-			if buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-			else
-				equip(sets.idle.PDT)
-			end
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			equip(sets.idle.Standard)
+			if PDT == 1 then
+				if buffactive['Weakness'] then
+					equip(sets.idle.PDT,{head="Twilight Helm", body="Twilight Mail"})
+				else
+					equip(sets.idle.PDT)
+				end
+			elseif MDT == 1 then
+				equip(sets.idle.MDT)
+			else
+				if new == 'Resting' then
+					equip(sets.Resting)
+				else
+					equip(sets.idle.Standard)
+				end
+			end
 		end
 	elseif new == 'Engaged' then
  		-- Automatically activate Hasso when engaging
@@ -181,7 +187,7 @@ function precast(spell,arg)
 	-- Weaponskills
 	elseif spell.type == 'WeaponSkill' then
 		if player.status == 'Engaged' then
-			if player.TP >= 100 then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
 						equip(sets.precast.WS[spell.name])
@@ -194,7 +200,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -204,8 +210,6 @@ function precast(spell,arg)
 		-- Healing Breath Triggers
 		if spell.english:wcmatch("Bar*") and player.hpp <= 51 then
 			equip(sets.precast.HealingBreath)
-		else
-			cancel_spell()
 		end
 		-- Cure casting time
 		if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
@@ -218,9 +222,9 @@ function precast(spell,arg)
 		end	
     -- Magic spell gear handling(Precast)
     elseif spell.type == 'Ninjutsu' then
-        equip(sets.misc.Fastcast)
+        equip(sets.precast.Fastcast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-            equip(sets.misc.Utsusemi)
+            equip(sets.precast.Utsusemi)
         end
     else
 		-- Special handling to remove Dancer sub job Sneak effect
@@ -238,7 +242,7 @@ function precast(spell,arg)
 end
 
 function pet_precast(spell,arg)
-	if spell.english:startswith('Healing Breath') or spell.english:startswith('Restoring Breathe') then
+	if spell.english:startswith('Healing Breath') or spell.english:startswith('Restoring Breath') then
 		equip(sets.precast.HealingBreath)
 	else 
 		equip(sets.precast.HealingBreath)
@@ -266,7 +270,7 @@ function midcast(spell,arg)
 		-- Gear change to Damage Taken set when in midcast of Utsusemi
 		-- Special handling to remove Utsusemi, Sneak, and Stoneskin effects if they are active
 		if windower.wc_match(spell.name,'Utsusemi*') then
-			equip(sets.misc.Utsusemi)
+			equip(sets.precast.Utsusemi)
 			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
 				if buffactive['Copy Image'] then
 					windower.ffxi.cancel_buff(66)
@@ -293,41 +297,46 @@ function pet_midcast(spell,arg)
 end
 
 function aftercast(spell,arg)
-	-- Leaving Healing Breath Gear on and use pet aftercast
-	if spell.english:wcmatch("Bar*") and player.hpp < 51 or pet_midaction() == true then
-			equip(sets.midcast.HealingBreath)
+	if areas.Town:contains(world.zone) then
+		windower.add_to_chat(121, "Town Gear")
+		equip(sets.misc.Town)
 	else
-	-- Engaged
-		if player.status == 'Engaged' then
-			if PDT == 1 then
-				if buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
-				else
-					equip(sets.idle.PDT)
-				end
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
-			else
-				previous_set()
-			end
+		-- Leaving Healing Breath Gear on and use pet aftercast
+		if spell.english:wcmatch("Bar*") and player.hpp < 51 or pet_midaction() == true then
+				equip(sets.midcast.HealingBreath)
 		else
-			if PDT == 1 then
-				if buffactive['Weakness'] or player.hpp < 30 then
-					equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
+		-- Engaged
+			if player.status == 'Engaged' then
+				if PDT == 1 then
+					if buffactive['Weakness'] or player.hpp < 30 then
+						equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
+					else
+						equip(sets.idle.PDT)
+					end
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
 				else
-					equip(sets.idle.PDT)
+					previous_set()
 				end
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
 			else
-				equip(sets.idle.Standard)
+				if PDT == 1 then
+					if buffactive['Weakness'] or player.hpp < 30 then
+						equip(sets.idle.PDT,{head="Twilight Helm",body="Twilight Mail"})
+					else
+						equip(sets.idle.PDT)
+					end
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
-		end
-		-- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
-		if spell and spell.name == 'Utsusemi: Ni' then
-			ShadowType = 'Ni'
-		elseif spell and spell.name == 'Utsusemi: Ichi' then
-			ShadowType = 'Ichi'
+			-- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
+			if spell and spell.name == 'Utsusemi: Ni' then
+				ShadowType = 'Ni'
+			elseif spell and spell.name == 'Utsusemi: Ichi' then
+				ShadowType = 'Ichi'
+			end
 		end
 	end
 end
@@ -380,7 +389,6 @@ function previous_set()
 	end
 end
 
-
 function slot_lock()
     -- Twilight Helm/Mail logic
     if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
@@ -398,20 +406,4 @@ function slot_lock()
         enable('left_ear','right_ear')
     end
 end
-function slot_lock()
-    -- Twilight Helm/Mail logic
-    if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail'then
-        disable('head','body')
-    else
-        enable('head','body')
-    end
-    if player.equipment.left_ear == 'Reraise Earring' then
-        disable('left_ear')
-        windower.add_to_chat(8,'Reraise Earring equiped on left ear')
-    elseif player.equipment.right_ear == 'Reraise Earring' then
-        disable('right_ear')
-        windower.add_to_chat(8,'Reraise Earring equiped on right ear')
-    else
-        enable('left_ear','right_ear')
-    end
-end
+

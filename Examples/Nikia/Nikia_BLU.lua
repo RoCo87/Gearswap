@@ -1,55 +1,9 @@
 --[[
     !! Special thanks to everyone that helped me with the code and to better understand it !!
-
-    AutoExec Companion Code
-    Job changes and registers job specific events
-    <!-- Blue Mage -->
-    <register event="jobchange_blu/dnc" silent="true">
-        input /macro book 7;
-        wait 1;
-        input /macro set 9;
-        input /echo [ Job Changed to BLU/DNC ];
-        input /echo [ Set Spells to subjob now ]
-    </register>
-    <register event="jobchange_blu/nin" silent="true">
-        input /macro book 8;
-        wait 1;
-        input /macro set 9;
-        input /echo [ Job Changed to BLU/NIN ]; 
-        input /echo [ Set Spells to subjob now ]
-    </register>
-    <register event="jobchange_blu/rdm" silent="true">
-        input /macro book 9;
-        wait 1;
-        input /macro set 9;
-        input /echo [ Job Changed to BLU/RDM ];
-        input /echo [ Set Spells to subjob now ]
-    </register>
-    <register event="jobchange_blu/war" silent="true">
-        input /macro book 10;
-        wait 1;
-        input /macro set 9;
-        input /echo [ Job Changed to BLU/WAR ];
-        input /echo [ Set Spells to subjob now ]
-    </register>
 ]]
 
 function get_sets()
-    -- Will change to different Macro book and set based on sub job,
-    -- currently doesn't change as you change jobs, therefore AutoExec is currently still needed
-    local book = 7
-    if player.sub_job:lower() == 'dnc' then
-        book = 7
-    elseif player.sub_job:lower() == 'nin' then
-        book = 8
-    elseif player.sub_job:lower() == 'rdm' then
-        book = 9
-    elseif player.sub_job:lower() == 'war' then
-        book = 10
-    end
-    windower.send_command('input /macro book '..tostring(book)..'; wait .1; input /macro set 9')
-    windower.send_command('input /echo [ Job Changed to '..player.main_job..'/'..player.sub_job..' ]')
-    windower.send_command('input /echo [ Set Spells to sub job now ]')
+    sub_job_change()
     windower.send_command('@bind f10 gs c tryweaponskill')
     windower.send_command('input /blockhelp on')
 
@@ -61,7 +15,7 @@ function get_sets()
                 ["Cannonball"]="VIT", ["Delta Thrust"]="VIT", ["Quad. Continuum"]="VIT",
                 ["Benthic Typhoon"]="AGI", ["Final Sting"]="AGI", ["Spiral Spin"]="AGI",
                 ["Magic Hammer"]="MND", ["Mind Blast"]="MND"}
-    bluSpells = T{["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", ["Winds of Promy."]="Recast", ["White Wind"]="Recast",
+    bluSpells = T{["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", ["Winds of Promy."]="Recast",
                 ["Magic Fruit"]="CurePot", ["Plenilune Embrace"]="CurePot", ["White Wind"]="CurePot",
                 ["Sudden Lunge"]="BluACC", ["Head Butt"]="BluACC"}
 
@@ -72,12 +26,21 @@ function get_sets()
     sets.misc.DT = {}
     sets.misc.DT.None = {}
     sets.misc.DT.Active = {
-                head="Iuitl Headgear", neck="Twilight Torque",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring="Dark Ring", rring="Defending Ring",
-                back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+                head="Iuitl Headgear +1", neck="Twilight Torque",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Defending Ring",
+                back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1"}
+
+    sets.misc['Chain Affinity'] = {
+                feet="Assim. Charuqs +1"}
 
     sets.misc.Efflux = {
                 legs="Mavi Tayt +2"}
+
+    sets.misc.IonisWaist = {
+                waist="Cetl Belt"}
+
+    sets.misc.DualWieldMarch = {
+                lear="Brutal Earring", rear="Suppanomimi"}
 
     sets.misc.Movement = {
                 legs="Blood Cuisses"}
@@ -90,22 +53,22 @@ function get_sets()
     sets.precast = {}
     sets.precast.JA = {}
     sets.precast.JA['Azure Lore'] = {
-                hands="Mrg. Bazubands +2"}
+                hands="Luh. Bazubands +1"}
 
     sets.precast.WS = {}
-    sets.precast.WS['Chant du Cygne'] = {ammo="Cheruski Needle",
+    sets.precast.WS['Chant du Cygne'] = {ammo="Jukukik Feather",
                 head="Uk'uxkaj Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Assim. Jubbah +1", hands="Assim. Bazu. +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Rancorous Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs +1"}
+                body="Luhlaza Jubbah +1", hands="Qaaxo Mitaines", lring="Rajas Ring", rring="Epona's Ring",
+                back="Rancorous Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Qaaxo Leggings"}
     sets.precast.WS['Requiescat'] = {ammo="Aqua Sachet",
                 head="Whirlpool Mask", neck="Shadow Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Wayfarer Robe", hands="Wayfarer Cuffs", lring="Aquasoul Ring", rring="Epona's Ring",
+                body="Vanir Cotehardie", hands="Qaaxo Mitaines", lring="Aquasoul Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Shadow Belt", legs="Quiahuiz Leggings", feet="Assim. Charuqs +1"}
 
     sets.precast.FastCast = {
-                head="Athos's Chapeau", neck="Orunmila's Torque", lear="Loquac. Earring",
-                body="Mirke Wardecors", hands="Thaumas Gloves", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Enif Cosciales", feet="Chelona Boots"}
+                head="Haruspex Hat +1", neck="Orunmila's Torque", lear="Loquac. Earring",
+                body="Luhlaza Jubbah +1", hands="Thaumas Gloves", lring="Prolix Ring",
+                back="Swith Cape +1", waist="Witful Belt", legs="Enif Cosciales", feet="Chelona Boots +1"}
     sets.precast.FastCast.BlueMagic = set_combine(sets.precast.FastCast, {
                 body="Mavi Mintan +2"})
 
@@ -113,55 +76,50 @@ function get_sets()
     -- Midcast sets --
     sets.midcast = {}
     sets.midcast.BlueMagic = {ammo="Mavi Tathlum",
-                head="Mirage Keffiyeh +2",
+                head="Luh. Keffiyeh +1",
                 body="Assim. Jubbah +1", hands="Fea's Cuffs",
-                back="Cornflower Cape", legs="Mavi Tayt +2"}
+                back="Cornflower Cape", legs="Mavi Tayt +2", feet="Luhlaza Charuqs +1"}
     sets.midcast.BlueMagic.STR = set_combine(sets.midcast.BlueMagic, {
-                head="Uk'uxkaj Cap", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
-                hands="Assim. Bazu. +1", lring="Rajas Ring", rring="Pyrosoul Ring",
-                waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs +1"})
+                neck="Tjukurrpa Medal", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                hands="Luh. Bazubands +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                waist="Wanion Belt", legs="Manibozho Brais"})
     sets.midcast.BlueMagic.VIT = set_combine(sets.midcast.BlueMagic.STR, {
                 waist="Chuq'aba Belt", legs="Nahtirah Trousers"})
     sets.midcast.BlueMagic.AGI = set_combine(sets.midcast.BlueMagic.STR, {
-                hands="Iuitl Wristbands",
+                hands="Iuitl Wristbands +1",
                 legs="Nahtirah Trousers"})
     sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",
-                head="Uk'uxkaj Cap", neck="Phalaina Locket", rear="Lifestorm Earring",
-                hands="Assim. Bazu. +1", rring="Aquasoul Ring",
-                legs="Quiahuiz Leggings", feet="Thur. Boots +1"})
-    sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
-                neck="Phalaina Locket", lear="Loquac. Earring",
-                hands="Buremte Gloves", lring="Kunaji Ring",
-                back="Oretania's Cape", waist="Chuq'aba Belt", legs="Magavan Slops"})
+                neck="Phalaina Locket", rear="Lifestorm Earring",
+                hands="Luh. Bazubands +1", rring="Aquasoul Ring",
+                legs="Quiahuiz Leggings"})
     sets.midcast.BlueMagic.BluACC = set_combine(sets.midcast.BlueMagic.STR, {ammo="Honed Tathlum",
-                head="Whirlpool Mask",
                 hands="Buremte Gloves",})
+    sets.midcast.BlueMagic.CurePot = {ammo="Aqua Sachet",
+                head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Loquac. Earring", rear="Lifestorm Earring",
+                body="Chelona Blazer", hands="Buremte Gloves", lring="Kunaji Ring", rring="Aquasoul Ring",
+                back="Tempered Cape", waist="Chuq'aba Belt", legs="Magavan Slops", feet="Thur. Boots +1"}
     sets.midcast.Recast = {
-                head="Iuitl Headgear",
-                body="Assim. Jubbah +1"}
+                waist="Twilight Belt"}
     sets.midcast.BlueMagic.Recast = set_combine(sets.midcast.Recast, {
                 hands="Mv. Bazubands +2"})
 
 
-    -- Aftercast sets labeled to show either melee or idle --
-    sets.melee = {}
-    sets.melee.TP = {}
-    -- Normal melee set Earrings are handled as part of the march buff check inside the gear_modes() function
-    -- Normal melee set Waist is handled in gear_modes() based on Ionis buff
-    sets.melee.TP.Normal = {ammo="Cheruski Needle",
-                head="Thur. Chapeau +1", neck="Asperity Necklace",
-                body="Thaumas Coat", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", legs="Iuitl Tights", feet="Manibozho Boots"}
-    sets.melee.TP.Refresh = set_combine(sets.melee.TP.Normal, {
-                body="Assim. Jubbah +1"})
-    sets.melee.TP.Accuracy = set_combine(sets.melee.TP.Normal, {ammo="Honed Tathlum",
+    -- Aftercast sets labeled to show either TP or idle --
+    sets.TP = {}
+    sets.TP.Normal = {ammo="Vanir Battery",
+                head="Iuitl Headgear +1", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+                body="Thaumas Coat", hands="Qaaxo Mitaines", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Iuitl Tights +1", feet="Qaaxo Leggings"}
+    sets.TP.Refresh = set_combine(sets.TP.Normal, {
+                body="Luhlaza Jubbah +1"})
+    sets.TP.Accuracy = set_combine(sets.TP.Normal, {ammo="Honed Tathlum",
                 head="Whirlpool Mask",
-                hands="Buremte Gloves",
-                feet="Assim. Charuqs +1"})
+                body="Luhlaza Jubbah +1", hands="Buremte Gloves",
+                back="Letalis Mantle", feet="Assim. Charuqs +1"})
 
-    sets.idle = set_combine(sets.misc.DT.Active, {ammo="Mavi Tathlum",
-                lear="Loquac. Earring", rear="Lifestorm Earring",
-                body="Assim. Jubbah +1", hands="Serpentes Cuffs",
+    sets.idle = set_combine(sets.misc.DT.Active, {ammo="Vanir Battery",
+                head="Luh. Keffiyeh +1", lear="Loquac. Earring", rear="Ethereal Earring",
+                body="Luhlaza Jubbah +1", hands="Serpentes Cuffs",
                 feet="Serpentes Sabots"})
 
     DTMode = 'None'
@@ -170,6 +128,22 @@ function get_sets()
     WSBind = 'Requiescat'
 end
 
+function sub_job_change(new,old)
+    -- Will change to different Macro book and set based on sub job
+    local book = 7
+    if player.sub_job:lower() == 'dnc' then
+        book = 7
+    elseif player.sub_job:lower() == 'nin' then
+        book = 8
+    elseif player.sub_job:lower() == 'rdm' then
+        book = 9
+    elseif player.sub_job:lower() == 'war' then
+        book = 10
+    end
+    windower.send_command('input /macro book '..book..'; wait .1; input /macro set 9')
+    windower.send_command('input /echo [ Job Changed to '..player.main_job..'/'..player.sub_job..' ]')
+    windower.send_command('input /echo [ Set Spells to sub job now ]')
+end
 
 function self_command(str)
     -- Use an in game macro "/con gs c DTMode" to toggle Damage Taken set
@@ -214,27 +188,20 @@ function self_command(str)
     end
 end
 
--- User created bridge for built in aftercast and status_change functions,
--- also self_command references listed above to help handle mode changes for situation needs
+-- User created bridge for built in aftercast and status_change functions
 function gear_modes()
-    -- Handles Waist for Normal TP mode set depending on Ionis buff being active
-    -- Caution with buff when not in an Ionis area
-    if buffactive.Ionis then
-        sets.melee.TP.Normal = set_combine(sets.melee.TP.Normal, {waist="Cetl Belt"})
-    else
-        sets.melee.TP.Normal = set_combine(sets.melee.TP.Normal, {waist="Twilight Belt"})
-    end
-
-    -- Adjusts Normal TP mode earrings when approaching delay cap
-    if buffactive.Haste and buffactive.March == 2 then
-        sets.melee.TP.Normal = set_combine(sets.melee.TP.Normal, {lear="Brutal Earring", rear="Suppanomimi"})
-    else
-        sets.melee.TP.Normal = set_combine(sets.melee.TP.Normal, {lear="Dudgeon Earring", rear="Heartseeker Earring"})
-    end
-
     -- Sequential gear sets used to easier allow for changing player needs
     if player.status == 'Engaged' then
-        equip(sets.melee.TP[TPMode], sets.misc.DT[DTMode])
+        equip(sets.TP[TPMode], sets.misc.DT[DTMode])
+        -- Handles Waist for Normal TP mode set depending on Ionis buff being active
+        -- Caution with buff when not in an Ionis area
+--        if buffactive.Ionis and DTMode == 'None' then
+--            equip(sets.misc.IonisWaist)
+--        end
+        -- Adjusts Normal TP mode earrings when approaching delay cap
+        if buffactive.Haste and buffactive.March == 2 then
+            equip(sets.misc.DualWieldMarch)
+        end
     else
         equip(sets.idle, sets.misc.DT[DTMode], sets.misc.Movement)
     end
@@ -270,7 +237,7 @@ end
 function precast(spell,arg)
     slot_disabling()
     -- Situational spell logic for Warrior sub job
-    if (spell.name == 'Chant du Cygne' or spell.name == 'Requiescat') and not buffactive.Berserk and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
+    if (spell.name == 'Chant du Cygne' or spell.name == 'Requiescat') and not buffactive.Berserk and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
         windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
         cancel_spell()
         return
@@ -287,9 +254,9 @@ function precast(spell,arg)
     end
 
     -- Magic spell gear handling(Precast)
-    if spell.skill == 'BlueMagic' then
+    if spell.skill == 'Blue Magic' then
         equip(sets.precast.FastCast.BlueMagic)
-    elseif spell.skill == 'HealingMagic' or spell.skill == 'EnhancingMagic' or spell.skill == 'Ninjutsu' then
+    elseif spell.skill == 'Healing Magic' or spell.skill == 'Enhancing Magic' or spell.skill == 'Ninjutsu' then
         equip(sets.precast.FastCast)
     end
 
@@ -301,15 +268,18 @@ function precast(spell,arg)
     elseif windower.wc_match(spell.name,'Curing*') then
         equip(sets.midcast.BlueMagic.VIT)
     elseif windower.wc_match(spell.name,'*Step') then
-        equip(sets.melee.TP.Accuracy)
+        equip(sets.TP.Accuracy)
     end
 end
 
 function midcast(spell,arg)
     -- Magic spell gear handling(Midcast)
-    if spell.skill == 'BlueMagic' then
+    if spell.skill == 'Blue Magic' then
         if bluSpellStats[spell.english] then
             equip(sets.midcast.BlueMagic[bluSpellStats[spell.english]])
+            if buffactive['Chain Affinity'] then
+                equip(sets.misc['Chain Affinity'])
+            end
             if buffactive.Efflux then
                 equip(sets.misc.Efflux)
             end
@@ -318,7 +288,7 @@ function midcast(spell,arg)
         else
             equip(sets.midcast.BlueMagic)
         end
-    elseif spell.skill == 'HealingMagic' or spell.skill == 'EnhancingMagic' then
+    elseif spell.skill == 'Healing Magic' or spell.skill == 'Enhancing Magic' then
         equip(sets.midcast.Recast)
         if windower.wc_match(spell.name,'Cure*') then
             equip(sets.midcast.BlueMagic.CurePot)
@@ -340,7 +310,7 @@ function midcast(spell,arg)
                 windower.ffxi.cancel_buff(446)
             end
         end
-    elseif spell.name == 'Monomi: Ichi' or spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+    elseif (spell.name == 'Monomi: Ichi' or spell.name == 'Sneak') and buffactive.Sneak and spell.target.type == 'SELF' then
         windower.ffxi.cancel_buff(71)
     elseif spell.name == 'Stoneskin' and buffactive.Stoneskin then
         windower.ffxi.cancel_buff(37)

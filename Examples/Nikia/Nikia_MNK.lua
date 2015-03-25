@@ -1,26 +1,23 @@
 --[[
     !! Special thanks to everyone that helped me with the code and to better understand it !!
 
-    AutoExec Companion Code
-    Job changes and registers job specific events
-    <register event="(regex)jobchange_(?!MNK).*(/regex)" silent="true">
-            ae unregister 10011;
-    </register>
-
-    <register event="jobchange_mnk/*" silent="true">
-            ae register 10011 hpp_100 gs c FullHP
-    </register>
-    
     Use for troubleshooting
     print(spell.name, player.sub_job)
     print(hp, player.max_hp, player.status)
-    
 ]]
 
 function get_sets()
     windower.send_command('input /macro book 1; wait .1; input /macro set 1; input /echo [ Job Changed to MNK ]')
     windower.send_command('@bind f10 gs c tryweaponskill')
     windower.send_command('input /blockhelp on')
+
+
+    -- Automated events similar to events in the AutoExec plugin
+    windower.register_event('hpp change', function(new, old)
+        if new == 100 and player.status == 'Idle' then
+            windower.send_command('wait 1;gs c FullHP')
+        end
+    end)
 
 
     -- Start defining actual gear sets to be used below --
@@ -49,8 +46,8 @@ function get_sets()
                 neck="Magoraga Beads",}
 
     sets.misc.VIT = {ammo="Brigantia Pebble",
-                head="Whirlpool Mask", neck="Tjukurrpa Medal", lear="Terra's Pearl", rear="Terra's Pearl",
-                body="Otronif Harness", hands="Otronif Gloves", lring="Terrasoul Ring", rring="Terrasoul Ring",
+                head="Lithelimb Cap", neck="Tjukurrpa Medal", lear="Terra's Pearl", rear="Terra's Pearl",
+                body="Anch. Cyclas +1", hands="Anch. Gloves +1", lring="Terrasoul Ring", rring="Terrasoul Ring",
                 back="Iximulew Cape", waist="Caudata Belt", legs="Nahtirah Trousers", feet="Thur. Boots +1"}
 
 
@@ -58,26 +55,30 @@ function get_sets()
     sets.precast = {}
     sets.precast.JA = {}
     sets.precast.JA.Boost = {
-                hands="Anchorite's Gloves"}
+                hands="Anch. Gloves +1"}
     sets.precast.JA.Chakra = set_combine(sets.misc.VIT, {
-                body="Anch. Cyclas +1", hands="Mel. Gloves +2"})
+                body="Anch. Cyclas +1", hands="Hes. Gloves +1"})
     sets.precast.JA.Counterstance = {
                 feet="Mel. Gaiters +2"}
     sets.precast.JA.Dodge = {
-                feet="Anch. Gaiters"}
+                feet="Anch. Gaiters +1"}
     sets.precast.JA.Focus = {
                 head="Anchor. Crown +1"}
     sets.precast.JA['Formless Strikes'] = {
-                body="Mel. Cyclas +2"}
+                body="Hes. Cyclas"}
     sets.precast.JA['Hundred Fists'] = {
-                legs="Mel. Hose +2"}
+                legs="Hes. Hose"}
     sets.precast.JA.Mantra = {
                 feet="Mel. Gaiters +2"}
 
     sets.precast.WS = {}
+    sets.precast.WS['Final Heaven'] = {ammo="Tantra Tathlum",
+                head="Lithelimb Cap", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Terra's Pearl",
+                body="Anch. Cyclas +1", hands="Anch. Gloves +1", lring="Terrasoul Ring", rring="Epona's Ring",
+                back="Iximulew Cape", waist="Caudata Belt", legs="Nahtirah Trousers", feet="Thur. Boots +1"}
     sets.precast.WS['Victory Smite'] = {ammo="Tantra Tathlum",
                 head="Uk'uxkaj Cap", neck="Rancor Collar", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Anch. Cyclas +1", hands="Otronif Gloves", lring="Pyrosoul Ring", rring="Epona's Ring",
+                body="Anch. Cyclas +1", hands="Anch. Gloves +1", lring="Pyrosoul Ring", rring="Epona's Ring",
                 back="Buquwik Cape", waist="Caudata Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
     sets.precast.FastCast = {
@@ -92,13 +93,14 @@ function get_sets()
     -- Aftercast sets labeled to show either melee or idle --
     sets.melee = {}
     sets.melee.TP = {}
-    sets.melee.TP.Normal = {ammo="Tantra Tathlum",
-                head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+    sets.melee.TP.Normal = {ammo="Vanir Battery",
+                head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais", feet="Manibozho Boots"}
     sets.melee.TP.Accuracy = set_combine(sets.melee.TP.Normal, {ammo="Honed Tathlum",
-                head="Whirlpool Mask",
-                legs="Manibozho Brais"})
+                head="Whirlpool Mask", neck="Ziel Charm",
+                body="Manibozho Jerkin", hands="Hes. Gloves +1",
+                back="Letalis Mantle", waist="Anguinus Belt", legs="Manibozho Brais", feet="Daihanshi Habaki"})
 
     sets.idle = {}
     sets.idle.DT = {ammo="Brigantia Pebble",
@@ -106,11 +108,10 @@ function get_sets()
                 body="Otronif Harness", hands="Otronif Gloves", lring="Dark Ring", rring="Defending Ring",
                 back="Shadow Mantle", waist="Black Belt", legs="Otronif Brais", feet="Otronif Boots"}
     sets.idle.Regen = set_combine(sets.idle.DT, {
-                head="Oce. Headpiece +1", neck="Wiglen Gorget",
-                body="Mel. Cyclas +2", lring="Paguroidea Ring", rring="Sheltered Ring"})
+                neck="Wiglen Gorget",
+                body="Hes. Cyclas", lring="Paguroidea Ring", rring="Sheltered Ring"})
 
     boostCount = 0
-    IdleMode = 'DT'
     DTMode = 'None'
     TPMode = 'Normal'
     ShadowType = 'None'
@@ -137,17 +138,17 @@ function self_command(str)
         end
         windower.add_to_chat(8,'Engaged melee set mode: '..TPMode)
         gear_modes()
-    -- Used with AutoExec event to automatically change to Idle DT set once 100% HP is reached
+    -- Used with windower.register_event to automatically change to Idle DT set once 100% HP is reached
     elseif str == 'FullHP' then
-        if player.status == 'Idle' then
-            gear_modes()
-        end
+        gear_modes()
     end
 
     -- Allows you to change the WeaponSkill that will be used when F10 is pressed,
     -- use in game macro "/con gs c WSBind"
     if str == 'WSBind' then
         if WSBind == 'Victory Smite' then
+            WSBind = 'Final Heaven'
+        elseif WSBind == 'Final Heaven' then
             WSBind = 'Shijin Spiral'
         else
             WSBind = 'Victory Smite'
@@ -167,13 +168,6 @@ end
 -- User created bridge for built in aftercast and status_change functions,
 -- also self_command references listed above to help handle mode changes for situation needs
 function gear_modes()
-    -- Allows adjustments to idle gear if regen gear should be used
-    if player.hpp < 100 then
-        IdleMode = 'Regen'
-    else
-        IdleMode = 'DT'
-    end
-
     -- Sequential gear sets used to easier allow for changing player needs
     if player.status == 'Engaged' then
         equip(sets.melee.TP[TPMode], sets.misc.DT[DTMode])
@@ -182,7 +176,10 @@ function gear_modes()
             equip(sets.misc.PC)
         end
     else
-        equip(sets.idle[IdleMode], sets.misc.DT[DTMode], sets.misc.Movement)
+        equip(sets.idle.DT, sets.misc.DT[DTMode], sets.misc.Movement)
+        if player.hpp < 100 then
+            equip(sets.idle.Regen, sets.misc.DT[DTMode], sets.misc.Movement)
+        end
     end
 end
 
@@ -208,7 +205,7 @@ function status_change(new,old)
             -- Gear info each time you Engage, useful if using DressUp or BlinkMeNot
             windower.add_to_chat(8,player.name..':   Melee = '..TPMode..'   |   Damage Taken = '..DTMode)
             -- Automatically activate Impetus when engaging
-            if not buffactive.Impetus and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[31] < 1 then
+            if not buffactive.Impetus and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and windower.ffxi.get_ability_recasts()[31] < 1 then
                 windower.send_command('impetus')
             end
         end
@@ -228,7 +225,7 @@ end
 function precast(spell,arg)
     slot_disabling()
     -- Situational spell logic for Warrior sub job
-    if (spell.name == 'Victory Smite' or spell.name == 'Shijin Spiral') and not buffactive.Berserk and not buffactive.Boost and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
+    if (spell.name == 'Final Heaven' or spell.name == 'Victory Smite' or spell.name == 'Shijin Spiral') and not buffactive.Berserk and not buffactive.Boost and not buffactive.Amnesia and not buffactive.Obliviscence and not buffactive.Paralysis and player.sub_job == 'WAR' and windower.ffxi.get_ability_recasts()[1] < 1 then
         windower.send_command('berserk; wait 1; warcry; wait 1; '..spell.name..' '..spell.target.raw)
         cancel_spell()
         return
@@ -285,7 +282,7 @@ function midcast(spell,arg)
                 windower.ffxi.cancel_buff(446)
             end
         end
-    elseif spell.name == 'Monomi: Ichi' or spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+    elseif (spell.name == 'Monomi: Ichi' or spell.name == 'Sneak') and buffactive.Sneak and spell.target.type == 'SELF' then
         windower.ffxi.cancel_buff(71)
     end
 end

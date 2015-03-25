@@ -1,12 +1,13 @@
 -- Feary's PLD LUA
--- Date: 4/1/2014
--- chiv and tp
+-- Created: 4/1/2014
+-- Last Update: 8/9/2014
+-- To Do List:
 --
 --
+-- 
 --
 --includes
 	include('include/functions.lua')
-	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -14,7 +15,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	-- Get PLD Gearsets
-	include('Gearsets/PLD_Gearsets.lua')
+	include('Gearsets/'..player.name..'/PLD_Gearsets.lua')
 	
 -- Define Default Values for Variables
 	Mode = 0
@@ -25,15 +26,15 @@ function get_sets()
 	mshield = "Aegis"
 	-- Physical Shield
 	pshield = "Ochain"
-	-- Defualt Shield
+	-- Default Shield
 	Shield = "Ochain"
 	
 end 
--- Called when this job file is unloaded (eg: job change)
+
 function file_unload()
 	clear_binds()
 end
--- Rules 
+
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then
@@ -76,7 +77,11 @@ function self_command(command)
 			PDT = 0
 		-- lock MDT set and equip it
 			MDT = 1	
-			equip(sets.idle.MDT)
+			if buffactive("Shell") then
+				equip(sets.idle.MDT.Shell)
+			else
+				equip(sets.idle.MDT)
+			end
 			windower.add_to_chat(121,'MDT Set Locked')
 		end
 	elseif command == 'TP' then
@@ -106,7 +111,7 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
-	elseif command == 'twilight' then
+	elseif command == 'twilight' or command == "t" then
 		-- Twilight Helm/Mail logic
 		if player.equipment.head == 'Twilight Helm' and player.equipment.body == 'Twilight Mail' then
 			enable('head','body')
@@ -133,28 +138,32 @@ function self_command(command)
 		end
 	elseif command == "w" then
 		equip({main="Buramenk'ah", sub=Shield})
-	elseif command == "clear_binds" then
-		clear_binds()
 	end
 end
 
 function status_change(new,old)
-	if player.equipment.main == 'empty' then
-		equip({main="Buramenk'ah", sub=Shield})
-	elseif player.equipment.sub == 'empty' then
-		equip({main="Buramenk'ah", sub=Shield})
-	end
 -- Autoset
     if T{'Idle','Resting'}:contains(new) then
+		weapon_check()
 		slot_lock()
-		if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-			equip(sets.idle.PDT)
-		elseif MDT == 1 then
-			equip(sets.idle.MDT)
+		if areas.Town:contains(world.zone) then
+			windower.add_to_chat(121, "Town Gear")
+			equip(sets.misc.Town)
 		else
-			equip(sets.idle.Standard)
+			if new == "Resting" then
+				equip(sets.Resting)
+			else
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
+			end
 		end
 	elseif new == 'Engaged' then
+		 weapon_check()
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
 				windower.add_to_chat(121,'PDT Locked')
@@ -172,24 +181,25 @@ function status_change(new,old)
 		end
 	end
 end
-
--- Gain or lose buffs 
+ 
 function buff_change(buff,g_or_l)
-	statuses()
-	-- gain = true losebuff = false
-
+	-- Global Status Values
+	include('include/status.lua')
 end
 
 function precast(spell,arg)
 	if spell.type == 'JobAbility' then
 		if spell.name == 'Convert' then
 			cancel_spell()
+		elseif spell.name == 'Chivalry' and player.tp <= 70 then
+			cancel_spell()
+			windower.add_to_chat(121,'Not Enought TP to Chivalry')
 		elseif sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
 	elseif spell.type == 'WeaponSkill' then
-		if  player.status == 'Engaged' then
-			if player.TP >= 100 then
+		if player.status == 'Engaged' then
+			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if Mode == 1 then
 						if sets.precast.WS.Acc[spell.name] then
@@ -210,36 +220,37 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.TP..'Not enough TP to WS')
+				windower.add_to_chat(121, ''..player.tp..'Not enough TP to WS')
 			end
 		else
 			cancel_spell()
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
 	elseif spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.precast.HPDown)
 			else
-				equip(sets.misc.Fastcast)
+				equip(sets.precast.Fastcast)
 			end
-		elseif spell.skill == "EnhancingMagic" then
-			equip(sets.misc.Fastcast)
+		elseif spell.skill == 'Enhancing Magic' then
+			equip(sets.precast.Enhancing)
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
 			end
-		elseif spell.skill == "DivineMagic" then
-			equip(sets.misc.Fastcast)
-		elseif spell.skill == "BlueMagic" then
-			equip(sets.misc.Fastcast,sets.Enmity)
-		elseif spell.skill == "ElementalMagic" then
-			equip(sets.misc.Fastcast)
+		elseif spell.skill == 'Divine Magic' then
+			equip(sets.precast.Fastcast)
+		elseif spell.skill == 'Blue Magic' then
+			equip(sets.precast.Fastcast,sets.Enmity)
+		elseif spell.skill == 'Elemental Magic' then
+			equip(sets.precast.Fastcast)
 		end
 	elseif spell.type == 'Ninjutsu' then
-		-- Ninjutsu spell gear handling(Precast)
-		equip(sets.misc.FastCast)
         if windower.wc_match(spell.name,'Utsusemi*') then
-			equip(sets.misc.Utsusemi)
+			equip(sets.precast.Utsusemi)
+		else
+			-- Ninjutsu spell gear handling(Precast)
+			equip(sets.precast.FastCast)
         end
 	else
 		-- Special handling to remove Dancer sub job Sneak effect
@@ -247,7 +258,7 @@ function precast(spell,arg)
 			windower.ffxi.cancel_buff(71)
 			cast_delay(0.3)
 		elseif windower.wc_match(spell.name,'Curing*') then
-			equip(sets.misc.Waltz)
+			equip(sets.precast.Waltz)
 		elseif windower.wc_match(spell.name,'*Step') then
 			equip(sets.TP.Acc)
 		end
@@ -256,43 +267,45 @@ end
 
 function midcast(spell,arg)
 	if spell.type:endswith('Magic') then
-		if spell.skill == "HealingMagic" then
+		if spell.skill == 'Healing Magic' then
 			-- Self Cure 
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.Cure)
 			else
 				equip(sets.Cure)
 			end
-		elseif spell.skill == "EnhancingMagic" then
+		elseif spell.skill == 'Enhancing Magic' then
 			if spell.name == "Reprisal" then
-				equip(sets.Recast,sets.misc.Fastcast)
+				equip(sets.midcast.Recast)
 			elseif spell.name == "Phalanx" then
-				equip(sets.Recast,sets.Enmity,sets.midcast.EnhancingMagic)
+				equip(sets.precast.Fastcast,sets.Enmity,sets.midcast.EnhancingMagic.Phalanx)
+			elseif spell.name == "Crusade" then
+				equip(sets.Enmity)
 			else
-				equip(sets.recast,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.Recast,sets.Enmity,sets.precast.Fastcast)
 			end
-		elseif spell.skill == "DivineMagic" then
+		elseif spell.skill == 'Divine Magic' then
 			if spell.name == "Flash" then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic.Flash)
 			elseif spell.english:wcmatch('Banish*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic,sets.Enmity,sets.midcast.Recast)
 			elseif spell.english:wcmatch('Holy*') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.DivineMagic, sets.Enmity,sets.midcast.Recast)
 			elseif spell.english:wcmatch('Enlight') then
-				equip(sets.midcast.DivineMagic,sets.Enmity,sets.misc.Fastcast)	
+				equip(sets.midcast.DivineMagic)	
 			else
-				equip(sets.Recast,sets.Enmity,sets.misc.Fastcast)
+				equip(sets.midcast.Recast,sets.Enmity)
 			end
-		elseif spell.skill == "BlueMagic" then
-			equip(sets.misc.Fastcast)
-		elseif spell.skill == "ElementalMagic" then
-			equip(sets.misc.Fastcast)
+		elseif spell.skill == 'Blue Magic' then
+			equip(sets.precast.Fastcast)
+		elseif spell.skill == 'Elemental Magic' then
+			equip(sets.precast.Fastcast)
 		end
     elseif spell.type == 'Ninjutsu' then
 		-- Utsusemi
 		if windower.wc_match(spell.name,'Utsusemi*') then
 			-- Equip PDT then Utsusemi Gear sets
-			equip(sets.idle.PDT, sets.misc.Utsusemi)
+			equip(sets.idle.PDT, sets.precast.Utsusemi)
 			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
 				if buffactive['Copy Image'] then
 					windower.ffxi.cancel_buff(66)
@@ -348,13 +361,13 @@ function previous_set()
 	if player.equipment.sub == mshield then
 		if buffactive["Cover"] then
 			if Mode == 0 then
-				equip(sets.TP,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - TP Set')
 			elseif Mode == 1 then
-				equip(sets.TP.Acc,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Acc,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - Acc TP Set')
 			elseif Mode == 2 then
-				equip(sets.TP.Hybrid,{magicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Hybrid,{magicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Aegis - Cover - Hybrid TP Set')
 			end
 		else
@@ -372,13 +385,13 @@ function previous_set()
 	elseif player.equipment.sub == pshield then
 		if buffactive["Cover"] then
 			if Mode == 0 then
-				equip(sets.TP,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - TP Set')
 			elseif Mode == 1 then
-				equip(sets.TP.Acc,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Acc,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - Acc TP Set')
 			elseif Mode == 2 then
-				equip(sets.TP.Hybrid,{physicalshield},{body="Cab. Surcoat"})
+				equip(sets.TP.Hybrid,{physicalshield},{body="Cab. Surcoat +1"})
 				windower.add_to_chat(121,'Ochain - Cover - Hybrid TP Set')
 			end
 		else
@@ -395,7 +408,7 @@ function previous_set()
 		end
 	else
 		equip(sets.idle.PDT)
-		windower.add_to_chat(121, "No Known Shield Equipped. Equiping PDT")
+		windower.add_to_chat(121, "No Known Shield Equipped. Equipping PDT")
 	end
 end
 
@@ -417,3 +430,10 @@ function slot_lock()
     end
 end
 
+function weapon_check()
+	if player.equipment.main == 'empty' then
+		equip({main="Buramenk'ah", sub=Shield})
+	elseif player.equipment.sub == 'empty' then
+		equip({main="Buramenk'ah", sub=Shield})
+	end
+end
