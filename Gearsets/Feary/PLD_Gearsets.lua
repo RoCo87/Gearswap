@@ -61,7 +61,7 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", legs="Blood Cuisses"})
 -- TP 
-sets.TP = { 	ammo="Paeapua",
+sets.TP = { 	ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Xaddi Mail", hands="Cizin Mufflers +1", lring="Rajas Ring", rring="K'ayres Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Ejekamal Boots"}
@@ -87,7 +87,7 @@ sets.precast.Fastcast = set_combine(sets.idle.PDT, {ammo="Incantor Stone",
 sets.precast.Enhancing = set_combine(sets.precast.Fastcast, {waist="Siegel Sash"})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
--- Enmity Caps at 200, Gear caps at 120, Current is 
+-- Enmity Caps at ?, Gear caps at 120, Current is 
 sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
 				head="Cab. Coronet", neck="Atzintli Necklace", lear="Trux Earring", rear="Pluto's Pearl",
 				body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", lring="Supersheer Earring", rring="Apeile Ring +1",
@@ -99,25 +99,33 @@ sets.HPDown = set_combine(sets.idle.PDT,{
 -- Midcast
 sets.midcast.Recast = set_combine(sets.precast.Fastcast,{})
 
-sets.midcast.Cure = set_combine(sets.midcast.Recast,{
-				head="Yaoyotl Helm", neck="Phalaina Locket", lear="Creed Earring", rear="Knightly Earring",
+-- Healing Magic 
+sets.midcast.Cure = set_combine(sets.midcast.Recast,{ammo="Paeapua",
+				head="Yaoyotl Helm", neck="Phalaina Locket", lear="Ethereal Earring", rear="Knightly Earring",
 				body="Reverence Surcoat",hands="Buremte Gloves",lring="Meridian Ring",rring="K'ayres Ring",
-				back="Fravashi Mantle", waist="Chuq'aba Belt", legs="Cab. Breeches", feet="Cab. Leggings"})
+				back="Fravashi Mantle", waist="Chuq'aba Belt", legs="Reverence Breeches", feet="Cab. Leggings"})
+sets.midcast.Cure.Self = set_combine(sets.midcast.Cure,{ammo="Paeapua",
+				head="Shabti Armet", neck="Phalaina Locket", lear="Ethereal Earring", rear="Knightly Earring",
+				body="Reverence Surcoat",hands="Buremte Gloves",lring="Meridian Ring",rring="K'ayres Ring",
+				back="Fravashi Mantle", waist="Chuq'aba Belt", legs="Reverence Breeches", feet="Cab. Leggings"})
 
--- Enlight
+-- Divine Magic - Enlight 490 Goal
 sets.midcast.DivineMagic = set_combine(sets.midcast.Recast,{
-				head="Kahin Turban",
+				head="Kahin Turban", neck="Nesanica Torque", lear="Beatific Earring", rear="Divine Earring",
 				body="Reverence Surcoat", hands="Paragon Mufflers", lring="Globidonta Ring", 
 				back="Altruistic Cape", waist="Cascade Belt", legs="Kaiser Diechlings", feet="Templar Sabotons"})
 
-sets.midcast.DivineMagic.Flash = set_combine(sets.midcast.Recast,{ammo="Paeapua",
+sets.midcast.DivineMagic.Flash = set_combine(sets.midcast.DivineMagic,{ammo="Paeapua",
 				head="Cizin Helm", neck="Atzintli Necklace", lear="Trux Earring", rear="Pluto's Pearl",
 				body="Reverence Surcoat", hands="Cab. Gauntlets +1", lring="Supersheer Earring", rring="Apeile Ring +1",
 				back="Fravashi Mantle", waist="Goading Belt", legs="Cab. Breeches", feet="Cab. Leggings"})
 				
-sets.midcast.EnhancingMagic = set_combine(sets.midcast.Recast,{legs="Rev. Breeches +1"})
+sets.midcast.EnhancingMagic = set_combine(sets.midcast.Recast,{
+				neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
+				body="Shabti Cuirass",
+				back="Merciful Cape", waist="Bishop Sash", legs="Rev. Breeches +1"})
 
-sets.midcast.EnhancingMagic.Phalanx = set_combine(sets.midcast.Recast,{legs="Rev. Breeches +1"})
+sets.midcast.EnhancingMagic.Phalanx = set_combine(sets.midcast.EnhancingMagic,{})
 
 -- JA
 sets.precast.JA["Invincible"] = set_combine(sets.Enmity,{legs="Cab. Breeches"})

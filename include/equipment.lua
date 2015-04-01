@@ -25,6 +25,65 @@
 	Aug.DemonRing1 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	Aug.DemonRing2 = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	
+	-- Skirmish
+	Aug.Skirmish = {}
+	
+	-- Yorcia 
+	-- Hagondes 
+	Aug.Skirmish.Hagondes = {}
+	Aug.Skirmish.Hagondes.Head = {}
+	Aug.Skirmish.Hagondes.Body = {}
+	Aug.Skirmish.Hagondes.Hands = {}
+	Aug.Skirmish.Hagondes.Legs = {}
+	Aug.Skirmish.Hagondes.Feet = {}
+	
+	-- Alluvion Skirmish
+	-- Acro 
+	Aug.Skirmish.Acro = {}
+	Aug.Skirmish.Acro.Head = {}
+	Aug.Skirmish.Acro.Body = {}
+	Aug.Skirmish.Acro.Hands = {}
+	Aug.Skirmish.Acro.Legs = {}
+	Aug.Skirmish.Acro.Feet = {}
+	
+	-- Yorium
+	Aug.Skirmish.Yorium = {}
+	Aug.Skirmish.Yorium.Head = {}
+	Aug.Skirmish.Yorium.Body = {}
+	Aug.Skirmish.Yorium.Hands = {}
+	Aug.Skirmish.Yorium.Legs = {}
+	Aug.Skirmish.Yorium.Feet = {}
+	
+	-- Taeon
+	Aug.Skirmish.Taeon = {}
+	Aug.Skirmish.Taeon.Head = {}
+	Aug.Skirmish.Taeon.Body = {}
+	Aug.Skirmish.Taeon.Hands = {}
+	Aug.Skirmish.Taeon.Legs = {}
+	Aug.Skirmish.Taeon.Feet = {}
+	
+	-- Helios - WHM BLM RDM SMN BLU SCH GEO
+	Aug.Skirmish.Helios = {}
+	Aug.Skirmish.Helios.Head = {}
+	Aug.Skirmish.Helios.Body = {}
+	Aug.Skirmish.Helios.Hands = {}
+	Aug.Skirmish.Helios.Legs = {}
+	Aug.Skirmish.Helios.Feet = {}
+	
+	Aug.Skirmish.Helios.Head.MAB = {name="Helios Band",augments={"", ""}}
+	Aug.Skirmish.Helios.Hands.MAB = {name="Helios Gloves",augments={"", ""}}
+	Aug.Skirmish.Helios.Feet.MAB = {name="Helios Boots",augments={"", ""}}
+	
+	-- Telchine - WHM BLM RDM BRD SMN BLU SCH GEO
+	Aug.Skirmish.Telchine = {}
+	Aug.Skirmish.Telchine.Head = {}
+	Aug.Skirmish.Telchine.Body = {}
+	Aug.Skirmish.Telchine.Hands = {}
+	Aug.Skirmish.Telchine.Legs = {}
+	Aug.Skirmish.Telchine.Feet = {}
+	
+	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Pigaches",augments={"", ""}}
+	
 -- Magian Staves
 	-- Elemental Precast
 		Fastcast = {}
