@@ -136,7 +136,7 @@ function status_change(new,old)
 				windower.add_to_chat(121,'Evasion Set')
 				equip(sets.idle.Standard,sets.idle.Evasion)
 			else
-				if new = "Resting" then		
+				if new == "Resting" then		
 					equip(sets.Resting)
 				else
 					windower.add_to_chat(121,'Idle/Resting Set')

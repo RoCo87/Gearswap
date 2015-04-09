@@ -93,7 +93,7 @@ sets.precast.JA["Chakra"] = set_combine(sets.idle.PDT, { ammo="Tantra Tahtlum",
 				legs="Nahtirah Trousers"})
 sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="", waist="", legs="Nahtirah Trousers"})
 sets.precast.JA["Impetus"] = {body="Tantra Cyclas +2"}
 sets.precast.JA["Hundred Fists"] = {legs="Hes. Hose"}
@@ -106,32 +106,32 @@ sets.precast.JA["Mantra"] = {feet="Hes. Gaiters"}
 -- Weaponskills
 sets.precast.WS = {ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS.Impetus = {}
 sets.precast.WS.Impetus['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Tantra Cyclas +2", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Tantra Cyclas +2", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS['Final Heaven'] = set_combine(sets.precast.WS)
 
 sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {ammo="Potestas Bomblet",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Thundersoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 
 sets.precast.WS.MidAcc = {}
 sets.precast.WS.HighAcc = {}
 sets.precast.WS.MidAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Thundersoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Anguinus Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {ammo="Potestas Bomblet",
 				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -140,7 +140,7 @@ sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin S
 
 sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fortia Gorget", waist="Anguinus Belt"})
 

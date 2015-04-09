@@ -102,50 +102,50 @@ sets.precast.JA["Warding Circle"] = {head="Wakido Kabuto"}
 -- Weaponskills
 sets.precast.WS = {
 				head="Otomi Helm", neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Fudo'] = {
 				head="Otomi Helm", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Wakido Haidate", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Shoha'] = {
 				head="Otomi Helm", neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Wakido Haidate", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Gekko'] = {
 				head="Otomi Helm", neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Rana'] = {
 				head="Otomi Helm", neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Windbuffet Belt", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Kaiten'] = {
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Phorcys Korazin", hands="Boor Bracelets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Boor Bracelets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 -- Sword 
 sets.precast.WS['Requiescat'] = {
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Mikinaak Cuisses", feet="Sakonji Sune-Ate"}
 -- Ranged Weaponskill
 sets.precast.RAWS = {
 				head="Sakonji Kabuto", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Wanion Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 sets.precast.RAWS['Apex Arrow'] = {
 				head="Sakonji Kabuto", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 sets.precast.RAWS['Namas Arrow'] = {
 				head="Sakonji Kabuto", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Unkai Kote +2", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 sets.precast.RAWS.Acc = {}
 sets.precast.RAWS.Acc['Namas Arrow'] = {
 				head="Sukeroku Hachi.", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Kyujutsugi", hands="Buremte Gloves", lring="Hajduk Ring", rring="Hajduk Ring",
+                body="Kyujutsugi", hands="Buremte Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Wakido Haidate", feet="Sakonji Sune-Ate"}
 
 -- Misc Sets

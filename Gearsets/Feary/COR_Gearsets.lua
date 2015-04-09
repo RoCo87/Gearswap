@@ -71,23 +71,23 @@ sets.precast.Snapshot = {ammo="TPBullet",
 -- Eminent Gun
 sets.RA = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+            body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 				
 sets.RA.Acc = { ammo="TPBullet",
 			head="Nvrch. Tricorne +2", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+            body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Thur. tights +1", feet="Iuitl Gaiters"}
 
 -- Armageddon 
 sets.RA.Armageddon = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+            body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.RA.Armageddon.Acc = { ammo="TPBullet",
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lanun Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+            body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 
@@ -103,7 +103,7 @@ sets.precast.JA["Triple Shot"] = {body="Nvrch. Frac +2"}
 sets.precast.JA["Double-Up"] = set_combine(sets.precast.JA["Phantom Roll"])
 
 -- Corsair Rolls
-sets.precast.JA["Phantom Roll"] = {head="Lanun Tricorne", hands="Nvrch. Gants +2", rring="Luzaf's Ring"}
+sets.precast.JA["Phantom Roll"] = {head="Lanun Tricorne", hands="Nvrch. Gants +2", legs="Desultor Tassets", rring="Luzaf's Ring"}
 sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {legs="Nvrch. Culottes +2"})
 sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {feet="Navarch's Bottes +2"})
 sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {head="Navarch's Tricorne +2"})
@@ -115,7 +115,7 @@ sets.precast.QD = {}
 --Light/Dark Shot
 sets.precast.QD.ACC = {
 				head="Whirlpool Mask", neck="Stoicheion Medal", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Lanun Frac", hands="Schutzen Mittens", lring="Stormsoul Ring", rring="Sangoma Ring",
+                body="Lanun Frac", hands="Schutzen Mittens", lring="Garuda Ring +1", rring="Sangoma Ring",
                 back="Navarch's Mantle", waist="Aquiline Belt", legs="Thur. Tights +1", feet="Lanun Boots"}
 -- Elemental Shots
 sets.precast.QD.MAB = {
@@ -134,7 +134,7 @@ sets.precast.WS = {
 
 sets.precast.WS["Requiescat"] = {
 				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Manibozho Jerkin", hands="Buremte Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Atheling Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.WS["Exenterator"] = {
 				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -144,16 +144,16 @@ sets.precast.WS["Exenterator"] = {
 -- RA WS
 sets.precast.RAWS = {
 				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 sets.precast.RAWS['Wildfire'] = {
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
-                body="Lanun Frac", hands="Thur. Gloves +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Lanun Frac", hands="Thur. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Toro Cape", waist="Aquiline Belt", legs="Nahtirah Trousers", feet="Lanun Boots"}
 
 sets.precast.RAWS['Last Stand'] = {
 				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 					
 -- Midcast Sets

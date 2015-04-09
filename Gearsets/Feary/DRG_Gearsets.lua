@@ -142,40 +142,40 @@ sets.precast.JA["Soul Jump"] = {ammo="Ginsen",
 -- Weaponskills
 sets.precast.WS = {ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
 sets.precast.WS.Acc = {}
 
 sets.precast.WS["Stardiver"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Mantle", waist="Fortia Belt", legs="Ptero. Brais", feet="Ptero. Greaves"}
 
 sets.precast.WS.Acc["Stardiver"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Cizin Breeches +1", feet="Ptero. Greaves"}
 
 sets.precast.WS["Drakesbane"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Ptero. Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Ptero. Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Lncr. Cuissots +2", feet="Vishap Greaves"}
 
 sets.precast.WS.Acc["Drakesbane"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
 
 sets.precast.WS["Camlann's Torment"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Fortia Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"}
 
 sets.precast.WS.Acc["Camlann's Torment"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Vishap Mail +1", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Updraft Mantle", waist="Fortia Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 
 -- Misc Sets
