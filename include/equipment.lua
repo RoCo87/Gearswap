@@ -38,11 +38,14 @@
 	Aug.Skirmish.Hagondes.Feet = {}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Aug.Skirmish.Hagondes.Legs.MAB = {}
 =======
 	Aug.Skirmish.Hagondes.Legs.MAB = {name="Hagondes Pants +1",augments={"", ""}}
 	
 >>>>>>> origin/master
+=======
+>>>>>>> parent of bb98b6b... Gear Update
 	-- Alluvion Skirmish
 	-- Acro - WAR PLD DRK SAM DRG
 	Aug.Skirmish.Acro = {}
