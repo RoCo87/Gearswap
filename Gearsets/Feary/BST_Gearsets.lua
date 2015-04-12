@@ -128,11 +128,11 @@ sets.midcast.Pet.WS = {
 -- Weaponskills
 sets.precast.WS = {ammo="Vanir battery",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
-			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
 			back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
 			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
-			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
 			back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 
 -- Ruinator

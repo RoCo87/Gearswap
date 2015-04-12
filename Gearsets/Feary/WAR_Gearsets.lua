@@ -106,41 +106,41 @@ sets.precast.JA["Aggressive Aim"] = {body="Warrior's Lorica +2"}
 -- Weaponskills
 sets.precast.WS = {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
 sets.precast.WS.MS = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 -- Great Axe
 sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 				
 sets.precast.WS["Upheaval"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 				
 sets.precast.WS.MS["Upheaval"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 				
 sets.precast.WS["Fell Cleave"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 sets.precast.WS.MS["Fell Cleave"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 
 -- GreatSword
 sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {ammo="Ravager's Orb",
 				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
 				
 -- Misc Sets

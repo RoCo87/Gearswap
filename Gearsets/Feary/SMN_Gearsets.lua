@@ -108,7 +108,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = { ammo="Impatiens",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
 				body="Anhur Robe", hands="", lring="Prolix Ring", rring="",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",
@@ -129,13 +129,13 @@ if player.name == 'Feary' then
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="", rear="",
-                body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {})
 		
 		sets.midcast.Curaga = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="", rear="",
-                body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
@@ -168,12 +168,12 @@ if player.name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Aquasoul ring", rring="Aquasoul ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma Ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 

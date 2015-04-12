@@ -56,7 +56,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalairis",
                 back="Pahtli Cape", legs="Orsn. Pantaln. +2", feet="Cure Clogs"})
@@ -82,16 +82,16 @@ if player.name == 'Feary' then
 		-- Cures
 		sets.midcast.Cure = {main="Tamaxchi", 
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Orison Bliaud +2", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", sub="Pax Grip",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Orison Bliaud +2", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"})
 
 		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
 				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Gende. Bilaut +1", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Refraction Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
@@ -138,7 +138,7 @@ if player.name == 'Feary' then
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Soothsayer Staff",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Novio Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Gende. Spats +1", feet="Gendewitha Galoshes"}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
@@ -146,12 +146,12 @@ if player.name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Gende. Gages +1", lring="Aquasoul ring", rring="Aquasoul ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                body="Bokwus Robe", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Bokwus Robe", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 

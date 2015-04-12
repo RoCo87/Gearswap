@@ -128,12 +128,12 @@ sets.precast.WS.Acc["Rudra's Storm"] = {
 -- Exenterator
 sets.precast.WS["Exenterator"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Stormsoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS.Acc["Exenterator"] = {
 				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Stormsoul Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 -- Evisceration
 sets.precast.WS["Evisceration"] = {

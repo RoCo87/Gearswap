@@ -67,16 +67,16 @@ sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads
 
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Haruspex Hat +1", rear="Loquac. Earring",
-			rring="Prolix Ring",
+			hands="Thaumas Gloves", rring="Prolix Ring",
 			})
 -- Midcast
 sets.midcast.Wheel = {
-			head="Koga Hatsuburi", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
-			body="Ninja Chainmail", hands="Ninja Tekko", lring="Icesoul Ring", rring="Icesoul Ring",
-			back="Toro Cape", waist="Wanion Belt", legs="Ninja Hakama", feet="Ninja Kyahan"}
+			head="Mochi. Hatsuburi", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
+			body="Ninja Chainmail", hands="Hachiya Tekko", lring="Icesoul Ring", rring="Icesoul Ring",
+			back="Toro Cape", waist="Wanion Belt", legs="Hachiya Hakama", feet="Hachiya Kyahan"}
 sets.midcast.Skill = {
-			head="Ninja Hatsuburi", 
-			feet="Koga Kyahan"}
+			head="Hachiya Hatsuburi", 
+			feet="Mochizuki Kyahan"}
 sets.midcast.Enfeeb = set_combine(sets.midcast.Skill,{
 			lear="Lifestorm Earring", rear="Psystorm Earring",
 			lring="Sangoma Ring", rring="Perception Ring"})
@@ -86,8 +86,8 @@ sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi,{
 -- TP Sets 
 sets.TP = { ammo="Ginsen",
 			head="Iga Zukin +2", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            body="Mochi. Chainmail", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Patentia Sash", legs="Mochizuki Hakama", feet="Manibozho Boots"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {ammo="Ginsen",
@@ -113,10 +113,10 @@ sets.precast.Snapshot = {legs="Nahtirah Trousers"}
 sets.RA = {}
 				
 -- JA
-sets.precast.JA["Mijin Gakure"] = {legs="Koga Hakama +2"}
+sets.precast.JA["Mijin Gakure"] = {legs="Mochizuki Hakama"}
 sets.precast.JA["Mikage"] = {}
 
-sets.precast.JA["Sange"] = {body="Koga Chainmail +2"}
+sets.precast.JA["Sange"] = {body="Mochi. Chainmail"}
 sets.precast.JA["Yonin"] = {legs="Iga Hakama +2"}
 sets.precast.JA["Innin"] = {head="Iga Zukin +2"}
 sets.precast.JA["Futae"] = {hands="Iga Tekko +2"}

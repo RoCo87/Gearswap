@@ -83,7 +83,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Haruspex Hat", neck="Orunmila's Torque", lear="Loquac. Earring",
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
 		
@@ -104,27 +104,27 @@ if player.name == 'Feary' then
 		-- STR
 		sets.midcast.BlueMagic.STR = set_combine(sets.midcast.BlueMagic, {
                 head="Uk'uxkaj Cap", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
-                body="Assimilator's Jubbah", hands="Luhlaza Bazubands", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Assimilator's Jubbah", hands="Luhlaza Bazubands", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Cornflower Cape", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		-- Accuracy - I.E Heavy Strike
 		sets.midcast.BlueMagic.STRAcc = set_combine(sets.midcast.BlueMagic, {ammo="Honed Tathlum",
                 head="Whirlpool Mask", neck="Eddy Necklace", lear="Flame Pearl", rear="Steelflash Earring",
-                Body="Assimilator's Jubbah", hands="Buremte Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                Body="Assimilator's Jubbah", hands="Buremte Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 Back="Cornflower Cape", waist="Wanion Belt", legs="Manibozho Brais",feet="Assim. Charuqs"})
 		-- VIT
 		sets.midcast.BlueMagic.VIT = set_combine(sets.midcast.BlueMagic, {
                 head="Whirlpool Mask", neck="Tjukurrpa Medal", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Luhlaza Jubbah", hands="Luhlaza Bazubands", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Luhlaza Jubbah", hands="Luhlaza Bazubands", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Cornflower Cape", waist="Chuq'aba Belt", legs="Nahtirah Trousers", feet="Assim. Charuqs"})
 		-- AGI
 		sets.midcast.BlueMagic.AGI = set_combine(sets.midcast.BlueMagic, {
                 head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Flame Pearl", rear="Flame Pearl",
-				body="Assimilator's Jubbah", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+				body="Assimilator's Jubbah", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
 				back="Cornflower Cape", legs="Nahtirah Trousers", feet="Assim. Charuqs"})
 		-- MND
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",
                 head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Psystorm Earring", rear="Lifestorm Earring",
-				body="Hagondes Coat", hands="Hagondes Cuffs", lring="Aquasoul ring", rring="Aquasoul Ring",
+				body="Hagondes Coat", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Swith Cape", waist="Cascade Belt", legs="Hagondes Pants", feet="Hagondes Pants"})
 		-- Cure Pot
 		sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
@@ -144,11 +144,11 @@ if player.name == 'Feary' then
 		-- Weaponskill
 		sets.precast.WS = set_combine(sets.TP, {ammo="Honed Tahtlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Assim. Jubbah", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Assim. Jubbah", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		sets.precast.WS.Acc = set_combine(sets.TP, {ammo="Honed Tathlum",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Assim. Jubbah", hands="Manibozho Gloves", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Assim. Jubbah", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		sets.precast.WS['Chant du Cygne'] = {ammo="Jukukik Feather",
                 head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -160,11 +160,11 @@ if player.name == 'Feary' then
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 		sets.precast.WS['Requiescat'] = {ammo="Aqua Sachet",
                 head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Assim. Jubbah", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Epona's Ring",
+                body="Assim. Jubbah", hands="Buremte Gloves", lring="Levia. Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}
 		sets.precast.WS.Acc['Requiescat'] = {ammo="Aqua Sachet",
                 head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Assim. Jubbah", hands="Buremte Gloves", lring="Aquasoul Ring", rring="Epona's Ring",
+                body="Assim. Jubbah", hands="Buremte Gloves", lring="Levia. Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}	
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",

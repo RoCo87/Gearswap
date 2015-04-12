@@ -83,14 +83,14 @@ if player.name == 'Feary' then
 		-- JA
 		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
 		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
-		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions"}
+		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions +1"}
 		
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = { 
-				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
@@ -112,33 +112,33 @@ if player.name == 'Feary' then
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee",
-                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
                 back="Harmony Cape", waist="Corvax Sash", legs="Mdk. Shalwar +1", feet="Brioso Slippers +1"}
-		-- Enhancing Buff - Buff Set
-		sets.midcast.Buffsong = {main="Legato Dagger",
+		-- Enhancing Buff - Buff Set (set Bonus)
+		sets.midcast.EnhanceSong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee",
-                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
                 back="Harmony Cape", waist="Corvax Sash", legs="Aoidos' Rhing. +2", feet="Aoidos' Cothrn. +2"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring",
-                body="Aoidos' hngrln. +2", hands="Ad. Mnchtte. +2",
+                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
                 back="Rhapsode's Cape", waist="Corvax Belt", legs="Aoidos' Rhing. +2", feet="Brioso Slippers +1"}
 		-- Debuffs
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Musical Earring", rear="Gwati Earring",
-                body="Brioso Just. +1", hands="Bihu Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
+                body="Brioso Just. +1", hands="Fili Manchettes", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Ovate Rope", legs="Bihu Cannions +1", feet="Bokwus Boots"}
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
-                body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Orison Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Orison Cape", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Arka IV",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
-                body="Gende. Bilaut +1", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Pahtli Cape", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
 	
 		-- Enhancing
@@ -155,38 +155,38 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Ovate Rope", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
 				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Ovate Rope", legs="Bokwus Slops", feet="Bokwus Boots"}
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.TP.Acc = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gende. Spats +1", feet="Bihu Slippers"})	
 		sets.precast.WS = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Vespid Mantle", waist="Witful Belt", legs="Gende. Spats +1", feet="Bihu Slippers"})
 		
 		sets.misc.Waltz = {}

@@ -68,53 +68,54 @@ sets.TP = {
 -- Melee Accuracy TP
 sets.TP.Acc = {
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
                 back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- RA Sets
+-- Snapshot - Caps at 70 from any source
 sets.precast.Snapshot = {
 				head="Arcadian Beret +1",
                 body="Arc. Jerkin +1", hands="Iuitl Wristbands +1",
-                waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks"}
+                waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
 sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion Beret +1",
                 body="Sylvan Caban +2", hands="Arc. Bracers +1",
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
 
 -- Bow
 sets.RA = { 
-			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Hajduk Ring",
-            back="Lutian Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+            body="Kyujutsugi", hands="Syl. Glvltte +2", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
 				
 sets.RA.Acc = {
-			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
-			back="Lutian Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+            body="Kyujutsugi", hands="Syl. Glvltte +2", lring="Garuda Ring +1", rring="Garuda Ring +1",
+			back="Lutian Cape", waist="Patentia Sash", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
 				
 -- Gun
 sets.RA.Gun = { 
-			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Hajduk Ring",
-            back="Lutian Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Garuda Ring +1",
+            back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.RA.Acc.Gun = { 
-			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
-            back="Lutian Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+            body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
+            back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 -- JA
 sets.precast.JA.Acc = {}
 
 -- Barrage 
 sets.precast.JA["Barrage"] =  {
-				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Hajduk Ring",
-                back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+                body="Kyujutsugi", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
+                back="Lutian Cape", waist="Scout's Belt", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
 
 sets.precast.JA.Acc["Barrage"] =  {
-				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
-                back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+                body="Kyujutsugi", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
+                back="Lutian Cape", waist="Scout's Belt", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
 -- Eagle Eye Shot
 sets.precast.JA["Eagle Eye Shot"] = set_combine(sets.RA, {legs="Arcadian Braccae +1"})
 
@@ -122,13 +123,13 @@ sets.precast.JA.Acc["Eagle Eye Shot"] = set_combine(sets.RA.Acc, {legs="Arcadian
 
 -- Overkill
 sets.precast.JA["Overkill"] = {
-				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Hajduk Ring",
+				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Garuda Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
-				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring ", rring="Hajduk Ring",
+				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1 ", rring="Garuda Ring +1",
                 back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
 
 sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
@@ -139,7 +140,7 @@ sets.precast.JA["Camouflage"] = {head="Orion Jerkin +1"}
 sets.precast.JA["Scavenge"] = {feet="Orion Socks +1"}
 sets.precast.JA["Bounty Shot"] = {hands="Syl. Glvltte. +2"}
 sets.precast.JA["Unlimited Shot"] = {feet="Sylvan Bottln. +2"}
-sets.precast.JA["Flashy Shot"] = {hands="Arcadian Bracers"}
+sets.precast.JA["Flashy Shot"] = {hands="Arc. Bracers +1"}
 sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks +1"}
 
 -- Weaponskills
@@ -148,39 +149,39 @@ sets.precast.WS = {}
 
 -- Range
 sets.precast.RAWS = {
-				head="Umbani Cap", neck="Ocachi Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+				head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 -- Bow WS
 sets.precast.RAWS['Jishnu\'s Radiance'] = {
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.precast.RAWS['Namas Arrow'] = {
 				head="Arcadian Beret +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
 				back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
 
 -- Gun/Crossbow WS
 sets.precast.RAWS['Last Stand'] = {
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Coronach'] = {
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Pyrosoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Wildfire'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 
 sets.precast.RAWS['Trueflight'] = {
 				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
-                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 					
 -- Midcast Sets
