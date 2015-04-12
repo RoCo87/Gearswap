@@ -37,6 +37,7 @@
 	Aug.Skirmish.Hagondes.Legs = {}
 	Aug.Skirmish.Hagondes.Feet = {}
 	
+	Aug.Skirmish.Hagondes.Legs.MAB = {}
 	-- Alluvion Skirmish
 	-- Acro 
 	Aug.Skirmish.Acro = {}
