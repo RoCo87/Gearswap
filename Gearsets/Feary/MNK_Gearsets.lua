@@ -15,7 +15,7 @@ if player.name == 'Feary' then
 	-- include('../include/autoexec.lua')
 	
 -- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'war' then
 				set_macro_page(6,1)

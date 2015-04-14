@@ -84,8 +84,8 @@ sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion 
 -- Bow
 sets.RA = { 
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
-            body="Kyujutsugi", hands="Syl. Glvltte +2", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
+            body="Kyujutsugi", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
+            back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
 				
 sets.RA.Acc = {
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",

@@ -15,7 +15,7 @@ if player.name == 'Feary' then
 	-- include('../include/autoexec.lua')
 
 	-- sets Macros: 0ff = 0  On = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'NIN' then
 				set_macro_page(16,1)
@@ -48,12 +48,12 @@ sets.idle.PDT = { ammo="Angha Gem",
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Creed Baudrier", legs="Cizin Breeches", feet="Cab. Leggings"}
+                back="Engulfer Cape", waist="Creed Baudrier", legs="Cizin Breeches +1", feet="Cab. Leggings"}
 
 sets.idle.MDT.Shell = { ammo="Vanir Battery",
 				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Creed Baudrier", legs="Cizin Breeches", feet="Cab. Leggings"}
+                back="Engulfer Cape", waist="Creed Baudrier", legs="Cizin Breeches +1", feet="Cab. Leggings"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
 				legs="Blood Cuisses"})

@@ -14,7 +14,7 @@ if player.Name == 'Feary' then
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'RDM' then
 				set_macro_page(2,6)
@@ -94,13 +94,13 @@ if player.Name == 'Feary' then
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
+                body="Bokwus Robe", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Helios Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}		
+                body="Bokwus Robe", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Helios Boots"}		
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 

@@ -210,7 +210,20 @@ function precast(spell,arg)
 				equip(sets.precast.Fastcast)
 			end
 		elseif spell.skill:startswith("Enhancing") then
-			equip(sets.precast.Fastcast)
+			if spell.english.wcmatch('Stoneskin') then
+				-- Magian Staff
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Stoneskin, {main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Stoneskin)
+				end
+			else
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Enhancing)
+				end
+			end
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 				windower.ffxi.cancel_buff(71)
@@ -227,13 +240,23 @@ function precast(spell,arg)
 					equip(sets.precast.Elemental)
 				end
 			end
-		else
-			-- Magian Staff
+		elseif spell.skill:startswith('Dark') then
+			if spell.english.wcmatch('Stun') then
+				equip(sets.midcast.Stun)
+			else
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
-				end	
+				end
+			end		
+		else
+			-- Magian Staff
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+			else
+				equip(sets.precast.Fastcast)
+			end	
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
