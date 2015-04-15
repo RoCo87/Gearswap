@@ -16,7 +16,7 @@ if player.name == 'Feary' then
 -- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'war' then
+			if player.sub_job == 'WAR' then
 				set_macro_page(19,1)
 			elseif player.sub_job == 'nin' then
 				set_macro_page(19,2)
@@ -24,7 +24,7 @@ if player.name == 'Feary' then
 				set_macro_page(19,3)
 			elseif player.sub_job == 'sch' then 
 				set_macro_page(19,4)
-			elseif player.sub_job == 'whm' then 
+			elseif player.sub_job == 'WHM' then 
 				set_macro_page(19,5)
 			end
 		else

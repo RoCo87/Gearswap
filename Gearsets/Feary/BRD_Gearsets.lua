@@ -18,7 +18,7 @@ if player.name == 'Feary' then
 				set_macro_page(4,1)
 			elseif player.sub_job =='whm' then
 				set_macro_page(4,2)
-			elseif player.sub_job == 'rdm' then
+			elseif player.sub_job == 'RDM' then
 				set_macro_page(4,3)
 			elseif player.sub_job =='sch' then 
 				set_macro_page(4,4)

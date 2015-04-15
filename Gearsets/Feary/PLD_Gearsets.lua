@@ -25,9 +25,9 @@ if player.name == 'Feary' then
 				set_macro_page(16,3)
 			elseif player.sub_job == 'BLU' then 
 				set_macro_page(16,4)
-			elseif player.sub_job == 'whm' then 
+			elseif player.sub_job == 'RDM' then 
 				set_macro_page(16,5)
-			elseif player.sub_job == 'run' then 
+			elseif player.sub_job == 'RUN' then 
 				set_macro_page(16,6)
 			end
 		elseif automacroset == 2 then
