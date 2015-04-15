@@ -17,13 +17,13 @@ if player.name == 'Feary' then
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'rdm' then
+			if player.sub_job == 'RDM' then
 				set_macro_page(1,1)
-			elseif player.sub_job =='sch' then
+			elseif player.sub_job == 'SCH' then
 				set_macro_page(1,2)
-			elseif player.sub_job == 'smn' then
+			elseif player.sub_job == 'SMN' then
 				set_macro_page(1,3)
-			elseif player.sub_job =='blm' then 
+			elseif player.sub_job == 'BLM' then 
 				set_macro_page(1,4)
 			end
 		else
@@ -32,7 +32,7 @@ if player.name == 'Feary' then
 		
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Bolelabunga",sub="Genbu's Shield", 
+		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gendewitha Galoshes"}
@@ -53,14 +53,16 @@ if player.name == 'Feary' then
 				feet="Herald's Gaiters"})
 		-- Precast
 		-- Magic
-		sets.precast.Fastcast = {ammo="Impatiens",
-				head="Nahtirah Hat", neck="Orison Locket", lear="Loquac. Earring",
+		sets.precast.Fastcast = {ammo="Incantor Stone",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{
-				waist="Seigal Sash"})
+				waist="Siegel Sash"})
+		-- Caps - 80%
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-                body="Heka's Kalairis",
+				head="Piety Cap",
+                body="Heka's Kalasiris",
                 back="Pahtli Cape", legs="Ebers Pantaloons", feet="Cure Clogs"})
 		-- JA
 		sets.precast.JA['Benediction'] = {body="Piety Briault"}
@@ -72,9 +74,7 @@ if player.name == 'Feary' then
 		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {
-				head="Nahtirah Hat",
-                body="Hedera Cotehardie",
-                waist="Witful Belt",feet="Umbani Boots"})
+				})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
 				lear="Magnetic Earring", rear="Gifted Earring",
                 body="Hedera Cotehardie", hands="Serpentes Cuffs",
@@ -83,26 +83,30 @@ if player.name == 'Feary' then
 		--Healing Magic
 		-- Cures
 		sets.midcast.Cure = {main="Tamaxchi",
-				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Orison Bliaud +2", hands="Theophany	 Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
-                back="Orison Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", sub="Pax Grip",
-				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
+                body="Orison Bliaud +2", hands="Theophany Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"}
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Tamaxchi",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
                 body="Orison Bliaud +2", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
-                back="Orison Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"})
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
-		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
+		sets.midcast.Curaga = {main="Tamaxchi",
+				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
                 body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Refraction Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}
-		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Piety Duckbills"}
+		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {main="Tamaxchi",
+				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
+                body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Cura = {}
 
 		-- Status Ailments
-		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {})
+		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {
+				legs="Ebers Pantaloons"})
 		
-		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
+		sets.midcast.Erase = set_combine(sets.midcast.NaSpells, {})
 
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				neck="Debilis Medallion",
@@ -121,15 +125,16 @@ if player.name == 'Feary' then
                 body="Orison Bliaut +2", hands="Orison Mitts +2", lring="", rring="",
                 back="Merciful Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
-				head="", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
+				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
                 body="Anhur Robe", hands="Ayao's Gages", lring="", rring="",
                 back="Merciful Cape", waist="Cascade Belt", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.Boost = {main="Beneficus",
-				head="", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
+				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
                 body="Anhur Robe", hands="Ayao's Gages", lring="", rring="",
                 back="Merciful Cape", waist="Cascade Belt", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Boost)
-		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
+		sets.midcast.Hastespell = set_combine(sets.precast.Fastcast,{ammo="Impatiens", 
+				back="Ogapepo Cape", waist="Witful Belt"})
 		sets.midcast.Stoneskin = {waist="Siegal Sash"}
 		sets.midcast.Aquaveil = {waist="Empahatikos Rope", legs="Shedir Seraweels"}
 		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
@@ -149,11 +154,11 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Bokwus Robe", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
+                back="Refraction Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Soothsayer Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Bokwus Robe", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
+                back="Refraction Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 

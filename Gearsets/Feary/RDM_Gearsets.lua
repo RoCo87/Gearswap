@@ -14,15 +14,15 @@ if player.Name == 'Feary' then
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 0
+		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'WHM' then
+			if player.sub_job =='WHM' then
 				set_macro_page(3,1)
 			elseif player.sub_job =='BLM' then
 				set_macro_page(3,2)
-			elseif player.sub_job == 'NIN' then
+			elseif player.sub_job =='NIN' then
 				set_macro_page(3,3)
-			elseif player.sub_job == 'DNC' then
+			elseif player.sub_job =='DNC' then
 				set_macro_page(3,4)
 			elseif player.sub_job =='SCH' then 
 				set_macro_page(3,5)
@@ -35,15 +35,15 @@ if player.Name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
+                body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants", feet="Gendewitha Galoshes"}			
+                body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Hagondes Coat", hands="Serpentes Cuffs",
+                body="Hagondes Coat +1", hands="Serpentes Cuffs",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring"})
@@ -107,11 +107,11 @@ if player.Name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Kalboron Stone",
 				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Estq. Sayon +2", hands="Estq. Ganthrt. +2", lring="Perception ring", rring="Sangoma ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Vitivation Boots"}
+                back="Refraction Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Kalboron Stone",
 				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Estq. Sayon +2", hands="Estq. Ganthrt. +2", lring="Perception ring", rring="Sangoma ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Vitivation Boots"}
+                back="Refraction Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{head="Vitivation Chapeau"})
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc, {feet="Vitivation Boots"})
 		sets.midcast.Blind = set_combine(sets.midcast.Macc, {legs="Vitivation Tights"})
@@ -123,12 +123,12 @@ if player.Name == 'Feary' then
 		sets.midcast.Elemental = {main="Mandau", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Vitivation Boots"}
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Vitivation Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Mandau", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Umbani Boots"}
 		
 		-- Dark Magic
 		sets.midcast.Dark = set_combine(sets.midcast.Macc, {neck="Aesir Torque"})
