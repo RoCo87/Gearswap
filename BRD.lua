@@ -438,7 +438,11 @@ function midcast(spell,arg)
 					end
 				else
 				-- Debuff
-					equip(sets.midcast.Debuff,{range="Gjallarhorn"})
+					if buffactive['Troubadour'] then
+						equip(sets.midcast.Buffsong)
+					else
+						equip(sets.midcast.Debuff,{range="Gjallarhorn"})
+					end
 				end
 			-- Not Ghorn
 			else
@@ -476,25 +480,47 @@ function midcast(spell,arg)
 					end
 			-- Debuff Songs
 				else
-					if string.find(spell.english,'Elegy') then
-						equip(sets.midcast.Debuff,elegy)
-					elseif string.find(spell.english,'Threnody') then
-						equip(sets.midcast.Debuff,threnody)
-					elseif string.find(spell.english,'Horde') then
-						equip(sets.midcast.Debuff,horde)
-					elseif string.find(spell.english,'Lullaby') then
-						equip(sets.midcast.Debuff,lullaby)
-					elseif string.find(spell.english,'Finale') then
-						equip(sets.midcast.Debuff,finale)
-					elseif string.find(spell.english,'Requiem') then
-						equip(sets.midcast.Debuff,requiem)
-					elseif string.find(spell.english,'Virelai') then
-						equip(sets.midcast.Debuff,virelai)
-					elseif string.find(spell.english,'Nocturne') then
-						equip(sets.midcast.Debuff,nocturne)
+					if buffactive['Troubadour'] then
+						if string.find(spell.english,'Elegy') then
+							equip(sets.midcast.Buffsong,elegy)
+						elseif string.find(spell.english,'Threnody') then
+							equip(sets.midcast.Buffsong,threnody)
+						elseif string.find(spell.english,'Horde') then
+							equip(sets.midcast.Buffsong,horde)
+						elseif string.find(spell.english,'Lullaby') then
+							equip(sets.midcast.Buffsong,lullaby)
+						elseif string.find(spell.english,'Finale') then
+							equip(sets.midcast.Buffsong,finale)
+						elseif string.find(spell.english,'Requiem') then
+							equip(sets.midcast.Buffsong,requiem)
+						elseif string.find(spell.english,'Virelai') then
+							equip(sets.midcast.Buffsong,virelai)
+						elseif string.find(spell.english,'Nocturne') then
+							equip(sets.midcast.Buffsong,nocturne)
+						else
+							equip(sets.midcast.Buffsong)
+						end
 					else
-						windower.add_to_chat(121,'Default DeBuff Instrument')
-						equip(sets.midcast.Debuff,default)
+						if string.find(spell.english,'Elegy') then
+							equip(sets.midcast.Debuff,elegy)
+						elseif string.find(spell.english,'Threnody') then
+							equip(sets.midcast.Debuff,threnody)
+						elseif string.find(spell.english,'Horde') then
+							equip(sets.midcast.Debuff,horde)
+						elseif string.find(spell.english,'Lullaby') then
+							equip(sets.midcast.Debuff,lullaby)
+						elseif string.find(spell.english,'Finale') then
+							equip(sets.midcast.Debuff,finale)
+						elseif string.find(spell.english,'Requiem') then
+							equip(sets.midcast.Debuff,requiem)
+						elseif string.find(spell.english,'Virelai') then
+							equip(sets.midcast.Debuff,virelai)
+						elseif string.find(spell.english,'Nocturne') then
+							equip(sets.midcast.Debuff,nocturne)
+						else
+							windower.add_to_chat(121,'Default DeBuff Instrument')
+							equip(sets.midcast.Debuff,default)
+						end
 					end
 				end
 			end
