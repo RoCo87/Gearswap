@@ -18,11 +18,11 @@ if player.name == 'Feary' then
 		if automacroset == 1 then
 			if player.sub_job == 'WAR' then
 				set_macro_page(19,1)
-			elseif player.sub_job == 'nin' then
+			elseif player.sub_job == 'NIN' then
 				set_macro_page(19,2)
-			elseif player.sub_job == 'dnc' then
+			elseif player.sub_job == 'DNC' then
 				set_macro_page(19,3)
-			elseif player.sub_job == 'sch' then 
+			elseif player.sub_job == 'SCH' then 
 				set_macro_page(19,4)
 			elseif player.sub_job == 'WHM' then 
 				set_macro_page(19,5)

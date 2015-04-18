@@ -34,11 +34,11 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {
 				head="Hagondes Hat", neck="Twilight Torque",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Helios Boots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs", lring="", rring="",
@@ -135,7 +135,7 @@ if player.name == 'Feary' then
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"})
+                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Macc 
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
                 head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
@@ -169,7 +169,7 @@ if player.name == 'Feary' then
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 
 		-- Misc
 		sets.misc.Waltz = {}

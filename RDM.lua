@@ -227,10 +227,13 @@ function precast(spell,arg)
 			elseif spell.skill:startswith("Enhancing") then
 				-- Magian Staff
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+					equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
 				else
-					equip(sets.precast.Fastcast)
+					equip(sets.precast.Enhancing)
 				end	
+				if spell.name == "Stoneskin" then
+					equip(sets.precast.Stoneskin)
+				end
 				-- Cancel Sneak
 				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
 					windower.ffxi.cancel_buff(71)
@@ -294,60 +297,97 @@ function midcast(spell,arg)
 			end
 	-- Enhancing Magic
 		elseif spell.skill == 'Enhancing Magic' then
-			if spell.name == 'Phalanx' then
-				equip(sets.midcast.Phalanx) 
-			elseif spell.name:wcmatch("Gain*") then
-				equip(sets.midcast.Enhancing)
-			elseif spell.name == "Temper" then
-				equip(sets.midcast.Enhancing)
-			elseif spell.english:contains("Spikes") then
-				equip(sets.midcast.INT, {legs="Vitivation Tights"})
-			elseif spell.english:contains("Refresh") then
-				equip(sets.midcast.ConserveMP,{legs="Estqr. Fuseau +2"})
-			elseif spell.name == 'Stoneskin' then
-				equip(sets.midcast.Stoneskin)
-				if buffactive.Stoneskin then
-					windower.ffxi.cancel_buff(36)
+			-- Composure
+			if buffactive['Composure'] and spell.target.type == "SELF" then
+				if spell.name == 'Phalanx' or spell.name == "Phalanx II" then
+					equip(sets.midcast.Enhancing.Self, sets.midcast.Phalanx)
+				elseif spell.english:contains("Refresh") then
+					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.SELF, {legs="Estqr. Fuseau +2"})
+				elseif spell.name:wcmatch("Haste*") then
+					equip(sets.midcast.Enhancing.SELf, sets.midcast.Hastespell)
+				elseif spell.english:wcmatch('Regen*') then
+					equip(sets.midcast.Enhancing.SELF, sets.midcast.Regen)	
+				elseif spell.name:wcmatch("Gain*") then
+					equip(sets.midcast.Enhancing)
+				elseif spell.name == "Temper" then
+					equip(sets.midcast.Enhancing)
+				elseif spell.english:contains("Spikes") then
+					equip(sets.midcast.INT, {legs="Vitivation Tights"})
+				elseif spell.name == 'Stoneskin' then
+					equip(sets.midcast.Stoneskin)
+					if buffactive.Stoneskin then
+						windower.ffxi.cancel_buff(36)
+					end
+				elseif spell.name == 'Blink' then
+					equip(sets.midcast.Blink)
+				elseif spell.name == 'Aquaveil' then
+					equip(sets.midcast.Aquaveil)
 				end
-			elseif spell.name == 'Blink' then
-				equip(sets.midcast.Blink)
-			elseif spell.name == 'Aquaveil' then
-				equip(sets.midcast.Aquaveil)
-			elseif spell.name == 'Haste' then
-				equip(sets.midcast.Hastespell)
-			elseif spell.english:wcmatch('Reraise*') then
-				equip(sets.midcast.ConserveMP)
 			else
-				equip(sets.midcast.ConserveMP)
-			end
+				if spell.name == 'Phalanx' or spell.name == "Phalanx II" then
+					equip(sets.midcast.Phalanx) 
+				elseif spell.english:contains("Refresh") then
+					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.Party, {legs="Estqr. Fuseau +2"})
+				elseif spell.name:wcmatch("Haste*") then
+					equip(sets.midcast.Enhancing.Party)
+				elseif spell.english:wcmatch('Regen*') then
+					equip(sets.midcast.Enhancing.Self, sets.midcast.Regen)
+				-- Everything Else Needs Skill
+				elseif spell.name:wcmatch("Gain*") then
+					equip(sets.midcast.Enhancing)
+				elseif spell.name == "Temper" then
+					equip(sets.midcast.Enhancing)
+				elseif spell.english:contains("Spikes") then
+					equip(sets.midcast.INT, {legs="Vitivation Tights"})
+				elseif spell.name == 'Stoneskin' then
+					equip(sets.midcast.Stoneskin)
+					if buffactive.Stoneskin then
+						windower.ffxi.cancel_buff(36)
+					end
+				elseif spell.name == 'Blink' then
+					equip(sets.midcast.Blink)
+				elseif spell.name == 'Aquaveil' then
+					equip(sets.midcast.Aquaveil)
+				end
+			end			
 	-- Enfeebling Magic
 		elseif spell.skill == 'Enfeebling Magic' then
 			-- Maybe account for saboteur
 			if spell.english:startswith('Dia') then
 				equip(sets.midcast.Dia)
-			elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
+			elseif spell.english:wcmatch('Paralyze*') then
 				equip(sets.midcast.enfeebling)
+			elseif spell.english:wcmatch('Slow*') then
+				equip(sets.midcast.Slow)
+			elseif spell.english:startswith('Addle') then
+				equip(sets.midcast.Addle)
+			elseif spell.english:wcmatch('Blind') then
+				equip(sets.midcast.Blind)
+			elseif spell.english:startswith('Bind') then
+				equip(sets.midcast.Bind)
 			else
 				equip(sets.midcast.Macc)
 			end
 	-- Divine Magic
 		elseif spell.skill == 'Divine Magic' then
 			if spell.english:startswith('Banish') then
-				equip(sets.midcast.Macc)
+				equip(sets.midcast.Nuke)
 			elseif spell.english:startswith('Holy') then
-				equip(sets.midcast.Macc)
+				equip(sets.midcast.Nuke)
 			elseif spell.name == 'Repose' then
 				equip(sets.midcast.Macc)
 			elseif spell.name == 'Flash' then
 				equip(sets.midcast.Macc)
 			end
-	elseif spell.skill == 'Dark Magic' then
+		elseif spell.skill == 'Dark Magic' then
 			if spell.name == "Drain" then
 				equip(sets.midcast.Aspir) 
-			elseif spell.name == "Aspir" then
+			elseif spell.english:startswith('Aspir') then
 				equip(sets.midcast.Aspir)
 			elseif spell.name == "Stun" then
-				equip(sets.midcast.Macc)
+				equip(sets.midcast.Stun)
+			elseif spell.english:wcmatch('Bio*') then
+				equip(sets.midcast.Bio)
 			else
 				equip(sets.midcast.Macc)
 			end
