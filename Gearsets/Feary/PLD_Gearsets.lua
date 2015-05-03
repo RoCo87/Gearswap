@@ -17,17 +17,17 @@ if player.name == 'Feary' then
 	-- sets Macros: 0ff = 0  On = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
+			if player.sub_job =='NIN' then
 				set_macro_page(16,1)
-			elseif player.sub_job == 'DNC' then
+			elseif player.sub_job =='DNC' then
 				set_macro_page(16,2)
-			elseif player.sub_job == 'WAR' then
+			elseif player.sub_job =='WAR' then
 				set_macro_page(16,3)
-			elseif player.sub_job == 'BLU' then 
+			elseif player.sub_job =='BLU' then 
 				set_macro_page(16,4)
-			elseif player.sub_job == 'RDM' then 
+			elseif player.sub_job =='RDM' then 
 				set_macro_page(16,5)
-			elseif player.sub_job == 'RUN' then 
+			elseif player.sub_job =='RUN' then 
 				set_macro_page(16,6)
 			end
 		elseif automacroset == 2 then
@@ -43,7 +43,7 @@ magicalshield = {sub="Aegis"}
 sets.idle.PDT = { ammo="Angha Gem",
 				head="Rev. Coronet +1", neck="Twilight Torque", lear="Ethereal Earring",
                 body="Cab. Surcoat +1", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Rev. Leggings +1"}
+                back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Yorium Sabatons"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
@@ -63,21 +63,19 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- TP 
 sets.TP = { 	ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Xaddi Mail", hands="Cizin Mufflers +1", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Cizin Breeches +1", feet="Ejekamal Boots"}
+                body="Acro Surcoat", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
 sets.TP.Acc = { ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Xaddi Mail", hands="Buremte Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.TP.Hybrid = { ammo="Angha Gem",
-				head="Yaoyotl Helm", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Cab. Surcoat +1", hands="Buremte Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Dynamic Belt +1", legs="Cizin Breeches +1", feet="Cizin Greaves"}			
-sets.Weakened = { ammo="Angha Gem",
-				head="Rev. Coronet +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Cab. Surcoat +1", hands="Cab. Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Cizin Breeches +1", feet="Cizin Greaves"}
-				
+                body="Acro Surcoat", hands="Arco Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Acro Breeches", feet="Acro Leggings"}
+-- DT/Acc Build
+sets.TP.Hybrid = { ammo="Hasty Pinion",
+				head="Yorium Barbuta", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Cab. Surcoat +1", hands="Yorium Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Repulse Mantle", waist="Nierenschutz", legs="Yorium Cuisses", feet="Yorium Sabatons"}			
+sets.Weakened = set_combine(sets.TP.Hybrid,{})
+
 -- Precast 
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {ammo="Incantor Stone",
 				head="Cizin Helm", neck="Voltsurge torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",

@@ -48,49 +48,43 @@
 	Aug.Skirmish.Acro.Legs = {}
 	Aug.Skirmish.Acro.Feet = {}
 	
-	-- STP
+	-- TP Snow: Att/Acc Dusk: Leaf:STP
 	Aug.Skirmish.Acro.Body.STP = {}
 	Aug.Skirmish.Acro.Hands.STP = {}
 	Aug.Skirmish.Acro.Legs.STP = {}
 	Aug.Skirmish.Acro.Feet.STP = {}
 	
-	-- ws acc/atk wsd wsa
-	Aug.Skirmish.Acro.Head.WS = {}
-	Aug.Skirmish.Acro.Body.WS = {}
-	Aug.Skirmish.Acro.Legs.WS = {}
-	Aug.Skirmish.Acro.Feet.WS = {}
-	
-	-- Attack + Acc D.atk crit rate
+	-- TP - Snow: Att/Acc Leaf:D.atk Dusk: Crit Rate
 	Aug.Skirmish.Acro.Head.TP = {}
 	Aug.Skirmish.Acro.Body.TP = {}
 	Aug.Skirmish.Acro.Hands.TP = {}
 	Aug.Skirmish.Acro.Legs.TP = {}
 	Aug.Skirmish.Acro.Feet.TP = {}
 	
-	-- Snow:acc/attack Leaf: Acro Dusk: DT
-	Aug.Skirmish.Acro.Head.DT = {}
-	Aug.Skirmish.Acro.Body.DT = {}
-	Aug.Skirmish.Acro.Hands.DT = {}
-	Aug.Skirmish.Acro.Legs.DT = {}
-	Aug.Skirmish.Acro.Feet.DT = {}
+	-- WS - Snow:acc/atk Dusk:WSD Leaf:WSacc
+	Aug.Skirmish.Acro.Head.WS = {}
+	Aug.Skirmish.Acro.Body.WS = {}
+	Aug.Skirmish.Acro.Legs.WS = {}
+	Aug.Skirmish.Acro.Feet.WS = {}
 	
-	-- Snow: Pet Macc Leaf: Breath Dusk: Pet: haste
+	-- DRG Breath - Snow: Pet Macc Leaf: Breath Dusk: Pet: haste
 	Aug.Skirmish.Acro.Head.Breathe = {}
 	Aug.Skirmish.Acro.Body.Breathe = {}
 	Aug.Skirmish.Acro.Hands.Breathe = {}
 	Aug.Skirmish.Acro.Legs.Breathe = {}
 	Aug.Skirmish.Acro.Feet.Breathe = {}
 	
-	-- Snow Pet: Acc Leaf: pet D.atk Dusk: pet DT
-	Aug.Skirmish.Acro.Body.pet = {}
-	Aug.Skirmish.Acro.Hands.pet = {}
-	Aug.Skirmish.Acro.Legs.pet = {}
-	Aug.Skirmish.Acro.Feet.pet = {}
-		
-	--  Leaf: CALL BEAST DELAY	
+	-- BST Delay - Snow Pet:Att/acc Leaf: CALL BEAST DELAY Dusk: PET DT
 	
 	-- Yorium - WAR PLD DRK
 	Aug.Skirmish.Yorium = {}
+	Aug.Skirmish.Yorium.Head = {}
+	Aug.Skirmish.Yorium.Body = {}
+	Aug.Skirmish.Yorium.Hands = {}
+	Aug.Skirmish.Yorium.Legs = {}
+	Aug.Skirmish.Yorium.Feet = {}
+	
+	-- DT Snow: Att/acc Leaf:DA Dusk: DT 
 	Aug.Skirmish.Yorium.Head = {}
 	Aug.Skirmish.Yorium.Body = {}
 	Aug.Skirmish.Yorium.Hands = {}
@@ -104,6 +98,12 @@
 	Aug.Skirmish.Yorium.Legs = {}
 	Aug.Skirmish.Yorium.Feet = {}
 	
+	-- BST DT - Snow Pet: Acc Leaf: pet D.atk Dusk: pet DT
+	Aug.Skirmish.Yorium.Body.pet = {}
+	Aug.Skirmish.Yorium.Hands.pet = {}
+	Aug.Skirmish.Yorium.Legs.pet = {}
+	Aug.Skirmish.Yorium.Feet.pet = {}
+		
 	-- Taeon
 	Aug.Skirmish.Taeon = {}
 	Aug.Skirmish.Taeon.Head = {}
@@ -112,7 +112,7 @@
 	Aug.Skirmish.Taeon.Legs = {}
 	Aug.Skirmish.Taeon.Feet = {}
 	
-	-- Snow: acc att Leaf: TA Dusk: STR/DEX
+	-- Snow:Att/Acc Leaf: TA Dusk: STR/DEX
 	Aug.Skirmish.Taeon.Head = {}
 	Aug.Skirmish.Taeon.Body = {}
 	Aug.Skirmish.Taeon.Hands = {}
@@ -133,6 +133,9 @@
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Leaf Snapshot?
+	Aug.Skirmish.Taeon.Feet = {}
+	
+	-- Snow: Racc/Ratt
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Helios - WHM BLM RDM SMN BLU SCH GEO
@@ -157,7 +160,7 @@
 	Aug.Skirmish.Telchine.Feet = {}
 	
 	-- Snow:  Leaf: Cure Pot Dusk: Enhancing pot
-	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Gloves",augments={"", ""}}
+	Aug.Skirmish.Telchine.Hands.Cure = {name="Telchine Gloves",augments={"", ""}}
 	-- Snow: Macc Leaf:Songs Dusk
 	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Pigaches",augments={"", ""}}
 	

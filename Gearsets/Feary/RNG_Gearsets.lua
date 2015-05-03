@@ -38,7 +38,7 @@ if player.name == 'Feary' then
 				end
 			end			
 		else
-			set_macro_page(13,1)
+			set_macro_page(13,3)
 		end
 		
 -- Auto Sets
@@ -77,20 +77,21 @@ sets.precast.Snapshot = {
 				head="Arcadian Beret +1",
                 body="Arc. Jerkin +1", hands="Iuitl Wristbands +1",
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
-sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{head="Orion Beret +1",
+sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
+				head="Orion Beret +1",
                 body="Sylvan Caban +2", hands="Arc. Bracers +1",
                 waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
 
 -- Bow
 sets.RA = { 
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
-            body="Kyujutsugi", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
+            body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
             back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
 				
 sets.RA.Acc = {
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Volley Earring",
             body="Kyujutsugi", hands="Syl. Glvltte +2", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Lutian Cape", waist="Patentia Sash", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
+			back="Lutian Cape", waist="Patentia Sash", legs="Feast Hose", feet="Orion Socks +1"}
 				
 -- Gun
 sets.RA.Gun = { 

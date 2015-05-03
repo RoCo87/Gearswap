@@ -12,19 +12,19 @@ if player.name == 'Feary' then
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 1
+		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'NIN' then
 				set_macro_page(4,1)
-			elseif player.sub_job =='whm' then
+			elseif player.sub_job =='WHM' then
 				set_macro_page(4,2)
 			elseif player.sub_job == 'RDM' then
 				set_macro_page(4,3)
-			elseif player.sub_job =='sch' then 
+			elseif player.sub_job =='SCH' then 
 				set_macro_page(4,4)
-			elseif player.sub_job =='dnc' then 
+			elseif player.sub_job =='DNC' then 
 				set_macro_page(4,5)
-			elseif player.sub_job =='blm' then 
+			elseif player.sub_job =='BLM' then 
 				set_macro_page(4,6)
 			end
 		else
@@ -69,13 +69,13 @@ if player.name == 'Feary' then
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring="", rring="",
-                back="Felicitas Cape", waist="", feet="Chelona Boots"})
+                body="Gende. Bilaut +1", hands="Gende. Gages +1",
+                back="Felicitas Cape", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",
-                feet="Aoidos' Cothrn. +2"})
+                feet="Fili Cothurnes"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Aoidos' Cothrn. +2"})
+				feet="Fili Cothurnes"})
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker", lear="", rear="",
                 body="Dalmatica", hands="Zenith Mitts", lring="", rring="",
@@ -112,21 +112,21 @@ if player.name == 'Feary' then
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee",
-                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
+                body="Fili Hongreline", hands="Fili Manchettes",
                 back="Harmony Cape", waist="Corvax Sash", legs="Mdk. Shalwar +1", feet="Brioso Slippers +1"}
 		-- Enhancing Buff - Buff Set (set Bonus)
 		sets.midcast.EnhanceSong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee",
-                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
-                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Aoidos' Cothrn. +2"}
+                body="Fili Hongreline", hands="Fili Manchettes",
+                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring",
-                body="Aoidos' hngrln. +2", hands="Fili Manchettes",
+                body="Fili Hongreline", hands="Fili Manchettes",
                 back="Rhapsode's Cape", waist="Corvax Belt", legs="Fili Rhingrave", feet="Brioso Slippers +1"}
 		-- Debuffs
 		sets.midcast.Debuff = {main="Mandau",
-				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Musical Earring", rear="Gwati Earring",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Gwati Earring", rear="Musical Earring",
                 body="Brioso Just. +1", hands="Fili Manchettes", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Ovate Rope", legs="Fili Rhingrave", feet="Telchine Pigaches"}
 		

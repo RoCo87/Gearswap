@@ -14,19 +14,19 @@ if player.name == 'Feary' then
 -- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
-				set_macro_page(12,1)
-			elseif player.sub_job == 'SAM' then
-				set_macro_page(12,2)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(12,3)
-			elseif player.sub_job == 'MNK' then 
-				set_macro_page(12,4)
-			elseif player.sub_job == 'DRK' then 
-				set_macro_page(12,5)
+			if player.sub_job =='NIN' then
+				set_macro_page(11,1)
+			elseif player.sub_job =='SAM' then
+				set_macro_page(11,2)
+			elseif player.sub_job =='DNC' then
+				set_macro_page(11,3)
+			elseif player.sub_job =='MNK' then 
+				set_macro_page(11,4)
+			elseif player.sub_job =='DRK' then 
+				set_macro_page(11,5)
 			end
 		else
-			set_macro_page(12,1)
+			set_macro_page(11,1)
 		end
 		
 -- Auto Sets
