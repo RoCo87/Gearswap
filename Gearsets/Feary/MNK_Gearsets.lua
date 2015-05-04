@@ -61,24 +61,25 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 -- TP 
 sets.TP = { ammo="Ginsen",
 				head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif brais +1", feet="Manibozho Boots"}
+                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 -- Accuracy TP
 sets.TP.MidAcc = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Taeon Tights", feet="Taeon Boots"}
+				
 -- High Accuracy TP
 sets.TP.HighAcc = { ammo="Honed Tathlum",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Hybrid PDT/TP
 sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)
 				
 -- Hundred Fists
-sets.TP.HF = set_combine(sets.TP,{body="Tantra Cyclas +2"})
+sets.TP.HF = set_combine(sets.TP,{body="Bhikku Cyclas"})
 
 -- Impetus Sets
 sets.TP.Impetus = set_combine(sets.TP, {})
@@ -95,7 +96,7 @@ sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="", waist="", legs="Nahtirah Trousers"})
-sets.precast.JA["Impetus"] = {body="Tantra Cyclas +2"}
+sets.precast.JA["Impetus"] = {body="Bhikku Cyclas"}
 sets.precast.JA["Hundred Fists"] = {legs="Hes. Hose"}
 sets.precast.JA["Focus"] = {head="Anchorite's Crown"}
 sets.precast.JA["Dodge"] = {feet="Anch. Gaiters"}
@@ -117,7 +118,7 @@ sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
 sets.precast.WS.Impetus = {}
 sets.precast.WS.Impetus['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Tantra Cyclas +2", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                body="Bhikku Cyclas", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS['Final Heaven'] = set_combine(sets.precast.WS)

@@ -256,7 +256,7 @@ function precast(spell,arg)
 					elseif string.find(spell.english,'Minuet') then
 						equip(sets.precast.Fastcast,minuet,{Body="Aoidos' Hngrln +2"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.precast.Fastcast,madrigal, {head="Aoidos' Calot +2"})
+						equip(sets.precast.Fastcast,madrigal, {head="Fili Calot"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.precast.Fastcast,minne) 
 					elseif string.find(spell.english,'Etude') then
@@ -429,7 +429,7 @@ function midcast(spell,arg)
 					elseif string.find(spell.english,'March') then
 						equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Ad. Mnchtte +2"})
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Aoidos' Calot +2"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Fili Calot"})
 					elseif string.find(spell.english,'Mazurka') then
 						equip(sets.midcast.Buffsong,{range="Daurdabla"})
 					--Everything else
@@ -455,7 +455,7 @@ function midcast(spell,arg)
 					elseif string.find(spell.english,'Minuet') then
 						equip(sets.midcast.Buffsong,minuet,{Body="Aoidos' Hngrln +2"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,madrigal, {head="Aoidos' Calot +2"})
+						equip(sets.midcast.Buffsong,madrigal, {head="Fili Calot"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.midcast.Buffsong,minne) 
 					elseif string.find(spell.english,'Etude') then

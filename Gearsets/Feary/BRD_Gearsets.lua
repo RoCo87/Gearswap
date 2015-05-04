@@ -92,7 +92,7 @@ if player.name == 'Feary' then
                 body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
-				head="Aoidos' Calot +2", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
+				head="Fili Calot", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Gende. Spats +1", feet="Telchine Pigaches"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
@@ -111,17 +111,17 @@ if player.name == 'Feary' then
 		-- Bard songs
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
-				head="Aoidos' Calot +2", neck="Aoidos' matinee",
+				head="Fili Calot", neck="Aoidos' matinee",
                 body="Fili Hongreline", hands="Fili Manchettes",
                 back="Harmony Cape", waist="Corvax Sash", legs="Mdk. Shalwar +1", feet="Brioso Slippers +1"}
 		-- Enhancing Buff - Buff Set (set Bonus)
 		sets.midcast.EnhanceSong = {main="Legato Dagger",
-				head="Aoidos' Calot +2", neck="Aoidos' matinee",
+				head="Fili Calot", neck="Aoidos' matinee",
                 body="Fili Hongreline", hands="Fili Manchettes",
                 back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
-				head="Aoidos' Calot +2", neck="Aoidos' matinee", lear="Musical Earring",
+				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring",
                 body="Fili Hongreline", hands="Fili Manchettes",
                 back="Rhapsode's Cape", waist="Corvax Belt", legs="Fili Rhingrave", feet="Brioso Slippers +1"}
 		-- Debuffs

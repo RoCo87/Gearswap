@@ -131,12 +131,12 @@ sets.precast.JA["Super Jump"] = {}
 
 sets.precast.JA["Spirit Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lancer Plackert +2", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+				body="Peltast Plackert", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Lncr. Schynbld. +2"}
 
 sets.precast.JA["Soul Jump"] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
-				body="Lancer Plackert +2", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
+				body="Peltast Plackert", hands="Xaddi Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Lancer Cuissots +2", feet="Cizin Greaves"}
 
 -- Weaponskills

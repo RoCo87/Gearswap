@@ -51,6 +51,13 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Merman's Earring", 
 				feet="Hermes' Sandals"})
+				
+-- Precast 
+-- Misc Sets
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", lear="Loquac. Earring", rring="Prolix Ring",})
+
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+
 -- Melee TP 
 sets.TP = { 
 			head="Taeon Chapeau", neck="Asperity Necklace", lear="Heartseeker Earring", rear="Dungeon Earring",
@@ -65,19 +72,19 @@ sets.TP.Acc = {
 
 -- RA Sets
 sets.precast.Snapshot = {ammo="TPBullet",
-				head="Nvrch. Tricorne +2n", 
+				head="Chass. Tricorne", 
 				Body="Skopos Jerkin", hands="Lanun Gants",
                 back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
 -- Eminent Gun
--- Chass. Tricorne,Chasseur's Frac,Chasseur's Gants,Gunslinger's Cape
+-- Chasseur's Gants, Gunslinger's Cape
 sets.RA = { ammo="TPBullet",
-			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
-            body="Lak. Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+			head="Chass. Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Volley Earring",
+            body="Chasseur's Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Taeon Boots"}
 				
 sets.RA.Acc = { ammo="TPBullet",
-			head="Nvrch. Tricorne +2", neck="Iqabi Necklace", lear="Clearview Earring", rear="Volley Earring",
-            body="Lak. Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
+			head="Chass. Tricorne", neck="Iqabi Necklace", lear="Clearview Earring", rear="Volley Earring",
+            body="Chasseur's Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Taeon Boots"}
 
 -- Armageddon 
@@ -100,15 +107,15 @@ sets.precast.JA["Cutting Cards"] = {}
 sets.precast.JA["Fold"] = {hands="Lanun Gants"}
 sets.precast.JA["Random Deal"] = {body="Lanun Frac"}
 sets.precast.JA["Snake Eye"] = {legs="Lanun Culottes"}
-sets.precast.JA["Triple Shot"] = {body="Nvrch. Frac +2"}
+sets.precast.JA["Triple Shot"] = {body="Chasseur's Frac"}
 sets.precast.JA["Double-Up"] = set_combine(sets.precast.JA["Phantom Roll"])
 
 -- Corsair Rolls
 sets.precast.JA["Phantom Roll"] = {head="Lanun Tricorne", hands="Nvrch. Gants +2", legs="Desultor Tassets", rring="Luzaf's Ring"}
-sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {legs="Nvrch. Culottes +2"})
+sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {legs="Chasseur's Culottes"})
 sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {feet="Navarch's Bottes +2"})
-sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {head="Navarch's Tricorne +2"})
-sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {body="Navarch's Frac +2"})
+sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {head="Chass. Tricorne"})
+sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {body="Chasseur's Frac"})
 sets.precast.JA["Allies' Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {hands="Navarch's Gants +2"})
 
 -- Quick Draw 
@@ -116,8 +123,8 @@ sets.precast.QD = {}
 --Light/Dark Shot
 sets.precast.QD.ACC = {
 				head="Blood Mask", neck="Stoicheion Medal", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Lanun Frac", hands="Schutzen Mittens", lring="Garuda Ring +1", rring="Sangoma Ring",
-                back="Navarch's Mantle", waist="Aquiline Belt", legs="Thur. Tights +1", feet="Lanun Boots"}
+                body="Lanun Frac", hands="Chasseur Gants", lring="Perception Ring", rring="Sangoma Ring",
+                back="Gunslinger's Cape", waist="Aquiline Belt", legs="Thur. Tights +1", feet="Lanun Boots"}
 -- Elemental Shots
 -- Deviant Necklace, Gunslinger's Cape
 sets.precast.QD.MAB = {
@@ -145,28 +152,25 @@ sets.precast.WS["Exenterator"] = {
 
 -- RA WS
 sets.precast.RAWS = {
-				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Flame Pearl",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
-sets.precast.RAWS['Wildfire'] = {
-				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
-                body="Lanun Frac", hands="Thur. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Toro Cape", waist="Aquiline Belt", legs="Nahtirah Trousers", feet="Lanun Boots"}
+				head="Chasseur Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Volley Earring",
+                body="Chasseur Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
+                back="Gunslinger's Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Taeon Boots"}
+-- Physical
+sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
+				head="Chasseur Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Moonshade Earring",
+                body="Chasseur Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
+                back="Gunslinger's Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Chasseur Bottes"})
+-- Magical
+sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
+				head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
+                body="Lanun Frac", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
+                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"}
 
-sets.precast.RAWS['Last Stand'] = {
-				head="Lanun Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Volley Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Terebellum Mantle", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
-					
--- Midcast Sets
-
--- Aftercast
-
--- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Haruspex Hat +1", lear="Loquac. Earring", rring="Prolix Ring",})
-
-sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
-
+sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
+				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Clearview Earring", rear="Volley Earring",
+                body="Lanun Frac", hands="Taeon Gloves", lring="Icesoul Ring", rring="Archon Ring",
+                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"}
+						
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)
 sets.misc.flourish = {}

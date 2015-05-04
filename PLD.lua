@@ -77,7 +77,7 @@ function self_command(command)
 			PDT = 0
 		-- lock MDT set and equip it
 			MDT = 1	
-			if buffactive("Shell") then
+			if buffactive['Shell'] then
 				equip(sets.idle.MDT.Shell)
 			else
 				equip(sets.idle.MDT)

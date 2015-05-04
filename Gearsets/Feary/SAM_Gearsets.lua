@@ -115,9 +115,9 @@ sets.precast.JA["Yaegasumi"] = {}
 sets.precast.JA["Meditate"] = set_combine(sets.idle.PDT, {
 				head="Wakido Kabuto",
 				hands="Sakonji Kote",})
-sets.precast.JA["Hasso"] = {hands="Wakido Kote",legs="Unkai Haidate +2"}
+sets.precast.JA["Hasso"] = {hands="Wakido Kote",legs="Kasuga Haidate "}
 sets.precast.JA["Third Eye"] = {legs="Saotome Haidate"}
-sets.precast.JA["Seigan"] = {head="Unkai Kabuto +2"}
+sets.precast.JA["Seigan"] = {head="Kasuga Kabuto"}
 sets.precast.JA["Blade Bash"] = {hands="Sakonji Kote"}
 sets.precast.JA["Sekkanoki"] = {hands="Unkai Kote +2"}
 sets.precast.JA["Sengikori"] = {feet="Unkai Sune-ate +2"}
