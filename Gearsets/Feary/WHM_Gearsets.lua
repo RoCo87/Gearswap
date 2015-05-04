@@ -86,11 +86,11 @@ if player.name == 'Feary' then
 		-- Cures
 		sets.midcast.Cure = {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Orison Bliaud +2", hands="Theophany Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
+                body="Ebers Briault", hands="Theophany Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Orison Bliaud +2", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
+                body="Ebers Briault", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Curaga = {main="Tamaxchi",
