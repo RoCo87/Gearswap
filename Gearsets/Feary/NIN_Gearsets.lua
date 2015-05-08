@@ -87,19 +87,19 @@ sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi,{
 sets.TP = { ammo="Ginsen",
 			head="Iga Zukin +2", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Mochi. Chainmail", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Patentia Sash", legs="Mochizuki Hakama", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Patentia Sash", legs="Mochizuki Hakama", feet="Taeon Boots"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 -- Alliance Buffed
 sets.TP.Buffed = {ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
@@ -125,32 +125,32 @@ sets.precast.JA["Futae"] = {hands="Iga Tekko +2"}
 sets.precast.WS = { ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Wanion Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Wanion Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 -- Mercy Stroke 
 sets.precast.WS["Blade: Jin"] = { ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.precast.WS["Blade: Shun"] = { ammo="Ginsen",
 			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
 			head="Uk'uxkaj Cap", neck="Hope Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Anguinus Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 				
 sets.precast.WS["Blade: Metsu"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.precast.WS["Blade: Kamu"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc)

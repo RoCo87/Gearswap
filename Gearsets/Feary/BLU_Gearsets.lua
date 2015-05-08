@@ -83,7 +83,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Haruspex Hat", neck="Orunmila's Torque", lear="Loquac. Earring",
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
 		
@@ -125,7 +125,7 @@ if player.name == 'Feary' then
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",
                 head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Psystorm Earring", rear="Lifestorm Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Swith Cape", waist="Cascade Belt", legs="Hagondes Pants +1", feet="Hagondes Pants +1"})
+                back="Swith Cape +1", waist="Cascade Belt", legs="Hagondes Pants +1", feet="Hagondes Pants +1"})
 		-- Cure Pot
 		sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
                 neck="Phalaina Locket",

@@ -56,11 +56,11 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Incantor Stone",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{
 				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
-				head="Umuthi Hat"})
+				head="Umuthi Hat", waist="Siegel Sash"})
 		-- Caps - 80%/26 Current: 81%/13 Haste
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Piety Cap",
@@ -94,12 +94,12 @@ if player.name == 'Feary' then
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Curaga = {main="Tamaxchi",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
+                body="Heka Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Piety Duckbills"}
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {main="Tamaxchi",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
+                body="Heka Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Cura = {}
@@ -124,20 +124,20 @@ if player.name == 'Feary' then
                 legs="Theo. Pantaloons"})
 		sets.midcast.BarElement = {main="Beneficus",
 				head="Orison Cap +2", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
-                body="Orison Bliaut +2", hands="Orison Mitts +2",
-                back="Merciful Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
+                body="Ebers Briault", hands="Orison Mitts +2",
+                back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Anhur Robe", hands="Ayao's Gages",
-                back="Merciful Cape", waist="Cascade Belt", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.Boost = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Anhur Robe", hands="Ayao's Gages", 
-                back="Merciful Cape", waist="Cascade Belt", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Boost)
 		sets.midcast.Hastespell = set_combine(sets.precast.Fastcast,{ammo="Impatiens", 
 				back="Ogapepo Cape", waist="Witful Belt"})
-		sets.midcast.Stoneskin = {waist="Siegal Sash"}
+		sets.midcast.Stoneskin = {waist="Siegel Sash"}
 		sets.midcast.Aquaveil = {waist="Empahatikos Rope", legs="Shedir Seraweels"}
 		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
 		sets.midcast.Reraise = set_combine(sets.midcast.ConserveMP)
@@ -146,7 +146,7 @@ if player.name == 'Feary' then
 		sets.midcast.Repose = set_combine(sets.midcast.Recast,{ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Psystorm Earring", rear="Lifestorm Earring",
 				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levi. Ring +1", rring="Levi. Ring +1",
-				back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"})
+				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"})
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Novio Earring",

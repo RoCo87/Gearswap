@@ -129,7 +129,7 @@ sets.precast.QD.ACC = {
 -- Deviant Necklace, Gunslinger's Cape
 sets.precast.QD.MAB = {
 				head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Novio earring",
-                body="Lanun Frac", hands="Taeon Gloves", lring="Icesoul Ring", rring="Icesoul Ring",
+                body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights", feet="Lanun Boots"}
 
 sets.precast.JA["Barrage"] =  set_combine(sets.RA.Acc)
@@ -168,7 +168,7 @@ sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
 
 sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Clearview Earring", rear="Volley Earring",
-                body="Lanun Frac", hands="Taeon Gloves", lring="Icesoul Ring", rring="Archon Ring",
+                body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"}
 						
 sets.misc.Waltz = {}

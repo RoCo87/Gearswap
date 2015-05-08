@@ -90,11 +90,11 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = { 
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
 				head="Fili Calot", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Gende. Spats +1", feet="Telchine Pigaches"})
+                back="Swith Cape +1", waist="Witful Belt", legs="Gende. Spats +1", feet="Telchine Pigaches"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris", 
                 back="Pahtli Cape"})

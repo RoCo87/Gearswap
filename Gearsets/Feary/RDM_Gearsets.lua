@@ -67,12 +67,12 @@ if player.Name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Atrophy Chapeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Estq. Earring",
                 body="Vitivation Tabard", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
                 back="Pahtli Cape"})
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast, {
-				waist="Siegal Sash"})
+				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
 				head="Umuthi Hat"})
 		-- Midcast
@@ -112,7 +112,7 @@ if player.Name == 'Feary' then
 		
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing, {hands="Vitivation Gloves"})
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
-		sets.midcast.Stoneskin = set_combine(sets.midcast.Enhancing.Self, {waist="Siegal Sash"})
+		sets.midcast.Stoneskin = set_combine(sets.midcast.Enhancing.Self, {waist="Siegel Sash"})
 		sets.midcast.Aquaveil = set_combine(sets.midcast.Enhancing.Self,{waist="Empahatikos Rope", legs="Shedir Seraweels"})
 		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
 		sets.midcast.Reraise = set_combine(sets.midcast.ConserveMP)
@@ -121,7 +121,7 @@ if player.Name == 'Feary' then
 		-- Spikes: Goal 250 Int
 		sets.midcast.INT = {main="Bolelabunga", ammo="Kalboron Stone",
 				head="Atrophy Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Hagondes Coat +1", hands="Vitivation Gloves", lring="Icesoul ring", rring="Icesoul ring",
+                body="Hagondes Coat +1", hands="Vitivation Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Orvate Rope", legs="Hagondes Pants +1", feet="Vitivation Boots"}
 		-- Enfeebling
 		-- Potency
@@ -143,12 +143,12 @@ if player.Name == 'Feary' then
 		-- Skill Gear For Elemental Dots And High Resisted Nukes
 		sets.midcast.Elemental = {main="Bolelabunga", ammo="Auroele",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
+                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
 		-- Pure Damage
 		sets.midcast.Nuke = {main="Bolelabunga", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
+                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
 		
 		-- Dark Magic

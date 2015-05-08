@@ -67,7 +67,7 @@ if player.Name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Incantor Stone",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Peda. Loafers"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Peda. Loafers"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris", 
                 back="Pahtli Cape"})  		
@@ -146,12 +146,12 @@ if player.Name == 'Feary' then
 		sets.midcast.Stun = set_combine(sets.precast.Fastcast, {main="Atinian Staff", sub="Arbuda Grip", ammo="Incantor Stone",
 			head="Argute M.board +2", neck="Eddy Necklace", lear="Loquac. Earring", rear="Gwati Earring",
 			body="Hedera Cotehardie", hands="Gende. Gages +1", lring="Prolix Ring", rring="Sangoma Ring",
-			back="Swith Cape", waist="Ninurta's Sash", legs="Artsieq Hose", feet="Acad. Loafers"})
+			back="Swith Cape +1", waist="Ninurta's Sash", legs="Artsieq Hose", feet="Acad. Loafers"})
 		-- Stun - Alacrity Up
 		sets.midcast.Stun.Alacrity = set_combine(sets.midcast.Stun, {main="Atinian Staff", sub="Arbuda Grip", ammo="Incantor Stone",
 			head="Nahtirah Hat", neck="Eddy Necklace", lear="Loquac. Earring", rear="Gwati Earring",
 			body="Hedera Cotehardie", hands="Gende. Gages +1", lring="Prolix Ring", rring="Sangoma Ring",
-			back="Swith Cape", waist="Ninurta's Sash", legs="Artsieq Hose", feet="Argute's Loafers +2"})
+			back="Swith Cape +1", waist="Ninurta's Sash", legs="Artsieq Hose", feet="Argute's Loafers +2"})
 		
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {

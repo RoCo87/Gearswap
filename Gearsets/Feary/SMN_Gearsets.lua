@@ -108,7 +108,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = { ammo="Impatiens",
 				head="Nahtirah Hat", neck="", lear="Loquac. Earring", rear="",
 				body="Anhur Robe", hands="", lring="Prolix Ring", rring="",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalairis", hands="", lring="", rring="",
