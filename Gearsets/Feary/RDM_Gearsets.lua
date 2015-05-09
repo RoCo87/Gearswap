@@ -44,7 +44,7 @@ if player.Name == 'Feary' then
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
+                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Vitivation Chapeau", lear="Merman's Earring", rear="Merman's Earring",
 				body="Hagondes Coat +1",
@@ -67,7 +67,7 @@ if player.Name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Atrophy Chapeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Estq. Earring",
                 body="Vitivation Tabard", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
                 back="Pahtli Cape"})
@@ -122,17 +122,17 @@ if player.Name == 'Feary' then
 		sets.midcast.INT = {main="Bolelabunga", ammo="Kalboron Stone",
 				head="Atrophy Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Hagondes Coat +1", hands="Vitivation Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Orvate Rope", legs="Hagondes Pants +1", feet="Vitivation Boots"}
+                back="Toro Cape", waist="Ovate Rope", legs="Hagondes Pants +1", feet="Vitivation Boots"}
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Kalboron Stone",
 				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Estq. Sayon +2", hands="Estq. Ganthrt. +2", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapepo Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Kalboron Stone",
 				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Estq. Sayon +2", hands="Estq. Ganthrt. +2", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapepo Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{head="Vitivation Chapeau"})
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc, {feet="Vitivation Boots"})
 		sets.midcast.Blind = set_combine(sets.midcast.Macc, {legs="Vitivation Tights"})

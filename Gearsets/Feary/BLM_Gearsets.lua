@@ -40,7 +40,7 @@ if player.Name == 'Feary' then
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
+                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Moonshade Earring",
 				hands="Serpentes Cuffs",
@@ -63,8 +63,8 @@ if player.Name == 'Feary' then
 				legs="Zenith Slacks", feet="Zenith Pumps"}
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
-                body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                body="Anhur Robe", hands="Magavan Mitts", lring="Prolix Ring",
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{
 				head="Goetia Petasos +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
@@ -129,11 +129,11 @@ if player.Name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Helios Jacket", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapego Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapego Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)

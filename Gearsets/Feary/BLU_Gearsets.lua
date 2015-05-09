@@ -34,17 +34,18 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {
 				head="Hagondes Hat", neck="Twilight Torque",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Helios Boots"}
+                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Helios Boots"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Hagondes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs", lring="", rring="",
-                back="Umbra Cape", waist="Fucho-no-obi", feet="Chelona Boots"})
+                back="Umbra Cape", waist="Fucho-no-obi", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",legs="Blood Cuisses"})
+				lear="Merman's Earring", rear="Merman's Earring",
+				legs="Blood Cuisses"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {body="Assim. Jubbah", legs="Blood Cuisses"})
 		
 		
@@ -52,7 +53,7 @@ if player.name == 'Feary' then
 		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
                 head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
                 body="Thaumas Coat", hands="Luh. Bazubands", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
 		-- Accuracy
 		sets.TP.Acc = set_combine(sets.TP, {ammo="Honed Tathlum",
                 hands="Buremte Gloves",
@@ -83,7 +84,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Impatiens",
 				head="Haruspex Hat", neck="Orunmila's Torque", lear="Loquac. Earring",
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
 		

@@ -104,7 +104,7 @@ sets.precast.JA["Rayke"] = {feet="Futhark Boots"}
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 				head="Runiest Bandeau", lear="Loquac. Earring", 
 				hands="Thaumas Gloves", rring="Prolix Ring",
-				legs="Artsieq Hose", feet="Chelona Boots"})
+				legs="Artsieq Hose", feet="Chelona Boots +1"})
 sets.midcast.Enhancing = {
 				neck="Colossus's Torque", lear="Andoaa Earring",
 				hands="Runeist Mitons",

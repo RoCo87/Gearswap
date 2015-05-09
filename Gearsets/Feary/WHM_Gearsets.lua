@@ -43,7 +43,7 @@ if player.name == 'Feary' then
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Gende. Caubeen +1", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
+                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Merman's Earring",
 				hands="Serpentes Cuffs",
@@ -56,7 +56,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Incantor Stone",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{
 				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
@@ -146,7 +146,7 @@ if player.name == 'Feary' then
 		sets.midcast.Repose = set_combine(sets.midcast.Recast,{ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Psystorm Earring", rear="Lifestorm Earring",
 				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levi. Ring +1", rring="Levi. Ring +1",
-				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"})
+				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"})
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Novio Earring",
@@ -159,11 +159,11 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Pahtli Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Ogapepo Cape", waist="Orvate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
