@@ -302,7 +302,7 @@ function midcast(spell,arg)
 				if spell.name == 'Phalanx' or spell.name == "Phalanx II" then
 					equip(sets.midcast.Enhancing.Self, sets.midcast.Phalanx)
 				elseif spell.english:contains("Refresh") then
-					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.SELF, {legs="Estqr. Fuseau +2"})
+					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.SELF, {legs="Leth. Fuseau"})
 				elseif spell.name:wcmatch("Haste*") then
 					equip(sets.midcast.Enhancing.SELf, sets.midcast.Hastespell)
 				elseif spell.english:wcmatch('Regen*') then
@@ -327,7 +327,7 @@ function midcast(spell,arg)
 				if spell.name == 'Phalanx' or spell.name == "Phalanx II" then
 					equip(sets.midcast.Phalanx) 
 				elseif spell.english:contains("Refresh") then
-					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.Party, {legs="Estqr. Fuseau +2"})
+					equip(sets.midcast.ConserveMP, sets.midcast.Enhancing.Party, {legs="Leth. Fuseau "})
 				elseif spell.name:wcmatch("Haste*") then
 					equip(sets.midcast.Enhancing.Party)
 				elseif spell.english:wcmatch('Regen*') then

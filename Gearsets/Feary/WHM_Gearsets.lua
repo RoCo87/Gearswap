@@ -34,11 +34,11 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Gende. Caubeen +1", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -51,35 +51,38 @@ if player.name == 'Feary' then
 
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
+				
+		-- JA
+		sets.precast.JA['Benediction'] = {body="Piety Briault"}
+		sets.precast.JA['Asylum'] = {}
+		
+		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Orison Mitts +2", back="Mending Cape"}
+		sets.precast.JA['Devotion'] = {head="Piety Cap"}
+		sets.precast.JA['Martyr'] = {hands="Piety Mitts"}
+		
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {ammo="Incantor Stone",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{
 				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
 				head="Umuthi Hat", waist="Siegel Sash"})
+		sets.precast.Healing = set_combine(sets.precast.Fastcast,{legs="Ebers Pantaloons"})
 		-- Caps - 80%/26 Current: 81%/13 Haste
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="Piety Cap",
                 body="Heka's Kalasiris",
                 back="Pahtli Cape", legs="Ebers Pantaloons", feet="Cure Clogs"})
-		-- JA
-		sets.precast.JA['Benediction'] = {body="Piety Briault"}
-		sets.precast.JA['Asylum'] = {}
-		
-		sets.precast.JA['Divine Caress'] = {head="Orison Cap +2", hands="Orison Mitts +2", back="Mending Cape"}
-		sets.precast.JA['Devotion'] = {head="Piety Cap"}
-		sets.precast.JA['Martyr'] = {hands="Piety Mitts"}
-		
+	
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {
 				})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
 				lear="Magnetic Earring", rear="Gifted Earring",
-                body="Hedera Cotehardie", hands="Serpentes Cuffs",
+                body="Hedera Cotehardie",
                 waist="Austerity Belt", legs="Nares Trews", feet="Umbani Boots"}
 
 		--Healing Magic
@@ -123,7 +126,7 @@ if player.name == 'Feary' then
                 body="Piety Briault", hands="Orison Mitts +2",
                 legs="Theo. Pantaloons"})
 		sets.midcast.BarElement = {main="Beneficus",
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
+				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Ebers Briault", hands="Orison Mitts +2",
                 back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
@@ -144,7 +147,7 @@ if player.name == 'Feary' then
 
 		-- Divine Magic
 		sets.midcast.Repose = set_combine(sets.midcast.Recast,{ammo="Aureole",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Psystorm Earring", rear="Lifestorm Earring",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
 				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levi. Ring +1", rring="Levi. Ring +1",
 				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"})
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
@@ -157,11 +160,11 @@ if player.name == 'Feary' then
 		-- Enfeebling
 		-- Potency - Slow Addle Paralyze
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Aureole",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Aureole",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 

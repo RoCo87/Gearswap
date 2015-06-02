@@ -17,12 +17,12 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Patriarch Cane", sub="Genbu's Shield",
 				head="Hagondes Hat", neck="Twilight Torque", lear="", rear="",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="", waist="",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
+                back="Felicitas Cape", waist="Austerity Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Caller's Horn +2", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs", lring="", rring="",
@@ -37,7 +37,7 @@ if player.name == 'Feary' then
 		-- Perp Sets
 		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
 				head="Convoker's Horn",neck="Caller's Pendant",lear="Gifted Earring",rear="Moonshade Earring",
-				body="Caller's Doublet +2",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
+				body="Caller's Doublet +2",hands="Serpentes Cuffs",lring="Evoker's Ring",rring="Sangoma Ring",
 				-- Conveyence Cape -- Fervor Ring
 				back="Pahtli Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Caller's Pgch. +2"}
 		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"})
@@ -48,11 +48,13 @@ if player.name == 'Feary' then
 		-- Avator Favor - needs 450 skill minimum
 		sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
 		
+		-- Avatar TP
 		sets.idle.Avatar.Melee = {hands="Regimen Mittens",waist="Kuku Stone",legs="Convoker's Spats"}
+		-- Spirit
 		sets.idle.Avatar.Spirit = {main="Bolelabunga",sub="Genbu's Shield",ammo="Eminent Sachet",
-				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquacious Earring",rear="Moonshade Earring",
-				body="Hagondes Coat +1",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-				back="Tiresias' Cape",waist="Fucho-no-obi",legs="Summoner's Spats",feet="Caller's Pgch +2"}
+				head="Caller's Horn +2",neck="Caller's Pendant", lear="Loquacious Earring", rear="Moonshade Earring",
+				body="Hagondes Coat +1",hands="Serpentes Cuffs",lring="Evoker's Ring",rring="Sangoma Ring",
+				back="Tiresias' Cape",waist="Fucho-no-obi",legs="Glyphic Spats",feet="Caller's Pgch +2"}
 				
 		sets.perp = {}
 		sets.perp.Day = {hands="Caller's Bracers +2"}
@@ -61,14 +63,14 @@ if player.name == 'Feary' then
 		-- Blood Pacts 
 		-- Precast
 		-- Pact delay reduction gear
-		sets.precast.BloodPactWard = {ammo="Eminent Sachet",head="Evoker's Horn",body="Summoner's Doublet",hands="Summoner's Bracers",legs="Summoner's Spats",feet="Summoner's Pgch.",lear="Caller's Earring"}
+		sets.precast.BloodPactWard = {ammo="Eminent Sachet",head="Convoker's Horn",body="Glyphic Doublet",hands="Glyphic Bracers",legs="Glyphic Spats",feet="Glyphic Pigaches",lear="Caller's Earring"}
 		sets.precast.BloodPactRage = sets.precast.BloodPactWard
 		
 		-- Midcast
 		-- Skill Gear
 		sets.midcast.SummoningMagic = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring", rear="Gifted Earring",
-				body="Anhur Robe",hands="Summoner's Bracers",ring1="Evoker's Ring",rring="Fervor Ring",
+				body="Anhur Robe",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				back="Conveyance Cape",waist="Cimmerian Sash",legs="Caller's Spats +2",feet="Rubeus Boots"}
 		-- BloodPactWard
 		sets.midcast.Pet.BloodPactWard = set_combine(sets.midcast.SummoningMagic,{})
@@ -78,31 +80,34 @@ if player.name == 'Feary' then
 		-- Physical 
 		sets.midcast.Pet.PhysicalBloodPactRage = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Sacrifice Torque",lear="Andoaa Earring", rear="Smn. Earring",
-				body="Call. Doublet +2",hands="Summoner's Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Summoner's Pgch."}
+				body="Convoker's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
+				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Convoker's Pigaches"}
+		-- Not Added to Smn.lua
+		sets.midcast.Pet.FC = set_combine(sets.midcast.Pet.PhysicalBloodPactRage,{}
+		
 		-- Magical
 		-- 'Nether Blast','Aerial Blast','Searing Light','Diamond Dust','Earthen Fury','Zantetsuken','Tidal Wave','Judgment Bolt','Inferno','Howling Moon','Ruinous Omen','Flaming Crush'
 		sets.midcast.Pet.MagicalBloodPactRage = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
-				body="Call. Doublet +2",hands="Summoner's Bracers",lring="Evoker's Ring",rring="Fervor Ring",
+				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
 		-- Heavenly Strike','Wind Blade','Holy Mist','Night Terror','Thunderstorm','Geocrush','Meteor Strike','Grand Fall','Lunar Bay','Thunderspark'		
 		sets.midcast.Pet.MagicalBloodPactRage.TP = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
-				body="Call. Doublet +2",hands="Summoner's Bracers",lring="Evoker's Ring",rring="Fervor Ring",
+				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
 		--	Additional Effect BPs
 		sets.midcast.Pet.MagicalBloodPactRage.Macc = {main="Eminent Pole",ammo="Eminent Sachet",
 				head="Bokwus Circlet",neck="Caller's Pendant",
-				body="Call. Doublet +2",hands="Summoner's Bracers",lring="Evoker's Ring",rring="Fervor Ring",
+				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
 		-- Avatar Nukes 
 		sets.midcast.Pet.MagicalBloodPactRage.MAB = {main="Eminent Pole",ammo="Eminent Sachet",
 				head="Bokwus Circlet",neck="Caller's Pendant",
-				body="Call. Doublet +2",hands="Summoner's Bracers",lring="Evoker's Ring",rring="Fervor Ring",
+				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
 		
-		sets.midcast.Pet.Spirit = set_combine(sets.midcast.Pet.BloodPactRage, {legs="Summoner's Spats"})		
+		sets.midcast.Pet.Spirit = set_combine(sets.midcast.Pet.BloodPactRage, {legs="Glyphic Spats"})		
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = { ammo="Impatiens",
@@ -116,7 +121,7 @@ if player.name == 'Feary' then
 		-- JA
 		sets.precast.JA['Astral Conduit'] = {}
 		sets.precast.JA['Astral Flow'] = {head="Summoner's Horn +2"}
-		sets.precast.JA['Elemental Siphon'] = set_combine(sets.midcast.SummoningSkill,{feet="Caller's Pigaches +2",back="Conveyance Cape"})
+		sets.precast.JA['Elemental Siphon'] = set_combine(sets.midcast.SummoningSkill,{feet="Beck. Pigaches",back="Conveyance Cape"})
 		sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
 		
 		-- Midcast
@@ -167,11 +172,11 @@ if player.name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Bokwus Robe", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Refraction Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma Ring",
                 back="Refraction Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 

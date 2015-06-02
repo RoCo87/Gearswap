@@ -54,7 +54,7 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 sets.TH = {
-			hands="Assassin's Armlets +2",
+			hands="Asn. Armlets +2",
 			feet="Raider's Poulaines +2"}
 
 -- Precast	

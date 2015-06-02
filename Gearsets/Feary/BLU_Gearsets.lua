@@ -33,11 +33,11 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Hagondes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -74,7 +74,7 @@ if player.name == 'Feary' then
 		sets.precast.JA["Unbridled Learning"] = {}
 		sets.precast.JA["Chain Affinity"] = {head="Mavi Kavuk +2", feet="Assimilator's Charuqs"}
 		sets.precast.JA["Burst Affinity"] = {legs="Assimilator's Shalwar", feet="Mavi Basmak +2"}
-		sets.precast.JA["Efflux"] = {legs="Mavi Tayt +2"}
+		sets.precast.JA["Efflux"] = {legs="Hashishin Tayt"}
 		sets.precast.JA["Diffusion"] = {feet="Luhlaza Charuqs"}
 		sets.precast.JA["Convergence"] = {head="Luhlaza Keffiyeh"}
 		sets.precast.JA["Enchainment"] = {body="Luhlaza Jubbah"}
@@ -85,7 +85,7 @@ if player.name == 'Feary' then
 				head="Haruspex Hat", neck="Orunmila's Torque", lear="Loquac. Earring",
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
-		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
+		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Hashishin Mintan"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
 		
 		-- Midcast
@@ -97,15 +97,15 @@ if player.name == 'Feary' then
 		sets.midcast.BlueMagic = set_combine(sets.TP,{ammo="Mavi Tathlum",
                 head="Luhlaza Keffiyeh",
                 body="Assimilator's Jubbah", hands="Fea's Cuffs",
-                back="Cornflower Cape", legs="Mavi Tayt +2", feet="Luhlaza Charuqs"})
+                back="Cornflower Cape", legs="Hashishin Tayt", feet="Luhlaza Charuqs"})
 		sets.idle.BlueMagic = {}
 		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{hands="Assim. Bazu.", back="Atheling Mantle"})
 		-- Recast
-		sets.midcast.BlueMagic.Recast = set_combine(sets.midcast.Recast)
+		sets.midcast.BlueMagic.Recast = set_combine(sets.midcast.Recast,{hands="Hashi. Bazubands"})
 		-- STR
 		sets.midcast.BlueMagic.STR = set_combine(sets.midcast.BlueMagic, {
-                head="Uk'uxkaj Cap", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
-                body="Assimilator's Jubbah", hands="Luhlaza Bazubands", lring="Rajas Ring", rring="Ifrit Ring +1",
+                head="Uk'uxkaj Cap", neck="Tjukurrpa Medal", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+                body="Assimilator's Jubbah", hands="Luhlaza Bazubands", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Cornflower Cape", waist="Wanion Belt", legs="Manibozho Brais", feet="Assim. Charuqs"})
 		-- Accuracy - I.E Heavy Strike
 		sets.midcast.BlueMagic.STRAcc = set_combine(sets.midcast.BlueMagic, {ammo="Honed Tathlum",
@@ -124,7 +124,7 @@ if player.name == 'Feary' then
 				back="Cornflower Cape", legs="Nahtirah Trousers", feet="Assim. Charuqs"})
 		-- MND
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",
-                head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Psystorm Earring", rear="Lifestorm Earring",
+                head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Gwati Earring", rear="Enchntr. Earring +1",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Swith Cape +1", waist="Cascade Belt", legs="Hagondes Pants +1", feet="Hagondes Pants +1"})
 		-- Cure Pot
@@ -135,13 +135,13 @@ if player.name == 'Feary' then
 		-- INT
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Macc 
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
-                head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Assimilator's Jubbah", hands="Hagondes Cuffs", lring="Sangoma Ring", rring="Perception Ring",
-                back="Cornflower Cape", waist="Ovate Rope", legs="Mavi Tayt +2", feet="Iuitl Gaiters"})	
+                back="Cornflower Cape", waist="Ovate Rope", legs="Hashishin Tayt", feet="Iuitl Gaiters"})	
 		-- Weaponskill
 		sets.precast.WS = set_combine(sets.TP, {ammo="Honed Tahtlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -169,7 +169,7 @@ if player.name == 'Feary' then
                 back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}	
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 
 		-- Misc

@@ -89,19 +89,19 @@ sets.TP.GS.Acc = set_combine(sets.TP.GS,{ammo="Ravager's Orb",
             back="Atheling Mantle", waist="Cetl Belt", legs="Cizin Breeches +1", feet="Mikinaak Greaves"})
 
 -- JA
-sets.precast.JA["Mighty Strikes"] = {hands="Warrior's Mufflers +2"}
+sets.precast.JA["Mighty Strikes"] = {hands="Agoge Mufflers"}
 sets.precast.JA["Brazen Rush"] = {}
 
 sets.precast.JA["Provoke"] = set_combine(sets.Enmity,{})
-sets.precast.JA["Berserk"] = {body="Pummeler's Lorica", feet="Warrior's Calligae +2"}
+sets.precast.JA["Berserk"] = {body="Pummeler's Lorica", feet="Agoge Calligae"}
 sets.precast.JA["Defender"] = {}
-sets.precast.JA["Warcry"] = {head="Warrior's Mask"}
-sets.precast.JA["Aggressor"] = {head="Pummeler's Mask", body="Warrior's Lorica +2"}
-sets.precast.JA["Tomahawk"] = {ammo="Thr. Tomahawk", feet="Warrior's Calligae +2"}
+sets.precast.JA["Warcry"] = {head="Agoge Mask"}
+sets.precast.JA["Aggressor"] = {head="Pummeler's Mask", body="Agoge Lorica"}
+sets.precast.JA["Tomahawk"] = {ammo="Thr. Tomahawk", feet="Agoge Calligae"}
 sets.precast.JA["Restraint"] = {hands="Ravager's Mufflers +2"}
-sets.precast.JA["Warrior's Charge"] = {legs="Warrior Cuisses +2"}
-sets.precast.JA["Savagery"] = {head="Warrior's Mask +2"}
-sets.precast.JA["Aggressive Aim"] = {body="Warrior's Lorica +2"}
+sets.precast.JA["Warrior's Charge"] = {legs="Agoge Cuisses"}
+sets.precast.JA["Savagery"] = {head="Agoge Mask"}
+sets.precast.JA["Aggressive Aim"] = {body="Agoge Lorica"}
 
 -- Weaponskills
 sets.precast.WS = {ammo="Ravager's Orb",

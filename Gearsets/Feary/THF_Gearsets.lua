@@ -34,12 +34,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
@@ -57,17 +57,17 @@ sets.idle.Evasion = set_combine(sets.idle.PDT,{
 
 sets.TH = {
 			hands="Plun. Armlets +1",
-			waist="Chaac Belt"}
+			waist="Chaac Belt", feet="Skulk. Poulaines"}
 
 -- Precast	
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
 			body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring",
-			legs="Enif Cosciales"})
+			waist="Twilight Belt", legs="Enif Cosciales"})
 -- Midcast
 sets.midcast.Fastcast = set_combine(sets.idle.PDT,{
 			head="Haruspex Hat +1", neck="Torero Torque",lear="Loquac. Earring", rear="Enchntr. Earring +1",
-            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest", hands="Thaumas Gloves", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 
 

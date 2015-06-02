@@ -61,25 +61,25 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Mandau", sub="Genbu's Shield",
 				head="Bihu Roundlet +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume Belt", legs="Bihu Cannions +1", feet="Bihu Slippers"}
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
-				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				head="", neck="Eidolon Pendant",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1",
                 back="Felicitas Cape", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",
+				lear="Merman's Earring", rear="Merman's Earring",
                 feet="Fili Cothurnes"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Fili Cothurnes"})
 		sets.misc.MinusHP = {
-				head="Zenith Crown", neck="Morgana's Choker", lear="", rear="",
-                body="Dalmatica", hands="Zenith Mitts", lring="", rring="",
-                back="", waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
+				head="Zenith Crown", neck="Morgana's Choker",
+                body="Dalmatica", hands="Zenith Mitts", 
+                waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
 		-- JA
 		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
 		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
@@ -88,12 +88,12 @@ if player.name == 'Feary' then
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = { 
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="", rring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
-				head="Fili Calot", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
-                body="Anhur Robe", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
+				head="Fili Calot", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+                body="Sha'ir Manteel", hands="Gende. Gages +1", lring="Minstrel's Ring", rring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Gende. Spats +1", feet="Telchine Pigaches"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris", 
@@ -102,12 +102,12 @@ if player.name == 'Feary' then
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
 		
 		-- Midcast
-		sets.midcast.Recast = set_combine(sets.idle.PDT, {waist="Witful Belt"})
+		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape +1", kwaist="Witful Belt"})
 		
 		sets.midcast.ConserveMP = {
-				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
-                body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
-                back="Balladeer's Cape", waist="Austerity Belt", legs="", feet="Serpentes Sabots"}
+				head="", neck="", lear="Gwati Earring", rear="Gifted Earring",
+                body="Hedera's Cotehardie", hands="", lring="", rring="",
+                back="Balladeer's Cape", waist="", legs="", feet=""}
 		-- Bard songs
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
@@ -132,9 +132,9 @@ if player.name == 'Feary' then
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
-				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Orison Cape", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}
+				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Gwati Earring",
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Arka IV",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
@@ -153,11 +153,11 @@ if player.name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Mandau", ammo="Aureole",
-				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Macc = {main="Mandau", ammo="Aureole",
-				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Bihu Roundlet +1", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Brioso Just. +1", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Bokwus Boots"}
 

@@ -177,12 +177,15 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			equip({main=Fastcast.Staff[spell.element]})
+		end
 		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
 				equip(sets.precast.Cure)
 			else
-				equip(sets.precast.Fastcast)
+				equip(sets.precast.Healing)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
 			-- Cancel Sneak
@@ -191,13 +194,15 @@ function precast(spell,arg)
 				cast_delay(0.3)
 			-- Auspice 
 			elseif spell.name == 'Auspice' then
-				equip(sets.precast.Fastcast,{feet="Orsn. Duckbills +2"})
+				equip(sets.precast.Enhancing,{feet="Orsn. Duckbills +2"})
 			elseif spell.english:wcmatch('Protectra*') then
-				equip(sets.precast.Fastcast,{feet="Clr. Duckbills +2"})
+				equip(sets.precast.Enhancing,{feet="Clr. Duckbills +2"})
 			elseif spell.english:wcmatch('Shellra*') then
-				equip(sets.precast.Fastcast,{legs="Clr. Pantaln +2"})
+				equip(sets.precast.Enhancing,{legs="Clr. Pantaln +2"})
+			elseif spell.english:wcmatch('Stoneskin') then
+				equip(sets.precast.Stoneskin)
 			else
-				equip(sets.precast.Fastcast)
+				equip(sets.precast.Enhancing)
 			end		
 		end
 -- Ninjutsu

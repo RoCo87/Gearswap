@@ -176,14 +176,14 @@ end
 function pretarget(spell)
 	if spell.type == 'Geomancy' then
 		if spell.english:startswith('Indi') then
-			if spell.validtarget == "Self" then
+			if spell.target.type == "SELF" then
 				-- Default to me
 				change_target("<me>")
 			end
 		elseif spell.english:startswith('Geo') then
-			if spell.validtarget == "Self, Party" then
+			if spell.target.type == "SELF, PARTY" then
 				change_target("<stpc>")
-			else
+			elseif spell.target.type == "MONSTER" then
 				change_target("<stnpc>")
 			end
 		end
@@ -224,9 +224,9 @@ function precast(spell,arg)
 			windower.add_to_chat(121, 'You must be Engaged to WS')
 		end
 	elseif spell.type == 'Geomancy' then
-		if pet.isvalid then
+		if pet.isvalid and spell.name:startswith('Geo') then
 			cancel_spell()
-			windower.send_command('Full Cicle;wait 1;'..spell.name)
+			windower.send_command('wait 1;Full Cicle;wait 1;'..spell.name)
 		else
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
@@ -245,9 +245,9 @@ function precast(spell,arg)
 			end
 		elseif spell.skill:startswith("Enhancing") then
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+				equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
 			else
-				equip(sets.precast.Fastcast)
+				equip(sets.precast.Enhancing)
 			end
 			-- Cancel Sneak
 			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
@@ -306,27 +306,33 @@ end
 
 function midcast(spell,arg)
 -- Geomancy
-	if spell.skill == 'Geomancy' then
+	if spell.skill == 'Geomancy' or spell.skill == 'Handbell' then
+		-- Equip Skill Gear 
 		equip(sets.midcast.Geomancy)
 		if buffactive["Lasting Emanation"] then
+		
 		end
 		if buffactive["Ecliptic Attriction"] then
+		
 		end
 		if buffactive["Collimated Fervor"] then
+		
 		end
 		if buffactive["Dematerilize"] then
+		
 		end
 		if buffactive["Bolster"] then
+		
 		end
 		if spell.english:wcmatch('Indi*') then
-			if spell.validtarget == "Self" then
+			if spell.target.type == "SELF" then
 				windower.add_to_chat(121,"===== Self AOE =====")
 			end
 		elseif spell.english:wcmatch('Geo*') then
-			if spell.validtarget == "Self, Party" then
-				windower.add_to_chat(121,"Cast %Spell on a Party Member to make Loupon at this location")
-			else
-				windower.add_to_chat(121,"Cast %Spell on a Party Member to make Loupon at this location")
+			if spell.target.type == "SELF, PlAYER" then
+				windower.add_to_chat(121,"Cast %Spell on a Party Member to make Loupon")
+			elseif spell.target.type == "MONSTER" then
+				windower.add_to_chat(121,"Cast %Spell.Name on a Mob to make Loupon")
 			end
 		end
 -- Healing Magic
@@ -387,7 +393,7 @@ function midcast(spell,arg)
 		elseif spell.name == "Aspir" then
 			equip(sets.midcast.Aspir)
 		elseif spell.name == "Stun" then
-			equip(sets.midcast.Macc)
+			equip(sets.midcast.Stun)
 		else
 			equip(sets.midcast.Macc)
 		end
@@ -399,7 +405,7 @@ function midcast(spell,arg)
 			equip(sets.midcast.Elemental)
 		else
 			if Skill == 1 then
-				equip(sets.midcast.Elemental) 
+				equip(sets.midcast.Nuke.Acc) 
 			else
 				-- Zodiac Ring Check
 				if spell.element == world.day_element and (player.inventory["Zodiac Ring"] or player.wardrobe["Zodiac Ring"]) then
@@ -658,37 +664,37 @@ function aftercast(spell,arg)
 		if spell.name == "Full Circle" then
 			windower.add_to_chat(121, 'Releasing Loupan - Returned some MP')
 		elseif spell.name == "Lasting Emanation" then
-			windower.add_to_chat(121,'%spell - Decreases HP consumed')
-			windower.send_command('wait 120;input [%spell]/[Ecliptic Attrition]  Ready in 3 Minutes')
-			windower.send_command('wait 240;input /echo [%spell]/[Ecliptic Attrition]  Ready in 1 Minutes')
-			windower.send_command('wait 300;input /echo [%spell]/[Ecliptic Attrition]  Ready!')
+			windower.add_to_chat(121,'%Spell.Name - Decreases HP consumed')
+			windower.send_command('wait 120;input [%Spell.Name]/[Ecliptic Attrition]  Ready in 3 Minutes')
+			windower.send_command('wait 240;input /echo [%Spell.Name]/[Ecliptic Attrition]  Ready in 1 Minutes')
+			windower.send_command('wait 300;input /echo [%Spell.Name]/[Ecliptic Attrition]  Ready!')
 		elseif spell.name == "Ecliptic Attraction" then
-			windower.add_to_chat(121,'%Spell - Loupon Potency +25%')
-			windower.send_command('wait 120;input [%spell]/[Lasting Emanation]  Ready in 3 Minutes')
-			windower.send_command('wait 240;input /echo [%spell]/[Lasting Emanation]  Ready in 1 Minutes')
-			windower.send_command('wait 300;input /echo [%spell]/[Lasting Emanation] Ready!')
+			windower.add_to_chat(121,'%Spell.Name - Loupon Potency +25%')
+			windower.send_command('wait 120;input [%Spell.Name]/[Lasting Emanation]  Ready in 3 Minutes')
+			windower.send_command('wait 240;input /echo [%Spell.Name]/[Lasting Emanation]  Ready in 1 Minutes')
+			windower.send_command('wait 300;input /echo [%Spell.Name]/[Lasting Emanation] Ready!')
 		elseif spell.name == "Collimated Fervor" then
-			windower.add_to_chat(121,'%Spell - Enhances Nukes by Direction Job trait')
+			windower.add_to_chat(121,'%Spell.Name - Enhances Nukes by Direction Job trait')
 		elseif spell.name == "Life Cycle" then
-			windower.add_to_chat(121,'%Spell - Distributes one fourth of your HP to heal your luopan.')
+			windower.add_to_chat(121,'%Spell.Name - Distributes one fourth of your HP to heal your luopan.')
 		elseif spell.name == "Blaze of Glory" then
-			windower.add_to_chat(121,'%Spell - Loupon Potency +50%')
+			windower.add_to_chat(121,'%Spell.Name - Loupon Potency +50%')
 		elseif spell.name == "Dematerialize" then
 			windower.add_to_chat(121,'Loupon DT')
 		elseif spell.name == "Theurgic Focus" then
-			windower.add_to_chat(121,"%Spell - Increases next Nuke by +50 MAB")
+			windower.add_to_chat(121,"%Spell.Name - Increases next Nuke by +50 MAB")
 		elseif spell.name == "Concetric Pulse" then
-			windower.add_to_chat(121,"%Spell - Dismiss Loupon and Deals Damage")
+			windower.add_to_chat(121,"%Spell.Name - Dismiss Loupon and Deals Damage")
 		elseif spell.name == "Mending Halation" then
-			windower.send_command("wait 3;input /p Casting %Spell - HP Return in 3 secs. Gather together!")
-			windower.send_command("wait 120;input /echo [%spell] Ready in 3 Minutes")
-			windower.send_command("wait 240;input /echo [%spell] Ready in 1 Minutes")
-			windower.send_command("wait 300;input /echo [%spell] Ready!")
+			windower.send_command("wait 3;input /p Casting %Spell.Name - HP Return in 3 secs. Gather together!")
+			windower.send_command("wait 120;input /echo [%Spell.Name] Ready in 3 Minutes")
+			windower.send_command("wait 240;input /echo [%Spell.Name] Ready in 1 Minutes")
+			windower.send_command("wait 300;input /echo [%Spell.Name] Ready!")
 		elseif spell.name == "Radial Arcana" then
-			windower.send_command("wait 3;input /p Casting %Spell - HP Return in 3 secs. Gather together!")
-			windower.send_command("wait 120;input /echo [%spell] Ready in 3 Minutes")
-			windower.send_command("wait 240;input /echo [%spell] Ready in 1 Minutes")
-			windower.send_command("wait 300;input /echo [%spell] Ready!")
+			windower.send_command("wait 3;input /p Casting %Spell.Name - HP Return in 3 secs. Gather together!")
+			windower.send_command("wait 120;input /echo [%Spell.Name] Ready in 3 Minutes")
+			windower.send_command("wait 240;input /echo [%Spell.Name] Ready in 1 Minutes")
+			windower.send_command("wait 300;input /echo [%Spell.Name] Ready!")
 		end
 	end
 end

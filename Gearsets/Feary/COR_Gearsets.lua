@@ -35,12 +35,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Lanun Frac", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Lanun Frac", hands="Umuthi Gloves", lring=Aug.Darklring, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Lanun Boots"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -111,18 +111,18 @@ sets.precast.JA["Triple Shot"] = {body="Chasseur's Frac"}
 sets.precast.JA["Double-Up"] = set_combine(sets.precast.JA["Phantom Roll"])
 
 -- Corsair Rolls
-sets.precast.JA["Phantom Roll"] = {head="Lanun Tricorne", hands="Nvrch. Gants +2", legs="Desultor Tassets", rring="Luzaf's Ring"}
+sets.precast.JA["Phantom Roll"] = {head="Lanun Tricorne", hands="Chasseur's Gants", legs="Desultor Tassets", rring="Luzaf's Ring"}
 sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {legs="Chasseur's Culottes"})
 sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {feet="Navarch's Bottes +2"})
 sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {head="Chass. Tricorne"})
 sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {body="Chasseur's Frac"})
-sets.precast.JA["Allies' Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {hands="Navarch's Gants +2"})
+sets.precast.JA["Allies' Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {hands="Chasseur's Gants"})
 
 -- Quick Draw 
 sets.precast.QD = {}
 --Light/Dark Shot
 sets.precast.QD.ACC = {
-				head="Blood Mask", neck="Stoicheion Medal", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Blood Mask", neck="Stoicheion Medal", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Lanun Frac", hands="Chasseur Gants", lring="Perception Ring", rring="Sangoma Ring",
                 back="Gunslinger's Cape", waist="Aquiline Belt", legs="Thur. Tights +1", feet="Lanun Boots"}
 -- Elemental Shots
@@ -164,12 +164,12 @@ sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
 sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
 				head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Pearl",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"}
+                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Clearview Earring", rear="Volley Earring",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Archon Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"}
+                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
 						
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.ACC)

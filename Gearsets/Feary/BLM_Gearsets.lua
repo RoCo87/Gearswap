@@ -31,11 +31,11 @@ if player.Name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darklring, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -62,7 +62,7 @@ if player.Name == 'Feary' then
 				body="Dalmatica", hands="Zenith Mitts", 
 				legs="Zenith Slacks", feet="Zenith Pumps"}
 		sets.precast.Fastcast = {ammo="Impatiens",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
+				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Anhur Robe", hands="Magavan Mitts", lring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{
@@ -127,11 +127,11 @@ if player.Name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)

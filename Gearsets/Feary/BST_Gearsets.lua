@@ -37,12 +37,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = {
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {feet="Skadi's Jambeaux"})
@@ -59,7 +59,7 @@ sets.Resting = set_combine(sets.idle.PDT,{
 sets.idle.Pet = {
 				head="Twilight Helm", neck="", lear="", rear="",
 				body="Twilight Mail", hands="Regimen Mittens", lring="", rring="",
-				back="Pastoralist's Mantle", waist="Isa Belt", legs="Ferine Quijotes +2", feet=""}
+				back="Pastoralist's Mantle", waist="Isa Belt", legs="Nukumi Quijotes", feet=""}
 				
 -- Pet Priority - Master Idle - Pet Engaged
 sets.idle.Pet.TP  = {
@@ -88,7 +88,7 @@ sets.TP.Pet = {	ammo="Paeapua",
 sets.TP.Pet.Tank = {ammo="Paeapua",
 			head="Monster Helm +2", neck="Shepherd's Chain", lear="Bladeborn Earring", rear="SteelFlash Earring",
 			body="Monster Jackcoat +2", hands="Monster Gloves +2", lring="Rajas ring", rring="Epona's Ring",
-			back="Oneiros Cappa", waist="Isa Belt", legs="Ferine Quijotes +2",feet="Ejekamal Boots"}
+			back="Oneiros Cappa", waist="Isa Belt", legs="Nukumi Quijotes",feet="Ejekamal Boots"}
 
 -- JA
 sets.precast.JA["Familiar"] = {legs="Monster Trousers +2"}
@@ -104,7 +104,7 @@ sets.precast.JA["Spur"] = {feet="Ferine Ocreae +2"}
 
 -- Reward + MND
 sets.precast.JA["Reward"] = {
-				head="Stout Bonnet", neck="Morgana's Choker", lear="Lifestorm Earring", rear="",
+				head="Stout Bonnet", neck="Morgana's Choker", lear="Enchntr. Earring +1", rear="",
 				body="Beast Jackcoat", hands="Beast Gloves", lring="", rring="",
 				back="Pastoralist's Mantle", waist="Crudelist Belt", legs="Monster Trousers +2", feet="Monster Gaiters +2"}
 -- Charm + CHR 
