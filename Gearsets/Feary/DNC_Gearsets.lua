@@ -57,7 +57,7 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
 -- TP Sets 
 sets.TP = { ammo="Charis Feather",
 			head="Uk'uxkaj Cap", neck="Charis Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Charis Casaque +2", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            body="Maculele Casaque", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
             back="Atheling Mantle", waist="Patentia Sash", legs="Manibozho Brais", feet="Horos Shoes"}
 
 -- Accuracy TP Set
