@@ -42,17 +42,17 @@ magicalshield = {sub="Aegis"}
 -- Standard/idle
 sets.idle.PDT = { ammo="Angha Gem",
 				head="Rev. Coronet +1", neck="Twilight Torque", lear="Ethereal Earring",
-                body="Cab. Surcoat +1", hands="Umuthi Gloves", lring=Aug.Darklring, rring="Defending Ring",
+                body="Cab. Surcoat +1", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Yorium Sabatons"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darklring, rring="Defending Ring",
+                body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
 sets.idle.MDT.Shell = { ammo="Vanir Battery",
 				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darklring, rring="Defending Ring",
+                body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -72,7 +72,7 @@ sets.TP.Acc = { ammo="Ginsen",
 -- DT/Acc Build
 sets.TP.Hybrid = { ammo="Hasty Pinion",
 				head="Yorium Barbuta", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Cab. Surcoat +1", hands="Yorium Gauntlets", lring=Aug.Darklring, rring="Defending Ring",
+                body="Cab. Surcoat +1", hands="Yorium Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Mollusca Mantle", waist="Nierenschutz", legs="Yorium Cuisses", feet="Yorium Sabatons"}			
 sets.Weakened = set_combine(sets.TP.Hybrid,{})
 

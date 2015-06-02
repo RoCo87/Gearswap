@@ -34,12 +34,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darklring, rring="Defending Ring",
+                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
@@ -75,21 +75,21 @@ sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads
 			
 -- TP Sets 
 sets.TP = { ranged="Raider's Bmrng.",
-			head="Felistris Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Thaumas Coat", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Patentia Sash", legs="Pillager's Culottes", feet="Plun. Poulaines"}
+			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+            body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	ammo="Ginsen",
 			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"}
+            body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
+            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Alliance Buffed
 sets.TP.Buffed = {	ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Taeon Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
