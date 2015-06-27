@@ -155,33 +155,33 @@ sets.precast.RAWS = {
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 -- Bow WS
 sets.precast.RAWS['Jishnu\'s Radiance'] = {
-				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+                back="Buquwik Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 				
 sets.precast.RAWS['Namas Arrow'] = {
-				head="Arcadian Beret +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Arcadian Beret +1", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Kyujutsugi", hands="Arc. Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
-				back="Buquwik Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
+				back="Buquwik Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
 
 -- Gun/Crossbow WS
 sets.precast.RAWS['Last Stand'] = {
-				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Coronach'] = {
-				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 sets.precast.RAWS['Wildfire'] = {
-				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
+				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 
 sets.precast.RAWS['Trueflight'] = {
-				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Novio Earring", rear="Friomisi Earring",
+				head="Uk'uxkaj Cap", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Toro Cape", waist="Aquiline Belt", legs="Arcadian Braccae +1", feet="Arcadian Socks +1"}
 					

@@ -100,13 +100,13 @@ if player.Name == 'Feary' then
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
 				head="Hagondes Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Hagondes Coat +1", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Icesoul Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}		
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Hagondes Coat +1", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Icesoul Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}		
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Tamaxchi", sub="Genbu's Shield",
@@ -136,11 +136,11 @@ if player.Name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Helios Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Lifestream Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Lifestream Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Helios Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Lifestream Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Lifestream Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)
@@ -180,9 +180,9 @@ if player.Name == 'Feary' then
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
 				back="Buquwik Cape", waist="Wanion Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
 		sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
-				head="Nahtirah Hat", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Nahtirah Hat", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levithan Ring +1", rring="Levithan Ring +1",
-				back="Buquwik Cape", waist="Fortia Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
+				back="Buquwik Cape", waist="Fotia Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
 		sets.precast.WS['Exudation'] = set_combine(sets.precast.WS, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levithan Ring +1", rring="Levithan Ring +1",

@@ -34,7 +34,7 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
@@ -51,9 +51,9 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 				
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
-			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
+			head="Pill. Bonnet +1", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
+            body="Pillager's Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
+            back="Fravashi Mantle", waist="Twilight Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
 sets.TH = {
 			hands="Plun. Armlets +1",
@@ -62,40 +62,40 @@ sets.TH = {
 -- Precast	
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
-			body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring",
+			body="Taeon Tabard", hands="Thaumas Gloves", lring="Prolix Ring",
 			waist="Twilight Belt", legs="Enif Cosciales"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+
 -- Midcast
 sets.midcast.Fastcast = set_combine(sets.idle.PDT,{
-			head="Haruspex Hat +1", neck="Torero Torque",lear="Loquac. Earring", rear="Enchntr. Earring +1",
-            body="Iuitl Vest", hands="Thaumas Gloves", lring="Rajas Ring", rring="Prolix Ring",
-            back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
-
-
-sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+			head="Haruspex Hat +1", neck="Voltsurge Torque",lear="Loquac. Earring", rear="Enchntr. Earring +1",
+            body="Taeon Tabard", hands="Thaumas Gloves", lring="Prolix Ring",
+            back="Fravashi Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
 sets.TP = { ranged="Raider's Bmrng.",
 			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
             back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	ammo="Ginsen",
-			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+			head="Skulker's Bonnet", neck="Iqabi Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Alliance Buffed
+-- 11 DW needed 
 sets.TP.Buffed = {	ammo="Ginsen",
-			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Taeon Boots"}
+			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+            body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
-			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
-            back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
+			head="Pill. Bonnet +1", neck="Torero Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
+            body="Pillager's Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
+            back="Fravashi Mantle", waist="Twilight Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
 -- RA Sets
 sets.precast.Snapshot = {legs="Nahtirah Trousers"}
@@ -117,18 +117,18 @@ sets.precast.JA["Accomplice"] = {head="Skulker's Bonnet"}
 sets.precast.JA["Collaborator"] = {head="Skulker's Bonnet"}
 sets.precast.JA["Conspirator"] = {body="Raider's Vest +2"}
 sets.precast.JA["Bully"] = {}
-sets.precast.JA["Despoil"] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
+sets.precast.JA["Despoil"] = {legs="Raider's Culottes +2", feet="Skulker's Poulaines"}
 
 -- Sneak Attack 
 sets.precast.JA["Sneak Attack"] = {
 				head="Uk'uxkaj Cap", neck="Love Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
                 body="Manibozho Jerkin", hands="Skulker's Armlets", lring="Ramuh Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Twilight Belt", legs="Manibozho Brais", feet="Iuitl Gaiters"}
+                back="Atheling Mantle", waist="Twilight Belt", legs="Taeon Tights", feet="Taeon Boots"}
 -- Trick Attack
 sets.precast.JA["Trick Attack"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Dudgeon Earring", rear="Bladeborn earring",
                 body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+                back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Taeon Boots"}
 
 -- Weaponskills
 sets.precast.WS = {
@@ -151,75 +151,75 @@ sets.precast.WS.Acc.TA = {}
 
 -- Mercy Stroke
 sets.precast.WS["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.SA["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Skulker's Armlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.TA["Mercy Stroke"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Rudra's Storm
 -- Solo
 sets.precast.WS["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 sets.precast.WS.SA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Tight t", feet="Taeon Boots"}
 sets.precast.WS.TA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 				
 sets.precast.WS.Acc["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 sets.precast.WS.Acc.SA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 sets.precast.WS.Acc.TA["Rudra's Storm"] = {
-				head="Pill. Bonnet +1", neck="Fortia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
 -- Exenterator
 sets.precast.WS["Exenterator"] = {
-				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Garuda Ring +1", rring="Epona's Ring",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Pillager's Poulaines"}
+				head="Skulker's Bonnet", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
+                body="Pillager's Vest +1", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Taeon Boots"}
 
 sets.precast.WS.Acc = {}
 sets.precast.WS.Acc["Exenterator"] = {
 				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Pillager's Armlets", lring="Garuda Ring +1", rring="Epona's Ring",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Pillager's Poulaines"}
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Taeon Boots"}
 -- Evisceration
 sets.precast.WS["Evisceration"] = {
 				head="Pill. Bonnet +1", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Iuitl Gaiters"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Evisceration"] = {
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
 -- Dancing Edge
 sets.precast.WS["Dancing Edge"] = {
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 				
 
 -- Misc Sets

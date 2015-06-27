@@ -110,18 +110,18 @@
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Snowslit:Att/Acc Leaf: TA Dusk: STR/DEX
-	Aug.Skirmish.Taeon.Head = {}
-	Aug.Skirmish.Taeon.Body = {}
-	Aug.Skirmish.Taeon.Hands = {}
-	Aug.Skirmish.Taeon.Legs = {}
-	Aug.Skirmish.Taeon.Feet = {}
+	Aug.Skirmish.Taeon.Head.TA = {}
+	Aug.Skirmish.Taeon.Body.TA = {}
+	Aug.Skirmish.Taeon.Hands.TA ={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2',}}
+	Aug.Skirmish.Taeon.Legs.TA = {}
+	Aug.Skirmish.Taeon.Feet.TA = { name="Taeon Boots", augments={'Accuracy+18 Attack+18','"Triple Atk."+1',}}
 	
-	-- Snow: acc + att Leaf: DW  Dusk: crit
-	Aug.Skirmish.Taeon.Head = {}
-	Aug.Skirmish.Taeon.Body = {}
-	Aug.Skirmish.Taeon.Hands = {}
-	Aug.Skirmish.Taeon.Legs = {}
-	Aug.Skirmish.Taeon.Feet = {}
+	-- Snow: acc + att Leaf: DW  Dusk: Crit
+	Aug.Skirmish.Taeon.Head.DW = {}
+	Aug.Skirmish.Taeon.Body.DW = {}
+	Aug.Skirmish.Taeon.Hands.DW = {}
+	Aug.Skirmish.Taeon.Legs.DW = { name="Taeon Tights", augments={'Accuracy+25','"Dual Wield"+5',}}
+	Aug.Skirmish.Taeon.Feet.DW = {}
 	
 	-- Leaf Fastcast?
 	Aug.Skirmish.Taeon.Body = {}
@@ -145,8 +145,8 @@
 	
 	-- MAB 
 	Aug.Skirmish.Helios.Head.MAB = {name="Helios Band",augments={"", ""}}
-	Aug.Skirmish.Helios.Hands.MAB = {name="Helios Gloves",augments={"", ""}}
-	Aug.Skirmish.Helios.Feet.MAB = {name="Helios Boots",augments={"", ""}}
+	Aug.Skirmish.Helios.Hands.MAB = { name="Helios Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic crit. hit rate +7',}}
+	Aug.Skirmish.Helios.Feet.MAB = { name="Helios Boots", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
 	
 	-- Telchine - WHM BLM RDM BRD SMN BLU SCH GEO
 	Aug.Skirmish.Telchine = {}
@@ -157,9 +157,9 @@
 	Aug.Skirmish.Telchine.Feet = {}
 	
 	-- Snow:  Leaf: Cure Pot Dusk: Enhancing pot
-	Aug.Skirmish.Telchine.Hands.Cure = {name="Telchine Gloves",augments={"", ""}}
+	Aug.Skirmish.Telchine.Hands.Cure = { name="Telchine Gloves", augments={'"Cure" potency +8%',}}
 	-- Snow: Macc Leaf:Songs Dusk
-	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Pigaches",augments={"", ""}}
+	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Pigaches", augments={'Mag. Acc.+20','Song spellcasting time -7%',}}
 	
 -- Magian Staves
 	-- Elemental Precast
@@ -188,11 +188,11 @@
 	elemental.Obi = {['Light']='Hachirin-no-Obi', ['Dark']='Anrin Obi', ['Fire']='Hachirin-no-Obi', ['Ice']='Hachirin-no-Obi', ['Wind']='Hachirin-no-Obi',
 			['Earth']='Hachirin-no-Obi', ['Lightning']='Hachirin-no-Obi', ['Water']='Hachirin-no-Obi'}
 
-	elemental.Gorget = {['Light']='Fortia Gorget', ['Dark']='Fortia Gorget', ['Fire']='Fortia Gorget', ['Ice']='Fortia Gorget',
-			['Wind']='Fortia Gorget', ['Earth']='Fortia Gorget', ['Lightning']='Fortia Gorget', ['Water']='Fortia Gorget'}
+	elemental.Gorget = {['Light']='Fotia Gorget', ['Dark']='Fotia Gorget', ['Fire']='Fotia Gorget', ['Ice']='Fotia Gorget',
+			['Wind']='Fotia Gorget', ['Earth']='Fotia Gorget', ['Lightning']='Fotia Gorget', ['Water']='Fotia Gorget'}
 
-	elemental.Belt = {['Light']='Fortia Belt', ['Dark']='Shadow Belt', ['Fire']='Fortia Belt', ['Ice']='Fortia Belt',
-			['Wind']='Fortia Belt', ['Earth']='Fortia Belt', ['Lightning']='Fortia Belt', ['Water']='Fortia Belt'}
+	elemental.Belt = {['Light']='Fotia Belt', ['Dark']='Shadow Belt', ['Fire']='Fotia Belt', ['Ice']='Fotia Belt',
+			['Wind']='Fotia Belt', ['Earth']='Fotia Belt', ['Lightning']='Fotia Belt', ['Water']='Fotia Belt'}
 
 			
 -------------------------------------------------------------------------------------------------------------------

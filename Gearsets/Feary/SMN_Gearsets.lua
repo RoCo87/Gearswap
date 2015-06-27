@@ -71,7 +71,7 @@ if player.name == 'Feary' then
 		sets.midcast.SummoningMagic = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring", rear="Gifted Earring",
 				body="Anhur Robe",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				back="Conveyance Cape",waist="Cimmerian Sash",legs="Caller's Spats +2",feet="Rubeus Boots"}
+				back="Conveyance Cape",waist="Cimmerian Sash",legs="Beckoner's Spats",feet="Rubeus Boots"}
 		-- BloodPactWard
 		sets.midcast.Pet.BloodPactWard = set_combine(sets.midcast.SummoningMagic,{})
 				
@@ -81,7 +81,7 @@ if player.name == 'Feary' then
 		sets.midcast.Pet.PhysicalBloodPactRage = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Sacrifice Torque",lear="Andoaa Earring", rear="Smn. Earring",
 				body="Convoker's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Convoker's Pigaches"}
+				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Convoker's Pigaches"}
 		-- Not Added to Smn.lua
 		sets.midcast.Pet.FC = set_combine(sets.midcast.Pet.PhysicalBloodPactRage,{}
 		
@@ -90,22 +90,22 @@ if player.name == 'Feary' then
 		sets.midcast.Pet.MagicalBloodPactRage = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
+				waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
 		-- Heavenly Strike','Wind Blade','Holy Mist','Night Terror','Thunderstorm','Geocrush','Meteor Strike','Grand Fall','Lunar Bay','Thunderspark'		
 		sets.midcast.Pet.MagicalBloodPactRage.TP = {main="Soulscourge",ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
+				waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
 		--	Additional Effect BPs
 		sets.midcast.Pet.MagicalBloodPactRage.Macc = {main="Eminent Pole",ammo="Eminent Sachet",
 				head="Bokwus Circlet",neck="Caller's Pendant",
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
+				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
 		-- Avatar Nukes 
 		sets.midcast.Pet.MagicalBloodPactRage.MAB = {main="Eminent Pole",ammo="Eminent Sachet",
 				head="Bokwus Circlet",neck="Caller's Pendant",
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
-				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Caller's Spats +2",feet="Hagondes Sabots"}
+				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
 		
 		sets.midcast.Pet.Spirit = set_combine(sets.midcast.Pet.BloodPactRage, {legs="Glyphic Spats"})		
 		-- Precast

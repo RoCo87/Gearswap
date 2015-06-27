@@ -36,11 +36,11 @@ if player.Name == 'Feary' then
 		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield",
 				head="Hagondes Hat", neck="Twilight Torque", rear="Ethereal Earring",
                 body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
+                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}			
+                back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
@@ -142,14 +142,14 @@ if player.Name == 'Feary' then
 		-- Elemental
 		-- Skill Gear For Elemental Dots And High Resisted Nukes
 		sets.midcast.Elemental = {main="Bolelabunga", ammo="Auroele",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Hagondes Coat +1", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		-- Pure Damage
 		sets.midcast.Nuke = {main="Bolelabunga", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Hagondes Coat +1", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		
 		-- Dark Magic
 		sets.midcast.Bio = set_combine(sets.midcast.Macc, {legs="Vitivation Tights"})

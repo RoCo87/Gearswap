@@ -85,19 +85,19 @@ if player.Name == 'Feary' then
 		-- Elemental
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Spaekona's Coat", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Spaekona's Coat", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		
 		sets.midcast.Nuke.Acc = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Spaekona's Coat", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet=Aug.Skirmish.Helios.feet.MAB}
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 
@@ -128,12 +128,12 @@ if player.Name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Helios Jacket", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                body="Helios Jacket", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Perception ring", rring="Sangoma ring",
+                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Ogapego Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)
