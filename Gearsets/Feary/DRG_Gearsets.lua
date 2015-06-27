@@ -148,34 +148,34 @@ sets.precast.WS = {ammo="Ginsen",
 sets.precast.WS.Acc = {}
 
 sets.precast.WS["Stardiver"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Mantle", waist="Fortia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+                back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
 sets.precast.WS.Acc["Stardiver"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Mantle", waist="Fortia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+                back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
 sets.precast.WS["Drakesbane"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Mantle", waist="Fortia Belt", legs="Peltast Cuissots", feet="Acro Leggings"}
+                back="Buquwik Mantle", waist="Fotia Belt", legs="Peltast Cuissots", feet="Acro Leggings"}
 
 sets.precast.WS.Acc["Drakesbane"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Mantle", waist="Fortia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+                back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
 sets.precast.WS["Camlann's Torment"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Buquwik Mantle", waist="Fortia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+                back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
 sets.precast.WS.Acc["Camlann's Torment"] = {ammo="Ginsen",
-				head="Otomi Helm", neck="Fortia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                back="Updraft Mantle", waist="Fortia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+                back="Updraft Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Cizin Helm", lear="Loquac. Earring", rring="Prolix Ring",})

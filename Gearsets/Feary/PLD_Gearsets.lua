@@ -152,30 +152,30 @@ sets.precast.WS = {
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Zoran's Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Requiescat'] = { ammo="",
-				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Atheling Mantle", waist="Fortia Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                back="Atheling Mantle", waist="Fotia Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Chant du Cygne'] = {ammo="",
-				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Savage Blade'] = {ammo="",
-				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 sets.precast.WS['Atonement'] = set_combine(sets.precast.WS, sets.Enmity,{
-				neck="Fortia Gorget", rear="Moonshade Earring",
+				neck="Fotia Gorget", rear="Moonshade Earring",
                 body="Phorcys Korazin", 
-				waist="Fortia Belt"})
+				waist="Fotia Belt"})
 
 sets.precast.WS.Acc = {}
 sets.precast.WS.Acc['Requiescat'] = {ammo="Aqua Sachet",
-				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Vespid Mantle", waist="Fortia Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                back="Vespid Mantle", waist="Fotia Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 
 sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
-				head="Yaoyotl Helm", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Mars's Ring",
                 back="Vespid Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 

@@ -139,11 +139,11 @@ sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
 sets.precast.WS["Ruinator"] = set_combine(sets.precast.WS, {ammo="Vanir battery",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Brutal earring", rear="Flame Pearl",
 			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
-			back="Buquwik Cape", waist="Fortia Belt", legs="Gor. Brayettes +1", feet="Ejekamal Boots"})
+			back="Buquwik Cape", waist="Fotia Belt", legs="Gor. Brayettes +1", feet="Ejekamal Boots"})
 sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {ammo="Ginsen",
 			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
 			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
-			back="Buquwik Cape", waist="Fortia Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"})
+			back="Buquwik Cape", waist="Fotia Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"})
 
 -- Primal Rend	
 sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {})

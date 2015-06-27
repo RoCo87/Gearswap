@@ -129,13 +129,13 @@ sets.precast.WS.Acc = {ammo="Vanir Battery",
 
 -- GreatSword
 sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
-				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Fortia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 sets.precast.WS.Acc["Resolution"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
-				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Fortia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})				
+                back="Buquwik Cape", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})				
 sets.precast.WS["Dimidiation"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Epona's Ring",
@@ -146,9 +146,9 @@ sets.precast.WS["Torcleaver"] = set_combine(sets.precast.WS, {ammo="Vanir Batter
                 back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 -- Sword
 sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS, {ammo="Ginsen",
-				head="Whirlpool Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Levia. Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Fortia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Atheling Mantle", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
 			
 -- Misc Sets
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})

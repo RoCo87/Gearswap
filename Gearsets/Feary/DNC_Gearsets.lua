@@ -116,12 +116,12 @@ sets.precast.WS.Acc = set_combine(sets.precast.WS,{})
 
 -- Rudra's Storm
 sets.precast.WS["Rudra's Storm"] = {
-				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
+				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 sets.precast.WS.Acc["Rudra's Storm"] = {
-				head="Uk'uxkaj Cap", neck="Fortia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
+				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
