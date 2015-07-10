@@ -138,9 +138,9 @@ sets.precast.WS["Blade: Jin"] = { ammo="Ginsen",
 
 -- Blade: Shun
 sets.precast.WS["Blade: Shun"] = { ammo="Ginsen",
-			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 -- Blade: Hi
 sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
 			head="Uk'uxkaj Cap", neck="Hope Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -154,14 +154,14 @@ sets.precast.WS.Acc["Blade: Hi"] = {ammo="Ginsen",
 
 -- Blade: Metsu	
 sets.precast.WS["Blade: Metsu"] = {ammo="Ginsen",
-			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 -- Blade: Kamu
 sets.precast.WS["Blade: Kamu"] = {ammo="Ginsen",
-			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Felistris Mask", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Otronif Harness", hands="Mochizuki Tekko", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
+            back="Atheling Mantle", waist="Fortia Belt", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc)

@@ -142,24 +142,24 @@ sets.precast.WS = {
                 back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS["Requiescat"] = {
-				head="Taeon Chapeau", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Taeon Chapeau", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Taeon Tabard", hands="Taeon Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 sets.precast.WS["Exenterator"] = {
-				head="Taeon Chapeau", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Taeon Chapeau", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+                back="Atheling Mantle", waist="Fortia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- RA WS
 sets.precast.RAWS = {
-				head="Chasseur Tricorne", neck="Fotia Gorget", lear="Clearview Earring", rear="Volley Earring",
+				head="Chasseur Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Volley Earring",
                 body="Chasseur Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Gunslinger's Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Taeon Boots"}
+                back="Gunslinger's Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Taeon Boots"}
 -- Physical
 sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
-				head="Chasseur Tricorne", neck="Fotia Gorget", lear="Clearview Earring", rear="Moonshade Earring",
+				head="Chasseur Tricorne", neck="Fortia Gorget", lear="Clearview Earring", rear="Moonshade Earring",
                 body="Chasseur Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Gunslinger's Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Chasseur Bottes"})
+                back="Gunslinger's Cape", waist="Fortia Belt", legs="Nahtirah Trousers", feet="Chasseur Bottes"})
 -- Magical
 sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
 				head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Pearl",

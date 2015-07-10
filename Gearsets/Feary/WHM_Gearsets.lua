@@ -153,8 +153,8 @@ if player.name == 'Feary' then
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
-                body="Helios Jacket", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
+                body="Helios Jacket", hands="Helios Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
 		-- Enfeebling
@@ -162,11 +162,11 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
+                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
