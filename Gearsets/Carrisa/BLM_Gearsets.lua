@@ -29,21 +29,21 @@ if player.Name == 'Carrisa' then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Earth Staff",
+		sets.idle.PDT = {main="Earth Staff", sub="Achaq Grip",
 				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
+                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring=Aug.Darkring2,
                 back="Engulfer Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
+		sets.Resting = set_combine(sets.idle.PDT, {main="Boonwell Staff",
 				ammo="Clarus Stone", head="Nefer Khat", neck="Eidolon Pendant", lear="Antivenom Earring", rear="Friomisi Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="Icesoul Ring", rring="Angha Ring",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				sub="Wise Strap", ammo="Witchstone", head="Nahtirah Hat", lear="Novio Earring", rear="Friomisi Earring",lring="Icesoul Ring", 
-				rring="Icesoul Ring", feet="Herald's Gaiters"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{main="Bolelabunga",
+				sub="Genbu's Shield", ammo="Dosis Tathlum", head="Wivre Hairpin", lear="Novio Earring", rear="Friomisi Earring", 
+				lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa, waist="Aswang Sash", legs="Nares Trews", feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		-- JA
 		sets.precast.JA["Manafont"] = {}
@@ -55,10 +55,10 @@ if player.Name == 'Carrisa' then
 		-- Precast
 		-- Magic
 		sets.precast.MinusHP = {head="Zenith Crown",neck="Morgana's Choker",body="Dalmatica",hands="Zenith Mitts",legs="Zenith Slacks",feet="Zenith Pumps"}
-		sets.precast.Fastcast = {ammo="Impatiens", sub="Vivid Strap",
-				head="Nahtirah Hat", neck="Jeweled Collar", lear="Loquac. Earring",
+		sets.precast.Fastcast = {ammo="Impatiens", main="Arka IV", sub="Vivid Strap",
+				head="Haruspex Hat +1", neck="Jeweled Collar", lear="Loquac. Earring",
                 body="Anhur Robe", hands="Repartie Gloves", lring="", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{head="Goetia Petasos +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				head="", neck="", lear="", rear="",
@@ -74,30 +74,31 @@ if player.Name == 'Carrisa' then
 		
 		-- Elemental
 		-- High Resist
-		sets.midcast.Elemental = {main="Atinian Staff", sub="Wise Strap", ammo="Witchstone",
+		sets.midcast.Elemental = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Dosis Tathlum",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Aswang Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                body="Hagondes Coat", hands="Yaoyotl Gloves", lring="Strendu Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Aswang Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 		-- Damage
-		sets.midcast.Nuke = {main="Atinian Staff", sub="Wise Strap", ammo="Witchstone",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Aswang Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+		sets.midcast.Nuke = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Dosis Tathlum",
+				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
+                body="Hagondes Coat", hands="Yaoyotl Gloves", lring="Strendu Ring", rring="Icesoul ring",
+                back="Toro Cape", waist="Aswang Sash", legs="Hagondes Pants", feet="Bokwus Boots"}
 		
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
+		sets.midcast.Cure = {main="Tamaxchi", sub="Sors Shield", 
 				head="Hyksos Khat", neck="Colossus's Torque", lear="Roundel Earring", rear="Healing Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Sirona's Ring", rring="Haoma's Ring",
-                back="Tempered Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}
 		
-		sets.midcast.Curaga = {main="Arka IV", 
+		sets.midcast.Curaga = {main="Tamaxchi", sub="Sors Shield",
 				head="Hyksos Khat", neck="Colossus's Torque", lear="Roundel Earring", rear="Healing Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Tempered Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}
 	
 		-- Enhancing 
 		-- 
-		sets.midcast.Enhancing = {sub="Fulcio Grip",neck="Colossus's Torque",body="Anhur Robe",hands="Ayao's Gloves",legs="Portant Pants",feet="Rubeus Boots",waist="Cascade Belt",back="Merciful Cape"}
+		sets.midcast.Enhancing = {sub="Fulcio Grip",neck="Colossus's Torque",body="Anhur Robe",hands="Ayao's Gloves",
+		legs="Portent Pants",feet="Rubeus Boots",waist="Olympus Sash",back="Merciful Cape"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
 		sets.midcast.Stoneskin = {}
@@ -109,12 +110,12 @@ if player.Name == 'Carrisa' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Kalboron Stone",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Mediator's ring", rring="Sangoma ring",
-                back="Oneiros Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
-		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Kalboron Stone",
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
+                back="Ogapepo Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
+		sets.midcast.Macc = {main="Eminent Staff", sub="Mephitis Grip", ammo="Kalboron Stone",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Mediator's ring", rring="Sangoma ring",
-                back="Oneiros Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
+                back="Ogapepo Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)

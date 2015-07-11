@@ -56,7 +56,7 @@ if player.name == 'Feary' then
 		sets.precast.JA['Benediction'] = {body="Piety Briault"}
 		sets.precast.JA['Asylum'] = {}
 		
-		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Orison Mitts +2", back="Mending Cape"}
+		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Piety Mitts", back="Mending Cape"}
 		sets.precast.JA['Devotion'] = {head="Piety Cap"}
 		sets.precast.JA['Martyr'] = {hands="Piety Mitts"}
 		
@@ -123,11 +123,11 @@ if player.name == 'Feary' then
 
 		-- Enhancing
 		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{main="Bolelabunga",
-                body="Piety Briault", hands="Orison Mitts +2",
+                body="Piety Briault", hands="Piety Mitts",
                 legs="Theo. Pantaloons"})
 		sets.midcast.BarElement = {main="Beneficus",
 				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
-                body="Ebers Briault", hands="Orison Mitts +2",
+                body="Ebers Briault", hands="Piety Mitts",
                 back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
@@ -153,8 +153,8 @@ if player.name == 'Feary' then
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
-                body="Helios Jacket", hands="Helios Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Artsieq Hose", feet="Helios Boots"}
+                body="Helios Jacket", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Holy = set_combine(sets.midcast.Banish)
 
 		-- Enfeebling
@@ -162,11 +162,11 @@ if player.name == 'Feary' then
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Helios Jacket", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.feet.MAB}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
