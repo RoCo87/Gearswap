@@ -107,18 +107,18 @@ sets.precast.JA["Mantra"] = {feet="Hes. Gaiters"}
 -- Weaponskills
 sets.precast.WS = {ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Anguinus Belt",  legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Impetus = {}
 sets.precast.WS.Impetus['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Bhikku Cyclas", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                body="Bhikku Cyclas", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS['Final Heaven'] = set_combine(sets.precast.WS)
@@ -141,7 +141,7 @@ sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin S
 
 sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"})
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fotia Gorget", waist="Anguinus Belt"})
 

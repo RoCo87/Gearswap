@@ -51,7 +51,7 @@ sets.idle.Regen = set_combine(sets.idle.PDT, {head="Pantin Taj"})
 sets.idle.Evasion = {
 				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Manibozho Boots"}
+                back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.misc.Town = set_combine(animator, oil, sets.idle.PDT, {
 				feet="Hermes' Sandals"})
@@ -64,17 +64,17 @@ sets.idle.Standard = set_combine(animator, oil, sets.idle.PDT, {
 sets.TP = set_combine(animator, oil, { 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Taeon Boots"})
 -- Accuracy TP
 sets.TP.MidAcc =  set_combine(animator, oil, sets.TP,{
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 -- High Accuracy TP
 sets.TP.HighAcc = set_combine(animator, oil, sets.TP,{
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 
 -- Hybrid PDT/TP
 sets.TP.Hybrid = set_combine(animator, oil, sets.TP, sets.idle.PDT)
@@ -83,20 +83,20 @@ sets.TP.Hybrid = set_combine(animator, oil, sets.TP, sets.idle.PDT)
 sets.TP.Pet = set_combine(animator,sets.TP,{ 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Regimen Mittens", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 sets.TP.Pet.Idle = {}
 sets.TP.Pet.Tank = set_combine(animator,sets.TP.Pet,{ 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Regimen Mittens", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 sets.TP.Pet.Range = set_combine(animator,sets.TP.Pet,{ 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Regimen Mittens", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 sets.TP.Pet.Mage = set_combine(animator,sets.TP.Pet,{ 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Regimen Mittens", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"})
 
 -- Pet 
 sets.pet = {}
@@ -135,36 +135,36 @@ sets.precast.Maneuvers = set_combine(sets.idle.PDT,Animator,{
 		
 sets.precast.WS = {ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Anguinus Belt",  legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {})
 
 sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {ammo="Potestas Bomblet",
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"})
 
 sets.precast.WS.MidAcc = {}
 sets.precast.WS.HighAcc = {}
 sets.precast.WS.MidAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {
 				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Anguinus Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"})
 sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {ammo="Potestas Bomblet",
 				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Mars's Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Anguinus Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
+                back="Buquwik Cape", waist="Anguinus Belt",  legs="Taeon Tights", feet="Taeon Boots"})
 
 sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Wanion Belt",  legs="Manibozho Brais", feet="Manibozho Boots"})
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"})
 
 sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fotia Gorget", waist="Anguinus Belt"})
 

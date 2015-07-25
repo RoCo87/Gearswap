@@ -145,8 +145,8 @@
 	
 	-- MAB 
 	Aug.Skirmish.Helios.Head.MAB = {name="Helios Band",augments={"", ""}}
-	Aug.Skirmish.Helios.Hands.MAB = { name="Helios Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic crit. hit rate +7',}}
-	Aug.Skirmish.Helios.Feet.MAB = { name="Helios Boots", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
+	Aug.Skirmish.Helios.Hands.MAB = { name="Helios Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic crit. hit rate +7'}}
+	Aug.Skirmish.Helios.Feet.MAB = { name="Helios Boots", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15'}}
 	
 	-- Telchine - WHM BLM RDM BRD SMN BLU SCH GEO
 	Aug.Skirmish.Telchine = {}

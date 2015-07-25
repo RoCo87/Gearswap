@@ -58,19 +58,19 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
 sets.TP = { ammo="Charis Feather",
 			head="Uk'uxkaj Cap", neck="Charis Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Maculele Casaque", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Patentia Sash", legs="Manibozho Brais", feet="Horos Shoes"}
+            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Horos Shoes"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
             body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Alliance Buffed - Capped Haste/Marches/Embrava
 sets.TP.Buffed = {
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Thaumas Coat", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
@@ -110,7 +110,7 @@ sets.precast.JA["Climactic Flourish"] = set_combine(sets.precast.JA["Flourish"],
 sets.precast.WS = {
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc = set_combine(sets.precast.WS,{})
 
@@ -118,44 +118,44 @@ sets.precast.WS.Acc = set_combine(sets.precast.WS,{})
 sets.precast.WS["Rudra's Storm"] = {
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Rudra's Storm"] = {
 				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Exenterator
 sets.precast.WS["Exenterator"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Exenterator"] = {
 				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 -- Evisceration
 sets.precast.WS["Evisceration"] = {
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Evisceration"] = {
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Pyrrhic Kleos
 sets.precast.WS["Pyrrhic Kleos"] = {
 				head="Whirlpool Mask", neck="Justicier's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Pyrrhic Kleos"] = {
 				head="Whirlpool Mask", neck="Justicier's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Iuitl Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 				
 -- Midcast Sets
 

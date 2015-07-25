@@ -69,16 +69,16 @@ sets.Enmity = {
 -- TP set
 sets.TP = { ammo="Vanir Battery",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Thaumas Coat", hands="Manibozho Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+            body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 sets.TP.Acc = { ammo="Honed Tathlum",
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Thaumas Coat", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Dynamic Belt +1", legs="Manibozho Brais", feet="Manibozho Boots"}
+            back="Atheling Mantle", waist="Dynamic Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
 sets.TP.Buffed = { ammo="Vanir Battery",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Thaumas Coat", hands="Manibozho Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}			
+            body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}			
 sets.TP.Hybrid = { ammo="Vanir Battery",
 			head="Whirlpool Mask", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Thaumas Coat", hands="Iuitl Wristbands +1", lring="Defending Ring", rring="Epona's Ring",
@@ -120,35 +120,35 @@ sets.midcast.Flash = set_combine(sets.Enmity,sets.precast.Fastcast,{})
 -- Weaponskills
 sets.precast.WS = {ammo="Vanir Battery",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 sets.precast.WS.Acc = {ammo="Vanir Battery",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- GreatSword
 sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
 sets.precast.WS.Acc["Resolution"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})				
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})				
 sets.precast.WS["Dimidiation"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
 sets.precast.WS["Torcleaver"] = set_combine(sets.precast.WS, {ammo="Vanir Battery",
 				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"})
 -- Sword
 sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS, {ammo="Ginsen",
 				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Manibozho Gloves", lring="Levia. Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Manibozho Brais", feet="Manibozho Boots"})
+                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Levia. Ring +1", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
 			
 -- Misc Sets
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})
