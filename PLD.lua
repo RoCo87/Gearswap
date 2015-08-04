@@ -109,6 +109,13 @@ function self_command(command)
 				previous_set()
 			else
 				equip(sets.idle.Standard)
+				if Mode == 0 then
+					windower.add_to_chat(121,'TP')
+				elseif Mode == 1 then
+					windower.add_to_chat(121,'Acc TP')
+				elseif Mode == 2 then
+					windower.add_to_chat(121,'Hybrid')
+				end
 			end
 		end
 	elseif command == 'twilight' or command == "t" then
@@ -157,6 +164,8 @@ function status_change(new,old)
 					equip(sets.idle.PDT)
 				elseif MDT == 1 then
 					equip(sets.idle.MDT)
+				elseif Mode == 2 then
+					equip(sets.idle.DT)
 				else
 					equip(sets.idle.Standard)
 				end
@@ -175,6 +184,8 @@ function status_change(new,old)
 				MDT = 0
 				PDT = 0
 			end
+		elseif Mode == 2 then
+			equip(sets.TP.Hybrid)
 		else
 			-- Equip previous TP set 
 				previous_set()

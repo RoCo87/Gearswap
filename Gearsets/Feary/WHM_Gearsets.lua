@@ -33,11 +33,11 @@ if player.name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
-				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
-				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
@@ -56,7 +56,7 @@ if player.name == 'Feary' then
 		sets.precast.JA['Benediction'] = {body="Piety Briault"}
 		sets.precast.JA['Asylum'] = {}
 		
-		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Piety Mitts", back="Mending Cape"}
+		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Ebers Mitts", back="Mending Cape"}
 		sets.precast.JA['Devotion'] = {head="Piety Cap"}
 		sets.precast.JA['Martyr'] = {hands="Piety Mitts"}
 		
@@ -128,15 +128,15 @@ if player.name == 'Feary' then
 		sets.midcast.BarElement = {main="Beneficus",
 				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Ebers Briault", hands="Piety Mitts",
-                back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.BarStatus = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Anhur Robe", hands="Ayao's Gages",
-                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.Boost = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
                 body="Anhur Robe", hands="Ayao's Gages", 
-                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Boost)
 		sets.midcast.Hastespell = set_combine(sets.precast.Fastcast,{ammo="Impatiens", 
 				back="Ogapepo Cape", waist="Witful Belt"})

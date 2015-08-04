@@ -32,12 +32,12 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
-				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Mekira Meikogai", hands="Cizin Mufflers", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves"}
 

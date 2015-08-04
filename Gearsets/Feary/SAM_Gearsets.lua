@@ -37,12 +37,12 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
-				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Otronif Harness", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
@@ -120,7 +120,7 @@ sets.precast.JA["Third Eye"] = {legs="Saotome Haidate"}
 sets.precast.JA["Seigan"] = {head="Kasuga Kabuto"}
 sets.precast.JA["Blade Bash"] = {hands="Sakonji Kote"}
 sets.precast.JA["Sekkanoki"] = {hands="Unkai Kote +2"}
-sets.precast.JA["Sengikori"] = {feet="Unkai Sune-ate +2"}
+sets.precast.JA["Sengikori"] = {feet="Kasuga Sune-ate"}
 sets.precast.JA["Hagakore"] = {}
 sets.precast.JA["Konzen-ittai"] = {}
 sets.precast.JA["Warding Circle"] = {head="Wakido Kabuto"}

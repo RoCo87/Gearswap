@@ -42,7 +42,7 @@ sets.idle.PDT = {
                 back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.MDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 

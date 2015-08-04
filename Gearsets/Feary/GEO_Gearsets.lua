@@ -38,11 +38,11 @@ if player.Name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="", sub="Genbu's Shield",
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Sekhmet corset", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felecie", waist="",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
@@ -180,9 +180,9 @@ if player.Name == 'Feary' then
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
 				back="Buquwik Cape", waist="Wanion Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
 		sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
-				head="Nahtirah Hat", neck="Fortia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+				head="Nahtirah Hat", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levithan Ring +1", rring="Levithan Ring +1",
-				back="Buquwik Cape", waist="Fortia Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
+				back="Buquwik Cape", waist="Fotia Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
 		sets.precast.WS['Exudation'] = set_combine(sets.precast.WS, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levithan Ring +1", rring="Levithan Ring +1",

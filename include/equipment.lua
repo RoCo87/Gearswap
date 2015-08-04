@@ -48,13 +48,13 @@
 	Aug.Skirmish.Acro.Legs = {}
 	Aug.Skirmish.Acro.Feet = {}
 	
-	-- TP Snow: Att/Acc Dusk: Leaf:STP
+	-- STP Snow: Att/Acc Dusk: Leaf:STP
 	Aug.Skirmish.Acro.Body.STP = {}
 	Aug.Skirmish.Acro.Hands.STP = {}
 	Aug.Skirmish.Acro.Legs.STP = {}
 	Aug.Skirmish.Acro.Feet.STP = {}
 	
-	-- TP - Snow: Att/Acc Leaf:D.atk Dusk: Crit Rate
+	-- TP - Snow: Att/Acc Leaf:D.Atk Dusk: Crit Rate
 	Aug.Skirmish.Acro.Head.TP = {}
 	Aug.Skirmish.Acro.Body.TP = {}
 	Aug.Skirmish.Acro.Hands.TP = {}
@@ -84,12 +84,13 @@
 	Aug.Skirmish.Yorium.Feet = {}
 	
 	-- DT Snow: Att/acc Leaf:DA Dusk: DT 
-	Aug.Skirmish.Yorium.Head.DT = {}
-	Aug.Skirmish.Yorium.Hands.DT = {}
-	Aug.Skirmish.Yorium.Legs.DT = {}
-	Aug.Skirmish.Yorium.Feet.DT = {}
+	Aug.Skirmish.Yorium.Head.DT ={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Damage taken-2%',}}
+	Aug.Skirmish.Yorium.Body.DT ={ name="Yorium Cuirass", augments={'Evasion+11','Damage taken-3%',}}
+	Aug.Skirmish.Yorium.Hands.DT ={ name="Yorium Gauntlets", augments={'Accuracy+21','Damage taken-3%',}}
+	Aug.Skirmish.Yorium.Legs.DT ={ name="Yorium Cuisses", augments={'Accuracy+20','Damage taken-3%',}}
+	Aug.Skirmish.Yorium.Feet.DT ={ name="Yorium Sabatons", augments={'Accuracy+18','Damage taken-2%',}}
 	
-	-- Snow: Leaf: Enmity Dusk: Phalanx 
+	-- Enmity Leaf: Enmity Dusk: Phalanx 
 	Aug.Skirmish.Yorium.Head.Enmity = {}
 	Aug.Skirmish.Yorium.Hands.Enmity = {}
 	Aug.Skirmish.Yorium.Legs.Enmity = {}
@@ -123,7 +124,7 @@
 	Aug.Skirmish.Taeon.Legs.DW = { name="Taeon Tights", augments={'Accuracy+25','"Dual Wield"+5',}}
 	Aug.Skirmish.Taeon.Feet.DW = {}
 	
-	-- Leaf Fastcast?
+	-- snow: macc/mab Leaf: Fastcast? INT
 	Aug.Skirmish.Taeon.Body = {}
 	Aug.Skirmish.Taeon.Hands = {}
 	Aug.Skirmish.Taeon.Legs = {}
@@ -132,7 +133,7 @@
 	-- Leaf Snapshot?
 	Aug.Skirmish.Taeon.Feet = {}
 	
-	-- Snow: Racc/Ratt
+	-- Snow: Racc/Ratt leaf
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Helios - WHM BLM RDM SMN BLU SCH GEO

@@ -40,40 +40,51 @@ physicalshield = {sub="Ochain"}
 magicalshield = {sub="Aegis"}
 
 -- Standard/idle
-sets.idle.PDT = { ammo="Angha Gem",
-				head="Rev. Coronet +1", neck="Twilight Torque", lear="Ethereal Earring",
+sets.idle.PDT = { ammo="Hasty Pinion +1",
+				head="Rev. Coronet +1", neck="Twilight Torque", lear="Ethereal Earring", rear="",
                 body="Cab. Surcoat +1", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Cab. Breeches", feet="Yorium Sabatons"}
+                back="Mollusca Mantle", waist="Nierenschutz", legs="Cab. Breeches", feet="Yorium Sabatons"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
-				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
+                back="Mollusca Mantle", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
 sets.idle.MDT.Shell = { ammo="Vanir Battery",
-				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {
-				legs="Blood Cuisses"})
+sets.idle.BDT = { ammo="Hasty Pinion +1",
+				head=Aug.Skirmish.Yorium.Head.DT, neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Cab. Surcoat +1", hands=Aug.Skirmish.Yorium.Hands.DT, lring=Aug.Darkring1, rring="Defending Ring",
+                back="Mollusca Mantle", waist="Nierenschutz", legs=Aug.Skirmish.Yorium.Legs.DT, feet=Aug.Skirmish.Yorium.Feet.DT}			
+
+sets.idle.DT = { ammo="Hasty Pinion +1",
+				head=Aug.Skirmish.Yorium.Head.DT, neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Cab. Surcoat +1", hands=Aug.Skirmish.Yorium.Hands.DT, lring=Aug.Darkring1, rring="Defending Ring",
+                back="Mollusca Mantle", waist="Nierenschutz", legs=Aug.Skirmish.Yorium.Legs.DT, feet=Aug.Skirmish.Yorium.Feet.DT}			
+
+sets.misc.Town = set_combine(sets.idle.DT, {
+				back="Shadow Mantle", legs="Blood Cuisses"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", legs="Blood Cuisses"})
+				lear="Merman's Earring", rear="Merman's Earring", 
+				back="Shadow Mantle", legs="Blood Cuisses"})
 -- TP 
 sets.TP = { 	ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Acro Surcoat", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
-sets.TP.Acc = { ammo="Ginsen",
-				head="Yaoyotl Helm", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Acro Surcoat", hands="Arco Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Atheling Mantle", waist="Dynamic Belt +1", legs="Acro Breeches", feet="Acro Leggings"}
+sets.TP.Acc = { ammo="Hasty Pinion +1",
+				head=Aug.Skirmish.Yorium.Head.DT, neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Acro Surcoat", hands="Acro Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Atheling Mantle", waist="Anguinus Belt", legs="Acro Breeches", feet="Acro Leggings"}
 -- DT/Acc Build
-sets.TP.Hybrid = { ammo="Hasty Pinion",
-				head="Yorium Barbuta", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Cab. Surcoat +1", hands="Yorium Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Mollusca Mantle", waist="Nierenschutz", legs="Yorium Cuisses", feet="Yorium Sabatons"}			
+sets.TP.Hybrid = { ammo="Hasty Pinion +1",
+				head=Aug.Skirmish.Yorium.Head.DT, neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Cab. Surcoat +1", hands=Aug.Skirmish.Yorium.Hands.DT, lring=Aug.Darkring1, rring="Defending Ring",
+                back="Mollusca Mantle", waist="Nierenschutz", legs=Aug.Skirmish.Yorium.Legs.DT, feet=Aug.Skirmish.Yorium.Feet.DT}			
 sets.Weakened = set_combine(sets.TP.Hybrid,{})
 
 -- Precast 
@@ -147,37 +158,48 @@ sets.precast.JA["Shield Bash"] = set_combine(sets.Enmity,{
 				hands="Cab. Gauntlets +1",lear="Knightly Earring"})
 
 -- WS
-sets.precast.WS = {
-				head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Zoran's Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.precast.WS['Requiescat'] = { ammo="",
-				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.precast.WS['Chant du Cygne'] = {ammo="",
-				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
-sets.precast.WS['Savage Blade'] = {ammo="",
-				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+sets.precast.WS = { ammo="Ginsen",
+				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Acro Breeches", feet="Acro Leggings"}
+sets.precast.WS['Requiescat'] = { ammo="Ginsen",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
+sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Acro Breeches", feet="Acro Leggings"}
+sets.precast.WS['Savage Blade'] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Wanion Belt", legs="Acro Breeches", feet="Acro Leggings"}
 sets.precast.WS['Atonement'] = set_combine(sets.precast.WS, sets.Enmity,{
 				neck="Fotia Gorget", rear="Moonshade Earring",
-                body="Phorcys Korazin", 
+                body="Phorcys Korazin", lring="",
 				waist="Fotia Belt"})
 
-sets.precast.WS.Acc = {}
+sets.precast.WS.Acc = {ammo="Ginsen",
+				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Acro Breeches", feet="Acro Leggings"}
+				
 sets.precast.WS.Acc['Requiescat'] = {ammo="Aqua Sachet",
 				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Vespid Mantle", waist="Fotia Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                back="Vespid Mantle", waist="Fotia Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
 
 sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
 				head="Yaoyotl Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Mars's Ring",
-                back="Vespid Mantle", waist="Wanion Belt",  legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+                body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Vespid Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Whirlpool Greaves"}
+
+sets.precast.WS.Acc['Savage Blade'] = {ammo="Ginsen",
+				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Chev. Cuirass", hands="Acro Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Buquwik Cape", waist="Wanion Belt", legs="Acro Breeches", feet="Acro Leggings"}
+
+sets.precast.WS.Acc['Atonement'] = set_combine(sets.precast.WS.Atonement)
 
 -- Misc Sets
 sets.misc.Waltz = set_combine(sets.precast.JA["Chivalry"],{})
