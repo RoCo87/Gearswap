@@ -72,7 +72,7 @@ if player.name == 'Feary' then
                 body="Gende. Bilaut +1", hands="Gende. Gages +1",
                 back="Felicitas Cape", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Merman's Earring",
+				lear="Merman's Earring", rear="Etiolation Earring",
                 feet="Fili Cothurnes"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Fili Cothurnes"})

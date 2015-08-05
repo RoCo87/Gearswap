@@ -49,7 +49,7 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				legs="Lanun Culottes", feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", 
+				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Hermes' Sandals"})
 				
 -- Precast 

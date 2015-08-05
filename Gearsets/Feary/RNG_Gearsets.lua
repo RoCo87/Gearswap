@@ -59,7 +59,7 @@ sets.misc.Town = set_combine(sets.idle.PDT,{
 				legs="Arcadian Braccae +1", feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Fajin Boots"})
+				lear="Merman's Earring", rear="Etiolation Earring", feet="Fajin Boots"})
 -- Melee TP 
 sets.TP = { 
 				head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",

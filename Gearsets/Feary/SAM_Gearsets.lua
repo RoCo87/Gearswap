@@ -52,7 +52,7 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Danzo Sune-Ate"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", feet="Danzo Sune-Ate"})
+				lear="Merman's Earring", rear="Etiolation Earring", feet="Danzo Sune-Ate"})
 -- Tsuru TP
 sets.TP = { 	
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",

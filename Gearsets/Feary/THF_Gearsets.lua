@@ -46,7 +46,7 @@ sets.misc.Town = set_combine(sets.idle.PDT, { head="Felistris Mask",
 				feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", 
+				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Fajin Boots"})
 				
 -- Full Evasion

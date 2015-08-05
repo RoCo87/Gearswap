@@ -48,7 +48,7 @@ sets.idle.MDT = {
 sets.misc.Town = set_combine(sets.idle.PDT, {feet="Skadi's Jambeaux"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Merman's Earring", 
+				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Skadi's Jambeaux"})
 
 sets.Resting = set_combine(sets.idle.PDT,{

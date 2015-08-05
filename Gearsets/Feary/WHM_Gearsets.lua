@@ -45,7 +45,7 @@ if player.name == 'Feary' then
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Merman's Earring",
+				lear="Merman's Earring", rear="Etiolation Earring",
 				hands="Serpentes Cuffs",
                 legs="Nares Trews", feet="Herald's Gaiters"})
 

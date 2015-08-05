@@ -50,11 +50,11 @@ if player.Name == 'Feary' then
                 body="Hagondes Coat +1", hands="Bagua Mitaines",
                 waist="Fucho-no-Obi", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{main="Bolelabunga", sub="Genbu's Shield", range="Dunna",
-				lear="Merman's Earring", rear="Merman's Earring",
+				lear="Merman's Earring", rear="Etiolation Earring",
 				--hands="Bagua Mitaines",
 				feet="Geomancy Sandals"})
 		sets.idle.Standard.Pet = set_combine(sets.idle.PDT,{range="Dunna",
-				head="Selenian Cap",lear="Merman's Earring", rear="Merman's Earring",
+				head="Selenian Cap",lear="Merman's Earring", rear="Etiolation Earring",
 				hands="Geomancy Mitaines",
 				feet="Bagua Sandals"})
 						

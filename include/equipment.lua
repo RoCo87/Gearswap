@@ -124,16 +124,17 @@
 	Aug.Skirmish.Taeon.Legs.DW = { name="Taeon Tights", augments={'Accuracy+25','"Dual Wield"+5',}}
 	Aug.Skirmish.Taeon.Feet.DW = {}
 	
-	-- snow: macc/mab Leaf: Fastcast? INT
+	-- snow: macc/mab Leaf: Fastcast Dusk: INT
 	Aug.Skirmish.Taeon.Body = {}
 	Aug.Skirmish.Taeon.Hands = {}
 	Aug.Skirmish.Taeon.Legs = {}
 	Aug.Skirmish.Taeon.Feet = {}
 	
-	-- Leaf Snapshot?
+	-- Leaf:Snapshot
 	Aug.Skirmish.Taeon.Feet = {}
 	
-	-- Snow: Racc/Ratt leaf
+	-- Snow: Racc/Ratt leaf:Crit rate dusk: crit damage
+	Aug.Skirmish.Taeon.Head = {}
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Helios - WHM BLM RDM SMN BLU SCH GEO
