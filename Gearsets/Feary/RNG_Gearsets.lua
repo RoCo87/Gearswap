@@ -90,6 +90,7 @@ sets.RA = {
             body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
             back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
 				
+-- Current- 33 STP
 sets.RA.Acc = {
 			head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
             body="Kyujutsugi", hands="Amini Glovelettes", lring="Garuda Ring +1", rring="Garuda Ring +1",

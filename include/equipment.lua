@@ -48,7 +48,7 @@
 	Aug.Skirmish.Acro.Legs = {}
 	Aug.Skirmish.Acro.Feet = {}
 	
-	-- STP Snow: Att/Acc Dusk: Leaf:STP
+	-- STP Snow: Att/Acc Leaf:STP Dusk: STR
 	Aug.Skirmish.Acro.Body.STP = {}
 	Aug.Skirmish.Acro.Hands.STP = {}
 	Aug.Skirmish.Acro.Legs.STP = {}
@@ -61,19 +61,25 @@
 	Aug.Skirmish.Acro.Legs.TP = {}
 	Aug.Skirmish.Acro.Feet.TP = {}
 	
-	-- WS - Snow:acc/atk Dusk:WSD Leaf:WSacc
+	-- WS - Snow:acc/atk Leaf:WSacc Dusk:WSD
 	Aug.Skirmish.Acro.Head.WS = {}
 	Aug.Skirmish.Acro.Body.WS = {}
 	Aug.Skirmish.Acro.Legs.WS = {}
 	Aug.Skirmish.Acro.Feet.WS = {}
 	
-	-- DRG Breath - Snow: Pet Macc Leaf: Breath Dusk: Pet: haste
+	-- DRG Breath - Snow: Pet Macc 20 Leaf: Breath Dusk: Pet: haste
 	Aug.Skirmish.Acro.Body.Breathe = {}
 	Aug.Skirmish.Acro.Hands.Breathe = {}
 	Aug.Skirmish.Acro.Legs.Breathe = {}
 	Aug.Skirmish.Acro.Feet.Breathe = {}
 	
-	-- BST Delay - Snow Pet:Att/acc Leaf: CALL BEAST DELAY Dusk: PET DT
+	-- BST Delay - Snow: pet MAB Leaf: CALL BEAST DELAY Dusk:MND
+	-- PET Ready/sic
+	Aug.Skirmish.Acro.Head.Delay = {}
+	Aug.Skirmish.Acro.Body.MSic = {}
+	Aug.Skirmish.Acro.Hands.MSic = {}
+	Aug.Skirmish.Acro.Legs.Delay = {}
+	Aug.Skirmish.Acro.Feet.MSic = {}
 	
 	-- Yorium - WAR PLD DRK
 	Aug.Skirmish.Yorium = {}
@@ -90,17 +96,11 @@
 	Aug.Skirmish.Yorium.Legs.DT ={ name="Yorium Cuisses", augments={'Accuracy+20','Damage taken-3%',}}
 	Aug.Skirmish.Yorium.Feet.DT ={ name="Yorium Sabatons", augments={'Accuracy+18','Damage taken-2%',}}
 	
-	-- Enmity Leaf: Enmity Dusk: Phalanx 
+	-- Enmity - Snow ? Leaf: Enmity Dusk: Phalanx 
 	Aug.Skirmish.Yorium.Head.Enmity = {}
 	Aug.Skirmish.Yorium.Hands.Enmity = {}
 	Aug.Skirmish.Yorium.Legs.Enmity = {}
 	Aug.Skirmish.Yorium.Feet.Enmity = {}
-	
-	-- BST DT - Snow Pet: Acc Leaf: pet D.atk Dusk: pet DT
-	Aug.Skirmish.Yorium.Body.pet = {}
-	Aug.Skirmish.Yorium.Hands.pet = {}
-	Aug.Skirmish.Yorium.Legs.pet = {}
-	Aug.Skirmish.Yorium.Feet.pet = {}
 		
 	-- Taeon
 	Aug.Skirmish.Taeon = {}
@@ -137,6 +137,36 @@
 	Aug.Skirmish.Taeon.Head = {}
 	Aug.Skirmish.Taeon.Feet = {}
 	
+	-- BST
+	-- pet TP - Snow; Pet: acc/att Leaf Pet DA +5 Dusk pet haste +5
+	-- hands Snow Attack +25
+	Aug.Skirmish.Taeon.Head.PET = {}
+	Aug.Skirmish.Taeon.Body.PET = {}
+	Aug.Skirmish.Taeon.Hands.PET = {}
+	Aug.Skirmish.Taeon.Legs.PET = {}
+	Aug.Skirmish.Taeon.Feet.PET = {}
+	
+	-- Snow: def +25 Leaf: regen +3 Dusk; pet dt
+	Aug.Skirmish.Taeon.Head.PDT = {}
+	Aug.Skirmish.Taeon.Body.PDT = {}
+	Aug.Skirmish.Taeon.Hands.PDT = {}
+	Aug.Skirmish.Taeon.Legs.PDT = {}
+	Aug.Skirmish.Taeon.Feet.PDT = {}
+	
+	-- PET Ready/sic
+	-- Snow; pet acc/attack Leaf: pet DA +5 Dusk;	 
+	Aug.Skirmish.Taeon.Head.PDT = {}
+	Aug.Skirmish.Taeon.Legs.PDT = {}
+	Aug.Skirmish.Taeon.Feet.PDT = {}
+	
+	-- PET Ready/sic
+	-- Snow; pet MAB/M.atk 	 
+	Aug.Skirmish.Taeon.Head.MSic = {}
+	Aug.Skirmish.Taeon.Body.MSic= {}
+	Aug.Skirmish.Taeon.Hands.MSic= {}
+	Aug.Skirmish.Taeon.Legs.MSic= {}
+	Aug.Skirmish.Taeon.Feet.MSic= {}
+	
 	-- Helios - WHM BLM RDM SMN BLU SCH GEO
 	Aug.Skirmish.Helios = {}
 	Aug.Skirmish.Helios.Head = {}
@@ -150,6 +180,36 @@
 	Aug.Skirmish.Helios.Hands.MAB = { name="Helios Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic crit. hit rate +7'}}
 	Aug.Skirmish.Helios.Feet.MAB = { name="Helios Boots", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15'}}
 	
+	--SMN
+	
+	-- avatar TP
+	-- prep cost pet haste pet acc/racc
+	Aug.Skirmish.Helios.Hands = {}
+	-- pet haste  pet DA  pet atk/ratk
+	Aug.Skirmish.Helios.Feet = {}
+	
+	-- pet mab 30 pet crit Blood Pact Damage +7
+	Aug.Skirmish.Helios.Head = {}
+	Aug.Skirmish.Helios.Body = {}
+	Aug.Skirmish.Helios.Hands = {}
+	Aug.Skirmish.Helios.Legs = {}
+	Aug.Skirmish.Helios.Feet = {}
+	
+	-- BPD 7 pet att/ratk pet crit
+	Aug.Skirmish.Helios.Head = {}
+	Aug.Skirmish.Helios.Hands = {}
+	Aug.Skirmish.Helios.Legs = {}
+	Aug.Skirmish.Helios.Feet = {}
+	
+	
+	-- boon pet acc 30 smn skill
+	Aug.Skirmish.Helios.Head = {}
+	Aug.Skirmish.Helios.Body = {}
+	Aug.Skirmish.Helios.Hands = {}
+	Aug.Skirmish.Helios.Legs = {}
+	Aug.Skirmish.Helios.Feet = {}
+	
+	
 	-- Telchine - WHM BLM RDM BRD SMN BLU SCH GEO
 	Aug.Skirmish.Telchine = {}
 	Aug.Skirmish.Telchine.Head = {}
@@ -162,6 +222,13 @@
 	Aug.Skirmish.Telchine.Hands.Cure = { name="Telchine Gloves", augments={'"Cure" potency +8%',}}
 	-- Snow: Macc Leaf:Songs Dusk
 	Aug.Skirmish.Telchine.Feet.Song = {name="Telchine Pigaches", augments={'Mag. Acc.+20','Song spellcasting time -7%',}}
+	
+	-- Smn
+	-- Elemental siphon
+	Aug.Skirmish.Telchine.Head = {}
+	Aug.Skirmish.Telchine.Body = {}
+	Aug.Skirmish.Telchine.Hands = {}
+	Aug.Skirmish.Telchine.Legs = {}
 	
 -- Magian Staves
 	-- Elemental Precast

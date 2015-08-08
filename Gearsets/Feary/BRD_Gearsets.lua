@@ -102,7 +102,7 @@ if player.name == 'Feary' then
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
 		
 		-- Midcast
-		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape +1", kwaist="Witful Belt"})
+		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape +1", waist="Witful Belt"})
 		
 		sets.midcast.ConserveMP = {
 				head="", neck="", lear="Gwati Earring", rear="Gifted Earring",
@@ -123,7 +123,7 @@ if player.name == 'Feary' then
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring",
                 body="Fili Hongreline", hands="Fili Manchettes",
-                back="Rhapsode's Cape", waist="Corvax Belt", legs="Fili Rhingrave", feet="Brioso Slippers +1"}
+                back="Rhapsode's Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Brioso Slippers +1"}
 		-- Debuffs
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Gwati Earring", rear="Musical Earring",
@@ -172,6 +172,8 @@ if player.name == 'Feary' then
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",
                 back="Atheling Mantle", waist="Dynamic Belt +1", legs="Gende. Spats +1", feet="Bihu Slippers"})	
+		
+		-- WeaponSkills
 		sets.precast.WS = set_combine(sets.TP, {main="Mandau",
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Bihu Justaucorps", hands="Bihu Cuffs +1", lring="Rajas Ring", rring="Ifrit Ring +1",

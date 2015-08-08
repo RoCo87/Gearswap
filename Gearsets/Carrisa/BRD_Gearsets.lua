@@ -11,15 +11,15 @@ if player.name == "Carrisa" then
 		-- sets Macros off = 0  on = 1
 		automacroset = 0
 		if automacroset == 1 then
-			if player.sub_job == 'nin' then
+			if player.sub_job == 'NIN' then
 				set_macro_page(20,1)
-			elseif player.sub_job =='whm' then
+			elseif player.sub_job =='WHM' then
 				set_macro_page(20,2)
-			elseif player.sub_job == 'rdm' then
+			elseif player.sub_job == 'RDM' then
 				set_macro_page(20,3)
-			elseif player.sub_job =='sch' then 
+			elseif player.sub_job =='SCH' then 
 				set_macro_page(20,4)
-			elseif player.sub_job =='dnc' then 
+			elseif player.sub_job =='DNC' then 
 				set_macro_page(20,5)
 			elseif player.sub_job =='BLM' then 
 				set_macro_page(20,6)
@@ -79,7 +79,6 @@ if player.name == "Carrisa" then
                 waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
 		-- JA
 		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions"}
-		
 		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
 		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
 		
@@ -96,8 +95,11 @@ if player.name == "Carrisa" then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
                 back="Pahtli Cape"})
+		--sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
+		--sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
+		
 		-- Midcast
-		sets.midcast.Recast = set_combine(sets.idle.PDT, {waist="Witful Belt"})
+		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape",waist="Witful Belt"})
 		
 		sets.midcast.ConserveMP = {
 				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
@@ -108,7 +110,12 @@ if player.name == "Carrisa" then
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
                 body="Fili Hongreline", hands="Fili Manchettes", lring="", rring="",
-                back="Rhapsode's Cape", waist="", legs="Fili Rhingrave", feet="Brioso Slippers"}
+                back="Rhapsode's Cape", waist="", legs="Fili Rhingrave", feet="Brioso Slippers"}	
+		-- Enhancing Buff - Buff Set (set Bonus)
+		sets.midcast.EnhanceSong = {main="Legato Dagger",
+				head="Fili Calot", neck="Aoidos' matinee",
+                body="Fili Hongreline", hands="Fili Manchettes",
+                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes"}
 		-- Target Skill + 800 Combined Singing + Instrument - Not really necessary anymore.
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
