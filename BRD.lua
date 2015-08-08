@@ -46,6 +46,7 @@ function pretarget(spell)
 		end
 	end
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
