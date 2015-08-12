@@ -73,17 +73,17 @@ sets.misc.Steps = set_combine({ammo="Ginsen",
 sets.misc.flourish = {}
 
 -- JA
-sets.precast.JA["Familiar"] = {legs="Monster Trousers +2"}
+sets.precast.JA["Familiar"] = {legs="Ankusa Trousers"}
 sets.precast.JA["Unleash"] = {}
 
-sets.precast.JA["Killer Instinct"] = {head="Monster Helm +2"}
+sets.precast.JA["Killer Instinct"] = {head="Ankusa Helm"}
 sets.precast.JA["Feral Howl"] = {
 			head="Despair Helm", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
-			body="Monster Jackcoat +2", hands=Aug.Skirmish.Acro.Hands.Breathe, lring="Sangoma Ring", rring="Perception Ring",
+			body="Ankusa Jackcoat", hands=Aug.Skirmish.Acro.Hands.Breathe, lring="Sangoma Ring", rring="Perception Ring",
 			back="", waist="", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe}
 sets.precast.JA["Call Beast"] = {
 			head="Acro Helm",
-			body="Mirke Wardecors", hands="Monster Gloves +2",
+			body="Mirke Wardecors", hands="Ankusa Gloves",
 			legs="Acro Breeches", feet="Armada Sollerets"}
 sets.precast.JA["Beast Loyality"] = set_combine(sets.precast.JA.["Call Beast"])
 sets.precast.JA["Tame"] = {
@@ -95,12 +95,12 @@ sets.precast.JA["Spur"] = {feet="Nukumi Ocreae"}
 sets.precast.JA["Reward"] = {
 				head="Stout Bonnet", neck="Morgana's Choker", lear="Enchntr. Earring +1", rear="Lifestorm Earring",
 				body="Totemic Jackcoat", hands="Beast Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-				back="Pastoralist's Mantle", waist="Crudelist Belt", legs="Monster Trousers +2", feet="Monster Gaiters +2"}
+				back="Pastoralist's Mantle", waist="Crudelist Belt", legs="Ankusa Trousers", feet="Ankusa Gaiters"}
 -- Charm + CHR 
 sets.precast.JA["Charm"] = {
 				head="Totemic Helm", neck="Ferine Necklace", lear="Enchntr. Earring +1", rear="",
-				body="Monster Jackcoat +2", hands="Monster Gloves +2",
-				back="", waist="", legs="Monster Trousers +2", feet="Monster Gaiters +2"}
+				body="Ankusa Jackcoat", hands="Ankusa Gloves",
+				back="", waist="", legs="Ankusa Trousers", feet="Ankusa Gaiters"}
 				
 -- Ready/Sic Moves
 sets.midcast.Pet = {}
