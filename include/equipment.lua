@@ -67,19 +67,19 @@
 	Aug.Skirmish.Acro.Legs.WS = {}
 	Aug.Skirmish.Acro.Feet.WS = {}
 	
-	-- DRG Breath - Snow: Pet Macc 20 Leaf: Breath Dusk: Pet: haste
+	-- DRG Breath/BST Macc - Snow: Pet Macc 20 Leaf: Breath +8 Dusk: Pet: haste
 	Aug.Skirmish.Acro.Body.Breathe = {}
 	Aug.Skirmish.Acro.Hands.Breathe = {}
 	Aug.Skirmish.Acro.Legs.Breathe = {}
 	Aug.Skirmish.Acro.Feet.Breathe = {}
 	
-	-- BST Delay - Snow: pet MAB Leaf: CALL BEAST DELAY Dusk:MND
-	-- PET Ready/sic
+	-- BST Delay - Snow: pet MAB Leaf: CALL BEAST DELAY Dusk:MND head/legs
+	-- PET Ready/sic - body/hand/feet pet.mab only
 	Aug.Skirmish.Acro.Head.Delay = {}
-	Aug.Skirmish.Acro.Body.MSic = {}
-	Aug.Skirmish.Acro.Hands.MSic = {}
+	Aug.Skirmish.Acro.Body.Delay = {}
+	Aug.Skirmish.Acro.Hands.Delay = {}
 	Aug.Skirmish.Acro.Legs.Delay = {}
-	Aug.Skirmish.Acro.Feet.MSic = {}
+	Aug.Skirmish.Acro.Feet.Delay = {}
 	
 	-- Yorium - WAR PLD DRK
 	Aug.Skirmish.Yorium = {}
@@ -138,7 +138,7 @@
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- BST
-	-- pet TP - Snow; Pet: acc/att Leaf Pet DA +5 Dusk pet haste +5
+	-- pet TP - Snow:Pet: acc/att Leaf Pet DA +5 Dusk pet haste +5
 	-- hands Snow Attack +25
 	Aug.Skirmish.Taeon.Head.PET = {}
 	Aug.Skirmish.Taeon.Body.PET = {}
@@ -146,26 +146,12 @@
 	Aug.Skirmish.Taeon.Legs.PET = {}
 	Aug.Skirmish.Taeon.Feet.PET = {}
 	
-	-- Snow: def +25 Leaf: regen +3 Dusk; pet dt
+	-- Pet Idle DT - Snow: def +25 Leaf: regen +3 Dusk; pet dt
 	Aug.Skirmish.Taeon.Head.PDT = {}
 	Aug.Skirmish.Taeon.Body.PDT = {}
 	Aug.Skirmish.Taeon.Hands.PDT = {}
 	Aug.Skirmish.Taeon.Legs.PDT = {}
 	Aug.Skirmish.Taeon.Feet.PDT = {}
-	
-	-- PET Ready/sic
-	-- Snow; pet acc/attack Leaf: pet DA +5 Dusk;	 
-	Aug.Skirmish.Taeon.Head.PDT = {}
-	Aug.Skirmish.Taeon.Legs.PDT = {}
-	Aug.Skirmish.Taeon.Feet.PDT = {}
-	
-	-- PET Ready/sic
-	-- Snow; pet MAB/M.atk 	 
-	Aug.Skirmish.Taeon.Head.MSic = {}
-	Aug.Skirmish.Taeon.Body.MSic= {}
-	Aug.Skirmish.Taeon.Hands.MSic= {}
-	Aug.Skirmish.Taeon.Legs.MSic= {}
-	Aug.Skirmish.Taeon.Feet.MSic= {}
 	
 	-- Helios - WHM BLM RDM SMN BLU SCH GEO
 	Aug.Skirmish.Helios = {}

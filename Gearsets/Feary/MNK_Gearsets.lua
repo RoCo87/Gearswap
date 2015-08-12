@@ -57,45 +57,33 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Hermes' Sandals"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
-				lear="Merman's Earring", rear="Etiolation Earring", feet="Hermes' Sandals"})
--- TP 
-sets.TP = { ammo="Ginsen",
-				head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
--- Accuracy TP
-sets.TP.MidAcc = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Taeon Tights", feet="Taeon Boots"}
+				lear="Merman's Earring", rear="Etiolation Earring",
+				feet="Hermes' Sandals"})
 				
--- High Accuracy TP
-sets.TP.HighAcc = { ammo="Honed Tathlum",
-				head="Whirlpool Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Thaumas Coat", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Taeon Tights", feet="Taeon Boots"}
+-- Precast
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+				head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchan Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="", rring="Prolix Ring",
+                back="", waist="Black Belt", legs="Taeon Tights", feet="Taeon Boots"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
--- Hybrid PDT/TP
-sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)
-				
--- Hundred Fists
-sets.TP.HF = set_combine(sets.TP,{body="Bhikku Cyclas"})
-
--- Impetus Sets
-sets.TP.Impetus = set_combine(sets.TP, {})
-sets.TP.MidAcc.Impetus = set_combine(sets.TP.MidAcc, {})
-sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, {})
+sets.misc.Waltz = {}
+sets.misc.Steps = {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
+                back="Kayapa Cape", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
+sets.misc.flourish = {}
 
 -- JA
 sets.precast.JA["Formless Strikes"] = {body="Hes. Cyclas"}
 sets.precast.JA["Chakra"] = set_combine(sets.idle.PDT, { ammo="Tantra Tahtlum",
-				head="Whirlpool Mask",
+				head="Taeon Chapeau",
 				body="Anchorite's Cyclas", hands="Hes. Gloves", 
 				legs="Nahtirah Trousers"})
 sets.precast.JA["Chi Blast"] = set_combine(sets.idle.PDT, {
 				head="Uk'uxkaj Cap", neck="Morgana's Choker",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="", waist="", legs="Nahtirah Trousers"})
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="", waist="", legs="Taeon Tights", feet="Taeon Boots"})
 sets.precast.JA["Impetus"] = {body="Bhikku Cyclas"}
 sets.precast.JA["Hundred Fists"] = {legs="Hes. Hose"}
 sets.precast.JA["Focus"] = {head="Anchorite's Crown"}
@@ -103,56 +91,93 @@ sets.precast.JA["Dodge"] = {feet="Anch. Gaiters"}
 sets.precast.JA["Boost"] = {hands="Anchorite's Gloves"}
 sets.precast.JA["Counterstance"] = {feet="Hes. Gaiters"}
 sets.precast.JA["Mantra"] = {feet="Hes. Gaiters"}
+			
+-- TP 
+sets.TP = { ammo="Ginsen",
+				head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+-- Accuracy TP
+sets.TP.MidAcc = { ammo="Ginsen",
+				head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
+				
+-- High Accuracy TP
+sets.TP.HighAcc = { ammo="Ginsen",
+				head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
+
+-- Hybrid PDT/TP
+sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)
+				
+-- Hundred Fists
+sets.TP.HF = set_combine(sets.TP,{body="Bhikku Cyclas"})
+sets.TP.HF.Acc = set_combine(sets.TP.MidAcc,{body="Bhikku Cyclas"})
+
+-- Impetus Sets
+sets.TP.Impetus = set_combine(sets.TP, {body="Bhikku Cyclas"})
+sets.TP.MidAcc.Impetus = set_combine(sets.TP.MidAcc, {body="Bhikku Cyclas"})
+sets.TP.HighAcc.Impetus =  set_combine(sets.TP.HighAcc, {body="Bhikku Cyclas"})
 
 -- Weaponskills
-sets.precast.WS = {ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Anguinus Belt",  legs="Taeon Tights", feet="Taeon Boots"}
+sets.precast.WS = {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
-sets.precast.WS['Victory Smite'] = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"}
+sets.precast.WS.Acc = {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Ramuh Ring +1",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
-sets.precast.WS.Impetus = {}
-sets.precast.WS.Impetus['Victory Smite'] = { ammo="Honed Tathlum",
-				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Bhikku Cyclas", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
+-- Victory Smite
+sets.precast.WS['Victory Smite'] = { ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ifrit Ring +1", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
+
+sets.precast.WS.Acc['Victory Smite'] = { ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
+                back="Kayapa Cape", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS['Final Heaven'] = set_combine(sets.precast.WS)
+sets.precast.WS.Acc['Final Heaven'] = set_combine(sets.precast.WS.Acc)
 
-sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {ammo="Potestas Bomblet",
-				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"})
+-- Shijun Spiral - Brutal/Trux 2 Ramuh
+sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
-sets.precast.WS.MidAcc = {}
-sets.precast.WS.HighAcc = {}
-sets.precast.WS.MidAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {
-				head="Uk'uxkaj Cap", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Ramuh Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"})
-sets.precast.WS.HighAcc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {ammo="Potestas Bomblet",
-				head="Whirlpool Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="Mars's Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Anguinus Belt",  legs="Taeon Tights", feet="Taeon Boots"})
+sets.precast.WS.Acc['Shijin Spiral'] = set_combine(sets.precast.WS['Shijin Spiral'], {
+				head="Taeon Chapeau", neck="Justiciar's Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
-sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
-				head="Uk'uxkaj Cap", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Manibozho Jerkin", hands="Taeon Gloves", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt",  legs="Taeon Tights", feet="Taeon Boots"})
-sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {neck="Fotia Gorget", waist="Anguinus Belt"})
+-- Ascetic's Fury
+sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ifrit Ring +1", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
--- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Haruspex Hat +1", neck="Magoraga Beads", lear="Loquac. Earring", rear="Novia Earring",
-                body="Manibozho Jerkin", hands="Otronif Gloves +1", lring="", rring="Prolix Ring",
-                back="Repulse Mantle", waist="Black Belt", legs="", feet=""})
-sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+sets.precast.WS.Acc["Ascetic's Fury"] = set_combine(sets.precast.WS.Acc, {
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
+                back="Kayapa Cape", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
-sets.misc.Waltz = {}
-sets.misc.Steps = set_combine(sets.TP.MidAcc,{})
-sets.misc.flourish = {}
+-- Asuran Fists
+sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
+
+sets.precast.WS.Acc["Asuran Fists"] = set_combine(sets.precast.WS.Acc, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Ramuh Ring +1",
+                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"})
 end
+				
+	

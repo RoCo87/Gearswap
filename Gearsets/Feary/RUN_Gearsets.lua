@@ -108,7 +108,7 @@ sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 sets.midcast.Enhancing = {
 				neck="Colossus's Torque", lear="Andoaa Earring",
 				hands="Runeist Mitons",
-				back="Merciful Cape", waist="Cascade Belt", legs="Futhark Trousers"}
+				back="Merciful Cape", waist="Bishop's Sash", legs="Futhark Trousers"}
 sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing,{
 				head="Futhark Bandeau"})
 sets.midcast.Regen = {head="Runiest Bandeau"}

@@ -79,7 +79,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {ammo="Impatiens", 
 				waist="Witful Belt"})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				lear="Magnetic Earring", rear="Gifted Earring",
+				rear="Gifted Earring",
                 body="Hedera Cotehardie", hands="Serpentes Cuffs",
                 waist="Austerity Belt", legs="Nares Trews", feet="Umbani Boots"}
 		
@@ -87,28 +87,28 @@ if player.Name == 'Feary' then
 		sets.midcast.Cure = {main="Tamaxchi", 
 				head="Gende. Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Ghostfyre Cape", waist="Cascade Belt", legs="Atrophy Tights", feet="Rubeus Boots"}
+                back="Ghostfyre Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Tamaxchi", 
 				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Novia Earring", rear="Enchntr. Earring +1",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Refraction Cape", waist="Cascade Belt", legs="Atrophy Tights", feet="Rubeus Boots"}
+                back="Refraction Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 	
 		-- Enhancing 
 		-- Goal 500+
 		sets.midcast.Enhancing = {main="Earth Staff", sub="Fulcio Grip",
 				head="Vitivation Chapeau", neck="Colossus's Torque", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
-                back="Estoqueur's Cape", waist="Cascade Belt", legs="Atrophy Tights", feet="Leth. Houseaux"}
+                back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
 		-- Duration
 		sets.midcast.Enhancing.Self = {main="Earth Staff", sub="Vox Grip",
 				head="Telchine Cap", neck="Colossus's Torque", rear="Andoaa Earring",
                 body="Telchine Chas.", hands="Atrophy Gloves",
-                back="Estoqueur's Cape", waist="Cascade Belt", legs="Telchine Braconi", feet="Leth. Houseaux"}
+                back="Estoqueur's Cape", waist="Bishop's Sash", legs="Telchine Braconi", feet="Leth. Houseaux"}
 		sets.midcast.Enhancing.Party = {main="Earth Staff", sub="Vox Grip",
 				head="Vitivation Chapeau", neck="Colossus's Torque", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
-                back="Estoqueur's Cape", waist="Cascade Belt", legs="Atrophy Tights", feet="Leth. Houseaux"}
+                back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
 		
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing, {hands="Vitivation Gloves"})
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}

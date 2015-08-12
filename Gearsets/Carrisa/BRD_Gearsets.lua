@@ -130,11 +130,11 @@ if player.name == "Carrisa" then
 		sets.midcast.Cure = {main="Arka IV", 
 				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Novia Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Haoma's Ring", rring="Sirona's Ring",
-                back="Tempered Cape", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}	
+                back="Tempered Cape", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}	
 		sets.midcast.Curaga = {main="Arka IV",
 				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Novia Earring",
                 body="Gendewitha Bliaut", hands="Bokwus Gloves", lring="Haoma's Ring", rring="Sirona's Ring",
-                back="Tempered Cape +1", waist="Cascade Belt", legs="Artsieq Hose", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}
 	
 		-- Enhancing
 		sets.midcast.Phalanx = {}

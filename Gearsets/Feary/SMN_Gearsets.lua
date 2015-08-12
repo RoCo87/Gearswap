@@ -97,7 +97,7 @@ if player.name == 'Feary' then
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
 		--	Additional Effect BPs
-		sets.midcast.Pet.MagicalBloodPactRage.Macc = {main="Eminent Pole",ammo="Eminent Sachet",
+		sets.midcast.Pet.MagicalBloodPactRage.Macc = {main="Eminent Pole", ammo="Eminent Sachet",
 				head="Bokwus Circlet",neck="Caller's Pendant",
 				body="Beckoner's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Beckoner's Spats",feet="Hagondes Sabots"}
@@ -135,13 +135,13 @@ if player.name == 'Feary' then
 		sets.midcast.Cure = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="", rear="",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
+                back="", waist="Bishop's Sash", legs="", feet="Rubeus Boots"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {})
 		
 		sets.midcast.Curaga = {main="Arka IV", 
 				head="", neck="Colossus's Torque", lear="", rear="",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
+                back="", waist="Bishop's Sash", legs="", feet="Rubeus Boots"}
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
 
 		sets.midcast.NaSpells = set_combine(sets.midcast.Recast)

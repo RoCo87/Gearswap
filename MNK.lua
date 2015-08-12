@@ -185,9 +185,26 @@ function precast(spell,arg)
 			if player.tp >= 100 then
 				if spell.target.distance <= 5 then
 					if sets.precast.WS[spell.name] then
-						equip(sets.precast.WS[spell.name])
+						if Mode	>= 1 then
+							if buffactive['Impetus'] and player.inventory['Bhikku Cyclas'] then
+								equip(sets.precast.WS.Acc[spell.name],{body="Bhikku Cyclas"})
+							else
+								equip(sets.precast.WS.Acc[spell.name])
+							end
+						else
+							if buffactive['Impetus'] then
+								equip(sets.precast.WS[spell.name],{body="Bhikku Cyclas"})
+							else
+								equip(sets.precast.WS[spell.name])
+							end
+						end
 					else
-						equip(sets.precast.WS)
+						windower.add_to_chat(121,'Default WS Gear')
+						if Mode	>= 1 then
+							equip(sets.precast.WS)
+						else
+							equip(sets.precast.WS.Acc)
+						end
 					end
 				else
 					cancel_spell()
@@ -269,9 +286,13 @@ end
 
 function previous_set()
 	if Mode == 0 then	
-		if buffactive == 'Hundred Fists' then
+		if  buffactive['Hundred Fists'] then
 			windower.add_to_chat(121,'Hundred Fists')
-			equip(sets.TP.HF)
+			if Mode	>= 1 then
+				equip(sets.TP.HF.Acc)
+			else
+				equip(sets.TP.HF)
+			end
 		else
 			windower.add_to_chat(121,'TP')
 			equip(sets.TP)

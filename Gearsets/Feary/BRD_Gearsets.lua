@@ -139,7 +139,7 @@ if player.name == 'Feary' then
 		sets.midcast.Curaga = {main="Arka IV",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="",
                 body="Gende. Bilaut +1", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Pahtli Cape", waist="Cascade Belt", legs="", feet="Rubeus Boots"}
+                back="Pahtli Cape", waist="Bishop's Sash", legs="", feet="Rubeus Boots"}
 	
 		-- Enhancing
 		sets.midcast.Phalanx = {}

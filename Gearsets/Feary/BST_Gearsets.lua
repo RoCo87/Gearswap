@@ -45,8 +45,6 @@ sets.idle.MDT = {
                 body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Nierenschutz", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
-sets.misc.Town = set_combine(sets.idle.PDT, {feet="Skadi's Jambeaux"})
-				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Skadi's Jambeaux"})
@@ -55,112 +53,160 @@ sets.Resting = set_combine(sets.idle.PDT,{
 				head="Twilight Helm",
 				body="Twilight Mail"})
 				
--- Pet Priority - Master Idle - Pet Idle
-sets.idle.Pet = {
-				head="Twilight Helm", neck="", lear="", rear="",
-				body="Twilight Mail", hands="Regimen Mittens", lring="", rring="",
-				back="Pastoralist's Mantle", waist="Isa Belt", legs="Nukumi Quijotes", feet=""}
+sets.misc.Town = set_combine(sets.idle.PDT, {feet="Skadi's Jambeaux"})
+	
+sets.lockstyle = set_combine(sets.misc.Town)
+
+-- Precast Sets
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+				head="Cizin Helm", lear="Loquac. Earring", rear="Enchntr. Earring +1", 
+				body="Taeon Tabard", hands=Thaumas Gloves", rring="Prolix Ring"})
 				
--- Pet Priority - Master Idle - Pet Engaged
-sets.idle.Pet.TP  = {
-				head="Monster Helm +2", neck="Ferine Necklace", lear="Ferine Earring", rear="Domes. Earring",
-				body="Monster Jackcoat +2", hands="Regimen Mittens",
-				back="Ferine Mantle", waist="Hurch'lan Sash", legs="Monster Trousers +2", feet="Armada Sollerets"}
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
--- Master Priority - TP set
-sets.TP = {	ammo="Paeapua",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="SteelFlash Earring",
-			body="Gorney Haubert +1", hands="Xaddi Gauntlets", lring="Rajas ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses",feet="Ejekamal Boots"}
+sets.misc.Waltz = set_combine(sets.idle.PDT,{})
+sets.misc.Steps = set_combine({ammo="Ginsen",
+			head=Aug.Skirmish.Taeon.Head.DW, neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			body=Aug.Skirmish.Taeon.Body.DW, hands=Aug.Skirmish.Taeon.Hands.DW, lring="Rajas ring", rring="Ramuh Ring +1",
+			back="Atheling Mantle", waist="Patentia Sash", legs=Aug.Skirmish.Taeon.Legs.DW,feet=Aug.Skirmish.Taeon.Feet.DW})
 
--- Master Priority - Acc TP set
-sets.TP.Acc = {	ammo="Paeapua",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="SteelFlash Earring",
-			body="Gorney Haubert +1", hands="Buremte Gloves", lring="Rajas ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Windbuffet Belt", legs="Xaddi Cuisses",feet="Ejekamal Boots"}
-
--- Pet Priority - Master Engaged - Pet Engaged - TP set
-sets.TP.Pet = {	ammo="Paeapua",
-			head="Monster Helm +2", neck="Asperity Necklace", lear="Bladeborn Earring", rear="SteelFlash Earring",
-			body="Monster Jackcoat +2", hands="Regimen Mittens", lring="Rajas ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Hurch'lan Sash", legs="Monster Trousers +2",feet="Armada Sollerets"}
-
-sets.TP.Pet.Tank = {ammo="Paeapua",
-			head="Monster Helm +2", neck="Shepherd's Chain", lear="Bladeborn Earring", rear="SteelFlash Earring",
-			body="Monster Jackcoat +2", hands="Monster Gloves +2", lring="Rajas ring", rring="Epona's Ring",
-			back="Oneiros Cappa", waist="Isa Belt", legs="Nukumi Quijotes",feet="Ejekamal Boots"}
+sets.misc.flourish = {}
 
 -- JA
 sets.precast.JA["Familiar"] = {legs="Monster Trousers +2"}
 sets.precast.JA["Unleash"] = {}
 
 sets.precast.JA["Killer Instinct"] = {head="Monster Helm +2"}
-sets.precast.JA["Feral Howl"] = {body="Monster Jackcoat +2"}
-sets.precast.JA["Call Beast"] = {hands="Monster Gloves +2"}
+sets.precast.JA["Feral Howl"] = {
+			head="Despair Helm", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
+			body="Monster Jackcoat +2", hands=Aug.Skirmish.Acro.Hands.Breathe, lring="Sangoma Ring", rring="Perception Ring",
+			back="", waist="", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe}
+sets.precast.JA["Call Beast"] = {
+			head="Acro Helm",
+			body="Mirke Wardecors", hands="Monster Gloves +2",
+			legs="Acro Breeches", feet="Armada Sollerets"}
+sets.precast.JA["Beast Loyality"] = set_combine(sets.precast.JA.["Call Beast"])
 sets.precast.JA["Tame"] = {
-				head="Beast Helm", lear="Tamer's Earring",
+				head="Totemic Helm", lear="Tamer's Earring",
 				legs="Stout Kecks"}
-sets.precast.JA["Spur"] = {feet="Ferine Ocreae +2"}
+sets.precast.JA["Spur"] = {feet="Nukumi Ocreae"}
 
 -- Reward + MND
 sets.precast.JA["Reward"] = {
-				head="Stout Bonnet", neck="Morgana's Choker", lear="Enchntr. Earring +1", rear="",
-				body="Beast Jackcoat", hands="Beast Gloves", lring="", rring="",
+				head="Stout Bonnet", neck="Morgana's Choker", lear="Enchntr. Earring +1", rear="Lifestorm Earring",
+				body="Totemic Jackcoat", hands="Beast Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
 				back="Pastoralist's Mantle", waist="Crudelist Belt", legs="Monster Trousers +2", feet="Monster Gaiters +2"}
 -- Charm + CHR 
 sets.precast.JA["Charm"] = {
-				head="Beast Helm", neck="Ferine Necklace",
+				head="Totemic Helm", neck="Ferine Necklace", lear="Enchntr. Earring +1", rear="",
 				body="Monster Jackcoat +2", hands="Monster Gloves +2",
-				legs="Monster Trousers +2", feet="Monster Gaiters +2"}
+				back="", waist="", legs="Monster Trousers +2", feet="Monster Gaiters +2"}
 				
--- Ready/Sic Moves 
-sets.midcast.Pet = {head="Beast Helm"}
-sets.midcast.Pet.Favorable = {head="Ferine Cabasset +2"}
-sets.midcast.Pet.TPBonus = {hands="Ferine Manoplas +2"}
+-- Ready/Sic Moves
+sets.midcast.Pet = {}
 sets.midcast.Pet.Recast = {legs="Desultor Tassets"}
-	
-sets.midcast.Pet.WS = {
-		neck="Ferine Necklace",ear1="Sabong Earring",ear2="Domesticator's Earring",
-		body="", hands="Regimen Mittens",lring="",rring="",
-		back="Ferine Mantle",waist="Hurch'lan Sash", legs="", feet="Beast Gaiters"}
 
+sets.midcast.Pet.WS = {
+		head="Despair Helm", neck="Ferine Necklace", lear="Sabong Earring", rear="Domesticator's Earring",
+		body=Aug.Skirmish.Taeon.Body.PET, hands="Regimen Mittens", lring="", rring="",
+		back="Ferine Mantle",waist="Hurch'lan Sash", legs=Aug.Skirmish.Taeon.Legs.PET, feet=Aug.Skirmish.Taeon.Feet.PET}
+ 
+sets.midcast.Pet.WS.MAB = {
+		head=Aug.Skirmish.Acro.Head.Delay, neck="", lear="", rear="",
+		body=Aug.Skirmish.Acro.Body.Delay, hands=Aug.Skirmish.Acro.Hands.Delay, lring="", rring="",
+		back="", waist="Hurch'lan Sash", legs=Aug.Skirmish.Acro.Legs.Delay, feet=Aug.Skirmish.Acro.Feet.Delay}
+ 
+sets.midcast.Pet.WS.Macc = {
+		head="Despair Helm", neck="Ferine Necklace", lear="Sabong Earring", rear="Domesticator's Earring",
+		body=Aug.Skirmish.Acro.Body.Breathe, hands=Aug.Skirmish.Acro.Hands.Breathe, lring="", rring="",
+		back="Ferine Mantle",waist="Hurch'lan Sash", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe}
+ 
+
+sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas"}
+
+-- Pet Priority - Master Idle - Pet Idle
+sets.idle.Pet = sets_combine(sets.idle.PDT,{
+				head="Twilight Helm", neck="Twilight Torque",
+				body="Twilight Mail", hands="Regimen Mittens", lring=Aug.Darkring1, rring="Defending Ring",
+				back="Pastoralist's Mantle", waist="Isa Belt", legs="Nukumi Quijotes", feet="Skadi Jambeaux"})		
+
+-- Pet Priority - Master Idle - Pet Engaged
+sets.TP.Pet.Tank = {
+			head=Aug.Skirmish.Taeon.Head.PDT, neck="Shepherd's Chain", lear="Handler's Earring", rear="Handler's Earring +1",
+			body=Aug.Skirmish.Taeon.Body.PDT, hands=Aug.Skirmish.Taeon.Hands.PDT, lring="Rajas ring", rring="Defending Ring",
+			back="Pastoralist's Mantle", waist="Isa Belt", legs=Aug.Skirmish.Taeon.Legs.PDT,feet=Aug.Skirmish.Taeon.Feet.PDT}
+
+-- Pet Priority - Master Engaged - Pet Engaged - TP set
+sets.TP.Pet = {	ammo="Paeapua",
+			head=Aug.Skirmish.Taeon.Head.PET, neck="Asperity Necklace", lear="Bladeborn Earring", rear="SteelFlash Earring",
+			body=Aug.Skirmish.Taeon.Body.PET, hands=Aug.Skirmish.Taeon.Hands.PET, lring="Rajas ring", rring="Epona's Ring",
+			back="Atheling Mantle", waist="Hurch'lan Sash", legs=Aug.Skirmish.Taeon.Legs.PET, feet=Aug.Skirmish.Taeon.Feet.PET}
+
+-- Master Priority - TP set - Pet Idle
+sets.TP = {	ammo="Paeapua",
+			head=Aug.Skirmish.Taeon.Head.DW, neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+			body=Aug.Skirmish.Taeon.Body.DW, hands=Aug.Skirmish.Taeon.Hands.DW, lring="Rajas ring", rring="Epona's Ring",
+			back="Atheling Mantle", waist="Patentia Sash", legs=Aug.Skirmish.Taeon.Legs.DW,feet=Aug.Skirmish.Taeon.Feet.DW}
+
+-- Master Priority - Acc TP set - Pet Not Engaged
+sets.TP.Acc = {	ammo="Ginsen",
+			head=Aug.Skirmish.Taeon.Head.DW, neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			body=Aug.Skirmish.Taeon.Body.DW, hands=Aug.Skirmish.Taeon.Hands.DW, lring="Rajas ring", rring="Ramuh Ring +1",
+			back="Atheling Mantle", waist="Patentia Sash", legs=Aug.Skirmish.Taeon.Legs.DW,feet=Aug.Skirmish.Taeon.Feet.DW}
+
+-- Master Priority - Acc TP set - Pet Not Engaged
+sets.TP.Buffed = {ammo="Ginsen",
+			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas ring", rring="Epona's Ring",
+			back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA,feet=Aug.Skirmish.Taeon.Feet.TA}
 
 -- Weaponskills
-sets.precast.WS = {ammo="Vanir battery",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
-			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-			back="Atheling Mantle", waist="Wanion Belt", legs="Miki. Cuisses", feet="Mikinaak Greaves"}
-sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
-			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
-			body="Miki. Breastplate", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-			back="Atheling Mantle", waist="Dynamic Belt +1", legs="Miki. Cuisses", feet="Mikinaak Greaves"})
+sets.precast.WS = {ammo="Ginsen",
+			head="Otomi Helm", neck="Fotia Gorget", lear="Brutal earring", rear="Vulcan's Pearl",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
+sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Hasty Pinion +1",
+			head="Otomi Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="SteelFlash Earring",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
 
 -- Ruinator
-sets.precast.WS["Ruinator"] = set_combine(sets.precast.WS, {ammo="Vanir battery",
-			head="Otomi Helm", neck="Asperity Necklace", lear="Brutal earring", rear="Flame Pearl",
-			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
-			back="Buquwik Cape", waist="Fotia Belt", legs="Gor. Brayettes +1", feet="Ejekamal Boots"})
-sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {ammo="Ginsen",
-			head="Yaoyotl Helm", neck="Asperity Necklace", lear="Bladeborn earring", rear="Steelflash Earring",
-			body="Gorney Haubert +1", hands="Buremete Gloves", lring="Rajas Ring", rring="Epona's Ring",
-			back="Buquwik Cape", waist="Fotia Belt", legs="Miki. Cuisses", feet="Ejekamal Boots"})
+sets.precast.WS["Ruinator"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+			head="Otomi Helm", neck="Fotia Gorget", lear="Brutal earring", rear="Vulcan's Pearl",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
+sets.precast.WS.Acc["Ruinator"] = set_combine(sets.precast.WS, {ammo="Hasty Pinion +1",
+			head=Aug.Skirmish.Acro.Head.TP, neck="Fotia Gorget", lear="Bladeborn Earring", rear="SteelFlash Earring",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
 
--- Primal Rend	
-sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {})
-sets.precast.WS["Cloudsplitter"] = set_combine(sets.precast.WS, {})
+-- Rampage 
+sets.precast.WS["Rampage"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+			head=Aug.Skirmish.Acro.Head.TP, neck="Fotia Gorget", lear="Brutal earring", rear="Moonshade Earring",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
+sets.precast.WS.Acc["Rampage"] = set_combine(sets.precast.WS, {ammo="Hasty Pinion +1",
+			head=Aug.Skirmish.Acro.Head.TP, neck="Fotia Gorget", lear="Bladeborn Earring", rear="SteelFlash Earring",
+			body=Aug.Skirmish.Acro.Body.TP, hands=Aug.Skirmish.Acro.Hands.TP, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Buquwik Cape", waist="Fotia Belt", legs=Aug.Skirmish.Acro.Legs.TP, feet=Aug.Skirmish.Acro.Feet.TP})
 
 -- Onslaught
-sets.precast.WS["Onslaught"] = set_combine(sets.precast.WS,{})
-sets.precast.WS.Acc["Onslaught"] = set_combine(sets.precast.WS, {})
-				
--- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Cizin Helm", lear="Loquac. Earring", 
-				rring="Prolix Ring"})
+sets.precast.WS["Onslaught"] = set_combine(sets.precast.WS,{ammo="Ginsen",
+			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
+			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
 
-sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+sets.precast.WS.Acc["Onslaught"] = set_combine(sets.precast.WS, ammo="Ginsen",
+			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
+			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Epona's Ring",
+			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
 
-sets.misc.Waltz = set_combine(sets.idle.PDT,{})
-sets.misc.Steps = set_combine(sets.TP.ACC)
-sets.misc.flourish = {}
+-- Primal Rend - Magic WS
+sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {ammo="Ginsen",
+			head=Aug.Skirmish.Acro.Head.WS, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
+			body=Aug.Skirmish.Acro.Body.WS, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Epona's Ring",
+			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.WS, feet=Aug.Skirmish.Acro.Feet.WS})
+
+-- Cloudslitter - Magic WS
+sets.precast.WS["Cloudsplitter"] = set_combine(sets.precast.WS['Primal Rend'], {})
 end

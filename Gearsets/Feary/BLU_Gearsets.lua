@@ -50,7 +50,8 @@ if player.name == 'Feary' then
 				head="Luhlaza Keffiyah",
 				body="Assim. Jubbah",
 				legs="Blood Cuisses"})
-		
+		 sets.lockstyle = set_combine{sets.misc.Town}
+		 
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
                 head="Taeon Chapeau", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",

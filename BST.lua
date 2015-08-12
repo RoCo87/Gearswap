@@ -26,30 +26,44 @@ function get_sets()
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
-	-- Complete list of Ready moves to use with Sic & Ready Recast -5 Desultor Tassets.
-	ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Song','Sheep Charge','Lamb Chop',
-		'Rage','Head Butt','Scream','Dream Flower','Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang',
-		'Roar','Gloeosuccus','Palsy Pollen','Soporific','Cursed Sphere','Venom','Geist Wall','Toxic Spit',
-		'Numbing Noise','Nimble Snap','Cyclotail','Spoil','Rhino Guard','Rhino Attack','Power Attack',
-		'Hi-Freq Field','Sandpit','Sandblast','Venom Spray','Mandibular Bite','Metallic Body','Bubble Shower',
-		'Bubble Curtain','Scissor Guard','Big Scissors','Grapple','Spinning Top','Double Claw','Filamented Hold',
-		'Frog Kick','Queasyshroom','Silence Gas','Numbshroom','Spore','Dark Spore','Shakeshroom','Blockhead',
-		'Secretion','Fireball','Tail Blow','Plague Breath','Brain Crush','Infrasonics','1000 Needles',
-		'Needleshot','Chaotic Eye','Blaster','Scythe Tail','Ripper Fang','Chomp Rush','Intimidate','Recoil Dive',
-		'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Spiral Spin','Noisome Powder','Wing Slap',
-		'Beak Lunge','Suction','Drainkiss','Acid Mist','TP Drainkiss','Back Heel','Jettatura','Choke Breath',
-		'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
-		'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
-		'Zealous Snort'}
 
-	-- List of Ready buff moves to use with Ferine Manoplas +1 or +2.
-	tp_based_moves = S{'Sic','Rage','Rhino Guard','Metallic Body','Bubble Curtain','Scissor Guard','Secretion',
-		'Water Wall','Wild Carrot','Fantod','Harden Shell','Zealous Snort'}
-
-	-- List of abilities to reference for applying Treasure Hunter +1 via Chaac Belt.
-	TH = S{'Feral Howl','Quickstep','Box Step','Stutter Step','Desperate Flourish','Violent Flourish',
-		'Animated Flourish','Provoke','Dia','Dia II','Flash','Bio','Bio II','Sleep','Sleep II',
-		'Drain','Aspir','Dispel','Steal','Mug'}
+	-- Complete list of Ready moves
+	Physical_Ready_Moves = S{'Sic','Foot Kick','Whirl Claws','Wild Carrot','Sheep Charge','Lamb Chop','Head Butt',
+		'Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang','Nimble Snap','Cyclotail','Rhino Attack','Power Attack',
+		'Mandibular Bite','Big Scissors','Grapple','Spinning Top','Double Claw','Frogkick','Blockhead','Brain Crush',
+		'Tail Blow','??? Needles','Needleshot','Scythe Tail','Ripper Fang','Chomp Rush','Recoil Dive','Sudden Lunge',
+		'Spiral Spin','Wing Slap','Beak Lunge','Suction','Back Heel','Choke Breath','Fantod','Tortoise Stomp',
+		'Harden Shell','Sensilla Blades','Tegmina Buffet','Swooping Frenzy','Pentapeck','Sweeping Gouge',
+		'Zealous Snort','Somersault','Tickling Tendrils','Pecking Flurry','Sickle Slash'}
+ 
+	Magical_Ready_Moves = S{'Dust Cloud','Cursed Sphere','Venom','Toxic Spit','Bubble Shower','Drainkiss',
+		'Silence Gas','Dark Spore','Fireball','Plague Breath','Snow Cloud','Charged Whisker','Purulent Ooze',
+		'Corrosive Ooze','Aqua Breath','Stink Bomb','Nectarous Deluge','Nepenthic Plunge','Pestilent Plume',
+		'Foul Waters','Infected Leech','Gloom Spray'}
+ 
+	Macc_Ready_Moves = S{'Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
+		'Soporific','Geist Wall','Toxic Spit','Numbing Noise','Spoil','Hi-Freq Field','Sandpit','Sandblast',
+		'Venom Spray','Filamented Hold','Queasyshroom','Numbshroom','Spore','Shakeshroom','Infrasonics',
+		'Chaotic Eye','Blaster','Intimidate','Noisome Powder','Acid Mist','TP Drainkiss','Jettatura',
+		'Molting Plumage','Spider Web'}
+ 
+	tp_based_ready_moves = S{'Sic','Foot Kick','Dust Cloud','Snow Cloud','Wild Carrot','Sheep Song','Sheep Charge',
+		'Lamb Chop','Rage','Head Butt','Scream','Dream Flower','Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang',
+		'Roar','Gloeosuccus','Palsy Pollen','Soporific','Cursed Sphere','Somersault','Geist Wall','Numbing Noise',
+		'Frogkick','Nimble Snap','Cyclotail','Spoil','Rhino Guard','Rhino Attack','Hi-Freq Field','Sandpit','Sandblast',
+		'Mandibular Bite','Metallic Body','Bubble Shower','Bubble Curtain','Scissor Guard','Grapple','Spinning Top',
+		'Double Claw','Filamented Hold','Spore','Blockhead','Secretion','Fireball','Tail Blow','Plague Breath',
+		'Brain Crush','Infrasonics','Needleshot','Chaotic Eye','Blaster','Ripper Fang','Intimidate','Recoil Dive',
+		'Water Wall','Sudden Lunge','Noisome Powder','Wing Slap','Beak Lunge','Suction','Drainkiss','Acid Mist',
+		'TP Drainkiss','Back Heel','Jettatura','Choke Breath','Fantod','Charged Whisker','Purulent Ooze',
+		'Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath','Sensilla Blades','Tegmina Buffet',
+		'Sweeping Gouge','Zealous Snort','Tickling Tendrils','Pecking Flurry','Pestilent Plume','Foul Waters',
+		'Spider Web','Gloom Spray'}
+	
+-- List of abilities to reference for applying Treasure Hunter +1 via Chaac Belt.
+abilities_to_check = S{'Feral Howl','Quickstep','Box Step','Stutter Step','Desperate Flourish',
+    'Violent Flourish','Animated Flourish','Provoke','Dia','Dia II','Flash','Bio','Bio II',
+    'Sleep','Sleep II','Drain','Aspir','Dispel','Stun','Steal','Mug'}
 end 
 
 function file_unload()
@@ -251,7 +265,7 @@ end
 
 function pet_precast(spell,arg)
 	if ready_moves_to_check:contains(spell.name) and pet.status == 'Engaged' then
-		equip(sets.midcast.Pet.ReadyRecast)
+		equip(sets.midcast.Pet.Recast)
 	end
 end
 
@@ -285,14 +299,32 @@ function midcast(spell,arg)
 	end
 end
 
-function pet_midcast(spell,arg)
-	
+function pet_midcast(spell)
+	if Physical_Ready_Moves:contains(spell.name) then
+		equip(sets.midcast.Pet.WS)
+		 if tp_based_ready_moves:contains(spell.name) and PetJob == 'Warrior' and pet.tp < 190 then
+            equip(sets.midcast.Pet.TPBonus)
+        elseif tp_based_ready_moves:contains(spell.name) and PetJob ~= 'Warrior' and pet.tp < 240 then
+            equip(sets.midcast.Pet.TPBonus)
+        end
+	elseif Magical_Ready_Moves:contains(spell.name)then
+		if Mode >= 1 then
+			equip(sets.midcast.Pet.WS.Macc)
+		else
+			equip(sets.midcast.Pet.WS.MAB)
+		end
+	elseif Macc_Ready_Moves:contains(spell.name) then
+		equip(sets.midcast.Pet.WS.Macc)
+	else
+		windower_add_to_chat(121,'Generic Ready Recast')
+		equip(sets.midcast.Pet.Recast)
+	end
 end
 
 function aftercast(spell,arg)
 	-- Leaving Pet Gear on and using Pet Aftercast
 	if pet_midaction() == true then
-		
+		-- Do Nothing
 	else
 	-- Engaged
 		if player.status == 'Engaged' then
@@ -361,7 +393,7 @@ function previous_set()
 				else
 				-- Pet Priority - Master Idle - Pet Engaged
 				windower.add_to_chat(121, ' Pet Priority - Master Idle - Pet Engaged')
-					equip(sets.idle.Pet.TP)
+					equip(sets.TP.Pet.Tank)
 				end
 			end
 		elseif pet.status == "Idle" then
