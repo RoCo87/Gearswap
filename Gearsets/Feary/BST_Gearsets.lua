@@ -1,8 +1,8 @@
 -- BST Gear_sets
 -- Created: 7/26/2014
--- Last Modified: 7/26/2014
--- To Do
---
+-- Last Modified: 8/12/2015
+-- To Do:
+-- Dual Wield vs Single
 --
 --
 --
@@ -59,18 +59,22 @@ sets.lockstyle = set_combine(sets.misc.Town)
 
 -- Precast Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Cizin Helm", lear="Loquac. Earring", rear="Enchntr. Earring +1", 
-				body="Taeon Tabard", hands=Thaumas Gloves", rring="Prolix Ring"})
+				head="Cizin Helm", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1", 
+				body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring"})
 				
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
 sets.misc.Waltz = set_combine(sets.idle.PDT,{})
 sets.misc.Steps = set_combine({ammo="Ginsen",
-			head=Aug.Skirmish.Taeon.Head.DW, neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-			body=Aug.Skirmish.Taeon.Body.DW, hands=Aug.Skirmish.Taeon.Hands.DW, lring="Rajas ring", rring="Ramuh Ring +1",
-			back="Atheling Mantle", waist="Patentia Sash", legs=Aug.Skirmish.Taeon.Legs.DW,feet=Aug.Skirmish.Taeon.Feet.DW})
+			head="", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			body=Aug.Skirmish.Taeon.Body.FC, hands=Aug.Skirmish.Taeon.Hands.FC, lring="Rajas ring", rring="Ramuh Ring +1",
+			back="", waist="", legs=Aug.Skirmish.Taeon.Legs.FC,feet=Aug.Skirmish.Taeon.Feet.FC})
 
-sets.misc.flourish = {}
+sets.misc.flourish = {
+			head="", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
+			body=Aug.Skirmish.Taeon.Body.FC, hands=Aug.Skirmish.Taeon.Hands.FC, lring="Perception Ring", rring="Sangoma Ring",
+			back="", waist="", legs=Aug.Skirmish.Taeon.Legs.FC, feet=Aug.Skirmish.Taeon.Feet.FC})
+
 
 -- JA
 sets.precast.JA["Familiar"] = {legs="Ankusa Trousers"}
@@ -78,7 +82,7 @@ sets.precast.JA["Unleash"] = {}
 
 sets.precast.JA["Killer Instinct"] = {head="Ankusa Helm"}
 sets.precast.JA["Feral Howl"] = {
-			head="Despair Helm", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
+			head="Despair Helm", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
 			body="Ankusa Jackcoat", hands=Aug.Skirmish.Acro.Hands.Breathe, lring="Sangoma Ring", rring="Perception Ring",
 			back="", waist="", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe}
 sets.precast.JA["Call Beast"] = {
