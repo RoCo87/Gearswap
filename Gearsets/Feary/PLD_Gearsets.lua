@@ -46,12 +46,12 @@ sets.idle.PDT = { ammo="Hasty Pinion +1",
                 back="Mollusca Mantle", waist="Nierenschutz", legs="Cab. Breeches", feet="Yorium Sabatons"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
-				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Cizin Helm +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Mollusca Mantle", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
 sets.idle.MDT.Shell = { ammo="Vanir Battery",
-				head="Cizin Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Cizin Helm +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
 
@@ -103,7 +103,7 @@ sets.Enmity = set_combine(sets.idle.PDT,{ ammo="Paeapua",
 				back="Fravashi Mantle", waist="Creed Baudrier", legs="Cab. Breeches", feet="Cab. Leggings"})
 
 sets.HPDown = set_combine(sets.idle.PDT,{
-				head="Cizin Helm", lear="Loquac. Earring",
+				head="Cizin Helm +1", lear="Loquac. Earring",
 				rring="Prolix Ring"})
 -- Midcast
 sets.midcast.Recast = set_combine(sets.precast.Fastcast,{})
@@ -125,7 +125,7 @@ sets.midcast.DivineMagic = set_combine(sets.midcast.Recast,{
 				back="Altruistic Cape", waist="Bishop's Sash", legs="Kaiser Diechlings", feet="Templar Sabotons"})
 
 sets.midcast.DivineMagic.Flash = set_combine(sets.midcast.DivineMagic,{ammo="Paeapua",
-				head="Cizin Helm", neck="Atzintli Necklace", lear="Trux Earring", rear="Pluto's Pearl",
+				head="Cizin Helm +1", neck="Atzintli Necklace", lear="Trux Earring", rear="Pluto's Pearl",
 				body="Reverence Surcoat", hands="Cab. Gauntlets +1", lring="Supersheer Earring", rring="Apeile Ring +1",
 				back="Fravashi Mantle", waist="Goading Belt", legs="Cab. Breeches", feet="Cab. Leggings"})
 				

@@ -58,51 +58,20 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
 				legs="Blood Cuisses"})
--- Melee TP 
-sets.TP = { ammo="Ginsen",
-			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
-            body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
-sets.TP.Ionis = { ammo="Ginsen",
-			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
-            body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
+sets.lockstyle = {}
 
--- Melee Accuracy TP
-sets.TP.Acc = {	ammo="Ginsen",
-		head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
-            body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
--- Ionis Haste +2% Save TP 25+
-sets.TP.Acc.Ionis = {ammo="Ginsen",
-			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
-            body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
--- Alliance Buffs - Rolls + Songs
-sets.TP.Buffed = {ammo="Ginsen",
-			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
-            body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
+-- Precast
+sets.precast.Fastcast = set_combine(sets.idle.PDT, {
+			head="Cizin Helm +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+			body=Aug.Skirmish.Taeon.Body.FC, hands=Aug.Skirmish.Taeon.Hands.FC, rring="Prolix Ring",
+			legs=Aug.Skirmish.Taeon.Legs.FC, feet=Aug.Skirmish.Taeon.Feet.FC})
 
--- Pet
--- Acro Breath +8 Pet Macc +25
-sets.precast.HealingBreath = {
-				head="Vishap Armet", 
-				body="Pteroslaver Mail", hands="Acro Gauntlets", lring="Meridian Ring", rring="K'ayres Ring",
-				back="Strendu Mantle", waist="Glassblower's Belt", legs="Acro Breeches", feet="Acro Leggings"}
-sets.midcast.HealingBreath = {
-				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring", rear="",
-				body="Acro Surcoat", hands="Acro Gauntlets",
-				back="Updraft Mantle", waist="Glassblower's Belt", legs="Vishap Brais", feet="Ptero. Greaves"}
-sets.midcast.Breath = {	
-				head="Ptero. Armet", neck="Lancer's Torque", lear="Dragoon's Earring", rear="",
-				body="Acro Surcoat", hands="Acro Gauntlets", lring="", rring="",
-				back="Updraft Mantle", waist="Glassblower's Belt", legs="Acro Breeches", feet="Acro Leggings"}
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 
-sets.precast.JA["Steady Wing"] = {
-				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring",
-				back="Updraft Mantle", legs="Pteroslaver Brais", feet="Ptero. Greaves"}
+sets.misc.Waltz = {}
+sets.misc.Steps = {}
+sets.misc.flourish = {}
 
 -- JA
 sets.precast.JA["Spirit Surge"] = {body="Pteroslaver Mail"}
@@ -139,6 +108,52 @@ sets.precast.JA["Soul Jump"] = {ammo="Ginsen",
 				body="Peltast Plackert", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
+-- Melee TP 
+sets.TP = { ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
+            body="Peltast Plackert", hands=Aug.Skirmish.Acro.Hands.STP, lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.STP, feet=Aug.Skirmish.Acro.Feet.STP}
+
+sets.TP.Ionis = { ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
+            body="Peltast Plackert", hands=Aug.Skirmish.Acro.Hands.STP, lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.STP, feet=Aug.Skirmish.Acro.Feet.STP}
+
+-- Melee Accuracy TP
+sets.TP.Acc = {	ammo="Ginsen",
+		head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
+            body="Peltast Plackert", hands=Aug.Skirmish.Acro.Hands.STP, lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.STP, feet=Aug.Skirmish.Acro.Feet.STP}
+-- Ionis Haste +2% Save TP 25+
+sets.TP.Acc.Ionis = {ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
+            body="Peltast Plackert", hands=Aug.Skirmish.Acro.Hands.STP lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.STP, feet=Aug.Skirmish.Acro.Feet.STP}
+-- Alliance Buffs - Rolls + Songs
+sets.TP.Buffed = {ammo="Ginsen",
+			head="Otomi Helm", neck="Ganesha's Mala", lear="Tripudio Earring", rear="Brutal Earring",
+            body="Peltast Plackert", hands=Aug.Skirmish.Acro.Hands.STP, lring="Rajas Ring", rring="K'ayres Ring",
+            back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.STP, feet=Aug.Skirmish.Acro.Feet.STP}
+
+-- Pet
+-- Acro Breath +8 Pet Macc +25
+sets.precast.HealingBreath = {
+				head="Vishap Armet", 
+				body=Aug.Skirmish.Acro.Body.Breathe, hands=Aug.Skirmish.Acro.Hands.Breathe, lring="Meridian Ring", rring="K'ayres Ring",
+				back="Strendu Mantle", waist="Glassblower's Belt", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe}
+sets.midcast.HealingBreath = {
+				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring", rear="",
+				body=Aug.Skirmish.Acro.Body.Breathe, hands=Aug.Skirmish.Acro.Hands.Breathe,
+				back="Updraft Mantle", waist="Glassblower's Belt", legs="Vishap Brais", feet="Ptero. Greaves"}
+sets.midcast.Breath = {	
+				head="Ptero. Armet", neck="Lancer's Torque", lear="Dragoon's Earring", rear="",
+				body=Aug.Skirmish.Acro.Body.Breathe, hands=Aug.Skirmish.Acro.Hands.Breathe, lring="", rring="",
+				back="Updraft Mantle", waist="Glassblower's Belt", legs=Aug.Skirmish.Acro.Legs.Breathe, feet=Aug.Skirmish.Acro.Feet.Breathe }
+
+sets.precast.JA["Steady Wing"] = {
+				head="Ptero. Armet", neck="Lancer's Torque", lear="Lancer's Earring",
+				back="Updraft Mantle", legs="Pteroslaver Brais", feet="Ptero. Greaves"}
+
 -- Weaponskills
 sets.precast.WS = {ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -147,6 +162,7 @@ sets.precast.WS = {ammo="Ginsen",
 
 sets.precast.WS.Acc = {}
 
+-- Stardiver
 sets.precast.WS["Stardiver"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
@@ -157,6 +173,7 @@ sets.precast.WS.Acc["Stardiver"] = {ammo="Ginsen",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
+-- Drakesbane
 sets.precast.WS["Drakesbane"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
@@ -167,6 +184,7 @@ sets.precast.WS.Acc["Drakesbane"] = {ammo="Ginsen",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Buquwik Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
 
+-- Camlann's Torment
 sets.precast.WS["Camlann's Torment"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
@@ -176,14 +194,4 @@ sets.precast.WS.Acc["Camlann's Torment"] = {ammo="Ginsen",
 				head="Otomi Helm", neck="Fotia Gorget", lear="Moonshade Earring", rear="Brutal Earring",
                 body="Acro Surcoat", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Updraft Mantle", waist="Fotia Belt", legs="Acro Breeches", feet="Acro Leggings"}
-
--- Misc Sets
-sets.precast.Fastcast = set_combine(sets.idle.PDT, {head="Cizin Helm", lear="Loquac. Earring", rring="Prolix Ring",})
-
-sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
-
-sets.misc.Waltz = {}
-sets.misc.Steps = set_combine(sets.TP.ACC)
-sets.misc.flourish = {}
-
 end

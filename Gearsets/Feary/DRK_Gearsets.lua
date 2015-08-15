@@ -103,7 +103,7 @@ sets.precast.JA["Aggressor"] = {}
 
 -- Magic 
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Cizin Helm", lear="Loquac. Earring", 
+				head="Cizin Helm +1", lear="Loquac. Earring", 
 				rring="Prolix Ring"})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})
 

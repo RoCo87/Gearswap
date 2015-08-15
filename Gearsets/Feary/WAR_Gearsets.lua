@@ -145,7 +145,7 @@ sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {ammo="Ravager's Or
 				
 -- Misc Sets
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-				head="Cizin Helm", lear="Loquac. Earring", 
+				head="Cizin Helm +1", lear="Loquac. Earring", 
 				rring="Prolix Ring"})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})

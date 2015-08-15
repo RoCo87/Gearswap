@@ -49,6 +49,7 @@
 	Aug.Skirmish.Acro.Feet = {}
 	
 	-- STP Snow: Att/Acc Leaf:STP Dusk: STR
+	-- body?
 	Aug.Skirmish.Acro.Body.STP = {}
 	Aug.Skirmish.Acro.Hands.STP = {}
 	Aug.Skirmish.Acro.Legs.STP = {}
@@ -91,7 +92,7 @@
 	
 	-- DT Snow: Att/acc Leaf:DA Dusk: DT 
 	Aug.Skirmish.Yorium.Head.DT ={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Damage taken-2%',}}
-	Aug.Skirmish.Yorium.Body.DT ={ name="Yorium Cuirass", augments={'Evasion+11','Damage taken-3%',}}
+	Aug.Skirmish.Yorium.Body.DT ={ name="Yorium Cuirass", augments={'Accuracy+25','Damage taken-3%',}}
 	Aug.Skirmish.Yorium.Hands.DT ={ name="Yorium Gauntlets", augments={'Accuracy+21','Damage taken-3%',}}
 	Aug.Skirmish.Yorium.Legs.DT ={ name="Yorium Cuisses", augments={'Accuracy+20','Damage taken-3%',}}
 	Aug.Skirmish.Yorium.Feet.DT ={ name="Yorium Sabatons", augments={'Accuracy+18','Damage taken-2%',}}
@@ -111,24 +112,24 @@
 	Aug.Skirmish.Taeon.Feet = {}
 	
 	-- Snowslit:Att/Acc Leaf: TA Dusk: STR/DEX
-	Aug.Skirmish.Taeon.Head.TA = {}
-	Aug.Skirmish.Taeon.Body.TA = {}
+	Aug.Skirmish.Taeon.Head.TA = { name="Taeon Chapeau", augments={'Accuracy+19 Attack+19',}}
+	Aug.Skirmish.Taeon.Body.TA = { name="Taeon Tabard", augments={'Accuracy+15 Attack+15',}}
 	Aug.Skirmish.Taeon.Hands.TA ={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2',}}
 	Aug.Skirmish.Taeon.Legs.TA = {}
 	Aug.Skirmish.Taeon.Feet.TA = { name="Taeon Boots", augments={'Accuracy+18 Attack+18','"Triple Atk."+1',}}
 	
-	-- Snow: acc + att Leaf: DW  Dusk: Crit
-	Aug.Skirmish.Taeon.Head.DW = {}
-	Aug.Skirmish.Taeon.Body.DW = {}
-	Aug.Skirmish.Taeon.Hands.DW = {}
+	-- Snow: acc + att Leaf: DW Dusk: Crit
+	Aug.Skirmish.Taeon.Head.DW = {  name="Taeon Chapeau"}
+	Aug.Skirmish.Taeon.Body.DW = {  name="Taeon Tabard"}
+	Aug.Skirmish.Taeon.Hands.DW = { name="Taeon Gloves"}
 	Aug.Skirmish.Taeon.Legs.DW = { name="Taeon Tights", augments={'Accuracy+25','"Dual Wield"+5',}}
-	Aug.Skirmish.Taeon.Feet.DW = {}
+	Aug.Skirmish.Taeon.Feet.DW = { name="Taeon Boots"}
 	
-	-- snow: macc/mab Leaf: Fastcast Dusk: INT
-	Aug.Skirmish.Taeon.Body = {}
-	Aug.Skirmish.Taeon.Hands = {}
-	Aug.Skirmish.Taeon.Legs = {}
-	Aug.Skirmish.Taeon.Feet = {}
+	-- snow: macc/mab Leaf: Fastcast Dusk:WSD
+	Aug.Skirmish.Taeon.Body.FC = {}
+	Aug.Skirmish.Taeon.Hands.FC = {}
+	Aug.Skirmish.Taeon.Legs.FC = {}
+	Aug.Skirmish.Taeon.Feet.FC = {}
 	
 	-- Leaf:Snapshot
 	Aug.Skirmish.Taeon.Feet = {}
