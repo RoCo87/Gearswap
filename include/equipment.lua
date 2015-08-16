@@ -24,10 +24,49 @@
 	-- Demon Rings
 	Aug.Demonlring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	Aug.Demonrring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
+
+	-- Capes
+	Aug.Cape = {}
+	Aug.Cape.MNK = {}
+	Aug.Cape.WAR = {}
+	Aug.Cape.WHM = {}
+	Aug.Cape.BLM = {}
+	Aug.Cape.RDM = {}
+	Aug.Cape.THF = {}
+	Aug.Cape.PLD = {}
+	Aug.Cape.DRK = {}
+	Aug.Cape.BST = {}
+	Aug.Cape.BRD = {}
+	Aug.Cape.RNG = {}
+	Aug.Cape.SAM = {}
+	Aug.Cape.NIN = {}
+	Aug.Cape.DRG = {}
+	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
+	Aug.Cape.BLU = {}
+	Aug.Cape.COR = {}
+	Aug.Cape.PUP = {}
+	Aug.Cape.DNC = {}
+	Aug.Cape.SCH = {}
+	Aug.Cape.GEO = {}
+	Aug.Cape.RUN = {}
 	
 	-- Skirmish
 	Aug.Skirmish = {}
 	
+	-- Weapons
+	Aug.Skirmish.Keraunos = {}
+	
+	-- Staff
+	-- Nuking
+	Aug.Skirmish.Keraunos.MAB = {}
+	Aug.Skirmish.Keraunos.Macc = {}
+	-- snow acc? leaf perp cost dusk?
+	Aug.Skirmish.Keraunos.Perp = {}
+	-- pet mab leaf db/crit dusk bpd +10
+	Aug.Skirmish.Keraunos.MBPD = {}
+	-- siphon?
+	
+	-- Armor
 	-- Yorcia 
 	-- Hagondes 
 	Aug.Skirmish.Hagondes = {}
@@ -171,30 +210,29 @@
 	
 	-- avatar TP
 	-- prep cost pet haste pet acc/racc
-	Aug.Skirmish.Helios.Hands = {}
+	Aug.Skirmish.Helios.Hands.Perp = {}
 	-- pet haste  pet DA  pet atk/ratk
-	Aug.Skirmish.Helios.Feet = {}
+	Aug.Skirmish.Helios.Feet.Pet = {}
 	
-	-- pet mab 30 pet crit Blood Pact Damage +7
-	Aug.Skirmish.Helios.Head = {}
-	Aug.Skirmish.Helios.Body = {}
-	Aug.Skirmish.Helios.Hands = {}
-	Aug.Skirmish.Helios.Legs = {}
-	Aug.Skirmish.Helios.Feet = {}
+	-- Snow:pet mab 30 Leaf:pet crit Dusk:Blood Pact Damage +7
+	Aug.Skirmish.Helios.Head.MBPD = {}
+	Aug.Skirmish.Helios.Body.MBPD = {}
+	Aug.Skirmish.Helios.Hands.MBPD = {}
+	Aug.Skirmish.Helios.Legs.MBPD = {}
+	Aug.Skirmish.Helios.Feet.MBPD = {}
 	
-	-- BPD 7 pet att/ratk pet crit
-	Aug.Skirmish.Helios.Head = {}
-	Aug.Skirmish.Helios.Hands = {}
-	Aug.Skirmish.Helios.Legs = {}
-	Aug.Skirmish.Helios.Feet = {}
+	-- Snow: pet att/ratk Leaf:pet crit Dusk:BPD 7
+	Aug.Skirmish.Helios.Head.PBPD = {}
+	Aug.Skirmish.Helios.Hands.PBPD = {}
+	Aug.Skirmish.Helios.Legs.PBPD = {}
+	Aug.Skirmish.Helios.Feet.PBPD = {}
 	
-	
-	-- boon pet acc 30 smn skill
-	Aug.Skirmish.Helios.Head = {}
-	Aug.Skirmish.Helios.Body = {}
-	Aug.Skirmish.Helios.Hands = {}
-	Aug.Skirmish.Helios.Legs = {}
-	Aug.Skirmish.Helios.Feet = {}
+	-- Snow:pet macc 30 leaf:boon Duskorb: smn skill
+	Aug.Skirmish.Helios.Head.BPbuff = {}
+	Aug.Skirmish.Helios.Body.BPbuff = {}
+	Aug.Skirmish.Helios.Hands.BPbuff = {}
+	Aug.Skirmish.Helios.Legs.BPbuff = {}
+	Aug.Skirmish.Helios.Feet.BPbuff = {}
 	
 	
 	-- Telchine - WHM BLM RDM BRD SMN BLU SCH GEO
@@ -212,10 +250,10 @@
 	
 	-- Smn
 	-- Elemental siphon
-	Aug.Skirmish.Telchine.Head = {}
-	Aug.Skirmish.Telchine.Body = {}
-	Aug.Skirmish.Telchine.Hands = {}
-	Aug.Skirmish.Telchine.Legs = {}
+	Aug.Skirmish.Telchine.Head.Siphon = {}
+	Aug.Skirmish.Telchine.Body.Siphon = {}
+	Aug.Skirmish.Telchine.Hands.Siphon = {}
+	Aug.Skirmish.Telchine.Legs.Siphon = {}
 	
 -- Magian Staves
 	-- Elemental Precast

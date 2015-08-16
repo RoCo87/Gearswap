@@ -119,7 +119,7 @@ function self_command(command)
 			-- Place me in previous set
 			previous_set()
 		else
-			if Mode >= 1 then
+			if Mode >= 2 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -301,6 +301,7 @@ end
 
 function pet_midcast(spell)
 	if Physical_Ready_Moves:contains(spell.name) then
+		windower.add_to_chat(121,'Pet WS')
 		equip(sets.midcast.Pet.WS)
 		 if tp_based_ready_moves:contains(spell.name) and PetJob == 'Warrior' and pet.tp < 190 then
             equip(sets.midcast.Pet.TPBonus)
@@ -309,14 +310,17 @@ function pet_midcast(spell)
         end
 	elseif Magical_Ready_Moves:contains(spell.name)then
 		if Mode >= 1 then
+			windower.add_to_chat(121,'Pet Macc ')
 			equip(sets.midcast.Pet.WS.Macc)
 		else
+			windower.add_to_chat(121,'Pet Macc')
 			equip(sets.midcast.Pet.WS.MAB)
 		end
 	elseif Macc_Ready_Moves:contains(spell.name) then
+		windower.add_to_chat(121,'Pet Macc')
 		equip(sets.midcast.Pet.WS.Macc)
 	else
-		windower_add_to_chat(121,'Generic Ready Recast')
+		windower.add_to_chat(121,'Generic Ready Recast')
 		equip(sets.midcast.Pet.Recast)
 	end
 end
@@ -375,42 +379,60 @@ function pet_aftercast(spell,arg)
 end
 
 function previous_set()
-	if pet.isvalid == true or master == 0 then 
-		if pet.status == "Engaged" then
-			if player.status == "Engaged" then
-				if Tank == 1 then
-					windower.add_to_chat(121, 'Tank')
-					equip(sets.TP.Pet.Tank)
-				else
-					-- Pet Priority - Master Engaged - Pet Engaged - TP set
-					windower.add_to_chat(121, 'Pet Priority - Master Engaged - Pet Engaged - TP set')
-					equip(sets.TP.Pet)
-				end
-			else
-				if Tank == 1 then
-					windower.add_to_chat(121, 'Tank')
-					equip(sets.TP.Pet.Tank)
-				else
-				-- Pet Priority - Master Idle - Pet Engaged
-				windower.add_to_chat(121, ' Pet Priority - Master Idle - Pet Engaged')
-					equip(sets.TP.Pet.Tank)
-				end
-			end
-		elseif pet.status == "Idle" then
+	if pet.isvalid == true then
+		if master == 1 then
 			if player.status == "Engaged" then
 				if Mode == 1 then
 					-- Master Priority - Acc TP set
-					windower.add_to_chat(121, 'Acc TP set')
+					windower.add_to_chat(121,'Master Priority - Acc TP set')
 					equip(sets.TP.Acc)
 				else
 					-- Master Priority - TP set
-					windower.add_to_chat(121, 'TP set')
+					windower.add_to_chat(121,'Master Priority - TP set')
 					equip(sets.TP)
 				end
 			else
-				-- Pet Priority - Master Idle - Pet Idle
-				windower.add_to_chat(121, 'Master Idle - Pet Idle')
-				equip(sets.idle.Pet)
+			 -- Standard
+				windower.add_to_chat(121, 'Standard')
+				equip(sets.idle.Standard)
+			end
+		else
+			if pet.status == "Engaged" then
+				if player.status == "Engaged" then
+					if Tank == 1 then
+						windower.add_to_chat(121, 'Pet Priority - Tank')
+						equip(sets.TP.Pet.Tank)
+					else
+						-- Pet Priority - Master Engaged - Pet Engaged - TP set
+						windower.add_to_chat(121, 'Pet Priority - Master Engaged - Pet Engaged - TP set')
+						equip(sets.TP.Pet)
+					end
+				else
+					if Tank == 1 then
+						windower.add_to_chat(121, 'Pet Priority - Tank')
+						equip(sets.TP.Pet.Tank)
+					else
+					-- Pet Priority - Master Idle - Pet Engaged
+						windower.add_to_chat(121, ' Pet Priority - Master Idle - Pet Engaged')
+						equip(sets.TP.Pet.Tank)
+					end
+				end
+			elseif pet.status == "Idle" then
+				if player.status == "Engaged" then
+					if Mode == 1 then
+						-- Master Priority - Acc TP set
+						windower.add_to_chat(121, 'Acc TP set')
+						equip(sets.TP.Acc)
+					else
+						-- Master Priority - TP set
+						windower.add_to_chat(121, 'TP set')
+						equip(sets.TP)
+					end
+				else
+					-- Pet Priority - Master Idle - Pet Idle
+					windower.add_to_chat(121, 'Master Idle - Pet Idle')
+					equip(sets.idle.Pet)
+				end
 			end
 		end
 	else

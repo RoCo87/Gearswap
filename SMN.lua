@@ -193,6 +193,11 @@ function status_change(new,old)
 	end
 end
 
+function pet_precast()
+	if spell.type == "BloodPactWard" or spell.type == "BloodPactRage" then
+		equip(sets.precast.BP)
+	end
+end
 function precast(spell,arg)
 	if midaction() or pet_midaction() then
         cancel_spell()
