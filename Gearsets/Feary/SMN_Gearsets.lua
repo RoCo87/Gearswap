@@ -36,12 +36,12 @@ if player.name == 'Feary' then
 		sets.lockstyle = {main="Hvergelmir",
 				head="Caller's Horn +2",
 				body="Beckoner's Doublet", hands="Caller's Bracers +2",
-				legs="Beckoner's Spats", feet="Beck. Pigaches"}
+				legs="Beckoner's Spats", feet="Herald's Gaiters"}
 		
 		-- Precast	
 		-- Blood Pacts 
 		sets.precast.BP = {ammo="Eminent Sachet",
-			head="Convoker's Horn", lear="Caller's Earring",
+			head="Convoker's Horn",
 			body="Glyphic Doublet", hands="Glyphic Bracers",
 			legs="Glyphic Spats", feet="Glyphic Pigaches"}
 		
@@ -63,11 +63,11 @@ if player.name == 'Feary' then
 		
 		sets.precast.JA['Elemental Siphon'] = {main="Keraunos", sub="Vox Grip", ammo="Esper Stone +1",
 				-- Telchine Cap Smn. Earring
-				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring", rear="Gifted Earring",
+				head="Caller's Horn +2", neck="Caller's Pendant", lear="Andoaa Earring", rear="Gifted Earring",
 				-- Telchine Chas. Telchine Gloves 
 				body="Anhur Robe", hands="Glyphic Bracers", lring="Evoker's Ring",rring="Fervor Ring",
 				-- Telchine braconi
-				back="Conveyance Cape",waist="Cimmerian Sash",legs="Beckoner's Spats", feet="Beck. Pigaches"}
+				back="Conveyance Cape", waist="Cimmerian Sash", legs="Beckoner's Spats", feet="Beck. Pigaches"}
 				
 		sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
 		

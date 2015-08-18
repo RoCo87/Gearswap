@@ -2,7 +2,7 @@
 -- Date Created : 1/29/2014
 -- Last Update: 8/17/2014
 -- To Do
--- Alex
+-- Astral Conduit?
 --
 --
 
@@ -23,11 +23,39 @@ function get_sets()
 	Mode = 0
 	PDT = 0
 	MDT = 0
-	 -- Variables and notes to myself
+	
+	 -- Wards table for creating custom timers   
+    wards = {}
+    -- Base duration for ward pacts.
+    wards.durations = {
+        ['Crimson Howl'] = 60, ['Earthen Armor'] = 60, ['Inferno Howl'] = 60, ['Heavenward Howl'] = 60,
+        ['Rolling Thunder'] = 120, ['Fleet Wind'] = 120,
+        ['Shining Ruby'] = 180, ['Frost Armor'] = 180, ['Lightning Armor'] = 180, ['Ecliptic Growl'] = 180,
+        ['Glittering Ruby'] = 180, ['Hastega'] = 180, ['Noctoshield'] = 180, ['Ecliptic Howl'] = 180,
+        ['Dream Shroud'] = 180,
+        ['Reraise II'] = 3600
+    }
+    -- Icons to use when creating the custom timer.
+    wards.icons = {
+        ['Earthen Armor']   = 'spells/00299.png', -- 00299 for Titan
+        ['Shining Ruby']    = 'spells/00043.png', -- 00043 for Protect
+        ['Dream Shroud']    = 'spells/00304.png', -- 00304 for Diabolos
+        ['Noctoshield']     = 'spells/00106.png', -- 00106 for Phalanx
+        ['Inferno Howl']    = 'spells/00298.png', -- 00298 for Ifrit
+        ['Hastega']         = 'spells/00358.png', -- 00358 for Hastega
+        ['Rolling Thunder'] = 'spells/00104.png', -- 00358 for Enthunder
+        ['Frost Armor']     = 'spells/00250.png', -- 00250 for Ice Spikes
+        ['Lightning Armor'] = 'spells/00251.png', -- 00251 for Shock Spikes
+        ['Reraise II']      = 'spells/00135.png', -- 00135 for Reraise
+        ['Fleet Wind']      = 'abilities/00074.png', -- 
+    }
+   
+	-- Variables and notes to myself
     Debuff_BPs = T{'Diamond Storm','Sleepga','Slowga','Tidal Roar','Shock Squall','Nightmare','Pavor Nocturnus','Ultimate Terror','Somnolence','Lunar Cry','Lunar Roar'}
     Magical_BPs_affected_by_TP = T{'Heavenly Strike','Wind Blade','Holy Mist','Night Terror','Thunderstorm','Geocrush','Meteor Strike','Grand Fall','Lunar Bay','Thunderspark'} -- Unsure if Thunderspark is affected by TP
     Magical_BPs_unaffected_by_TP = T{'Nether Blast','Aerial Blast','Searing Light','Diamond Dust','Earthen Fury','Zantetsuken','Tidal Wave','Judgment Bolt','Inferno','Howling Moon','Ruinous Omen','Flaming Crush'}
-    Additional_effect_BPs = T{'Rock Throw'}    
+    Additional_effect_BPs = T{'Rock Throw'}
+	SpiritList = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
     AvatarList = S{'Shiva','Ramuh','Garuda','Leviathan','Diabolos','Titan','Fenrir','Ifrit','Carbuncle',
         'Fire Spirit','Air Spirit','Ice Spirit','Thunder Spirit','Light Spirit','Dark Spirit','Earth Spirit','Water Spirit',
         'Cait Sith','Alexander','Odin','Atomos'}
@@ -108,6 +136,10 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
+	elseif command == "siphon" then
+		handle_siphoning()
+	elseif command == "petweather" then
+		handle_petweather()
 	end
 end
 
@@ -164,7 +196,7 @@ function status_change(new,old)
 					windower.add_to_chat(121, "Town Gear")
 					equip(sets.misc.Town)
 				else
-					if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					if PDT == 1 then
 						equip(sets.idle.PDT)
 					elseif MDT == 1 then
 						equip(sets.idle.MDT)
@@ -193,92 +225,93 @@ function status_change(new,old)
 	end
 end
 
-function pet_precast()
-	if spell.type == "BloodPactWard" or spell.type == "BloodPactRage" then
-		equip(sets.precast.BP)
-	end
-end
 function precast(spell,arg)
-	if midaction() or pet_midaction() then
-        cancel_spell()
-        return
-    end
--- Job Abilities
-	if spell.type == 'JobAbility' then
-		if sets.precast.JA[spell.name] then
-			equip(sets.precast.JA[spell.name])
-		end
--- Weaponskills
-	elseif spell.type == "WeaponSkill" then
-		if player.status == 'Engaged' then
-			if player.tp >= 100 then
-				if spell.target.distance <= 5 then
-					if sets.precast.WS[spell.name] then
-						equip(sets.precast.WS[spell.name])
-					else
-						equip(sets.precast.WS)
-					end
-				else
-					cancel_spell()
-					windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
-				end
-			else 
-				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
+	if not midaction() or  not pet_midaction() then
+	-- Job Abilities
+		if spell.type == 'JobAbility' then
+			if sets.precast.JA[spell.name] then
+				equip(sets.precast.JA[spell.name])
 			end
-		else
-			cancel_spell()
-			windower.add_to_chat(121, 'You must be Engaged to WS')
-		end
--- Magic
-	elseif spell.type:endswith('Pact') then
-		-- Magian Staff
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
-		else
-			equip(sets.precast.Fastcast)
-		end
-	elseif spell.type:endswith('Magic') then
-		if spell.skill == 'Healing Magic' then
-			-- Cure casting time
-			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
-				equip(sets.precast.Cure)
+		elseif spell.type == "BloodPactWard" or spell.type == "BloodPactRage" then
+			if spell.name == "Alexander" or spell.name == "Perfect Defense" then
+				windower.add_to_chat(121,'Alexander')
+				equip(sets.midcast.SummoningSkill)
 			else
-				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-					equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
-				else
-					equip(sets.precast.Fastcast)
-				end
+				windower.add_to_chat(121,'BP Delay')
+				equip(sets.precast.BP)
 			end
-		elseif spell.skill == 'Enhancing Magic' then
-			-- Cancel Sneak
-			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-				windower.ffxi.cancel_buff(71)
-				cast_delay(0.3)
-			end	
-		else
+	-- Weaponskills
+		elseif spell.type == "WeaponSkill" then
+			if player.status == 'Engaged' then
+				if player.tp >= 100 then
+					if spell.target.distance <= 5 then
+						if sets.precast.WS[spell.name] then
+							equip(sets.precast.WS[spell.name])
+						else
+							equip(sets.precast.WS)
+						end
+					else
+						cancel_spell()
+						windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
+					end
+				else 
+					cancel_spell()
+					windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
+				end
+			else
+				cancel_spell()
+				windower.add_to_chat(121, 'You must be Engaged to WS')
+			end
+	-- Magic
+		elseif spell.type:endswith('Pact') then
 			-- Magian Staff
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
 			end
-		end
--- Ninjutsu
-	elseif spell.type == 'Ninjutsu' then
-		-- Magian Staff
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
-		else
-			equip(sets.precast.Fastcast)
-		end
--- BardSongs
-	elseif spell.type == 'BardSong' then
-		-- Magian Staff
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-			equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
-		else
-			equip(sets.precast.Fastcast)
+		elseif spell.type:endswith('Magic') then
+			if spell.skill == 'Healing Magic' then
+				-- Cure casting time
+				if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
+					equip(sets.precast.Cure)
+				else
+					if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+						equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
+					else
+						equip(sets.precast.Fastcast)
+					end
+				end
+			elseif spell.skill == 'Enhancing Magic' then
+				-- Cancel Sneak
+				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+					windower.ffxi.cancel_buff(71)
+					cast_delay(0.3)
+				end	
+			else
+				-- Magian Staff
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Fastcast)
+				end
+			end
+	-- Ninjutsu
+		elseif spell.type == 'Ninjutsu' then
+			-- Magian Staff
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
+			else
+				equip(sets.precast.Fastcast)
+			end
+	-- BardSongs
+		elseif spell.type == 'BardSong' then
+			-- Magian Staff
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				equip(sets.precast.Fastcast,{main=Fastcast.Staff[spell.element]})
+			else
+				equip(sets.precast.Fastcast)
+			end
 		end
 	end
 end
@@ -288,7 +321,7 @@ function pet_midcast(spell)
 		equip(sets.midcast.Pet.Spirit)
 	else
 	-- Perfect Defense
-		if spell.name == "Perfect Defense" then
+		if spell.name == "Perfect Defense" or spell.name == "Impact" then
 			equip(sets.midcast.SummoningSkill)
 		elseif spell.type == "BloodPactWard" then
 			if Debuff_BPs:contains(spell.name) then
@@ -307,201 +340,212 @@ function pet_midcast(spell)
 				equip(sets.midcast.Pet.MagicalBloodPactRage)
 			elseif Additional_effect_BPs:contains(spell.name) then -- for BPs where the additional effect matters more than the damage
 				equip(sets.midcast.Pet.MagicalBloodPactRage.Macc)
+			elseif spell.name == "Flaming Crush" then
+				equip(sets.midcast.Pet.FC)
 			else
 				equip(sets.midcast.Pet.PhysicalBloodPactRage)
 			end
-		elseif spell.type=='BlackMagic' then
+		elseif spell.type == 'BlackMagic' then
 			equip(sets.midcast.Pet.MagicalBloodPactRage.MAB)
 		end
 	end
 end
 
 function midcast(spell,arg)
--- SummoningMagic
-	if spell.skill == "Summoning Magic" then
-		equip(sets.midcast.Recast)
--- Healing Magic
-	elseif spell.skill == 'Healing Magic' then
-		-- Cure Curaga Cura
-		if spell.english:startswith('Cure') then
-			equip(sets.midcast.Cure)
-		elseif spell.english:startswith("Curaga") then
-			equip(sets.midcast.Curaga)
-		elseif spell.english:startswith('Cura') then
-			equip(sets.midcast.Cura)
-		-- Na Spells
-		elseif spell.english:wcmatch('Paralyna|Poisona|Blindna|Silena|Cursna|Viruna|Stona') then
-			if buffactive['Divine Caress'] then
-				equip(sets.midcast.Naspells, sets.precast.JA[spell.name])
-			elseif spell.name == 'Cursna' then
-				equip(sets.midcast.Cursna)
-			else
-				equip(sets.midcast.Naspells)
-			end
-		elseif spell.name == 'Erase' then
-			equip(sets.midcast.Erase)
-		elseif spell.name == 'Esuna' then
-			equip(sets.midcast.Esuna)
-		elseif spell.name == 'Sacrifice' then
-			equip(sets.midcast.Sacrifice)
-		elseif spell.english:startswith('Reraise') or spell.name == 'Arise' then
-			equip(sets.midcast.ConserveMP)
-		else
+	if not midaction() or not pet_midaction() or spell.interrupted then
+	-- SummoningMagic
+		if spell.skill == "Summoning Magic" then
 			equip(sets.midcast.Recast)
-		end
--- Enhancing Magic
-	elseif spell.skill == 'Enhancing Magic' then
-		if spell.name == 'Phalanx' then
-			equip(sets.midcast.Phalanx) 
-		elseif spell.english:wcmatch('Regen*') then
-			equip(sets.midcast.Regen)
-		elseif spell.english:wcmatch('BarStona|BarWatera|BarAera|BarFira|BarBlizzara|BarThundra') then
-			equip(sets.midcast.BarElement)
-		elseif spell.english:wcmatch('BarSleepra|BarPoisonra|BarParalyna|BarBlindra|BarSilencra|BarVira|BarPetra|BarAmnesra') then
-			equip(sets.midcast.BarStatus)
-		elseif spell.english:wcmatch('Boost-*') then
-			equip(sets.midcast.Boost)
-		elseif spell.english:endswith('Spikes') then
-			equip(sets.midcast.Spikes)
-		elseif spell.name == 'Stoneskin' then
-			equip(sets.midcast.Stoneskin)
-			if buffactive.Stoneskin then
-				windower.ffxi.cancel_buff(36)
+	-- Healing Magic
+		elseif spell.skill == 'Healing Magic' then
+			-- Cure Curaga Cura
+			if spell.english:startswith('Cure') then
+				equip(sets.midcast.Cure)
+			elseif spell.english:startswith("Curaga") then
+				equip(sets.midcast.Curaga)
+			elseif spell.english:startswith('Cura') then
+				equip(sets.midcast.Cura)
+			-- Na Spells
+			elseif spell.english:wcmatch('Paralyna|Poisona|Blindna|Silena|Cursna|Viruna|Stona') then
+				if buffactive['Divine Caress'] then
+					equip(sets.midcast.Naspells, sets.precast.JA[spell.name])
+				elseif spell.name == 'Cursna' then
+					equip(sets.midcast.Cursna)
+				else
+					equip(sets.midcast.Naspells)
+				end
+			elseif spell.name == 'Erase' then
+				equip(sets.midcast.Erase)
+			elseif spell.name == 'Esuna' then
+				equip(sets.midcast.Esuna)
+			elseif spell.name == 'Sacrifice' then
+				equip(sets.midcast.Sacrifice)
+			elseif spell.english:startswith('Reraise') or spell.name == 'Arise' then
+				equip(sets.midcast.ConserveMP)
+			else
+				equip(sets.midcast.Recast)
 			end
-		elseif spell.name == 'Blink' then
-			equip(sets.midcast.Blink)
-		elseif spell.name == 'Aquaveil' then
-			equip(sets.midcast.Aquaveil)
-		elseif spell.name == 'Haste' then
-			equip(sets.midcast.Hastespell)
-		elseif spell.english:wcmatch('Protectra*') then
-			equip(sets.midcast.ConserveMP)
-		elseif spell.english:wcmatch('Shellra*') then
-			equip(sets.midcast.ConserveMP)
-		elseif spell.english:wcmatch('Reraise*') then
-			equip(sets.midcast.ConserveMP)
-		else
-			equip(sets.midcast.ConserveMP)
-		end
--- Enfeebling Magic
-	elseif spell.skill == 'Enfeebling Magic' then
-		if spell.english:startswith('Dia') then
-			equip(sets.midcast.Dia)
-		elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
-			equip(sets.midcast.enfeebling)
-		else
+	-- Enhancing Magic
+		elseif spell.skill == 'Enhancing Magic' then
+			if spell.name == 'Phalanx' then
+				equip(sets.midcast.Phalanx) 
+			elseif spell.english:wcmatch('Regen*') then
+				equip(sets.midcast.Regen)
+			elseif spell.english:wcmatch('BarStona|BarWatera|BarAera|BarFira|BarBlizzara|BarThundra') then
+				equip(sets.midcast.BarElement)
+			elseif spell.english:wcmatch('BarSleepra|BarPoisonra|BarParalyna|BarBlindra|BarSilencra|BarVira|BarPetra|BarAmnesra') then
+				equip(sets.midcast.BarStatus)
+			elseif spell.english:wcmatch('Boost-*') then
+				equip(sets.midcast.Boost)
+			elseif spell.english:endswith('Spikes') then
+				equip(sets.midcast.Spikes)
+			elseif spell.name == 'Stoneskin' then
+				equip(sets.midcast.Stoneskin)
+				if buffactive.Stoneskin then
+					windower.ffxi.cancel_buff(36)
+				end
+			elseif spell.name == 'Blink' then
+				equip(sets.midcast.Blink)
+			elseif spell.name == 'Aquaveil' then
+				equip(sets.midcast.Aquaveil)
+			elseif spell.name == 'Haste' then
+				equip(sets.midcast.Hastespell)
+			elseif spell.english:wcmatch('Protectra*') then
+				equip(sets.midcast.ConserveMP)
+			elseif spell.english:wcmatch('Shellra*') then
+				equip(sets.midcast.ConserveMP)
+			elseif spell.english:wcmatch('Reraise*') then
+				equip(sets.midcast.ConserveMP)
+			else
+				equip(sets.midcast.ConserveMP)
+			end
+	-- Enfeebling Magic
+		elseif spell.skill == 'Enfeebling Magic' then
+			if spell.english:startswith('Dia') then
+				equip(sets.midcast.Dia)
+			elseif spell.english:wcmatch('Paralyze*|Slow*|Addle') then
+				equip(sets.midcast.enfeebling)
+			else
+				equip(sets.midcast.Macc)
+			end
+	-- Divine Magic
+		elseif spell.skill == 'Divine Magic' then
+			if spell.english:startswith('Banish') then
+				equip(sets.midcast.Banish)
+			elseif spell.english:startswith('Holy') then
+				equip(sets.midcast.Holy)
+			elseif spell.name == 'Repose' then
+				equip(sets.midcast.Repose)
+			elseif spell.name == 'Flash' then
+				equip(sets.midcast.Flash)
+			end
+	-- Dark Magic
+		elseif spell.skill == 'Dark Magic' then
+			if spell.name == 'Drain' then
+				equip(sets.midcast.Drain)
+			elseif spell.name == 'Aspir' then
+				equip(sets.midcast.Aspir)
+			elseif spell.name == 'Stun' then
+				equip(sets.midcast.Macc)
+			else
+				equip(sets.midcast.DarkMagic)
+			end
+	-- Elemental Magic
+		elseif spell.skill == 'Elemental Magic' then
 			equip(sets.midcast.Macc)
+	-- Ninjutsu
+		elseif spell.skill == "Ninjutsu" then
+			equip(sets.midcast.Recast)
+			if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
+				if buffactive['Copy Image'] then
+					windower.ffxi.cancel_buff(66)
+				elseif buffactive['Copy Image (2)'] then
+					windower.ffxi.cancel_buff(444)
+				elseif buffactive['Copy Image (3)'] then
+					windower.ffxi.cancel_buff(445)
+				elseif buffactive['Copy Image (4+)'] then
+					windower.ffxi.cancel_buff(446)
+				end
+			end
+		elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
+			windower.ffxi.cancel_buff(71)
 		end
--- Divine Magic
-	elseif spell.skill == 'Divine Magic' then
-		if spell.english:startswith('Banish') then
-			equip(sets.midcast.Banish)
-		elseif spell.english:startswith('Holy') then
-			equip(sets.midcast.Holy)
-		elseif spell.name == 'Repose' then
-			equip(sets.midcast.Repose)
-		elseif spell.name == 'Flash' then
-			equip(sets.midcast.Flash)
-		end
--- Dark Magic
-	elseif spell.skill == 'Dark Magic' then
-		if spell.name == 'Drain' then
-			equip(sets.midcast.Drain)
-		elseif spell.name == 'Aspir' then
-			equip(sets.midcast.Aspir)
-		elseif spell.name == 'Stun' then
-			equip(sets.midcast.Macc)
-		else
-			equip(sets.midcast.DarkMagic)
-		end
--- Elemental Magic
-	elseif spell.skill == 'Elemental Magic' then
-		equip(sets.midcast.Macc)
--- Ninjutsu
-	elseif spell.skill == "Ninjutsu" then
-		equip(sets.midcast.Recast)
-        if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' then
-            if buffactive['Copy Image'] then
-                windower.ffxi.cancel_buff(66)
-            elseif buffactive['Copy Image (2)'] then
-                windower.ffxi.cancel_buff(444)
-            elseif buffactive['Copy Image (3)'] then
-                windower.ffxi.cancel_buff(445)
-            elseif buffactive['Copy Image (4+)'] then
-                windower.ffxi.cancel_buff(446)
-            end
-        end
-    elseif spell.name == 'Monomi: Ichi' and buffactive.Sneak and spell.target.type == 'SELF' then
-        windower.ffxi.cancel_buff(71)
-    end
-end -- end midcast 
+	end
+end 
 
 function pet_aftercast(spell)
-   pet_sets()
+	if spell.name == "Fleet Wind" then
+		equip({feet="Herald's Gaiters")
+	else
+		pet_sets()
+	end
 end
 
 function aftercast(spell,arg)
-	if pet_midaction() or spell.type == "SummonerPact" then
-        return
-    end
--- Autoset
-	if pet.isvalid then
-		if pet.status == "Engaged" then
-			-- equip pet Engaged
-			equip(sets.idle.Avatar.Melee)
-		else
-			pet_sets()
+	if not midaction() or not pet_midaction() or spell.interrupted then
+		if spell.type == "BloodPactRage" or spell.type == "BloodPactWard" then
+			return
 		end
-	else	
-		if player.status == 'Engaged' then
-			if PDT == 1 or MDT == 1 then
-				if PDT == 1 and MDT == 0 then
-					windower.add_to_chat(121,'PDT Locked')
-					equip(sets.idle.PDT)
-				elseif MDT == 1 and PDT == 0 then
-					windower.add_to_chat(121,'MDT Locked')
-					equip(sets.idle.MDT)
+	-- Autoset
+		if pet.isvalid then
+			if pet.status == "Engaged" then
+				-- equip pet Engaged
+				equip(sets.idle.Avatar.Melee)
+			else
+				pet_sets()
+			end
+		else	
+			if player.status == 'Engaged' then
+				if PDT == 1 or MDT == 1 then
+					if PDT == 1 and MDT == 0 then
+						windower.add_to_chat(121,'PDT Locked')
+						equip(sets.idle.PDT)
+					elseif MDT == 1 and PDT == 0 then
+						windower.add_to_chat(121,'MDT Locked')
+						equip(sets.idle.MDT)
+					else
+						MDT = 0
+						PDT = 0
+					end
 				else
-					MDT = 0
-					PDT = 0
+					-- Equip previous TP set 
+						previous_set()
 				end
 			else
-				-- Equip previous TP set 
-					previous_set()
-			end
-		else
-			slot_lock()
-			if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
-				equip(sets.idle.PDT)
-			elseif MDT == 1 then
-				equip(sets.idle.MDT)
-			else
-				equip(sets.idle.Standard)
+				slot_lock()
+				if PDT == 1 or buffactive['Weakness'] or player.hpp < 30 then
+					equip(sets.idle.PDT)
+				elseif MDT == 1 then
+					equip(sets.idle.MDT)
+				else
+					equip(sets.idle.Standard)
+				end
 			end
 		end
-	end
--- Sleep and repose
-	if spell.name == "Sleep II" or spell.name == "Repose" then
-		windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
-        windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
-        windower.send_command('wait 85;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
-	elseif spell.name == "Sleep" or spell.name == "Sleepga" then
-		windower.send_command('wait 45;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
-        windower.send_command('wait 50;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
-        windower.send_command('wait 55;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
-	end
--- Convert
-	if spell.name == 'Convert' then
-		windower.send_command('wait 1; input /ma "Cure V" <me>')
-	end
-	 -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
-    if spell and spell.name == 'Utsusemi: Ni' then
-        ShadowType = 'Ni'
-    elseif spell and spell.name == 'Utsusemi: Ichi' then
-        ShadowType = 'Ichi'
+		-- Sleep and repose
+		if spell.name == "Sleep II" or spell.name == "Repose" then
+			windower.send_command('wait 75;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
+			windower.send_command('wait 80;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
+			windower.send_command('wait 85;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
+		elseif spell.name == "Sleep" or spell.name == "Sleepga" then
+			windower.send_command('wait 45;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:15 ]')
+			windower.send_command('wait 50;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:10 ]')
+			windower.send_command('wait 55;input /echo [ WARNING! '..spell.name..' : Will wear off within 0:05 ]')
+		end
+		-- Convert
+		if spell.name == 'Convert' then
+			windower.send_command('wait 1.1; input /ma "Cure IV" <me>')
+		end
+		 -- Changes shadow type variable to allow cancel Copy Image if last cast was Utsusemi: Ni
+		if spell and spell.name == 'Utsusemi: Ni' then
+			ShadowType = 'Ni'
+		elseif spell and spell.name == 'Utsusemi: Ichi' then
+			ShadowType = 'Ichi'
+		end
 	end
 end
 
+-- Handes Pets Gearsets
 function pet_sets()
 	-- Spirits
 	if pet.isvalid then
@@ -538,6 +582,7 @@ function pet_sets()
 	end
 end
 
+-- Handles Melee TP Sets
 function previous_set()
 	slot_lock()
 	if Mode == 0 then
@@ -561,3 +606,153 @@ function slot_lock()
     end
 end
 
+-- Cast the appopriate storm for the currently summoned avatar, if possible.
+function handle_petweather()
+    if player.sub_job ~= 'SCH' then
+        add_to_chat(122, "You can not cast storm spells")
+        return
+    end
+        
+    if not pet.isvalid then
+        add_to_chat(122, "You do not have an active avatar.")
+        return
+    end
+    
+    local element = pet.element
+    if element == 'Thunder' then
+        element = 'Lightning'
+    end
+    
+    if S{'Light','Dark','Lightning'}:contains(element) then
+        add_to_chat(122, 'You do not have access to '..elements.storm_of[element]..'.')
+        return
+    end 
+    
+    local storm = elements.storm_of[element]
+    
+    if storm then
+        send_command('@input /ma "'..elements.storm_of[element]..'" <me>')
+    else
+        add_to_chat(123, 'Error: Unknown element ('..tostring(element)..')')
+    end
+end
+
+-- Custom uber-handling of Elemental Siphon
+function handle_siphoning()
+    if areas.Town:contains(world.zone) then
+        add_to_chat(122, 'Cannot use Elemental Siphon in a city area.')
+        return
+    end
+
+    local siphonElement
+    local stormElementToUse
+    local releasedAvatar
+    local dontRelease
+    
+    -- If we already have a spirit out, just use that.
+    if pet.isvalid and SpiritList:contains(pet.name) then
+        siphonElement = pet.element
+        dontRelease = true
+        -- If current weather doesn't match the spirit, but the spirit matches the day, try to cast the storm.
+        if player.sub_job == 'SCH' and pet.element == world.day_element and pet.element ~= world.weather_element then
+            if not S{'Light','Dark','Lightning'}:contains(pet.element) then
+                stormElementToUse = pet.element
+            end
+        end
+    -- If we're subbing /sch, there are some conditions where we want to make sure specific weather is up.
+    -- If current (single) weather is opposed by the current day, we want to change the weather to match
+    -- the current day, if possible.
+    elseif player.sub_job == 'SCH' and world.weather_element ~= 'None' then
+        -- We can override single-intensity weather; leave double weather alone, since even if
+        -- it's partially countered by the day, it's not worth changing.
+        if get_weather_intensity() == 1 then
+            -- If current weather is weak to the current day, it cancels the benefits for
+            -- siphon.  Change it to the day's weather if possible (+0 to +20%), or any non-weak
+            -- weather if not.
+            -- If the current weather matches the current avatar's element (being used to reduce
+            -- perpetuation), don't change it; just accept the penalty on Siphon.
+            if world.weather_element == elements.weak_to[world.day_element] and
+                (not pet.isvalid or world.weather_element ~= pet.element) then
+                -- We can't cast lightning/dark/light weather, so use a neutral element
+                if S{'Light','Dark','Lightning'}:contains(world.day_element) then
+                    stormElementToUse = 'Wind'
+                else
+                    stormElementToUse = world.day_element
+                end
+            end
+        end
+    end
+    
+    -- If we decided to use a storm, set that as the spirit element to cast.
+    if stormElementToUse then
+        siphonElement = stormElementToUse
+    elseif world.weather_element ~= 'None' and (get_weather_intensity() == 2 or world.weather_element ~= elements.weak_to[world.day_element]) then
+        siphonElement = world.weather_element
+    else
+        siphonElement = world.day_element
+    end
+    
+    local command = ''
+    local releaseWait = 0
+    
+    if pet.isvalid and AvatarList:contains(pet.name) then
+        command = command..'input /pet "Release" <me>;wait 1.1;'
+        releasedAvatar = pet.name
+        releaseWait = 10
+    end
+    
+    if stormElementToUse then
+        command = command..'input /ma "'..elements.storm_of[stormElementToUse]..'" <me>;wait 4;'
+        releaseWait = releaseWait - 4
+    end
+    
+    if not (pet.isvalid and SpiritList:contains(pet.name)) then
+        command = command..'input /ma "'..elements.spirit_of[siphonElement]..'" <me>;wait 4;'
+        releaseWait = releaseWait - 4
+    end
+    
+    command = command..'input /ja "Elemental Siphon" <me>;'
+    releaseWait = releaseWait - 1
+    releaseWait = releaseWait + 0.1
+    
+    if not dontRelease then
+        if releaseWait > 0 then
+            command = command..'wait '..tostring(releaseWait)..';'
+        else
+            command = command..'wait 1.1;'
+        end
+        
+        command = command..'input /pet "Release" <me>;'
+    end
+    
+    if releasedAvatar then
+        command = command..'wait 1.1;input /ma "'..releasedAvatar..'" <me>'
+    end
+    
+    send_command(command)
+end
+
+-- Function to create custom timers using the Timers addon.  Calculates ward duration
+-- based on player skill and base pact duration (defined in job_setup).
+function create_pact_timer(spell_name)
+    -- Create custom timers for ward pacts.
+    if wards.durations[spell_name] then
+        local ward_duration = wards.durations[spell_name]
+        if ward_duration < 181 then
+            local skill = player.skills.summoning_magic
+            if skill > 300 then
+                skill = skill - 300
+                if skill > 200 then skill = 200 end
+                ward_duration = ward_duration + skill
+            end
+        end
+        
+        local timer_cmd = 'timers c "'..spell_name..'" '..tostring(ward_duration)..' down'
+        
+        if wards.icons[spell_name] then
+            timer_cmd = timer_cmd..' '..wards.icons[spell_name]
+        end
+
+        send_command(timer_cmd)
+    end
+end

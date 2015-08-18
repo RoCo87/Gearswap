@@ -1,7 +1,7 @@
 -- Feary's Equipment
 -- Created On 1/12/2014
--- Last Update:
--- To Do
+-- Last Update: 8/17/2015
+-- To Do:
 --
 --
 --
