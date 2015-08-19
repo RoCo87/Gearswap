@@ -49,16 +49,53 @@ function get_sets()
         ['Reraise II']      = 'spells/00135.png', -- 00135 for Reraise
         ['Fleet Wind']      = 'abilities/00074.png', -- 
     }
-   
-	-- Variables and notes to myself
-    Debuff_BPs = T{'Diamond Storm','Sleepga','Slowga','Tidal Roar','Shock Squall','Nightmare','Pavor Nocturnus','Ultimate Terror','Somnolence','Lunar Cry','Lunar Roar'}
-    Magical_BPs_affected_by_TP = T{'Heavenly Strike','Wind Blade','Holy Mist','Night Terror','Thunderstorm','Geocrush','Meteor Strike','Grand Fall','Lunar Bay','Thunderspark'} -- Unsure if Thunderspark is affected by TP
-    Magical_BPs_unaffected_by_TP = T{'Nether Blast','Aerial Blast','Searing Light','Diamond Dust','Earthen Fury','Zantetsuken','Tidal Wave','Judgment Bolt','Inferno','Howling Moon','Ruinous Omen','Flaming Crush'}
-    Additional_effect_BPs = T{'Rock Throw'}
+	
 	SpiritList = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
-    AvatarList = S{'Shiva','Ramuh','Garuda','Leviathan','Diabolos','Titan','Fenrir','Ifrit','Carbuncle',
-        'Fire Spirit','Air Spirit','Ice Spirit','Thunder Spirit','Light Spirit','Dark Spirit','Earth Spirit','Water Spirit',
-        'Cait Sith','Alexander','Odin','Atomos'}
+    AvatarList = S{'Shiva','Ramuh','Garuda','Leviathan','Diabolos','Titan','Fenrir','Ifrit','Carbuncle', 'Cait Sith','Alexander','Odin','Atomos'}
+
+	-- Types of BloodPacts
+	-- Skill
+		Skill_BloodPact = S{'Perfect Defense', 'Impact'}
+	
+	-- Physical
+		PhysicalRagePacts = S{
+		-- T1 BPs
+		'Double Slap', 'Camisado', 'Punch', "Barracurda Dive", 'Claw', 'Axe Kick',
+		-- T2 BPs
+		'Predator Claws', 'Eclipse Bite', 'Double Punch', 'Spinning Dive', 'Regal Scratch', 'Rush',
+		-- T3 BPs
+		'Regal Gash', 
+		}
+	-- Magical 
+	-- MAB
+		MagicalBloodPactRage = S{
+		-- Astral Flow
+        'Inferno','Earthen Fury','Tidal Wave','Aerial Blast','Diamond Dust','Judgment Bolt','Searing Light','Howling Moon','Ruinous Omen',
+        -- T2 Nukes
+		'Fire II','Stone II','Water II','Aero II','Blizzard II','Thunder II',
+        -- T4 Nukes 
+		'Fire IV','Stone IV','Water IV','Aero IV','Blizzard IV','Thunder IV',
+        -- T1 BPs
+		'Thunderspark','Burning Strike','Meteorite',
+        -- T2 BPs
+		'Level ? Holy', 'Nether Blast', 'Flaming Crush',
+		-- T3 BPs
+		'Zantetsuken'
+		}
+	-- Macc
+	-- Uses Magic Acc BP Set
+		DebuffBloodPact = T{
+		-- T1
+		 'Mewing Lullaby', 'Sleepga', 'Slowga', 'Tidal Roar', 'Nightmare', 'Ultimate Terror', 'Somnolence', 'Lunar Cry', 'Lunar Roar', 'Moonlit Charge', 'Crescent Fang',
+		-- T2
+		'Diamond Storm', 'Eerie Eye', "Chaotic Strike",
+		-- T3
+		'Shock Squall','Pavor Nocturnus', 'Volt Strike',
+		}
+	-- Uses Rage set with Beckoner's spats
+	Magical_BPs_affected_by_TP = T{
+	'Heavenly Strike', 'Wind Blade', 'Night Terror', 'Thunderstorm', 'Geocrush', 'Meteor Strike', 'Grand Fall', 'Thunderspark', 'Holy Mist', 'Lunar Bay',}
+	
 end
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
@@ -320,33 +357,32 @@ function pet_midcast(spell)
 	if string.find(pet.name,'Spirit') then
 		equip(sets.midcast.Pet.Spirit)
 	else
-	-- Perfect Defense
-		if spell.name == "Perfect Defense" or spell.name == "Impact" then
+	-- Blood Pacts
+		if Skill_BloodPact:contains(spell.name) then
 			equip(sets.midcast.SummoningSkill)
-		elseif spell.type == "BloodPactWard" then
-			if Debuff_BPs:contains(spell.name) then
-				equip(sets.midcast.Pet.BloodPactWard.Macc)
-			else
-				equip(sets.midcast.Pet.BloodPactWard)
-			end
-		elseif spell.type == "BloodPactRage" then
-			if Magical_BPs_affected_by_TP:contains(spell.name) then
-				if (spell.name == 'Heavenly Strike' and pet.TP > 120) or pet.TP > 280 then
-					equip(sets.midcast.Pet.MagicalBloodPactRage)
-				else
-					equip(sets.midcast.Pet.MagicalBloodPactRage.TP)
-				end
-			elseif Magical_BPs_unaffected_by_TP:contains(spell.name) then
+		elseif spell.name == "Flaming Crush" then
+			equip(sets.midcast.Pet.FC)
+		elseif PhysicalRagePacts:contains(spell.name) then
+			equip(sets.midcast.Pet.PhysicalBloodPactRage)
+		elseif MagicalBloodPactRage:contains(spell.name) then
+			equip(sets.midcast.Pet.MagicalBloodPactRage)
+		elseif DebuffBloodPact:contains(spell.name) then
+			equip(sets.midcast.Pet.BloodPactWard.Macc)
+		elseif Magical_BPs_affected_by_TP:contains(spell.name) then
+			if (spell.name == 'Heavenly Strike' and pet.TP > 120) or pet.TP > 280 then
 				equip(sets.midcast.Pet.MagicalBloodPactRage)
-			elseif Additional_effect_BPs:contains(spell.name) then -- for BPs where the additional effect matters more than the damage
-				equip(sets.midcast.Pet.MagicalBloodPactRage.Macc)
-			elseif spell.name == "Flaming Crush" then
-				equip(sets.midcast.Pet.FC)
 			else
-				equip(sets.midcast.Pet.PhysicalBloodPactRage)
+				equip(sets.midcast.Pet.MagicalBloodPactRage.TP)
 			end
-		elseif spell.type == 'BlackMagic' then
-			equip(sets.midcast.Pet.MagicalBloodPactRage.MAB)
+		else
+			if spell.type == "BloodPactWard" then
+				windower.add_to_chat(121,'Defaulted Ward Set')
+				equip(sets.midcast.SummoningSkill)
+			elseif spell.type == "BloodPactRage" then
+				windower.add_to_chat(121,'Defaulted Rage Set')
+				equip(sets.midcast.Pet.BloodPactRage)
+			end
+		
 		end
 	end
 end
