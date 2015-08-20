@@ -88,7 +88,7 @@ if player.name == 'Feary' then
 		sets.midcast.Pet.BloodPactWard.Macc = set_combine(sets.midcast.SummoningMagic,{main="", sub=""
 				-- Aug.Skirmish.Helios.Head.smn
 				-- Aug.Skirmish.Helios.Body.smn, Aug.Skirmish.Helios.Hands.smn
-				--Aug.Skirmish.Helios.Legs.smn, Aug.Skirmish.Helios.Feet.smn
+				-- Aug.Skirmish.Helios.Legs.smn, Aug.Skirmish.Helios.Feet.smn
 				})
 		
 		-- BloodPactRage
