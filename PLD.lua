@@ -204,9 +204,11 @@ function precast(spell,arg)
 			cancel_spell()
 		elseif spell.name == 'Chivalry' and player.tp <= 70 then
 			cancel_spell()
-			windower.add_to_chat(121,'Not Enought TP to Chivalry')
+			windower.add_to_chat(121,'Not Enough TP to Chivalry')
 		elseif sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
+		else
+			equip(sets.Enmity)
 		end
 	elseif spell.type == 'WeaponSkill' then
 		if player.status == 'Engaged' then

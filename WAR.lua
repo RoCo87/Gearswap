@@ -21,7 +21,7 @@ function get_sets()
 	MDT = 0
 	ShadowType = 'None'
 	
-	GreatAxes = T{}
+	GreatAxes = T{'Castigation','Sverga'}
 	GreatSwords = T{}
 	
 end 
@@ -87,7 +87,7 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		else
-			if Mode >= 1 then
+			if Mode >= 2 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -309,6 +309,8 @@ function previous_set()
 			else
 				equip(sets.TP.GA.Acc)
 			end
+		elseif Mode == 2 then
+			equip(sets.TP.Hybrid)
 		else
 			if buffactive.Ionis and areas.Adoulin:contains(world.area) then
 				equip(sets.TP.GA.Ionis)
@@ -320,11 +322,19 @@ function previous_set()
 	elseif GreatSwords:contains(player.equipment.main) then
 		if Mode == 1 then
 			equip(sets.TP.GS.Acc)
+		elseif Mode == 2 then
+			equip(sets.TP.Hybrid)
 		else
 			equip(sets.TP.GS)
 		end
 	else
-		equip(sets.TP)
+		if Mode == 1 then
+			equip(sets.TP.Acc)
+		elseif Mode == 2 then
+			equip(sets.TP.Hybrid)
+		else
+			equip(sets.TP)
+		end
 	end
 end
 

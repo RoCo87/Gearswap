@@ -1,7 +1,7 @@
 -- Pup Gear_sets
 -- Created:
 -- Last Updated:
--- To Do
+-- To Do:
 --
 --
 --
@@ -51,7 +51,7 @@ sets.idle.Regen = set_combine(sets.idle.PDT, {head="Pantin Taj"})
 sets.idle.Evasion = {
 				head="Uk'uxkaj Cap", neck="Torero Torque", lear="Musical earring", rear="Novia Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Boxer's Mantle", waist="Scouter's Rope",  legs="Otronif Brais +1", feet="Taeon Boots"}
+                back="Boxer's Mantle", waist="Scouter's Rope", legs="Otronif Brais +1", feet="Taeon Boots"}
 
 sets.misc.Town = set_combine(animator, oil, sets.idle.PDT, {
 				feet="Hermes' Sandals"})

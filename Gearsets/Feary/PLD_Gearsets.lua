@@ -71,6 +71,10 @@ sets.misc.Town = set_combine(sets.idle.DT, {
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
 				back="Shadow Mantle", legs="Blood Cuisses"})
+				
+sets.lockstyle = set_combine(sets.idle.Standard,{
+				legs="Kaiser Diechlings",
+				})
 -- TP 
 sets.TP = { 	ammo="Ginsen",
 				head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
