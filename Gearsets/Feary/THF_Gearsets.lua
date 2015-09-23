@@ -49,6 +49,8 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Fajin Boots"})
 				
+sets.lockstyle = set_combine(sets.misc.Town,{})
+				
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Pill. Bonnet +1", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
