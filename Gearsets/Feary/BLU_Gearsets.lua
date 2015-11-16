@@ -32,11 +32,11 @@ if player.name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {ammo="Vanir Battery",
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
@@ -120,12 +120,12 @@ if player.name == 'Feary' then
                 back="Buquwik Cape", waist="Prosilio Belt", legs="Hashishin Tayt", feet="Taeon Boots"})
 		-- INT
 		sets.midcast.BlueMagic.INT = set_combine(sets.midcast.BlueMagic, {
-                head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- CHR
 		sets.midcast.BlueMagic.CHR = set_combine(sets.midcast.BlueMagic, {
-                head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Macc
@@ -151,13 +151,13 @@ if player.name == 'Feary' then
 		
 		-- Nuke
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tahlum",
-                head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Dark
 		-- Pixie Hairpin +1
 		sets.midcast.BlueMagic.Nuke,Dark = set_combine(sets.midcast.Nuke, {
-                head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Breath 
@@ -195,11 +195,20 @@ if player.name == 'Feary' then
 		sets.precast.WS.Acc = set_combine(sets.TP, {ammo="Ginsen",
 				head="Taeon Chapeau", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"})
+                back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"})		
+		-- Savage Blade
+		sets.precast.WS['Savage Blade'] = set_combine(sets.TP, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"})
+		sets.precast.WS.Acc['Savage Blade'] = set_combine(sets.TP, {ammo="Ginsen",
+				head="Taeon Chapeau", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+                back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"})
 		-- Chant du Cygne
 		sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
                 head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 		sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Ginsen",
                 head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
@@ -216,12 +225,12 @@ if player.name == 'Feary' then
                 back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 		-- Expiacion
 		sets.precast.WS['Expiacion'] = {ammo="Dosis Tathlum",
-                head="Hagondes Hat", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                head="Hagondes Hat +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+                back="Vespid Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 		-- Sanguine Blade
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
-                head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		-- Realmrazer
@@ -232,6 +241,6 @@ if player.name == 'Feary' then
 		
 		-- Misc
 		sets.misc.Waltz = {}
-		sets.misc.Steps = {}
+		sets.misc.Steps = set_combine(sets.TP.Acc,{})
 		sets.misc.flourish = {}
 end

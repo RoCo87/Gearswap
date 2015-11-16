@@ -38,11 +38,11 @@ if player.Name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="", sub="Genbu's Shield",
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Sekhmet corset", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felecie", waist="",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
@@ -99,12 +99,12 @@ if player.Name == 'Feary' then
 		-- Elemental
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Helios Gloves", lring="Icesoul Ring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}		
 		

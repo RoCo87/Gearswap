@@ -31,10 +31,13 @@ if player.name == 'Feary' then
 			set_macro_page(4,1)
 		end
 		
+		fishing = 0
+		
 		-- Instruments
 		default = {range="Iron Ram Horn"}
 		-- Buffs
 		ballad = {range="Crooner's Cithara"}
+		honor = {range="Marsyas"}
 		march = {range="Langeleik"}
 		minuet = {range="Apollo's Flute"}
 		madrigal = {range="Cantabank's Horn"}
@@ -73,9 +76,18 @@ if player.name == 'Feary' then
                 back="Felicitas Cape", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Etiolation Earring",
-                feet="Fili Cothurnes"})
+                feet="Fili Cothurnes +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Fili Cothurnes"})
+				feet="Fili Cothurnes +1"})
+				
+		sets.lockstyle = set_combine(sets.misc.Town,{
+				body="Sheikh Manteel",
+				feet="Fili Cothurnes +1"})
+		
+		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang Fishing Rod", ammo="Robber Rig",
+				body="Fisherman's Tunica", hands="Angler's Gloves", lring="Pelican Ring", rring="Pelican Ring",
+				legs="Fisherman's Hose", feet="Fisherman's Boots"})
+				
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker",
                 body="Dalmatica", hands="Zenith Mitts", 
@@ -118,7 +130,7 @@ if player.name == 'Feary' then
 		sets.midcast.EnhanceSong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee",
                 body="Fili Hongreline", hands="Fili Manchettes",
-                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes"}
+                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes +1"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring",
