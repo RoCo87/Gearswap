@@ -84,9 +84,10 @@ if player.name == 'Feary' then
 				body="Sheikh Manteel",
 				feet="Fili Cothurnes +1"})
 		
-		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang Fishing Rod", ammo="Robber Rig",
+		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang Fishing Rod", ammo="Sinking Minnow",
+				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
 				body="Fisherman's Tunica", hands="Angler's Gloves", lring="Pelican Ring", rring="Pelican Ring",
-				legs="Fisherman's Hose", feet="Fisherman's Boots"})
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
 				
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker",

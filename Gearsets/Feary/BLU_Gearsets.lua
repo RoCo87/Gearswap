@@ -33,11 +33,11 @@ if player.name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="", rear="",
@@ -121,17 +121,17 @@ if player.name == 'Feary' then
 		-- INT
 		sets.midcast.BlueMagic.INT = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- CHR
 		sets.midcast.BlueMagic.CHR = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Macc
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
                 head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-                body="Assimilator's Jubbah", hands="Hagondes Cuffs", lring="Sangoma Ring", rring="Perception Ring",
+                body="Assimilator's Jubbah", hands="Hagondes Cuffs +1", lring="Sangoma Ring", rring="Perception Ring",
                 back="Cornflower Cape", waist="Ovate Rope", legs="Hashishin Tayt", feet="Helios Boots"})	
 		-- Acc
 		sets.midcast.BlueMagic.PhysMagicAcc = set_combine(sets.midcast.Macc, {
@@ -158,7 +158,7 @@ if player.name == 'Feary' then
 		-- Pixie Hairpin +1
 		sets.midcast.BlueMagic.Nuke,Dark = set_combine(sets.midcast.Nuke, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Archon Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
@@ -236,7 +236,7 @@ if player.name == 'Feary' then
 		-- Realmrazer
 		sets.precast.WS['Realmrazer'] = {ammo="Hasty Pinion +1",
                 head="Taeon Chapeau", neck="Fotia Gorget Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		
 		-- Misc

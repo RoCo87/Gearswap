@@ -35,11 +35,11 @@ if player.Name == 'Feary' then
 		-- Standard/idle
 		sets.idle.PDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
@@ -145,11 +145,11 @@ if player.Name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", range="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Helios Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
+                body="Helios Jacket", hands="Hagondes Cuffs +1", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Helio Jacket", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
+                body="Helio Jacket", hands="Hagondes Cuffs +1", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
