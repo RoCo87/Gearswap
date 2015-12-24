@@ -38,7 +38,7 @@ if player.name == 'Aniyah' then
 		sets.idle.MDT = {
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
-                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
@@ -127,7 +127,7 @@ if player.name == 'Aniyah' then
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Aqua Sachet",
                 head="Uk'uxkaj Cap", neck="Phalaina Locket", lear="Psystorm Earring", rear="Lifestorm Earring",
 				body="Hagondes Coat", hands="Hagondes Cuffs", lring="Aquasoul ring", rring="Aquasoul Ring",
-                back="Swith Cape", waist="Cascade Belt", legs="Hagondes Pants", feet="Hagondes Pants"})
+                back="Swith Cape", waist="Cascade Belt", legs="Hagondes Pants +1", feet="Hagondes Pants +1"})
 		-- Cure Pot
 		sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
                 neck="Phalaina Locket",
@@ -137,7 +137,7 @@ if player.name == 'Aniyah' then
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants", feet="Hagondes Sabots"})
+                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"})
 		-- Macc 
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
                 head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
@@ -171,7 +171,7 @@ if player.name == 'Aniyah' then
 		sets.precast.WS['Sanguine Blade'] = {ammo="Aqua Sachet",
                 head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring="Icesoul Ring", rring="Icesoul Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants", feet="Hagondes Sabots"}
+                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 
 		-- Misc
 		sets.misc.Waltz = {}
