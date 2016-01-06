@@ -25,16 +25,6 @@ if player.name == 'Feary' then
 				set_macro_page(15,3)
 			elseif player.sub_job == 'DNC' then 
 				set_macro_page(15,4)
-			elseif player.sub_job == 'DRG' then 
-				set_macro_page(15,5)
-			elseif player.sub_job == 'MNK' then 
-				set_macro_page(15,6)
-			elseif player.sub_job == 'WHM' then 
-				set_macro_page(15,8)
-			elseif player.sub_job == 'RDM' then 
-				set_macro_page(15,8)
-			elseif player.sub_job == 'SCH' then 
-				set_macro_page(15,8)
 			end
 		else
 			set_macro_page(15,2)

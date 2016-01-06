@@ -62,7 +62,7 @@
 		"Outer Ra'Kaznar [U]"
 		}
 
--- City areas for town gear and behavior.
+-- City areas for town gear behavior.
 	areas.Town = S{
 			"Ru'Lude Gardens",
 			"Upper Jeuno",
@@ -91,23 +91,3 @@
 			"Kazham",
 			"Rabao"
 					}
--- Adoulin areas, where Ionis will grant special stat bonuses.
-	areas.Adoulin = S{
-			"Yahse Hunting Grounds",
-			"Ceizak Battlegrounds",
-			"Foret de Hennetiel",
-			"Morimar Basalt Fields",
-			"Yorcia Weald",
-			"Yorcia Weald [U]",
-			"Cirdas Caverns",
-			"Cirdas Caverns [U]",
-			"Marjami Ravine",
-			"Kamihr Drifts",
-			"Sih Gates",
-			"Moh Gates",
-			"Dho Gates",
-			"Woh Gates",
-			"Rala Waterways",
-			"Rala Waterways [U]"
-					}
-

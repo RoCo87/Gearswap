@@ -70,8 +70,8 @@ function self_command(command)
 			if player.status == 'Engaged' then
 				previous_set()
 			else
-				if Mode == 4 then
-					equip(sets.idle.Standard,sets.idle.Evasion)
+				if Mode == 3 then
+					equip(sets.TP.Hybrid)
 				else
 					equip(sets.idle.Standard)
 				end
@@ -93,14 +93,14 @@ function self_command(command)
 			if player.status == 'Engaged' then
 				previous_set()
 			else
-				if Mode == 4 then
-					equip(sets.idle.Standard,sets.idle.Evasion)
+				if Mode == 3 then
+					equip(sets.TP.Hybrid)
 				else
 					equip(sets.idle.Standard)
 				end
 			end
 		else
-			if Mode >= 4 then
+			if Mode >= 3 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -111,8 +111,8 @@ function self_command(command)
 			if player.status == 'Engaged' then
 				previous_set()
 			else
-				if Mode == 4 then
-					equip(sets.idle.Standard,sets.idle.Evasion)
+				if Mode == 3 then
+					equip(sets.TP.Hybrid)
 				else
 					equip(sets.idle.Standard)
 				end
@@ -130,9 +130,9 @@ function status_change(new,old)
 			windower.add_to_chat(121, "Town Gear")
 			equip(sets.misc.Town)
 		else
-			if Mode == 4 then
-				windower.add_to_chat(121,'Evasion Set')
-				equip(sets.idle.Standard,sets.idle.Evasion)
+			if Mode == 3 then
+				windower.add_to_chat(121,'Tank Set')
+				equip(sets.TP.Hybrid)
 			else
 				if new == "Resting" then
 					equip(sets.Resting)
@@ -143,6 +143,7 @@ function status_change(new,old)
 			end
 		end
 	elseif new == 'Engaged' then
+		weapon_check()
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then
 				windower.add_to_chat(121,'PDT Locked')
@@ -195,7 +196,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..'tp is Not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is Not Enough to WS')
 			end
 		else
 			cancel_spell()
@@ -203,10 +204,30 @@ function precast(spell,arg)
 		end
  -- Ninjutsu spell gear handling(Precast)
     elseif spell.skill == 'Ninjutsu' then
-        equip(sets.precast.FastCast)
         if windower.wc_match(spell.name,'Utsusemi*') then
             equip(sets.precast.Utsusemi)
+		else	
+			equip(sets.precast.FastCast)
         end
+	elseif spell.type:endswith('Magic') then
+		if spell.skill == 'Healing Magic' then
+			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
+				equip(sets.precast.HPDown)
+			else
+				equip(sets.precast.Fastcast)
+			end
+		elseif spell.skill == 'Enhancing Magic' then
+			equip(sets.precast.Enhancing)
+			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+				windower.ffxi.cancel_buff(71)
+			end
+		elseif spell.skill == 'Divine Magic' then
+			equip(sets.precast.Fastcast)
+		elseif spell.skill == 'Blue Magic' then
+			equip(sets.precast.Fastcast,sets.Enmity)
+		elseif spell.skill == 'Elemental Magic' then
+			equip(sets.precast.Fastcast)
+		end
 	else
 	 -- Special handling to remove Dancer sub job Sneak effect
 		if spell.name == 'Spectral Jig' and buffactive.Sneak then
@@ -259,8 +280,8 @@ function aftercast(spell,arg)
 			-- Equip Previous TP set
 			previous_set()
 		else
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion)
+			if Mode == 3 then
+				equip(sets.TP.Hybrid)
 			else
 				equip(sets.idle.Standard)
 			end
@@ -283,13 +304,29 @@ function previous_set(spell)
 		windower.add_to_chat(121,'Acc Set')
 	elseif Mode == 2 then
 		equip(sets.TP.Buffed)
-		windower.add_to_chat(121,'Alliance Buff Set')
+		windower.add_to_chat(121,'Alliance Buffed Set')
 	elseif Mode == 3 then
 		equip(sets.TP.Hybrid)
-		windower.add_to_chat(121,'Hybrid Evasion Set')
-	elseif Mode == 4 then
-		equip(sets.idle.Evasion)
-		windower.add_to_chat(121,'Full Evasion Set')
+		windower.add_to_chat(121,'Tank Set')
 	end		
 end
 
+function slot_lock()
+    if player.equipment.left_ear == 'Reraise Earring' then
+        disable('left_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on left ear')
+    elseif player.equipment.right_ear == 'Reraise Earring' then
+        disable('right_ear')
+        windower.add_to_chat(8,'Reraise Earring equiped on right ear')
+    else
+        enable('left_ear','right_ear')
+    end
+end
+
+function weapon_check()
+	if player.equipment.main == 'empty' then
+		windower.add_to_chat(121,"No Weapon Equipped")
+	elseif player.equipment.sub == 'empty' then
+		windower.add_to_chat(121,"No Sub Equipped")
+	end
+end
