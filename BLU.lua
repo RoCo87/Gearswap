@@ -25,12 +25,21 @@ function get_sets(spell)
 	
 	-- Maps Blue Mage spell Stats per spell for the midcast function, can expand mapping as needed
 	-- Options - STR, STRAcc, VIT, AGI, MND, CurePot, Nuke, Macc, Recast
-    bluSpellStats = T{["Amorphic Spikes"]="STR", ["Bloodrake"]="STR", ["Disseverment"]="STR", ["Glutinous Dart"]="STR", ["Goblin Rush"]="STR",
-                ["Heavy Strike"]="STRAcc", ["Paralyzing Triad"]="STR", ["Ram Charge"]="STR", ["Vanity Dive"]="STR", ["Vertical Cleave"]="STR",
-                ["Whirl of Rage"]="STR",
+    bluSpellStats = T{
+				-- STR
+				["Amorphic Spikes"]="STR", ["Bloodrake"]="STR", ["Disseverment"]="STR", ["Glutinous Dart"]="STR", ["Goblin Rush"]="STR",
+                ["Paralyzing Triad"]="STR", ["Ram Charge"]="STR", ["Vanity Dive"]="STR", ["Vertical Cleave"]="STR", ["Whirl of Rage"]="STR",
+				-- STR/Acc
+				["Heavy Strike"]="STRAcc",
+				-- STR/VIT
                 ["Cannonball"]="VIT", ["Delta Thrust"]="VIT", ["Quad. Continuum"]="VIT",
-                ["Benthic Typhoon"]="AGI", ["Final Sting"]="AGI", ["Spiral Spin"]="AGI",
-                ["Magic Hammer"]="MND", ["Mind Blast"]="MND"}
+                -- AGI
+				["Benthic Typhoon"]="AGI", ["Final Sting"]="AGI", ["Spiral Spin"]="AGI",
+				-- MND
+                ["Magic Hammer"]="MND", ["Mind Blast"]="MND",
+				-- Nukes
+				["Subduction"]="Nuke",["Entomb"]="Nuke",["Silent Storm"]="Nuke",["Tenebral Crush"]="Nuke",["Anvil Lightning"]="Nuke",
+				["Scouring Spate"]="Nuke",["Spectral Floe"]="Nuke",["Searing Tempest"]="Nuke",}
     bluSpells = T{["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", ["Winds of Promy."]="Recast",
                 ["Magic Fruit"]="CurePot", ["Plenilune Embrace"]="CurePot", ["White Wind"]="CurePot",
                 ["Sudden Lunge"]="STRAcc", ["Head Butt"]="STRAcc", ["Absolute Terror"]="Macc"}

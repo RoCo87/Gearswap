@@ -66,6 +66,7 @@
 	Aug.Cape.SCH = {}
 	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {}
+	-- Enmity -7 
 	Aug.Cape.RUN = {}
 	
 	-- Skirmish

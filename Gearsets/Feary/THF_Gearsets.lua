@@ -43,9 +43,9 @@ sets.idle.MDT = {
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
-				neck="Carver's Torque",
-				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Craftmaster's Ring", rring="Orvail Ring",
-				waist="Carpenter's Belt", feet="Fajin Boots"})
+				head="Felistris Mask",
+				body="Taeon Tabard", hands="Taeon Gloves",
+				legs="Taeon Tights", feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
@@ -55,7 +55,16 @@ sets.lockstyle = set_combine(sets.misc.Town,{
 			head="Felistris Mask",
 			body="Taeon Tabard", hands="Taeon Gloves",
 			legs="Taeon Tights", feet="Fajin Boots"})
-				
+
+sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
+				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
+				body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
+sets.idle.Wood = set_combine(sets.idle.Standard,{
+				neck="Carpenter's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
+				waist="Carpenter's Belt"})		
+					
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Pill. Bonnet +1", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",

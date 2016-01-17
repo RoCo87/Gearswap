@@ -47,11 +47,19 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Etiolation Earring",
 				legs="Blood Cuisses"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="Luhlaza Keffiyah",
+				head="Luhlaza Keffiyeh",
 				body="Assim. Jubbah",
 				legs="Blood Cuisses"})
 		 sets.lockstyle = set_combine{sets.misc.Town}
-		 
+		 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
+				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
+				body="Fisherman's Tunica", hands="Kachina Gloves", lring="Albatross Ring", rring="Albatross Ring",
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
+		sets.idle.Wood = set_combine(sets.idle.Standard,{
+				neck="Carpenter's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
+				waist="Carpenter's Belt"})		
+				 
 		-- JA
 		sets.precast.JA["Azure Lore"] = {hands="Luhlaza Bazubands"}
 		sets.precast.JA["Unbridled Wisdom"] = {}
