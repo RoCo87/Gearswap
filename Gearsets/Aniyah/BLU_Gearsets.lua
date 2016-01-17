@@ -12,7 +12,7 @@ if player.name == 'Aniyah' then
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 1
+		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'NIN' then
 				set_macro_page(8,1)
@@ -40,7 +40,7 @@ if player.name == 'Aniyah' then
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
-				head="", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				head="Ovail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring="", rring="",
                 back="Cheviot Cape", waist="Fucho-no-obi", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{

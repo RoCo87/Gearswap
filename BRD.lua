@@ -120,6 +120,21 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		end
+	elseif command == "fishing" then
+		if fishing == 1 then
+			fishing = 0
+			-- Place Me in my previous set.
+			if player.status == 'Engaged' then
+				previous_set()
+			else
+				equip(sets.idle.Standard)
+			end
+			windower.add_to_chat(121,'Fishing Set UnLocked')
+		else
+			fishing = 1
+			equip(sets.idle.Fishing)
+			windower.add_to_chat(121,'Fishing Set Locked')
+		end
 	end
 end
 
@@ -534,6 +549,9 @@ function aftercast(spell,arg)
 	if areas.Town:contains(world.zone) then
 		windower.add_to_chat(121, "Town Gear")
 		equip(sets.misc.Town)
+	elseif fishing == 1 then
+		windower.add_to_chat(121, "Fishing Gear")
+		equip(sets.idle.Fishing)
 	else
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then

@@ -24,29 +24,47 @@
 	-- Demon Rings
 	Aug.Demonlring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 	Aug.Demonrring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
+	Aug.Demonlring.Derion = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
+	Aug.Demonrring.Derion = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
 
 	-- Capes
 	Aug.Cape = {}
 	Aug.Cape.MNK = {}
+	-- crit damage +3 acc +7
 	Aug.Cape.WAR = {}
+	-- cure pot +4/skill +10
 	Aug.Cape.WHM = {}
+	-- elemental skill
 	Aug.Cape.BLM = {}
+	-- Duration 10-20
 	Aug.Cape.RDM = {}
+	-- Dual Wield +5
 	Aug.Cape.THF = {}
+	-- Phalanx +5
 	Aug.Cape.PLD = {}
 	Aug.Cape.DRK = {}
+	-- pet dt-5
 	Aug.Cape.BST = {}
-	Aug.Cape.BRD = {}
+	-- Magic acc +7
+	Aug.Cape.BRD = {name="Rhapsode's Cape", augments={'HP+24','Mag. Acc.+7','Enmity-4','Damage taken-1%',}}
+	-- STP +3
 	Aug.Cape.RNG = {}
+	-- stp+3 mediate
 	Aug.Cape.SAM = {}
+	-- WSD +3
 	Aug.Cape.NIN = {}
+	-- Breath +10 wsd+5
 	Aug.Cape.DRG = {}
+	-- skill
 	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
+	-- Blu SKill +10
 	Aug.Cape.BLU = {}
+	-- Phantom Roll -5
 	Aug.Cape.COR = {}
 	Aug.Cape.PUP = {}
 	Aug.Cape.DNC = {}
 	Aug.Cape.SCH = {}
+	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {}
 	Aug.Cape.RUN = {}
 	
