@@ -29,45 +29,50 @@
 
 	-- Capes
 	Aug.Cape = {}
-	Aug.Cape.MNK = {}
+	-- dont bother lol
+	Aug.Cape.MNK = {name="Anchorite Mantle"}
 	-- crit damage +3 acc +7
-	Aug.Cape.WAR = {}
+	Aug.Cape.WAR = {name="Mauler's Cape"}
 	-- cure pot +4/skill +10
-	Aug.Cape.WHM = {}
+	Aug.Cape.WHM = {{name="Mending	 Cape", augments={''}}}
 	-- elemental skill
-	Aug.Cape.BLM = {}
+	Aug.Cape.BLM = {name="Bane Cape"}
 	-- Duration 10-20
-	Aug.Cape.RDM = {}
+	Aug.Cape.RDM = {name="Ghostfyre Cape"}
 	-- Dual Wield +5
-	Aug.Cape.THF = {}
+	Aug.Cape.THF = {name="Canny Cape"}
 	-- Phalanx +5
-	Aug.Cape.PLD = {}
-	Aug.Cape.DRK = {}
+	Aug.Cape.PLD = {name="Weard Mantle"}
+	--
+	Aug.Cape.DRK = {name="Niht Mantle"}
 	-- pet dt-5
-	Aug.Cape.BST = {}
+	Aug.Cape.BST = {name="Pastoralist's Mantle"}
 	-- Magic acc +7
 	Aug.Cape.BRD = {name="Rhapsode's Cape", augments={'HP+24','Mag. Acc.+7','Enmity-4','Damage taken-1%',}}
 	-- STP +3
-	Aug.Cape.RNG = {}
+	Aug.Cape.RNG = {name="Lutian Cape", augments={}}
 	-- stp+3 mediate
-	Aug.Cape.SAM = {}
+	Aug.Cape.SAM = {name="Tahaka Mantle"}
 	-- WSD +3
-	Aug.Cape.NIN = {}
+	Aug.Cape.NIN = {name="Yokaze Mantle"}
 	-- Breath +10 wsd+5
-	Aug.Cape.DRG = {}
+	Aug.Cape.DRG = {name="Updraft Mantle"}
 	-- skill
 	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
-	-- Blu SKill +10
-	Aug.Cape.BLU = {}
+	-- Blu Skill +10
+	Aug.Cape.BLU = {name="Cornflower Cape"}
 	-- Phantom Roll -5
-	Aug.Cape.COR = {}
+	Aug.Cape.COR = {name="Gunslinger's Cape"}
+	--
 	Aug.Cape.PUP = {}
-	Aug.Cape.DNC = {}
-	Aug.Cape.SCH = {}
+	--
+	Aug.Cape.DNC = {name="Toetapper's Mantle"}
+	--
+	Aug.Cape.SCH = {name="Bookworm's Cape"}
 	-- skill +10  duration + 10-20
-	Aug.Cape.GEO = {}
+	Aug.Cape.GEO = {name="Lifestream Cape"}
 	-- Enmity -7 
-	Aug.Cape.RUN = {}
+	Aug.Cape.RUN = {name="Evasionist's Cape"}
 	
 	-- Skirmish
 	Aug.Skirmish = {}

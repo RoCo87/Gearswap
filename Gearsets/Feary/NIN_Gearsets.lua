@@ -96,7 +96,7 @@ sets.midcast.Utsusemi.San = set_combine(sets.precast.Utsusemi,{ammo="Impatiens",
 			
 -- TP Sets 
 sets.TP = { ammo="Ginsen",
-			head="Iga Zukin +2", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+			head="Hattori Zukin", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
             body="Mochi. Chainmail", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
             back="Iga Dochugappa", waist="Patentia Sash", legs="Mochizuki Hakama", feet="Taeon Boots"}
 
@@ -129,14 +129,14 @@ sets.precast.JA["Mikage"] = {}
 
 sets.precast.JA["Sange"] = {body="Mochi. Chainmail"}
 sets.precast.JA["Yonin"] = {legs="Iga Hakama +2"}
-sets.precast.JA["Innin"] = {head="Iga Zukin +2"}
-sets.precast.JA["Futae"] = {hands="Iga Tekko +2"}
+sets.precast.JA["Innin"] = {head="Hattori Zukin"}
+sets.precast.JA["Futae"] = {hands="Hattori Tekko"}
 
 -- Weaponskills
 sets.precast.WS = { ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc = {}
 
@@ -145,12 +145,12 @@ sets.precast.WS.Acc = {}
 sets.precast.WS["Blade: Jin"] = { ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Blade: Jin"] = { ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Blade: Shun
 sets.precast.WS["Blade: Shun"] = { ammo="Ginsen",
@@ -161,29 +161,29 @@ sets.precast.WS["Blade: Shun"] = { ammo="Ginsen",
 sets.precast.WS.Acc["Blade: Shun"] = { ammo="Ginsen",
 			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Blade: Hi
 sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Rancor Collar", lear="Brutal Earring", rear="Moonshade Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Blade: Hi"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Rancor Collar", lear="Brutal Earring", rear="Moonshade Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}	
+            back="Yokaze Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}	
 
 -- Blade: Metsu	
 sets.precast.WS["Blade: Metsu"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 			
 sets.precast.WS.Acc["Blade: Metsu"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.misc.Waltz = {}
 sets.misc.Steps = set_combine(sets.TP.Acc)

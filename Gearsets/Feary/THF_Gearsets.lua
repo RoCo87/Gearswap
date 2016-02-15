@@ -92,7 +92,7 @@ sets.midcast.Fastcast = set_combine(sets.idle.PDT,{
 sets.TP = { ranged="Raider's Bmrng.",
 			head="Skulker's Bonnet", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
             body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Canny Cape", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	ammo="Ginsen",

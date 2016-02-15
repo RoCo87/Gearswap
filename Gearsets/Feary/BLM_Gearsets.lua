@@ -30,20 +30,21 @@ if player.Name == 'Feary' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
-				head="Hagondes Hat", neck="Twilight Torque",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
-				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
+				-- Assidaity Pants +1
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",
 				hands="Serpentes Cuffs",
+				-- Assidiaty pants +1
 				feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
@@ -51,6 +52,7 @@ if player.Name == 'Feary' then
 		-- JA
 		sets.precast.JA["Manafont"] = {body="Archmage's Coat"}
 		sets.precast.JA["Subtle Sorcery"] = {}
+		
 		sets.precast.JA["Elemental Seal"] = {main="Baqil Staff"}
 		sets.precast.JA["Emnity Douse"] = {}
 		sets.precast.JA["Manawell"] = {}
@@ -74,6 +76,7 @@ if player.Name == 'Feary' then
 				waist="Seigel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
 				head="Umuthi Hat"})
+				
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.precast.Fastcast, {
 				waist="Witful Belt"})		
@@ -85,19 +88,25 @@ if player.Name == 'Feary' then
 		-- Elemental
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
 		
 		sets.midcast.Nuke.Acc = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+		
+		sets.midcast.Nuke.MB = {main="Atinian Staff", sub="Zuuxowu Grip", ammo="Witchstone",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Spaekona's Coat", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+		
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 

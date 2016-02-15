@@ -51,7 +51,7 @@ if player.Name == 'Feary' then
                 waist="Fucho-no-Obi", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{main="Bolelabunga", sub="Genbu's Shield", range="Dunna",
 				lear="Merman's Earring", rear="Etiolation Earring",
-				--hands="Bagua Mitaines",
+				hands="Bagua Mitaines",
 				feet="Geomancy Sandals"})
 		sets.idle.Standard.Pet = set_combine(sets.idle.PDT,{range="Dunna",
 				head="Selenian Cap",lear="Merman's Earring", rear="Etiolation Earring",
@@ -94,7 +94,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{range="Dunna",
 				head="Hike Khat",
 				body="Bagua Tunic", hands="Geomancy Mitaines",
-				back="Lifestream Cape",legs="Bagua Pants"})
+				back="Lifestream Cape", legs="Bagua Pants"})
 		
 		-- Elemental
 		-- High Resist
@@ -120,7 +120,7 @@ if player.Name == 'Feary' then
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}
 	
 		-- Enhancing 
-		sets.midcast.Enhancing = {sub="Fulcio Grip",
+		sets.midcast.Enhancing = {main="Kirin's Pole", sub="Fulcio Grip",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
 				body="Anhur Robe", hands="Ayao's Gages",
 				back="Merciful Cape", waist="Olympus Sash", legs="Portant Pants", feet="Rubeus Boots"}
@@ -145,8 +145,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)
 		sets.midcast.Bio = set_combine(sets.midcast.Macc)
-		sets.midcast.Slow = set_combine(sets.midcast.Macc)
-		
+		sets.midcast.Slow = set_combine(sets.midcast.Macc)		
 		
 		-- Dark Magic
 		sets.midcast.Dark = set_combine(sets.midcast.Macc, {
@@ -159,7 +158,7 @@ if player.Name == 'Feary' then
 				body="Anhur Robe", hands="Hagondes Cuffs +1", lring="Prolix Ring", rring="Sangoma Ring",
 				back="Lifestream Cape", waist="Witful Cape", legs="Artsieq hose", feet="Hagondes Sabots"})
 		
-		-- Melee Sets
+-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
@@ -169,7 +168,8 @@ if player.Name == 'Feary' then
 				head="Nahtirah Hat", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 				back="Buquwik Cape", waist="Witful Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
-		
+
+-- Weaponskill		
 		sets.precast.WS = set_combine(sets.TP, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
@@ -186,7 +186,8 @@ if player.Name == 'Feary' then
 		sets.precast.WS['Exudation'] = set_combine(sets.precast.WS, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Levithan Ring +1", rring="Levithan Ring +1",
-				back="Buquwik Cape", waist="Wanion Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
+				back="Buquwik Cape", waist="Wanion Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"})
+				
 		-- Staff 
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {})

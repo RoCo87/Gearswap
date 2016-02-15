@@ -1,3 +1,4 @@
+
 -- Feary's COR Gear_sets
 -- Created:
 -- Last Modified: 9/4/2014
@@ -56,7 +57,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring", 
 			body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.FC, rring="Prolix Ring",
-			back="", waist="", legs="", feet=""})
+			})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 						
@@ -84,42 +85,43 @@ sets.precast.JA["Allies' Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
 
 -- Quick Draw 
 sets.precast.QD = {}
+
 --Light/Dark Shot
 sets.precast.QD.ACC = {
 				head="Blood Mask", neck="Stoicheion Medal", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Lanun Frac", hands="Chasseur Gants", lring="Perception Ring", rring="Sangoma Ring",
                 back="Gunslinger's Cape", waist="Aquiline Belt", legs="Thur. Tights +1", feet="Lanun Boots"}
 -- Elemental Shots
--- Deviant Necklace, Gunslinger's Cape
+-- Deviant Necklace
 sets.precast.QD.MAB = {
 				head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights", feet="Lanun Boots"}
+                back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights", feet="Lanun Boots"}
 				
 -- RA Sets
-sets.precast.Snapshot = {ammo="TPBullet",
+sets.precast.Snapshot = {ammo=TPBullet,
 				head="Chass. Tricorne", 
 				Body="Skopos Jerkin", hands="Lanun Gants",
                 back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
 -- Eminent Gun
 -- Gunslinger's Cape
-sets.RA = { ammo="TPBullet",
+sets.RA = { ammo=TPBullet,
 			head="Chass. Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
             body="Chasseur's Frac", hands="Chasseur's Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Taeon Boots"}
 				
-sets.RA.Acc = { ammo="TPBullet",
+sets.RA.Acc = { ammo=TPBullet,
 			head="Chass. Tricorne", neck="Iqabi Necklace", lear="Clearview Earring", rear="Enervating Earring",
             body="Chasseur's Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Taeon Boots"}
 
 -- Armageddon 
-sets.RA.Armageddon = { ammo="TPBullet",
+sets.RA.Armageddon = { ammo=TPBullet,
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
-sets.RA.Armageddon.Acc = { ammo="TPBullet",
+sets.RA.Armageddon.Acc = { ammo=TPBullet,
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
             body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
             back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
@@ -169,11 +171,11 @@ sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
 sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
 				head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Pearl",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
-                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
+                back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
 				head="Lanun Tricorne", neck="Stoicheion Medal", lear="Clearview Earring", rear="Enervating Earring",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Archon Ring",
-                back="Toro Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
+                back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 end
