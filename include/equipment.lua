@@ -34,8 +34,8 @@
 	-- crit damage +3 acc +7
 	Aug.Cape.WAR = {name="Mauler's Cape"}
 	-- cure pot +4/skill +10
-	Aug.Cape.WHM = {{name="Mending	 Cape", augments={''}}}
-	-- elemental skill
+	Aug.Cape.WHM = {{name="Mending Cape", augments={'Mac. Acc.+7','Healing Magic skill +2','Enha. mag. skill +3'}}}
+	-- elemental skill  dark magic skill
 	Aug.Cape.BLM = {name="Bane Cape"}
 	-- Duration 10-20
 	Aug.Cape.RDM = {name="Ghostfyre Cape"}

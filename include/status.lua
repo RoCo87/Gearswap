@@ -5,7 +5,6 @@
 --
 --
 
-function buff_change(buff,g_or_l)
 -- Gain buffs
 	if buff == 'Defense Down' and g_or_l == true then
 		windower.send_command('input /p Defense Down')
@@ -49,4 +48,3 @@ function buff_change(buff,g_or_l)
 	if buff == 'charm' and g_or_l == true then
 		windower.send_command('input /p Uncharmed')
 	end
-end

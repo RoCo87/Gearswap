@@ -34,11 +34,11 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="", neck="Eidolon Pendant", lear="", rear="",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
@@ -53,11 +53,11 @@ if player.name == 'Feary' then
 		 sets.lockstyle = set_combine{sets.misc.Town}
 		 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
-				body="Fisherman's Tunica", hands="Kachina Gloves", lring="Albatross Ring", rring="Albatross Ring",
+				body="Fisherman's Smock", hands="Kachina Gloves", lring="Noddy Ring", rring="Puffin Ring",
 				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
 		sets.idle.Wood = set_combine(sets.idle.Standard,{
 				neck="Carpenter's Torque",
-				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's ",
 				waist="Carpenter's Belt"})		
 				 
 		-- JA
@@ -65,7 +65,7 @@ if player.name == 'Feary' then
 		sets.precast.JA["Unbridled Wisdom"] = {}
 		
 		sets.precast.JA["Unbridled Learning"] = {}
-		sets.precast.JA["Chain Affinity"] = {head="Mavi Kavuk +2", feet="Assimilator's Charuqs"}
+		sets.precast.JA["Chain Affinity"] = {head="Hashishin Kavuk", feet="Assimilator's Charuqs"}
 		sets.precast.JA["Burst Affinity"] = {legs="Assimilator's Shalwar", feet="Mavi Basmak +2"}
 		sets.precast.JA["Efflux"] = {legs="Hashishin Tayt"}
 		sets.precast.JA["Diffusion"] = {feet="Luhlaza Charuqs"}

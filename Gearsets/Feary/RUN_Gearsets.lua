@@ -38,13 +38,13 @@ if player.name == 'Feary' then
 -- Standard/idle
 	sets.idle.PDT = { 
 					head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+					body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
 					head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Engulfer Cape", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+					body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Engulfer Cape", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 	sets.misc.Town = set_combine(sets.idle.PDT, {legs="Blood Cuisses"})
 					
@@ -78,7 +78,7 @@ if player.name == 'Feary' then
 	sets.precast.JA["Lunge"] = {
 					head="Haruspex Hat +1", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
 					hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-					back="Toro Cape", legs="Iuitl Tights"}
+					back="Toro Cape", legs="Iuitl Tights +1"}
 					
 	sets.precast.JA["Valiance"] = {body="Runiest Coat"}
 	sets.precast.JA["Vallation"] = {body="Runiest Coat"}
@@ -109,7 +109,7 @@ if player.name == 'Feary' then
 	sets.misc.flourish = {
 				neck="Eddy Necklace",
 				hands="Taeon Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-				legs="Iuitl Tights", feet="Iuitl Gaiters"}
+				legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 -- Magic 
 sets.midcast.Enhancing = {

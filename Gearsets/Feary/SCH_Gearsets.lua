@@ -36,11 +36,11 @@ if player.Name == 'Feary' then
 		sets.idle.PDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
 		sets.idle.MDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+                back="Felicitas Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
@@ -133,7 +133,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Regen = set_combine(sets.midcast.Enhancing,{main="Bolelabunga",
 			head="Svnt. Bonnet +2",
 			back="Bookworm's Cape"})
-		sets.midcast.Enspell = set_combine{sets.midcast.Enhancing,{})
+		sets.midcast.Enspell = set_combine(sets.midcast.Enhancing,{})
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
 		sets.midcast.Stoneskin = {waist="Siegel Sash"}
@@ -169,7 +169,7 @@ if player.Name == 'Feary' then
 		sets.midcast.Kaustra = set_combine(sets.midcast.Macc,{main="Atinian Staff", sub="Mephitis Grip",
 				head="Helios Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Hachirin-no-Obi", legs="Hagondes Pants +1", feet="Helios Boots"}})
+                back="Toro Cape", waist="Hachirin-no-Obi", legs="Hagondes Pants +1", feet="Helios Boots"})
 		
 		-- Stun - Alacrity Down
 		sets.midcast.Stun = set_combine(sets.precast.Fastcast, {main="Atinian Staff", sub="Arbuda Grip", ammo="Incantor Stone",

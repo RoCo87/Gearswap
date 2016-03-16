@@ -35,11 +35,11 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gendewitha Galoshes"}
+                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet=""}
 		sets.idle.MDT = {
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
+                back="Felicitas Cape", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gende. Galosh. +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Gende. Caubeen +1", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",

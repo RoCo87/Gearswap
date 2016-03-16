@@ -69,7 +69,7 @@ if player.name == 'Feary' then
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Gende. Spats +1", feet="Gendewitha Galoshes"}			
+                back="Engulfer Cape", waist="Flume Belt",  legs="Gende. Spats +1", feet="Gende. Galosh. +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				head="", neck="Eidolon Pendant",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1",
@@ -86,7 +86,7 @@ if player.name == 'Feary' then
 		
 		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang's Fishing Rod", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
-				body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
+				body="Fisherman's Smock", hands="Kachina Gloves", lring="Noddy Ring", rring="",
 				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
 		sets.idle.Wood = set_combine(sets.idle.Standard,{
 				neck="Carpenter's Torque",

@@ -193,19 +193,13 @@ function buff_change(buff,g_or_l)
 	end
 
 -- Flee
+	-- gained
 	if buff == 'Flee' and g_or_l == true then
-		if Mode == 4 then
-		 equip(sets.idle.PDT,sets.idle.Evasion,{feet="Pillager's Poulaines"})
-		else
-			equip(sets.idle.PDT,{feet="Fajin Boots"})
-		end
+		equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
 	end
+	-- lose
 	if buff == 'Flee' and g_or_l == false then
-		if Mode == 4 then
-			equip(sets.idle.PDT,sets.idle.Evasion,{feet="Pillager's Poulaines"})
-		else
-			equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
-		end
+		equip(sets.idle.PDT,{feet="Fajin Boots"})
 	end
 	
 -- Feint
@@ -354,7 +348,12 @@ function aftercast(spell,arg)
 -- Autoset
 	if areas.Town:contains(world.zone) then
 		windower.add_to_chat(121, "Town Gear")
-		equip(sets.misc.Town)
+		if buffactive['Flee'] or spell.name == 'Flee' then
+				windower.add_to_chat(121,'Flee active')
+				equip(sets.misc.Town, {feet="Pillager's Poulaines"})
+		else
+			equip(sets.misc.Town)
+		end
 	else
 		if player.status == 'Engaged' then
 			if S{'Sneak Attack', 'Trick Attack', 'Feint'}:contains(spell.english) then
@@ -364,7 +363,8 @@ function aftercast(spell,arg)
 				previous_set()
 			end
 		else
-			if buffactive["Flee"] then
+			if buffactive['Flee'] or spell.name == "Flee" then
+				windower.add_to_chat(121,'Flee')
 				equip(sets.idle.Standard,{feet="Pillager's Poulaines"})
 			else
 				if not S{'Sneak Attack', 'Trick Attack', 'Feint'}:contains(spell.english) then

@@ -37,11 +37,11 @@ if player.name == 'Feary' then
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Lanun Frac", hands="Umuthi Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Lanun Boots"}
+                back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Lanun Boots"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -96,7 +96,7 @@ sets.precast.QD.ACC = {
 sets.precast.QD.MAB = {
 				head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
                 body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights", feet="Lanun Boots"}
+                back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights +1", feet="Lanun Boots"}
 				
 -- RA Sets
 sets.precast.Snapshot = {ammo=TPBullet,

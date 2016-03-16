@@ -18,11 +18,11 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {main="Earth Staff",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etoilation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
 		sets.idle.MDT = {main="Earth Staff",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+                back="Felicitas Cape", waist="Austerity Belt", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Caller's Horn +2", neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
@@ -99,7 +99,7 @@ if player.name == 'Feary' then
 				-- Aug.Skirmish.Helios.Hands.PBPD 
 				body="Convoker's Doublet", hands="Glyphic Bracers", lring="Evoker's Ring", rring="Fervor Ring",
 				-- Aug.Skirmish.Helios.Legs.PBPD Aug.Skirmish.Helios.Feet.PBPD
-				back="Conveyance Cape", waist="Mujin Obi", legs="Beckoner's Spats", feet="Hagondes Sabots"}
+				back="Conveyance Cape", waist="Mujin Obi", legs="Beckoner's Spats", feet="Hag. Sabots +1"}
 		
 		-- Magical
 		-- 'Nether Blast','Aerial Blast','Searing Light','Diamond Dust','Earthen Fury','Zantetsuken','Tidal Wave','Judgment Bolt','Inferno','Howling Moon','Ruinous Omen','Flaming Crush'
@@ -109,7 +109,7 @@ if player.name == 'Feary' then
 				-- Aug.Skirmish.Helios.Body.MBPD, Aug.Skirmish.Helios.Hands.MBPD,
 				body="Beckoner's Doublet", hands="Glyphic Bracers", lring="Evoker's Ring", rring="Fervor Ring",
 				-- Aug.Skirmish.Helios.Legs.MBPD Aug.Skirmish.Helios.Feet.MBPD
-				back="Conveyance Cape", waist="Caller's Sash", legs="Beckoner's Spats", feet="Hagondes Sabots"}
+				back="Conveyance Cape", waist="Caller's Sash", legs="Beckoner's Spats", feet="Hag. Sabots +1"}
 		
 		-- Flaming Crush - Not Added to Smn.lua
 		sets.midcast.Pet.FC = set_combine(sets.midcast.Pet.MagicalBloodPactRage,{
