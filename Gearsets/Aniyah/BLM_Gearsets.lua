@@ -34,19 +34,19 @@ if player.Name == 'Aniyah' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff",
-				head="Hagondes Hat", neck="Twilight Torque",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring1.Aniyah,
+				head="Hagondes Hat +1", neck="Twilight Torque",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring1.Aniyah,
                 back="Cheviot Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
 		sets.idle.MDT = {
-				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
         		back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"})		
 		sets.Resting = set_combine(sets.idle.PDT, {main="Iridal Staff", ammo="Clarus Stone",
 				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
-				body="Hagondes Coat", hands="Serpentes Cuffs",
+				body="Hagondes Coat +1", hands="Serpentes Cuffs",
                 back="Felicitas Cape"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
@@ -87,22 +87,22 @@ if player.Name == 'Aniyah' then
 		-- Elemental
 		-- High Resist
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Strophadic Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Strophadic Earring", rear="Friomisi Earring",
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Umbani Boots"}
 		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
+				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
                 body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Umbani Boots"}
 		sets.midcast.Elemental = {main="Atinian Staff", sub="Pax Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
-                body="Hagondes Coat", hands="Hagondes Cuffs", lring="Shiva ring", rring="Shiva ring",
+				head="Hagondes Hat +1", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
+                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva ring", rring="Shiva ring",
                 back="Toro Cape", waist="Cognition Belt", legs="Hagondes Pants", feet="Rubeus Boots"}
 				-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Pax Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
-                body="Hagondes Coat", hands="Goetia Gloves +2", lring="Shiva ring", rring="Shiva ring",
+				head="Hagondes Hat +1", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
+                body="Hagondes Coat +1", hands="Goetia Gloves +2", lring="Shiva ring", rring="Shiva ring",
                 back="Toro Cape", waist="Cognition Belt", legs="Hagondes Pants", feet="Rubeus Boots"}
 		
 		--Healing Magic
