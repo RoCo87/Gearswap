@@ -33,9 +33,9 @@ if player.name == 'Derion' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Derion, rring="",
-                back="Repulse Mantle", waist="", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+				head="Iuitl Headgear +1", neck="Twilight Torque", lear="", rear="",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1.Derion, rring="",
+                back="Repulse Mantle", waist="", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1"}
 
 sets.idle.MDT = { 
 				head="Espial Cap", neck="Twilight Torque", lear="", rear="",
@@ -72,9 +72,9 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
 			
 -- TP Sets 
 sets.TP = { ranged="Raider's Bmrng.",
-			head="Espial Cap", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
+			head="Iuitl Headgear +1", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+            body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 -- Accuracy TP Set
 sets.TP.Acc = {	ranged="Raider's Bmrng.",
