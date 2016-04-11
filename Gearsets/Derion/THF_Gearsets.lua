@@ -91,7 +91,7 @@ sets.TP.Buffed = {
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Dudgeon Earring", rear="Heartseeker Earring",
-            body="Iuitl Vest +1", hands="Iuitl Wristbands +1 +1", lring="Rajas Ring", rring="Epona's Ring",
+            body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"})
 
 -- RA Sets
@@ -124,7 +124,7 @@ sets.precast.JA["Sneak Attack"] = {
 -- Trick Attack
 sets.precast.JA["Trick Attack"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Dudgeon Earring", rear="Bladeborn earring",
-                body="Manibozho Jerkin", hands="Iuitl Wristbands +1 +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 -- Weaponskills
@@ -234,12 +234,12 @@ elseif player.name == 'Fugiwara' then
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Iuitl Headgear", neck="Twilight Torque", lear="Brutal Earring", rear="Suppanomimi",
-                body="Iuitl Vest +1", hands="Iuitl Wristbands +1 +1", lring="Dark Ring", rring="Shadow Ring",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
                 back="Shadow Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Iuitl Headgear", neck="Twilight Torque", lear="Brutal Earring", rear="Suppanomimi",
-                body="Iuitl Vest +1", hands="Iuitl Wristbands +1 +1", lring="Dark Ring", rring="Shadow Ring",
+                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
                 back="Shadow Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -257,13 +257,13 @@ sets.TH = {hands="Plunderer's Armlets",feet="Raider's Poulaines +2"}
 -- Precast	
 sets.precast.Recast = set_combine(sets.idle.PDT,{
 			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest +1", hands="Iuitl Wristbands +1 +1", lring="Rajas Ring", rring="Prolix Ring",
+            body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Prolix Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"})
 			
 -- TP Sets 
 sets.TP = { ammo="Raider's Bmrng.",
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands +1 +1", lring="Rajas Ring", rring="Epona's Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Letalis Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Accuracy TP Set
@@ -275,13 +275,13 @@ sets.TP.Acc = {
 -- Alliance Buffed
 sets.TP.Buffed = {
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands +1 +1", lring="Rajas Ring", rring="Epona's Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
             back="Letalis Mantle", waist="Windbuffet Belt", legs="Manibozho Brais", feet="Manibozho Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.TP,{
 			head="Felistris Mask", neck="Torero Torque", lear="Brutal Earring", rear="Suppanomimi",
-            body="Manibozho Jerkin", hands="Iuitl Wristbands +1 +1", lring="Dark Ring", rring="Shadow Ring",
+            body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Dark Ring", rring="Shadow Ring",
             back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Manibozho Boots"})
 
 -- RA Sets
@@ -314,7 +314,7 @@ sets.precast.JA["Sneak Attack"] = {
 -- Trick Attack
 sets.precast.JA["Trick Attack"] = {
 				head="Uk'uxkaj Cap", neck="Houyi's Gorget", lear="Dudgeon Earring", rear="Bladeborn earring",
-                body="Manibozho Jerkin", hands="Iuitl Wristbands +1 +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
+                body="Manibozho Jerkin", hands="Iuitl Wristbands +1", lring="Stormsoul Ring", rring="Stormsoul Ring",
                 back="Vespid Mantle", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 -- Weaponskills
