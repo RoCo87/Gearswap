@@ -1,6 +1,6 @@
 -- SMN Gearsets
--- Created:
--- Last Updated: 
+-- Created: 7/25/2014
+-- Last Updated: 08/14/2015
 -- To Do:
 --
 --
@@ -72,7 +72,7 @@ if player.name == 'Feary' then
 		sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
 		
 		-- Midcast
-		-- Summoning
+		-- Summoning Magic Skill Gear
 		sets.midcast.SummoningMagic = {main="Kirin's Pole", sub="Vox Grip", ammo="Eminent Sachet",
 				-- Smn. Earring
 				head="Convoker's Horn",neck="Caller's Pendant", lear="Andoaa Earring", rear="Gifted Earring",
@@ -201,14 +201,15 @@ if player.name == 'Feary' then
 		sets.perp = {}
 		sets.perp.Day = {hands="Caller's Bracers +2"}
 		sets.perp.Weather = {neck="Caller's Pendant", hands="Caller's Bracers +2"}
+		
 		--Avatar
 		sets.idle.Avatar = {main="Keraunos", sub="Vox Grip", ammo="Eminent Sachet",
 				-- Rimeice Earring
 				head="Convoker's Horn", neck="Caller's Pendant", lear="Gifted Earring", rear="Etoilation Earring",
 				-- Shomonjijoe +1 hands=Aug.Skirmish.Helios.Hands.Perp
 				body="Beckoner's Doublet", hands="Serpentes Cuffs", lring="Evoker's Ring", rring="Fervor Ring",
-				-- Conveyence Cape - Moepapa Stone - Assipidity Pants. - Aug.Skirmish.Helios.Feet.Pet = {}
-				back="Pahtli Cape", waist="Fucho-no-Obi", legs="Nares Trews", feet="Beck. Pigaches"}
+				-- Moepapa Stone - Assipidity Pants. - Aug.Skirmish.Helios.Feet.Pet = {}
+				back="Conveyence Cape", waist="Fucho-no-Obi", legs="Nares Trews", feet="Beck. Pigaches"}
 		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"}) -- Asteria Mitts +1
 		sets.idle.Avatar["Diabolos"] = set_combine(sets.idle.Avatar, {waist="Diabolos's Rope"})
 		sets.idle.Avatar["Alexander"] = set_combine(sets.midcast.SummoningMagic)
@@ -222,7 +223,7 @@ if player.name == 'Feary' then
 		-- Avatar TP
 		sets.idle.Avatar.Melee = set_combine(sets.idle.Avatar,{})
 		
-		-- Avatar DT - add to smn.lua
+		-- Avatar DT - needs to be added to smn.lua
 		sets.idle.Avatar.DT = set_combine(sets.idle.Avatar,{
 				head="Selenian Cap", neck="Caller's Pendant", lear="Handler's Earring +1", rear="Handler's Earring",
 				body="Shomonjijoe +1", hands="Telchine Gloves", lring="Evoker's Ring", rring="Defending Ring",

@@ -56,45 +56,46 @@ if player.name == "Carrisa" then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Earth Staff", 
-				sub="Umbra Strap", head="Bihu Roundlet", neck="Twilight Torque", lear="Loquac. Earring", rear="Musical Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
-                back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers"}
+		sets.idle.PDT = {main="Terra's Staff", 
+				sub="Umbra Strap", head="Bihu Roundlet +1", neck="Twilight Torque", lear="Loquac. Earring", rear="Ethereal Earring",
+                body="Gendewitha Bilaut +1", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring",
+                back="Umbra Cape", waist="Flume Belt", legs="Gendewitha Spats", feet="Bihu Slippers +1"}
 		sets.idle.MDT = {
 				head="Nahtirah Hat", neck="Twilight Torque", lear="Loquac. Earring", rear="Musical Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
+                body="Gendewitha Bilaut +1", hands="Gendewitha Gages", lring=Aug.Darkring1.Carrisa, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Boonwell Staff",
-				head="Nefer Khat", neck="Eidolon Pendant", lear="Loquac. Earring", rear="Antivenom Earring",
+				head="Nefer Khat", neck="Eidolon Pendant", lear="Moonshade Earring", rear="Antivenom Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", rring="Angha Ring",
-                back="Felicitas Cape", legs="Nares Trews", feet="Chelona Boots"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				head="Wivre Hairpin", lear="Loquac. Earring", rear="Musical Earring", body="Gendewitha Bliaut", hands="Gendewitha Gages", 
-				lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa, legs="Nares Trews", feet="Fili Cothurnes"})
+                back="Felicitas Cape +1", legs="Nares Trews", feet="Chelona Boots"})
+		sets.idle.Standard = set_combine(sets.idle.PDT,{range="Daurdabla",
+				head="Wivre Hairpin", lear="Moonshade Earring", rear="Ethereal Earring", body="Gende. Bilaut +1", hands="Serpentes Cuffs", 
+				lring=Aug.Darkring1.Carrisa, rring="Defending Ring", legs="Nares Trews", feet="Fili Cothurnes +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="Lilac Corsage", body="Bihu Justaucorps", feet="Fili Cothurnes"})
+				main="Legato Dagger", range="Daurdabla", head="Wivre Hairpin", body="Fili Hongreline +1", hands="Fili Manchettes +1", 
+				legs="Fili Rhingrave +1", feet="Fili Cothurnes +1"})
 		sets.misc.MinusHP = {
 				head="Zenith Crown", neck="Morgana's Choker", 
                 body="Dalmatica", hands="Zenith Mitts", 
                 waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
 		-- JA
-		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions"}
-		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
-		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
+		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions +1"}
+		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers +1"}
+		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps +1"}
 		
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {
-				head="Haruspex Hat +1", neck="Jeweled Collar", lear="Loquac. Earring", rear="Musical Earring",
-                body="Anhur Robe", hands="Gendewitha Gages", lring="", rring="Prolix Ring",
+				head="Haruspex Hat +1", neck="Jeweled Collar", lear="Loquac. Earring", rear="Enchanter Earring +1",
+                body="Anhur Robe", hands="Leyline Gloves", lring="Weatherspoon Ring", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
 		sets.precast.Fastcast.Song = set_combine(sets.precast.Fastcast, {main="Felibre's Dague",
-				head="Fili Calot", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
+				head="Fili Calot +1", neck="Aoidos' Matinee", lear="Loquac. Earring", rear="Aoidos' Earring",
                 body="Sheikh Manteel", hands="Schellenband", lring="Minstrel's Ring", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers"})
+                back="Swith Cape", waist="Witful Belt", legs="Gendewitha Spats", feet="Bihu Slippers +1"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
-                back="Pahtli Cape"})
+                back="Pahtli Cape", waist="Acerbic Sash +1", legs="Artsieq Hose"})
 		--sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
 		--sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
 		
@@ -108,33 +109,33 @@ if player.name == "Carrisa" then
 		-- Bard songs
 		-- Duration > Skill 
 		sets.midcast.Buffsong = {main="Legato Dagger",
-				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
-                body="Fili Hongreline", hands="Fili Manchettes", lring="", rring="",
-                back="Rhapsode's Cape", waist="", legs="Fili Rhingrave", feet="Brioso Slippers"}	
+				head="Fili Calot +1", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1", lring="", rring="",
+                back="Rhapsode's Cape", waist="", legs="Fili Rhingrave +1", feet="Brioso Slippers +1"}	
 		-- Enhancing Buff - Buff Set (set Bonus)
 		sets.midcast.EnhanceSong = {main="Legato Dagger",
-				head="Fili Calot", neck="Aoidos' matinee",
-                body="Fili Hongreline", hands="Fili Manchettes",
-                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes"}
+				head="Fili Calot +1", neck="Aoidos' matinee",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1",
+                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave +1", feet="Fili Cothurnes +1"}
 		-- Target Skill + 800 Combined Singing + Instrument - Not really necessary anymore.
 		sets.midcast.Skillsong = {main="Legato Dagger",
-				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
-                body="Fili Hongreline", hands="Fili Manchettes", lring="", rring="",
-                back="Rhapsode's Cape", waist="Witful Belt", legs="Fili Rhingrave", feet="Brioso Slippers"}
-		sets.midcast.Debuff = {main="Soothsayer Staff", sub="Mephitis Grip",
-				head="Bihu Roundlet", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Justaucorps", hands="Fili Manchettes", lring="Perception Ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions", feet="Bokwus Boots"}
+				head="Fili Calot +1", neck="Aoidos' matinee", lear="Musical Earring", rear="Singing Earring",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1", lring="", rring="",
+                back="Rhapsode's Cape", waist="Witful Belt", legs="Fili Rhingrave +1", feet="Brioso Slippers +1"}
+		sets.midcast.Debuff = {main="Marin Staff +1", sub="Mephitis Grip",
+				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Brioso Justaucorps +1", hands="Fili Manchettes +1", lring="Perception Ring", rring="Sangoma Ring",
+                back="Rhapsode's Cape", waist="Demonry Sash", legs="Bihu Cannions 1", feet="Bokwus Boots"}
 		
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
-				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Novia Earring",
+		sets.midcast.Cure = {main="Arka IV", sub="Curatio Grip",
+				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Beatific Earring",
                 body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Haoma's Ring", rring="Sirona's Ring",
-                back="Tempered Cape", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}	
+                back="Tempered Cape", waist="Cascade Belt", legs="Gyve Trousers", feet="Rubeus Boots"}	
 		sets.midcast.Curaga = {main="Arka IV",
-				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Novia Earring",
-                body="Gendewitha Bliaut", hands="Bokwus Gloves", lring="Haoma's Ring", rring="Sirona's Ring",
-                back="Tempered Cape +1", waist="Bishop's Sash", legs="Artsieq Hose", feet="Rubeus Boots"}
+				head="Gendewitha Caubeen", neck="Colossus's Torque", lear="Healing Earring", rear="Beatific Earring",
+                body="Gendewitha Bilaut +1", hands="Bokwus Gloves", lring="Haoma's Ring", rring="Sirona's Ring",
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Gyve Trousers", feet="Rubeus Boots"}
 	
 		-- Enhancing
 		sets.midcast.Phalanx = {}
@@ -142,7 +143,7 @@ if player.name == "Carrisa" then
 		-- 40 MND
 		sets.midcast.Stoneskin = set_combine(sets.idle.PDT, {
 				head="Umuthi Hat", neck="Stone Gorget", rear="Earthcry Earring",
-                body="Gendewitha Bliaut", hands="Carapacho Cuffs", lring="Aquasoul Ring", rring="Aquasoul Ring",
+                body="Gendewitha Bilaut +1", hands="Carapacho Cuffs", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 waist="Siegel Sash", legs="Haven Hose", feet="Rubeus Boots"})				
 		sets.midcast.Aquaveil = {waist="Empahatikos Rope", legs="Shedir Seraweels"}
 		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
@@ -150,13 +151,13 @@ if player.name == "Carrisa" then
 
 		-- Enfeebling
 		-- Potency
-		sets.midcast.Enfeebling = {main="Ngqoqwanb", sub="Mephitis Grip",
-				head="Bihu Roundlet", neck="", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Justaucorps", hands="Fili Manchettes", lring="Perception Ring", rring="Sangoma Ring",
+		sets.midcast.Enfeebling = {main="Marin Staff +1", sub="Mephitis Grip",
+				head="Bihu Roundlet +1", neck="Sanctity Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Brioso Justaucorps +1", hands="Fili Manchettes +1", lring="Perception Ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
-		sets.midcast.Macc = {main="Ngqoqwanb", sub="Mephitis Grip",
-				head="Bihu Roundlet", neck="Enfeebling Torque", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Brioso Justaucorps", hands="Fili Manchettes", lring="Perception Ring", rring="Sangoma Ring",
+		sets.midcast.Macc = {main="Marin Staff +1", sub="Mephitis Grip",
+				head="Bihu Roundlet +1", neck="Sanctity Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
+                body="Brioso Justaucorps +1", hands="Fili Manchettes +1", lring="Perception Ring", rring="Sangoma Ring",
                 back="Rhapsode's Cape", waist="Demonry Sash", legs="Artsieq Hose", feet="Bokwus Boots"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
@@ -169,7 +170,6 @@ if player.name == "Carrisa" then
 		sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {})
 		
-		sets.misc.Waltz = {}
 		sets.misc.Steps = set_combine(sets.TP.Acc,{})
 		sets.misc.flourish = set_combine(sets.TP.Macc,{})
 end

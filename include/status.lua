@@ -30,9 +30,6 @@
 	if buff == 'weight' and g_or_l == true then
 		windower.send_command('input /p Gravity')
 	end
-	if buff == 'weakness' and g_or_l == true then
-		windower.send_command('gs c twilight')
-	end
 -- Lose Buffs
 	if S{MNK,SAM,THF,DRK,WAR,COR,DRG,PUP,PLD}:contains(player.main_job) then
 		if buff == 'haste' and g_or_l == false then

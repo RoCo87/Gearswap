@@ -1,8 +1,8 @@
 -- Feary's Equipment
 -- Created On 1/12/2014
--- Last Update: 8/17/2015
+-- Last Update: 4/12/2016
 -- To Do:
---
+-- Escha/Reisen Gear
 --
 --
 --
@@ -10,24 +10,30 @@
 -- Augmented Gear
 	Aug = {}
 	-- Dark Rings
+	-- Feary
 	Aug.Darkring1 = {name="Dark Ring",augments={"Phys. dmg. taken -5%","Magic dmg. taken -3%"}}
 	Aug.Darkring2 = {name="Dark Ring",augments={"Phys. dmg. taken -4%","Magic dmg. taken -4%"}}
+	
+	-- Aniyah
 	Aug.Darkring1.Aniyah = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
 	Aug.Darkring2.Aniyah = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
+	
+	-- Derion
 	Aug.Darkring1.Derion = {name="Dark Ring",augments={"Breath dmg. Taken -4%","Phys. dmg. Taken -5%", "Magic dmg. taken -3%"}}
 	--Aug.Darkring2.Derion = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
+	
+	-- Firetoplay
 	--Aug.Darkring1.Firetoplay = {name="Dark Ring",augments={"Phys. dmg. Taken -4%", "Breath dmg. taken -4%"}}
 	--Aug.Darkring2.Firetoplay = {name="Dark Ring",augments={"Spell interruption rate down 3%", "Magic dmg. taken -4%"}}
-	Aug.Darkring1.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
-	Aug.Darkring2.Carrisa = {name="Dark Ring",augments={"Magic dmg. taken -4%","Breath dmg. taken -4%"}}
+	
+	--Carrisa
+	Aug.Darkring1.Carrisa = {name="Dark Ring", augments={"Breath dmg. taken -4%", "Phys. dmg. taken -6%", "Magic dmg. taken -5%"}}
+	Aug.Darkring2.Carrisa = {name="Dark Ring", augments={"Phys. dmg. taken -4%", "Magic dmg. taken -5%"}}
 
-	-- Demon Rings
-	Aug.Demonlring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
-	Aug.Demonrring = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
-	Aug.Demonlring.Derion = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
-	Aug.Demonrring.Derion = {name="Demon's Ring",augments={"Resist Curse+2","Mag. crit. hit dmg. +3%"}}
-
-	-- Capes
+	-- WKR JSE Capes - Some will be replaced by JSE Ambuscade Capes.
+	-- Either Ideal Minimum Augments are listed.
+	-- "?" means i dont know because i havent researched it.
+	
 	Aug.Cape = {}
 	-- dont bother lol
 	Aug.Cape.MNK = {name="Anchorite Mantle"}
@@ -43,7 +49,7 @@
 	Aug.Cape.THF = {name="Canny Cape"}
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
-	--
+	-- ?
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	-- pet dt-5
 	Aug.Cape.BST = {name="Pastoralist's Mantle"}
@@ -63,11 +69,11 @@
 	Aug.Cape.BLU = {name="Cornflower Cape"}
 	-- Phantom Roll -5
 	Aug.Cape.COR = {name="Gunslinger's Cape"}
-	--
+	-- ?
 	Aug.Cape.PUP = {}
-	--
+	-- ?
 	Aug.Cape.DNC = {name="Toetapper's Mantle"}
-	--
+	-- ?
 	Aug.Cape.SCH = {name="Bookworm's Cape"}
 	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {name="Lifestream Cape"}
@@ -75,6 +81,10 @@
 	Aug.Cape.RUN = {name="Evasionist's Cape"}
 	
 	-- Skirmish
+	--
+	-- Ignore these if you dont know what they mean.
+	-- Alot of this gear has been replaced by Reisen/Escha Gear.
+	
 	Aug.Skirmish = {}
 	
 	-- Weapons

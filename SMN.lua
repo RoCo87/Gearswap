@@ -1,6 +1,6 @@
 -- Feary's SMN LUA
 -- Date Created : 1/29/2014
--- Last Update: 8/17/2014
+-- Last Update: 8/14/2015
 -- To Do
 -- Astral Conduit?
 --

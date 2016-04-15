@@ -1,8 +1,8 @@
--- Feary's BLM LUA
--- Created - 4/11/2014
+-- Feary's GEO LUA
+-- Created - 3/11/2016
 -- To do list
--- - Obi Staves cape ring
--- 	sorceror's ring
+-- 
+-- 	
 --
 --includes
 	include('include/functions.lua')

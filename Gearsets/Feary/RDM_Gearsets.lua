@@ -48,7 +48,7 @@ if player.Name == 'Feary' then
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Vitivation Chapeau", lear="Merman's Earring", rear="Etiolation Earring",
 				body="Hagondes Coat +1",
-				waist="Fucho-no-Obi"})
+				legs="Blood Cuisses", waist="Fucho-no-Obi"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				head="Vitivation Chapeau",
 				body="Vitivation Tabard",
@@ -57,7 +57,7 @@ if player.Name == 'Feary' then
 		sets.precast.JA["Chainspell"] = {body="Vitivation Tabard"}
 		sets.precast.JA["Stymie"] = {}
 		
-		sets.precast.JA["Composure"] = {head="Estq. Chappel +2", body="Lethargy Sayon", hands="Leth. Gantherots", legs="Leth. Fuseau ", feet="Leth. Houseaux"}
+		sets.precast.JA["Composure"] = {head="Estq. Chappel +2", body="Lethargy Sayon", hands="Leth. Gantherots", legs="Leth. Fuseau", feet="Leth. Houseaux"}
 		sets.precast.JA["Saboteur"] = {hands="Leth. Gantherots"}
 		sets.precast.JA["Convert"] = {}
 		sets.precast.JA["Spontaneity"] = {}
@@ -87,26 +87,26 @@ if player.Name == 'Feary' then
 		sets.midcast.Cure = {main="Tamaxchi", 
 				head="Gende. Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Ghostfyre Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 		
 		sets.midcast.Curaga = {main="Tamaxchi", 
 				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Novia Earring", rear="Enchntr. Earring +1",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Refraction Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 	
 		-- Enhancing 
 		-- Goal 500+
 		sets.midcast.Enhancing = {main="Earth Staff", sub="Fulcio Grip",
-				head="Vitivation Chapeau", neck="Colossus's Torque", rear="Andoaa Earring",
+				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
                 back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
 		-- Duration
-		sets.midcast.Enhancing.Self = {main="Earth Staff", sub="Vox Grip",
-				head="Telchine Cap", neck="Colossus's Torque", rear="Andoaa Earring",
+		sets.midcast.Enhancing.Self = {main="Earth Staff", sub="Fulcio Grip",
+				head="Telchine Cap", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Telchine Chas.", hands="Atrophy Gloves",
                 back="Estoqueur's Cape", waist="Bishop's Sash", legs="Telchine Braconi", feet="Leth. Houseaux"}
-		sets.midcast.Enhancing.Party = {main="Earth Staff", sub="Vox Grip",
-				head="Vitivation Chapeau", neck="Colossus's Torque", rear="Andoaa Earring",
+		sets.midcast.Enhancing.Party = {main="Earth Staff", sub="Fulcio Grip",
+				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
                 back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
 		

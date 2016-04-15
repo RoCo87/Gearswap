@@ -35,13 +35,13 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet=""}
+                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gende. Galosh. +1"}
 		sets.idle.MDT = {
 				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Felicitas Cape", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gende. Galosh. +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="Gende. Caubeen +1", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				head="Gende. Caubeen +1", neck="Eidolon Pendant", 
                 body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
@@ -81,7 +81,7 @@ if player.name == 'Feary' then
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {
 				})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				lear="Magnetic Earring", rear="Gifted Earring",
+				lear="Gwati Earring", rear="Gifted Earring",
                 body="Hedera Cotehardie",
                 waist="Austerity Belt", legs="Nares Trews", feet="Umbani Boots"}
 
@@ -89,20 +89,20 @@ if player.name == 'Feary' then
 		-- Cures
 		sets.midcast.Cure = {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Ebers Briault", hands="Theophany Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
+                body="Ebers Bliaud", hands="Theophany Mitts", lring="Sirona's Ring", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Ebers Briault", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
+                body="Ebers Bliaud", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Curaga = {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Heka Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"}
 		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {main="Tamaxchi",
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
-                body="Heka Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Ebers Pantaloons", feet="Piety Duckbills"})
 
 		sets.midcast.Cura = {}
@@ -116,18 +116,18 @@ if player.name == 'Feary' then
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {ammo="Impatiens",
 				neck="Debilis Medallion",
                 rring="Haoma's Ring",
-                back="Mending Cape", legs="Theo. Pantaloons", feet="Gende. Galoshes"})
+                back="Mending Cape", legs="Theo. Pantaloons", feet="Gende. Galosh. +1"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
 
 		-- Enhancing
 		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{main="Bolelabunga",
-                body="Piety Briault", hands="Piety Mitts",
+                body="Piety Briault", hands="Ebers Mitts",
                 legs="Theo. Pantaloons"})
 		sets.midcast.BarElement = {main="Beneficus",
 				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
-                body="Ebers Briault", hands="Piety Mitts",
+                body="Ebers Bliaud", hands="Ebers Mitts",
                 back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.BarStatus = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
@@ -148,7 +148,7 @@ if player.name == 'Feary' then
 		-- Divine Magic
 		sets.midcast.Repose = set_combine(sets.midcast.Recast,{ammo="Aureole",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
-				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levi. Ring +1", rring="Levi. Ring +1",
+				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
 				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"})
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
 		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",

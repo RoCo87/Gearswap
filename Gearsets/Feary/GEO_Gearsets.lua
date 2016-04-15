@@ -1,6 +1,6 @@
--- BLM Gearsets
+-- Geo Gearsets
 -- Created: 4/11/2014
--- Last Updated:
+-- Last Updated: 03/16/2016
 -- To Do List
 --
 --
@@ -37,7 +37,7 @@ if player.Name == 'Feary' then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {sub="Genbu's Shield",
+		sets.idle.PDT = {sub={name="Genbu's Shield",priority=1},
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-Obi", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
@@ -171,7 +171,7 @@ if player.Name == 'Feary' then
 				body="Anhur Robe", hands="Hagondes Cuffs +1", lring="Prolix Ring", rring="Sangoma Ring",
 				back="Lifestream Cape", waist="Witful Cape", legs="Geomancy Tights", feet="Hag. Sabots +1"})
 		
--- Melee Sets
+		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
@@ -182,7 +182,7 @@ if player.Name == 'Feary' then
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 				back="Buquwik Cape", waist="Witful Belt", legs="Telchine Braconi", feet="Battlecast Gaiters"}) 
 
--- Weaponskill		
+		-- Weaponskills	
 		sets.precast.WS = set_combine(sets.TP, {
 				head="Nahtirah Hat", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Rajas Ring", rring="Ramuh Ring +1",

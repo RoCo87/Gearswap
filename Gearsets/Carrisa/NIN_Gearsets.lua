@@ -60,7 +60,7 @@ sets.Enmity = {
 
 -- Precast	
 sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-			head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring"})
+			head="Athos's Chapeau", lear="Loquac. Earring", lring="Weatherspoon Ring", rring="Prolix Ring"})
 
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 

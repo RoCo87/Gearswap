@@ -25,19 +25,19 @@ if player.name == 'Carrisa' then
 				set_macro_page(13,4)
 			end
 		else
-			set_macro_page(13,1)
+			set_macro_page(9,1)
 		end
 		
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2.Carrisa,
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"}
 
 sets.idle.MDT = { 
 				head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring=Aug.Darkring2,
+                body="Iuitl Vest", hands="Iuitl Wristbands", lring=Aug.Darkring1.Carrisa, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {
@@ -141,9 +141,9 @@ sets.precast.WS.TA["Mercy Stroke"] = {
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 -- Rudra's Storm
 sets.precast.WS["Rudra's Storm"] = {
-				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
-                body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
-                back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+				head="Pillager's Bonnet", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
+                body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
+                back="Rancorous Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 sets.precast.WS.SA["Rudra's Storm"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",

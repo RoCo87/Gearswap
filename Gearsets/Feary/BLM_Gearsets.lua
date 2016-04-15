@@ -1,6 +1,6 @@
 -- BLM Gearsets
--- Date: 4/11/2014
---
+-- Created On: 4/11/2014
+-- Last Updated:
 ---
 
 if player.Name == 'Feary' then

@@ -57,13 +57,14 @@ sets.lockstyle = set_combine(sets.misc.Town,{
 			legs="Taeon Tights", feet="Fajin Boots"})
 
 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
-				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
-				body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
-				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
+			head="Tlahtlamah Glasses", neck="Fisher's Torque",
+			body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
+			waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
+
 sets.idle.Wood = set_combine(sets.idle.Standard,{
-				neck="Carpenter's Torque",
-				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
-				waist="Carpenter's Belt"})		
+			neck="Carpenter's Torque",
+			body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
+			waist="Carpenter's Belt"})		
 					
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
@@ -81,6 +82,14 @@ sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			body="Taeon Tabard", hands="Thaumas Gloves", lring="Prolix Ring",
 			waist="Twilight Belt", legs="Enif Cosciales"})
 sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+
+sets.misc.Waltz = {rring="Asklepian Ring"}
+-- Steps = Full Acc
+sets.misc.Steps = {head="Skulker's Bonnet", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
+            body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
+            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
+-- Magic Acc
+sets.misc.flourish = {}
 
 -- Midcast
 sets.midcast.Fastcast = set_combine(sets.idle.PDT,{
@@ -152,9 +161,9 @@ sets.precast.WS = {
                 body="Pillager's Vest +1", hands="Taeon Gloves", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
                 back="Vespid Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
-sets.precast.WS.SA = {}
+sets.precast.WS.SA = set_combine(sets.precast.WS,{})
 
-sets.precast.WS.TA = {}
+sets.precast.WS.TA = set_combine(sets.precast.WS,{})
 	
 sets.precast.WS.Acc = {
 				head="Pill. Bonnet +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Moonshade Earring",
@@ -195,7 +204,7 @@ sets.precast.WS.TA["Rudra's Storm"] = {
 				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
                 back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
-				
+-- Acc 	
 sets.precast.WS.Acc["Rudra's Storm"] = {
 				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
@@ -235,10 +244,4 @@ sets.precast.WS["Dancing Edge"] = {
 				head="Skulker's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
-				
-
--- Misc Sets
-sets.misc.Waltz = {}
-sets.misc.Steps = set_combine(sets.TP.ACC)
-sets.misc.flourish = {}
 end

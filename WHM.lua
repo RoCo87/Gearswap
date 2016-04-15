@@ -1,6 +1,6 @@
 -- Feary's WHM LUA
 -- Date Created : 1/29/2014
--- Last Update: 5/26/2014
+-- Last Update: 5/13/2015
 -- To Do:
 -- Add Enmity Cure Sets Toggle
 --

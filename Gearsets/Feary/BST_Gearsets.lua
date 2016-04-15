@@ -75,7 +75,6 @@ sets.misc.flourish = {
 			body=Aug.Skirmish.Taeon.Body.FC, hands=Aug.Skirmish.Taeon.Hands.FC, lring="Perception Ring", rring="Sangoma Ring",
 			back="", waist="", legs=Aug.Skirmish.Taeon.Legs.FC, feet=Aug.Skirmish.Taeon.Feet.FC}
 
-
 -- JA
 sets.precast.JA["Familiar"] = {legs="Ankusa Trousers"}
 sets.precast.JA["Unleash"] = {}
