@@ -1,6 +1,6 @@
 -- Feary's THF LUA
 -- Created: 4/5/2014
--- Last Modified: 8/17/2014
+-- Last Modified: 04/12/2016
 -- To Do:
 --	Account for Hide + SA or TA
 -- 	account for SATA?

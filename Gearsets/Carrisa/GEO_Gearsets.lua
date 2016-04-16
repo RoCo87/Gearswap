@@ -1,4 +1,4 @@
--- BLM Gearsets
+-- Geo Gearsets
 -- Created: 4/11/2014
 -- Last Updated:
 -- To Do List
@@ -80,6 +80,10 @@ if player.Name == 'Carrisa' then
 				head="", neck="", lear="", rear="",
                 body="Heka's Kalasiris", hands="", lring="Sirona's Ring", rring="Haoma's Ring",
                 back="Pahtli Cape", waist=" Acerbic Sash +1", legs="", feet=""})
+		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
+		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{head="Umuthi Hat"})
+		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{hands="Bagua Mitaines"})
+		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {waist="Witful Belt"})
 		
@@ -104,6 +108,10 @@ if player.Name == 'Carrisa' then
                 body="Witching Robe", hands="Helios Gloves", lring="Strendu Ring", rring="Icesoul ring",
                 back="Seshaw Cape", waist="Aswang Sash", legs="Gyve Trousers", feet="Manabyss Pigaches"}		
 		
+		sets.midcast.Nuke.Acc = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1},}		
+		
+		sets.midcast.Nuke.MB = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1},}		
+		
 		--Healing Magic
 		sets.midcast.Cure = {main="Tamaxchi", sub="Sors Shield",
 				head="Hyksos Khat", neck="Colossus's Torque", lear="Beatific Earring", rear="Healing Earring",
@@ -117,7 +125,7 @@ if player.Name == 'Carrisa' then
 	
 		-- Enhancing 
 		sets.midcast.Enhancing = {main="Marin Staff +1", sub="Fulcio Grip", head="Befouled Crown", neck="Colossus's Torque", body="Anhur Robe", hands="Ayao's Gloves",
-		legs="Portant Pants",feet="Rubeus Boots",waist="Cascade Belt",back="Merciful Cape"}
+				legs="Portant Pants",feet="Rubeus Boots",waist="Cascade Belt",back="Merciful Cape"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
 		sets.midcast.Stoneskin = {head="Umuthi Hat", neck="Stone Gorget", rear="Earthcry Earring", hands="Carapacho Cuffs",waist="Siegal Sash", legs="Haven Hose"}
@@ -151,14 +159,31 @@ if player.Name == 'Carrisa' then
 		
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {waist="Witful Belt",})
+		
 		sets.TP.Acc = set_combine(sets.TP, {waist="Witful Belt",})
-		sets.precast.WS = set_combine(sets.TP, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+		
+		-- Weaponskills
+		sets.precast.WS = set_combine(sets.TP, {})
+		
+		sets.precast.WS.Acc = {}
+		
+		-- Club
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
+		
+		sets.precast.WS.Acc['Hexa Strike'] = {}
+		
 		sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {})
+		
+		sets.precast.WS.Acc['Realmrazer'] = set_combine(sets.precast.WS, {}) 
+		
+		sets.precast.WS['Exudation'] = set_combine(sets.precast.WS, {})
+				
+		sets.precast.WS.Acc['Exudation'] = set_combine(sets.precast.WS, {})
+				
+		-- Staff 
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
+		
+		sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {})
 		
 		-- Misc
 		sets.misc.Waltz = set_combine(sets.idle.PDT,{})

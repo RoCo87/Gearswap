@@ -77,8 +77,12 @@
 	Aug.Cape.SCH = {name="Bookworm's Cape"}
 	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {name="Lifestream Cape"}
-	-- Enmity -7 
+	-- Enmity +7 
+	-- Ogma's cape - Enmity + 10
 	Aug.Cape.RUN = {name="Evasionist's Cape"}
+	
+	-- Ambuscade Capes
+	
 	
 	-- Skirmish
 	--

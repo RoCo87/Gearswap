@@ -3,9 +3,6 @@
 -- Last Updated: 02/03/2015
 -- To Do List:
 --
---
---
---
 
 if player.name == 'Feary' then
 		-- includes
@@ -48,7 +45,6 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Etiolation Earring",
 				hands="Serpentes Cuffs",
                 legs="Nares Trews", feet="Herald's Gaiters"})
-
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
 				
@@ -59,6 +55,8 @@ if player.name == 'Feary' then
 		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Ebers Mitts", back="Mending Cape"}
 		sets.precast.JA['Devotion'] = {head="Piety Cap"}
 		sets.precast.JA['Martyr'] = {hands="Piety Mitts"}
+		
+		sets.precast.JA['Divine Veil'] = {head="Ebers Cap +1"}
 		
 		-- Precast
 		-- Magic
@@ -144,6 +142,9 @@ if player.name == 'Feary' then
 		sets.midcast.Aquaveil = {waist="Empahatikos Rope", legs="Shedir Seraweels"}
 		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
 		sets.midcast.Reraise = set_combine(sets.midcast.ConserveMP)
+		sets.midcast.Shellra = set_combine(sets.precast.Enhancing,{legs="Piety Pantaloons"})
+		sets.midcast.Protectra = set_combine(sets.precast.Enhancing,{feet="Piety Duckbills"})
+		sets.midcast.Auspice = set_combine(sets.precast.Enhancing,{feet="Ebers Duckbills"})
 
 		-- Divine Magic
 		sets.midcast.Repose = set_combine(sets.midcast.Recast,{ammo="Aureole",
@@ -188,6 +189,16 @@ if player.name == 'Feary' then
 
 		-- Melee Sets
 		sets.TP = {}
+		
+		sets.TP.Acc = {}
+		
+		-- Weaponskills
 		sets.precast.WS = set_combine(sets.TP, {})
+		sets.precast.WS.Acc = {}
+		
+		-- Club
+		-- Hexa Strike
 		sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {})
+		
+		sets.precast.WS.Acc["Hexa Strike"] = set_combine(sets.precast.WS.Acc,{})
 end

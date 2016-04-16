@@ -177,9 +177,6 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
-			equip({main=Fastcast.Staff[spell.element]})
-		end
 		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:startswith('Cure') or spell.english:startswith("Curaga") then
@@ -194,16 +191,19 @@ function precast(spell,arg)
 				cast_delay(0.3)
 			-- Auspice 
 			elseif spell.name == 'Auspice' then
-				equip(sets.precast.Enhancing,{feet="Orsn. Duckbills +2"})
+				equip(sets.precast.Auspice)
 			elseif spell.english:wcmatch('Protectra*') then
-				equip(sets.precast.Enhancing,{feet="Clr. Duckbills +2"})
+				equip(sets.precast.Protectra)
 			elseif spell.english:wcmatch('Shellra*') then
-				equip(sets.precast.Enhancing,{legs="Clr. Pantaln +2"})
+				equip(sets.precast.Shellra)
 			elseif spell.english:wcmatch('Stoneskin') then
 				equip(sets.precast.Stoneskin)
 			else
 				equip(sets.precast.Enhancing)
 			end		
+		end
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]) then
+			equip({main=Fastcast.Staff[spell.element]})
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
@@ -270,11 +270,11 @@ function midcast(spell,arg)
 		elseif spell.name == 'Haste' then
 			equip(sets.midcast.Hastespell)
 		elseif spell.name == 'Auspice' then
-			equip(sets.midcast.ConserveMP, {feet="Orsn. Duckbills +2"})
+			equip(sets.midcast.ConserveMP, sets.precast.Auspice)
 		elseif spell.english:wcmatch('Protectra*') then
-			equip(sets.midcast.ConserveMP, {feet="Clr. Duckbills +2"})
+			equip(sets.midcast.ConserveMP, sets.precast.Protectra)
 		elseif spell.english:wcmatch('Shellra*') then
-			equip(sets.midcast.ConserveMP, {legs="Clr. Pantaln +2"})
+			equip(sets.midcast.ConserveMP, sets.precast.Shellra)
 		elseif spell.english:wcmatch('Reraise*') then
 			equip(sets.midcast.ConserveMP)
 		else

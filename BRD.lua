@@ -139,7 +139,7 @@ end
 
 function status_change(new,old)
 -- Auto set
-    if T{'Idle'}:contains(new) then
+	if T{'Idle'}:contains(new) then
 		slot_lock()
 		if areas.Town:contains(world.zone) then
 			windower.add_to_chat(121, "Town Gear")
@@ -175,7 +175,7 @@ function status_change(new,old)
 end
 
 -- Gain or lose buffs 
-function buff_change(buff, g_or_l)
+function buff_change(buff,g_or_l)
 	-- Global Status Values
 	include('include/status.lua')
 end
@@ -202,7 +202,7 @@ function precast(spell,arg)
 				end
 			else 
 				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..' TP is not enough to WS')
+				windower.add_to_chat(121, ''..player.tp..'TP is not enough to WS')
 			end
 		else
 			cancel_spell()
@@ -221,7 +221,7 @@ function precast(spell,arg)
 		elseif spell.skill == "Enhancing Magic" then
 			if spell.name == "Stoneskin" then
 				equip(sets.precast.Stoneskin)
-			else
+			else 
 				equip(sets.precast.Enhancing)
 			end
 			-- Cancel Sneak
@@ -235,12 +235,12 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
 			end	
--- BardS ongs
+-- BardSongs
 	elseif spell.type == 'BardSong' then
 		if buffactive.Nightingale then
 			-- Dummy Songs
@@ -248,30 +248,30 @@ function precast(spell,arg)
 			if spell.name == "Fowl Aubade" then
 				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
 					equip({range="Daurdabla"})
-				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] then
+				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			-- 4th Song
 			elseif spell.name == "Herb Pastoral" then
-				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
+				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"]then
 					equip({range="Daurdabla"})
-				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] then
+				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			else
 				-- Instrument check 
-				if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Gjallarhorn"] then
+				if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] then
 					-- Use Gjallarhorn
 					equip(sets.precast.Fastcast,{range="Gjallarhorn"})
 				else
 					if string.find(spell.english,'Ballad') then
-						equip(sets.precast.Fastcast,ballad,{legs="Fili Rhingrave"})
+						equip(sets.precast.Fastcast,ballad,{legs="Aoidos' rhing. +2"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.precast.Fastcast,march,{hands="Fili Manchettes"})
+						equip(sets.precast.Fastcast,march,{hands="Ad. Mnchtte +2"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.precast.Fastcast,minuet,{Body="Fili Hongreline"})					
+						equip(sets.precast.Fastcast,minuet,{Body="Aoidos' Hngrln +2"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.precast.Fastcast,madrigal, {head="Fili Calot"})
+						equip(sets.precast.Fastcast,madrigal, {head="Aoidos' Calot +2"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.precast.Fastcast,minne) 
 					elseif string.find(spell.english,'Etude') then
@@ -287,7 +287,7 @@ function precast(spell,arg)
 					elseif string.find(spell.english,'Prelude') then
 						equip(sets.precast.Fastcast,prelude) 
 					elseif string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong, scherzo, {feet="Fili Cothurnes +1"})
+						equip(sets.midcast.Skillsong, scherzo, {feet="Aoidos' Cothrn. +2"})
 					elseif string.find(spell.english,'Hymnus') then
 						equip(sets.precast.Fastcast,hymnus)
 					-- Debuffs 
@@ -426,25 +426,25 @@ function midcast(spell,arg)
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		elseif spell.name == "Herb Pastoral" then
-			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"]  then
+			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
 				equip(sets.midcast.Recast, {range="Daurdabla"})
 			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] then
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		else
-			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Gjallarhorn"] then
+			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] pr player.wardrobe2["Gjallarhorn"]then
 				-- Buff Songs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong,{range="Gjallarhorn", feet="Fili Cothurnes +1"})
+						equip(sets.midcast.Skillsong,{range="Gjallarhorn", feet="Aoidos' Cothrn. +2"})
 					elseif string.find(spell.english,'Ballad') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", legs="Fili Rhingrave"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", legs="Aoidos' rhing. +2"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", body="Fili Hongreline"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", body="Aoidos' Hngrln +2"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Fili Manchettes"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Ad. Mnchtte +2"})
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Fili Calot"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Aoidos' Calot +2"})
 					elseif string.find(spell.english,'Mazurka') then
 						equip(sets.midcast.Buffsong,{range="Daurdabla"})
 					--Everything else
@@ -453,24 +453,20 @@ function midcast(spell,arg)
 					end
 				else
 				-- Debuff
-					if buffactive['Troubadour'] then
-						equip(sets.midcast.Buffsong)
-					else
-						equip(sets.midcast.Debuff,{range="Gjallarhorn"})
-					end
+					equip(sets.midcast.Debuff,{range="Gjallarhorn"})
 				end
 			-- Not Ghorn
 			else
 			-- BuffSongs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Ballad') then
-						equip(sets.midcast.Buffsong,ballad,{legs="Fili Rhingrave"})
+						equip(sets.midcast.Buffsong,ballad,{legs="Aoidos' rhing. +2"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.midcast.Buffsong,march,{hands="Fili Manchettes"})
+						equip(sets.midcast.Buffsong,march,{hands="Ad. Mnchtte +2"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.midcast.Buffsong,minuet,{Body="Fili Hongreline"})					
+						equip(sets.midcast.Buffsong,minuet,{Body="Aoidos' Hngrln +2"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,madrigal, {head="Fili Calot"})
+						equip(sets.midcast.Buffsong,madrigal, {head="Aoidos' Calot +2"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.midcast.Buffsong,minne) 
 					elseif string.find(spell.english,'Etude') then
@@ -486,7 +482,7 @@ function midcast(spell,arg)
 					elseif string.find(spell.english,'Prelude') then
 						equip(sets.midcast.Buffsong,prelude) 
 					elseif string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong, scherzo, {feet="Fili Cothurnes +1"})
+						equip(sets.midcast.Skillsong, scherzo, {feet="Aoidos' Cothrn. +2"})
 					elseif string.find(spell.english,'Hymnus') then
 						equip(sets.midcast.Buffsong,hymnus)
 					else	
@@ -495,47 +491,25 @@ function midcast(spell,arg)
 					end
 			-- Debuff Songs
 				else
-					if buffactive['Troubadour'] then
-						if string.find(spell.english,'Elegy') then
-							equip(sets.midcast.Buffsong,elegy)
-						elseif string.find(spell.english,'Threnody') then
-							equip(sets.midcast.Buffsong,threnody)
-						elseif string.find(spell.english,'Horde') then
-							equip(sets.midcast.Buffsong,horde)
-						elseif string.find(spell.english,'Lullaby') then
-							equip(sets.midcast.Buffsong,lullaby)
-						elseif string.find(spell.english,'Finale') then
-							equip(sets.midcast.Buffsong,finale)
-						elseif string.find(spell.english,'Requiem') then
-							equip(sets.midcast.Buffsong,requiem)
-						elseif string.find(spell.english,'Virelai') then
-							equip(sets.midcast.Buffsong,virelai)
-						elseif string.find(spell.english,'Nocturne') then
-							equip(sets.midcast.Buffsong,nocturne)
-						else
-							equip(sets.midcast.Buffsong)
-						end
+					if string.find(spell.english,'Elegy') then
+						equip(sets.midcast.Debuff,elegy)
+					elseif string.find(spell.english,'Threnody') then
+						equip(sets.midcast.Debuff,threnody)
+					elseif string.find(spell.english,'Horde') then
+						equip(sets.midcast.Debuff,horde)
+					elseif string.find(spell.english,'Lullaby') then
+						equip(sets.midcast.Debuff,lullaby)
+					elseif string.find(spell.english,'Finale') then
+						equip(sets.midcast.Debuff,finale)
+					elseif string.find(spell.english,'Requiem') then
+						equip(sets.midcast.Debuff,requiem)
+					elseif string.find(spell.english,'Virelai') then
+						equip(sets.midcast.Debuff,virelai)
+					elseif string.find(spell.english,'Nocturne') then
+						equip(sets.midcast.Debuff,nocturne)
 					else
-						if string.find(spell.english,'Elegy') then
-							equip(sets.midcast.Debuff,elegy)
-						elseif string.find(spell.english,'Threnody') then
-							equip(sets.midcast.Debuff,threnody)
-						elseif string.find(spell.english,'Horde') then
-							equip(sets.midcast.Debuff,horde)
-						elseif string.find(spell.english,'Lullaby') then
-							equip(sets.midcast.Debuff,lullaby)
-						elseif string.find(spell.english,'Finale') then
-							equip(sets.midcast.Debuff,finale)
-						elseif string.find(spell.english,'Requiem') then
-							equip(sets.midcast.Debuff,requiem)
-						elseif string.find(spell.english,'Virelai') then
-							equip(sets.midcast.Debuff,virelai)
-						elseif string.find(spell.english,'Nocturne') then
-							equip(sets.midcast.Debuff,nocturne)
-						else
-							windower.add_to_chat(121,'Default DeBuff Instrument')
-							equip(sets.midcast.Debuff,default)
-						end
+						windower.add_to_chat(121,'Default DeBuff Instrument')
+						equip(sets.midcast.Debuff,default)
 					end
 				end
 			end

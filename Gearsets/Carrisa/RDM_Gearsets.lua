@@ -18,13 +18,13 @@ if player.Name == 'Carrisa' then
 		if automacroset == 1 then
 			if player.sub_job == 'WHM' then
 				set_macro_page(5,6)
-			elseif player.sub_job =='BLM' then
+			elseif player.sub_job == 'BLM' then
 				set_macro_page(5,2)
 			elseif player.sub_job == 'NIN' then
 				set_macro_page(5,3)
 			elseif player.sub_job == 'DNC' then
 				set_macro_page(5,4)
-			elseif player.sub_job =='SCH' then 
+			elseif player.sub_job == 'SCH' then 
 				set_macro_page(5,5)
 			end
 		else

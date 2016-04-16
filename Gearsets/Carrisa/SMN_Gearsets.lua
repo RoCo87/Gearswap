@@ -1,6 +1,6 @@
 -- SMN Gearsets
--- Created:
--- Last Updated: 
+-- Created: 7/25/2014
+-- Last Updated: 04/14/2016
 -- To Do:
 --
 --
@@ -33,33 +33,40 @@ if player.name == 'Carrisa' then
 				main="Bolelabunga", sub="Genbu's Shield", ammo="Eminent Sachet", head="Convoker's Horn", lear="Moonshade Earring", rear="Ethereal Earring",
                 body="Hagondes Coat", hands="Serpentes Cuffs", lring=Aug.Darkring1.Carrisa, rring="Defending Ring", back="Umbra Cape", waist="Mujin Obi",
 				legs="Nares Trews", feet="Herald's Gaiters"})
-		
-		-- Perp Sets
-		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
-				head="Glyphic Horn",neck="Caller's Pendant",lear="Loquac. Earring",rear="Gifted Earring",
-				body="Glyphic Doublet",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-				back="Pahtli Cape",waist="Mujin Obi",legs="Nares Trews",feet="Convoker's Pigaches"}
-		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"})
-		sets.idle.Avatar["Diabolos"] = set_combine(sets.idle.Avatar,{waist="Diabolos's Rope"})
-		sets.idle.Avatar["Alexander"] = set_combine(sets.midcast.SummoningMagic)
-		
-		sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
-		sets.idle.Avatar.Melee = {hands="Regimen Mittens",waist="Moepapa Stone",legs="Convoker's Spats"}
-		sets.idle.Avatar.Spirit = {main="Bolelabunga",sub="Genbu's Shield",ammo="Eminent Sachet",
-				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquacious Earring",rear="Moonshade Earring",
-				body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-				back="Tiresias' Cape",waist="Mujin Obi",legs="Glyphic Spats",feet="Caller's Pgch +2"}
+		sets.lockstyle = {}
 				
-		sets.perp = {}
-		sets.perp.Day = {hands="Caller's Bracers +2"}
-		sets.perp.Weather = {neck="Caller's Pendant",hands="Caller's Bracers +2"}
+	
 		-- Blood Pacts 
 		-- Precast
 		-- Pact delay reduction gear
-		sets.precast.BloodPactWard = {ammo="Eminent Sachet",head="Glyphic Horn",body="Glyphic Doublet",hands="Glyphic Bracers",legs="Glyphic Spats",feet="Glyphic Pgch.",lear="Caller's Earring"}
-		sets.precast.BloodPactRage = sets.precast.BloodPactWard
+		sets.precast.BP = {ammo="Eminent Sachet",
+			head="Convoker's Horn",
+			body="Glyphic Doublet", hands="Glyphic Bracers",
+			legs="Glyphic Spats", feet="Glyphic Pigaches"}
+		
+		-- Magic
+		sets.precast.Fastcast = {main="Eminent Staff", ammo="Impatiens", sub="Vivid Strap",
+				head="Haruspex Hat +1", neck="Jeweled Collar", lear="Loquac. Earring", rear="Enchanter Earring +1",
+				body="Anhur Robe", hands="Repartie Gloves", lring="Prolix Ring", rring="Weatherspoon Ring",
+                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
+		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
+				head="", neck="", lear="", rear="",
+                body="Heka's Kalasiris", hands="", lring="", rring="",
+                back="Pahtli Cape", waist="Acerbic Sash +1", legs="Artsieq Hose", feet=""})
+		sets.precast.Enhancing = set_combine(sets.precast.Fastcast, {waist="Siegel Sash"})
+		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
+	
+		-- JA
+		sets.precast.JA['Astral Conduit'] = {}
+		sets.precast.JA['Astral Flow'] = {head="Summoner's Horn +2"}
+		
+		sets.precast.JA['Elemental Siphon'] = set_combine(sets.midcast.SummoningSkill,{ 
+				back="Conveyance Cape", feet="Caller's Pigaches +2" })
+		
+		sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
+		
 		-- Midcast
-		-- Skill Gear
+		-- Summoning Magic Skill Gear
 		sets.midcast.SummoningMagic = {main="Soulscourge",sub="Vox Grip", ammo="Eminent Sachet",
 				head="Caller's Horn +2",neck="Caller's Pendant", lear="Andoaa Earring", rear="Summoning Earring",
 				body="Anhur Robe",hands="Glyphic Bracers",ring1="Evoker's Ring",rring="Fervor Ring",
@@ -68,6 +75,7 @@ if player.name == 'Carrisa' then
 		sets.midcast.Pet.BloodPactWard = set_combine(sets.midcast.SummoningMagic,{})
 				
 		sets.midcast.Pet.BloodPactWard.Macc = set_combine(sets.midcast.SummoningMagic,{})
+		
 		-- BloodPactRage
 		-- Physical 
 		sets.midcast.Pet.PhysicalBloodPactRage = {main="Soulscourge", sub="Vox Grip", ammo="Eminent Sachet",
@@ -80,6 +88,11 @@ if player.name == 'Carrisa' then
 				head="Glyphic Horn",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
 				body="Convoker's Doublet",hands="Glyphic Bracers",lring="Evoker's Ring",rring="Fervor Ring",
 				waist="Diabolos's Rope",legs="Glyphic Spats",feet="Hagondes Sabots"}
+		
+		-- Flaming Crush - Not Added to Smn.lua
+		sets.midcast.Pet.FC = set_combine(sets.midcast.Pet.MagicalBloodPactRage,{
+				rring="Fervor Ring"})
+		
 		-- Heavenly Strike','Wind Blade','Holy Mist','Night Terror','Thunderstorm','Geocrush','Meteor Strike','Grand Fall','Lunar Bay','Thunderspark'		
 		sets.midcast.Pet.MagicalBloodPactRage.TP = {main="Balsam Staff", sub="Vox Grip", ammo="Eminent Sachet",
 				head="Glyphic Horn",neck="Caller's Pendant", lear="Andoaa Earring",rear="Smn. Earring",
@@ -97,24 +110,10 @@ if player.name == 'Carrisa' then
 				back="Tiresias' Cape",waist="Diabolos's Rope",legs="Glyphic Spats",feet="Hagondes Sabots"}
 		
 		sets.midcast.Pet.Spirit = set_combine(sets.midcast.Pet.BloodPactRage, {legs="Glyphic Spats"})		
-		-- Precast
-		-- Magic
-		sets.precast.Fastcast = {main="Eminent Staff", ammo="Impatiens", sub="Vivid Strap",
-				head="Haruspex Hat +1", neck="Jeweled Collar", lear="Loquac. Earring", rear="Enchanter Earring +1",
-				body="Anhur Robe", hands="Repartie Gloves", lring="Prolix Ring", rring="Weatherspoon Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots"}
-		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="Acerbic Sash +1", legs="Artsieq Hose", feet=""})
-		-- JA
-		sets.precast.JA['Astral Conduit'] = {}
-		sets.precast.JA['Astral Flow'] = {head="Summoner's Horn +2"}
-		sets.precast.JA['Elemental Siphon'] = set_combine(sets.midcast.SummoningSkill,{feet="Caller's Pigaches +2",back="Conveyance Cape"})
-		sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
 		
-		-- Midcast
+		-- Magic 
 		sets.midcast.Recast = set_combine(sets.idle.PDT,{main="Plenitas Virga", waist="Witful Belt"})
+		
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
 				head="", neck="", lear="Magnetic Earring", rear="Gifted Earring",
                 body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
@@ -180,11 +179,50 @@ if player.name == 'Carrisa' then
 		sets.midcast.Nuke = set_combine(sets.midcast.Banish)
 		sets.midcast.Dot = {}
 
+		-- Perp Sets
+		sets.perp = {}
+		sets.perp.Day = {hands="Caller's Bracers +2"}
+		sets.perp.Weather = {neck="Caller's Pendant",hands="Caller's Bracers +2"}
+		
+		--Avatar
+		sets.idle.Avatar = {main="Patriarch Cane",sub="Genbu's Shield",ammo="Eminent Sachet",
+				head="Glyphic Horn",neck="Caller's Pendant",lear="Loquac. Earring",rear="Gifted Earring",
+				body="Glyphic Doublet",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
+				back="Pahtli Cape",waist="Mujin Obi",legs="Nares Trews",feet="Convoker's Pigaches"}
+		sets.idle.Avatar["Carbuncle"] = set_combine(sets.idle.Avatar,{hands="Carbuncle Mitts"})
+		sets.idle.Avatar["Diabolos"] = set_combine(sets.idle.Avatar,{waist="Diabolos's Rope"})
+		sets.idle.Avatar["Alexander"] = set_combine(sets.midcast.SummoningMagic)
+		
+		-- Avator Favor - needs 450 skill minimum
+		sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
+		
+		-- Avatar TP
+		sets.idle.Avatar.Melee = {hands="Regimen Mittens",waist="Moepapa Stone",legs="Convoker's Spats"}
+		
+		-- Avatar DT - needs to be added to smn.lua
+		sets.idle.Avatar.DT = set_combine(sets.idle.Avatar,{
+				head="Selenian Cap", neck="Caller's Pendant", lear="Handler's Earring +1", rear="Handler's Earring",
+				body="Shomonjijoe +1", hands="Telchine Gloves", lring="Evoker's Ring", rring="Defending Ring",
+				back="Conveyance Cape", waist="Isa Belt", legs="Telchine Braconi", feet="Beckoner's Pigaches"})
+		
+		-- Spirit
+		sets.idle.Avatar.Spirit = {main="Bolelabunga",sub="Genbu's Shield",ammo="Eminent Sachet",
+				head="Caller's Horn +2",neck="Caller's Pendant",lear="Loquacious Earring",rear="Moonshade Earring",
+				body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
+				back="Tiresias' Cape",waist="Mujin Obi",legs="Glyphic Spats",feet="Caller's Pgch +2"}
+				
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {waist="Witful Belt"})
+		
+		-- Weaponskills
 		sets.precast.WS = set_combine(sets.TP, {})
+		
 		-- MP Gear
 		sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {})
+		
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
+		
+		sets.precast.WS['Garland of Bliss'] = set_combine(sets.precast.WS, {})
+
 
 end

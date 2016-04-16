@@ -96,8 +96,8 @@ if player.name == "Carrisa" then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
                 back="Pahtli Cape", waist="Acerbic Sash +1", legs="Artsieq Hose"})
-		--sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
-		--sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
+		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
+		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
 		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape",waist="Witful Belt"})
@@ -164,7 +164,10 @@ if player.name == "Carrisa" then
 
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {})
+		
 		sets.TP.Acc = set_combine(sets.TP, {})	
+		
+		-- Weaponskills
 		sets.precast.WS = set_combine(sets.TP, {})
 		sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
 		sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS, {})

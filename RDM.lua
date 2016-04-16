@@ -218,7 +218,7 @@ function precast(spell,arg)
 					equip(sets.precast.Cure)
 				else
 					-- Magian Staff
-					if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+					if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 						equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 					else
 						equip(sets.precast.Fastcast)
@@ -226,7 +226,7 @@ function precast(spell,arg)
 				end
 			elseif spell.skill:startswith("Enhancing") then
 				-- Magian Staff
-				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Enhancing)
@@ -243,7 +243,7 @@ function precast(spell,arg)
 				equip(sets.midcast.Macc, {head="Empty", body="Twilight Cloak"})
 			else
 				-- Magian Staff
-				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
@@ -253,7 +253,7 @@ function precast(spell,arg)
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -261,7 +261,7 @@ function precast(spell,arg)
 -- BardSongs
 	elseif spell.type == 'BardSong' then
 		-- Magian Staff
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)

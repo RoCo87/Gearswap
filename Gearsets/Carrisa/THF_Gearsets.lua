@@ -1,7 +1,7 @@
--- THF Gear_sets
---
---
---
+-- Carrisa's THF Gear_sets
+-- Created: 4/5/2014
+-- Last Modified: 04/12/2016
+-- To Do List 
 --
 
 
@@ -25,7 +25,7 @@ if player.name == 'Carrisa' then
 				set_macro_page(13,4)
 			end
 		else
-			set_macro_page(9,1)
+			set_macro_page(13,1)
 		end
 		
 -- Auto Sets
@@ -45,6 +45,22 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Dudgeon Earring", rear="Heartseeker Earring", legs="Manibozho Brais", feet="Fajin Boots"})
+
+sets.lockstyle = set_combine(sets.misc.Town,{
+			head="Felistris Mask",
+			body="Taeon Tabard", hands="Taeon Gloves",
+			legs="Taeon Tights", feet="Fajin Boots"})
+
+sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
+			head="Tlahtlamah Glasses", neck="Fisher's Torque",
+			body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
+			waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
+
+sets.idle.Leather = set_combine(sets.idle.Standard,{
+			neck="Tanner's Torque",
+			body="Tanner's Smock", hands="Tanner's Gloves", lring="Craftkeeper's Ring", rring="Craftmaster's Ring",
+			waist="Tanner's Belt"})		
+			
 -- Full Evasion
 sets.idle.Evasion = set_combine(sets.idle.PDT,{
 			head="Uk'uxkaj Cap", neck="Torero Torque", lear="Phawaylla Earring", rear="Novia Earring",
@@ -55,11 +71,26 @@ sets.TH = {hands="Plunderer's Armlets +1", waist="Chaac Belt",
 			feet="Skulker's Poulaines"}
 
 -- Precast	
-sets.precast.Recast = set_combine(sets.idle.PDT,{
-			head="Athos's Chapeau", neck="Torero Torque", lear="Magnetic Earring", rear="Loquac. Earring",
-            body="Iuitl Vest", hands="Iuitl Wristbands", lring="Rajas Ring", rring="Prolix Ring",
-            back="Boxer's Mantle", waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
-			
+sets.precast.Fastcast = set_combine(sets.idle.PDT,{
+			head="Athos's Chapeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+            body="Iuitl Vest", hands="Iuitl Wristbands", rring="Prolix Ring",
+            waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
+sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
+
+sets.misc.Waltz = {rring="Asklepian Ring"}
+-- Steps = Full Acc
+sets.misc.Steps = {head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
+            body="Manibozho Jerkin", hands="Buremte Gloves", lring="Rajas Ring", rring="Epona's Ring",
+            back="Atheling Mantle", waist="Hurch'lan Sash", legs="Manibozho Brais", feet="Manibozho Boots"}
+-- Magic Acc
+sets.misc.flourish = {}
+
+-- Midcast
+sets.midcast.Fastcast = set_combine(sets.idle.PDT,{
+			head="Athos's Chapeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+            body="Iuitl Vest", hands="Iuitl Wristbands", rring="Prolix Ring",
+            waist="Twilight Belt", legs="Iuitl Tights", feet="Iuitl Gaiters"})
+		
 -- TP Sets 
 sets.TP = { ammo="Raider's Bmrng.",
 			head="Whirlpool Mask", neck="Asperity Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
@@ -122,23 +153,33 @@ sets.precast.WS = {
 				head="Pillager's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+
+sets.precast.WS.SA = set_combine(sets.precast.WS,{})
+
+sets.precast.WS.TA = set_combine(sets.precast.WS,{})
+	
+sets.precast.WS.Acc = {}
+
+sets.precast.WS.Acc.SA = {}
+
+sets.precast.WS.Acc.TA = {}
+
 -- Mercy Stroke
 sets.precast.WS["Mercy Stroke"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
-sets.precast.WS.SA = {}
 sets.precast.WS.SA["Mercy Stroke"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Raid. Armlets +2", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
-sets.precast.WS.TA = {}
 sets.precast.WS.TA["Mercy Stroke"] = {
 				head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Pyrosoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+
 -- Rudra's Storm
 sets.precast.WS["Rudra's Storm"] = {
 				head="Pillager's Bonnet", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
@@ -153,13 +194,26 @@ sets.precast.WS.TA["Rudra's Storm"] = {
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Thundersoul Ring",
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
 
+-- Acc 	
+sets.precast.WS.Acc["Rudra's Storm"] = {
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+sets.precast.WS.Acc.SA["Rudra's Storm"] = {
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+sets.precast.WS.Acc.TA["Rudra's Storm"] = {
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+                body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+
 -- Exenterator
 sets.precast.WS["Exenterator"] = {
 				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash", rear="Bladeborn Earring",
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Pyrosoul Ring", rring="Pyrosoul Ring",
                 back="Rancorous Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Pillager's Poulaines"}
 
-sets.precast.WS.Acc = {}
 sets.precast.WS.Acc["Exenterator"] = {
 				head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash", rear="Bladeborn Earring",
                 body="Manibozho Jerkin", hands="Pillager's Armlets", lring="Pyrosoul Ring", rring="Pyrosoul Ring",
@@ -175,12 +229,10 @@ sets.precast.WS.Acc["Evisceration"] = {
                 body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Epona's Ring",
                 back="Rancorous Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Manibozho Boots"}
 
--- Misc Sets
-sets.misc.Fastcast = set_combine(sets.idle.PDT, {head="Athos's Chapeau", lear="Loquac. Earring", rring="Prolix Ring",})
+-- Dancing Edge
+sets.precast.WS["Dancing Edge"] = {
+				head="Skulker's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
+                body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
-sets.misc.Utsusemi = set_combine(sets.misc.Fastcast, {neck="Magoraga Beads"})
-
-sets.misc.Waltz = {hands="Buremte Gloves", waist="Chuq'aba Belt"}
-sets.misc.Steps = set_combine(sets.TP.ACC)
-sets.misc.flourish = {}
 end

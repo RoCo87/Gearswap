@@ -1,5 +1,6 @@
 -- Feary's GEO LUA
 -- Created - 3/11/2016
+-- Last Update - 4/16/2016
 -- To do list
 -- 
 -- 	
@@ -86,7 +87,7 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		else
-			if Mode >= 1 then
+			if Mode >= 2 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -97,35 +98,52 @@ function self_command(command)
 			if player.status == 'Engaged' then
 				previous_set()
 			else
+				-- Nuke
+				if Mode == 0 then
+					if Skill == 1 then
+						windower.add_to_chat(121,'Nuke.Acc')
+					else
+						windower.add_to_chat(121,'Nuke Mode')
+					end
+				-- MB
+				elseif Mode == 1 then 
+					if Skill == 1 then
+						windower.add_to_chat(121,'MB.Acc Mode')
+					else
+						windower.add_to_chat(121,'MB Mode')
+					end
+				-- Death
+				elseif Mode == 2 then
+					if Skill == 2 then
+						windower.add_to_chat(121,'Death MB Mode')
+					elseif Skill == 1 then
+						windower.add_to_chat(121,'Death Acc Mode')
+					else
+						windower.add_to_chat(121,'Death Mode')
+					end
+				end
 				equip(sets.idle.Standard)
 			end
 		end
-	elseif command == 'skill' then
-	-- toggle
-		if skill == 0 then
-			-- set it on
-			skill = skill + 1
+	elseif command == 'skill' or command == "acc" or command == "Skill" then
+		-- If Death Mode 
+		if Mode == 3 then
+			if Skill >=2 then
+				--Reset to 0
+			else
+				-- Increment by 1
+				Skill = Skill + 1
+			end
+		-- Nuke or Magic Burst Mode.
 		else
-			-- set if off
-			skill = 0
+			if Skill >=1 then
+				-- Reset to 0
+				Skill = 0
+			else
+				-- Increment by 1
+				Skill = Skill + 1
+			end
 		end
-	elseif command == "idle" then
-		if idle == 0 then
-			-- Idle is Refresh gear
-			idle = idle + 1
-		else
-			idle = 0
-		end
-	elseif command == "t" then
-		if twilight == 0 then
-			twilight = twilight + 1
-			-- Twilight Gear
-			equip({head="Empty",body="Twilight Cloak"})
-			disable('head,body')
-			windower.add_to_chat(121,"Twilight Cloak Locked")
-		else
-			enable('head,body')
-		end		
 	end
 end
 
@@ -229,7 +247,7 @@ function precast(spell,arg)
 			cancel_spell()
 			windower.send_command('wait 1;Full Cicle;wait 1;'..spell.name)
 		else
-			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -245,7 +263,7 @@ function precast(spell,arg)
 				equip(sets.precast.Fastcast)
 			end
 		elseif spell.skill:startswith("Enhancing") then
-			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Enhancing)
@@ -257,20 +275,20 @@ function precast(spell,arg)
 			end
 		elseif spell.skill:startswith("Elemental") then
 			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element],head="Empty", body="Twilight Cloak"})
 				else
 					equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
 				end				
 			else
-				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
 				end
 			end
 		else
-			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 			else
 				equip(sets.precast.Fastcast)
@@ -278,14 +296,14 @@ function precast(spell,arg)
 		end
 -- Ninjutsu
 	elseif spell.type == 'Ninjutsu' then
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
 		end
 -- BardSongs
 	elseif spell.type == 'BardSong' then
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]]) then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 			equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 		else
 			equip(sets.precast.Fastcast)
@@ -537,10 +555,10 @@ end
 
 function previous_set()
 	slot_lock()
-	if Mode == 0 then
+	if Skill == 0 then
 		equip(sets.TP)
 		windower.add_to_chat(121,'TP Set')
-	elseif Mode == 1 then
+	elseif Skill == 1 then
 		equip(sets.TP.Acc)
 		windower.add_to_chat(121,'Acc TP Set')
 	end
