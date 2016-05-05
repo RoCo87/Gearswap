@@ -121,30 +121,31 @@ if player.name == 'Feary' then
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {back="Swith Cape +1", waist="Witful Belt"})
 		
 		sets.midcast.ConserveMP = {
-				head="", neck="", lear="Gwati Earring", rear="Gifted Earring",
-                body="Hedera's Cotehardie", hands="", lring="", rring="",
-                back="Balladeer's Cape", waist="", legs="", feet=""}
+				lear="Gwati Earring", rear="Gifted Earring",
+                body="Hedera's Cotehardie",
+                back="Balladeer's Cape"}
+				
 		-- Bard songs
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee",
-                body="Fili Hongreline", hands="Fili Manchettes",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1",
                 back="Harmony Cape", waist="Corvax Sash", legs="Mdk. Shalwar +1", feet="Brioso Slippers +1"}
 		-- Enhancing Buff - Buff Set (set Bonus)
 		sets.midcast.EnhanceSong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee",
-                body="Fili Hongreline", hands="Fili Manchettes",
-                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Fili Cothurnes +1"}
+                body="Fili Hongreline +1", hands="Fili Manchettes +1",
+                back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave +1", feet="Fili Cothurnes +1"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main="Legato Dagger",
 				head="Fili Calot", neck="Aoidos' matinee", lear="Musical Earring",
-                body="Fili Hongreline", hands="Fili Manchettes",
-                back="Rhapsode's Cape", waist="Corvax Sash", legs="Fili Rhingrave", feet="Brioso Slippers +1"}
+                body="Fili Hongreline +1", hands="Fili Manchettes +1",
+                back="Rhapsode's Cape", waist="Corvax Sash", legs="Fili Rhingrave +1", feet="Brioso Slippers +1"}
 		-- Debuffs
 		sets.midcast.Debuff = {main="Mandau",
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Gwati Earring", rear="Musical Earring",
-                body="Brioso Just. +1", hands="Fili Manchettes", lring="Perception ring", rring="Sangoma Ring",
-                back="Rhapsode's Cape", waist="Ovate Rope", legs="Fili Rhingrave", feet="Telchine Pigaches"}
+                body="Brioso Just. +1", hands="Fili Manchettes +1", lring="Perception ring", rring="Sangoma Ring",
+                back="Rhapsode's Cape", waist="Ovate Rope", legs="Fili Rhingrave +1", feet="Telchine Pigaches"}
 		
 		--Healing Magic
 		sets.midcast.Cure = {main="Arka IV", 

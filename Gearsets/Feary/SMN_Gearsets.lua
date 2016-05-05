@@ -51,9 +51,8 @@ if player.name == 'Feary' then
 				body="Anhur Robe", hands="Magavan Mitts", lring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="Heka's Kalairis", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="", feet=""})
+                body="Heka's Kalairis", 
+                back="Pahtli Cape"})
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast, {waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing, {head="Umuthi Hat"})
 	

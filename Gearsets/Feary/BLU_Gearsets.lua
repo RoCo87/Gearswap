@@ -40,9 +40,9 @@ if player.name == 'Feary' then
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
-				head="", neck="Eidolon Pendant", lear="", rear="",
+				neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Umbra Cape", waist="Fucho-no-obi", feet="Chelona Boots +1"})
+                back="Umbra Cape", waist="Austerity Belt", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Etiolation Earring",
 				legs="Blood Cuisses"})
@@ -57,7 +57,7 @@ if player.name == 'Feary' then
 				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
 		sets.idle.Wood = set_combine(sets.idle.Standard,{
 				neck="Carpenter's Torque",
-				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's ",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's Ring",
 				waist="Carpenter's Belt"})		
 				 
 		-- JA
@@ -124,7 +124,7 @@ if player.name == 'Feary' then
 		-- MND
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Flame Sachet",
                 head="Taeon Chapeau", neck="Phalaina Locket", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                body="Assim. Jubbah", hands="Luh. Bazubands", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                body="Assim. Jubbah", hands="Luhlaza Bazubands", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Buquwik Cape", waist="Prosilio Belt", legs="Hashishin Tayt", feet="Taeon Boots"})
 		-- INT
 		sets.midcast.BlueMagic.INT = set_combine(sets.midcast.BlueMagic, {
@@ -164,29 +164,30 @@ if player.name == 'Feary' then
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Dark
 		-- Pixie Hairpin +1
-		sets.midcast.BlueMagic.Nuke,Dark = set_combine(sets.midcast.Nuke, {
+		sets.midcast.BlueMagic.Nuke.Dark = set_combine(sets.midcast.Nuke, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
         ammo="Mavi Tathlum",
-        head="Luh. Keffiyeh"})
+        head="Luhlaza Keffiyeh"})
 		
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
                 head="Taeon Chapeau", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
-		-- Accuracy
+		-- Accuracy - Need 1200 Acc - Sole +1 = 81 = 1119 
 		sets.TP.Acc = set_combine(sets.TP, {ammo="Ginsen",
-                head="Taeon Chapeau", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Epona Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
+                head="Taeon Chapeau", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				-- Ramuh Ring
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Patricius Ring",
+                back="Gounded Mantle +1", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"})
 		-- Alliance Buffs - Haste + March x2 
 		sets.TP.Buffed = set_combine(sets.TP, {ammo="Ginsen",
                 head="Taeon Chapeau", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring +1",
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
 		-- Evasion or DT ?
@@ -243,7 +244,7 @@ if player.name == 'Feary' then
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		-- Realmrazer
 		sets.precast.WS['Realmrazer'] = {ammo="Hasty Pinion +1",
-                head="Taeon Chapeau", neck="Fotia Gorget Necklace", lear="Brutal Earring", rear="Moonshade Earring",
+                head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		

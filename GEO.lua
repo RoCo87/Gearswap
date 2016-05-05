@@ -87,7 +87,7 @@ function self_command(command)
 				equip(sets.idle.Standard)
 			end
 		else
-			if Mode >= 2 then
+			if Mode >= 1 then
 			-- Reset to 0
 				Mode = 0
 			else
@@ -112,37 +112,17 @@ function self_command(command)
 					else
 						windower.add_to_chat(121,'MB Mode')
 					end
-				-- Death
-				elseif Mode == 2 then
-					if Skill == 2 then
-						windower.add_to_chat(121,'Death MB Mode')
-					elseif Skill == 1 then
-						windower.add_to_chat(121,'Death Acc Mode')
-					else
-						windower.add_to_chat(121,'Death Mode')
-					end
 				end
 				equip(sets.idle.Standard)
 			end
 		end
 	elseif command == 'skill' or command == "acc" or command == "Skill" then
-		-- If Death Mode 
-		if Mode == 3 then
-			if Skill >=2 then
-				--Reset to 0
-			else
-				-- Increment by 1
-				Skill = Skill + 1
-			end
-		-- Nuke or Magic Burst Mode.
+		if Skill >=1 then
+			-- Reset to 0
+			Skill = 0
 		else
-			if Skill >=1 then
-				-- Reset to 0
-				Skill = 0
-			else
-				-- Increment by 1
-				Skill = Skill + 1
-			end
+			-- Increment by 1
+			Skill = Skill + 1
 		end
 	end
 end
@@ -255,14 +235,14 @@ function precast(spell,arg)
 		end		
 -- Magic
 	elseif spell.type:endswith('Magic') then
-		if spell.skill:startswith("Healing") then
+		if spell.skill == 'Healing Magic' then
 			-- Cure casting time
 			if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
 				equip(sets.precast.Cure)
 			else
 				equip(sets.precast.Fastcast)
 			end
-		elseif spell.skill:startswith("Enhancing") then
+		elseif spell.skill == 'Enhancing Magic' then
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Enhancing, {main=Fastcast.Staff[spell.element]})
 			else
@@ -273,20 +253,32 @@ function precast(spell,arg)
 				windower.ffxi.cancel_buff(71)
 				cast_delay(0.3)
 			end
-		elseif spell.skill:startswith("Elemental") then
+		elseif spell.skill == "Elemental Magic" then
+			-- Impact
 			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element],head="Empty", body="Twilight Cloak"})
 				else
-					equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
+					equip(sets.precast.Elemental, {head="Empty", body="Twilight Cloak"})
 				end				
+			else
+				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
+					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
+				else
+					equip(sets.precast.Elemental)
+				end
+			end
+		elseif spell.skill == 'Dark Magic' then
+			if spell.name == "Stun" then
+				equip(sets.midcast.Stun)
 			else
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
 				else
 					equip(sets.precast.Fastcast)
 				end
-			end
+			end	
+		-- All Other Magic
 		else
 			if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 				equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
@@ -423,10 +415,38 @@ function midcast(spell,arg)
 		elseif spell.english:wcmatch('Frost|Drown|Rasp|Burn|Shock|Choke') then
 			equip(sets.midcast.Elemental)
 		else
-			if Skill == 1 then
-				equip(sets.midcast.Nuke.Acc) 
+			-- Normal Nuke
+			if Mode == 0 then
+				if Skill == 1 then
+					if (spell.element == world.day_element or spell.element == world.weather_element) or buffactive[elements.storm_of[spell.element]] then
+						equip(sets.midcast.Nuke.Acc, {lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+					else
+						equip(sets.midcast.Nuke.Acc)
+					end 
+				else
+					if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+						equip(sets.midcast.Nuke,{lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+					else
+						equip(sets.midcast.Nuke)
+					end
+				end
+			-- Magic Burst
+			elseif Mode == 1 then
+				if Skill == 1 then
+					if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+						equip(sets.midcast.Nuke.MB.Acc,{lring="Zodiac Ring", waist="Hachirin-no-Obi"})
+					else
+						equip(sets.midcast.Nuke.MB.Acc)
+					end
+				else
+					if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+						equip(sets.midcast.Nuke.MB,{waist="Hachirin-no-Obi"})
+					else
+						equip(sets.midcast.Nuke.MB)
+					end
+				end
 			else
-				equip(sets.midcast.Nuke)
+			
 			end
 		end
 -- Ninjutsu
@@ -452,12 +472,6 @@ function midcast(spell,arg)
 end -- end midcast
 
 function aftercast(spell,arg)
-	if spell.name == "Impact" then 
-		twilight = 0
-		enable('head,body')
-		windower.add_to_chat(121,'Twilight Unlocked')
-		return
-	end
 	if player.status == 'Engaged' then
 		if PDT == 1 or MDT == 1 then
 			if PDT == 1 and MDT == 0 then

@@ -48,6 +48,7 @@ sets.misc.Town = set_combine(sets.idle.PDT, {
 				legs="Taeon Tights", feet="Fajin Boots"})
 				
 sets.idle.Standard = set_combine(sets.idle.PDT, {
+				main={name="Mandau",priority=2}, sub={name="Atoyac",priority=1},
 				lear="Merman's Earring", rear="Etiolation Earring", 
 				feet="Fajin Boots"})
 				
@@ -58,12 +59,12 @@ sets.lockstyle = set_combine(sets.misc.Town,{
 
 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
 			head="Tlahtlamah Glasses", neck="Fisher's Torque",
-			body="Fisherman's Tunica", hands="Kachina Gloves", lring="Pelican Ring", rring="Pelican Ring",
+			body="Fisherman's Tunica", hands="Kachina Gloves", lring="Noddy Ring", rring="Puffin Ring",
 			waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
 
 sets.idle.Wood = set_combine(sets.idle.Standard,{
 			neck="Carpenter's Torque",
-			body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="",
+			body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's Ring",
 			waist="Carpenter's Belt"})		
 					
 -- Full Evasion
@@ -103,11 +104,11 @@ sets.TP = { ranged="Raider's Bmrng.",
             body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
             back="Canny Cape", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
--- Accuracy TP Set
+-- Accuracy TP Set - Need 1200 - 81 = 1119 Acc
 sets.TP.Acc = {	ammo="Ginsen",
-			head="Skulker's Bonnet", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
+			head="Skulker's Bonnet", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-            back="Atheling Mantle", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Grounded Mantle +1", waist="Patentia Sash", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Alliance Buffed
 -- 11 DW needed 
@@ -128,7 +129,7 @@ sets.precast.Snapshot = {legs="Nahtirah Trousers"}
 sets.RA = {}
 				
 -- JA
-sets.precast.JA["Perfect Dodge"] = {hands="Plunderer's Armlets"}
+sets.precast.JA["Perfect Dodge"] = {hands="Plun. Armlets +1"}
 sets.precast.JA["Larceny"] = {}
 
 sets.precast.JA["Steal"] = {head="Plun. Bonnet",hands="Pillager's Armlets",legs="Pillager's Culottes",feet="Pillager's Poulaines"}
@@ -144,14 +145,14 @@ sets.precast.JA["Conspirator"] = {body="Raider's Vest +2"}
 sets.precast.JA["Bully"] = {}
 sets.precast.JA["Despoil"] = {legs="Raider's Culottes +2", feet="Skulker's Poulaines"}
 
--- Sneak Attack 
+-- Solo Sneak Attack 
 sets.precast.JA["Sneak Attack"] = {
-				head="Pill. Bonnet +1", neck="Love Torque", lear="Brutal Earring", rear="Kuwunga Earring",
+				head="Pill. Bonnet +1", neck="Love Torque", lear="Brutal Earring", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Skulker's Armlets", lring="Ramuh Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
--- Trick Attack
+-- Solo Trick Attack
 sets.precast.JA["Trick Attack"] = {
-				head="Pill. Bonnet +1", neck="Asperity Necklace", lear="Brutal Earring", rear="Kuwunga Earring",
+				head="Pill. Bonnet +1", neck="Asperity Necklace", lear="Brutal Earring", rear="Vulcan's Pearl",
                 body="Pillager's Vest +1", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Garuda Ring +1",
                 back="Vespid Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
@@ -167,8 +168,8 @@ sets.precast.WS.TA = set_combine(sets.precast.WS,{})
 	
 sets.precast.WS.Acc = {
 				head="Pill. Bonnet +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Moonshade Earring",
-                body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramub Ring +1",
-                back="Vespid Mantle", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
+                body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Kayapa Cape", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc.SA = {}
 
@@ -230,12 +231,12 @@ sets.precast.WS.Acc["Exenterator"] = {
                 back="Vespid Mantle", waist="Prosilio Belt", legs="Taeon Tights", feet="Taeon Boots"}
 -- Evisceration
 sets.precast.WS["Evisceration"] = {
-				head="Pill. Bonnet +1", neck="Love Torque", lear="Brutal Earring", rear="Moonshade Earring",
+				head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Evisceration"] = {
-				head="Skulker's Bonnet", neck="Love Torque", lear="Brutal Earring", rear="Moonshade Earring",
+				head="Skulker's Bonnet", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Pillager's Vest +1", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Epona's Ring",
                 back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 

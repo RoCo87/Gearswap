@@ -21,13 +21,15 @@ function get_sets(spell)
 	PDT = 0
 	MDT = 0
 	Skill = 0
-	MB = 0
+	MP = 0
 	ShadowType = 'None'
 end 
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -103,34 +105,41 @@ function self_command(command)
 				if Mode == 0 then
 					if Skill == 1 then
 						windower.add_to_chat(121,'Nuke.Acc')
+						equip(sets.idle.Standard)
 					else
 						windower.add_to_chat(121,'Nuke Mode')
+						equip(sets.idle.Standard)
 					end
 				-- MB
 				elseif Mode == 1 then 
 					if Skill == 1 then
 						windower.add_to_chat(121,'MB.Acc Mode')
+						equip(sets.idle.Standard)
 					else
 						windower.add_to_chat(121,'MB Mode')
+						equip(sets.idle.Standard)
 					end
 				-- Death
 				elseif Mode == 2 then
 					if Skill == 2 then
 						windower.add_to_chat(121,'Death MB Mode')
+						equip(sets.idle.Death)
 					elseif Skill == 1 then
 						windower.add_to_chat(121,'Death Acc Mode')
+						equip(sets.idle.Death)
 					else
 						windower.add_to_chat(121,'Death Mode')
+						equip(sets.idle.Death)
 					end
 				end
-				equip(sets.idle.Standard)
 			end
 		end
-	elseif command == 'skill'  or command == "acc" or command == "Skill" then
-		-- If Death Mode 
-		if Mode == 3 then
+	elseif command == 'skill' or command == "acc" or command == "Skill" then
+		-- Death Mode 
+		if Mode == 2 then
 			if Skill >=2 then
 				--Reset to 0
+				Skill = 0
 			else
 				-- Increment by 1
 				Skill = Skill + 1
@@ -144,6 +153,12 @@ function self_command(command)
 				-- Increment by 1
 				Skill = Skill + 1
 			end
+		end
+	elseif command == "MP" or command == "mp" then
+		if MP >= 1 then
+			MP = 0
+		else 
+			MP = MP + 1
 		end
 	end
 end
@@ -189,6 +204,11 @@ end
 
 -- Gain or lose buffs 
 function buff_change(buff,g_or_l)
+
+	if buff == "Manawall" and not g_or_l then
+		enable('feet','back') 
+	end
+	
 	-- Global Status
 	include('include/status.lua')
 end
@@ -227,6 +247,7 @@ function precast(spell,arg)
 		end
 -- Magic
 	elseif spell.type:endswith('Magic') then
+		-- Healing Magic 
 		if spell.skill == 'Healing Magic' then
 			-- Cure Casting Time
 			if spell.english:wcmatch('Cure*') or spell.english:wcmatch("Curaga*") then
@@ -234,6 +255,7 @@ function precast(spell,arg)
 			else
 				equip(sets.precast.Fastcast)
 			end
+		-- Enhancing Magic
 		elseif spell.skill == 'Enhancing Magic' then
 			if spell.name == "Stoneskin" then 
 				-- Magian Staff
@@ -254,9 +276,10 @@ function precast(spell,arg)
 				windower.ffxi.cancel_buff(71)
 				cast_delay(0.3)
 			end
+		-- Elemental Magic 
 		elseif spell.skill == 'Elemental Magic' then
 			if spell.name == "Impact" or player.equipment.body == "Twilight Cloak" then
-				equip(sets.precast.Fastcast, {head="Empty", body="Twilight Cloak"})
+				equip(sets.precast.Elemental, {head="Empty", body="Twilight Cloak"})
 			else
 				-- Magian Staff
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
@@ -265,9 +288,12 @@ function precast(spell,arg)
 					equip(sets.precast.Elemental)
 				end
 			end
+		-- Dark Magic 
 		elseif spell.skill == 'Dark Magic' then
 			if spell.name == "Stun" then
 				equip(sets.midcast.Stun)
+			elseif spell.name == "Death" then
+				equip(sets.precast.Death)
 			else
 				if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 					equip(sets.precast.Fastcast, {main=Fastcast.Staff[spell.element]})
@@ -376,13 +402,18 @@ function midcast(spell,arg)
 	elseif spell.skill == 'Dark Magic' then
 		if spell.name == "Drain" then
 			equip(sets.midcast.Aspir) 
-		elseif spell.english:wcmatch('Aspir|Aspir II') then
-			equip(sets.midcast.Aspir)
+		elseif spell.english:wcmatch('Aspir|Aspir II|Aspir III') then
+			if Mode == 2 then
+				-- Death 
+				equip(sets.midcast.Aspir.Death)
+			else
+				equip(sets.midcast.Aspir)
+			end
 		elseif spell.name == "Stun" then
 			equip(sets.midcast.Stun)
 		elseif spell.name == "Death" then
 			-- Magic Burst
-			if Mode == 2 then
+			if Skill == 2 then
 				equip(sets.midcast.Nuke.Death.MB)
 			else
 				-- Acc
@@ -404,24 +435,110 @@ function midcast(spell,arg)
 		else
 			-- Normal Nuke
 			if Mode == 0 then
-				if Skill == 1 then
-					equip(sets.midcast.Nuke.Acc)
+				if MP == 1 then
+					-- High Magic Accuracy
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.Acc, {body="Spaekona's Coat", lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+						else
+							equip(sets.midcast.Nuke.Acc,{body="Spaekona's Coat"})
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke,{body="Spaekona's Coat", lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+						else
+							equip(sets.midcast.Nuke,{body="Spaekona's Coat"})
+						end
+					end
 				else
-					equip(sets.midcast.Nuke)
+					-- High Magic Accuracy
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.Acc, {lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+						else
+							equip(sets.midcast.Nuke.Acc)
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke,{lring="Zodiac Ring", waist="Hachirin-no-Obi", back="Twilight Cape"})
+						else
+							equip(sets.midcast.Nuke)
+						end
+					end
 				end
+			-- Magic Burst
 			elseif Mode == 1 then
-				if Skill == 1 then
-					equip(sets.midcast.Nuke.Acc)
+				if MP == 1 then
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.MB.Acc,{body="Spaekona Coat", waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Nuke.MB.Acc,{body="Spaekona Coat"})
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.MB,{body="Spaekona Coat", waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Nuke.MB,{body="Spaekona Coat"})
+						end
+					end
 				else
-					equip(sets.midcast.Nuke)
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.MB.Acc,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Nuke.MB.Acc)
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Nuke.MB,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Nuke.MB)
+						end
+					end
 				end
+			-- Death
 			elseif Mode == 2 then
-				if Skill == 1 then
-					equip(sets.midcast.Death.Acc)
-				elseif Skill == 2 then
-					equip(sets.midcast.Death.MB)
+				if MP == 1 then
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death.Acc,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death.Acc)
+						end
+					elseif Skill == 2 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death.MB,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death.MB)
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death)
+						end
+					end
 				else
-					equip(sets.midcast.Death)
+					if Skill == 1 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death.Acc,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death.Acc)
+						end
+					elseif Skill == 2 then
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death.MB,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death.MB)
+						end
+					else
+						if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+							equip(sets.midcast.Death,{waist="Hachirin-no-Obi"})
+						else
+							equip(sets.midcast.Death)
+						end
+					end
 				end
 			end
 		end
@@ -476,7 +593,7 @@ function aftercast(spell,arg)
 				equip(sets.idle.MDT)
 			else
 				-- Death Mode
-				if Mode == 3 then 
+				if Mode == 2 then 
 					if buffactive['Mana Wall'] then
 						equip(sets.idle.Death,sets.precast.JA["Manawall"])
 					else
@@ -516,23 +633,44 @@ end
 
 function previous_set()
 	slot_lock()
-	if Skill == 0 then
-		equip(sets.TP)
-		windower.add_to_chat(121,'TP Set')
-	elseif Skill >= 1 then
-		equip(sets.TP.Acc)
-		windower.add_to_chat(121,'Acc TP Set')
+	if Mode == 2 then
+		equip(sets.idle.Death)
+	else
+		if Skill == 0 then
+			equip(sets.TP)
+			windower.add_to_chat(121,'TP Set')
+		elseif Skill >= 1 then
+			equip(sets.TP.Acc)
+			windower.add_to_chat(121,'Acc TP Set')
+		end
 	end
 end
 
 function slot_lock()					
     if player.equipment.left_ear == 'Reraise Earring' then
         disable('left_ear')
-        windower.add_to_chat(8,'Reraise Earring equiped on left ear')
+        windower.add_to_chat(8,'Reraise Earring equipped on left ear')
     elseif player.equipment.right_ear == 'Reraise Earring' then
         disable('right_ear')
-        windower.add_to_chat(8,'Reraise Earring equiped on right ear')
-    else
+        windower.add_to_chat(8,'Reraise Earring equipped on right ear')
+	else
         enable('left_ear','right_ear')
     end
+	
+	if player.equipment.left_ring == "Warp Ring" then
+		disable('left_ring')
+        windower.add_to_chat(8,'Warp Ring equipped on left ring')
+	elseif player.equipment.right_ring == "Warp Ring" then
+		disable('right_ring')
+        windower.add_to_chat(8,'Warp Ring equipped on right ring')
+	else
+		enable('left_ring','right_ring')
+	end
+	
+	if player.equipment.back == "Mecistopins Mantle" or player.equipment.back == "Aptitude Mantle" then
+		disable('back')
+        windower.add_to_chat(8,'Capacity Back equipped')
+	else
+		enable('back')
+	end
 end

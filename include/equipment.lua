@@ -317,7 +317,7 @@
 -- Elemental Gear 
 	elemental = {}
 		
-	elemental.Obi = {['Light']='Hachirin-no-Obi', ['Dark']='Anrin Obi', ['Fire']='Hachirin-no-Obi', ['Ice']='Hachirin-no-Obi', ['Wind']='Hachirin-no-Obi',
+	elemental.Obi = {['Light']='Hachirin-no-Obi', ['Dark']='Hachirin-no-Obi', ['Fire']='Hachirin-no-Obi', ['Ice']='Hachirin-no-Obi', ['Wind']='Hachirin-no-Obi',
 			['Earth']='Hachirin-no-Obi', ['Lightning']='Hachirin-no-Obi', ['Water']='Hachirin-no-Obi'}
 
 	elemental.Gorget = {['Light']='Fotia Gorget', ['Dark']='Fotia Gorget', ['Fire']='Fotia Gorget', ['Ice']='Fotia Gorget',
@@ -325,52 +325,8 @@
 
 	elemental.Belt = {['Light']='Fotia Belt', ['Dark']='Shadow Belt', ['Fire']='Fotia Belt', ['Ice']='Fotia Belt',
 			['Wind']='Fotia Belt', ['Earth']='Fotia Belt', ['Lightning']='Fotia Belt', ['Water']='Fotia Belt'}
-
+	
 			
--------------------------------------------------------------------------------------------------------------------
--- Mappings, lists and sets to describe game relationships that aren't easily determinable otherwise.
--------------------------------------------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------------------------------------------
--- Elemental mappings for element relationships and certian types of spells.
--------------------------------------------------------------------------------------------------------------------
-
-elements = {}
-
-elements.list = S{'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
-
-elements.weak_to = {['Light']='Dark', ['Dark']='Light', ['Fire']='Ice', ['Ice']='Wind', ['Wind']='Earth', ['Earth']='Lightning',
-['Lightning']='Water', ['Water']='Fire'}
-
-elements.strong_to = {['Light']='Dark', ['Dark']='Light', ['Fire']='Water', ['Ice']='Fire', ['Wind']='Ice', ['Earth']='Wind',
-['Lightning']='Earth', ['Water']='Lightning'}
-
-elements.storm_of = {['Light']="Aurorastorm", ['Dark']="Voidstorm", ['Fire']="Firestorm", ['Earth']="Sandstorm",
-['Water']="Rainstorm", ['Wind']="Windstorm", ['Ice']="Hailstorm", ['Lightning']="Thunderstorm"}
-
-elements.spirit_of = {['Light']="Light Spirit", ['Dark']="Dark Spirit", ['Fire']="Fire Spirit", ['Earth']="Earth Spirit",
-['Water']="Water Spirit", ['Wind']="Air Spirit", ['Ice']="Ice Spirit", ['Lightning']="Thunder Spirit"}
-
-
-
-storms = S{"Aurorastorm", "Voidstorm", "Firestorm", "Sandstorm", "Rainstorm", "Windstorm", "Hailstorm", "Thunderstorm"}
-
-
-skillchain_elements = {}
-skillchain_elements.Light = S{'Light','Fire','Wind','Lightning'}
-skillchain_elements.Dark = S{'Dark','Ice','Earth','Water'}
-skillchain_elements.Fusion = S{'Light','Fire'}
-skillchain_elements.Fragmentation = S{'Wind','Lightning'}
-skillchain_elements.Distortion = S{'Ice','Water'}
-skillchain_elements.Gravitation = S{'Dark','Earth'}
-skillchain_elements.Transfixion = S{'Light'}
-skillchain_elements.Compression = S{'Dark'}
-skillchain_elements.Liquification = S{'Fire'}
-skillchain_elements.Induration = S{'Ice'}
-skillchain_elements.Detonation = S{'Wind'}
-skillchain_elements.Scission = S{'Earth'}
-skillchain_elements.Impaction = S{'Lightning'}
-skillchain_elements.Reverberation = S{'Water'}
 
 
 

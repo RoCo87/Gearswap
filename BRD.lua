@@ -265,13 +265,13 @@ function precast(spell,arg)
 					equip(sets.precast.Fastcast,{range="Gjallarhorn"})
 				else
 					if string.find(spell.english,'Ballad') then
-						equip(sets.precast.Fastcast,ballad,{legs="Aoidos' rhing. +2"})
+						equip(sets.precast.Fastcast,ballad,{legs="Fili Rhingrave +1"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.precast.Fastcast,march,{hands="Ad. Mnchtte +2"})
+						equip(sets.precast.Fastcast,march,{hands="Fili Manchettes +1"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.precast.Fastcast,minuet,{Body="Aoidos' Hngrln +2"})					
+						equip(sets.precast.Fastcast,minuet,{Body="Fili Hongreline +1"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.precast.Fastcast,madrigal, {head="Aoidos' Calot +2"})
+						equip(sets.precast.Fastcast,madrigal, {head="Fili Calot", back="Intarabus's Cape"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.precast.Fastcast,minne) 
 					elseif string.find(spell.english,'Etude') then
@@ -285,9 +285,9 @@ function precast(spell,arg)
 					elseif string.find(spell.english,'Paeon') then
 						equip(sets.precast.Fastcast,paeon) 
 					elseif string.find(spell.english,'Prelude') then
-						equip(sets.precast.Fastcast,prelude) 
+						equip(sets.precast.Fastcast,prelude, {back="Intarabus's Cape"}) 
 					elseif string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong, scherzo, {feet="Aoidos' Cothrn. +2"})
+						equip(sets.midcast.Skillsong, scherzo, {feet="Fili Cothurnes +1"})
 					elseif string.find(spell.english,'Hymnus') then
 						equip(sets.precast.Fastcast,hymnus)
 					-- Debuffs 
@@ -432,19 +432,19 @@ function midcast(spell,arg)
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		else
-			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] pr player.wardrobe2["Gjallarhorn"]then
+			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Gjallarhorn"] then
 				-- Buff Songs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong,{range="Gjallarhorn", feet="Aoidos' Cothrn. +2"})
+						equip(sets.midcast.Skillsong,{range="Gjallarhorn", feet="Fili Cothurnes +1"})
 					elseif string.find(spell.english,'Ballad') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", legs="Aoidos' rhing. +2"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", legs="Fili Rhingrave +1"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", body="Aoidos' Hngrln +2"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", body="Fili Hongreline +1"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Ad. Mnchtte +2"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", hands="Fili Manchettes +1"})
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Aoidos' Calot +2"})
+						equip(sets.midcast.Buffsong,{range="Gjallarhorn", head="Fili Calot", back="Intarabus's Cape"})
 					elseif string.find(spell.english,'Mazurka') then
 						equip(sets.midcast.Buffsong,{range="Daurdabla"})
 					--Everything else
@@ -460,13 +460,13 @@ function midcast(spell,arg)
 			-- BuffSongs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Ballad') then
-						equip(sets.midcast.Buffsong,ballad,{legs="Aoidos' rhing. +2"})
+						equip(sets.midcast.Buffsong,ballad,{legs="Fili Rhingrave +1"})
 					elseif string.find(spell.english,'March') then
-						equip(sets.midcast.Buffsong,march,{hands="Ad. Mnchtte +2"})
+						equip(sets.midcast.Buffsong,march,{hands="Fili Manchettes +1"})
 					elseif string.find(spell.english,'Minuet') then
-						equip(sets.midcast.Buffsong,minuet,{Body="Aoidos' Hngrln +2"})					
+						equip(sets.midcast.Buffsong,minuet,{Body="Fili Hongreline +1"})					
 					elseif string.find(spell.english,'Madrigal') then
-						equip(sets.midcast.Buffsong,madrigal, {head="Aoidos' Calot +2"})
+						equip(sets.midcast.Buffsong,madrigal, {head="Fili Calot", back="Intarabus's Cape"})
 					elseif string.find(spell.english,'Minne') then
 						equip(sets.midcast.Buffsong,minne) 
 					elseif string.find(spell.english,'Etude') then
@@ -480,9 +480,9 @@ function midcast(spell,arg)
 					elseif string.find(spell.english,'Paeon') then
 						equip(sets.midcast.Buffsong,paeon) 
 					elseif string.find(spell.english,'Prelude') then
-						equip(sets.midcast.Buffsong,prelude) 
+						equip(sets.midcast.Buffsong,prelude, {back="Intarabus's Cape"}) 
 					elseif string.find(spell.english,'Scherzo') then
-						equip(sets.midcast.Skillsong, scherzo, {feet="Aoidos' Cothrn. +2"})
+						equip(sets.midcast.Skillsong, scherzo, {feet="Fili Cothurnes +1"})
 					elseif string.find(spell.english,'Hymnus') then
 						equip(sets.midcast.Buffsong,hymnus)
 					else	
