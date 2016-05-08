@@ -78,7 +78,7 @@ if player.name == 'Feary' then
 				head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots +1"}
-		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Hashishin Mintan"})
+		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
 		
 		-- Midcast
@@ -94,8 +94,10 @@ if player.name == 'Feary' then
                 back="Cornflower Cape", legs="Hashishin Tayt", feet="Luhlaza Charuqs"})
 		sets.idle.BlueMagic = {}
 		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{hands="Assim. Bazu.", back="Atheling Mantle"})
+		
 		-- Recast
 		sets.midcast.BlueMagic.Recast = set_combine(sets.midcast.Recast,{hands="Hashi. Bazubands"})
+		
 		-- STR
 		sets.midcast.BlueMagic.STR = set_combine(sets.midcast.BlueMagic, {ammo="Flame Sachet",
                 head="Taeon Chapeau", neck="Tjukurrpa Medal", lear="Vulcan's Pearl", rear="Vulcan's Pearl",

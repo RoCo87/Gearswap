@@ -177,12 +177,12 @@ if player.Name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main={name="Lathi", priority=2}, sub={name="Mephitis Grip", priority=1}, ammo="Aureole",
-				neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				neck="Eddy Necklace",  lear="Barkaro. Earring", rear="Enchntr. Earring +1",,
                 -- Helios Jacket
 				body="Cohort Cloak", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main={name="Lathi", priority=2}, sub={name="Mephitis Grip", priority=1}, ammo="Aureole",
-				neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				neck="Eddy Necklace", lear="Barkaro. Earring", rear="Enchntr. Earring +1",
                 -- Helios Jacket
 				body="Cohort Cloak", hands="Hagondes Cuffs +1", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
@@ -234,8 +234,5 @@ if player.Name == 'Feary' then
 		-- Shattersoul
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
 		
-		-- Misc
-		sets.misc.Waltz = {}
-		sets.misc.Steps = {}
-		sets.misc.flourish = {}
+		sets.precast.WS['Myrkr'] = {}
 end
