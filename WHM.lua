@@ -202,7 +202,7 @@ function precast(spell,arg)
 				equip(sets.precast.Enhancing)
 			end		
 		end
-		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]) then
+		if Fastcast.Staff[spell.element] and (player.inventory[Fastcast.Staff[spell.element]] or player.wardrobe[Fastcast.Staff[spell.element]] or player.wardrobe2[Fastcast.Staff[spell.element]]) then
 			equip({main=Fastcast.Staff[spell.element]})
 		end
 -- Ninjutsu
