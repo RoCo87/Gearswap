@@ -123,16 +123,21 @@ if player.Name == 'Feary' then
 				head="Atrophy Chapeau", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
                 body="Hagondes Coat +1", hands="Vitivation Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Ovate Rope", legs="Hagondes Pants +1", feet="Vitivation Boots"}
-		-- Enfeebling
-		-- Potency
+				
+		-- Enfeebling 
+		-- Skill need 625
+		-- Frazzle/Distract 
 		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Kalboron Stone",
-				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Lethargy Sayon", hands="Leth. Gantherots", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
+		-- MACC
 		sets.midcast.Macc = {main="Bolelabunga", ammo="Kalboron Stone",
-				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Lethargy Sayon", hands="Leth. Gantherots", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
+		
+		-- Potency
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{head="Vitivation Chapeau"})
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc, {feet="Vitivation Boots"})
 		sets.midcast.Blind = set_combine(sets.midcast.Macc, {legs="Vitivation Tights"})

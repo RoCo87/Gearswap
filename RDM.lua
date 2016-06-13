@@ -355,16 +355,23 @@ function midcast(spell,arg)
 			-- Maybe account for saboteur
 			if spell.english:startswith('Dia') then
 				equip(sets.midcast.Dia)
+			-- MND
 			elseif spell.english:wcmatch('Paralyze*') then
 				equip(sets.midcast.enfeebling)
 			elseif spell.english:wcmatch('Slow*') then
 				equip(sets.midcast.Slow)
 			elseif spell.english:startswith('Addle') then
 				equip(sets.midcast.Addle)
+			-- INT
 			elseif spell.english:wcmatch('Blind') then
 				equip(sets.midcast.Blind)
 			elseif spell.english:startswith('Bind') then
 				equip(sets.midcast.Bind)
+			-- Skill
+			elseif spell.english:startswith('Distract') then
+				equip(sets.midcast.Enfeebling)
+			elseif spell.english:startswith("Frazzle") then
+				equip(sets.midcast.Enfeebling)
 			else
 				equip(sets.midcast.Macc)
 			end

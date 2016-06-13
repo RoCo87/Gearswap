@@ -33,7 +33,7 @@ if player.name == 'Aniyah' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main="Earth Staff", 
-				head="", neck="Twilight Torque", lear="", rear="",
+				head="Gendewitha Canbeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring=Aug.Darkring2.Aniyah,
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
 		sets.idle.MDT = {
@@ -80,16 +80,16 @@ if player.name == 'Aniyah' then
 
 		--Healing Magic
 		-- Cures
-		sets.midcast.Cure = {main="Arka IV", 
+		sets.midcast.Cure = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
 				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main="Arka IV", 
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
 				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Orison Bliaud +2", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"})
 
-		sets.midcast.Curaga = {main="Arka IV", sub="Pax Grip",
+		sets.midcast.Curaga = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
 				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Gendewitha Bliaut", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
                 back="Refraction Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}

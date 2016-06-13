@@ -29,25 +29,36 @@ function get_sets(spell)
 				-- STR
 				["Amorphic Spikes"]="STR", ["Bloodrake"]="STR", ["Disseverment"]="STR", ["Glutinous Dart"]="STR", ["Goblin Rush"]="STR",
                 ["Paralyzing Triad"]="STR", ["Ram Charge"]="STR", ["Vanity Dive"]="STR", ["Vertical Cleave"]="STR", ["Whirl of Rage"]="STR",
+				["Empty Thrash"]="STR",
 				-- STR/Acc
 				["Heavy Strike"]="STRAcc",
 				-- STR/VIT
-                ["Cannonball"]="VIT", ["Delta Thrust"]="VIT", ["Quad. Continuum"]="VIT",
+                ["Cannonball"]="VIT", ["Delta Thrust"]="VIT", ["Quad. Continuum"]="VIT", ["Sinker Drill"]="VIT",
                 -- AGI
 				["Benthic Typhoon"]="AGI", ["Final Sting"]="AGI", ["Spiral Spin"]="AGI",
 				-- MND
                 ["Magic Hammer"]="MND", ["Mind Blast"]="MND",
 				-- Nukes
-				["Subduction"]="Nuke",["Entomb"]="Nuke",["Silent Storm"]="Nuke",["Tenebral Crush"]="Nuke",["Anvil Lightning"]="Nuke",
-				["Scouring Spate"]="Nuke",["Spectral Floe"]="Nuke",["Searing Tempest"]="Nuke",}
-    bluSpells = T{["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", ["Winds of Promy."]="Recast",
-                ["Magic Fruit"]="CurePot", ["Plenilune Embrace"]="CurePot", ["White Wind"]="CurePot",
-                ["Sudden Lunge"]="STRAcc", ["Head Butt"]="STRAcc", ["Absolute Terror"]="Macc"}
+				["Subduction"]="Nuke",["Entomb"]="Nuke",["Silent Storm"]="Nuke",["Anvil Lightning"]="Nuke",
+				["Scouring Spate"]="Nuke",["Spectral Floe"]="Nuke",["Searing Tempest"]="Nuke",
+				-- Nukes Dark
+				["Tenebral Crush"]="Nuke.Dark"}
+    bluSpells = T{
+				-- Recast
+				["Animating Wail"]="Recast", ["Battery Charge"]="Recast", ["Cocoon"]="Recast", ["Nat. Meditation"]="Recast", 
+				["Winds of Promy."]="Recast", ["Erratic Flutter"]="Recast",
+                -- CurePot
+				["Magic Fruit"]="CurePot", ["Plenilune Embrace"]="CurePot",
+				-- White Wind
+				["White Wind"]="WW",
+				-- Macc/Additional Effects
+                ["Sudden Lunge"]="Macc", ["Head Butt"]="Macc", ["Absolute Terror"]="Macc", ["Dream Flower"]="Macc"}
 end 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -261,16 +272,18 @@ end
 function midcast(spell,arg)
 -- BlueMagic
 	if spell.skill == 'Blue Magic' then
-		if bluSpellStats[spell.english] then
-            equip(sets.midcast.BlueMagic[bluSpellStats[spell.english]])
-            if buffactive['Chain Affinity'] then
-                equip(sets.precast.JA['Chain Affinity'])
-            end
-            if buffactive.Efflux then
-                equip(sets.precast.JA['Effux'])
-            end
+		if spell.name == "White Wind" and spell.targets == "SELF" then
+			equip(sets.midcast.BlueMagic.WW.Self)
+		elseif bluSpellStats[spell.english] then
+			equip(sets.midcast.BlueMagic[bluSpellStats[spell.english]])
+			if buffactive['Chain Affinity'] then
+				equip(sets.precast.JA['Chain Affinity'])
+			end
+			if buffactive.Efflux then
+				equip(sets.precast.JA['Effux'])
+			end
 		elseif bluSpells[spell.english] then
-            equip(sets.midcast.BlueMagic[bluSpells[spell.english]])
+			equip(sets.midcast.BlueMagic[bluSpells[spell.english]])
         else
 			windower.add_to_chat(121,"Default Skill Set")
             equip(sets.midcast.BlueMagic)

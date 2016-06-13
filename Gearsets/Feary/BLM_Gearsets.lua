@@ -177,7 +177,7 @@ if player.Name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main={name="Lathi", priority=2}, sub={name="Mephitis Grip", priority=1}, ammo="Aureole",
-				neck="Eddy Necklace",  lear="Barkaro. Earring", rear="Enchntr. Earring +1",,
+				neck="Eddy Necklace",  lear="Barkaro. Earring", rear="Enchntr. Earring +1",
                 -- Helios Jacket
 				body="Cohort Cloak", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}

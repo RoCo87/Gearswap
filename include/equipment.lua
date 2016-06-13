@@ -46,9 +46,13 @@
 	-- Duration 10-20
 	Aug.Cape.RDM = {name="Ghostfyre Cape"}
 	-- Dual Wield +5
-	Aug.Cape.THF = {name="Canny Cape"}
+	Aug.Cape.THF = {name="Canny Cape", augments={}}
+	Aug.Cape.THF.STP = {name="Toutalis Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
+	Aug.Cape.THF.WS = {name="Toutalis Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
+	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+3','Accuracy+1 Attack+1','Enmity+1',}}
 	-- ?
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	-- pet dt-5

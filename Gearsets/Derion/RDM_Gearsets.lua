@@ -50,7 +50,7 @@ if player.Name == 'Feary' then
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				head="Vitivation Chapeau",
 				body="Vitivation Tabard",
-				legs="Blood Cuisses"})
+				legs="Crimson Cuisses"})
 		-- JA
 		sets.precast.JA["Chainspell"] = {body="Vitivation Tabard"}
 		sets.precast.JA["Stymie"] = {}
