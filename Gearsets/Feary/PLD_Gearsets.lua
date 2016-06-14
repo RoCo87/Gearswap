@@ -41,30 +41,29 @@ if player.name == 'Feary' then
 
 	-- Standard/idle
 	sets.idle.PDT = { ammo="Hasty Pinion +1",
-					head="Rev. Coronet +1", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
-					
+					head="Sulevia's Mask +1", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
 					body="Cab. Surcoat +1", hands="Redan Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Mollusca Mantle", waist="Nierenschutz", legs="Cab. Breeches", feet="Yorium Sabatons"}
+					back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
-					head="Cizin Helm +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Cab. Surcoat +1", hands="Rev. Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Mollusca Mantle", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
+					head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+					body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Mollusca Mantle", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT.Shell = { ammo="Vanir Battery",
-					head="Cizin Helm +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Cab. Surcoat +1", hands="Reverence Gauntlets", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Engulfer Cape", waist="Creed Baudrier", legs="Yorium Cuisses", feet="Cab. Leggings"}
+					head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+					body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Engulfer Cape", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.BDT = { ammo="Hasty Pinion +1",
-					head=Aug.Skirmish.Yorium.Head.DT, neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-					body="Cab. Surcoat +1", hands=Aug.Skirmish.Yorium.Hands.DT, lring=Aug.Darkring1, rring="Defending Ring",
-					back="Mollusca Mantle", waist="Nierenschutz", legs=Aug.Skirmish.Yorium.Legs.DT, feet=Aug.Skirmish.Yorium.Feet.DT}			
+					head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+					body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
 
 	sets.idle.DT = { ammo="Hasty Pinion +1",
-					head=Aug.Skirmish.Yorium.Head.DT, neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-					body="Cab. Surcoat +1", hands=Aug.Skirmish.Yorium.Hands.DT, lring=Aug.Darkring1, rring="Defending Ring",
-					back="Mollusca Mantle", waist="Nierenschutz", legs=Aug.Skirmish.Yorium.Legs.DT, feet=Aug.Skirmish.Yorium.Feet.DT}			
+					head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+					body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+					back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
 
 	sets.misc.Town = set_combine(sets.idle.DT, {
 					back="Shadow Mantle", legs="Blood Cuisses"})
@@ -193,7 +192,7 @@ if player.name == 'Feary' then
 	-- VIT - No Cap
 	sets.precast.JA["Rampart"] = set_combine(sets.Enmity,{
 					head="Cab. Coronet", 
-					body="Cab. Surcoat +1", hands="Cab. Gauntlets +1",
+					body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", lring="Titan Ring", rring="Titan Ring",
 					waist="Chuq'aba Belt", legs="Cab. Breeches", feet="Rev. Leggings +1"})
 	sets.precast.JA["Sentinel"] = set_combine(sets.Enmity,{feet="Cab. Leggings"})
 	sets.precast.JA["Holy Circle"] = set_combine(sets.Enmity,{feet="Rev. Leggings +1"})

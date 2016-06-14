@@ -122,18 +122,18 @@ if player.name == 'Aniyah' then
                 legs="Theo. Pantaloons"})
 		sets.midcast.BarElement = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
 				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
-                body="Orison Bliaut +2", hands="Orison Mitts +2", lring="", rring="",
-                back="Merciful Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
+                body="Ebers Bliaud", hands="Orison Mitts +2", lring="", rring="",
+                back="Merciful Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.BarStatus = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
 				-- head="", lear="Andoaa Earring", rear="Augment. Earring",
 				neck="Colossus's Torque", 
 				--body="Anhur Robe", hands="Ayao's Gages",
 				--back="Merciful Cape", 
-				waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
+				waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Ebers Duckbills"}
 		sets.midcast.Boost = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
 				head="", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
                 body="Anhur Robe", hands="Ayao's Gages", lring="", rring="",
-                back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Orsn. Duckbills +2"}
+                back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Ebers Duckbills"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Boost)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
 		sets.midcast.Stoneskin = {waist="Siegal Sash"}
