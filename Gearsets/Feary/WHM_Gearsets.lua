@@ -152,7 +152,7 @@ if player.name == 'Feary' then
 				body="Vanir Cotehardie", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
 				back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"})
 		sets.midcast.Flash = set_combine(sets.midcast.Macc)
-		sets.midcast.Banish = {main="Bolelabunga", ammo="Aureole",
+		sets.midcast.Banish = {main={name="Bolelabunga",priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Nahtirah Hat", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
                 body="Helios Jacket", hands=Aug.Skirmish.Helios.Hands.MAB, lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.Feet.MAB}
@@ -160,14 +160,16 @@ if player.name == 'Feary' then
 
 		-- Enfeebling
 		-- Potency - Slow Addle Paralyze
-		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Aureole",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Helios Jacket", hands="Gende. Gages +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Pahtli Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.Feet.MAB}
-		sets.midcast.Macc = {main="Bolelabunga", ammo="Aureole",
-				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Helios Jacket", hands="Gende. Gages +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Helios.Feet.MAB}
+		sets.midcast.Enfeebling = {main={name="Bolelabunga",priority=2}, sub={name="Genbu's Shield", priority=1},
+				-- Incantor Torque 
+				head="Inyanga Tiara +1", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring="Perception Ring", rring="Sangoma Ring",
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}
+		sets.midcast.Macc = {main={name="Bolelabunga",priority=2}, sub={name="Genbu's Shield", priority=1},
+				-- Incantor Torque 
+				head="Inyanga Tiara +1", neck="Voltsurge Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring="Perception Ring", rring="Sangoma Ring",
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}
 
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
