@@ -88,39 +88,39 @@ if player.Name == 'Feary' then
 		-- High Resist
 		sets.midcast.Elemental = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Elemental Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		-- Damage
 		sets.midcast.Nuke = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva ring", rring="Shiva ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva ring", rring="Shiva ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		sets.midcast.Nuke.Acc = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Helios Hat", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Helios Jacket", hands="Helios Gloves", lring="Shiva ring", rring="Shiva ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Helios Jacket", hands="Amalric Slops", lring="Shiva ring", rring="Shiva ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		-- Magic Burst
 		sets.midcast.Nuke.MB = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Helios Hat", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Helios Jacket", hands="Helios Gloves", lring="Shiva ring", rring="Shiva ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Helios Jacket", hands="Amalric Gages", lring="Shiva ring", rring="Shiva ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		sets.midcast.Nuke.MB.Acc = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Helios Hat", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Helios Jacket", hands="Helios Gloves", lring="Shiva ring", rring="Shiva ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Helios Jacket", hands="Amalric Gages", lring="Shiva ring", rring="Shiva ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 				
-		-- Hellx 
+		-- Hellx - INT
 		sets.midcast.Helix = {main={name="Atinian Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Arbatel Bonnet", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Bookworm's Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Arbatel Loafers"}
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Bookworm's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		--Healing Magic
-		sets.midcast.Cure = {main={name="Arka IV", priority=2}, 
+		sets.midcast.Cure = {main={name="Arka IV", priority=2}, sub={name="Pax Grip", priority=1}, 
 				head="Gendewitha Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Beatific Earring",
                 body="Pedagogy Gown", hands="Telchine Gloves", lring="Sirona's Ring", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Academic's Pants", feet="Pedagogy Loafers"}

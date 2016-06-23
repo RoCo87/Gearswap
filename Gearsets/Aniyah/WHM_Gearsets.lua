@@ -35,15 +35,15 @@ if player.name == 'Aniyah' then
 		sets.idle.PDT = {main={name="Earth Staff", priority=2}, sub={name="Pax Grip", priority=1},
 				head="Gende. Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
-                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Gendewitha Galoshes"}
+                back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {main={name="Earth Staff", priority=2}, sub={name="Pax Grip", priority=1},
 				head="Gende. Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
-                back="Felicitas Cape", waist="Austerity Belt",  legs="Gendewitha Spats", feet="Gendewitha Galoshes"}			
+                back="Felicitas Cape", waist="Austerity Belt",  legs="Gendewitha Spats", feet="Gende. Galoshes"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Antivenom Earring", rear="Relaxing Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs",
-                back="Felicitas Cape", waist="Austerity Belt", legs="", feet=""})
+                back="Felicitas Cape", waist="Austerity Belt", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				hands="Serpentes Cuffs",
                 })
@@ -120,17 +120,17 @@ if player.name == 'Aniyah' then
 				head="Inyanga Tiara",
                 body="Cleric's Briault", hands="Orison Mitts +2",
                 legs="Theo. Pantaloons"})
-		sets.midcast.BarElement = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
-				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
-                body="Ebers Bliaud", hands="Orison Mitts +2", lring="", rring="",
+		sets.midcast.BarElement = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1},
+				head="Ebers Cap", neck="Colossus's Torque", lear="Andoaa Earring", 
+                body="Ebers Bliaud", hands="Orison Mitts +2",
                 back="Merciful Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Ebers Duckbills"}
-		sets.midcast.BarStatus = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
+		sets.midcast.BarStatus = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1},
 				-- head="", lear="Andoaa Earring", rear="Augment. Earring",
 				neck="Colossus's Torque", 
 				--body="Anhur Robe", hands="Ayao's Gages",
 				--back="Merciful Cape", 
 				waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Ebers Duckbills"}
-		sets.midcast.Boost = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1}
+		sets.midcast.Boost = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="", neck="Colossus's Torque", lear="Andoaa Earring", rear="",
                 body="Anhur Robe", hands="Ayao's Gages", lring="", rring="",
                 back="Merciful Cape", waist="Cascade Belt", legs="Clr. Pantaln. +2", feet="Ebers Duckbills"}

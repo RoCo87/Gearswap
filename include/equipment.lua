@@ -52,7 +52,7 @@
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
 	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+3','Accuracy+1 Attack+1','Enmity+1',}}
+	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Enmity+10',}}
 	-- ?
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	-- pet dt-5

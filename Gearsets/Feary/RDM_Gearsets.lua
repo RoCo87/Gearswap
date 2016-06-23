@@ -65,9 +65,9 @@ if player.Name == 'Feary' then
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {ammo="Impatiens",
-				head="Atrophy Chapeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+				head="Carmine Mask +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Vitivation Tabard", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Carmine Greaves +1"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalasiris",
                 back="Pahtli Cape"})
@@ -75,6 +75,7 @@ if player.Name == 'Feary' then
 				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{
 				head="Umuthi Hat"})
+				
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {ammo="Impatiens", 
 				waist="Witful Belt"})
@@ -148,13 +149,13 @@ if player.Name == 'Feary' then
 		-- Skill Gear For Elemental Dots And High Resisted Nukes
 		sets.midcast.Elemental = {main="Bolelabunga", ammo="Auroele",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalic Nails"}
 		-- Pure Damage
 		sets.midcast.Nuke = {main="Bolelabunga", ammo="Witchstone",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Helios Gloves", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants +1", feet="Helios Boots"}
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		-- Dark Magic
 		sets.midcast.Bio = set_combine(sets.midcast.Macc, {legs="Vitivation Tights"})

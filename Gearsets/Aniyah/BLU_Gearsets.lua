@@ -65,8 +65,8 @@ if player.name == 'Aniyah' then
 		sets.precast.JA["Unbridled Wisdom"] = {}
 		
 		sets.precast.JA["Unbridled Learning"] = {}
-		sets.precast.JA["Chain Affinity"] = {head="Mavi Kavuk +2", feet="Magus Charuqs"}
-		sets.precast.JA["Burst Affinity"] = {legs="Magus Shalwar", feet="Mavi Basmak +2"}
+		sets.precast.JA["Chain Affinity"] = {head="Hashishin Kavuk", feet="Magus Charuqs"}
+		sets.precast.JA["Burst Affinity"] = {legs="Magus Shalwar", feet="Hashishin Basmak"}
 		sets.precast.JA["Efflux"] = {legs="Mavi Tayt +2"}
 		sets.precast.JA["Diffusion"] = {feet="Mirage Charuqs"}
 		sets.precast.JA["Convergence"] = {head="Mirage Keffiyeh"}
@@ -158,8 +158,8 @@ if player.name == 'Aniyah' then
 		-- INT
 		sets.midcast.BlueMagic.INT = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"})
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
 		-- CHR
 		sets.midcast.BlueMagic.CHR = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
@@ -169,10 +169,10 @@ if player.name == 'Aniyah' then
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
                 -- head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
 				head="Orvail Corona +1",
-				--body="Assimilator's Jubbah", hands="Hagondes Cuffs +1", lring="Sangoma Ring", rring="Perception Ring",
-				body="Mavi Mintan +2", lring="Balrahn's Ring", rring="Perception Ring",
+				--body="Assimilator's Jubbah", hands="Hagondes Cuffs +1", lring="Sangoma Ring",
+				body="Mavi Mintan +2", hands="Amalric Gages", lring="Balrahn's Ring", rring="Perception Ring",
 				--back="Cornflower Cape", waist="Ovate Rope", legs="Hashishin Tayt", feet="Helios Boots"
-				back="Ogapepo Cape", legs="Orvail Pants +1", feet="Mavi Basmak +2"})	
+				back="Ogapepo Cape", legs="Orvail Pants +1", feet="Hashishin Basmak"})	
 		-- Acc
 		sets.midcast.BlueMagic.PhysMagicAcc = set_combine(sets.midcast.Macc, {
                 head="Mirage Keffiyeh", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
@@ -201,16 +201,14 @@ if player.name == 'Aniyah' then
 		-- Nuke
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tahlum",
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-				-- Almaric Gages 
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
-				-- Almaric Nails
-                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Mavi Basmak +2"})
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
 		-- Dark - Tenerbal Crush
 		sets.midcast.BlueMagic.Nuke.Dark = set_combine(sets.midcast.Nuke, {
 				-- Pixie Hairpin +1
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Archon Ring",
-                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Mavi Basmak +2"})
+                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Archon Ring",
+                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
 				ammo="Mavi Tathlum",
@@ -282,12 +280,12 @@ if player.name == 'Aniyah' then
 		sets.precast.WS['Sanguine Blade'] = {ammo="Dosis Tathlum",
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Mavi Basmak +2"}
+                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Hashishin Basmak"}
 		-- Realmrazer - MND/MAB
 		sets.precast.WS['Realmrazer'] = {ammo="Hasty Pinion +1",
                 head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Levia. Ring", rring="Levia. Ring",
-                back="Toro Cape", waist="Light Belt", legs="Hagondes Pants +1", feet="Mavi Basmak +2"}
+                back="Toro Cape", waist="Light Belt", legs="Hagondes Pants +1", feet="Hashishin Basmak"}
 		
 		-- Misc
 		sets.misc.Waltz = {}

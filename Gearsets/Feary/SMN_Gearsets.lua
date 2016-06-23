@@ -15,14 +15,14 @@ if player.name == 'Feary' then
 			
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Earth Staff",
+		sets.idle.PDT = {main={name="Earth Staff",priority=2}, sub={name="Pax Grip", priority=1},
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etoilation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
-		sets.idle.MDT = {main="Earth Staff",
-				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
+		sets.idle.MDT = {main={name="Earth Staff",priority=2}, sub={name="Pax Grip", priority=1},
+				head="Inyanga Tiara +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+                body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Felicitas Cape", waist="Austerity Belt", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Caller's Horn +2", neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
@@ -48,7 +48,7 @@ if player.name == 'Feary' then
 		-- Magic
 		sets.precast.Fastcast = { ammo="Impatiens",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
-				body="Anhur Robe", hands="Magavan Mitts", lring="Prolix Ring",
+				body="Inyanga Jubbah +1", hands="Magavan Mitts", lring="Prolix Ring",
                 back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
                 body="Heka's Kalairis", 
@@ -158,7 +158,8 @@ if player.name == 'Feary' then
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
 
 		-- Enhancing
-		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{main="Bolelabunga"})
+		sets.midcast.Regen = set_combine(sets.midcast.ConserveMP,{main="Bolelabunga",
+				head="Inyanga Tiara +1",})
 		sets.midcast.BarElement = {}
 		sets.midcast.BarStatus = {}
 		sets.midcast.Phalanx = set_combine(sets.Boost)
@@ -176,15 +177,15 @@ if player.name == 'Feary' then
 
 		-- Enfeebling
 		-- Potency
-		sets.midcast.Enfeebling = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-                back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Telchine.Feet.Song}
-		sets.midcast.Macc = {main="Eminent Pole", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs +1", lring="Perception ring", rring="Sangoma Ring",
-                back="Refraction Cape", waist="Ovate Rope", legs="Artsieq Hose", feet=Aug.Skirmish.Telchine.Feet.Song}
-
+		sets.midcast.Enfeebling = {main={name="Eminent Pole", priority=2}, sub={name="Mephitis Grip", priority=1}, 
+				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}
+		sets.midcast.Macc = {main={name="Eminent Pole", priority=2}, sub={name="Mephitis Grip", priority=1}, 
+				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+                back="Ogapepo Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}
+				
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
 
 		-- Dark Magic
