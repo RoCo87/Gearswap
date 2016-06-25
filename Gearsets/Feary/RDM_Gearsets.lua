@@ -57,7 +57,7 @@ if player.Name == 'Feary' then
 		sets.precast.JA["Chainspell"] = {body="Vitivation Tabard"}
 		sets.precast.JA["Stymie"] = {}
 		
-		sets.precast.JA["Composure"] = {head="Estq. Chappel +2", body="Lethargy Sayon", hands="Leth. Gantherots", legs="Leth. Fuseau", feet="Leth. Houseaux"}
+		sets.precast.JA["Composure"] = {head="Lethargy Chappel", body="Lethargy Sayon", hands="Leth. Gantherots", legs="Leth. Fuseau", feet="Leth. Houseaux"}
 		sets.precast.JA["Saboteur"] = {hands="Leth. Gantherots"}
 		sets.precast.JA["Convert"] = {}
 		sets.precast.JA["Spontaneity"] = {}
