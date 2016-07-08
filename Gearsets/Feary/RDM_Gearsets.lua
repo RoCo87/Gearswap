@@ -33,7 +33,7 @@ if player.Name == 'Feary' then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield",
+		sets.idle.PDT = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Hagondes Hat +1", neck="Twilight Torque", rear="Ethereal Earring",
                 body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
@@ -41,7 +41,7 @@ if player.Name == 'Feary' then
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}			
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
+		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2}, sub={name="Pax Grip", priority=1},
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
                 back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
@@ -53,6 +53,7 @@ if player.Name == 'Feary' then
 				head="Vitivation Chapeau",
 				body="Vitivation Tabard",
 				legs="Blood Cuisses"})
+	
 		-- JA
 		sets.precast.JA["Chainspell"] = {body="Vitivation Tabard"}
 		sets.precast.JA["Stymie"] = {}
@@ -80,33 +81,34 @@ if player.Name == 'Feary' then
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {ammo="Impatiens", 
 				waist="Witful Belt"})
 		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				rear="Gifted Earring",
-                body="Hedera Cotehardie", hands="Serpentes Cuffs",
-                waist="Austerity Belt", legs="Nares Trews", feet="Umbani Boots"}
+				-- rear="Gifted Earring",
+                -- body="Hedera Cotehardie", hands="Serpentes Cuffs",
+                waist="Austerity Belt", feet="Carmine Greaves +1"}
 		
 		--Healing Magic
-		sets.midcast.Cure = {main="Tamaxchi", 
+		sets.midcast.Cure = {main={name="Tamaxchi", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Gende. Caubeen +1", neck="Colossus's Torque", lear="Novia Earring", rear="Roundel Earring",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 		
-		sets.midcast.Curaga = {main="Tamaxchi", 
+		sets.midcast.Curaga = {main={name="Tamaxchi", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Novia Earring", rear="Enchntr. Earring +1",
                 body="Heka's Kalasiris", hands="Telchine Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Tempered Cape +1", waist="Bishop's Sash", legs="Atrophy Tights", feet="Rubeus Boots"}
 	
 		-- Enhancing 
 		-- Goal 500+
-		sets.midcast.Enhancing = {main="Earth Staff", sub="Fulcio Grip",
+		sets.midcast.Enhancing = {main={name="Earth Staff", priority=2}, sub={name="Fulcio Grip", priority=1},
 				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
                 back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
 		-- Duration
-		sets.midcast.Enhancing.Self = {main="Earth Staff", sub="Fulcio Grip",
+		sets.midcast.Enhancing.Self = {main={name="Earth Staff", priority=2}, sub={name="Fulcio Grip", priority=1},
 				head="Telchine Cap", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Telchine Chas.", hands="Atrophy Gloves",
-                back="Estoqueur's Cape", waist="Bishop's Sash", legs="Telchine Braconi", feet="Leth. Houseaux"}
-		sets.midcast.Enhancing.Party = {main="Earth Staff", sub="Fulcio Grip",
+				--  legs="Telchine Braconi", Duration Bonus
+                back="Estoqueur's Cape", waist="Bishop's Sash", feet="Leth. Houseaux"}
+		sets.midcast.Enhancing.Party = {main={name="Earth Staff", priority=2}, sub={name="Fulcio Grip", priority=1},
 				head="Vitivation Chapeau", neck="Colossus's Torque", lear="Augment. Earring", rear="Andoaa Earring",
                 body="Vitivation Tabard", hands="Vitivation Gloves",
                 back="Estoqueur's Cape", waist="Bishop's Sash", legs="Atrophy Tights", feet="Leth. Houseaux"}
@@ -119,22 +121,22 @@ if player.Name == 'Feary' then
 		sets.midcast.Reraise = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Regen = {main="Bolelabunga"}
 		
+		sets.midcast.INT = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Kalboron Stone",
 		-- Spikes: Goal 250 Int
-		sets.midcast.INT = {main="Bolelabunga", ammo="Kalboron Stone",
-				head="Atrophy Chapeau", neck="Eddy Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+				head="Atrophy Chapeau", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Hagondes Coat +1", hands="Vitivation Gloves", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Ovate Rope", legs="Hagondes Pants +1", feet="Vitivation Boots"}
 				
 		-- Enfeebling 
 		-- Skill need 625
 		-- Frazzle/Distract 
-		sets.midcast.Enfeebling = {main="Bolelabunga", ammo="Kalboron Stone",
+		sets.midcast.Enfeebling = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Kalboron Stone",
 				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Lethargy Sayon", hands="Leth. Gantherots", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		-- MACC
-		sets.midcast.Macc = {main="Bolelabunga", ammo="Kalboron Stone",
-				head="Vitivation Chapeau", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+		sets.midcast.Macc = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Kalboron Stone",
+				head="Carmine Mask +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Lethargy Sayon", hands="Leth. Gantherots", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Vitivation Boots"}
 		
@@ -147,12 +149,12 @@ if player.Name == 'Feary' then
 		
 		-- Elemental
 		-- Skill Gear For Elemental Dots And High Resisted Nukes
-		sets.midcast.Elemental = {main="Bolelabunga", ammo="Auroele",
+		sets.midcast.Elemental = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Auroele",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalic Nails"}
 		-- Pure Damage
-		sets.midcast.Nuke = {main="Bolelabunga", ammo="Witchstone",
+		sets.midcast.Nuke = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Witchstone",
 				head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
