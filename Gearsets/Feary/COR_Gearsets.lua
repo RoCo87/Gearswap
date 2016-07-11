@@ -41,7 +41,7 @@ if player.name == 'Feary' then
 	sets.idle.MDT = { 
 					head="Whirlpool Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 					body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Engulfer Cape", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+					back="Engulfer Cape +1", waist="Flume Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
 
 	sets.misc.Town = set_combine(sets.idle.PDT, {
 					head="Lanun Tricorne",

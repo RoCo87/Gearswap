@@ -44,7 +44,7 @@ sets.idle.PDT = {
 sets.idle.MDT = { 
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Manibozho Jerkin", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
+                back="Engulfer Cape +1", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.Regen = set_combine(sets.idle.PDT, {body="Hes. Cyclas"})
 sets.idle.Evasion = {

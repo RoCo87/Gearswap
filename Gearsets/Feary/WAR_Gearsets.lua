@@ -39,7 +39,7 @@ sets.idle.PDT = { ammo="Vanir Battery",
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cizin Mail +1", hands="Cizin Mufflers +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves +1"}
+                back="Engulfer Cape +1 +1", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves +1"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {feet="Hermes' Sandals"})
 				

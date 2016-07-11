@@ -38,7 +38,7 @@ if player.name == 'Feary' then
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
+                back="Engulfer Cape +1", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",

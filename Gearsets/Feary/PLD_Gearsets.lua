@@ -53,7 +53,7 @@ if player.name == 'Feary' then
 	sets.idle.MDT.Shell = { ammo="Vanir Battery",
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Engulfer Cape", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.BDT = { ammo="Hasty Pinion +1",
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",

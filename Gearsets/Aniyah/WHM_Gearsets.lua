@@ -17,13 +17,13 @@ if player.name == 'Aniyah' then
 		-- sets Macros off = 0  on = 1
 		automacroset = 1
 		if automacroset == 1 then
-			if player.sub_job == 'rdm' then
+			if player.sub_job =='RDM' then
 				set_macro_page(1,1)
-			elseif player.sub_job =='sch' then
+			elseif player.sub_job =='SCH' then
 				set_macro_page(1,2)
-			elseif player.sub_job == 'smn' then
+			elseif player.sub_job =='SMN' then
 				set_macro_page(1,3)
-			elseif player.sub_job =='blm' then 
+			elseif player.sub_job =='BLM' then 
 				set_macro_page(1,4)
 			end
 		else
@@ -37,9 +37,9 @@ if player.name == 'Aniyah' then
                 body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
                 back="Cheviot Cape", waist="Austerity Belt", legs="Gendewitha Spats", feet="Gende. Galoshes"}
 		sets.idle.MDT = {main={name="Earth Staff", priority=2}, sub={name="Pax Grip", priority=1},
-				head="Gende. Caubeen", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-                body="Gendewitha Bliaut", hands="Gendewitha Gages", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
-                back="Felicitas Cape", waist="Austerity Belt",  legs="Gendewitha Spats", feet="Gende. Galoshes"}			
+				head="Inyanga Tiara", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+                body="Inyanga Jubbah", hands="Inyanga Dastanas", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
+                back="Felicitas Cape", waist="Austerity Belt",  legs="Inyanga Shalwar", feet="Inyanga Crackows"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Antivenom Earring", rear="Relaxing Earring",
                 body="Heka's Kalasiris", hands="Serpentes Cuffs",
@@ -53,15 +53,6 @@ if player.name == 'Aniyah' then
 				})
 				
 		-- Precast
-		-- Magic
-		sets.precast.Fastcast = {ammo="Incantor Stone",
-				head="Haruspex Hat", neck="Orison Locket", lear="Loquac. Earring",
-                body="Inyanga Jabbuh", hands="Gendewitha Gages", lring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
-		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-                body="Heka's Kalasiris",
-				-- back="Pahtli Cape", feet="Cure Clogs"
-                 legs="Ebers Pantaloons",})
 		-- JA
 		sets.precast.JA['Benediction'] = {body="Cleric's Briault +2"}
 		sets.precast.JA['Asylum'] = {}
@@ -69,6 +60,16 @@ if player.name == 'Aniyah' then
 		sets.precast.JA['Divine Caress'] = {head="Ebers Cap", hands="Orison Mitts +2", back="Mending Cape"}
 		sets.precast.JA['Devotion'] = {head="Cleric's Cap +2"}
 		sets.precast.JA['Martyr'] = {hands="Cleric's Mitts +2"}
+		
+		-- Magic
+		sets.precast.Fastcast = {ammo="Incantor Stone",
+				head="Haruspex Hat", neck="Orison Locket", lear="Loquac. Earring",
+                body="Inyanga Jubbah", hands="Gendewitha Gages", lring="Prolix Ring",
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
+                body="Heka's Kalasiris",
+				-- back="Pahtli Cape", feet="Cure Clogs"
+                 legs="Ebers Pantaloons",})
 		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {
@@ -84,16 +85,16 @@ if player.name == 'Aniyah' then
 
 		--Healing Magic
 		-- Cures
-		sets.midcast.Cure = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
+		sets.midcast.Cure = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
 				head="Ebers Cap", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Ebers Bliaud", hands="Healer's Mitts", lring="Sirona's Ring", rring="Leviathan's Ring",
                 back="Tempered Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}
-		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
+		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure, {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
 				head="Ebers Cap", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Ebers Bliaud", hands="Healer's Mitts", lring="Leviathan's Ring", rring="Leviathan's Ring",
                 back="Tempered Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"})
 
-		sets.midcast.Curaga = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=2},
+		sets.midcast.Curaga = {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
 				head="Ebers Cap", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
                 body="Gendewitha Bliaut", hands="Healer's Mitts", lring="Leviathan's Ring", rring="Leviathan's Ring",
                 back="Tempered Cape", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}

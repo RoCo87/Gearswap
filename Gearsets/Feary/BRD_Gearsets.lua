@@ -69,12 +69,12 @@ if player.name == 'Feary' then
 		sets.idle.MDT = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Inyanga Tiara +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}			
+                back="Engulfer Cape +1", waist="Flume Belt", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				main={name="Chatoyant Staff", priority=2}, sub={name="", priority=1},
 				head="", neck="Eidolon Pendant",
                 body="Gende. Bilaut +1", hands="Gende. Gages +1",
-                back="Felicitas Cape", feet="Chelona Boots +1"})
+                back="Felicitas Cape +1", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Etiolation Earring",
                 feet="Fili Cothurnes +1"})
@@ -180,7 +180,7 @@ if player.name == 'Feary' then
 		-- 40 MND
 		sets.midcast.Stoneskin = set_combine(sets.idle.PDT, {})
 		sets.midcast.Aquaveil = {waist="Empahatikos Rope", legs="Shedir Seraweels"}
-		sets.midcast.Blink = set_combi/	ne(sets.midcast.Aquaveil)
+		sets.midcast.Blink = set_combine(sets.midcast.Aquaveil)
 		sets.midcast.Reraise = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Regen = {head="Inyanga Tiara +1"}
 

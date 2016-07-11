@@ -44,7 +44,7 @@ sets.idle.PDT = {
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Otro. Harness +1", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
+                back="Engulfer Cape +1", waist="Flume Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 
 sets.idle.Evasion = {}
 

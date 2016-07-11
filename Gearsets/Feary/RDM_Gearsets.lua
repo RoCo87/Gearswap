@@ -40,11 +40,11 @@ if player.Name == 'Feary' then
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}			
+                back="Engulfer Cape +1", waist="Flume Belt", legs="Hagondes Pants +1", feet="Helios Boots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2}, sub={name="Pax Grip", priority=1},
 				head="Vitivation Chapeau", neck="Eidolon Pendant", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
+                back="Felicitas Cape +1", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Vitivation Chapeau", lear="Merman's Earring", rear="Etiolation Earring",
 				body="Hagondes Coat +1",

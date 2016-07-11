@@ -38,8 +38,8 @@ if player.Name == 'Feary' then
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				-- Amalric Doublet
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-				-- Felicitas Cape +1	
-                back="Felicitas Cape", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Amalric Nails"}			
+				-- Felicitas Cape +1 +1	
+                back="Felicitas Cape +1", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Amalric Nails"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				main={name="Chatoyant Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1},ammo="Clarus Stone",
 				neck="Eidolon Pendant",

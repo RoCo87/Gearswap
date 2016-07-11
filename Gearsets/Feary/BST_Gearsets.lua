@@ -43,7 +43,7 @@ sets.idle.PDT = {
 sets.idle.MDT = {
 				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape", waist="Nierenschutz", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
+                back="Engulfer Cape +1", waist="Nierenschutz", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
 
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 

@@ -22,11 +22,11 @@ if player.name == 'Feary' then
 		sets.idle.MDT = {main={name="Earth Staff",priority=2}, sub={name="Pax Grip", priority=1},
 				head="Inyanga Tiara +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}			
+                back="Felicitas Cape +1", waist="Austerity Belt", legs="Inyanga Shalwar +1", feet="Inyanga Crackows +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
 				head="Caller's Horn +2", neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Felicitas Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
+                back="Felicitas Cape +1", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {main="Hvergelmir",
 				feet="Herald's Gaiters"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{ammo="",
