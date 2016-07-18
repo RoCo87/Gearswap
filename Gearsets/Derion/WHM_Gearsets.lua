@@ -67,7 +67,7 @@ if player.name == 'Derion' then
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
 				-- body="Heka's Kalairis",
                 --back="Pahtli Cape", 
-				legs="Orsn. Pantaln. +2", feet="Hygieia Clogs"})
+				legs="Ebers Pantaloons", feet="Hygieia Clogs"})
 		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, sets.precast.Fastcast, {
@@ -79,33 +79,41 @@ if player.name == 'Derion' then
 		-- Cures - Queller Rod Sors Shield 
 		sets.midcast.Cure =  {main={name="Arka IV", priority=2}, sub={name="Pax Grip", priority=1}, 
 				-- Gende. Caubeen +1  Nourish Earing
-				head="Gende. Caubeen", neck="Colossus's Torque", lear="Roundel Earring", rear="Orison Earring",
-				-- Theo Mitts +1  Epheral Ring
-                body="Orison Bliaud +2", hands="Augur's Gloves", lring="Sirona's Ring", rring="Aquasoul Ring",
+				head="Ebers Cap", neck="Colossus's Torque", lear="Roundel Earring", rear="Orison Earring",
+				-- Theo Mitts +1
+                body="Ebers Bliaud", hands="Augur's Gloves", lring="Sirona's Ring", rring="Ephedra Ring",
 				-- Alaunus Cape Bishop Sash kaykaus boots
-                back="Tempered Cape +1", waist="Salire Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
+                back="Tempered Cape +1", waist="Salire Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}
 		sets.midcast.EnmityCure = set_combine(sets.midcast.Cure,  {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
 				head="Gende. Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Orison Bliaud +2", hands="Augur's Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Tempered Cape +1", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"})
-
+                body="Ebers Bliaud", hands="Augur's Gloves", lring="Aquasoul Ring", rring="Levia. Ring",
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"})
+		-- Cure Pot > MND
 		sets.midcast.Curaga =  {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
-				head="Orison Cap +2", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
-                body="Gendewitha Bliaut", hands="Augur's Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Refraction Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Rubeus Boots"}
-		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {})
+				head="Gende. Caubeen", neck="Colossus's Torque", lear="Roundel Earring", rear="Orison Earring",
+                body="Ebers Bliaud", hands="Augur's Gloves", lring="Aquasoul Ring", rring="Levia. Ring",
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"}
+		sets.midcast.EnmityCuraga = set_combine(sets.midcast.Curaga, {main={name="Arka IV", priority=2}, sub={name="Pax Grip",priority=1},
+				head="Gende. Caubeen", neck="Colossus's Torque", lear="Novia Earring", rear="Orison Earring",
+                body="Ebers Bliaud", hands="Augur's Gloves", lring="Aquasoul Ring", rring="Levia. Ring",
+                back="Tempered Cape +1", waist="Cascade Belt", legs="Ebers Pantaloons", feet="Rubeus Boots"})
 
 		sets.midcast.Cura = {}
 
 		-- Status Ailments
-		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {})
+		sets.midcast.NaSpells = set_combine(sets.midcast.Recast, {
+				head="Orison Cap"})
 		
 		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
 
+		-- Cursna 500 Skill > Cursna+
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
-				neck="Debilis Medallion",
-                rring="Haoma's Ring",
-                back="Alaunus Cape", legs="Theophany Pantaloons", feet="Gende. Galoshes"})
+				--neck="Debilis Medallion",
+				neck="Colossus's Torque",
+                --hands="Fanatic Gloves", lring="Ephedra Ring",
+                body="Ebers Bliaud", hands="Healer's Mitts", rring="Sirona's Ring", rring="Ephedra Ring",
+				--legs="Theophany Pantaloons",
+				back="Alaunus's Cape", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)
@@ -120,7 +128,7 @@ if player.name == 'Derion' then
 				head="Orison Cap +2", neck="Colossus's Torque",
                 body="Orison Bliaut +2", hands="Orison Mitts +2", 
                 -- back="Merciful Cape", waist="Cascade Belt",
-				legs="Orsn. Pantaln. +2", feet="Orsn. Duckbills +2"}
+				legs="Ebers Pantaloons", feet="Orsn. Duckbills +2"}
 		sets.midcast.BarStatus = {main={name="Beneficus", priority=2}, sub={name="Genbu's Shield", priority=1},
 				-- lear="Andoaa Earring", 
 				neck="Colossus's Torque", 
@@ -158,7 +166,7 @@ if player.name == 'Derion' then
 		sets.midcast.Enfeebling = {main={name="Soothsayer Staff", priority=2}, sub={name="Mephitis Grip", priority=1},
 				-- neck="Eddy Necklace", 
 				head="Inyanga Tiara",lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Inyanga Jubbah", hands="Inyanga Dastanas", lring="Aquasoul ring", rring="Aquasoul ring",
+                body="Inyanga Jubbah", hands="Inyanga Dastanas", lring="Aquasoul ring", rring="Levia. Ring",
                 back="Ogapepo Cape", waist="Salire Belt", legs="Inyanga Shalwar", feet="Inyanga Crackows +1"}
 		sets.midcast.Macc = {main={name="Soothsayer Staff", priority=2}, sub={name="Mephitis Grip", priority=1},
 				--  neck="Eddy Necklace",

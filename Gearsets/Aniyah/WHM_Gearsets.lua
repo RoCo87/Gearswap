@@ -107,11 +107,14 @@ if player.name == 'Aniyah' then
 		
 		sets.midcast.Erase = set_combine(sets.midcast.NaSpells)
 
+		-- Cursna 500 Skill > + Cursna 
 		sets.midcast.Cursna = set_combine(sets.midcast.Recast, {
 				--neck="Debilis Medallion",
-                --rring="Haoma's Ring",
-                --back="Mending Cape", legs="Theophany Pantaloons",
-				feet="Gende. Galoshes"})
+				neck="Colossus's Torque",
+                --hands="Fanatic Gloves", rring="Haoma's Ring", rring="Haoma's Ring",
+                body="Ebers Bliaud", hands="Healer's Mitts",
+				--legs="Theophany Pantaloons",
+				back="Alaunus's Cape", feet="Gende. Galoshes"})
 				
 		sets.midcast.Esuna = set_combine(sets.midcast.Recast)
 		sets.midcast.Sacrifice = set_combine(sets.midcast.Recast)

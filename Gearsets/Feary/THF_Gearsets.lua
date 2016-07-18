@@ -113,7 +113,7 @@ if player.name == 'Feary' then
 
 	-- Alliance Buffed
 	-- 11 DW needed 
-	sets.TP.Buffed = {	ammo="Ginsen",
+	sets.TP.Buffed = { ammo="Ginsen",
 				head="Skulker's Bonnet", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
 				body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
@@ -125,7 +125,7 @@ if player.name == 'Feary' then
 				back="Fravashi Mantle", waist="Twilight Belt", legs="Taeon Tights", feet="Taeon Boots"})
 
 	-- RA Sets
-	sets.precast.Snapshot = {legs="Nahtirah Trousers"}
+	sets.precast.Snapshot = {hands="Iuitl Wristbands +1", legs="Nahtirah Trousers"}
 
 	sets.RA = {}
 					
