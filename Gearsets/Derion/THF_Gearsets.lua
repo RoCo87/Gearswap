@@ -230,14 +230,14 @@ if player.name == 'Derion' then
 
 	-- Evisceration
 	sets.precast.WS["Evisceration"] = {
-			head="Iuitl Headgear +1", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
-			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Wanion Belt", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
+			head="Meghanada Visor", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+			back="Atheling Mantle", waist="Wanion Belt", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
 
 	sets.precast.WS.Acc["Evisceration"] = {
-			head="Iuitl Headgear +1", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
-			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Wanion Belt", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
+			head="Meghanada Visor", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+			back="Atheling Mantle", waist="Wanion Belt", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
 
 	-- Dancing Edge
 	sets.precast.WS["Dancing Edge"] = {
