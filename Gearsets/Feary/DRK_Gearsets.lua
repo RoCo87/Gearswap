@@ -34,12 +34,12 @@ if player.name == 'Feary' then
 -- Standard/idle
 	sets.idle.PDT = {
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-			body="Yorium Cuirass", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+			body="Tartarus Platemail", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Repulse Mantle", waist="Flume Belt", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-			body="Yorium Cuirass", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+			body="Tartarus Platemail", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Engulfer Cape +1", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.Standard = set_combine(sets.idle.PDT, {

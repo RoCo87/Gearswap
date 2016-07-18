@@ -36,7 +36,7 @@ if player.name == 'Derion' then
 			head="Iuitl Headgear +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
 			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1.Derion, rring="",
 			-- Flume Belt
-			back="Repulse Mantle", waist="", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
+			back="Repulse Mantle", waist="", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
 
 	sets.idle.MDT = { 
 			head="Iuitl Headgear +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
@@ -165,6 +165,15 @@ if player.name == 'Derion' then
 			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
 			back="Atheling Mantle", waist="Wanion Belt", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
 	
+	sets.precast.WS.Acc = {
+					head="Pill. Bonnet +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Moonshade Earring",
+					body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
+					back="Kayapa Cape", waist="Wanion Belt", legs="Taeon Tights", feet="Taeon Boots"}
+
+	sets.precast.WS.Acc.SA = {}
+
+	sets.precast.WS.Acc.TA = {}
+	
 	-- Mercy Stroke
 	sets.precast.WS["Mercy Stroke"] = {
 			head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
@@ -194,6 +203,19 @@ if player.name == 'Derion' then
 			head="Pillager's Bonnet", neck="Shadow Gorget", lear="Steelflash Earring", rear="Bladeborn Earring",
 			body="Pillager's Vest", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring",
 			back="Vespid Mantle", waist="Prosilio Belt", legs="Pillager's Culottes", feet="Pillager's Poulaines"}
+	-- Acc 	
+	sets.precast.WS.Acc["Rudra's Storm"] = {
+					head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+					body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+					back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+	sets.precast.WS.Acc.SA["Rudra's Storm"] = {
+					head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+					body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+					back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+	sets.precast.WS.Acc.TA["Rudra's Storm"] = {
+					head="Pill. Bonnet +1", neck="Fotia Gorget", lear="Kuwunga Earring", rear="Moonshade Earring",
+					body="Pillager's Vest +1", hands="Pillager's Armlets", lring="Rajas Ring", rring="Ramuh Ring +1",
+					back="Kayapa Cape", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
 
 	-- Exenterator
 	sets.precast.WS["Exenterator"] = {
@@ -201,7 +223,6 @@ if player.name == 'Derion' then
 			body="Pillager's Vest", hands="Pillager's Armlets", lring="Stormsoul Ring", rring="Epona's Ring",
 			back="Vespid Mantle", waist="Prosilio Belt", legs="Nahtirah Trousers", feet="Pillager's Poulaines"}
 
-	sets.precast.WS.Acc = {}
 	sets.precast.WS.Acc["Exenterator"] = {
 			head="Whirlpool Mask", neck="Justiciar's Torque", lear="Steelflash Earring", rear="Bladeborn Earring",
 			body="Iuitl Vest +1", hands="Pillager's Armlets", lring="Stormsoul Ring", rring="Epona's Ring",
@@ -217,11 +238,19 @@ if player.name == 'Derion' then
 			head="Iuitl Headgear +1", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
 			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring="Rajas Ring", rring="Epona's Ring",
 			back="Atheling Mantle", waist="Wanion Belt", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
+
+	-- Dancing Edge
+	sets.precast.WS["Dancing Edge"] = {
+					head="Skulker's Bonnet", neck="Asperity Necklace", lear="Steelflash Earring", rear="Bladeborn Earring",
+					body="Pillager's Vest +1", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+					back="Atheling Mantle", waist="Wanion Belt", legs="Pillager's Culottes", feet="Taeon Boots"}
+	
 	-- Aeolian Edge
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS,{
-			-- Founder/obyssean
-		--	head="Sukeroku Hachimaki", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-			-- Carmine Mail +1  Carmine Fin. Gauntlets +1  Shiva Ring +1 Shiva Ring +1 
-		--	body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Shiva Ring", rring="Shiva Ring",
-			-- back=Aug.Cape.PLD.WS, waist="Wanion Belt", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"})
+			-- neck="Fotia Gorget", lear="Crematio Earring",
+			head="Meghanada Visor",  lear="Hecate Earring", rear="Friomisi Earring",
+			--  Shiva Ring +1 Shiva Ring +1 
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Shiva Ring", rring="Shiva Ring",
+			-- back=Aug.Cape.THF.WS 
+			waist="Wanion Belt", legs="Meghanada Chausses", feet="Meghanada Jambeaux"})
 end

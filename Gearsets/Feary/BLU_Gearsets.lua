@@ -47,8 +47,6 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Etiolation Earring",
 				legs="Blood Cuisses"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				head="Luhlaza Keffiyeh",
-				body="Assim. Jubbah",
 				legs="Blood Cuisses"})
 		 sets.lockstyle = set_combine{sets.misc.Town}
 		 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
