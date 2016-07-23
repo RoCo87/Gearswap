@@ -2,6 +2,8 @@
 -- Created: 4/26/2014
 -- Last Updated: 6/13/2014
 -- To Do List:
+-- Spell.Interrupted 
+--
 --
 --
 
@@ -26,7 +28,7 @@ if player.name == 'Feary' then
 				set_macro_page(8,5)
 			end
 		else
-			set_macro_page(8,3)
+			set_macro_page(8,1)
 		end
 
 		-- Auto Sets
@@ -34,7 +36,7 @@ if player.name == 'Feary' then
 		sets.idle.PDT = {
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
+                back="Umbra Cape", waist="Flume Belt", legs="Hagondes Pants +1", feet="Hag. Sabots +1"}
 		sets.idle.MDT = {ammo="Vanir Battery",
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
@@ -52,7 +54,7 @@ if player.name == 'Feary' then
 		 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
 				body="Fisherman's Smock", hands="Kachina Gloves", lring="Noddy Ring", rring="Puffin Ring",
-				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
 		sets.idle.Wood = set_combine(sets.idle.Standard,{
 				neck="Carpenter's Torque",
 				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's Ring",
@@ -64,7 +66,7 @@ if player.name == 'Feary' then
 		
 		sets.precast.JA["Unbridled Learning"] = {}
 		sets.precast.JA["Chain Affinity"] = {head="Hashishin Kavuk", feet="Assimilator's Charuqs"}
-		sets.precast.JA["Burst Affinity"] = {legs="Assimilator's Shalwar", feet="Mavi Basmak +2"}
+		sets.precast.JA["Burst Affinity"] = {legs="Mirage Shalwar", feet="Mavi Basmak +2"}
 		sets.precast.JA["Efflux"] = {legs="Hashishin Tayt"}
 		sets.precast.JA["Diffusion"] = {feet="Luhlaza Charuqs"}
 		sets.precast.JA["Convergence"] = {head="Luhlaza Keffiyeh"}
@@ -73,22 +75,70 @@ if player.name == 'Feary' then
 		-- Precast
 		-- Magic
 		sets.precast.Fastcast = {ammo="Impatiens",
-				head="Haruspex Hat +1", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+				-- neck="Voltsurge Torque", 
+				head="Carmine Mask +1", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+				-- Leyline Gloves
                 body="Luhlaza Jubbah", hands="Thaumas Gloves", rring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Orvail Pants +1", feet="Amalric Nails"}
-		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Mavi Mintan +2"})
+				-- 
+                back="Swith Cape +1", waist="Witful Belt", legs="Orvail Pants +1", feet="Carmine Greaves +1"}
+		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Hashishin Mintan"})
 		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
+		
+		-- Misc
+		sets.misc.Waltz = {}
+		sets.misc.Steps = {ammo="Ginsen",
+				head="Carmine Mask +1", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+				-- Adhemar Jacket  Adhemar Wristbands lring="Petrov Ring"
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
+                -- Rosmerta's Cape 
+				back="Ground. Mantle +1", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"}
+		sets.misc.flourish = {}
 		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {
 			waist="Witful Belt"})
-		sets.midcast.ConserveMP = {}
+		sets.midcast.ConserveMP = {feet="Carmine Greaves +1"}
 		
+		-- Melee Sets
+		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
+				-- Adhemar Bonnet
+                head="Carmine Mask +1", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
+				-- Adhemar Jacket  Adhemar Wristbands lring="Petrov Ring"
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
+                -- Bleating Mantle 
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"})
+		-- Accuracy - Need 1200 Acc - 100 = 1100
+		sets.TP.Acc = set_combine(sets.TP, {ammo="Ginsen",
+               -- Adhemar Bonnet Zennoroi
+                head="Carmine Mask +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
+				-- Adhemar Jacket  Adhemar Wristbands lring="Cacoethic Ring +1"
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Patricius Ring",
+				-- Rosmerta Cape
+				back="Ground. Mantle +1", waist="Anguinus Belt", legs="Taeon Tights", feet="Carmine Greaves +1"})
+		-- Alliance Buffs - Haste + March x2 
+		sets.TP.Buffed = set_combine(sets.TP, {ammo="Ginsen",
+                -- Adhemar Bonnet
+                head="Carmine Mask +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
+				-- Adhemar Jacket  Adhemar Wristbands lring="Petrov Ring"
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
+                -- Bleating Mantle 
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"})
+				
+		--  DT/Acc
+		sets.TP.Hybrid = set_combine(sets.idle.PDT, {ammo="Ginsen",
+                -- Adhemar Bonnet 	
+                head="Carmine Mask +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
+				-- Adhemar Jacket  Adhemar Wristbands lring="Petrov Ring"
+                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
+                -- Bleating Mantle 
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"})
+				
 		-- Blue Magic
 		-- Skill
-		sets.midcast.BlueMagic = set_combine(sets.TP,{ammo="Mavi Tathlum",
+		sets.midcast.BlueMagic = set_combine(sets.TP, {ammo="Mavi Tathlum",
                 head="Luhlaza Keffiyeh",
-                body="Assimilator's Jubbah", hands="Fea's Cuffs",
+				-- hands="Fea's Cuffs",
+                body="Assimilator's Jubbah", 
                 back="Cornflower Cape", legs="Hashishin Tayt", feet="Luhlaza Charuqs"})
 		sets.idle.BlueMagic = {}
 		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{hands="Assim. Bazu.", back="Atheling Mantle"})
@@ -138,7 +188,7 @@ if player.name == 'Feary' then
                 back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
 		-- Macc
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
-                head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                head="Luhlaza Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Assimilator's Jubbah", hands="Amalric Gages", lring="Sangoma Ring", rring="Perception Ring",
                 back="Cornflower Cape", waist="Ovate Rope", legs="Amalric Slops", feet="Amalric Nails"})	
 		-- Acc
@@ -158,7 +208,7 @@ if player.name == 'Feary' then
                 back="Tempered Cape +1", waist="Chuq'aba Belt",})
 		
 		-- Nuke
-		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tahlum",
+		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tathlum",
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
@@ -169,32 +219,10 @@ if player.name == 'Feary' then
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
 		-- Breath 
-		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
-        ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh"})
+		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {ammo="Mavi Tathlum",
+				head="Luhlaza Keffiyeh"
+				})
 		
-		-- Melee Sets
-		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
-                head="Taeon Chapeau", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
-		-- Accuracy - Need 1200 Acc - Sole +1 = 81 = 1119 
-		sets.TP.Acc = set_combine(sets.TP, {ammo="Ginsen",
-                head="Taeon Chapeau", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-				-- Ramuh Ring
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Patricius Ring",
-                back="Gounded Mantle +1", waist="Anguinus Belt", legs="Taeon Tights", feet="Taeon Boots"})
-		-- Alliance Buffs - Haste + March x2 
-		sets.TP.Buffed = set_combine(sets.TP, {ammo="Ginsen",
-                head="Taeon Chapeau", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
-
-		-- Evasion or DT ?
-		sets.TP.Hybrid = set_combine(sets.idle.PDT, {ammo="Ginsen",
-                head="Taeon Chapeau", neck="Twilight Torque", lear="Brutal Earring", rear="Suppanomimi",
-                body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring=Aug.Darkring1, rring="Defending Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"})
 		
 		-- Weaponskill
 		sets.precast.WS = set_combine(sets.TP, {ammo="Ginsen",
@@ -248,8 +276,5 @@ if player.name == 'Feary' then
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
                 back="Toro Cape", waist="Wanion Belt", legs="Hagondes Pants +1", feet="Helios Boots"}
 		
-		-- Misc
-		sets.misc.Waltz = {}
-		sets.misc.Steps = set_combine(sets.TP.Acc,{})
-		sets.misc.flourish = {}
+	
 end

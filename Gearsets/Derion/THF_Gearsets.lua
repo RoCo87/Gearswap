@@ -33,15 +33,15 @@ if player.name == 'Derion' then
 	-- Auto Sets
 	-- Standard/idle
 	sets.idle.PDT = { 
-			head="Iuitl Headgear +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1.Derion, rring="",
+			head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+			body="Meghanada Cuirie", hands="Meghanada Gloves", lring=Aug.Darkring1.Derion, rring="",
 			-- Flume Belt
-			back="Repulse Mantle", waist="", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
+			back="Repulse Mantle", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
 
 	sets.idle.MDT = { 
-			head="Iuitl Headgear +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
-			body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1.Derion, rring="Shadow Ring",
-			back="Engulfer Cape", waist="", legs="Iuitl Tights +1", feet="Meg. Jambeaux"}
+			head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+			body="Meghanda Cuirie", hands="Meghanada Gloves", lring=Aug.Darkring1.Derion, rring="Shadow Ring",
+			back="Engulfer Cape", waist="", legs="Meghanada Chausses", feet="Meg. Jambeaux"}
 
 	sets.misc.Town = set_combine(sets.idle.PDT, { 
 					feet="Fajin Boots"})

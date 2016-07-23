@@ -238,13 +238,13 @@ if player.name == 'Feary' then
 	-- Savage Blade
 	sets.precast.WS['Savage Blade'] = {ammo="Ginsen",
 			-- Lust. Cap +1
-			head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+			head="Sulevia's Mask +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
 			-- Lustr. Harness +1 Lustr.	Mittens +1 
-			body="Chev. Cuirass", hands="Miki. Gauntlets", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+			body="Chev. Cuirass", hands="Sulev. Gauntlets +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
 			-- Metalsinger Belt Lustr. Subligar +1 Lustra. Leggings +1
 			back=Aug.Cape.PLD.WS, waist="Wanion Belt", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 	sets.precast.WS.Acc['Savage Blade'] = {ammo="Ginsen",
-			head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+			head="Sulevia's Mask +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
 			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
 			back=Aug.Cape.PLD.WS, waist="Wanion Belt", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 

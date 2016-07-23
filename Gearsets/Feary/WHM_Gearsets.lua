@@ -129,7 +129,7 @@ if player.name == 'Feary' then
                 back="Merciful Cape", waist="Olympus Sash", legs="Ebers Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.BarStatus = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",
-                body="Anhur Robe", hands="Ayao's Gages",
+                body="Anhur Robe", hands="Inyanga Dastanas +1",
                 back="Merciful Cape", waist="Olympus Sash", legs="Piety Pantaloons", feet="Ebers Duckbills"}
 		sets.midcast.Boost = {main="Beneficus",
 				head="Umuthi Hat", neck="Colossus's Torque", lear="Andoaa Earring", rear="Augment. Earring",

@@ -71,6 +71,15 @@
 	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
 	-- Blu Skill +10
 	Aug.Cape.BLU = {name="Cornflower Cape"}
+	-- DEX ACC STP
+	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments=""}
+	-- STR ACC WSD
+	Aug.Cape.BLU.WS = {name="Rosmerta's Cape", augments=""}
+	-- INT MACC MAB
+	Aug.Cape.BLU.MB = {name="Rosmerta's Cape", augments=""}
+	-- Fastcast
+	Aug.Cape.BLU.FC = {name="Rosmerta's Cape", augments=""}
+	
 	-- Phantom Roll -5
 	Aug.Cape.COR = {name="Gunslinger's Cape"}
 	-- ?

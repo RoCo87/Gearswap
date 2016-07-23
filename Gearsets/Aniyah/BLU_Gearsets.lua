@@ -199,7 +199,7 @@ if player.name == 'Aniyah' then
                 back="Tempered Cape", waist="Chuq'aba Belt",})
 				
 		-- Nuke
-		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tahlum",
+		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tathlum",
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
