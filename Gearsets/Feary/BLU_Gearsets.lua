@@ -109,7 +109,7 @@ if player.name == 'Feary' then
 				back="Atheling Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"})
 		-- Accuracy - Need 1200 Acc - 100 = 1100
 		sets.TP.Acc = set_combine(sets.TP, {ammo="Ginsen",
-               -- Adhemar Bonnet Zennoroi
+               -- Adhemar Bonnet Zennoroi	
                 head="Carmine Mask +1", neck="Iqabi Necklace", lear="Brutal Earring", rear="Suppanomimi",
 				-- Adhemar Jacket  Adhemar Wristbands lring="Cacoethic Ring +1"
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Patricius Ring",
@@ -253,9 +253,11 @@ if player.name == 'Feary' then
                 back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
 		-- Requiescat
 		sets.precast.WS['Requiescat'] = {ammo="Vanir Battery",
-                head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+                head="Carmine Mask +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+				-- Carmine Mail +1 Carmine Fin. Ga. +1
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Levia. Ring +1", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots"}
+                -- Rosmerta's Cape 
+				back="Atheling Mantle", waist="Fotia Belt", legs="Samnuha Tights", feet="Carmine Greaves +1"}
 		sets.precast.WS.Acc['Requiescat'] = {ammo="Vanir Battery",
                 head="Taeon Chapeau", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Taeon Tabard", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Levia. Ring +1", rring="Levia. Ring +1",

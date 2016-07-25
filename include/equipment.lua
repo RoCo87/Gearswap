@@ -61,6 +61,13 @@
 	Aug.Cape.BRD = {name="Rhapsode's Cape", augments={'HP+24','Mag. Acc.+7','Enmity-4','Damage taken-1%',}}
 	-- STP +3
 	Aug.Cape.RNG = {name="Lutian Cape", augments={}}
+	-- STP
+	Aug.Cape.RNG.TP = {}
+	-- WSD
+	Aug.Cape.RNG.WS = {}
+	-- Snapshot
+	Aug.Cape.RNG.Snapshot = {}
+	
 	-- stp+3 mediate
 	Aug.Cape.SAM = {name="Tahaka Mantle"}
 	-- WSD +3

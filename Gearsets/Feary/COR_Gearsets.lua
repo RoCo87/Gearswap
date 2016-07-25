@@ -1,6 +1,6 @@
 -- Feary's COR Gear_sets
 -- Created: 03/10/2014
--- Last Modified: 9/4/2014
+-- Last Modified: 7/25/2016
 --
 --
 

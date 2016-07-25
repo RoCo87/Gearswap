@@ -1,6 +1,6 @@
 -- RNG Gear_sets
 -- Created: 3/10/2014
--- Last Updated: 02/03/2015
+-- Last Updated: 07/25/2016
 -- To Do:
 --
 --
@@ -57,8 +57,8 @@ if player.name == 'Feary' then
 				feet="Fajin Boots"})
 						
 		sets.idle.Standard = set_combine(sets.idle.PDT, {
-						lear="Merman's Earring", rear="Etiolation Earring", 
-						feet="Fajin Boots"})
+				lear="Merman's Earring", rear="Etiolation Earring", 
+				feet="Fajin Boots"})
 						
 		-- Precast				
 		sets.precast.Fastcast = set_combine(sets.idle.PDT, {
@@ -76,14 +76,111 @@ if player.name == 'Feary' then
 
 		-- Barrage 
 		sets.precast.JA["Barrage"] =  {
-						head="Arcadian Beret +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
-						body="Kyujutsugi", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-						back="Lutian Cape", waist="Scout's Belt", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
+				head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
+				-- Belenus.STP
+				back="Lutian Cape", waist="Scout's Belt", legs="Desultor Tassets", feet="Meg. Jam. +1"}
 
 		sets.precast.JA.Acc["Barrage"] =  {
-						head="Arcadian Beret +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
-						body="Kyujutsugi", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-						back="Lutian Cape", waist="Scout's Belt", legs="Aetosaur Trousers +1", feet="Orion Socks +1"}
+				head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
+				-- Belenus.STP	
+				back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses", feet="Meg. Jam. +1"}
+						
+		-- JA
+		sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
+		sets.precast.JA["Sharpshot"] = {legs="Orion Braccae +1"}
+		sets.precast.JA["Double Shot"] = {body="Amini Gapette"}
+		sets.precast.JA["Velocity Shot"] = {legs="Amini Caban", back="Belenus's Cape"}
+		sets.precast.JA["Camouflage"] = {head="Orion Jerkin +1"}
+		sets.precast.JA["Scavenge"] = {feet="Orion Socks +1"}
+		sets.precast.JA["Bounty Shot"] = {hands="Amini Glovelettes"}
+		sets.precast.JA["Unlimited Shot"] = {feet="Amini Bottillons"}
+		sets.precast.JA["Flashy Shot"] = {hands="Arc. Bracers +1"}
+		sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks +1"}
+
+		-- Melee TP 
+		sets.TP = { 
+						head="Meghanada Visor", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+						back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+		-- Melee Accuracy TP
+		sets.TP.Acc = {
+						head="Meghanada Visor", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+						back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+
+		-- RA Sets
+		-- Snapshot - Caps at 80 from any source.
+		-- Merit:10 Gifts:10 Flurry II: 30
+		sets.precast.Snapshot = {
+						head="Amini Gapette",
+						-- Arc. Jerkin +1  hands="Carmine Fin. Ga. +1"
+						body="Amini Caban", hands="Iuitl Wristbands +1",
+						-- Belenus Cape Adhemar Kecks
+						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
+		sets.precast.Snapshot.Flurry = {
+						head="Amini Gapette",
+						body="Amini Caban", hands="Iuitl Wristbands +1",
+						-- Arc. Braccae +1
+						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
+		sets.precast.Radpidshot = {
+						head="Orion Beret +1",
+						-- hands="Carmine Fin. Ga. +1",
+						body="Arc. Jerkin +1", 
+						-- back="Belenus Cape",
+						legs="Adhemar Kecks", feet="Pursuer's Gaiters"}
+						
+		-- Overkill
+		sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
+						head="Orion Beret +1",
+						body="Amini Caban", hands="Arc. Bracers +1",
+						waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
+
+		-- Bow
+		-- Needs 42+ STP For 3/4 Hit, Goal is 50.
+		-- Current: 46 + Recycle
+		sets.RA = { -- Perun +1 Perun  
+					-- Neritic Earring
+					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
+					-- Belenus Cape Yemaya Belt 
+					back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
+						
+		-- Current - 33 STP
+		sets.RA.Acc = {
+					head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+					-- Belenus Cape Yemaya Belt
+					back="Lutian Cape", waist="Scout's Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+		
+		-- SAM Subjob
+		sets.RA.Sam = { -- Perun +1 Perun  
+					-- Neritic Earring
+					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
+					-- Belenus Cape Yemaya Belt 
+					back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
+						
+		-- 
+		sets.RA.Acc.Sam = {
+					head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+					-- Belenus Cape Yemaya Belt
+					back="Lutian Cape", waist="Scout's Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+				
+		-- Gun
+		sets.RA.Gun = { 
+					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Hajduk Ring",
+					back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						
+		sets.RA.Acc.Gun = { 
+					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
+					body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
+					back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+
+						
 		-- Eagle Eye Shot
 		sets.precast.JA["Eagle Eye Shot"] = set_combine(sets.RA, {legs="Arcadian Braccae +1"})
 
@@ -99,64 +196,6 @@ if player.name == 'Feary' then
 						head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
 						body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1 ", rring="Garuda Ring +1",
 						back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
-
-		sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
-		sets.precast.JA["Sharpshot"] = {legs="Orion Braccae +1"}
-		sets.precast.JA["Double Shot"] = {body="Amini Gapette"}
-		sets.precast.JA["Velocity Shot"] = {legs="Amini Caban"}
-		sets.precast.JA["Camouflage"] = {head="Orion Jerkin +1"}
-		sets.precast.JA["Scavenge"] = {feet="Orion Socks +1"}
-		sets.precast.JA["Bounty Shot"] = {hands="Amini Glovelettes"}
-		sets.precast.JA["Unlimited Shot"] = {feet="Amini Bottillons"}
-		sets.precast.JA["Flashy Shot"] = {hands="Arc. Bracers +1"}
-		sets.precast.JA["Stealth Shot"] = {feet="Arcadian Socks +1"}
-
-		-- Melee TP 
-		sets.TP = { 
-						head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-						body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-						back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
-		-- Melee Accuracy TP
-		sets.TP.Acc = {
-						head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-						body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Ramuh Ring +1",
-						back="Atheling Mantle", waist="Hurch'lan Sash",  legs="Taeon Tights", feet="Taeon Boots"}
-
-		-- RA Sets
-		-- Snapshot - Caps at 80 from any source.
-		sets.precast.Snapshot = {
-						head="Amini Gapette",
-						body="Amini Caban", hands="Iuitl Wristbands +1",
-						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"}
-		sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
-						head="Orion Beret +1",
-						body="Amini Caban", hands="Arc. Bracers +1",
-						waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
-
-		-- Bow
-		-- Needs 42+ STP For 3/4 Hit, Goal is 50.
-		-- Current: 46 + Recycle
-		sets.RA = { 
-					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
-					body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
-					back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
-						
-		-- Current- 33 STP
-		sets.RA.Acc = {
-					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
-					body="Kyujutsugi", hands="Amini Glovelettes", lring="Garuda Ring +1", rring="Garuda Ring +1",
-					back="Lutian Cape", waist="Patentia Sash", legs="Feast Hose", feet="Orion Socks +1"}
-						
-		-- Gun
-		sets.RA.Gun = { 
-					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
-					body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Garuda Ring +1",
-					back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
-						
-		sets.RA.Acc.Gun = { 
-					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
-					body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-					back="Lutian Cape", waist="Patentia Sash", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 		-- Weaponskills
 		-- Melee
