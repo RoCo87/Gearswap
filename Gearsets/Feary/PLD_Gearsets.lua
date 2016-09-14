@@ -39,30 +39,44 @@ if player.name == 'Feary' then
 	physicalshield = {sub="Ochain"}
 	magicalshield = {sub="Aegis"}
 
-	-- Standard/idle
+	-- Standard/Idle - Iron Gobbet
 	sets.idle.PDT = { ammo="Hasty Pinion +1",
+			-- Souveran Schaller +1 Combatant's Torque Thureous Earring
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
+			-- Chev. Gauntlets +1
 			body="Tartarus Platemail", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			-- Chev Cuisses +1 Soveriegn Schuhs +1
+			back=Aug.Cape.PLD, waist="Flume Belt +1", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
+			-- Founder's Corona Warder's Charm +1
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-			body="Tartarus Platemail, hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Mollusca Mantle", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			-- 
+			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring="Shadow Ring, rring="Defending Ring",
+			-- Flax Sash Souv. Diechlings +1 Cab Leggings +1
+			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT.Shell = { ammo="Vanir Battery",
+			-- Founder's Corona Warder's Charm +1 Spellbr. Earring  Sanare Earring
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-			body="Tartarus Platemail", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.BDT = { ammo="Hasty Pinion +1",
+			-- Souveran Schaller +1 Zwazo Earring +1
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
+			-- Souv. Cuirass +1
 			body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+			-- Xucau Mantle
 			back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
-
+		
+	-- Turtle
 	sets.idle.DT = { ammo="Hasty Pinion +1",
+			-- Souv. Schaller +1 Warder's Charm Odnowa Earring +1 Odnowa Earring
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
-			body="Tartarus Platemail", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
+			-- Souveran Cuirass +1 
+			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring=Aug.Darkring1, rring="Defending Ring",
+			-- Reiki Cloak Gold Mog. Belt Souv. Diechlings +1 Souveran Schuhs +1
 			back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
 
 	sets.misc.Town = set_combine(sets.idle.DT, {
@@ -78,25 +92,25 @@ if player.name == 'Feary' then
 	-- TP 
 	sets.TP = {ammo="Ginsen",
 			head="Sulevia's Mask +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-			-- Souvereign
-			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Rajas Ring", rring="K'ayres Ring",
+			-- Souveran Cuirass +1
+			body="Chev. Cuirass", hands="Souv. Handsch. +1", lring="Rajas Ring", rring="K'ayres Ring",
 			back="Atheling Mantle", waist="Windbuffet Belt", legs="Sulevia's Cuisses +1", feet="Sulevia's Leggings +1"}
 	sets.TP.Acc = { ammo="Hasty Pinion +1",
 			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-			-- Souvereign
+			-- Souveran
 			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Sulevia's Cuisses +1", feet="Carmine Greaves +1"}
 	-- Tank 
 	sets.TP.Tank = {ammo="Hasty Pinion +1",
 			head="Sulevia's Mask +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-			-- Souvereign
-			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+			-- Souveran
+			body="Chev. Cuirass", hands="Souveran Handschuhs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Sulevia's Cuisses +1", feet="Sulevia's Leggings +1"}
 	
 	-- DT/Acc Turtle Build
 	sets.TP.Hybrid = { ammo="Hasty Pinion +1",
 			head="Sulevia's Mask +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-			-- Souvereign
+			-- Souveran
 			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Sulevia's Cuisses +1", feet="Sulevia's Leggings +1"}
 	
@@ -175,8 +189,8 @@ if player.name == 'Feary' then
 	sets.midcast.EnhancingMagic.Refresh = {feet="Shab. Sabatons +1"}
 	
 	sets.midcast.EnhancingMagic.Reprisal = set_combine(sets.midcast.EnhancingMagic, {
-				-- Souvereign Schaller Dualism Collar +1 Odnowa Earring Odnowa Earring +1
-				-- Souvereign Cuirass Souvereign Handschuhs Eihwaz Ring Meridian Ring 
+				-- Souveran Schaller Dualism Collar +1 Odnowa Earring Odnowa Earring +1
+				-- Souveran Cuirass Souveran Handschuhs Eihwaz Ring Meridian Ring 
 				rring="Meridian Ring",
 				-- Reiki Cloak Creed Baudrier Souv Diechlings Souv Schuhs
 				waist="Creed Baudrier"})
