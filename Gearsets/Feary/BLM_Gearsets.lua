@@ -38,7 +38,7 @@ if player.Name == 'Feary' then
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				-- Amalric Doublet
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-				-- Felicitas Cape +1 +1	
+				-- Felicitas Cape +1
                 back="Felicitas Cape +1", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Amalric Nails"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				main={name="Chatoyant Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1},ammo="Clarus Stone",
@@ -102,48 +102,48 @@ if player.Name == 'Feary' then
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		-- Damage
 		sets.midcast.Nuke = {main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		-- Acc
 		sets.midcast.Nuke.Acc = {main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Eddy Necklace", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		
 		-- Magic Burst
 		sets.midcast.Nuke.MB = {main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		-- Magic Burst Acc
 		sets.midcast.Nuke.MB.Acc = {main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Spaekona's Coat", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 				
 		-- Death
 		sets.idle.Death = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.precast.Death = {}
 		sets.midcast.Nuke.Death = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.midcast.Nuke.Death.Acc = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
                 body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.midcast.Nuke.Death.MB = {
 				-- Noibid Strap - Psilomene
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				-- Pixie Hairpin 
-				head="Jhakri Coronal", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
+				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
 				-- Amalric Doublet/Merlinic - Memphitas Ring
 			    body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Archon Ring",
 				-- Merlinic Crackows
@@ -177,13 +177,13 @@ if player.Name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main={name="Lathi", priority=2}, sub={name="Mephitis Grip", priority=1}, ammo="Aureole",
-				--head="Jhakri Coronal", 
+				--head="Jhakri Coronal +1", 
 				neck="Eddy Necklace", lear="Barkaro. Earring", rear="Enchntr. Earring +1",
                 -- Helios Jacket
 				body="Cohort Cloak", hands="Helios Gloves", lring="Perception ring", rring="Sangoma ring",
                 back="Ogapepo Cape", waist="Ovate Rope", legs="Artsieq Hose", feet="Helios Boots"}
 		sets.midcast.Macc = {main={name="Lathi", priority=2}, sub={name="Mephitis Grip", priority=1}, ammo="Aureole",
-				-- head="Jhakri Coronal",
+				-- head="Jhakri Coronal +1",
 				neck="Eddy Necklace", lear="Barkaro. Earring", rear="Enchntr. Earring +1",
                 -- Helios Jacket
 				body="Cohort Cloak", hands="Hagondes Cuffs +1", lring="Perception ring", rring="Sangoma ring",

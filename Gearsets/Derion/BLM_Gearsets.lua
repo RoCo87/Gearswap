@@ -35,34 +35,48 @@ if player.Name == 'Derion' then
 
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Earth Staff",
+		sets.idle.PDT = {main={name="Earth Staff", priority=2}, sub={name="Wise Strap", priority=1},
 				head="Hagondes Hat", neck="Twilight Torque",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Hagondes Pants", feet="Hagondes Sabots"}
-		sets.idle.MDT = {
+				--waist="Fucho-no-obi",
+                back="Cheviot Cape",  legs="Hagondes Pants", feet="Hagondes Sabots"}
+		sets.idle.MDT = {main={name="Earth Staff", priority=2}, sub={name="Wise Strap", priority=1},
 				head="Hagondes Hat", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape", waist="Fucho-no-obi",  legs="Hagondes Pants", feet="Hagondes Sabots"}			
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff",
+                --waist="Fucho-no-obi",
+				back="Felicitas Cape", legs="Hagondes Pants", feet="Hagondes Sabots"}			
+		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2},
 				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
-                body="Hagondes Coat", hands="Serpentes Cuffs",
-                back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
+                --hands="Serpentes Cuffs",
+				body="Hagondes Coat", 
+                -- waist="Fucho-no-obi",
+				back="Cheviot Cape", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",feet="Herald's Gaiters"})
-		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
+				lear="Merman's Earring", rear="Merman's Earring",
+				--feet="Herald's Gaiters"
+				})
+		sets.misc.Town = set_combine(sets.idle.PDT, {
+				head="Shaded Spectacles", neck="Goldsmith's Torque",
+				body="Goldsmith's Smock", lring="Craftkeeper's Ring", rring="Craftmaster's Ring", 
+				--feet="Herald's Gaiters"
+				waist="Goldsmith's Belt"})
 		
 		-- JA
-		sets.precast.JA["Manafont"] = {}
+		sets.precast.JA["Manafont"] = {body="Sorcerer's Coat +2"}
 		sets.precast.JA["Subtle Sorcery"] = {}
 		sets.precast.JA["Elemental Seal"] = {}
 		sets.precast.JA["Emnity Douse"] = {}
-		sets.precast.JA["Manawell"] = {}
+		sets.precast.JA["Manawell"] = {feet="Goetia's Sabots +2"}
 		
 		-- Precast
 		-- Magic
-		sets.precast.MinusHP = {head="Zenith Crown",neck="Morgana's Choker",body="Dalmatica",hands="Zenith Mitts",legs="Zenith Slacks",feet="Zenith Pumps"}
-		sets.precast.Fastcast = {ammo="Impatiens",
-				head="Nahtirah Hat", neck="", lear="Loquac. Earring",
+		sets.precast.MinusHP = {
+			head="Zenith Crown", neck="Morgana's Choker",
+			body="Dalmatica", hands="Zenith Mitts",
+			legs="Zenith Slacks", feet="Zenith Pumps"}
+		sets.precast.Fastcast = {--ammo="Impatiens",
+				--neck="Voltsurge Torque",
+				head="Haruspex Hat",  lear="Loquac. Earring",
                 body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
                 back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{head="Goetia Petasos +2"})
