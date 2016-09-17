@@ -51,9 +51,9 @@ if player.name == 'Aniyah' then
                 body="Emet Harness", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
                 back="Shadow Mantle", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
-				head="Ovail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
+				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Cheviot Cape", waist="Austerity Belt", feet="Chelona Boots"})
+                back="Cheviot Cape", waist="Austerity Belt", legs="Crimson Cuisses", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Merman's Earring",
 				hands="Serpentes Cuffs",
@@ -63,11 +63,10 @@ if player.name == 'Aniyah' then
 		-- JA
 		sets.precast.JA["Azure Lore"] = {hands="Luhlaza Bazubands"}
 		sets.precast.JA["Unbridled Wisdom"] = {}
-		
 		sets.precast.JA["Unbridled Learning"] = {}
 		sets.precast.JA["Chain Affinity"] = {head="Hashishin Kavuk", feet="Magus Charuqs"}
 		sets.precast.JA["Burst Affinity"] = {legs="Magus Shalwar", feet="Hashishin Basmak"}
-		sets.precast.JA["Efflux"] = {legs="Mavi Tayt +2"}
+		sets.precast.JA["Efflux"] = {legs="Hashishin Tayt"}
 		sets.precast.JA["Diffusion"] = {feet="Mirage Charuqs"}
 		sets.precast.JA["Convergence"] = {head="Mirage Keffiyeh"}
 		sets.precast.JA["Enchainment"] = {body="Mirage Jubbah"}
@@ -92,7 +91,7 @@ if player.name == 'Aniyah' then
                 head="Mirage Keffiyeh",
                 body="Magus Jubbah", 
 				--  back="Cornflower Cape", feet="Mirage Charuqs"
-				legs="Mavi Tayt +2"})
+				legs="Hashishin Tayt"})
 		
 		sets.idle.BlueMagic = {}
 		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{
@@ -168,16 +167,16 @@ if player.name == 'Aniyah' then
 		-- Macc
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
                 -- head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-				head="Orvail Corona +1",
+				head="Jhakri Coronal",
 				--body="Assimilator's Jubbah", hands="Hagondes Cuffs +1", lring="Sangoma Ring",
-				body="Mavi Mintan +2", hands="Amalric Gages", lring="Balrahn's Ring", rring="Perception Ring",
+				body="Jhakri Robe", hands="Jhakri Cuffs", lring="Balrahn's Ring", rring="Perception Ring",
 				--back="Cornflower Cape", waist="Ovate Rope", legs="Hashishin Tayt", feet="Helios Boots"
-				back="Ogapepo Cape", legs="Orvail Pants +1", feet="Hashishin Basmak"})	
+				back="Ogapepo Cape", legs="Jhakri Slops", feet="Jhakri Pigaches"})	
 		-- Acc
 		sets.midcast.BlueMagic.PhysMagicAcc = set_combine(sets.midcast.Macc, {
-                head="Mirage Keffiyeh", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-                body="Assimilator's Jubbah", hands="Helios Gloves", lring="Sangoma Ring", rring="Perception Ring",
-                back="Cornflower Cape", waist="Ovate Rope", legs="Hashishin Tayt", feet="Helios Boots"})
+                head="Jhakri Coronal", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Sangoma Ring", rring="Perception Ring",
+                back="Cornflower Cape", waist="Ovate Rope", legs="Jhakri Slops", feet="Jhakri Pigaches"})
 
 		-- Healing Cure Pot
 		sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
@@ -200,15 +199,15 @@ if player.name == 'Aniyah' then
 				
 		-- Nuke
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tathlum",
-                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
+                head="Jhakri Coronal", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Warwolf Belt", legs="Jhakri Slops", feet="Jhakri Pigaches"})
 		-- Dark - Tenerbal Crush
 		sets.midcast.BlueMagic.Nuke.Dark = set_combine(sets.midcast.Nuke, {
 				-- Pixie Hairpin +1
-                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Archon Ring",
-                back="Toro Cape", waist="Warwolf Belt", legs="Hagondes Pants +1", feet="Amalric Nails"})
+               head="Jhakri Coronal", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Archon Ring",
+                back="Toro Cape", waist="Warwolf Belt", legs="Jhakri Slops", feet="Jhakri Pigaches"})
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
 				ammo="Mavi Tathlum",

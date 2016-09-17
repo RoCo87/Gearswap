@@ -188,9 +188,9 @@ if player.name == 'Feary' then
                 back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
 		-- Macc
 		sets.midcast.BlueMagic.Macc = set_combine(sets.midcast.BlueMagic, {
-                head="Luhlaza Keffiyeh", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-                body="Assimilator's Jubbah", hands="Amalric Gages", lring="Sangoma Ring", rring="Perception Ring",
-                back="Cornflower Cape", waist="Ovate Rope", legs="Amalric Slops", feet="Amalric Nails"})	
+                head="Jhakri Coronal", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                body="Jhakri Robe", hands="Jhakri Cuffs +1", lring="Sangoma Ring", rring="Perception Ring",
+                back="Cornflower Cape", waist="Ovate Rope", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})	
 		-- Acc
 		sets.midcast.BlueMagic.PhysMagicAcc = set_combine(sets.midcast.Macc, {
                 head="Luhlaza Keffiyeh", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
@@ -209,15 +209,15 @@ if player.name == 'Feary' then
 		
 		-- Nuke
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tathlum",
-                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
+                head="Jhakri Coronal", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs +1", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Wanion Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})
 		-- Dark
-		-- Pixie Hairpin +1
 		sets.midcast.BlueMagic.Nuke.Dark = set_combine(sets.midcast.Nuke, {
-                head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Archon Ring",
-                back="Toro Cape", waist="Wanion Belt", legs="Amalric Slops", feet="Amalric Nails"})
+				-- Pixie Hairpin +1
+                head="Jhakri Coronal", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Archon Ring",
+                back="Toro Cape", waist="Wanion Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {ammo="Mavi Tathlum",
 				head="Luhlaza Keffiyeh"

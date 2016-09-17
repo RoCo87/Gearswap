@@ -47,7 +47,7 @@ if player.Name == 'Feary' then
                 body="Hagondes Coat", hands="Serpentes Cuffs",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Moonshade Earring",feet="Herald's Gaiters"})
+				lear="Merman's Earring", rear="Moonshade Earring", feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		
 		-- JA

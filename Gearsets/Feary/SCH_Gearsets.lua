@@ -45,7 +45,7 @@ if player.Name == 'Feary' then
 				neck="Eidolon Pendant",
                 body="Hagondes Coat +1", hands="Serpentes Cuffs",
                 back="Umbra Cape", waist="Fucho-no-obi", legs="Nares Trews", feet="Chelona Boots +1"})
-		sets.idle.Standard = set_combine(sets.idle.PDT,{main={name="Hvergelmir", priority=2}, sub={name="", priority=1}
+		sets.idle.Standard = set_combine(sets.idle.PDT,{main={name="Hvergelmir", priority=2}, sub={name="", priority=1},
 				feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {feet="Herald's Gaiters"})
 		
@@ -199,7 +199,7 @@ if player.Name == 'Feary' then
 		sets.TP.Acc = set_combine(sets.TP,{})
 		
 		sets.precast.WS = set_combine(sets.TP, {})
-		sets.precast.WS.Acc = set_combine{sets.WS,{})
+		sets.precast.WS.Acc = set_combine(sets.WS,{})
 		
 		-- Staff
 		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
