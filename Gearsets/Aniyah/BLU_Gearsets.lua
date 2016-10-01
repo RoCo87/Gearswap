@@ -43,22 +43,28 @@ if player.name == 'Aniyah' then
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {
-				head="Hagondes Hat +1", neck="Twilight Torque",
-                body="Emet Harness", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
-                back="Cheviot Cape", waist="Flume belt", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
-		sets.idle.MDT = {
+				-- Herculean Head Loricate Torque +1
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				-- Herculean Vest  Herculean Hands
                 body="Emet Harness", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
-                back="Shadow Mantle", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
+				-- Flume Belt Herculean Boots 
+                back="Cheviot Cape", legs="Hagondes Pants +1", feet="Hagondes Sabots"}
+		sets.idle.MDT = {
+				-- Herculean Head Loricate Torque +1
+				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Merman's Earring",
+				-- Herculean Vest  Herculean Hands
+                body="Emet Harness", hands="Hagondes Cuffs", lring=Aug.Darkring1.Aniyah, rring="Shadow Ring",
+                --  waist="Flume Belt", Herculean Boots 
+				back="Shadow Mantle",  legs="Hagondes Pants +1", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
 				head="Orvail Corona +1", neck="Eidolon Pendant", lear="Relaxing Earring", rear="Antivenom Earring",
-                body="Hagondes Coat +1", hands="Serpentes Cuffs",
-                back="Cheviot Cape", waist="Austerity Belt", legs="Crimson Cuisses", feet="Chelona Boots"})
+                body="Jhakri Robe", hands="Serpentes Cuffs",
+                back="Cheviot Cape", waist="Austerity Belt", legs="Carmine Cuisses", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Merman's Earring",
 				hands="Serpentes Cuffs",
-				legs="Crimson Cuisses"})
-		sets.misc.Town = set_combine(sets.idle.Standard, {body="Mirage Jubbah", legs="Crimson Cuisses"})
+				legs="Carmine Cuisses"})
+		sets.misc.Town = set_combine(sets.idle.Standard, {body="Mirage Jubbah", legs="Carmine Cuisses"})
 		
 		-- JA
 		sets.precast.JA["Azure Lore"] = {hands="Luhlaza Bazubands"}
@@ -95,7 +101,8 @@ if player.name == 'Aniyah' then
 		
 		sets.idle.BlueMagic = {}
 		sets.idle.BlueMagic.Learn = set_combine(sets.midcast.BlueMagic,{
-				hands="Magus Bazubands", 
+				hands="Magus Bazubands",
+				-- Rosmerta's Cape
 				back="Atheling Mantle"})
 		
 		-- Recast
@@ -103,57 +110,37 @@ if player.name == 'Aniyah' then
 		
 		-- STR
 		sets.midcast.BlueMagic.STR = set_combine(sets.midcast.BlueMagic, {ammo="Flame Sachet",
-                -- head="Taeon Chapeau", lear="Vulcan's Pearl",  rear="Flame Pearl", 
-				head="Espial Cap", neck="Tjukurrpa Medal",
-                --body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA,
-				body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-                -- legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- STR Accuracy - 
 		-- Heavy Strike
 		sets.midcast.BlueMagic.STRAcc = set_combine(sets.midcast.BlueMagic.STR, {ammo="Ginsen",
-                --head="Taeon Chapeau",  lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                head="Espial Cap", neck="Tjukurrpa Medal", 
-				--body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-				--legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- DEX
 		-- Thrashing Assault
 		sets.midcast.BlueMagic.DEX = set_combine(sets.midcast.BlueMagic.STR, {ammo="Ginsen",
-                --head="Taeon Chapeau",  lear="Vulcan's Pearl", 
-                head="Espial Cap", neck="Tjukurrpa Medal", rear="Pixie Earring",
-				--body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-				--legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- VIT
 		-- Sinker Drill
 		sets.midcast.BlueMagic.VIT = set_combine(sets.midcast.BlueMagic.STR, {ammo="Flame Sachet",
-               --head="Taeon Chapeau",  lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                head="Espial Cap", neck="Tjukurrpa Medal", 
-				--body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-				--legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
-
+               -head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- AGI
 		sets.midcast.BlueMagic.AGI = set_combine(sets.midcast.BlueMagic, {ammo="Flame Sachet",
-               --head="Taeon Chapeau",  lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                head="Espial Cap", neck="Tjukurrpa Medal", 
-				--body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-				--legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
-
+               head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- MND
 		sets.midcast.BlueMagic.MND = set_combine(sets.midcast.BlueMagic, {ammo="Flame Sachet",
-                --head="Taeon Chapeau",  lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-                head="Espial Cap", neck="Tjukurrpa Medal", 
-				--body="Assim. Jubbah", hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-                body="Emet Harness", hands="Espial Bracers", lring="Ifrit Ring", rring="Ifrit Ring",
-				--legs="Taeon Tights", 
-				back="Buquwik Cape", waist="Prosilio Belt", legs="Espial Hose", feet="Carmine Greaves"})
+                head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
+				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- INT
 		sets.midcast.BlueMagic.INT = set_combine(sets.midcast.BlueMagic, {
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Crematio Earring", rear="Friomisi Earring",
@@ -174,9 +161,10 @@ if player.name == 'Aniyah' then
 				back="Ogapepo Cape", legs="Jhakri Slops", feet="Jhakri Pigaches"})	
 		-- Acc
 		sets.midcast.BlueMagic.PhysMagicAcc = set_combine(sets.midcast.Macc, {
-                head="Jhakri Coronal", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+                head="Carmine Mask", neck="Iqabi Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Jhakri Robe", hands="Jhakri Cuffs", lring="Sangoma Ring", rring="Perception Ring",
-                back="Cornflower Cape", waist="Ovate Rope", legs="Jhakri Slops", feet="Jhakri Pigaches"})
+				-- waist="Ovate Rope",
+                back="Cornflower Cape", waist="Anguinus Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 
 		-- Healing Cure Pot
 		sets.midcast.BlueMagic.CurePot = set_combine(sets.midcast.BlueMagic.MND, {
@@ -186,7 +174,7 @@ if player.name == 'Aniyah' then
 		sets.midcast.BlueMagic.CurePot.Self = set_combine(sets.midcast.BlueMagic.CurePot, {
                 neck="Phalaina Locket",
                 lring="Levia. Ring", rring="Levia. Ring",
-                back="Tempered Cape", waist="Chuq'aba Belt",})
+                back="Tempered Cape", waist="Chuq'aba Belt"})
 		-- White Wind = HP set
 		sets.midcast.BlueMagic.WW = set_combine(sets.midcast.BlueMagic.CurePot, {
 				lear="Loquac. Earring",
@@ -200,14 +188,16 @@ if player.name == 'Aniyah' then
 		-- Nuke
 		sets.midcast.BlueMagic.Nuke = set_combine(sets.midcast.BlueMagic, {ammo="Dosis Tathlum",
                 head="Jhakri Coronal", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
-                back="Toro Cape", waist="Warwolf Belt", legs="Jhakri Slops", feet="Jhakri Pigaches"})
+                body="Jhakri Robe", hands="Amalric Gages", lring="Shiva Ring", rring="Shiva Ring",
+                back="Toro Cape", waist="Warwolf Belt", legs="Jhakri Slops", feet="Amalric Nails"})
+				
 		-- Dark - Tenerbal Crush
 		sets.midcast.BlueMagic.Nuke.Dark = set_combine(sets.midcast.Nuke, {
 				-- Pixie Hairpin +1
-               head="Jhakri Coronal", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
-                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Archon Ring",
+				head="Jhakri Coronal", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",
+				body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Archon Ring",
                 back="Toro Cape", waist="Warwolf Belt", legs="Jhakri Slops", feet="Jhakri Pigaches"})
+		
 		-- Breath 
 		sets.midcast.BlueMagic.Breath = set_combine(sets.midcast.BlueMagic.Nuke, {
 				ammo="Mavi Tathlum",
@@ -215,14 +205,15 @@ if player.name == 'Aniyah' then
 
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {ammo="Vanir Battery",
-                head="Espial Cap", neck="Mavi Scarf", lear="Brutal Earring", rear="Pixie Earring",
-                body="Thaumas Coat", hands="Espial Bracers", lring="Rajas Ring", rring="Epona's Ring",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Espial Hose", feet="Carmine Greaves"})
+                head="Carmine Mask", neck="Mavi Scarf", lear="Brutal Earring", rear="Ghillie Earring +1",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- Accuracy
 		sets.TP.Acc = set_combine(sets.TP, {
-				body="Emet Harness", lring="Ramuh Ring", rring="Ramuh Ring",
-				waist="Anguinus Belt",})
-		
+				head="Carmine Mask", neck="Mavi Scarf", lear="Brutal Earring", rear="Ghillie Earring +1",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rringl="Epona's Ring",
+                back="Atheling Mantle", waist="Windbuffet Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
+						
 		-- Allianced Buffs - Haste + March x2 
 		sets.TP.Buffed = set_combine(sets.TP, {})
 		
@@ -232,35 +223,35 @@ if player.name == 'Aniyah' then
 			  
 		-- Weaponskill
 		sets.precast.WS = set_combine(sets.TP, {ammo="Honed Tahtlum",
-				head="Espial Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ifrit Ring",
-                back="Atheling Mantle", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ifrit Ring",
+                back="Atheling Mantle", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		sets.precast.WS.Acc = set_combine(sets.TP, {ammo="Honed Tathlum",
-				head="Espial Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ifrit Ring",
-                back="Atheling Mantle", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ifrit Ring",
+                back="Atheling Mantle", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 	
 		-- Sword
 		-- Savage Blade - STR
 		sets.precast.WS['Savage Blade'] = set_combine(sets.TP, {ammo="Ginsen",
-				head="Espial Cap", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ifrit Ring",
-                back="Buquwik Cape", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ifrit Ring",
+                back="Buquwik Cape", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		sets.precast.WS.Acc['Savage Blade'] = set_combine(sets.TP, {ammo="Ginsen",
-				head="Espial Cap", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ifrit Ring",
-                back="Buquwik Cape", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"})
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ifrit Ring",
+                back="Buquwik Cape", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- Chant du Cygne - DEX Crit
 		sets.precast.WS['Chant du Cygne'] = {ammo="Jukukik Feather",
-                head="Espial Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Carmine Mask", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 --body="Luhlaza Jubbah", hands="Luh. Bazubands", lring="Rajas Ring", rring="Epona's Ring",
-				body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ramuh Ring",
-				back="Atheling Mantle", waist="Light Belt", legs="Espial Hose", feet="Carmine Greaves"}
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ramuh Ring",
+				back="Atheling Mantle", waist="Light Belt", legs="Carmine Cuisses", feet="Carmine Greaves"}
 		sets.precast.WS.Acc['Chant du Cygne'] = {ammo="Jukukik Feather",
-                head="Espial Cap", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+                head="Carmine Mask", neck="Light Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 --body="Luhlaza Jubbah", hands="Luh. Bazubands", lring="Rajas Ring", rring="Epona's Ring",
-				body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ramuh Ring",
-				back="Atheling Mantle", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"}
+				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ramuh Ring",
+				back="Atheling Mantle", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"}
 		-- Requiescat - MND
 		sets.precast.WS['Requiescat'] = {ammo="Aqua Sachet",
                 head="Whirlpool Mask", neck="Shadow Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -272,9 +263,9 @@ if player.name == 'Aniyah' then
                 back="Atheling Mantle", waist="Shadow Belt", legs="Manibozho Brais", feet="Assim. Charuqs"}	
 		-- Expiacion
 		sets.precast.WS['Expiacion'] = {ammo="Dosis Tathlum",
-				head="Espial Cap", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
-                body="Espial Gambison", hands="Espial Bracers", lring="Rajas Ring", rring="Ifrit Ring",
-                back="Buquwik Cape", waist="Warwolf Belt", legs="Espial Hose", feet="Carmine Greaves"}
+				head="Carmine Mask", neck="Tjukurrpa Medal", lear="Brutal Earring", rear="Flame Pearl",
+                body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Rajas Ring", rring="Ifrit Ring",
+                back="Buquwik Cape", waist="Warwolf Belt", legs="Carmine Cuisses", feet="Carmine Greaves"}
 		-- Sanguine Blade
 		sets.precast.WS['Sanguine Blade'] = {ammo="Dosis Tathlum",
                 head="Hagondes Hat +1", neck="Eddy Necklace", lear="Hecate's Earring", rear="Friomisi Earring",

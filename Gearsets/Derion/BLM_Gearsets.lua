@@ -66,7 +66,7 @@ if player.Name == 'Derion' then
 		sets.precast.JA["Subtle Sorcery"] = {}
 		sets.precast.JA["Elemental Seal"] = {}
 		sets.precast.JA["Emnity Douse"] = {}
-		sets.precast.JA["Manawell"] = {feet="Goetia's Sabots +2"}
+		sets.precast.JA["Manawell"] = {back="Taranus's Cape", feet="Goetia's Sabots +2"}
 		
 		-- Precast
 		-- Magic
@@ -75,49 +75,110 @@ if player.Name == 'Derion' then
 			body="Dalmatica", hands="Zenith Mitts",
 			legs="Zenith Slacks", feet="Zenith Pumps"}
 		sets.precast.Fastcast = {--ammo="Impatiens",
-				--neck="Voltsurge Torque",
-				head="Haruspex Hat",  lear="Loquac. Earring",
-                body="Anhur Robe", hands="Gende. Gages +1", rring="Prolix Ring",
-                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Chelona Boots"}
+				--neck="Voltsurge Torque", rear="Enchantr. Earring +1"
+				head="Haruspex Hat", lear="Loquac. Earring",
+                --body="Anhur Robe", rring="Prolix Ring",
+				hands="Magavan Mitts",
+                back="Swith Cape", waist="Witful Belt", legs="Orvail Pants +1", feet="Regal Pumps"}
 		sets.precast.Elemental = set_combine(sets.precast.Fastcast,{head="Goetia Petasos +2"})
-		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
-				head="", neck="", lear="", rear="",
-                body="Heka's Kalasiris", hands="", lring="", rring="",
-                back="Pahtli Cape", waist="", legs="", feet=""})
+		sets.precast.Cure = set_combine(sets.precast.Fastcast, {	
+               -- body="Heka's Kalasiris", 
+               -- back="Pahtli Cape"
+				})
+		
 		-- Midcast
 		sets.midcast.Recast = set_combine(sets.idle.PDT, {waist="Witful Belt"})
 		
-		sets.midcast.ConserveMP = {ammo="Clarus Stone",
-				head="Nares Cap", neck="", lear="Magnetic Earring", rear="Gifted Earring",
-                body="Hedera's Cotehardie", hands="Serpentes Cuffs", lring="", rring="",
-				waist="Sekhmet Corset"}
+		sets.midcast.ConserveMP = {head="Jhakri Coronal"}
 		
 		-- Elemental
 		-- High Resist
-		sets.midcast.Elemental = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Strophadic Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
+		sets.midcast.Elemental = {--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
 		-- Damage
-		sets.midcast.Nuke = {main="Atinian Staff", sub="Wise Grip", ammo="Witchstone",
-				head="Hagondes Hat", neck="Eddy Necklace", lear="Novio Earring", rear="Friomisi Earring",
-                body="Bokwus Robe", hands="Yaoyotl Gloves", lring="Icesoul ring", rring="Icesoul ring",
-                back="Toro Cape", waist="Sekhmet Corset", legs="Hagondes Pants", feet="Umbani Boots"}
+		sets.midcast.Nuke = {--ammo="Witchstone",
+				main={name="Cha Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Hecate's Earring", rear="Moldavite Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		-- Acc
+		sets.midcast.Nuke.Acc = {--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		
+		-- Magic Burst
+		sets.midcast.Nuke.MB = {--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		-- Magic Burst Acc
+		sets.midcast.Nuke.MB.Acc = {--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+				
+		-- Death
+		sets.idle.Death = {
+				--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		sets.precast.Death = {}
+		sets.midcast.Nuke.Death = {
+				--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		sets.midcast.Nuke.Death.Acc = {
+				--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		sets.midcast.Nuke.Death.MB = {
+				--ammo="Witchstone",
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				-- neck="Eddy Necklace", 
+				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",
+                back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
 		
 		--Healing Magic
-		sets.midcast.Cure = {main="Arka IV", 
-				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
-                body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Refraction Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
+		sets.midcast.Cure = {main={name="Arka IV", priority=2}, sub={name="", priority=1},
+				head="Haruspex Hat", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Levia. Ring", rring="Levia. Ring",
+                back="Tempered Cape +1", waist="Salire Belt", legs="Orvail Pants +1", feet="Regal Pumps"}
 		
-		sets.midcast.Curaga = {main="Arka IV", 
-				head="", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
-                body="Heka's Kalasiris", hands="Bokwus Gloves", lring="Aquasoul Ring", rring="Aquasoul Ring",
-                back="Refraction Cape", waist="Cascade Belt", legs="Bokwus Slops", feet="Rubeus Boots"}
-	
+		sets.midcast.Curaga = {main={name="Arka IV", priority=2}, sub={name="", priority=1},
+				head="Haruspex Hat", neck="Colossus's Torque", lear="Novia Earring", rear="Lifestorm Earring",
+                body="Heka's Kalasiris", hands="Augur's Gloves", lring="Levia. Ring", rring="Levia. Ring",
+                back="Tempered Cape +1", waist="Salire Belt", legs="Orvail Pants +1", feet="Regal Pumps"}
+		
 		-- Enhancing 
-		-- 
-		sets.midcast.Enhancing = {sub="Fulcio Grip",neck="Colossus's Torque",body="Anhur Robe",hands="Ayao's Gloves",legs="Portant Pants",feet="Rubeus Boots",waist="Cascade Belt",back="Merciful Cape"}
+		sets.midcast.Enhancing = {sub="Fulcio Grip",
+			-- Andoaa Earring
+			neck="Colossus's Torque", 
+			--body="Anhur Robe",
+			hands="Augur's Gloves", 
+			-- back="Merciful Cape", waist="Sash", legs="Portant Pants", 
+			feet="Rubeus Boots"}
 		sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing)
 		sets.midcast.Hastespell = {ammo="Impatiens", waist="Witful Belt"}
 		sets.midcast.Stoneskin = {}
@@ -127,14 +188,18 @@ if player.Name == 'Derion' then
 
 		-- Enfeebling
 		-- Potency
-		sets.midcast.Enfeebling = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
-		sets.midcast.Macc = {main="Atinian Staff", sub="Mephitis Grip", ammo="Aureole",
-				head="Nahtirah Hat", neck="Eddy Necklace", lear="Lifestorm Earring", rear="Psystorm Earring",
-                body="Bokwus Robe", hands="Hagondes Cuffs", lring="Perception ring", rring="Sangoma ring",
-                back="Refraction Cape", waist="Demonry Sash", legs="Bokwus Slops", feet="Bokwus Boots"}
+		sets.midcast.Enfeebling ={main={name="Eminent Staff", priority=2}, sub={name="Mephitis Grip", priority=1},
+				--neck="Eddy Necklace", 
+				head="Jhakri Coronal", lear="Lifestorm Earring", rear="Psystorm Earring",
+				-- rring="Sangoma ring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Perception ring",
+                back="Taranus's Cape", waist="Salire Sash", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
+		sets.midcast.Macc = {main={name="Eminent Staff", priority=2}, sub={name="Mephitis Grip", priority=1},
+				--neck="Eddy Necklace", 
+				head="Jhakri Coronal", lear="Lifestorm Earring", rear="Psystorm Earring",
+				-- rring="Sangoma ring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Perception ring",
+                back="Taranus's Cape", waist="Salire Sash", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP)
 		sets.midcast.Paralyze = set_combine(sets.midcast.Macc)
 		sets.midcast.Blind = set_combine(sets.midcast.Macc)
@@ -144,22 +209,27 @@ if player.Name == 'Derion' then
 		
 		-- Dark Magic
 		sets.midcast.Dark = set_combine(sets.midcast.Macc, {
-				head="Appetence Crown", neck="Aesir Torque",
+				--head="Appetence Crown",
+				neck="Aesir Torque",
 				hands="Sorcerer's Gloves", 
-				back="Merciful Cape", waist="Fucho-no-Obi", legs="Wizard's Tonban", feet="Goetia Sabots +2"})
+				--back="Merciful Cape", waist="Fucho-no-Obi", legs="Wizard's Tonban", 
+				feet="Goetia Sabots +2"})
 		sets.midcast.Aspir = set_combine(sets.midcast.Dark)
 		sets.midcast.Stun = set_combine(sets.midcast.Macc)
 		
 		-- Melee Sets
 		sets.TP = set_combine(sets.idle.PDT, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
+				head="Jhakri Coronal", neck="Peacock Charm", lear="Bladeborn Earring", rear="SteelFlash Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Rajas Ring", rring="Ramuh Ring",
+                back="Rancorous Mantle", waist="Goading Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})
 		sets.precast.WS = set_combine(sets.TP, {
-				head="", neck="", lear="", rear="",
-                body="", hands="", lring="", rring="",
-                back="", waist="", legs="", feet=""})
-		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {})
+				head="Jhakri Coronal", neck="Peacock Charm", lear="Bladeborn Earring", rear="SteelFlash Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Rajas Ring", rring="Ramuh Ring",
+                back="Rancorous Mantle", waist="Goading Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})
+		sets.precast.WS['Shattersoul'] = set_combine(sets.precast.WS, {
+				head="Jhakri Coronal", neck="Peacock Charm",  lear="Bladeborn Earring", rear="SteelFlash Earring",
+                body="Jhakri Robe", hands="Jhakri Cuffs", lring="Rajas Ring", rring="Ramuh Ring",
+                back="Rancorous Mantle", waist="Goading Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"})
 		
 		-- Misc
 		sets.misc.Waltz = {}

@@ -46,21 +46,21 @@ if player.name == 'Feary' then
 			-- Chev. Gauntlets +1
 			body="Tartarus Platemail", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			-- Chev Cuisses +1 Soveriegn Schuhs +1
-			back=Aug.Cape.PLD, waist="Flume Belt +1", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			back=Aug.Cape.PLD, waist="Flume Belt +1", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
 			-- Founder's Corona Warder's Charm +1
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			-- 
-			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring="Shadow Ring, rring="Defending Ring",
-			-- Flax Sash Souv. Diechlings +1 Cab Leggings +1
-			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring="Shadow Ring", rring="Defending Ring",
+			-- Flax Sash Cab Leggings +1
+			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.MDT.Shell = { ammo="Vanir Battery",
 			-- Founder's Corona Warder's Charm +1 Spellbr. Earring  Sanare Earring
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
+			back="Engulfer Cape +1", waist="Creed Baudrier", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.BDT = { ammo="Hasty Pinion +1",
 			-- Souveran Schaller +1 Zwazo Earring +1
@@ -68,7 +68,7 @@ if player.name == 'Feary' then
 			-- Souv. Cuirass +1
 			body="Cab. Surcoat +1", hands="Sulev. Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			-- Xucau Mantle
-			back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
+			back="Mollusca Mantle", waist="Nierenschutz", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}			
 		
 	-- Turtle
 	sets.idle.DT = { ammo="Hasty Pinion +1",
@@ -76,15 +76,16 @@ if player.name == 'Feary' then
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
 			-- Souveran Cuirass +1 
 			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring=Aug.Darkring1, rring="Defending Ring",
-			-- Reiki Cloak Gold Mog. Belt Souv. Diechlings +1 Souveran Schuhs +1
-			back="Mollusca Mantle", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}			
+			-- Reiki Cloak  Gold Mog. Belt     Souveran Schuhs +1
+			back="Mollusca Mantle", waist="Nierenschutz", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}			
 
 	sets.misc.Town = set_combine(sets.idle.DT, {
-			back="Shadow Mantle", legs="Blood Cuisses"})
+			body="Tartarus Platemail", hands="Souv. Handsch. +1",
+			back="Shadow Mantle", legs="Carmine Cuisses +1"})
 					
 	sets.idle.Standard = set_combine(sets.idle.PDT, {
 			lear="Merman's Earring", rear="Etiolation Earring", 
-			back="Shadow Mantle", legs="Blood Cuisses"})
+			back="Shadow Mantle", legs="Carmine Cuisses +1"})
 					
 	sets.lockstyle = set_combine(sets.idle.Standard,{
 			legs="Kaiser Diechlings",

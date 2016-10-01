@@ -14,11 +14,11 @@ if player.name == 'Feary' then
 		-- sets Macros off = 0  on = 1
 		automacroset = 0
 		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
+			if player.sub_job =='NIN' then
 				set_macro_page(4,1)
 			elseif player.sub_job =='WHM' then
 				set_macro_page(4,2)
-			elseif player.sub_job == 'RDM' then
+			elseif player.sub_job =='RDM' then
 				set_macro_page(4,3)
 			elseif player.sub_job =='SCH' then 
 				set_macro_page(4,4)
@@ -79,7 +79,9 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Etiolation Earring",
                 feet="Fili Cothurnes +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				feet="Fili Cothurnes +1"})
+				neck="Carpenter's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
+				waist="Carpenter's Belt", feet="Fili Cothurnes +1"})
 				
 		sets.lockstyle = set_combine(sets.misc.Town,{
 				body="Sheikh Manteel",
@@ -88,15 +90,17 @@ if player.name == 'Feary' then
 		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang's Fishing Rod", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
 				body="Fisherman's Smock", hands="Kachina Gloves", lring="Noddy Ring", rring="",
-				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Fisherman's Boots"})
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
 		sets.idle.Wood = set_combine(sets.idle.Standard,{
-				neck="Carpenter's Torque",
+				neck="Carver's Torque",
 				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
 				waist="Carpenter's Belt"})		
-	--	sets.misc.MinusHP = {
+		
+		--	sets.misc.MinusHP = {
 		--		head="Zenith Crown", neck="Morgana's Choker",
         --      body="Dalmatica", hands="Zenith Mitts", 
         --      waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
+		   
 		-- JA
 		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
 		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}

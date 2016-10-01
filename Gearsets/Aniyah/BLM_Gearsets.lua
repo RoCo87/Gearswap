@@ -99,7 +99,7 @@ if player.Name == 'Aniyah' then
 				head="Hagondes Hat +1", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
                 body="Hagondes Coat +1", hands="Hagondes Cuffs", lring="Shiva ring", rring="Shiva ring",
                 back="Toro Cape", waist="Cognition Belt", legs="Hagondes Pants", feet="Rubeus Boots"}
-				-- Damage
+		-- Damage
 		sets.midcast.Nuke = {main="Atinian Staff", sub="Pax Grip", ammo="Witchstone",
 				head="Hagondes Hat +1", neck="Aesir Torque", lear="Moldavite Earring", rear="Hecate's Earring",
                 body="Hagondes Coat +1", hands="Goetia Gloves +2", lring="Shiva ring", rring="Shiva ring",

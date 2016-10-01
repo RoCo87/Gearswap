@@ -47,8 +47,8 @@
 	Aug.Cape.RDM = {name="Ghostfyre Cape"}
 	-- Dual Wield +5
 	Aug.Cape.THF = {name="Canny Cape", augments={}}
-	Aug.Cape.THF.STP = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+19 Attack+19','Store TP +10',}}
-	Aug.Cape.THF.WS = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+19 Attack+19','Weapon skill damage +10%',}}
+	Aug.Cape.THF.STP = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
+	Aug.Cape.THF.WS = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
 	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
@@ -79,7 +79,7 @@
 	-- Blu Skill +10
 	Aug.Cape.BLU = {name="Cornflower Cape"}
 	-- DEX ACC STP
-	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments=""}
+	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
 	-- STR ACC WSD
 	Aug.Cape.BLU.WS = {name="Rosmerta's Cape", augments=""}
 	-- INT MACC MAB
