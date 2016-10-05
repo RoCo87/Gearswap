@@ -79,13 +79,14 @@ if player.name == 'Feary' then
 				lear="Merman's Earring", rear="Etiolation Earring",
                 feet="Fili Cothurnes +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				neck="Carpenter's Torque",
+				neck="Carver's Torque",
 				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
 				waist="Carpenter's Belt", feet="Fili Cothurnes +1"})
-				
+		
 		sets.lockstyle = set_combine(sets.misc.Town,{
-				body="Sheikh Manteel",
-				feet="Fili Cothurnes +1"})
+				neck="Carver's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
+				waist="Carpenter's Belt", feet="Fili Cothurnes +1"})
 		
 		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang's Fishing Rod", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
