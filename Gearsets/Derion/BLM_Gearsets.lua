@@ -46,14 +46,15 @@ if player.Name == 'Derion' then
                 --waist="Fucho-no-obi",
 				back="Felicitas Cape", legs="Hagondes Pants", feet="Hagondes Sabots"}			
 		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2},
-				neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+				head="Amalric Coif", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 --hands="Serpentes Cuffs",
 				body="Hagondes Coat", 
                 -- waist="Fucho-no-obi",
 				back="Cheviot Cape", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
-				lear="Merman's Earring", rear="Merman's Earring",
-				--feet="Herald's Gaiters"
+				head="Amalric Coif", lear="Merman's Earring", rear="Merman's Earring",
+				body="Jhakri Robe", 
+				-- Legs="Assudity Pants +1 feet="Herald's Gaiters"
 				})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				head="Shaded Spectacles", neck="Goldsmith's Torque",
@@ -101,7 +102,7 @@ if player.Name == 'Derion' then
                 back="Taranus's Cape", waist="Acuity Belt", legs="Jhakri Slops", feet="Jhakri Pigaches +1"}
 		-- Damage
 		sets.midcast.Nuke = {--ammo="Witchstone",
-				main={name="Cha Staff", priority=2}, sub={name="Wise Grip", priority=1},
+				main={name="Eminent Staff", priority=2}, sub={name="Wise Grip", priority=1},
 				-- neck="Eddy Necklace", 
 				head="Jhakri Coronal", neck="Artemis's Necklace", lear="Hecate's Earring", rear="Moldavite Earring",
                 body="Jhakri Robe", hands="Jhakri Cuffs", lring="Shiva Ring", rring="Shiva Ring",

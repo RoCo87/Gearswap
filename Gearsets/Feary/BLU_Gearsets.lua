@@ -82,7 +82,8 @@ if player.name == 'Feary' then
 				-- 
                 back="Swith Cape +1", waist="Witful Belt", legs="Orvail Pants +1", feet="Carmine Greaves +1"}
 		sets.precast.BlueMagic = set_combine(sets.precast.Fastcast,{body="Hashishin Mintan"})
-		sets.precast.Cure = set_combine(sets.precast.Fastcast, {back="Pahtli Cape"})
+		sets.precast.Cure = set_combine(sets.precast.Fastcast, {
+			back="Pahtli Cape"})
 		
 		-- Misc
 		sets.misc.Waltz = {}

@@ -103,9 +103,11 @@ if player.name == 'Feary' then
         --      waist="Witful Belt", legs="Zenith Slacks", feet="Zenith Pumps"}
 		   
 		-- JA
+		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions +1"}
+		
 		sets.precast.JA["Nightingale"] = {feet="Bihu Slippers"}
 		sets.precast.JA["Troubadour"] = {body="Bihu Justaucorps"}
-		sets.precast.JA["Soul Voice"] = {legs="Bihu Cannions +1"}
+		
 		
 		-- Precast
 		-- Magic

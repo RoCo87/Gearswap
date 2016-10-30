@@ -244,7 +244,7 @@ function precast(spell,arg)
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
 				equip(sets.precast.HPDown)
 			else
-				equip(sets.precast.Fastcast)
+				equip(sets.precast.Cure)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
 			equip(sets.precast.Enhancing)

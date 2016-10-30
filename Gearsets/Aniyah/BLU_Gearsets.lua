@@ -128,7 +128,7 @@ if player.name == 'Aniyah' then
 		-- VIT
 		-- Sinker Drill
 		sets.midcast.BlueMagic.VIT = set_combine(sets.midcast.BlueMagic.STR, {ammo="Flame Sachet",
-               -head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
+                head="Carmine Mask", neck="Tjukurrpa Medal", lear="Flame Pearl", rear="Flame Pearl",
 				body="Adhemar Jacket", hands="Adhemar Wristbands", lring="Ifrit Ring", rring="Ifrit Ring",
 				back="Buquwik Cape", waist="Prosilio Belt", legs="Carmine Cuisses", feet="Carmine Greaves"})
 		-- AGI

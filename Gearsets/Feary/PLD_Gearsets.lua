@@ -76,12 +76,27 @@ if player.name == 'Feary' then
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Bladeborn Earring", rear="Steelflash Earring",
 			-- Souveran Cuirass +1 
 			body="Tartarus Platemail", hands="Souv. Handsch. +1", lring=Aug.Darkring1, rring="Defending Ring",
-			-- Reiki Cloak  Gold Mog. Belt     Souveran Schuhs +1
+			-- Reiki Cloak  Gold Mog. Belt Souveran Schuhs +1
 			back="Mollusca Mantle", waist="Nierenschutz", legs="Souv. Diechlings +1", feet="Sulev. Leggings +1"}			
 
-	sets.misc.Town = set_combine(sets.idle.DT, {
-			body="Tartarus Platemail", hands="Souv. Handsch. +1",
-			back="Shadow Mantle", legs="Carmine Cuisses +1"})
+	sets.misc.Town = set_combine(sets.idle.PDT, {
+				neck="Carver's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
+				waist="Carpenter's Belt", legs="Carmine Cuisses +1"})
+		
+		sets.lockstyle = set_combine(sets.misc.Town,{
+				neck="Carver's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="craftmaster's Ring",
+				waist="Carpenter's Belt", legs="Carmine Cuisses +1"})
+		
+		sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang's Fishing Rod", ammo="Sinking Minnow",
+				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
+				body="Fisherman's Smock", hands="Kachina Gloves", lring="Noddy Ring", rring="",
+				waist="Fisherman's Belt", legs="Fisherman's Hose", feet="Waders"})
+		sets.idle.Wood = set_combine(sets.idle.Standard,{
+				neck="Carver's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's Ring",
+				waist="Carpenter's Belt", legs="Carmine Cuisses +1"})		
 					
 	sets.idle.Standard = set_combine(sets.idle.PDT, {
 			lear="Merman's Earring", rear="Etiolation Earring", 
@@ -95,18 +110,18 @@ if player.name == 'Feary' then
 			head="Sulevia's Mask +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 			-- Souveran Cuirass +1
 			body="Chev. Cuirass", hands="Souv. Handsch. +1", lring="Rajas Ring", rring="K'ayres Ring",
-			back="Atheling Mantle", waist="Windbuffet Belt", legs="Sulevia's Cuisses +1", feet="Sulevia's Leggings +1"}
+			back=Aug.Cape.PLD.Enimty, waist="Windbuffet Belt", legs="Souv. Diechlings +1", feet="Sulevia's Leggings +1"}
 	sets.TP.Acc = { ammo="Hasty Pinion +1",
 			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 			-- Souveran
-			body="Chev. Cuirass", hands="Sulevia's Gauntlets +1", lring="Rajas Ring", rring="Ramuh Ring +1",
-			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Sulevia's Cuisses +1", feet="Carmine Greaves +1"}
+			body="Chev. Cuirass", hands="Souv. Handsch. +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Carmine Cuisses +1", feet="Carmine Greaves +1"}
 	-- Tank 
 	sets.TP.Tank = {ammo="Hasty Pinion +1",
 			head="Sulevia's Mask +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 			-- Souveran
-			body="Chev. Cuirass", hands="Souveran Handschuhs +1", lring="Rajas Ring", rring="Ramuh Ring +1",
-			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Sulevia's Cuisses +1", feet="Sulevia's Leggings +1"}
+			body="Chev. Cuirass", hands="Souv. Handsch. +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Souv. Diechlings +1", feet="Sulevia's Leggings +1"}
 	
 	-- DT/Acc Turtle Build
 	sets.TP.Hybrid = { ammo="Hasty Pinion +1",
@@ -120,12 +135,13 @@ if player.name == 'Feary' then
 	-- Precast 
 	sets.precast.Fastcast = set_combine(sets.idle.PDT, {ammo="Incantor Stone",
 			-- neck="Voltsurge Torque",
-			head="Carmine Mask +1",  lear="Loquac. Earring", rear="Enchntr. Earring +1",
-			--  Odyssean Chestplate Leyline Gloves  lring="Veneficium Ring",
+			head="Carmine Mask +1", lear="Loquac. Earring", rear="Enchntr. Earring +1",
+			--  Odyssean Chestplate Leyline Gloves lring="Veneficium Ring",
 			hands="Buremte Gloves", rring="Prolix Ring",
 			--legs="Enif Cosciales",
-			waist="Goading Belt",  feet="Carmine Greaves +1"})
+			back=Aug.Cape.PLD.FC, waist="Goading Belt", feet="Carmine Greaves +1"})
 	sets.precast.Enhancing = set_combine(sets.precast.Fastcast, {waist="Siegel Sash"})
+	sets.precast.Cure = set_combine(sets.precast.Fastcast, {body="Jumalik Mail"})
 	sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 	sets.misc.Waltz = set_combine(sets.precast.JA["Chivalry"],{})
 	sets.misc.Steps = set_combine(sets.TP.Acc,{})
