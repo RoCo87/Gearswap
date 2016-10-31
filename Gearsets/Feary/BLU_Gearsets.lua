@@ -42,14 +42,20 @@ if player.name == 'Feary' then
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Engulfer Cape +1", waist="Flume Belt",  legs="Hagondes Pants +1", feet="Hag. Sabots +1"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
+				-- Amalric Coif
 				neck="Eidolon Pendant",
-                body="Hagondes Coat +1", hands="Serpentes Cuffs",
+                body="Jhakri Robe +1", hands="Serpentes Cuffs",
+				-- Assidity Pants +1
                 back="Umbra Cape", waist="Austerity Belt", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
+				--Amalric Coif
 				lear="Merman's Earring", rear="Etiolation Earring",
-				legs="Blood Cuisses"})
+				body="Jhakri Robe +1",
+				legs="Carmine Cuisses +1"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
-				legs="Blood Cuisses"})
+				neck="Carpenter's Torque",
+				body="Carpenter's Smock", hands="Carpenter's Gloves", lring="Orvail Ring", rring="Craftmaster's Ring",
+				waist="Carpenter's Belt", legs="Carmine Cuisses +1"})		
 		 sets.lockstyle = set_combine{sets.misc.Town}
 		 sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Sh. F. Rod +1", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",

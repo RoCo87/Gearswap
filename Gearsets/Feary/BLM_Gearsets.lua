@@ -38,16 +38,17 @@ if player.Name == 'Feary' then
 				head="Hagondes Hat +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				-- Amalric Doublet
                 body="Hagondes Coat +1", hands="Hagondes Cuffs +1", lring=Aug.Darkring1, rring="Defending Ring",
-				-- Felicitas Cape +1
                 back="Felicitas Cape +1", waist="Fucho-no-obi", legs="Hagondes Pants +1", feet="Amalric Nails"}			
 		sets.Resting = set_combine(sets.idle.PDT, {
-				main={name="Chatoyant Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1},ammo="Clarus Stone",
+				main={name="Chatoyant Staff", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Clarus Stone",
+				-- Amalric Coif
 				neck="Eidolon Pendant",
-                body="Hagondes Coat +1", hands="Serpentes Cuffs",
+                body="Jhakri Robe +1", hands="Serpentes Cuffs",
 				-- Assidaity Pants +1
                 back="Umbra Cape", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1},
-				hands="Serpentes Cuffs",
+				-- Amalric Coif
+				body="Jhakri Robe +1", hands="Serpentes Cuffs",
 				-- Assidiaty pants +1 Serpentes boots
 				feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT,  {main={name="Hvergelmir", priority=2}, sub={name="Zuuxowu Grip", priority=1},
@@ -126,18 +127,18 @@ if player.Name == 'Feary' then
 		sets.idle.Death = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
+                body="Jhakri Robe +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.precast.Death = {}
 		sets.midcast.Nuke.Death = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
+                body="Jhakri Robe +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.midcast.Nuke.Death.Acc = {
 				main={name="Lathi", priority=2}, sub={name="Zuuxowu Grip", priority=1}, ammo="Witchstone",
 				head="Jhakri Coronal +1", neck="Mizukage-no-Kubikazari", lear="Barkaro. Earring", rear="Friomisi Earring",
-                body="Hagondes Coat +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
+                body="Jhakri Robe +1", hands="Amalric Gages", lring="Shiva Ring", rring="Locus Ring",
                 back="Taranus's Cape", waist="Sekhmet Corset", legs="Amalric Slops", feet="Amalric Nails"}
 		sets.midcast.Nuke.Death.MB = {
 				-- Noibid Strap - Psilomene
