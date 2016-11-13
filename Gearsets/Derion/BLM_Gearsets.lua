@@ -48,7 +48,7 @@ if player.Name == 'Derion' then
 		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2},
 				head="Amalric Coif", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
                 --hands="Serpentes Cuffs",
-				body="Hagondes Coat", 
+				body="Jhakri Robe", 
                 -- waist="Fucho-no-obi",
 				back="Cheviot Cape", legs="Nares Trews", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{

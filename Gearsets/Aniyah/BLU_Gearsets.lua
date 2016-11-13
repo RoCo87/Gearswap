@@ -14,27 +14,6 @@ if player.name == 'Aniyah' then
 		-- sets Macros off = 0  on = 1
 		automacroset = 0
 		if automacroset == 1 then
-			if Mode == "dynamis" then
-				set_macro_page(8,1)
-				windower.send_command('wait 5;aset spellset dynamis')
-			elseif Mode == "AOE" then
-				set_macro_page(8,2)
-				windower.send_command('wait 5;aset spellset aoe')
-			else 
-				if player.sub_job == 'NIN' then
-					set_macro_page(8,3)
-					windower.send_command('wait 5;aset spellset dd')
-				elseif player.sub_job == 'WAR' then
-					set_macro_page(8,4)
-					windower.send_command('wait 5;aset spellset dd')
-				elseif player.sub_job == 'RDM' then
-					set_macro_page(8,5)
-					windower.send_command('wait 5;aset spellset dd')
-				elseif player.sub_job == 'DNC' then
-					set_macro_page(8,6)
-					windower.send_command('wait 5;aset spellset dd')
-				end
-			end
 			
 		else
 			set_macro_page(8,3)

@@ -14,7 +14,7 @@ if player.name == 'Feary' then
 		include('include/utility.lua')
 
 		-- sets Macros off = 0  on = 1
-		automacroset = 1
+		automacroset = 0
 		if automacroset == 1 then
 			if player.sub_job == 'NIN' then
 				set_macro_page(8,1)
@@ -26,9 +26,9 @@ if player.name == 'Feary' then
 				set_macro_page(8,4)
 			elseif player.sub_job == 'NIN' then 
 				set_macro_page(8,5)
+			else
+				set_macro_page(8,3)
 			end
-		else
-			set_macro_page(8,1)
 		end
 
 		-- Auto Sets

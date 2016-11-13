@@ -141,6 +141,7 @@ if player.name == 'Feary' then
                 head="Mirage Keffiyeh", neck="Eddy Necklace", lear="Psystorm Earring", rear="Lifestorm Earring",
                 body="Assimilator's Jubbah", hands="Hagondes Cuffs", lring="Sangoma Ring", rring="Perception Ring",
                 back="Cornflower Cape", waist="Ovate Rope", legs="Mavi Tayt +2", feet="Iuitl Gaiters"})	
+		
 		-- Weaponskill
 		sets.precast.WS = set_combine(sets.TP, {ammo="Honed Tahtlum",
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",

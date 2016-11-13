@@ -60,9 +60,11 @@
 	
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
+	Aug.Cape.PLD.TP = {name="Rudianos's Mantle", augments={'VIT+20','Accuracy+30 Attack+20', 'Store TP +10'}}
 	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Enmity+10',}}
-	Aug.Cape.PLD.FC = {name="Rudianos's Mantle", augments={'Fast Cast+10%'}}
+	Aug.Cape.PLD.FC = {name="Rudianos's Mantle", augments={'MND+1','Fast Cast+10%','Eva.+1/Mag. Eva.+1'}}
+	
 	-- ?
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	
@@ -87,19 +89,24 @@
 	Aug.Cape.SAM = {name="Tahaka Mantle"}
 	-- WSD +3
 	Aug.Cape.NIN = {name="Yokaze Mantle"}
+	
 	-- Breath +10 wsd+5
 	Aug.Cape.DRG = {name="Updraft Mantle"}
+	Aug.Cape.DRG.TP = {name="Brigantia's Mantle", augments={}}
+	Aug.Cape.DRG.WSD = {}
+	Aug.Cape.DRG.Breath = {}
+	
 	-- skill
 	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
 	
 	-- Blu Skill +10
-	Aug.Cape.BLU = {name="Cornflower Cape"}
+	Aug.Cape.BLU = {name="Cornflower Cape", augments={}}
 	-- DEX ACC STP
 	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
 	-- STR ACC WSD
 	Aug.Cape.BLU.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	-- INT MACC MAB
-	Aug.Cape.BLU.MB = {name="Rosmerta's Cape", augments=""}
+	Aug.Cape.BLU.MB = {name="Rosmerta's Cape", augments={'INT+20', '"Mag. Atk. Bns."+10', 'Mag. Acc.+20/Mag. Dmg.+20'}}
 	-- Fastcast
 	Aug.Cape.BLU.FC = {name="Rosmerta's Cape", augments=""}
 	

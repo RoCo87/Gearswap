@@ -18,6 +18,7 @@ function get_sets(spell)
 	
 -- Define Default Values for Variables
 	Mode = 0
+	Type = 0
 	PDT = 0
 	MDT = 0
 	Skill = 0
@@ -142,6 +143,48 @@ function self_command(command)
 				previous_set()
 			else
 				equip(sets.idle.Standard)
+			end
+		end
+	elseif command == 'type' then
+		
+		if Type >= 2 then
+			--Reset to 0
+			Type = 0
+		else
+			-- Increment By 1 
+			Type = Type + 1 
+		end 
+		
+		-- Set spell to type and subjob
+		if Type == "dynamis" or Type == 1 then
+			set_macro_page(8,1)
+			windower.send_command('wait 3;aset spellset dynamis')
+			windower.add_to_chat(121,'Dynamis Spells Set')
+		elseif Type == "AOE" or Type == 2 then
+			set_macro_page(8,2)
+			windower.send_command('wait 3;aset spellset aoe')
+				windower.add_to_chat(121,'AOE Spells Set')
+		else 
+			if player.sub_job == 'NIN' then
+				set_macro_page(8,3)
+				windower.send_command('wait 3;aset spellset dd')
+				windower.add_to_chat(121,'BLU/NIN Spells Set')
+			elseif player.sub_job == 'WAR' then
+				set_macro_page(8,4)
+				windower.send_command('wait 3;aset spellset dd')
+				windower.add_to_chat(121,'BLU/WAR Spells Set')
+			elseif player.sub_job == 'RDM' then
+				set_macro_page(8,5)
+				windower.send_command('wait 3;aset spellset dd')
+				windower.add_to_chat(121,'BLU/RDM Spells Set')
+			elseif player.sub_job == 'DNC' then
+				set_macro_page(8,6)
+				windower.send_command('wait 3;aset spellset dd')
+				windower.add_to_chat(121,'BLU/DNC DD Spells Set')
+			else
+				set_macro_page(8,3)
+				windower.send_command('wait 3;aset spellset dd')
+				windower.add_to_chat(121,'BLU/?? DD Spells Set')
 			end
 		end
 	end
