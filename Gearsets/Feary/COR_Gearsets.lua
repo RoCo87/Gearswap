@@ -34,14 +34,14 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 	sets.idle.PDT = { 
-			head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+			head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Repulse Mantle", waist="Flume Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Repulse Mantle", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.idle.MDT = { 
-			head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+			head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-			back="Engulfer Cape +1", waist="Flume Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.misc.Town = set_combine(sets.idle.PDT, {
 			head="Lanun Tricorne",
@@ -98,17 +98,17 @@ if player.name == 'Feary' then
 			head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
 			--  Samnuha Coat Leyline Gloves Fenrir Ring +1 Fenrir Ring +1
 			body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-			-- Adhe. Gamashes +1 
-			back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Iuitl Tights +1", feet="Lanun Boots"}
+			-- Adhe. Gamashes +1 Legs
+			back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Meg. Chausses +1", feet="Lanun Boots"}
 		
 	--Light/Dark Shot
 	sets.precast.QD.ACC = {
 			-- Waylayer's Scarf
-			head="Meghanada Visor", neck="Iqabi Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
+			head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
 			-- Mirke Wadecors  Longshot Ring  Arvina Ringlet +1
 			body="Lanun Frac", hands="Chasseur Gants", lring="Perception Ring", rring="Sangoma Ring",
-			-- Eschan Stone 
-			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Meghanada Chausses", feet="Chasseur's Boots"}
+			-- Eschan Stone Legs
+			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Meg. Chausses +1", feet="Chasseur's Boots"}
 				
 	-- RA Sets
 	sets.precast.Snapshot = {ammo=TPBullet,
@@ -159,49 +159,49 @@ if player.name == 'Feary' then
 			-- Adhemar Jacket +1 Adhemar Wrist. +1 lring="Petrov Ring" Cacoethic Ring +1
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 			-- Letalis Mantle  Adhe. Gamashes +1
-			back="Atheling Mantle", waist="Anguinus Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Atheling Mantle", waist="Anguinus Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	-- Weaponskills
 	-- Melee WS
 	sets.precast.WS = {
-			head="Meghanada Visor", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Wanion Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Atheling Mantle", waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	sets.precast.WS.Acc = {}
 	
 	-- Sword
 	sets.precast.WS["Savage Blade"] = {
-			head="Meghanada Visor", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-			back="Buquwik Cape", waist="Wanion Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Buquwik Cape", waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.precast.WS["Requiescat"] = {
-			head="Meghanada Visor", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
 			body="Meghanada Tabard", hands="Meg. Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
-			back="Vespid Mantle", waist="Fotia Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Vespid Mantle", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 					
 	-- Dagger
 	sets.precast.WS["Exenterator"] = {
-			head="Meghanada Visor", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
 			body="Meghanada Tabard", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Fotia Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Atheling Mantle", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	-- RA WS
 	sets.precast.RAWS = {
 			-- rear="Moonshade Earring or Ishvara Earring"
-			head="Meghanada Visor", neck="Fotia Gorget", lear="Enervating Earring", rear="Clearview Earring",
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Clearview Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	-- Physical
 	sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
 			-- Ishvara Earring
-			head="Meghanada Visor", neck="Fotia Gorget", lear="Enervating Earring", rear="Moonshade Earring",
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Moonshade Earring",
 			-- Carmine Fin. Ga. +1
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
 			-- Camulus's Mantle
-			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"})
+			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"})
 	
 	-- Magical
 	sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{

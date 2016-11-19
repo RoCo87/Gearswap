@@ -44,14 +44,14 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 		sets.idle.PDT = { 
-				head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-				back="Repulse Mantle", waist="Flume Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+				back="Repulse Mantle", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		sets.idle.MDT = { 
-				head="Meghanada Visor", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-				back="Engulfer Cape +1", waist="Flume Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+				back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		sets.misc.Town = set_combine(sets.idle.PDT,{
 				feet="Fajin Boots"})
@@ -76,13 +76,13 @@ if player.name == 'Feary' then
 
 		-- Barrage 
 		sets.precast.JA["Barrage"] =  {
-				head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+				head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
 				-- Belenus.STP
 				back="Lutian Cape", waist="Scout's Belt", legs="Desultor Tassets", feet="Meg. Jam. +1"}
 
 		sets.precast.JA.Acc["Barrage"] =  {
-				head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+				head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
 				-- Belenus.STP	
 				back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses", feet="Meg. Jam. +1"}
@@ -101,14 +101,14 @@ if player.name == 'Feary' then
 
 		-- Melee TP 
 		sets.TP = { 
-						head="Meghanada Visor", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+						head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-						back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+						back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 		-- Melee Accuracy TP
 		sets.TP.Acc = {
-						head="Meghanada Visor", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+						head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
-						back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+						back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		-- RA Sets
 		-- Snapshot - Caps at 80 from any source.
@@ -149,10 +149,10 @@ if player.name == 'Feary' then
 						
 		-- Current - 33 STP
 		sets.RA.Acc = {
-					head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+					head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
 					-- Belenus Cape Yemaya Belt
-					back="Lutian Cape", waist="Scout's Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+					back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 		
 		-- SAM Subjob
 		sets.RA.Sam = { -- Perun +1 Perun  
@@ -164,10 +164,10 @@ if player.name == 'Feary' then
 						
 		-- 
 		sets.RA.Acc.Sam = {
-					head="Meghanada Visor", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+					head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
 					-- Belenus Cape Yemaya Belt
-					back="Lutian Cape", waist="Scout's Belt", legs="Meghanada Chausses", feet="Meg. Jam. +1"}
+					back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 				
 		-- Gun
 		sets.RA.Gun = { 

@@ -45,12 +45,12 @@ if player.Name == 'Derion' then
                 body="Hagondes Coat", hands="Hagondes Cuffs", lring=Aug.Darkring1, rring="Defending Ring",
                 --waist="Fucho-no-obi",
 				back="Felicitas Cape", legs="Hagondes Pants", feet="Hagondes Sabots"}			
-		sets.Resting = set_combine(sets.idle.PDT, {main={name="Chatoyant Staff", priority=2},
-				head="Amalric Coif", neck="Eidolon Pendant", lear="Magnetic Earring", rear="Moonshade Earring",
+		sets.Resting = set_combine(sets.idle.PDT, {main={name="Iridal Staff", priority=2}, sub={name="Wise Strap", priority=1},
+				head="Amalric Coif", neck="Eidolon Pendant", lear="Magnetic Earring",
                 --hands="Serpentes Cuffs",
 				body="Jhakri Robe", 
                 -- waist="Fucho-no-obi",
-				back="Cheviot Cape", legs="Nares Trews", feet="Chelona Boots"})
+				back="Cheviot Cape", feet="Chelona Boots"})
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Amalric Coif", lear="Merman's Earring", rear="Merman's Earring",
 				body="Jhakri Robe", 
