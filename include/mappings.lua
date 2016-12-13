@@ -137,5 +137,6 @@ skillchain_elements.Reverberation = S{'Water'}
 			"Eastern Adoulin",
 			"Western Adoulin",
 			"Kazham",
-			"Rabao"
+			"Rabao",
+			"Mog Garden"
 					}
