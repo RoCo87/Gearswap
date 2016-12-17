@@ -37,25 +37,25 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 	sets.idle.PDT = { 
-					head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Repulse Mantle", waist="Flume Belt", legs="Meg. Chausses +1", feet="Iuitl Gaiters"}
+				head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
+				back="Repulse Mantle", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.idle.MDT = { ammo="Vanir Battery",
-					head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Iuitl Gaiters"}
+				head="Futhark Bandeau", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+				body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
+				back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.misc.Town = set_combine(sets.idle.PDT, {legs="Blood Cuisses"})
 					
 	sets.idle.Standard = set_combine(sets.idle.PDT, {
-					lear="Merman's Earring", rear="Etiolation Earring",
-					back="Shadow Mantle", legs="Blood Cuisses"})
+				lear="Merman's Earring", rear="Etiolation Earring",
+				back="Shadow Mantle", legs="Blood Cuisses"})
 
 	sets.idle.Evasion = { 
-					head="Taeon Chapeau", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
-					body="Taeon Tabard", hands="Taeon Gloves", lring=Aug.Darkring1, rring="Defending Ring",
-					back="Fravashi Mantle", waist="Flume Belt", legs="Taeon Tights", feet="Taeon Boots"}
+				head="Taeon Chapeau", neck="Torero Torque", lear="Musical Earring", rear="Novia Earring",
+				body="Taeon Tabard", hands="Taeon Gloves", lring=Aug.Darkring1, rring="Defending Ring",
+				back="Fravashi Mantle", waist="Flume Belt", legs="Taeon Tights", feet="Taeon Boots"}
 
 	sets.idle.Fishing = set_combine(sets.idle.Standard,{range="Lu Shang's Fishing Rod", ammo="Sinking Minnow",
 				head="Tlahtlamah Glasses", neck="Fisherman's Torque",
@@ -76,9 +76,9 @@ if player.name == 'Feary' then
 	sets.precast.JA["Odyllic Subterfuge"] = {}
 
 	sets.precast.JA["Lunge"] = {
-					head="Haruspex Hat +1", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
-					hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-					back="Toro Cape", legs="Meg. Chausses +1"}
+				head="Haruspex Hat +1", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
+				hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
+				back="Toro Cape", legs="Meg. Chausses +1"}
 					
 	sets.precast.JA["Valiance"] = {body="Runiest Coat"}
 	sets.precast.JA["Vallation"] = {body="Runiest Coat"}
@@ -92,16 +92,16 @@ if player.name == 'Feary' then
 	
 -- Precast Sets
 	sets.precast.Fastcast = set_combine(sets.idle.PDT, {
-					head="Runiest Bandeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
-					body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring",
-					legs="Orvail Pants +1", feet="Chelona Boots +1"})
+				head="Runiest Bandeau", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchtr. Earring +1",
+				body="Taeon Tabard", hands="Thaumas Gloves", rring="Prolix Ring",
+				legs="Orvail Pants +1", feet="Chelona Boots +1"})
 	sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {})
 	sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{waist="Siegel Sash"})
 		
 	sets.misc.Waltz = set_combine(sets.idle.PDT,{
-								head="Kheper Bonnet", lear="Roundel Earring",
-								body="Passion Jacket", hands="Slither Gloves +1", lring="Valseur Ring", rring="Asklepian Ring",
-								feet="Rawhide Boots"})
+				head="Kheper Bonnet", lear="Roundel Earring",
+				body="Passion Jacket", hands="Slither Gloves +1", lring="Valseur Ring", rring="Asklepian Ring",
+				feet="Rawhide Boots"})
 	sets.misc.Steps = {ammo="Hasty Pinion +1",
 				head="Taeon Chapeau", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Taeon Tabard", hands="Taeon Gloves", lring="Ramuh Ring +1", rring="Ramuh Ring +1",
@@ -109,7 +109,7 @@ if player.name == 'Feary' then
 	sets.misc.flourish = {
 				neck="Eddy Necklace",
 				hands="Taeon Gloves", lring="Levia. Ring +1", rring="Levia. Ring +1",
-				legs="Meg. Chausses +1", feet="Iuitl Gaiters"}
+				legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 -- Magic 
 sets.midcast.Enhancing = {
@@ -128,24 +128,24 @@ sets.midcast.Flash = set_combine(sets.Enmity, sets.precast.Fastcast, {})
 
 -- TP set
 sets.TP = { ammo="Vanir Battery",
-			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+				head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
 -- Acc Set
 sets.TP.Acc = { ammo="Hasty Pinion +1",
-			head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Dynamic Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
+				head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+				back="Atheling Mantle", waist="Dynamic Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
 -- Alliance Buffed
 sets.TP.Buffed = { ammo="Vanir Battery",
-			head="Felistris Mask", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-            body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}		
+				head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
+				back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}		
 -- Tank			
 sets.TP.Hybrid = { ammo="Vanir Battery",
-			head="Futhark Bandeau", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
-            body="Erilaz Surcoat", hands="Erilaz Gauntlets", lring="Patricius Ring", rring="Defending Ring",
-            back="Repulse Mantle", waist="Flume Belt", legs="Erilaz Leg Guards", feet="Erilaz Greaves"}
+				head="Futhark Bandeau", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
+				body="Erilaz Surcoat", hands="Erilaz Gauntlets", lring="Patricius Ring", rring="Defending Ring",
+				back="Repulse Mantle", waist="Flume Belt", legs="Erilaz Leg Guards", feet="Erilaz Greaves"}
 
 -- Weaponskills
 sets.precast.WS = {ammo="Ginsen",

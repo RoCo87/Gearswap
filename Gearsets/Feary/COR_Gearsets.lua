@@ -133,12 +133,12 @@ if player.name == 'Feary' then
 	sets.RA.Armageddon = { ammo=TPBullet,
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
 			body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+			back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 
 	sets.RA.Armageddon.Acc = { ammo=TPBullet,
 			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
 			Body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Iuitl Gaiters"}
+			back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 
 	--Barrage
 	sets.precast.JA["Barrage"] =  set_combine(sets.RA.Acc)
