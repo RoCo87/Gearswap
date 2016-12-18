@@ -246,21 +246,21 @@ function precast(spell,arg)
 			-- Dummy Songs
 			-- 3rd Song
 			if spell.name == "Fowl Aubade" then
-				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
+				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] or player.wardrobe3["Daurdabla"] or player.wardrobe4["Daurdabla"] then
 					equip({range="Daurdabla"})
 				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			-- 4th Song
 			elseif spell.name == "Herb Pastoral" then
-				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"]then
+				if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] or player.wardrobe3["Daurdabla"] or player.wardrobe4["Daurdabla"] then
 					equip({range="Daurdabla"})
 				elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] then
 					equip({range="Terpander"})
 				end
 			else
 				-- Instrument check 
-				if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] then
+				if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Daurdabla"] or player.wardrobe3["Daurdabla"] or player.wardrobe4["Daurdabla"] then
 					-- Use Gjallarhorn
 					equip(sets.precast.Fastcast,{range="Gjallarhorn"})
 				else
@@ -420,19 +420,19 @@ function midcast(spell,arg)
 	elseif spell.skill == "Singing" or spell.skill == "Stringed Instrument" or spell.skill == "Wind Instrument" then
 		-- Dummy Songs
 		if spell.name == "Fowl Aubade" then
-			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
+			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] or player.wardrobe3["Daurdabla"] or player.wardrobe4["Daurdabla"] then
 				equip(sets.midcast.Recast, {range="Daurdabla"})
-			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] then
+			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] or player.wardrobe3["Terpander"] or player.wardrobe4["Terpander"] then
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		elseif spell.name == "Herb Pastoral" then
-			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] then
+			if player.inventory["Daurdabla"] or player.wardrobe["Daurdabla"] or player.wardrobe2["Daurdabla"] or player.wardrobe3["Daurdabla"] or player.wardrobe4["Daurdabla"]then
 				equip(sets.midcast.Recast, {range="Daurdabla"})
-			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] then
+			elseif player.inventory["Terpander"] or player.wardrobe["Terpander"] or player.wardrobe2["Terpander"] or player.wardrobe3["Terpander"] or player.wardrobe4["Terpander"] then
 				equip(sets.midcast.Recast, {range="Terpander"})
 			end
 		else
-			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Gjallarhorn"] then
+			if player.inventory["Gjallarhorn"] or player.wardrobe["Gjallarhorn"] or player.wardrobe2["Gjallarhorn"] or player.wardrobe3["Gjallarhorn"] or player.wardrobe4["Gjallarhorn"] then
 				-- Buff Songs
 				if spell.target.type == "SELF" then
 					if string.find(spell.english,'Scherzo') then
@@ -454,6 +454,7 @@ function midcast(spell,arg)
 				else
 				-- Debuff
 					equip(sets.midcast.Debuff,{range="Gjallarhorn"})
+					
 				end
 			-- Not Ghorn
 			else
