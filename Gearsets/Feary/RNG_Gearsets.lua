@@ -116,12 +116,12 @@ if player.name == 'Feary' then
 		sets.precast.Snapshot = {
 						head="Amini Gapette",
 						-- Arc. Jerkin +1  hands="Carmine Fin. Ga. +1"
-						body="Amini Caban", hands="Iuitl Wristbands +1",
+						body="Amini Caban", hands="Meg. Gloves +1",
 						-- Belenus Cape Adhemar Kecks
 						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 		sets.precast.Snapshot.Flurry = {
 						head="Amini Gapette",
-						body="Amini Caban", hands="Iuitl Wristbands +1",
+						body="Amini Caban", hands="Meg. Gloves +1",
 						-- Arc. Braccae +1
 						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 		sets.precast.Radpidshot = {

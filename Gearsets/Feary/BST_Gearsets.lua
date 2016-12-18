@@ -36,14 +36,14 @@ if player.name == 'Feary' then
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Repulse Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
+				head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+                body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Repulse Mantle", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 sets.idle.MDT = {
-				head="Felistris Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Iuitl Vest +1", hands="Iuitl Wristbands +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape +1", waist="Nierenschutz", legs="Iuitl Tights +1", feet="Iuitl Gaiters"}
+				head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+                body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Engulfer Cape +1", waist="Nierenschutz", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
