@@ -153,8 +153,7 @@ if player.name == 'Feary' then
 		sets.midcast.Debuff = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1},
 				-- Incantor's Torque
 				head="Bihu Roundlet +1", neck="Piper's Torque", lear="Gwati Earring", rear="Enchntr. Earring +1",
-				-- Carbuncle Ring +1 Carbuncle Ring +1
-                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Perception ring", rring="Sangoma Ring",
+                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Stikini ring", rring="Stikini ring",
                 back="Intarabus's Cape", waist="Ovate Rope", legs="Fili Rhingrave +1", feet="Inyan. Crackows +1"}
 		
 		--Healing Magic
@@ -172,11 +171,11 @@ if player.name == 'Feary' then
 		-- Potency
 		sets.midcast.Enfeebling = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1}, 
 				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Perception ring", rring="Sangoma Ring",
+                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Stikini ring", rring="Stikini ring",
                 back="Intarabus's Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyan. Crackows +1"}
 		sets.midcast.Macc = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1}, 
 				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
-                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Perception ring", rring="Sangoma Ring",
+                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Stikini ring", rring="Stikini ring",
                 back="Intarabus's Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyan. Crackows +1"}
 				
 		sets.midcast.Dia = set_combine(sets.midcast.ConserveMP,{})
