@@ -54,13 +54,13 @@ if player.Name == 'Derion' then
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				head="Amalric Coif", lear="Merman's Earring", rear="Merman's Earring",
 				body="Jhakri Robe", 
-				-- Legs="Assudity Pants +1 feet="Herald's Gaiters"
+				-- Legs="Assudity Pants +1 
+				feet="Herald's Gaiters"
 				})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				head="Shaded Spectacles", neck="Goldsmith's Torque",
 				body="Goldsmith's Smock", lring="Craftkeeper's Ring", rring="Craftmaster's Ring", 
-				--feet="Herald's Gaiters"
-				waist="Goldsmith's Belt"})
+				waist="Goldsmith's Belt", feet="Herald's Gaiters"})
 		
 		-- JA
 		sets.precast.JA["Manafont"] = {body="Sorcerer's Coat +2"}

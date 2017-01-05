@@ -199,87 +199,94 @@ function buff_change(buff,g_or_l)
 end
 
 function precast(spell,arg)
-	if spell.type == 'JobAbility' then
-		if spell.name == 'Convert' then
-			cancel_spell()
-		elseif spell.name == 'Chivalry' and player.tp <= 70 then
-			cancel_spell()
-			windower.add_to_chat(121,'Not Enough TP to Chivalry')
-		elseif sets.precast.JA[spell.name] then
-			equip(sets.precast.JA[spell.name])
-		else
-			equip(sets.Enmity)
-		end
-	elseif spell.type == 'WeaponSkill' then
-		if player.status == 'Engaged' then
-			if player.tp >= 100 then
-				if spell.target.distance <= 5 then
-					if Mode == 1 then
-						if sets.precast.WS.Acc[spell.name] then
-							equip(sets.precast.WS.Acc[spell.name])
+	-- Silenced, Terror, Petri
+	if buffactive['stun'] or buffactive['terror'] or buffactive['petrification'] or	buffactive['terror'] or spell.interrupted = true then
+		cancel_spell()
+		windower.add_to_chat(121,'Can\'t Cast, Canceling Spell')
+	else
+		if spell.type == 'JobAbility' and not buffactive['amnesia'] then
+			if spell.name == 'Convert' then
+				cancel_spell()
+			elseif spell.name == 'Chivalry' and player.tp <= 70 then
+				cancel_spell()
+				windower.add_to_chat(121,'Not Enough TP to Chivalry')
+			elseif sets.precast.JA[spell.name] then
+				equip(sets.precast.JA[spell.name])
+			else
+				equip(sets.Enmity)
+			end
+		elseif spell.type == 'WeaponSkill' and not buffactive['amnesia'] then
+			if player.status == 'Engaged' then
+				if player.tp >= 100 then
+					if spell.target.distance <= 5 then
+						if Mode == 1 then
+							if sets.precast.WS.Acc[spell.name] then
+								equip(sets.precast.WS.Acc[spell.name])
+							else
+								equip(sets.precast.WS)
+							end
 						else
-							equip(sets.precast.WS)
+							if sets.precast.WS[spell.name] then
+								equip(sets.precast.WS[spell.name])
+							else
+								equip(sets.precast.WS)
+							end
 						end
 					else
-						if sets.precast.WS[spell.name] then
-							equip(sets.precast.WS[spell.name])
-						else
-							equip(sets.precast.WS)
-						end
+						cancel_spell()
+						windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
 					end
-				else
+				else 
 					cancel_spell()
-					windower.add_to_chat(121, 'Canceled '..spell.name..'.'..spell.target.name..' is Too Far')
+					windower.add_to_chat(121, ''..player.tp..'Not enough TP to WS')
 				end
-			else 
-				cancel_spell()
-				windower.add_to_chat(121, ''..player.tp..'Not enough TP to WS')
-			end
-		else
-			cancel_spell()
-			windower.add_to_chat(121, 'You must be Engaged to WS')
-		end
-	elseif spell.type:endswith('Magic') then
-		if spell.skill == 'Healing Magic' then
-			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
-				equip(sets.precast.HPDown)
 			else
-				equip(sets.precast.Cure)
+				cancel_spell()
+				windower.add_to_chat(121, 'You must be Engaged to WS')
 			end
-		elseif spell.skill == 'Enhancing Magic' then
-			equip(sets.precast.Enhancing)
-			if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
-				windower.ffxi.cancel_buff(71)
+		elseif spell.type:endswith('Magic') and not (buffactive['silence'] or  buffactive['mute']) then
+			if spell.skill == 'Healing Magic' then
+				if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
+					equip(sets.precast.HPDown)
+				else
+					equip(sets.precast.Cure)
+				end
+			elseif spell.skill == 'Enhancing Magic' then
+				equip(sets.precast.Enhancing)
+				if spell.name == 'Sneak' and buffactive.Sneak and spell.target.type == 'SELF' then
+					windower.ffxi.cancel_buff(71)
+				end
+			elseif spell.skill == 'Divine Magic' then
+				equip(sets.precast.Fastcast)
+			elseif spell.skill == 'Blue Magic' then
+				equip(sets.precast.Fastcast,sets.Enmity)
+			elseif spell.skill == 'Elemental Magic' then
+				equip(sets.precast.Fastcast)
 			end
-		elseif spell.skill == 'Divine Magic' then
-			equip(sets.precast.Fastcast)
-		elseif spell.skill == 'Blue Magic' then
-			equip(sets.precast.Fastcast,sets.Enmity)
-		elseif spell.skill == 'Elemental Magic' then
-			equip(sets.precast.Fastcast)
-		end
-	elseif spell.type == 'Ninjutsu' then
-        if windower.wc_match(spell.name,'Utsusemi*') then
-			equip(sets.precast.Utsusemi)
+		elseif spell.type == 'Ninjutsu' and not (buffactive['silence'] or  buffactive['mute']) then
+			if windower.wc_match(spell.name,'Utsusemi*') then
+				equip(sets.precast.Utsusemi)
+			else
+				-- Ninjutsu spell gear handling(Precast)
+				equip(sets.precast.FastCast)
+			end
 		else
-			-- Ninjutsu spell gear handling(Precast)
-			equip(sets.precast.FastCast)
-        end
-	else
-		-- Special handling to remove Dancer sub job Sneak effect
-		if spell.name == 'Spectral Jig' and buffactive.Sneak then
-			windower.ffxi.cancel_buff(71)
-			cast_delay(0.3)
-		elseif windower.wc_match(spell.name,'Curing*') then
-			equip(sets.precast.Waltz)
-		elseif windower.wc_match(spell.name,'*Step') then
-			equip(sets.TP.Acc)
+			-- Special handling to remove Dancer sub job Sneak effect
+			if spell.name == 'Spectral Jig' and buffactive.Sneak then
+				windower.ffxi.cancel_buff(71)
+				cast_delay(0.3)
+			elseif windower.wc_match(spell.name,'Curing*') then
+				equip(sets.precast.Waltz)
+			elseif windower.wc_match(spell.name,'*Step') then
+				equip(sets.TP.Acc)
+			end
 		end
 	end
 end
 
+
 function midcast(spell,arg)
-	if spell.type:endswith('Magic') then
+	if spell.type:endswith('Magic') and not buffactive['stun'] or buffactive['terror'] or buffactive('petrification') or buffactive['terror'] or (buffactive['silence'] or  buffactive['mute']) or spell.interrupted = false then
 		if spell.skill == 'Healing Magic' then
 			-- Self Cure 
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then
@@ -314,7 +321,7 @@ function midcast(spell,arg)
 		elseif spell.skill == 'Elemental Magic' then
 			equip(sets.precast.Fastcast)
 		end
-    elseif spell.type == 'Ninjutsu' then
+    elseif spell.type == 'Ninjutsu' and not (buffactive['silence'] or  buffactive['mute']) then
 		-- Utsusemi
 		if windower.wc_match(spell.name,'Utsusemi*') then
 			-- Equip PDT then Utsusemi Gear sets

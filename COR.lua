@@ -1,9 +1,9 @@
 -- Feary's COR LUA
 -- Created: 3/10/2014
--- Last Updated: 4/22/2014
+-- Last Updated: 01/5/2017
 -- To Do List
--- Triple Shot?
--- 	`1
+-- 
+-- 
 --
 --includes
 	include('include/functions.lua')
@@ -12,12 +12,16 @@
 function get_sets()
 	-- Ammo 
 	-- Rare Quick Draw Ammo
-	QDBullets = T{"Omphalos Bullet","Animikii Bullet"}
+		QDBullets = T{"Omphalos Bullet","Animikii Bullet"}
 	-- Ammo
-	QDBullet = {ammo="Animikii Bullet"}
-	TPBullet = {ammo="Bullet"}
-	WSBullet = {ammo="Achiyal. Bullet"}
-	MBullet = {ammo="Bullet"}
+		-- Quick Draw Only
+		QDBullet = {ammo="Animikii Bullet"}
+		-- Normal TP Bullets
+		TPBullet = {ammo="Adlivun Bullet"}
+		-- WS Bullets
+		WSBullet = {ammo="Adlivun Bullet"}
+		-- Magical WS Bullets "use the cheapest"
+		MBullet = {ammo="Bullet"}
 	-- Luzaf's Ring - 1 to use
 	luzaf = 1
 	
@@ -241,7 +245,7 @@ function precast(spell,arg)
 		if ranged_weaponskills:contains(spell.name) then
 			if player.status == 'Engaged' then
 				if player.tp >= 100 then
-					if spell.target.distance >= ranged_weaponskills.Distance[spell.name] then
+					if spell.target.distance <= ranged_weaponskills_Distance[spell.name] then
 						if sets.precast.RAWS[spell.name] then
 							equip(sets.precast.RAWS[spell.name])
 						else
@@ -249,7 +253,7 @@ function precast(spell,arg)
 						end
 					else
 						cancel_spell()
-						windower.add_to_chat(121,''..spell.target..'is too far to ws')
+						windower.add_to_chat(121,''..spell.target.name..'is too far to ws')
 					end
 				else 
 					cancel_spell()
@@ -310,18 +314,44 @@ function midcast(spell,arg)
 		if buffactive.Barrage then
             equip(sets.precast.JA["Barrage"])
         end
-		-- Acc Sets 
-		if Mode == 1 or Mode == 3 then
-			if player.equipment.range == "Armageddon" then
-				equip(sets.RA.Armageddon.Acc)
-			elseif player.equipment.range == "Eminent Gun" then
-				equip(sets.RA.Acc)
+		-- Triple Shot
+		if buffactive["Triple Shot"] then
+			-- Acc Sets 
+			if Mode == 1 or Mode == 3 then
+				if player.equipment.range == "Armageddon" then
+					equip(sets.RA.Armageddon.Acc, sets.precast.JA["Triple Shot"])
+				elseif player.equipment.range == "Eminent Gun" then
+					equip(sets.RA.Acc. sets.precast.JA["Triple Shot"])
+				else
+					equip(sets.RA, sets.precast.JA["Triple Shot"])
+				end
+			else
+				if player.equipment.range == "Armageddon" then
+					equip(sets.RA.Armageddon, sets.precast.JA["Triple Shot"])
+				elseif player.equipment.range == "Eminent Gun" then
+					equip(sets.RA, sets.precast.JA["Triple Shot"])
+				else
+					equip(sets.RA, sets.precast.JA["Triple Shot"])
+				end
 			end
 		else
-			if player.equipment.range == "Armageddon" then
-				equip(sets.RA.Armageddon)
-			elseif player.equipment.range == "Eminent Gun" then
-				equip(sets.RA)
+			-- Acc Sets 
+			if Mode == 1 or Mode == 3 then
+				if player.equipment.range == "Armageddon" then
+					equip(sets.RA.Armageddon.Acc)
+				elseif player.equipment.range == "Eminent Gun" then
+					equip(sets.RA.Acc)
+				else
+					equip(sets.RA)
+				end
+			else
+				if player.equipment.range == "Armageddon" then
+					equip(sets.RA.Armageddon)
+				elseif player.equipment.range == "Eminent Gun" then
+					equip(sets.RA)
+				else
+					equip(sets.RA)
+				end
 			end
 		end
     end
@@ -367,7 +397,11 @@ function aftercast(spell,arg)
 			end
 		else
 			if player.status == 'Engaged' then
-				previous_set()
+				if spell.target.distance <= 6 then
+					previous_set()
+				else
+					equip(sets.idle.Standard)
+				end
 			else
 				equip(sets.idle.Standard)
 			end

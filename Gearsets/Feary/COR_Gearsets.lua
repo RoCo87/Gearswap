@@ -42,16 +42,16 @@ if player.name == 'Feary' then
 			head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
-
+			
+	sets.idle.Standard = set_combine(sets.idle.PDT, {
+			legs="Carmine Cuisses +1"})
+					
 	sets.misc.Town = set_combine(sets.idle.PDT, {
 			head="Lanun Tricorne",
 			body="Lak. Frac", hands="Lanun Gants",
-			legs="Lanun Culottes", feet="Hermes' Sandals"})
-					
-	sets.idle.Standard = set_combine(sets.idle.PDT, {
-			feet="Hermes' Sandals"})
-					
-	-- Precast 
+			legs="Carmine Cuisses +1"})
+	
+	-- Precast ..
 	sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			-- neck="Voltsurge Torque",
 			head="Carmine Mask +1",  lear="Loquac. Earring", rear="Enchntr. Earring +1", 
@@ -62,7 +62,9 @@ if player.name == 'Feary' then
 
 	sets.precast.Utsusemi = set_combine(sets.precast.Fastcast, {neck="Magoraga Beads"})
 							
-	sets.misc.Waltz = {}
+	sets.misc.Waltz = {
+			rring="Asklepian Ring",
+			legs="Dashing Subligar"}
 	sets.misc.Steps = {}
 	sets.misc.flourish = {}
 
@@ -73,14 +75,16 @@ if player.name == 'Feary' then
 	sets.precast.JA["Fold"] = {hands="Lanun Gants"}
 	sets.precast.JA["Random Deal"] = {body="Lanun Frac"}
 	sets.precast.JA["Snake Eye"] = {legs="Lanun Culottes"}
-	sets.precast.JA["Triple Shot"] = {body="Chasseur's Frac"}
+	sets.precast.JA["Triple Shot"] = {
+			body="Chasseur's Frac",
+			back="Camulus's Mantle"}
 	
 
 	-- Corsair Rolls
 	sets.precast.JA["Phantom Roll"] = set_combine(sets.idle.PDT,{
 			head="Lanun Tricorne", 
 			hands="Chasseur's Gants", lring="Barataria Ring", rring="Luzaf's Ring",
-			back="Camulus Mantle", legs="Desultor Tassets"})
+			back="Camulus's Mantle", legs="Desultor Tassets"})
 	sets.precast.JA["Double-Up"] = set_combine(sets.precast.JA["Phantom Roll"])
 	
 	sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {legs="Chasseur's Culottes"})
@@ -98,100 +102,111 @@ if player.name == 'Feary' then
 			head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
 			--  Samnuha Coat Leyline Gloves Fenrir Ring +1 Fenrir Ring +1
 			body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-			-- Adhe. Gamashes +1 Legs
-			back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Meg. Chausses +1", feet="Lanun Boots"}
+			-- Camulus's Mantle       Mummu Kecks +1         Adhe. Gamashes +1 
+			back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Meg. Chausses +1", feet="Adhemar Gamashes"}
 		
 	--Light/Dark Shot
 	sets.precast.QD.ACC = {
-			-- Waylayer's Scarf
+			-- Sanctity Necklace 
 			head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
-			-- Mirke Wadecors  Longshot Ring  Arvina Ringlet +1
-			body="Lanun Frac", hands="Chasseur Gants", lring="Perception Ring", rring="Sangoma Ring",
-			-- Eschan Stone Legs
-			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Meg. Chausses +1", feet="Chasseur's Boots"}
+			-- Mirke Wadecors  Arvina Ringlet +1
+			body="Lanun Frac", hands="Chasseur Gants", lring="Stikini Ring", rring="Stikini Ring",
+			-- Eschan Stone Mummu Kecks +1
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Chasseur's Boots"}
 				
 	-- RA Sets
 	sets.precast.Snapshot = {ammo=TPBullet,
 			-- Aurora Beret +1
 			head="Chass. Tricorne", 
-			Body="Skopos Jerkin", hands="Lanun Gants",
-			-- Chas. Culottes +1
+			body="Skopos Jerkin", hands="Lanun Gants",
+			-- Aug.Cape.COR.Snapshot Chas. Culottes +1
 			back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 	
 	-- Eminent Gun
 	sets.RA = { ammo=TPBullet,
-			head="Chass. Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
-			body="Chasseur's Frac", hands="Chasseur's Gants", lring="Hajduk Ring", rring="Hajduk Ring",
-			back="Gunslinger's Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Meg. Jam +1"}
+			head="Meghanada Visor +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+			-- Aug.Cape.COR.TP
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 					
 	sets.RA.Acc = { ammo=TPBullet,
-			head="Chass. Tricorne", neck="Iqabi Necklace", lear="Clearview Earring", rear="Enervating Earring",
-			body="Chasseur's Frac", hands="Lanun Gants", lring="Hajduk Ring", rring="Hajduk Ring",
-			back="Kayapa Cape", waist="Buccaneer's Belt", legs="Feast Hose", feet="Taeon Boots"}
-
+			head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Clearview Earring", rear="Enervating Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+			-- Aug.Cape.COR.TP
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			
 	-- Armageddon 
 	sets.RA.Armageddon = { ammo=TPBullet,
-			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
-			body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Terebellum Mantle", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
-
+			head="Meghanada Visor +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+			-- Aug.Cape.COR.TP
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			
 	sets.RA.Armageddon.Acc = { ammo=TPBullet,
-			head="Lanun Tricorne", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
-			Body="Lanun Frac", hands="Lanun Gants", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			back="Kayapa Cape", waist="Buccaneer's Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
-
+			head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Clearview Earring", rear="Enervating Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
+			-- Aug.Cape.COR.TP
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			
 	--Barrage
 	sets.precast.JA["Barrage"] =  set_combine(sets.RA.Acc)
 
 	-- Melee TP 
 	sets.TP = { 
 			-- Adhe. Bonnet +1 Defiant Collar 
-			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Heartseeker Earring", rear="Dudgeon Earring",
+			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
 			-- Adhemar Jacket +1 Adhemar Wrist. +1 lring="Petrov Ring"
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-			-- Bleating Mantle Windbuffet Belt +1 Adhe. Gamashes +1
-			back="Atheling Mantle", waist="Windbuffet Belt", legs="Samnuha Pants", feet="Meg. Jam. +1"}
+			-- Windbuffet Belt +1 Adhe. Gamashes +1
+			back="Camulus's Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Meg. Jam. +1"}
 
 	-- Melee Accuracy TP
 	sets.TP.Acc = {	
 			-- Adhe. Bonnet +1 Defiant Collar Telos Earring Zennaroi Earring
-			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Heartseeker Earring", rear="Dudgeon Earring",
+			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
 			-- Adhemar Jacket +1 Adhemar Wrist. +1 lring="Petrov Ring" Cacoethic Ring +1
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
-			-- Letalis Mantle  Adhe. Gamashes +1
-			back="Atheling Mantle", waist="Anguinus Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			-- Camulus's Mantle Adhe. Gamashes +1
+			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	-- Weaponskills
 	-- Melee WS
 	sets.precast.WS = {
 			head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			back=Aug.Cape.COR.Melee.WS, waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
-	sets.precast.WS.Acc = {}
+	sets.precast.WS.Acc = {
+			head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+			back=Aug.Cape.COR.Melee.WS, waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	-- Sword
 	sets.precast.WS["Savage Blade"] = {
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+			-- Aug.Cape.COR.Melee.WS
 			back="Buquwik Cape", waist="Wanion Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 	sets.precast.WS["Requiescat"] = {
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-			body="Meghanada Tabard", hands="Meg. Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+			-- Aug.Cape.COR.Melee.WS
 			back="Vespid Mantle", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 					
 	-- Dagger
 	sets.precast.WS["Exenterator"] = {
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-			body="Meghanada Tabard", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+			-- Aug.Cape.COR.Melee.WS
 			back="Atheling Mantle", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	-- RA WS
 	sets.precast.RAWS = {
-			-- rear="Moonshade Earring or Ishvara Earring"
-			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Clearview Earring",
+			--  or Ishvara Earring"
+			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Moonshade Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
+			-- Aug.Cape.COR.WS
 			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 	
 	-- Physical
@@ -200,7 +215,7 @@ if player.name == 'Feary' then
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Moonshade Earring",
 			-- Carmine Fin. Ga. +1
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			-- Camulus's Mantle
+			-- Aug.Cape.COR.WS
 			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"})
 	
 	-- Magical
@@ -209,7 +224,7 @@ if player.name == 'Feary' then
 			head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
 			-- Samnuha Coat/Carmine Mail +1 Carmine Fin. Gauntlets +1 Arvina Ringlet +1
 			body="Lanun Frac", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
-			-- Camulus's Mantle Eschan Stone Adhe. Gamashes +1
+			-- Aug.Cape.COR.WS Eschan Stone Adhe. Gamashes +1
 			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 	sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
@@ -217,5 +232,7 @@ if player.name == 'Feary' then
 			head="Lanun Tricorne", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Moonshade Earring",
 			-- Samnuha Coat Carmine Mail +1  Carmine Fin. Gauntlets +1 Arvina Ringlet +1
 			body="Lanun Frac", hands="Meg. Gloves +1", lring="Shiva Ring", rring="Archon Ring",
+			-- Aug.Cape.COR.WS
 			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
+
 end

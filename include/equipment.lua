@@ -44,74 +44,89 @@
 	-- cure pot +4/skill +10
 	Aug.Cape.WHM = {name="Mending Cape", augments={'Mac. Acc.+7','Healing Magic skill +2','Enha. mag. skill +3'}}
 	
+	-- BlM
 	-- elemental skill  dark magic skill
 	Aug.Cape.BLM = {name="Bane Cape"}
-	-- MACC
 	Aug.Cape.BLM.MACC = {name="Taranus's Cape", augments={'MP+60','"Mag. Atk. Bns."+10"','Mag. Acc.+20/Mag.DMG.+20',}}
+	Aug.Cape.BLM.Fastcast = {name="Sucello's Cape"}
 	
+	--RDM
 	-- Duration 10-20
 	Aug.Cape.RDM = {name="Ghostfyre Cape"}
+	Aug.Cape.RDM.Macc = {name="Sucello's Cape"}
+	Aug.Cape.RDM.Fastcast = {name="Sucello's Cape"}
 	
+	-- THF
 	-- Dual Wield +5
 	Aug.Cape.THF = {name="Canny Cape", augments={}}
-	Aug.Cape.THF.STP = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
+	Aug.Cape.THF.STP = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	Aug.Cape.THF.WS = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	Aug.Cape.THF.Crit = {}
+	Aug.Cape.THF.Crit = {name="Toutalis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
 	
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
-	Aug.Cape.PLD.TP = {name="Rudianos's Mantle", augments={'VIT+20','Accuracy+30 Attack+20', 'Store TP +10'}}
+	Aug.Cape.PLD.TP = {name="Rudianos's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
 	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Enmity+10',}}
-	Aug.Cape.PLD.FC = {name="Rudianos's Mantle", augments={'MND+19','Fast Cast+10%','Eva.+13/Mag. Eva.+13'}}
-	Aug.Cape.PLD.Macc = {name="Rudianos's Mantle", augments={'Mag. Acc.+20/Mag. Dmg+20'}}
+	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','MND+10','Enmity+10',}}
+	Aug.Cape.PLD.FC = {name="Rudianos's Mantle", augments={'MND+19','Eva.+13 /Mag. Eva.+13','"Fast Cast"+10',}}
+	Aug.Cape.PLD.MAB = {name="Rudianos's Mantle", augments={'Mag. Acc+20 /Mag. Dmg.+20',}}
 	
-	-- ?
+	-- DRK
+	-- Drain/Aspir
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	
 	-- pet dt-5
 	Aug.Cape.BST = {name="Pastoralist's Mantle"}
 
-	-- BRD
+	-- Magic acc +7
 	Aug.Cape.BRD = {name="Rhapsode's Cape", augments={'HP+24','Mag. Acc.+7','Enmity-4','Damage taken-1%',}}
-	Aug.Cape.BRD.MACC = {name="Intarabus's Cape", augments={'CHR+20','Fast Cast+10','Mag. Acc.+20/Mag. Dmg.+20',}}
+	-- Magic acc
+	Aug.Cape.BRD.MACC = {name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+3','"Fast Cast"+10',}}
 
 	-- RNG
 	Aug.Cape.RNG = {name="Lutian Cape", augments={}}
 	-- STP
-	Aug.Cape.RNG.TP = {}
-	-- WSD
-	Aug.Cape.RNG.WS = {}
-	-- Snapshot
-	Aug.Cape.RNG.Snapshot = {}
+	Aug.Cape.RNG.TP = {name="Belenus's Cape"}
+	Aug.Cape.RNG.WS = {name="Belenus's Cape"}
+	Aug.Cape.RNG.Snapshot = {name="Belenus's Cape"}
 	
-	-- SAM stp+3 mediate
+	-- SAM
+	-- stp+3 mediate
 	Aug.Cape.SAM = {name="Tahaka Mantle"}
+	
+	-- NIN
 	-- WSD +3
 	Aug.Cape.NIN = {name="Yokaze Mantle"}
 	
+	--DRG
 	-- Breath +10 wsd+5
 	Aug.Cape.DRG = {name="Updraft Mantle"}
-	Aug.Cape.DRG.TP = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Store TP +10',}}
-	Aug.Cape.DRG.WSD = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	Aug.Cape.DRG.Breath = {}
+	Aug.Cape.DRG.TP = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	Aug.Cape.DRG.WSD = {name="Brigantia's Mantle",}
+	Aug.Cape.DRG.Breath = {name="Brigantia's Mantle",}
 	
 	-- skill
 	Aug.Cape.SMN = {name="Coveyence Cape", augments="Summoning Skill +5"}
 	
+	--BLU
 	-- Blu Skill +10
 	Aug.Cape.BLU = {name="Cornflower Cape", augments={}}
 	-- DEX ACC STP
-	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Store TP +10',}}
+	Aug.Cape.BLU.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	-- STR ACC WSD
 	Aug.Cape.BLU.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	-- INT MACC MAB
-	Aug.Cape.BLU.MB = {name="Rosmerta's Cape", augments={'INT+20', '"Mag. Atk. Bns."+10', 'Mag. Acc.+20/Mag. Dmg.+20'}}
+	Aug.Cape.BLU.MB = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
 	-- Fastcast
-	Aug.Cape.BLU.FC = {name="Rosmerta's Cape", augments={'"Fast Cast"+10'}}
+	Aug.Cape.BLU.FC = {name="Rosmerta's Cape", augments={'"Fast Cast"+10',}}
 	
 	-- Phantom Roll -5
 	Aug.Cape.COR = {name="Gunslinger's Cape"}
+	Aug.Cape.COR.TP = {name="Camulus's Mantle"}
+	Aug.Cape.COR.WS = {name="Camulus's Mantle"}
+	Aug.Cape.COR.Snapshot = {name="Camulus's Mantle"}
+	Aug.Cape.COR.Melee = {name="Camulus's Mantle"}
+	Aug.Cape.COR.Melee.WS = {name="Camulus's Mantle"}
 	
 	-- ?
 	Aug.Cape.PUP = {}
@@ -124,7 +139,8 @@
 	
 	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {name="Lifestream Cape"}
-	Aug.Cape.GEO.MACC = {name="Lifestream Cape"}
+	Aug.Cape.GEO.MACC = {name="Nantosuetta's Cape"}
+	Aug.Cape.GEO.Fastcast = {name="Nantosuetta's Cape"}
 	
 	-- Enmity +7 
 	-- Ogma's cape - Enmity + 10
