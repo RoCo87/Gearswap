@@ -102,17 +102,17 @@ if player.name == 'Feary' then
 			head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
 			--  Samnuha Coat Leyline Gloves Fenrir Ring +1 Fenrir Ring +1
 			body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
-			-- Camulus's Mantle       Mummu Kecks +1         Adhe. Gamashes +1 
-			back="Gunslinger's Cape", waist="Hachirin-no-Obi", legs="Meg. Chausses +1", feet="Adhemar Gamashes"}
+			-- Camulus's Mantle        Belt     Mummu Kecks +1         Adhe. Gamashes +1 
+			back="Gunslinger's Cape", waist="Salire Belt", legs="Meg. Chausses +1", feet="Adhemar Gamashes"}
 		
 	--Light/Dark Shot
 	sets.precast.QD.ACC = {
 			-- Sanctity Necklace 
 			head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Enchntr. Earring +1", rear="Gwati Earring",
 			-- Mirke Wadecors  Arvina Ringlet +1
-			body="Lanun Frac", hands="Chasseur Gants", lring="Stikini Ring", rring="Stikini Ring",
+			body="Lanun Frac", hands="Chasseur's Gants", lring="Stikini Ring", rring="Stikini Ring",
 			-- Eschan Stone Mummu Kecks +1
-			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Chasseur's Boots"}
+			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Chasseur's Bottes"}
 				
 	-- RA Sets
 	sets.precast.Snapshot = {ammo=TPBullet,
@@ -124,7 +124,7 @@ if player.name == 'Feary' then
 	
 	-- Eminent Gun
 	sets.RA = { ammo=TPBullet,
-			head="Meghanada Visor +1", neck="Ocachi Gorget", lear="Clearview Earring", rear="Enervating Earring",
+			head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Clearview Earring", rear="Enervating Earring",
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
 			-- Aug.Cape.COR.TP
 			back="Gunslinger's Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
@@ -213,7 +213,7 @@ if player.name == 'Feary' then
 	sets.precast.RAWS['Last Stand'] = set_combine(sets.precast.RAWS,{
 			-- Ishvara Earring
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Enervating Earring", rear="Moonshade Earring",
-			-- Carmine Fin. Ga. +1
+			-- Laksa. Frac +3 
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
 			-- Aug.Cape.COR.WS
 			back="Gunslinger's Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"})
@@ -221,11 +221,11 @@ if player.name == 'Feary' then
 	-- Magical
 	sets.precast.RAWS['Wildfire'] = set_combine(sets.precast.RAWS,{
 			-- Taeon Chapeau Baetyl Pendant
-			head="Chasseur Tricorne", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
-			-- Samnuha Coat/Carmine Mail +1 Carmine Fin. Gauntlets +1 Arvina Ringlet +1
+			head="Chass. Tricorne", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
+			-- Laksa. Frac +3/Carmine Mail +1 Arvina Ringlet +1
 			body="Lanun Frac", hands="Meg. Gloves +1", lring="Garuda Ring +1", rring="Garuda Ring +1",
 			-- Aug.Cape.COR.WS Eschan Stone Adhe. Gamashes +1
-			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
+			back="Gunslinger's Cape", waist="Salire Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 	sets.precast.RAWS['Leaden Salute'] = set_combine(sets.precast.RAWS,{
 			-- Pixie Earring +1 Baetyl Pendant
@@ -233,6 +233,6 @@ if player.name == 'Feary' then
 			-- Samnuha Coat Carmine Mail +1  Carmine Fin. Gauntlets +1 Arvina Ringlet +1
 			body="Lanun Frac", hands="Meg. Gloves +1", lring="Shiva Ring", rring="Archon Ring",
 			-- Aug.Cape.COR.WS
-			back="Gunslinger's Cape", waist="Aquiline Belt", legs="Lak. Trews", feet="Lanun Boots"})
+			back="Gunslinger's Cape", waist="Salire Belt", legs="Lak. Trews", feet="Lanun Boots"})
 
 end

@@ -54,11 +54,11 @@ if player.name == 'Feary' then
 				back="Engulfer Cape +1", waist="Flume Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		sets.misc.Town = set_combine(sets.idle.PDT,{
-				feet="Fajin Boots"})
+				legs="Carmine Cuisses +1"})
 						
 		sets.idle.Standard = set_combine(sets.idle.PDT, {
 				lear="Merman's Earring", rear="Etiolation Earring", 
-				feet="Fajin Boots"})
+				legs="Carmine Cuisses +1"})
 						
 		-- Precast				
 		sets.precast.Fastcast = set_combine(sets.idle.PDT, {
@@ -79,13 +79,13 @@ if player.name == 'Feary' then
 				head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
 				-- Belenus.STP
-				back="Lutian Cape", waist="Scout's Belt", legs="Desultor Tassets", feet="Meg. Jam. +1"}
+				back="Lutian Cape", waist="Kwahu Kachina Belt", legs="Desultor Tassets", feet="Meg. Jam. +1"}
 
 		sets.precast.JA.Acc["Barrage"] =  {
 				head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 				body="Kyujutsugi", hands="Orion Bracers +1", lring="Hajduk Ring", rring="Hajduk Ring",
 				-- Belenus.STP	
-				back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses", feet="Meg. Jam. +1"}
+				back="Lutian Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 						
 		-- JA
 		sets.precast.JA["Shadowbind"] = {hands="Orion Bracers +1"}
@@ -101,14 +101,14 @@ if player.name == 'Feary' then
 
 		-- Melee TP 
 		sets.TP = { 
-						head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-						back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+				head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
+				back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 		-- Melee Accuracy TP
 		sets.TP.Acc = {
-						head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-						body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
-						back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+				head="Meghanada Visor +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+				body="Meghanada Cuirie", hands="Meghanada Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+				back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		-- RA Sets
 		-- Snapshot - Caps at 80 from any source.
@@ -118,18 +118,18 @@ if player.name == 'Feary' then
 						-- Arc. Jerkin +1  hands="Carmine Fin. Ga. +1"
 						body="Amini Caban", hands="Meg. Gloves +1",
 						-- Belenus Cape Adhemar Kecks
-						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
+						back="Lutian Cape", waist="Impulse Belt", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
 		sets.precast.Snapshot.Flurry = {
 						head="Amini Gapette",
 						body="Amini Caban", hands="Meg. Gloves +1",
 						-- Arc. Braccae +1
-						back="Lutian Cape", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
+						back="Lutian Cape", waist="Impulse Belt", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
 		sets.precast.Radpidshot = {
 						head="Orion Beret +1",
 						-- hands="Carmine Fin. Ga. +1",
 						body="Arc. Jerkin +1", 
-						-- back="Belenus Cape",
-						legs="Adhemar Kecks", feet="Pursuer's Gaiters"}
+						-- back="Belenus Cape", feet="Pursuer's Gaiters" 
+						legs="Adhemar Kecks",}
 						
 		-- Overkill
 		sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
@@ -152,7 +152,7 @@ if player.name == 'Feary' then
 					head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
 					-- Belenus Cape Yemaya Belt
-					back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+					back="Lutian Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 		
 		-- SAM Subjob
 		sets.RA.Sam = { -- Perun +1 Perun  
@@ -167,7 +167,7 @@ if player.name == 'Feary' then
 					head="Meghanada Visor +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
 					body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Hajduk Ring", rring="Hajduk Ring",
 					-- Belenus Cape Yemaya Belt
-					back="Lutian Cape", waist="Scout's Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+					back="Lutian Cape", waist="Kwahu Kachina Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 				
 		-- Gun
 		sets.RA.Gun = { 
@@ -190,12 +190,12 @@ if player.name == 'Feary' then
 		sets.precast.JA["Overkill"] = {
 						head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
 						body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Garuda Ring +1",
-						back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						back="Sylvan's Chlamys", waist="Kwahu Kachina Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 		sets.precast.JA.Acc["Overkill"] = set_combine(sets.RA.Acc, {
 						head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
 						body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Garuda Ring +1 ", rring="Garuda Ring +1",
-						back="Sylvan's Chlamys", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
+						back="Sylvan's Chlamys", waist="Kwahu Kachina Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"})
 
 		-- Weaponskills
 		-- Melee
@@ -207,7 +207,7 @@ if player.name == 'Feary' then
 		sets.precast.RAWS = {
 						head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
 						body="Amini Caban", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-						back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						back="Buquwik Cape", waist="Kwahu Kachina Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 		sets.precast.RAWS.Acc = set_combine(sets.precast.RAWS,{})
 
@@ -237,12 +237,12 @@ if player.name == 'Feary' then
 		sets.precast.RAWS['Last Stand'] = {
 						head="Amini Gapette", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
 						body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
-						back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						back="Buquwik Cape", waist="Kwahu Kachina Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 		sets.precast.RAWS['Coronach'] = {
 						head="Amini Gapette", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
 						body="Orion Jerkin +1", hands="Orion Bracers +1", lring="Rajas Ring", rring="Ifrit Ring +1",
-						back="Buquwik Cape", waist="Scout's Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						back="Buquwik Cape", waist="Kwahu Kachina Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
 
 		sets.precast.RAWS['Wildfire'] = {
 						head="Amini Gapette", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",

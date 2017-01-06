@@ -230,9 +230,17 @@ function precast(spell,arg)
 -- Quick Draw
 	elseif spell.type == "CorsairShot" then
 		if spell.english:wcmatch('Dark Shot|Light Shot') then
-			equip(sets.precast.QD.ACC,QDBullet)
+			if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+				equip(sets.midcast.Nuke.MB.Acc,{waist="Hachirin-no-Obi"})
+			else
+				equip(sets.precast.QD.ACC,QDBullet)
+			end
 		else
-			equip(sets.precast.QD.MAB,QDBullet)
+			if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+				equip(sets.precast.QD.MAB,QDBullet, {waist="Hachirin-no-Obi"})
+			else
+				equip(sets.precast.QD.MAB,QDBullet)
+			end
 		end
 -- JobAbility
 	elseif spell.type == "JobAbility" then
@@ -247,7 +255,15 @@ function precast(spell,arg)
 				if player.tp >= 100 then
 					if spell.target.distance <= ranged_weaponskills_Distance[spell.name] then
 						if sets.precast.RAWS[spell.name] then
-							equip(sets.precast.RAWS[spell.name])
+							if spell.name == "Wildfire" or spell.name == "Leaden Salute" then
+								if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
+									equip(sets .precast.RAWS[spell.name],{waist="Hachirin-no-Obi"})
+								else
+									equip(sets.precast.RAWS[spell.name]
+								end
+							else
+								equip(sets.precast.RAWS[spell.name]
+							end
 						else
 							equip(sets.precast.RAWS)
 						end
