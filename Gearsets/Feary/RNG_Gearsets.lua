@@ -18,27 +18,27 @@ if player.name == 'Feary' then
 		if automacroset == 1 then
 			if ranged_Bow:contains(player.equipment.range) then
 				if player.sub_job == 'NIN' then
-					set_macro_page(13,1)
+					set_macro_page(1,13)
 				elseif player.sub_job == 'SAM' then
-					set_macro_page(13,2)
+					set_macro_page(2,13)
 				elseif player.sub_job == 'WAR' then
-					set_macro_page(13,3)
+					set_macro_page(3,13)
 				elseif player.sub_job == 'DRG' then 
-					set_macro_page(13,4)
+					set_macro_page(4,13)
 				end
 			elseif ranged_Gun:contains(player.equipment.range) then
 				if player.sub_job == 'NIN' then
-					set_macro_page(13,5)
+					set_macro_page(5,13)
 				elseif player.sub_job == 'SAM' then
-					set_macro_page(13,6)
+					set_macro_page(6,13)
 				elseif player.sub_job == 'WAR' then
-					set_macro_page(13,7)
+					set_macro_page(7,13)
 				elseif player.sub_job == 'DRG' then 
-					set_macro_page(13,8)
+					set_macro_page(8,13)
 				end
 			end			
 		else
-			set_macro_page(13,3)
+			set_macro_page(3,13)
 		end
 		
 -- Auto Sets
@@ -111,25 +111,35 @@ if player.name == 'Feary' then
 				back="Ground. Mantle +1", waist="Dynamic Belt +1",  legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 
 		-- RA Sets
-		-- Snapshot - Caps at 80 from any source.
+		-- Snapshot - Caps at 70 from any source.
 		-- Merit:10 Gifts:10 Flurry II: 30
 		sets.precast.Snapshot = {
+						-- Taeon Chapaeu
 						head="Amini Gapette",
-						-- Arc. Jerkin +1  hands="Carmine Fin. Ga. +1"
-						body="Amini Caban", hands="Meg. Gloves +1",
-						-- Belenus Cape Adhemar Kecks
+						-- hands="Carmine Fin. Ga. +1"
+						body="Amini Caban", hands="Iuitl Wristbands +1",
+						-- Belenus Cape
 						back="Lutian Cape", waist="Impulse Belt", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
 		sets.precast.Snapshot.Flurry = {
+						-- Taeon Chapaeu
 						head="Amini Gapette",
-						body="Amini Caban", hands="Meg. Gloves +1",
-						-- Arc. Braccae +1
+						-- hands="Carmine Fin. Ga. +1"
+						body="Amini Caban", hands="Iuitl Wristbands +1",
+						-- Belenus Cape  
 						back="Lutian Cape", waist="Impulse Belt", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
+		sets.precast.Snapshot.Flurry2 = {
+						head="Arcadian Beret +1",
+						-- hands="Carmine Fin. Ga. +1"
+						body="Amini Caban", hands="Iuitl Wristbands +1",
+						-- Belenus Cape Pursuer Gaiters 
+						back="Lutian Cape", waist="Impulse Belt", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
+	
 		sets.precast.Radpidshot = {
 						head="Orion Beret +1",
 						-- hands="Carmine Fin. Ga. +1",
 						body="Arc. Jerkin +1", 
 						-- back="Belenus Cape", feet="Pursuer's Gaiters" 
-						legs="Adhemar Kecks",}
+						legs="Adhemar Kecks"}
 						
 		-- Overkill
 		sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
@@ -141,11 +151,12 @@ if player.name == 'Feary' then
 		-- Needs 42+ STP For 3/4 Hit, Goal is 50.
 		-- Current: 46 + Recycle
 		sets.RA = { -- Perun +1 Perun  
-					-- Neritic Earring
-					head="Arcadian Beret +1", neck="Ocachi Gorget", lear="Tripudio Earring", rear="Enervating Earring",
+					-- 	 Erudition Necklace Neritic Earring
+					head="Arcadian Beret +1", neck="Gaudryi Necklace", lear="Tripudio Earring", rear="Enervating Earring",
+					-- Adhemar Wristbands
 					body="Amini Caban", hands="Amini Glovelettes", lring="Rajas Ring", rring="K'ayres Ring",
 					-- Belenus Cape Yemaya Belt 
-					back="Lutian Cape", waist="Patentia Sash", legs="Amini Brague", feet="Arcadian Socks +1"}
+					back="Lutian Cape", waist="Patentia Sash", legs="Adhemar Kecks", feet="Meg. Jam. +1"}
 						
 		-- Current - 33 STP
 		sets.RA.Acc = {
@@ -215,13 +226,13 @@ if player.name == 'Feary' then
 		-- Jishnu's Radiance
 		sets.precast.RAWS['Jishnu\'s Radiance'] = {
 						head="Amini Gapette", neck="Fotia Gorget", lear="Moonshade Earring", rear="Vulcan's Pearl",
-						body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-						back="Buquwik Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						body="Orion Jerkin +1", hands="Meg. Gloves +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+						back="Buquwik Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Orion Socks +1"}
 
 		sets.precast.RAWS.Acc['Jishnu\'s Radiance'] = {
-						head="Amini Gapette", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",
-						body="Orion Jerkin +1", hands="Arc. Bracers +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
-						back="Buquwik Cape", waist="Fotia Belt", legs="Nahtirah Trousers", feet="Orion Socks +1"}
+						head="Amini Gapette", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Moonshade Earring",
+						body="Orion Jerkin +1", hands="Meg. Gloves +1", lring="Ifrit Ring +1", rring="Ifrit Ring +1",
+						back="Buquwik Cape", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Orion Socks +1"}
 		-- Namas Arrow			
 		sets.precast.RAWS['Namas Arrow'] = {
 						head="Arcadian Beret +1", neck="Fotia Gorget", lear="Vulcan's Pearl", rear="Vulcan's Pearl",

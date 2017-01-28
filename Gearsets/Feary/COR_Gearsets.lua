@@ -15,20 +15,20 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'DNC' then
-				set_macro_page(10,1)
+				set_macro_page(1,10)
 			elseif player.sub_job == 'NIN' then
-				set_macro_page(10,2)
+				set_macro_page(2,10)
 			elseif player.sub_job == 'RNG' then
-				set_macro_page(10,3)
+				set_macro_page(3,10)
 			elseif player.sub_job == 'WHM' then 
-				set_macro_page(10,4)
+				set_macro_page(4,10)
 			elseif player.sub_job == 'SCH' then 
-				set_macro_page(10,6)
+				set_macro_page(6,10)
 			elseif player.sub_job == 'BRD' then 
-				set_macro_page(10,5)	
+				set_macro_page(5,10)	
 			end
 		else
-			set_macro_page(10,1)
+			set_macro_page(1,10)
 		end
 		
 -- Auto Sets
@@ -116,10 +116,11 @@ if player.name == 'Feary' then
 				
 	-- RA Sets
 	sets.precast.Snapshot = {ammo=TPBullet,
-			-- Aurora Beret +1
+			-- Taeon Chapeau
 			head="Chass. Tricorne", 
+			-- Carmine Fin. Gauntlets +1
 			body="Skopos Jerkin", hands="Lanun Gants",
-			-- Aug.Cape.COR.Snapshot Chas. Culottes +1
+			-- Aug.Cape.COR.Snapshot Chas. Culottes +1 Taeon Boots 
 			back="Navarch's Mantle", waist="Impulse Belt", legs="Nahtirah Trousers", feet="Meg. Jam. +1"}
 	
 	-- Eminent Gun

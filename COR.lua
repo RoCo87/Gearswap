@@ -184,7 +184,15 @@ function precast(spell,arg)
 			equip(TPBullet)
 			cancel_spell()
 		else
-			equip(sets.precast.Snapshot)
+			if buffactive['Flurry'] then
+				if flurry2 == 1 then 
+					equip(sets.precast.Snapshot.Flurry2)
+				else
+					equip(sets.precast.Snapshot.Flurry)
+				end
+			else
+				equip(sets.precast.Snapshot)
+			end
 		end
 -- Cor Rolls
 	elseif spell.type == 'CorsairRoll' or spell.english == "Double-Up" then

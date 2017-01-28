@@ -200,14 +200,14 @@ end
 
 function precast(spell,arg)
 	-- Silenced, Terror, Petri
-	if buffactive['stun'] or buffactive['terror'] or buffactive['petrification'] or	buffactive['terror'] or spell.interrupted = true then
+	if buffactive['stun'] or buffactive['terror'] or buffactive['petrification'] or	buffactive['terror'] or spell.interrupted == true then
 		cancel_spell()
 		windower.add_to_chat(121,'Can\'t Cast, Canceling Spell')
 	else
 		if spell.type == 'JobAbility' and not buffactive['amnesia'] then
 			if spell.name == 'Convert' then
 				cancel_spell()
-			elseif spell.name == 'Chivalry' and player.tp <= 70 then
+			elseif spell.name == 'Chivalry' and player.tp <= 700 then
 				cancel_spell()
 				windower.add_to_chat(121,'Not Enough TP to Chivalry')
 			elseif sets.precast.JA[spell.name] then
@@ -286,7 +286,7 @@ end
 
 
 function midcast(spell,arg)
-	if spell.type:endswith('Magic') and not buffactive['stun'] or buffactive['terror'] or buffactive('petrification') or buffactive['terror'] or (buffactive['silence'] or  buffactive['mute']) or spell.interrupted = false then
+	if spell.type:endswith('Magic') and not buffactive['stun'] or buffactive['terror'] or buffactive('petrification') or buffactive['terror'] or (buffactive['silence'] or  buffactive['mute']) or spell.interrupted == false then
 		if spell.skill == 'Healing Magic' then
 			-- Self Cure 
 			if spell.english:wcmatch("Cure*") and (player.name == spell.target.name) then

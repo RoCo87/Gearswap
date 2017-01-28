@@ -23,6 +23,7 @@ function get_sets()
 	PDT = 0
 	MDT = 0
 	ShadowType = 'None'
+	flurry2 = 0
 	
 end
 -- Called when this job file is unloaded (eg: job change)
@@ -156,6 +157,12 @@ function self_command(command)
 			windower.send_command('input /attack <t>')
 			windower.send_command('gs c ws')
 		end
+	elseif command == 'flurry' then
+		if flurry >= 1 then
+			flurry = 0
+		else
+			flutry = flurry + 1
+		end
 	end
 end
 
@@ -196,7 +203,15 @@ end
 
 function precast(spell,arg)
     if spell.name == 'Ranged' then
-        equip(sets.precast.Snapshot)
+		if buffactive['Flurry'] then
+			if flurry2 == 1 then
+				equip(sets.precast.Snapshot.Flurry2)
+			else
+				equip(sets.precast.Snapshot.Flurry)
+			end
+		else
+			equip(sets.precast.Snapshot)
+		end
     end
     -- Generic equip command for all Job Abilities and Weaponskills
 	if spell.type == "JobAbility" then
@@ -230,7 +245,7 @@ function precast(spell,arg)
 			cancel_spell()
 			return
 		end
-     -- Ranged Weaponskills
+		-- Ranged Weaponskills
 		if ranged_weaponskills:contains(spell.name) then
 			if player.status == 'Engaged' then
 				if player.tp >= 100 then

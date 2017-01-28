@@ -18,20 +18,20 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job =='NIN' then
-				set_macro_page(16,1)
+				set_macro_page(1,16)
 			elseif player.sub_job =='DNC' then
-				set_macro_page(16,2)
+				set_macro_page(1,16)
 			elseif player.sub_job =='WAR' then
-				set_macro_page(16,3)
+				set_macro_page(3,16)
 			elseif player.sub_job =='BLU' then 
-				set_macro_page(16,4)
+				set_macro_page(4,16)
 			elseif player.sub_job =='RDM' then 
-				set_macro_page(16,5)
+				set_macro_page(5,16)
 			elseif player.sub_job =='RUN' then 
-				set_macro_page(16,6)
+				set_macro_page(6,16)
 			end
 		elseif automacroset == 2 then
-			set_macro_page(16,2)
+			set_macro_page(2,16)
 		else
 			windower.send_command('input /macro book 16')
 		end
