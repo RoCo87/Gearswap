@@ -13,6 +13,8 @@ function get_sets(spell)
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 -- Get BLM gearsets
 	include('Gearsets/'..player.name..'/BLM_Gearsets.lua')
 	

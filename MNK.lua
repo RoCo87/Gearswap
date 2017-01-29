@@ -13,6 +13,7 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
 
 	-- Get MNK Gearsets
 	include('Gearsets/'..player.name..'/Mnk_Gearsets.lua')

@@ -9,7 +9,7 @@ if player.name == 'Aniyah' then
 		-- includes
 		include('include/mappings.lua')
 		include('include/equipment.lua')
-		include('include/utility.lua')
+		
 		--Dynamisa aoe dd ddwar ddrdm dddnc ddnin
 		-- sets Macros off = 0  on = 1
 		automacroset = 0

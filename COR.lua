@@ -33,6 +33,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 -- Get COR Gearsets
 	include('Gearsets/'..player.name..'/COR_Gearsets.lua')   
 

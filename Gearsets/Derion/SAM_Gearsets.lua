@@ -9,7 +9,7 @@
 
 if player.name == 'Feary' then
 	-- includes
-	include('include/utility.lua')
+	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')

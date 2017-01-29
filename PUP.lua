@@ -13,6 +13,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 	-- Get PUP gearsets
 	include('Gearsets/'..player.name..'/PUP_Gearsets.lua')
 	

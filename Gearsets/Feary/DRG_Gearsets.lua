@@ -9,7 +9,7 @@
 
 if player.name == 'Feary' then
 -- includes
-	include('include/utility.lua')
+	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
@@ -18,26 +18,26 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'SAM' then
-				set_macro_page(12,1)
+				set_macro_page(1,12)
 			elseif player.sub_job == 'NIN' then
-				set_macro_page(12,2)
+				set_macro_page(2,12)
 			elseif player.sub_job == 'DNC' then
-				set_macro_page(12,3)
+				set_macro_page(3,12)
 			elseif player.sub_job == 'WAR' then 
-				set_macro_page(12,4)
+				set_macro_page(4,12)
 			elseif player.sub_job == 'BLU' then 
-				set_macro_page(12,5)
+				set_macro_page(5,12)
 			elseif player.sub_job == 'RDM' then 
-				set_macro_page(12,6)
+				set_macro_page(6,12)
 			elseif player.sub_job == 'WHM' then 
-				set_macro_page(12,7)	
+				set_macro_page(7,12)	
 			elseif player.sub_job == 'SCH' then 
-				set_macro_page(12,8)	
+				set_macro_page(8,12)	
 			elseif player.sub_job == 'PLD' then 
-				set_macro_page(12,9)	
+				set_macro_page(9,12)	 
 			end
 		else
-			set_macro_page(12,1)
+			set_macro_page(1,12)
 		end
 		
 -- Auto Sets

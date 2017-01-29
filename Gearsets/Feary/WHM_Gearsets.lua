@@ -6,7 +6,7 @@
 
 if player.name == 'Feary' then
 		-- includes
-		include('include/utility.lua')
+		
 		include('include/mappings.lua')
 		include('include/equipment.lua')
 		-- include('../include/autoexec.lua')
@@ -17,11 +17,11 @@ if player.name == 'Feary' then
 			if player.sub_job == 'RDM' then
 				set_macro_page(1,1)
 			elseif player.sub_job == 'SCH' then
-				set_macro_page(1,2)
+				set_macro_page(2,1)
 			elseif player.sub_job == 'SMN' then
-				set_macro_page(1,3)
+				set_macro_page(3,1)
 			elseif player.sub_job == 'BLM' then 
-				set_macro_page(1,4)
+				set_macro_page(4,1)
 			end
 		else
 			set_macro_page(1,1)

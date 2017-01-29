@@ -9,7 +9,7 @@
 
 if player.name == 'Feary' then
 -- includes
-	include('include/utility.lua')
+	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	
@@ -17,18 +17,18 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'WAR' then
-				set_macro_page(19,1)
+				set_macro_page(1,19)
 			elseif player.sub_job == 'NIN' then
-				set_macro_page(19,2)
+				set_macro_page(2,19)
 			elseif player.sub_job == 'DNC' then
-				set_macro_page(19,3)
+				set_macro_page(3,19)
 			elseif player.sub_job == 'SCH' then 
-				set_macro_page(19,4)
+				set_macro_page(4,19)
 			elseif player.sub_job == 'WHM' then 
-				set_macro_page(19,5)
+				set_macro_page(5,19)
 			end
 		else
-			set_macro_page(19,1)
+			set_macro_page(1,19)
 		end
 	
 	animator = {range="Em. Animator"}

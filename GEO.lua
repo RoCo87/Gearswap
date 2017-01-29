@@ -13,6 +13,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 -- Get RDM gearsets
 	include('Gearsets/'..player.name..'/Geo_Gearsets.lua')
 	

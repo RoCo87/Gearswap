@@ -9,7 +9,7 @@
 
 if player.name == 'Feary' then
 -- includes
-	include('include/utility.lua')
+	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
@@ -18,26 +18,25 @@ if player.name == 'Feary' then
 		automacroset = 1
 		if automacroset == 1 then
 			if player.sub_job == 'WAR' then
-				set_macro_page(6,1)
+				set_macro_page(1,6)
 			elseif player.sub_job == 'NIN' then
-				set_macro_page(6,2)
+				set_macro_page(2,6)
 			elseif player.sub_job == 'DNC' then
-				set_macro_page(6,3)
+				set_macro_page(3,6)
 			elseif player.sub_job == 'DRG' then 
-				set_macro_page(6,4)
+				set_macro_page(4,6)
 			elseif player.sub_job == 'WHM' then 
-				set_macro_page(6,5)
+				set_macro_page(5,6)
 			elseif player.sub_job == 'RUN' then 
 				set_macro_page(6,6)
 			end
 		else
-			set_macro_page(6,1)
+			set_macro_page(1,6)
 		end
-
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 
-				head="Otronif Mask", neck="Twilight Torque",
+				head="Otronif Mask", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Otro. Harness +1", hands="Otronif Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Black Belt", legs="Otronif Brais +1", feet="Otronif Boots +1"}
 

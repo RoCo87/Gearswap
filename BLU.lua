@@ -13,9 +13,13 @@ function get_sets(spell)
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 -- Get BLU gearsets
 	include('Gearsets/'..player.name..'/BLU_Gearsets.lua')
 	
+	
+	select_default_macro_book()
 -- Define Default Values for Variables
 	Mode = 0
 	Type = 0

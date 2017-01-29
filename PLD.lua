@@ -14,6 +14,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 	-- Get PLD Gearsets
 	include('Gearsets/'..player.name..'/PLD_Gearsets.lua')
 	

@@ -12,6 +12,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 	-- Get WAR Gearsets
 	include('Gearsets/'..player.name..'/WAR_Gearsets.lua')
 

@@ -12,6 +12,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 	-- Get WHM gearsets
 	include('Gearsets/'..player.name..'/WHM_Gearsets.lua')
 	

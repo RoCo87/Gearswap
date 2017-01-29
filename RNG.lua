@@ -14,7 +14,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
-
+	include('include/utility.lua')
+	
 -- Get RNG Gearsets
 	include('Gearsets/'..player.name..'/RNG_Gearsets.lua')   
 	

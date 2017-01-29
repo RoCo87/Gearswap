@@ -15,6 +15,8 @@ function get_sets()
 --includes
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
+	include('include/utility.lua')
+	
 	-- Get RUN Gearsets
 	include('Gearsets/'..player.name..'/RUN_Gearsets.lua')
 	
