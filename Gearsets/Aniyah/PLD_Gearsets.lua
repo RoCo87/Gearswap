@@ -14,27 +14,6 @@ if player.name == 'Feary' then
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
 
-	-- sets Macros: 0ff = 0  On = 1
-		automacroset = 0
-		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
-				set_macro_page(16,1)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(16,2)
-			elseif player.sub_job == 'WAR' then
-				set_macro_page(16,3)
-			elseif player.sub_job == 'BLU' then 
-				set_macro_page(16,4)
-			elseif player.sub_job == 'whm' then 
-				set_macro_page(16,5)
-			elseif player.sub_job == 'run' then 
-				set_macro_page(16,6)
-			end
-		elseif automacroset == 2 then
-			set_macro_page(16,2)
-		else
-			windower.send_command('input /macro book 16')
-		end
 -- Auto Sets
 physicalshield = {sub="Ochain"}
 magicalshield = {sub="Aegis"}

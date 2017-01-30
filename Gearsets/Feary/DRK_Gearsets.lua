@@ -8,28 +8,11 @@
 --
 
 if player.name == 'Feary' then
--- includes
-	
+	-- includes	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
-
--- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
-				set_macro_page(1,15)
-			elseif player.sub_job == 'SAM' then
-				set_macro_page(2,15)
-			elseif player.sub_job == 'WAR' then
-				set_macro_page(3,15)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(4,15)
-			end
-		else
-			set_macro_page(2,15)
-		end
-
+	
 -- Auto Sets
 -- Standard/idle
 	sets.idle.PDT = {
@@ -43,10 +26,10 @@ if player.name == 'Feary' then
 			back="Engulfer Cape +1", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
 	sets.idle.Standard = set_combine(sets.idle.PDT, {
-			legs="Blood Cuisses"})
+			legs="Carmine Cuisses +1"})
 
 	sets.misc.Town = set_combine(sets.idle.PDT, {
-			legs="Blood Cuisses"})
+			legs="Carmine Cuisses +1  "})
 
 	sets.Enmity = {
 			-- Loess Barbuta +1 Unmoving Collar +1 lear="Trux Earring", rear="Pluto's Pearl",

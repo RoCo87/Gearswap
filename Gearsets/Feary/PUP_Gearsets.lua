@@ -8,28 +8,9 @@
 --
 
 if player.name == 'Feary' then
--- includes
-	
+	-- includes
 	include('include/mappings.lua')
 	include('include/equipment.lua')
-	
--- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job == 'WAR' then
-				set_macro_page(1,19)
-			elseif player.sub_job == 'NIN' then
-				set_macro_page(2,19)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(3,19)
-			elseif player.sub_job == 'SCH' then 
-				set_macro_page(4,19)
-			elseif player.sub_job == 'WHM' then 
-				set_macro_page(5,19)
-			end
-		else
-			set_macro_page(1,19)
-		end
 	
 	animator = {range="Em. Animator"}
 	oil = {ammo="Automat. Oil +3"}

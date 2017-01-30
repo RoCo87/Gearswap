@@ -14,22 +14,6 @@ if player.name == 'Feary' then
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
 	
--- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job == 'WAR' then
-				set_macro_page(20,1)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(20,2)
-			elseif player.sub_job == 'DRK' then
-				set_macro_page(20,4)
-			elseif player.sub_job == 'RDM' then 
-				set_macro_page(20,3)
-			end
-		else
-			set_macro_page(20,1)
-		end
-		
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 

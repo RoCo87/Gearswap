@@ -13,6 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 	-- Get DRG Gearsets
 	include('Gearsets/'..player.name..'/DRG_Gearsets.lua')

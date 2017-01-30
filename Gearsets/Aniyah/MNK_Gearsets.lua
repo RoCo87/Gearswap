@@ -13,26 +13,6 @@ if player.name == 'Aniyah' then
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
-	
--- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job == 'war' then
-				set_macro_page(6,1)
-			elseif player.sub_job == 'nin' then
-				set_macro_page(6,2)
-			elseif player.sub_job == 'dnc' then
-				set_macro_page(6,3)
-			elseif player.sub_job == 'drg' then 
-				set_macro_page(6,4)
-			elseif player.sub_job == 'whm' then 
-				set_macro_page(6,5)
-			elseif player.sub_job == 'run' then 
-				set_macro_page(6,6)
-			end
-		else
-			set_macro_page(6,1)
-		end
 
 -- Auto Sets
 -- Standard/idle

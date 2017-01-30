@@ -8,26 +8,7 @@ if player.Name == 'Feary' then
 		include('include/mappings.lua')
 		include('include/equipment.lua')
 		
-
-		function select_default_macro_book()
-			-- sets Macros off = 0  on = 1
-			automacroset = 1
-			if automacroset == 1 then
-				if player.sub_job == 'RDM' then
-					set_macro_page(1,2)
-				elseif player.sub_job == 'WHM' then
-					set_macro_page(2,2)
-				elseif player.sub_job == 'SCH' then
-					set_macro_page(3,2)
-				elseif player.sub_job == 'BRD' then
-					set_macro_page(4,2)
-				elseif player.sub_job == 'NIN' then 
-					set_macro_page(5,2)
-				end
-			else
-				set_macro_page(3,2)
-			end
-		end
+	
 
 		-- Auto Sets
 		-- Standard/idle

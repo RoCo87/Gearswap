@@ -13,6 +13,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 	-- Get DNC gearsets
 	include('Gearsets/'..player.name..'/DNC_Gearsets.lua')

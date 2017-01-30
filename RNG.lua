@@ -15,9 +15,11 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 -- Get RNG Gearsets
 	include('Gearsets/'..player.name..'/RNG_Gearsets.lua')   
+	
 	
 -- Define Default Values for Variables
 	Mode = 0

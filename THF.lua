@@ -16,6 +16,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 	-- Get THF Gearsets
 	include('Gearsets/'..player.name..'/THF_Gearsets.lua')

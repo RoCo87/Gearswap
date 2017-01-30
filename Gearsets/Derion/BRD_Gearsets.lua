@@ -13,27 +13,6 @@ if player.name == 'Derion' then
 		include('include/equipment.lua')
 		--include('include/autoexec.lua')
 		
-
-		-- sets Macros off = 0  on = 1
-		automacroset = 0
-		if automacroset == 1 then
-			if player.sub_job == 'nin' then
-				set_macro_page(4,1)
-			elseif player.sub_job =='whm' then
-				set_macro_page(4,2)
-			elseif player.sub_job == 'rdm' then
-				set_macro_page(4,3)
-			elseif player.sub_job =='sch' then 
-				set_macro_page(4,4)
-			elseif player.sub_job =='dnc' then 
-				set_macro_page(4,5)
-			elseif player.sub_job =='blm' then 
-				set_macro_page(4,6)
-			end
-		else
-			set_macro_page(4,1)
-		end
-		
 		-- Instruments
 		default = {range="Eminent Flute"}
 		-- Buffs

@@ -10,15 +10,6 @@ if player.name == 'Aniyah' then
 		include('include/mappings.lua')
 		include('include/equipment.lua')
 		
-		--Dynamisa aoe dd ddwar ddrdm dddnc ddnin
-		-- sets Macros off = 0  on = 1
-		automacroset = 0
-		if automacroset == 1 then
-			
-		else
-			set_macro_page(8,3)
-		end
-
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {

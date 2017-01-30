@@ -5,6 +5,18 @@
 --
 
 
+-- Called when the player's subjob changes.
+function sub_job_change(newSubjob, oldSubjob)
+	-- Macros 
+    if select_default_macro_book() then
+        select_default_macro_book()
+    end
+    
+    if job_sub_job_change then
+        job_sub_job_change(newSubjob, oldSubjob)
+    end
+end
+
 -- Macros 
 function set_macro_page(set,book)
     if not tonumber(set) then
@@ -15,7 +27,7 @@ function set_macro_page(set,book)
         add_to_chat(123,'Error setting macro page: Macro set ('..tostring(set)..') must be between 1 and 10.')
         return
     end
- 
+
     if book then
         if not tonumber(book) then
             add_to_chat(123,'Error setting macro page: book is not a valid number ('..tostring(book)..').')
@@ -26,7 +38,10 @@ function set_macro_page(set,book)
             return
         end
         send_command('@input /macro book '..tostring(book)..';wait .1;input /macro set '..tostring(set))
+		add_to_chat(123,'Macro Set')
+            
     else
         send_command('@input /macro set '..tostring(set))
+		add_to_chat(123,'Macro book Set')
     end
 end

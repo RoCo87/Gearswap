@@ -13,33 +13,7 @@ if player.name == 'Feary' then
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	
--- Auto macro sets off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if ranged_Bow:contains(player.equipment.range) then
-				if player.sub_job == 'NIN' then
-					set_macro_page(1,13)
-				elseif player.sub_job == 'SAM' then
-					set_macro_page(2,13)
-				elseif player.sub_job == 'WAR' then
-					set_macro_page(3,13)
-				elseif player.sub_job == 'DRG' then 
-					set_macro_page(4,13)
-				end
-			elseif ranged_Gun:contains(player.equipment.range) then
-				if player.sub_job == 'NIN' then
-					set_macro_page(5,13)
-				elseif player.sub_job == 'SAM' then
-					set_macro_page(6,13)
-				elseif player.sub_job == 'WAR' then
-					set_macro_page(7,13)
-				elseif player.sub_job == 'DRG' then 
-					set_macro_page(8,13)
-				end
-			end			
-		else
-			set_macro_page(3,13)
-		end
+	
 		
 -- Auto Sets
 -- Standard/idle

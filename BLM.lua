@@ -14,6 +14,7 @@ function get_sets(spell)
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 -- Get BLM gearsets
 	include('Gearsets/'..player.name..'/BLM_Gearsets.lua')

@@ -13,34 +13,6 @@ if player.name == 'Feary' then
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	
--- Auto macro sets off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if ranged_Bow:contains(player.equipment.range) then
-				if player.sub_job == 'NIN' then
-					set_macro_page(13,1)
-				elseif player.sub_job == 'SAM' then
-					set_macro_page(13,2)
-				elseif player.sub_job == 'WAR' then
-					set_macro_page(13,3)
-				elseif player.sub_job == 'DRG' then 
-					set_macro_page(13,4)
-				end
-			elseif ranged_Gun:contains(player.equipment.range) then
-				if player.sub_job == 'NIN' then
-					set_macro_page(13,5)
-				elseif player.sub_job == 'SAM' then
-					set_macro_page(13,6)
-				elseif player.sub_job == 'WAR' then
-					set_macro_page(13,7)
-				elseif player.sub_job == 'DRG' then 
-					set_macro_page(13,8)
-				end
-			end			
-		else
-			set_macro_page(13,1)
-		end
-		
 -- Auto Sets
 -- Standard/idle
 sets.idle.PDT = { 

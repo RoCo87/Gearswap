@@ -14,6 +14,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 	-- Get SAM Gearsets
 	include('Gearsets/'..player.name..'/SAM_Gearsets.lua')

@@ -8,28 +8,12 @@
 --
 
 if player.name == 'Derion' then
--- includes
+	-- includes
 	
 	include('include/mappings.lua')
 	include('include/equipment.lua')
 	-- include('../include/autoexec.lua')
 	
--- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job == 'NIN' then
-				set_macro_page(5,1)
-			elseif player.sub_job == 'WAR' then
-				set_macro_page(5,2)
-			elseif player.sub_job == 'DNC' then
-				set_macro_page(5,3)
-			elseif player.sub_job == 'DRK' then 
-				set_macro_page(5,4)
-			end
-		else
-			set_macro_page(5,1)
-		end
-		
 	-- Auto Sets
 	-- Standard/idle
 	sets.idle.PDT = { 

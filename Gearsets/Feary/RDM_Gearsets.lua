@@ -12,25 +12,7 @@ if player.Name == 'Feary' then
 		include('include/mappings.lua')
 		include('include/equipment.lua')
 		
-
-		-- sets Macros off = 0  on = 1
-		automacroset = 1
-		if automacroset == 1 then
-			if player.sub_job =='WHM' then
-				set_macro_page(1,3)
-			elseif player.sub_job =='BLM' then
-				set_macro_page(2,3)
-			elseif player.sub_job =='NIN' then
-				set_macro_page(3,3)
-			elseif player.sub_job =='DNC' then
-				set_macro_page(4,3)
-			elseif player.sub_job =='SCH' then 
-				set_macro_page(5,3)
-			end
-		else
-			set_macro_page(1,3)
-		end
-
+		
 		-- Auto Sets
 		-- Standard/idle
 		sets.idle.PDT = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1},

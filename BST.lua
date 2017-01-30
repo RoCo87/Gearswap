@@ -15,6 +15,7 @@ function get_sets()
 	--include('include/autoexec.lua')
 	include('include/binds.lua')
 	include('include/utility.lua')
+	include('include/macro.lua')
 	
 	-- Get BST Gearsets
 	include('Gearsets/'..player.name..'/BST_Gearsets.lua')

@@ -10,26 +10,6 @@ if player.name == 'Feary' then
 		include('include/equipment.lua')
 		--include('include/autoexec.lua')
 		
-
-		-- sets Macros off = 0  on = 1
-		automacroset = 0
-		if automacroset == 1 then
-			if player.sub_job =='NIN' then
-				set_macro_page(1,4)
-			elseif player.sub_job =='WHM' then
-				set_macro_page(2,4)
-			elseif player.sub_job =='RDM' then
-				set_macro_page(3,4)
-			elseif player.sub_job =='SCH' then 
-				set_macro_page(4,4)
-			elseif player.sub_job =='DNC' then 
-				set_macro_page(5,4)
-			elseif player.sub_job =='BLM' then 
-				set_macro_page(6,4)
-			end
-		else
-			set_macro_page(2,4)
-		end
 		
 		fishing = 0
 		
