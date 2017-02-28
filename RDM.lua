@@ -7,6 +7,8 @@
 --
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -26,10 +28,12 @@ function get_sets()
 	Skill = 0
 	ShadowType = 'None'
 end 
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -123,11 +127,6 @@ function self_command(command)
 			enable('head,body')
 		end		
 	end
-end
-
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
 end
 
 function status_change(new,old)

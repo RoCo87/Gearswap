@@ -8,6 +8,8 @@
 --
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -34,11 +36,6 @@ function file_unload()
 	clear_binds()
 end
  
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
-end
-
 function self_command(command)
    -- Lock PDT
 	if command == 'PDT' then

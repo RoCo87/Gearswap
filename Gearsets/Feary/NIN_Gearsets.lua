@@ -61,7 +61,7 @@ sets.precast.Recast = set_combine(sets.idle.PDT,{
 -- Midcast
 sets.midcast.Wheel = {
 			head="Mochi. Hatsuburi", neck="Stoicheion Medal", lear="Crematio Earring", rear="Friomisi Earring",
-			body="Mochi. Chainmail", hands="Hachiya Tekko", lring="Shiva Ring", rring="Shiva Ring",
+			body="Mochi. Chainmail", hands="Hachiya Tekko", lring="Shiva Ring +1", rring="Shiva Ring +1",
 			back="Toro Cape", waist="Wanion Belt", legs="Hachiya Hakama", feet="Hachiya Kyahan"}
 sets.midcast.Skill = {
 			head="Hachiya Hatsuburi", lear="Ninjutsu Earring",
@@ -95,7 +95,7 @@ sets.TP.Acc = {ammo="Ginsen",
 sets.TP.Buffed = {ammo="Ginsen",
 			head="Felistris Mask", neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
             body="Mochi. Chainmail", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-            back="Iga Dochugappa", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Iga Dochugappa", waist="Windbuffet Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
 
 -- Hybrid Evasion
 sets.TP.Hybrid = set_combine(sets.idle.PDT,{
@@ -152,7 +152,7 @@ sets.precast.WS.Acc["Blade: Shun"] = { ammo="Ginsen",
 sets.precast.WS["Blade: Hi"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Rancor Collar", lear="Brutal Earring", rear="Moonshade Earring",
             body="Hattori Ningi", hands="Taeon Gloves", lring="Garuda Ring +1", rring="Epona's Ring",
-            back="Yokaze Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+            back="Yokaze Mantle", waist="Windbuffet Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
 
 sets.precast.WS.Acc["Blade: Hi"] = {ammo="Ginsen",
 			head="Felistris Mask", neck="Rancor Collar", lear="Brutal Earring", rear="Moonshade Earring",

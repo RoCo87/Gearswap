@@ -36,7 +36,7 @@ sets.idle.Standard = set_combine(sets.idle.PDT, {
 sets.TP = { 	
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Acro Leggings"}
 sets.TP.Acc = { 
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Sankoji Kote", lring="Rajas Ring", rring="K'ayres Ring",
@@ -44,12 +44,12 @@ sets.TP.Acc = {
 sets.TP.Buffed = {
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Otronif Gloves +1", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Acro Leggings"}
 -- Ionis Tsuru TP
 sets.TP.Ionis= { 	
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Acro Leggings"}
 sets.TP.Ionis.Acc = { 
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Sankoji Kote", lring="Rajas Ring", rring="K'ayres Ring",
@@ -57,35 +57,35 @@ sets.TP.Ionis.Acc = {
 sets.TP.Ionis.Buffed = {
 				head="Yaoyotl Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Wakido Domaru", hands="Otronif Gloves +1", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Acro Leggings"}
 
 -- Yoichi Tsu TP
 sets.TP.Bow = {
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 sets.TP.Bow.Acc = {
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Acro Gauntlets", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 sets.TP.Bow.Buffed = {		
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 				
 -- Ionis Yoichi Tsu TP
 sets.TP.Ionis.Bow = {
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 sets.TP.Ionis.Bow.Acc = {
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="Ramuh Ring +1",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 sets.TP.Ionis.Bow.Buffed = {		
 				head="Otomi Helm", neck="Ganesha's Mala", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Kasuga Domaru", hands="Wakido Kote", lring="Rajas Ring", rring="K'ayres Ring",
-                back="Takaha Mantle", waist="Windbuffet Belt", legs="Kasuga Haidate", feet="Acro Leggings"}
+                back="Takaha Mantle", waist="Windbuffet Belt +1", legs="Kasuga Haidate", feet="Acro Leggings"}
 
 -- JA
 sets.precast.JA["Meikyo Shisui"] = {feet="Sakonji Sune-ate"}
@@ -117,19 +117,19 @@ sets.precast.WS['Tachi: Fudo'] = {
 sets.precast.WS['Tachi: Shoha'] = {
 				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Ejekamel Boots"}
+                back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Gekko'] = {
 				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
+                back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Rana'] = {
 				head="Otomi Helm", neck="Fotia Gorget", lear="Brutal Earring", rear="Moonshade Earring",
                 body="Phorcys Korazin", hands="Miki. Gauntlets", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Buquwik Cape", waist="Windbuffet Belt", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
+                back="Buquwik Cape", waist="Windbuffet Belt +1", legs="Mikinaak Cuisses", feet="Ejekamel Boots"}
 sets.precast.WS['Tachi: Kaiten'] = {
 				head="Otomi Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Phorcys Korazin", hands="Boor Bracelets", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Atheling Mantle", waist="Windbuffet Belt", legs="Wakido Haidate +1", feet="Sakonji Sune-Ate"}
+                back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Wakido Haidate +1", feet="Sakonji Sune-Ate"}
 -- Sword 
 sets.precast.WS['Requiescat'] = {
 				head="Otomi Helm", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",

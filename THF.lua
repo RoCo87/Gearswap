@@ -9,6 +9,8 @@
 
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 
 -- Gear Sets 
 function get_sets()
@@ -182,44 +184,6 @@ function status_change(new,old)
 	end
 end
 
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
--- Global Includes
-	include('include/status.lua')
--- Sneak Attack
-	if buff == 'Sneak Attack' and g_or_l == false then
-		previous_set()
-	end
--- Trick Attack
-	if buff == 'Trick Attack' and g_or_l == false then
-       previous_set()
-	end
-
--- Flee
-	-- gained
-	if buff == 'Flee' and g_or_l == true then
-		equip(sets.idle.PDT,{feet="Pillager's Poulaines"})
-	end
-	-- lose
-	if buff == 'Flee' and g_or_l == false then
-		equip(sets.idle.PDT,{feet="Fajin Boots"})
-	end
-	
--- Feint
-	if buff == 'Feint' and g_or_l == false then
-        equip({legs="Plunderer's Culottes"})
-		if player.status == 'Engaged' then
-			previous_set()
-		else	
-			if Mode == 4 then
-				equip(sets.idle.Standard,sets.idle.Evasion)
-			else
-				equip(sets.idle.Standard)
-			end
-		end
-	end
-end
-
 function precast(spell,arg)
  -- Generic equip command for all Job Abilities and Weaponskills
 	if spell.type == 'JobAbility' then
@@ -256,7 +220,9 @@ function precast(spell,arg)
 					end
 				end
 			else
-				equip(sets.precast.JA[spell.name])
+				if not spell.name == "Flee" then
+					equip(sets.precast.JA[spell.name])
+				end
 			end
 		end
    elseif spell.type == 'Weaponskill' then

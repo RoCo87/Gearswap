@@ -127,7 +127,7 @@ sets.TP.Acc = {	ammo="Ginsen",
 sets.TP.Buffed = {ammo="Ginsen",
 			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Suppanomimi",
 			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Rajas ring", rring="Epona's Ring",
-			back="Atheling Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA,feet=Aug.Skirmish.Taeon.Feet.TA}
+			back="Atheling Mantle", waist="Windbuffet Belt +1", legs=Aug.Skirmish.Taeon.Legs.TA,feet=Aug.Skirmish.Taeon.Feet.TA}
 
 -- Pet Priority - Master Engaged - Pet Engaged - TP set
 sets.TP.Pet = {	ammo="Paeapua",
@@ -182,18 +182,18 @@ sets.precast.WS.Acc["Rampage"] = set_combine(sets.precast.WS, {ammo="Hasty Pinio
 sets.precast.WS["Onslaught"] = set_combine(sets.precast.WS,{ammo="Ginsen",
 			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
 			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Epona's Ring",
-			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
+			back="Vespid Mantle", waist="Windbuffet Belt +1", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
 
 sets.precast.WS.Acc["Onslaught"] = set_combine(sets.precast.WS, {ammo="Ginsen",
 			head=Aug.Skirmish.Taeon.Head.TA, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
 			body=Aug.Skirmish.Taeon.Body.TA, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ramuh Ring +1", rring="Epona's Ring",
-			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
+			back="Vespid Mantle", waist="Windbuffet Belt +1", legs=Aug.Skirmish.Taeon.Legs.TA, feet=Aug.Skirmish.Taeon.Feet.TA})
 
 -- Primal Rend - Magic WS
 sets.precast.WS["Primal Rend"] = set_combine(sets.precast.WS, {ammo="Ginsen",
 			head=Aug.Skirmish.Acro.Head.WS, neck="Asperity Necklace", lear="Brutal Earring", rear="Moonshade Earring",
 			body=Aug.Skirmish.Acro.Body.WS, hands=Aug.Skirmish.Taeon.Hands.TA, lring="Ifrit Ring +1", rring="Epona's Ring",
-			back="Vespid Mantle", waist="Windbuffet Belt", legs=Aug.Skirmish.Acro.Legs.WS, feet=Aug.Skirmish.Acro.Feet.WS})
+			back="Vespid Mantle", waist="Windbuffet Belt +1", legs=Aug.Skirmish.Acro.Legs.WS, feet=Aug.Skirmish.Acro.Feet.WS})
 
 -- Cloudslitter - Magic WS
 sets.precast.WS["Cloudsplitter"] = set_combine(sets.precast.WS['Primal Rend'], {})

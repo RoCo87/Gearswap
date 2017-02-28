@@ -3,10 +3,13 @@
 -- Last Update: 5/13/2015
 -- To Do:
 -- Add Enmity Cure Sets Toggle
---
+-- Weather cures
+
 
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 function get_sets()
 --includes
@@ -103,11 +106,6 @@ function self_command(command)
 			end
 		end
 	end
-end
-	
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
 end
 
 function status_change(new,old)

@@ -35,8 +35,8 @@ if player.name == 'Feary' then
 	sets.precast.Fastcast = set_combine(sets.idle.PDT, {
 			-- neck="Voltsurge Torque",
 			head="Carmine Mask +1",  lear="Loquac. Earring", rear="Enchntr. Earring +1", 
-			--  hands="Leyline Gloves", 
-			body="Taeon Tabard", rring="Prolix Ring",
+			-- Kisher Ring
+			body="Taeon Tabard", hands="Leyline Gloves", rring="Prolix Ring",
 			--back="Camulus's Mantle", legs="Taeon Tights", 
 			waist="Twilight Belt", feet="Carmine Greaves +1"})
 
@@ -81,7 +81,7 @@ if player.name == 'Feary' then
 			-- Baetyl Pendant
 			head="Blood Mask", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Crematio Earring",
 			--  Samnuha Coat Leyline Gloves Fenrir Ring +1 Fenrir Ring +1
-			body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
+			body="Lanun Frac", hands="Taeon Gloves", lring="Shiva Ring +1", rring="Shiva Ring +1",
 			-- Camulus's Mantle        Belt     Mummu Kecks +1         Adhe. Gamashes +1 
 			back="Gunslinger's Cape", waist="Salire Belt", legs="Meg. Chausses +1", feet="Adhemar Gamashes"}
 		
@@ -138,8 +138,8 @@ if player.name == 'Feary' then
 			head="Carmine Mask +1", neck="Iqabi Necklace", lear="Dudgeon Earring", rear="Heartseeker Earring",
 			-- Adhemar Jacket +1 Adhemar Wrist. +1 lring="Petrov Ring"
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-			-- Windbuffet Belt +1 Adhe. Gamashes +1
-			back="Camulus's Mantle", waist="Windbuffet Belt", legs="Samnuha Tights", feet="Meg. Jam. +1"}
+			-- Adhe. Gamashes +1
+			back="Camulus's Mantle", waist="Windbuffet Belt +1", legs="Samnuha Tights", feet="Meg. Jam. +1"}
 
 	-- Melee Accuracy TP
 	sets.TP.Acc = {	
@@ -148,7 +148,7 @@ if player.name == 'Feary' then
 			-- Adhemar Jacket +1 Adhemar Wrist. +1 lring="Petrov Ring" Cacoethic Ring +1
 			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Rajas Ring", rring="Ramuh Ring +1",
 			-- Camulus's Mantle Adhe. Gamashes +1
-			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
+			back="Ground. Mantle +1", waist="Anguinus Belt", legs="Carmine Cuisses +1", feet="Meg. Jam. +1"}
 
 	-- Weaponskills
 	-- Melee WS
@@ -171,7 +171,7 @@ if player.name == 'Feary' then
 
 	sets.precast.WS["Requiescat"] = {
 			head="Meghanada Visor +1", neck="Fotia Gorget", lear="Bladeborn Earring", rear="Steelflash Earring",
-			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Levia. Ring +1", rring="Levia. Ring +1",
+			body="Meghanada Cuirie", hands="Meg. Gloves +1", lring="Stikini Ring", rring="Stikini Ring",
 			-- Aug.Cape.COR.Melee.WS
 			back="Vespid Mantle", waist="Fotia Belt", legs="Meg. Chausses +1", feet="Meg. Jam. +1"}
 					
@@ -212,7 +212,7 @@ if player.name == 'Feary' then
 			-- Pixie Earring +1 Baetyl Pendant
 			head="Lanun Tricorne", neck="Stoicheion Medal", lear="Friomisi Earring", rear="Moonshade Earring",
 			-- Samnuha Coat Carmine Mail +1  Carmine Fin. Gauntlets +1 Arvina Ringlet +1
-			body="Lanun Frac", hands="Meg. Gloves +1", lring="Shiva Ring", rring="Archon Ring",
+			body="Lanun Frac", hands="Meg. Gloves +1", lring="Shiva Ring +1", rring="Archon Ring",
 			-- Aug.Cape.COR.WS
 			back="Gunslinger's Cape", waist="Salire Belt", legs="Lak. Trews", feet="Lanun Boots"})
 

@@ -8,6 +8,8 @@
 --
 -- includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()

@@ -8,6 +8,7 @@
 
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
 	include('include/status.lua')
 	
 -- Gear Sets 
@@ -514,7 +515,7 @@ end
 
 function pet_aftercast(spell)
 	if spell.name == "Fleet Wind" then
-		equip({feet="Herald's Gaiters")
+		equip({feet="Herald's Gaiters"})
 	else
 		pet_sets()
 	end

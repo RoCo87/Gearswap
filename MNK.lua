@@ -7,6 +7,8 @@
 -- 
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -147,34 +149,6 @@ function status_change(new,old)
 			-- Equip Previous TP
 			previous_set()
 		end
-	end
-end
-
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
--- gain = true losebuff = false
--- Lose Buffs
-	if buff == 'Boost' and g_or_l == false then
-        boostCount = 0
-	end
-	if buff == 'Max HP Boost' and g_or_l == false then
-		windower.send_command('input /p ===== Mantra/HP Boost Off =====')
-	end
-	if buff == 'Formless Strikes' and g_or_l == false then
-		windower.send_command('input /p ===== Formless Strikes Off =====')
-	end
-	if buff == 'Hundred Fists' and g_or_l == true then
-		windower.send_command('input /p ===== Hundred Fists Off =====')
-	end
--- Gain Buffs
-	if buff == 'Max HP Boost' and g_or_l == true then
-		windower.send_command('input /p ===== Mantra/HP Boost On =====')
-	end
-	if buff == 'Formless Strikes' and g_or_l == true then
-		windower.send_command('input /p ===== Formless Strikes On =====')
-	end
-	if buff == 'Hundred Fists' and g_or_l == true then
-		windower.send_command('input /p ===== Hundred Fists On =====')
 	end
 end
 

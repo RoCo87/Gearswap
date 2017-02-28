@@ -16,13 +16,13 @@ if player.name == 'Feary' then
 -- Standard/idle
 sets.idle.PDT = { ammo="Vanir Battery",
 				head="Cizin Helm +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Cizin Mail +1", hands="Cizin Mufflers +1 +1", lring=Aug.Darkring1, rring="Defending Ring",
+                body="Cizin Mail +1", hands="Cizin Mufflers +1", lring=Aug.Darkring1, rring="Defending Ring",
                 back="Repulse Mantle", waist="Flume Belt", legs="Cizin Breeches", feet="Cizin Greaves +1"}
 
 sets.idle.MDT = { ammo="Vanir Battery",
 				head="Yaoyotl Helm", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
                 body="Cizin Mail +1", hands="Cizin Mufflers +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Engulfer Cape +1 +1", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves +1"}
+                back="Engulfer Cape +1", waist="Nierenschutz", legs="Cizin Breeches +1", feet="Cizin Greaves +1"}
 
 sets.misc.Town = set_combine(sets.idle.PDT, {feet="Hermes' Sandals"})
 				
@@ -68,7 +68,7 @@ sets.precast.JA["Aggressive Aim"] = {body="Agoge Lorica"}
 sets.TP = { ammo="Ginsen",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Agoge Cuisses", feet="Boii Calligae"}
+            back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Agoge Cuisses", feet="Boii Calligae"}
 sets.TP.Acc = {ammo="Ginsen",
 			head="Otomi Helm", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
@@ -83,13 +83,13 @@ sets.TP.Hybrid = { ammo="Hasty Pinion +1",
 sets.TP.GA = {  ammo="Ginsen",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Agoge Cuisses", feet="Boii Calligae"}
+            back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Agoge Cuisses", feet="Boii Calligae"}
 
 -- Ionis Haste +2% Save TP 25+
 sets.TP.GA.Ionis = set_combine(sets.TP.GA, {  ammo="Ginsen",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Agoge Cuisses", feet="Boii Calligae"})
+            back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Agoge Cuisses", feet="Boii Calligae"})
 
 -- Great Axe Accuracy TP
 sets.TP.GA.Acc = {	ammo="Ginsen",
@@ -106,12 +106,12 @@ sets.TP.GA.Acc.Ionis = set_combine(sets.TP.GA.Acc,{ammo="Ginsen",
 sets.TP.GS = {ammo="Ginsen",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Agoge Cuisses", feet="Boii Calligae"}
+            back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Agoge Cuisses", feet="Boii Calligae"}
 
 sets.TP.GS.Acc = set_combine(sets.TP.GS,{ammo="Ginsen",
 			head="Otomi Helm", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
             body="Boii Lorica", hands="Acro Gauntlets", lring="Rajas Ring", rring="K'ayres Ring",
-            back="Atheling Mantle", waist="Windbuffet Belt", legs="Agoge Cuisses", feet="Boii Calligae"})
+            back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Agoge Cuisses", feet="Boii Calligae"})
 
 -- Weaponskills
 sets.precast.WS = {ammo="Ginsen",

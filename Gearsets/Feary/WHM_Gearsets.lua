@@ -14,22 +14,20 @@ if player.name == 'Feary' then
 		
 		-- Auto Sets
 		-- Standard/idle
-		sets.idle.PDT = {main="Bolelabunga", sub="Genbu's Shield", 
-				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Umbra Cape", waist="Fucho-no-Obi", legs="Gende. Spats +1", feet="Gende. Galosh. +1"}
+		sets.idle.PDT = {main={name="Bolelabunga", priority=2}, sub={name="Genbu's Shield", priority=1}, ammo="Staunch Tathlum", 
+				head="Aya. Zucchetto +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+                body="Ayanmo Corazza +1", hands="Aya. Gambieras +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Umbra Cape", waist="Fucho-no-Obi", legs="Aya. Cosciales +1", feet="Aya. Gambieras +1"}
 		sets.idle.MDT = {
-				head="Gende. Caubeen +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
-                body="Gende. Bilaut +1", hands="Gende. Gages +1", lring=Aug.Darkring1, rring="Defending Ring",
-                back="Felicitas Cape +1", waist="Fucho-no-Obi",  legs="Gende. Spats +1", feet="Gende. Galosh. +1"}			
-		sets.Resting = set_combine(sets.idle.PDT, {main="Chatoyant Staff", ammo="Clarus Stone",
-				head="Gende. Caubeen +1", neck="Eidolon Pendant", 
-                body="Heka's Kalasiris", hands="Serpentes Cuffs", lring="", rring="",
-                back="Felicitas Cape +1", waist="Austerity Belt", legs="Nares Trews", feet="Chelona Boots +1"})
+				head="Inyanga Tiara +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
+                body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring=Aug.Darkring1, rring="Defending Ring",
+                back="Felicitas Cape +1", waist="Fucho-no-Obi",  legs="Inyanga Shalwar +1", feet="Inyan. Crackows +1"}			
+		sets.Resting = set_combine(sets.idle.PDT, {})
+		
 		sets.idle.Standard = set_combine(sets.idle.PDT,{
 				lear="Merman's Earring", rear="Etiolation Earring",
 				hands="Serpentes Cuffs",
-                legs="Nares Trews", feet="Herald's Gaiters"})
+                waist="Fucho-no-Obi", legs="Nares Trews", feet="Herald's Gaiters"})
 		sets.misc.Town = set_combine(sets.idle.PDT, {
 				feet="Herald's Gaiters"})
 				
@@ -48,7 +46,7 @@ if player.name == 'Feary' then
 		sets.precast.Fastcast = {ammo="Incantor Stone",
 				head="Nahtirah Hat", neck="Voltsurge Torque", lear="Loquac. Earring", rear="Enchntr. Earring +1",
                 body="Anhur Robe", hands="Gende. Gages +1", lring="Prolix Ring",
-                back="Swith Cape +1", waist="Witful Belt", legs="Artsieq Hose", feet="Chelona Boots +1"}
+                back="Swith Cape +1", waist="Witful Belt", legs="Lengo Pants", feet="Chelona Boots +1"}
 		sets.precast.Enhancing = set_combine(sets.precast.Fastcast,{
 				waist="Siegel Sash"})
 		sets.precast.Stoneskin = set_combine(sets.precast.Enhancing,{

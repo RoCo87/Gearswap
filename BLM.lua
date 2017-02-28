@@ -7,6 +7,8 @@
 --
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets(spell)
@@ -208,17 +210,6 @@ function status_change(new,old)
 				previous_set()
 		end
 	end
-end
-
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-
-	if buff == "Manawall" and not g_or_l then
-		enable('feet','back') 
-	end
-	
-	-- Global Status
-	include('include/status.lua')
 end
 
 function pretarget(spell)

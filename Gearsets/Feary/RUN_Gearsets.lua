@@ -57,7 +57,7 @@ if player.name == 'Feary' then
 
 	sets.precast.JA["Lunge"] = {
 				head="Haruspex Hat +1", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
-				hands="Taeon Gloves", lring="Shiva Ring", rring="Shiva Ring",
+				hands="Taeon Gloves", lring="Shiva Ring +1", rring="Shiva Ring +1",
 				back="Toro Cape", legs="Meg. Chausses +1"}
 					
 	sets.precast.JA["Valiance"] = {body="Runiest Coat"}
@@ -101,7 +101,7 @@ sets.midcast.Phalanx = set_combine(sets.midcast.Enhancing,{
 sets.midcast.Regen = {head="Runiest Bandeau"}
 
 -- INT
-sets.midcast.Spikes = set_combine(sets.idle.PDT,{lring="Shiva Ring", rring="Shiva Ring"})
+sets.midcast.Spikes = set_combine(sets.idle.PDT,{lring="Shiva Ring +1", rring="Shiva Ring +1"})
 
 -- Divine
 sets.midcast.Flash = set_combine(sets.Enmity, sets.precast.Fastcast, {})
@@ -110,7 +110,7 @@ sets.midcast.Flash = set_combine(sets.Enmity, sets.precast.Fastcast, {})
 sets.TP = { ammo="Vanir Battery",
 				head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}
+				back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Taeon Tights", feet="Taeon Boots"}
 -- Acc Set
 sets.TP.Acc = { ammo="Hasty Pinion +1",
 				head="Taeon Chapeau", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
@@ -120,7 +120,7 @@ sets.TP.Acc = { ammo="Hasty Pinion +1",
 sets.TP.Buffed = { ammo="Vanir Battery",
 				head="Meghanada Visor +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 				body="Taeon Tabard", hands="Taeon Gloves", lring="Rajas Ring", rring="Epona's Ring",
-				back="Atheling Mantle", waist="Windbuffet Belt", legs="Taeon Tights", feet="Taeon Boots"}		
+				back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Taeon Tights", feet="Taeon Boots"}		
 -- Tank			
 sets.TP.Hybrid = { ammo="Vanir Battery",
 				head="Futhark Bandeau", neck="Twilight Torque", lear="Ethereal Earring", rear="Etiolation Earring",
@@ -171,7 +171,7 @@ sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {ammo="Ginsen",
 -- Sanguine Blade
 sets.precast.WS["Sanguine Blade"] = set_combine(sets.precast.WS, {
 				head="", neck="Eddy Necklace", lear="Friomisi Earring", rear="Crematio Earring",
-				body="", hands="Taeon Gloves", lring="Archon Ring", rring="Shiva Ring",
+				body="", hands="Taeon Gloves", lring="Archon Ring", rring="Shiva Ring +1",
 				back="Toro Cape", waist="", legs="", feet=""})
 
 -- Great Axe

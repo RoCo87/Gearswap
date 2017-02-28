@@ -45,7 +45,7 @@ sets.idle.Standard = set_combine(animator, oil, sets.idle.PDT, {
 sets.TP = set_combine(animator, oil, { 
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Thaumas Coat", hands="Otronif Gloves +1", lring="Rajas Ring", rring="Epona's Ring",
-                back="Buquwik Cape", waist="Windbuffet Belt", legs="Otronif Brais +1", feet="Taeon Boots"})
+                back="Buquwik Cape", waist="Windbuffet Belt +1", legs="Otronif Brais +1", feet="Taeon Boots"})
 -- Accuracy TP
 sets.TP.MidAcc =  set_combine(animator, oil, sets.TP,{
 				head="Uk'uxkaj Cap", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",

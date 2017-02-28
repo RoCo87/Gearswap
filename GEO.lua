@@ -7,6 +7,8 @@
 --
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -28,10 +30,12 @@ function get_sets()
 	idle = 1
 	ShadowType = 'None'
 end 
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -168,11 +172,6 @@ function status_change(new,old)
 				previous_set()
 		end
 	end
-end
-
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
 end
 
 function pretarget(spell)
@@ -321,8 +320,6 @@ end
 function midcast(spell,arg)
 -- Geomancy
 	if spell.skill == 'Geomancy' or spell.skill == 'Handbell' then
-		-- Equip Skill Gear 
-		equip(sets.midcast.Geomancy)
 		if buffactive["Lasting Emanation"] then
 		
 		end
@@ -339,10 +336,12 @@ function midcast(spell,arg)
 		
 		end
 		if spell.english:wcmatch('Indi*') then
+			equip(sets.midcast.Geomancy.Indi)
 			if spell.target.type == "SELF" then
 				windower.add_to_chat(121,"===== Self AOE =====")
 			end
 		elseif spell.english:wcmatch('Geo*') then
+			equip(sets.midcast.Geomancy)
 			if spell.target.type == "SELF, PlAYER" then
 				windower.add_to_chat(121,"Cast %Spell on a Party Member to make Loupon")
 			elseif spell.target.type == "MONSTER" then
@@ -471,6 +470,10 @@ function midcast(spell,arg)
 -- Songs
 	elseif spell.skill == "Singing" then
 		equip(sets.midcast.Macc)
+	end
+	
+	if spell.interuppeted then
+		aftercast()
 	end
 end -- end midcast
 

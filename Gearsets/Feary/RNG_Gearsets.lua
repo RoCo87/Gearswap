@@ -8,15 +8,12 @@
 --
 
 if player.name == 'Feary' then
--- includes
-	
+	-- includes
 	include('include/mappings.lua')
 	include('include/equipment.lua')
-	
-	
 		
--- Auto Sets
--- Standard/idle
+	-- Auto Sets
+	-- Standard/idle
 		sets.idle.PDT = { 
 				head="Meghanada Visor +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 				body="Meghanada Cuirie", hands="Meg. Gloves +1", lring=Aug.Darkring1, rring="Defending Ring",
@@ -119,7 +116,7 @@ if player.name == 'Feary' then
 		sets.precast.Snapshot.Overkill = set_combine(sets.precast.Snapshot,{
 						head="Orion Beret +1",
 						body="Amini Caban", hands="Arc. Bracers +1",
-						waist="Impulse Belt", legs="Nahtirah Trousers", feet="Arcadian Socks +1"})
+						waist="Impulse Belt", legs="Adhemar Kecks", feet="Arcadian Socks +1"})
 
 		-- Bow
 		-- Needs 42+ STP For 3/4 Hit, Goal is 50.

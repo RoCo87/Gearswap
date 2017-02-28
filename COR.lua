@@ -7,6 +7,8 @@
 --
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -139,12 +141,6 @@ function self_command(command)
 	end
 end
 
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-	include('include/status.lua')
-	-- gain = true losebuff = false
-end
-
 function status_change(new,old)
     if T{'Idle','Resting'}:contains(new) then
 		if areas.Town:contains(world.zone) then
@@ -270,10 +266,10 @@ function precast(spell,arg)
 								if spell.element == world.day_element or spell.element == world.weather_element or buffactive[elements.storm_of[spell.element]] then
 									equip(sets .precast.RAWS[spell.name],{waist="Hachirin-no-Obi"})
 								else
-									equip(sets.precast.RAWS[spell.name]
+									equip(sets.precast.RAWS[spell.name])
 								end
 							else
-								equip(sets.precast.RAWS[spell.name]
+								equip(sets.precast.RAWS[spell.name])
 							end
 						else
 							equip(sets.precast.RAWS)

@@ -31,6 +31,7 @@ end
 function file_unload()
 	clear_binds()
 end
+
 function self_command(command)
 -- Lock PDT
 	if command == 'PDT' then
@@ -110,11 +111,6 @@ function self_command(command)
 			master = 1
 		end
 	end
-end
-
-function buff_change(buff,g_or_l)
-	include('include/status.lua')
-	-- gain = true losebuff = false
 end
 
 function pet_change(pet,gain)

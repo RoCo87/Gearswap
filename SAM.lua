@@ -7,6 +7,8 @@
 -- 	
 --includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -28,10 +30,12 @@ function get_sets()
 	MDT = 0
 	ShadowType = 'None'
 end -- End gear sets
+
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
 	clear_binds()
 end
+
 -- Rules
 function self_command(command)
 -- Lock PDT
@@ -171,18 +175,12 @@ function status_change(new,old)
 	end
 end
 
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
--- Global Status Values
-	include('include/status.lua')
-end
-
 function precast(spell,arg)
 	if spell.type == "JobAbility" then
 		if sets.precast.JA[spell.name] then
 			equip(sets.precast.JA[spell.name])
 		end
-   elseif spell.type == "WeaponSkill" then
+	elseif spell.type == "WeaponSkill" then
 		if player.status == 'Engaged' then
 			if player.tp >= 100 then
 				-- Situational spell logic for Warrior sub job

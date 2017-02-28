@@ -15,12 +15,12 @@ if player.name == 'Feary' then
 	
 -- Auto Sets
 -- Standard/idle
-	sets.idle.PDT = {
+	sets.idle.PDT = {ammo="Staunch Tathlum",
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Tartarus Platemail", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Repulse Mantle", waist="Flume Belt", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}
 
-	sets.idle.MDT = { ammo="Vanir Battery",
+	sets.idle.MDT = {ammo="Staunch Tathlum",
 			head="Sulevia's Mask +1", neck="Twilight Torque", lear="Merman's Earring", rear="Etiolation Earring",
 			body="Tartarus Platemail", hands="Sulevia's Gauntlets +1", lring=Aug.Darkring1, rring="Defending Ring",
 			back="Engulfer Cape +1", waist="Nierenschutz", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1"}

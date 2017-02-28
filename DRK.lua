@@ -6,6 +6,8 @@
 --
 -- includes
 	include('include/functions.lua')
+	-- Global Buffs
+	include('include/status.lua')
 	
 -- Gear Sets 
 function get_sets()
@@ -119,12 +121,6 @@ function self_command(command)
 			equip({head="Twilight Helm",body="Twilight Mail"})
 		end
 	end
-end
-
--- Gain or lose buffs 
-function buff_change(buff,g_or_l)
-	-- Global Status
-	include('include/status.lua')
 end
 
 function status_change(new,old)

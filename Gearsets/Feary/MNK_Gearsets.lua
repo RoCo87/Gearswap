@@ -79,18 +79,18 @@ if player.name == 'Feary' then
 	sets.TP = { ammo="Ginsen",
 					head="Hizamaru Somen +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 					body="Hizamaru Haramaki +1", hands="Hizamaru Kote +1", lring="Rajas Ring", rring="Epona's Ring",
-					back="Atheling Mantle", waist="Windbuffet Belt", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
+					back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
 	-- Accuracy TP
 	sets.TP.MidAcc = { ammo="Ginsen",
 					head="Hizamaru Somen +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 					body="Hizamaru Haramaki +1", hands="Hizamaru Kote +1", lring="Rajas Ring", rring="Epona's Ring",
-					back="Atheling Mantle", waist="Windbuffet Belt", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
+					back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
 
 	-- High Accuracy TP
 	sets.TP.HighAcc = { ammo="Ginsen",
 					head="Hizamaru Somen +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
 					body="Hizamaru Haramaki +1", hands="Hizamaru Kote +1", lring="Rajas Ring", rring="Epona's Ring",
-					back="Atheling Mantle", waist="Windbuffet Belt", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
+					back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Hizamaru Hizayoroi +1", feet="Hizamaru Sune-ate +1"}
 
 	-- Hybrid PDT/TP
 	sets.TP.Hybrid = set_combine(sets.TP, sets.idle.PDT)

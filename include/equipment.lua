@@ -48,10 +48,10 @@
 	-- elemental skill  dark magic skill
 	Aug.Cape.BLM = {name="Bane Cape"}
 	Aug.Cape.BLM.MACC = {name="Taranus's Cape", augments={'MP+60','"Mag. Atk. Bns."+10"','Mag. Acc.+20/Mag.DMG.+20',}}
-	Aug.Cape.BLM.Fastcast = {name="Sucello's Cape"}
+	Aug.Cape.BLM.Fastcast = {name="Taranus's Cape"}
 	
 	--RDM
-	-- Duration 10-20
+	-- Skill+ 10 Duration 10-20
 	Aug.Cape.RDM = {name="Ghostfyre Cape"}
 	Aug.Cape.RDM.Macc = {name="Sucello's Cape"}
 	Aug.Cape.RDM.Fastcast = {name="Sucello's Cape"}
@@ -65,20 +65,28 @@
 	
 	-- Phalanx +5
 	Aug.Cape.PLD = {name="Weard Mantle"}
+	-- DEX
 	Aug.Cape.PLD.TP = {name="Rudianos's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
+	-- STR
 	Aug.Cape.PLD.WS = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	-- MND
+	Aug.Cape.PLD.WS.Req = {name="Rudianos's Mantle", augments={'Mag. Acc+20 /Mag. Dmg.+20',}}
+	-- VIT
 	Aug.Cape.PLD.Enmity = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','MND+10','Enmity+10',}}
+	-- HP
 	Aug.Cape.PLD.FC = {name="Rudianos's Mantle", augments={'MND+19','Eva.+13 /Mag. Eva.+13','"Fast Cast"+10',}}
-	Aug.Cape.PLD.MAB = {name="Rudianos's Mantle", augments={'Mag. Acc+20 /Mag. Dmg.+20',}}
+	
 	
 	-- DRK
 	-- Drain/Aspir
 	Aug.Cape.DRK = {name="Niht Mantle"}
 	
+	-- BST
 	-- pet dt-5
 	Aug.Cape.BST = {name="Pastoralist's Mantle"}
-
-	-- Magic acc +7
+	
+	-- BRD
+	-- Magic Acc +7
 	Aug.Cape.BRD = {name="Rhapsode's Cape", augments={'HP+24','Mag. Acc.+7','Enmity-4','Damage taken-1%',}}
 	-- Magic acc
 	Aug.Cape.BRD.MACC = {name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+3','"Fast Cast"+10',}}
@@ -120,6 +128,7 @@
 	-- Fastcast
 	Aug.Cape.BLU.FC = {name="Rosmerta's Cape", augments={'"Fast Cast"+10',}}
 	
+	-- Cor
 	-- Phantom Roll -5
 	Aug.Cape.COR = {name="Gunslinger's Cape"}
 	Aug.Cape.COR.TP = {name="Camulus's Mantle"}
@@ -128,19 +137,26 @@
 	Aug.Cape.COR.Melee = {name="Camulus's Mantle"}
 	Aug.Cape.COR.Melee.WS = {name="Camulus's Mantle"}
 	
+	-- Pup
 	-- ?
 	Aug.Cape.PUP = {}
 	
+	-- DNC
 	-- ?
 	Aug.Cape.DNC = {name="Toetapper's Mantle"}
 	
-	-- ?
+	-- SCH
+	--
 	Aug.Cape.SCH = {name="Bookworm's Cape"}
-	
+	Aug.Cape.SCH.Macc = {name=""}
+	Aug.Cape.SCH.FC = {}
+
+	-- Geo
 	-- skill +10  duration + 10-20
 	Aug.Cape.GEO = {name="Lifestream Cape"}
-	Aug.Cape.GEO.MACC = {name="Nantosuetta's Cape"}
-	Aug.Cape.GEO.Fastcast = {name="Nantosuetta's Cape"}
+	Aug.Cape.GEO.MACC = {name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
+	Aug.Cape.GEO.Fastcast = {name="Nantosuelta's Cape"}
+	Aug.Cape.GEO.Melee = {name="Nantosuelta's Cape"}
 	
 	-- Enmity +7 
 	-- Ogma's cape - Enmity + 10
@@ -155,31 +171,9 @@
 	Aug.Skirmish = {}
 	
 	-- Weapons
-	Aug.Skirmish.Keraunos = {}
 	
-	-- Staff
-	-- Nuking
-	Aug.Skirmish.Keraunos.MAB = {}
-	Aug.Skirmish.Keraunos.Macc = {}
-	-- snow acc? leaf perp cost dusk?
-	Aug.Skirmish.Keraunos.Perp = {}
-	-- pet mab leaf db/crit dusk bpd +10
-	Aug.Skirmish.Keraunos.MBPD = {}
-	-- siphon?
+	-- Armor	
 	
-	-- Armor
-	-- Yorcia 
-	-- Hagondes 
-	Aug.Skirmish.Hagondes = {}
-	Aug.Skirmish.Hagondes.Head = {}
-	Aug.Skirmish.Hagondes.Body = {}
-	Aug.Skirmish.Hagondes.Hands = {}
-	Aug.Skirmish.Hagondes.Legs = {}
-	Aug.Skirmish.Hagondes.Feet = {}
-	
-	Aug.Skirmish.Hagondes.Legs.MAB = {name="Hagondes Pants +1",augments={"", ""}}
-	
-	-- Alluvion Skirmish
 	-- Acro - WAR PLD DRK SAM DRG
 	Aug.Skirmish.Acro = {}
 	Aug.Skirmish.Acro.Head = {}
@@ -187,26 +181,6 @@
 	Aug.Skirmish.Acro.Hands = {}
 	Aug.Skirmish.Acro.Legs = {}
 	Aug.Skirmish.Acro.Feet = {}
-	
-	-- STP Snow: Att/Acc Leaf:STP Dusk: STR
-	-- body?
-	Aug.Skirmish.Acro.Body.STP = {}
-	Aug.Skirmish.Acro.Hands.STP = {}
-	Aug.Skirmish.Acro.Legs.STP = {}
-	Aug.Skirmish.Acro.Feet.STP = {}
-	
-	-- TP - Snow: Att/Acc Leaf:D.Atk Dusk: Crit Rate
-	Aug.Skirmish.Acro.Head.TP = {}
-	Aug.Skirmish.Acro.Body.TP = {}
-	Aug.Skirmish.Acro.Hands.TP = {}
-	Aug.Skirmish.Acro.Legs.TP = {}
-	Aug.Skirmish.Acro.Feet.TP = {}
-	
-	-- WS - Snow:acc/atk Leaf:WSacc Dusk:WSD
-	Aug.Skirmish.Acro.Head.WS = {}
-	Aug.Skirmish.Acro.Body.WS = {}
-	Aug.Skirmish.Acro.Legs.WS = {}
-	Aug.Skirmish.Acro.Feet.WS = {}
 	
 	-- DRG Breath/BST Macc - Snow: Pet Macc 20 Leaf: Breath +8 Dusk: Pet: haste
 	Aug.Skirmish.Acro.Body.Breathe = {}
