@@ -117,17 +117,17 @@ if player.name == 'Feary' then
 		-- Bard songs
 		-- Enhancing Buff - Duration Set
 		sets.midcast.Buffsong = {main={name="Legato Dagger", priority=2}, sub={name="Genbu's Shield", priority=1},
-				head="Fili Calot +1", neck="Aoidos' matinee",
-                body="Fili Hongreline +1", hands="Fili Manchettes +1",
+				head="Fili Calot +1", neck="Moonbow Whistle", lear="Musical Earring",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1", lring="Stikini Ring", rring="Stikini Ring",
                 back="Harmony Cape", waist="Corvax Sash", legs="Inyanga Shalwar +1", feet="Brioso Slippers +1"}
 		-- Enhancing Buff - Buff Set (set Bonus)
 		sets.midcast.EnhanceSong = {main={name="Legato Dagger", priority=2}, sub={name="Genbu's Shield", priority=1},
-				head="Fili Calot +1", neck="Aoidos' matinee",
-                body="Fili Hongreline +1", hands="Fili Manchettes +1",
+				head="Fili Calot +1", neck="Moonbow Whistle", lear="Musical Earring",
+                body="Fili Hongreline +1", hands="Fili Manchettes +1", lring="Stikini Ring", rring="Stikini Ring",
                 back="Harmony Cape", waist="Corvax Sash", legs="Fili Rhingrave +1", feet="Fili Cothurnes +1"}
 		-- Enhancing Buff - Skill Set 800+
 		sets.midcast.Skillsong = {main={name="Legato Dagger", priority=2}, sub={name="Genbu's Shield", priority=1},
-				head="Fili Calot +1", neck="Aoidos' matinee", lear="Musical Earring",
+				head="Fili Calot +1", neck="Moonbow Whistle", lear="Musical Earring",
                 body="Fili Hongreline +1", hands="Fili Manchettes +1", lring="Stikini Ring", rring="Stikini Ring",
                 back="Rhapsode's Cape", waist="Corvax Sash", legs="Fili Rhingrave +1", feet="Brioso Slippers +1"}
 		-- Debuffs
@@ -151,11 +151,11 @@ if player.name == 'Feary' then
 		-- Enfeebling
 		-- Potency
 		sets.midcast.Enfeebling = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1}, 
-				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+				head="Inyanga Tiara +1", neck="Moonbow Whistle", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Stikini ring", rring="Stikini ring",
                 back="Intarabus's Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyan. Crackows +1"}
 		sets.midcast.Macc = {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1}, 
-				head="Inyanga Tiara +1", neck="Eddy Necklace", lear="Gwati Earring", rear="Enchntr. Earring +1",
+				head="Inyanga Tiara +1", neck="Moonbow Whistle", lear="Gwati Earring", rear="Enchntr. Earring +1",
                 body="Inyanga Jubbah +1", hands="Inyan. Dastanas +1", lring="Stikini ring", rring="Stikini ring",
                 back="Intarabus's Cape", waist="Ovate Rope", legs="Inyanga Shalwar +1", feet="Inyan. Crackows +1"}
 				
@@ -178,11 +178,11 @@ if player.name == 'Feary' then
 		sets.TP = set_combine(sets.idle.PDT, {main={name="Mandau", priority=2}, sub={name="Genbu's Shield", priority=1},
 				head="Aya. Zucchetto +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
                 body="Ayanmo Corazza +1", hands="Aya. Manopolas +1", lring="Patricius Ring", rring="Ramuh Ring +1",
-                back="Umbra Cape", waist="Dynamic Belt +1", legs="Aya. Cosciales +1", feet="Aya. Gambieras +1"})
+                back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Aya. Cosciales +1", feet="Aya. Gambieras +1"})
 		sets.TP.Acc = set_combine(sets.TP, {{main={name="Mandau", priority=2}, sub="Genbu's Shield", priority=1},
-				head="Aya. Zucchetto +1", neck="Asperity Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
-                body="Ayanmo Corazza +1", hands="Aya. Manopolas +1", lring="Rajas Ring", rring="Ifrit Ring +1",
-                back="Umbra Cape", waist="Dynamic Belt +1", legs="Aya. Cosciales +1", feet="Aya. Gambieras +1"})	
+				head="Aya. Zucchetto +1", neck="Iqabi Necklace", lear="Bladeborn Earring", rear="Steelflash Earring",
+                body="Ayanmo Corazza +1", hands="Aya. Manopolas +1", lring="Rajas Ring", rring="Ramuh Ring +1",
+                back="Ground. Mantle +1", waist="Dynamic Belt +1", legs="Aya. Cosciales +1", feet="Aya. Gambieras +1"})	
 		
 		-- WeaponSkills
 		sets.precast.WS = set_combine(sets.TP, {
